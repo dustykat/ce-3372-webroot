@@ -1,0 +1,123 @@
+\documentclass[12pt]{article}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{daves,fancyhdr,natbib,graphicx,dcolumn,amsmath,lastpage,url}
+\usepackage{amsmath,amssymb,epstopdf,longtable}
+\usepackage{paralist} 
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+\pagestyle{fancy}
+\lhead{CE 3372 -- Water Systems Design}
+%\rhead{FALL 2010}
+%\rhead{SPRING 2011}
+%\rhead{FALL 2011}
+%\rhead{SPRING 2012}
+%\rhead{FALL 2012}
+\rhead{FALL 2015}
+%\lfoot{EXERCISE 1 -- REVISION 1}
+%\lfoot{EXERCISE 1 -- REVISION 2}
+%\lfoot{EXERCISE 1 -- REVISION 3}
+%\lfoot{EXERCISE 1 -- DUE 26 JAN 2012}
+%\lfoot{EXERCISE 1 -- DUE 4 SEP 2012}
+\lfoot{EXERCISE 2}
+\cfoot{}
+\rfoot{Page \thepage\ of \pageref{LastPage}}
+\renewcommand\headrulewidth{0pt}
+
+
+
+\begin{document}
+\begin{center}
+{\textbf{{ CE 3372 -- Water Systems Design} \\ {Exercise Set 2}}}
+\end{center}
+\begingroup
+\begin{tabular}{p{1in} p{5in}}
+Purpose: & Reinforce use of authoritative documents as sources of design criteria. \\
+~             & Reinforce reading and interpreting plan and profile drawings \\
+~             & Review of closed conduit hydraulics and use of energy equation for systems analysis \\
+\end{tabular}
+\endgroup
+\section*{\small{Exercises}}
+\begin{enumerate}
+%%%%%%%%%%%%%%%% TEXAS ADMINISTRATIVE CODE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Locate TCEQ Rules and Regulations for Public Water Systems (RG-195).    Use the document to answer the following questions
+\begin{enumerate}
+\item  What is the minimum required pressure in a distribution system under normal operating conditions?  \\
+\textsl{290.44(d)  35 psi at all points within the distribution network at flow rates of at least 1.5 gallons per minute per connection.}
+\item What is the minimum required pressure in a distribution system under combined fire and drinking water operating conditions?  \\
+\textsl{290.44(d) When the system is intended to provide fire fighting capability, it must also be designed to maintain a minimum pressure of 20 psi under combined fire and drinking water flow conditions.}
+\item What is the minimum distance that waterlines can be located relative to septic tank drainfields?  \\
+\textsl{290.44(e)(8) ... Waterlines shall not be installed closer than ten feet to septic tank drainfields.}
+\item What is the minimum required residual of free chlorine in milligram per liter?  \\
+\textsl{290.46(d)(2)(A) a free chlorine residual of 0.2 milligrams per liter (mg/L).}
+\item What is the minimum required residual of chloramine residual for systems that feed ammonia?  \\
+\textsl{§290.46(d)(2)(B) a chloramine residual of 0.5 mg/L (measured as total chlorine) for those systems that feed ammonia.}
+\end{enumerate}
+\clearpage
+\item Locate Chapter 217 ``Design Criteria for Domestic Wastewater Systems'' of the Texas Administrative Code.   Download and print Subchapter C ``Conventional Collection Systems''.   Use the subchapter to answer the following questions.
+\begin{enumerate}[a)]
+\item What four components of flow calculations are to be included in a gravity collection system?  \\
+\textsl{Average dry weather; dry weather peaking factor; infiltration; inflow}
+\item What time frame are these flow calculations to be considered?   \\
+\textsl{Completion of construction and 50 years post-construction}
+\item Collection system pipes may be installed in the same trench as a pressurized water supply pipe.  True or false?   \\
+\textsl{False, should not be in same trench}
+%\item Collection system surcharge is allowed when actual flow equals expected peak design flow.  True or false?
+\item What is the minimum structural design life for wastewater collection facilities?  \\
+\textsl{50 years; explicit in ``Structural Analysis (k) ..... "}
+\item What is the minimum allowable gravity collection pipe diameter, in feet?   \\
+\textsl{1/2 foot (6 inches)}
+\item What is the minimum allowed flow velocity when a collection system component is flowing full?   \\
+\textsl{ 2 feet per second}
+\item What is the maximum allowed flow velocity when a collection system component is flowing full?   \\
+\textsl{ 10 feet per second}
+\item What is the head loss formula is used in the gravity collection portion of the subchapter?   \\
+\textsl{ Manning's equation}
+\item What is the head loss formula used in the lift station (pumping) portion of the subchapter?   \\
+\textsl{ Implied Hazen-Williams based on use of C for friction coefficients}
+\item Collection system warning labels must be provided in what languages ?   \\
+\textsl{ENGLISH on pipes; both ENGLISH and SPANISH on storage tanks and faucets}
+%\item What ASTM, ASCE, and ANSI standards are referenced in the subchapter with regards to trench backfill?
+\end{enumerate}
+\clearpage
+%%%%%%%%%%%%%%%%% CITY OF HOUSTON DESIGN MANUAL %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Using the City of Houston Infrastructure Design Manual on the class website, summarize backfill requirements as pertaining to wastewater collection systems. \\~\\~\\
+\textsl{Page 8-7: Section E(4) -- Back fill excavated areas and trenches under or within one foot of existing or proposed pavement with cement-stabilized sand from the top of the pipe embedment zone up to one foot below the paving sub-grade. Cement-stabilized sand must develop 100 psi minimum compression at 48 hours. Backfill shall be compacted to 95 percent standard Proctor density. }
+
+%%%%%%%%%%%%%%%%% PLAN AND PROFILE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\item Using the City of Rocksprings Storm Sewer Plan and Profile on the class website determine:
+%\begin{enumerate}
+%\item What is the station of inlet 8?
+%\item What is the offset of inlet 8?
+%\item What is the elevation that connects IL8 and IL8A to the main line?
+%\end{enumerate}
+%\item	What is the ADA requirement for ramp slopes? Be sure to cite your source.   
+%%%%%%%%%%%%%%%%% CLOSED CONDUIT HYDRAULICS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\item A 5-foot diameter, enamel coated, steel pipe carries 60$^o$F water at a discharge of 295 cubic-feet per second (cfs).  Estimate the head loss in a 10,000 foot length of this pipe using the Hazen-Williams head loss model.
+
+%\item Estimate the diameter of a cast-iron pipe needed to carry 60$^o$F water at a discharge of 10 cubic-feet per second (cfs) between two reservoirs 2 miles apart.  The elevation difference between the water surfaces in the two reservoirs is 20 feet.
+
+%\item Points A and B are 3 miles apart along a 24-inch ductile iron pipe carrying 50$^o$F water.   Point A is 30 feet higher in elevation than point B.  The pressure at point B is 20 pounds per square-inch (psi) greater than the pressure at point A.  Determine the direction and magnitude of flow (i.e. discharge and direction).
+\clearpage
+\item  Water is pumped from a supply reservoir to a ductile iron water-transmission line as shown in Figure \ref{fig:p219}.   The high elevation of the line is at point A, 1 kilometer downstream of the pump station, and the low elevation is at point B, 1 kilometer downstream of point A.  If the discharge in the pipeline is 1 cubic-meter per second (cms), the diameter of the pipe is 750 millimeters (mm) and the pressure at point A is 350 kilopascals (kPa).  Determine
+
+\begin{enumerate}[(a)]
+\item The added head supplied by the pump station.
+\item The water pressure at B.
+\item The mechanical power supplied by the pump.
+\end{enumerate}
+
+\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=4in]{p219.pdf} 
+   \caption{Reservoir-Pump-Transmission System Schematic}
+   \label{fig:p219}
+\end{figure}
+
+\newpage
+~\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{enumerate}
+\end{document}  

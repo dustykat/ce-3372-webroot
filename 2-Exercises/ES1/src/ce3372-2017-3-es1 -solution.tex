@@ -1,0 +1,196 @@
+\documentclass[12pt]{article}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{daves,fancyhdr,natbib,graphicx,dcolumn,amsmath,lastpage,url}
+\usepackage{amsmath,amssymb,epstopdf,longtable}
+\usepackage{paralist} 
+\usepackage[final]{pdfpages}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+\pagestyle{fancy}
+\lhead{CE 3372 -- Water Systems Design}
+\rhead{FALL 2017}
+\lfoot{EXERCISE 1}
+\cfoot{}
+\rfoot{Page \thepage\ of \pageref{LastPage}}
+\renewcommand\headrulewidth{0pt}
+
+\begin{document}
+\begin{center}
+\textbf{MEMORANDUM}
+\end{center}
+\begingroup
+\begin{tabular}{p{1in} p{5in}}
+\hline
+\hline
+To: & P. N. Guin \\ ~\\
+From: & P. Olar Bear \\ ~\\
+Date: & 04JAN2024 \\ ~\\
+Subject: & CE 3372 -- Water Systems Design, Exercise Set 1. ~\\
+\hline
+\hline
+\end{tabular}
+\endgroup
+\section*{{Purpose}} 
+Demonstrate ability to use web resources and supplied readings to self-teach about water systems.
+\section*{Solution/Discussion}
+Google search and reading of the server-supplied reading excerpts are used to complete various tables in this exercise set.
+
+Persistence was needed for some informational items as a simple Google search did not return the requested information directly -- the user had to read various documents to extract the required answers.
+Evaporation is a difficult data item to find easily; in this solution results from published models were downloaded, averaged, and then converted from a monthly mean into an annual mean by multiplication for the Texas sites; the New Mexico location the value was found in a very old (circa 1905) document that the user actually had to read to find a meaningful value.  
+This requirement [reading] is typical of water resources problems and often the data required are quite available, but require some analysis.
+
+Some items were entered in this memorandum incorrectly (they are obvious) as a check against verbatim copy and submission as explained in the lecture and used as a scoring category in the grading rubric.
+
+The four problems are shown completed in the remainder of the memorandum.  
+\newpage
+\begin{enumerate}
+\item{{\textbf{Relevant Water Systems Web Resources}}}~\\~\\
+Table \ref{tab:url-list} was constructed by visiting the \texttt{URLs} listed in the table, and completing the table entries.  
+%In this exercise, governmental means the entity has taxing authority and elected officials.
+%Use the following ``codes'' for the type of organization based on your web visit.
+%\begin{enumerate}[a)]
+%\item GOV:$<$level$>$ == A municipality or city is City; A county is County; A state entity is State; and a Federal entity is Federal.  
+%For example, a visit to a city level website is coded as: GOV:City.
+%A governmental entity has taxing authority and is directed by elected officials.  
+%\item NGO == A non-governmental entity.  A professional organization is one example, Amnesty International is another example.
+%\end{enumerate}
+% Requires the booktabs if the memoir class is not being used
+\begin{table}[htbp]
+   \centering
+   \caption{Water Relevant Websites in the United States}
+   \begin{tabular}{p{2.2in}p{3.5in}p{0.9in}} % Column formatting, @{} suppresses leading/trailing space
+   ~ & ~ & ~ \\
+\hline \hline
+\texttt{URL} & Organization Name & Type \\
+\hline
+http://www.asce.org & American Society of Civil Engineers & NGO \\
+%http://www.water.ca.gov && \\
+https://www.ci.lubbock.tx.us & City of Lubbock & GOV:City\\
+https://www.tceq.texas.gov & Texas Commission on Environmental Quality & GOV:State\\
+%http://www.edwardscountytexas.us && \\
+https://www.hcfcd.org & Harris County Flood Control District & GOV:County \\
+http://www.dep.state.fl.us & Florida Dept. of Environmental Planning $\cdot$ & GOV:State  \\
+%http://www.usace.army.mil && \\
+https://www.nrcs.usda.gov & Natural Resource Conservation Service & GOV:Federal \\
+https://www.usgs.gov & U.S. Geological Survey & GOV:Federal\\
+%https://tx.usgs.gov && \\
+https://www.epa.gov & U.S. Environmental Protection Agency & GOV:Federal \\
+https://www.awwa.org & American Water Works Association & NGO \\
+%http://www.wef.org && \\
+http://www.ngwa.org & National Groundwater Association & NGO \\
+https://www.fhwa.dot.gov & Florida Highway Administration $\cdot$ & GOV:Federal \\
+%http://www.iwra.org && \\
+http://www.asce.ewrinstitute.org & Environmental and Water Resources Institute & NGO\\
+\hline
+\hline
+   \end{tabular}
+   \label{tab:url-list}
+\end{table}
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item{{\textbf{Water Use Descriptions}}}~\\
+Table \ref{tab:water-use} is constructed from various sources in the server-supplied readings
+\begin{table}[h!]
+   \centering
+   \caption{Water Use Categories}
+   \begin{tabular}{p{1.7in}p{4.3in}} % Column formatting, @{} suppresses leading/trailing space
+   ~ & ~ \\
+\hline \hline
+Water Use Category & Description \\
+\hline
+Domestic Use & Water for household needs: drinking, food preparation, personal hygiene, washing clothes and dishes, flushing toilets, and watering lawns and gardens \\
+Commercial Use & Water used in \textbf{``\dots Hotel, Motel, Holiday Inn, \dots''}; office buildings, hospitals, and other commercial facilities \\
+Irrigation Use & Application of water on lands to assist in growing of crops and pasture; maintain vegetative growth in recreational lands; maintain vegetative growth in ornamental displays\\
+Industrial Use & Water for fabrication, processing, washing, and cooling in the production of widgets and energy\\
+Livestock Use & Water used for livestock watering, feed lot operations, dairy operations, fish farming, pig farming and other on-farm needs\\
+Mining Use & Water used for extracting minerals occurring naturally; waters used in quarrying, well operations and other activities associated with mining.\\
+Public Use & Water supplied from a public water supply for firefighting, street warshing, municipal parks and swimming pools\\
+Rural Use & Water used by suburban and farm areas for domestic needs -- generally self-supplied\\
+Thermoelectric Use & Water used in generation of power by thermoelectric processes \\
+Hydroelectric Use & Water used to generate power by hydroelectric process (the water that passes through the turbines in dammed and run-of-river systems) \\
+Environmental Use & Water used to restore or maintain non-human habitat; wetlands intentionally supplied water to create habitat for waterfowl harvesting is one example\\
+
+Recreational Use & Water used in recreational activities; water-ski, booze-cruise, and sun-burn generation.  \\
+
+Navigation (Inland) Use & Water used as part of navigational systems to provide sufficient pool elevations for commercial waterborne cargo shipment\\
+
+\hline
+\hline
+   \end{tabular}
+   \label{tab:water-use}
+\end{table}
+The quote \textbf{``\dots Hotel, Motel, Holiday Inn, \dots''} is a fragment of lyrics from ``Rappers Delight'' by The Sugar Hill Gang.
+\clearpage
+\item{{\textbf{Climate Conditions -- 1}}}~\\~\\
+Table \ref{tab:climate} below in U.S. Customary units was completed using a similar table reported in SI units in the server-supplied readings.
+\begin{table}[htbp]
+   \centering
+   \caption{Climate Description, Precipitation, and Evapotranspiration}
+   \begin{tabular}{p{1.5in}p{2.25in}p{2.25in}} % Column formatting, @{} suppresses leading/trailing space
+   ~ & ~ & ~\\
+\hline \hline
+Climate Description & Mean Annual Precip. (inches) & Mean Annual Evap. (inches) \\
+\hline
+
+   Superarid & $<~$4 & $<~$118 \\
+
+   Hyperarid & 4 -- 8  &  90 -- 140  \\
+  
+   Arid & 8 -- 16 &  78 -- 90 \\
+
+   Semiarid & 16 -- 32 & 62 -- 78 \\
+
+   Subhumid & 32 -- 64 & 47 -- 62 \\
+
+   Humid & 64 -- 128 & 47  \\
+
+   Hyperhumid & 128 - 256 & 47 \\
+
+   Superhumid & $>~256$ & 47 \\
+
+\hline
+\hline
+   \end{tabular}
+   \label{tab:climate}
+\end{table}
+
+\item{{\textbf{Climate Conditions -- 2}}}~\\~\\
+Use the internet and locate values of mean annual precipitation and mean annual evapotranspiration for Lubbock, Texas; Albuquerque, New Mexico, and Houston, Texas.   Using Table \ref{tab:climate} you constructed above, classify the climates of these three locales.
+\end{enumerate}
+Lubbock Mean Precipitation $~\approx~19$ inches. \\
+Lubbock Mean Evaporation $~\approx~67$ inches.\footnote{Evaporation data from TNRIS model.}\\
+Climate Type == SEMIARID
+
+Albuquerque Mean Precipitation $~\approx~90$ inches. \\
+Albuquerque Mean Evaporation $~\approx~90$ inches.\footnote{NM Evaporation data is not easy to obtain; this value is taken from an old study.}\\
+Climate Type == ARID
+
+Houston Mean Precipitation $~\approx~45$ inches. \\
+Houston Mean Evaporation $~\approx~47$ inches.\footnote{Evaporation data from TNRIS model.}\\
+Climate Type == SUBHUMID
+
+\end{document}  
+%%%%%%%%%%%%%%%
+\newpage
+
+\begin{thebibliography}{\small}
+
+\bibitem[\protect\citeauthoryear{Chin}{Chin}{2006}]{Chin2006}
+Chin, D. (2006). 
+\newblock{\em Water Resources Engineering, 2 ed.}
+\newblock Prentice Hall, Inc. {pp. 1--8}
+
+\bibitem[\protect\citeauthoryear{Mays}{Mays}{2011}]{mays2011}
+Mays, L.~W. (2011).
+\newblock {\em Water-Resources Engineering}.
+\newblock Wiley. {pp. 1--11}
+
+\bibitem[\protect\citeauthoryear{Wurbs}{Wurbs}{2002}]{Wurbs2002}
+Wurbs, R.A., and James, W. P. (2002).
+\newblock{\em Water Resources Engineering}
+\newblock Prentice Hall. {pp. 1--33}
+
+\end{thebibliography}
