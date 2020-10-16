@@ -1,0 +1,83 @@
+RG-195
+
+1)Section 290.46(n) provides rules and guidance related to:
+A) Pressure tank inspections
+B) Basins used for water clarification
+C) Plans, specifications, maps, and other pertinent information
+D) Pumps, motors, valves, and other mechanical devices
+E) Minimum Acceptable Operating Practices for Public Drinking Water Systems
+
+2) Section 290.45(g)(5) discusses minimum requirements for water systems. The section states that the preferred method of pressure maintenance for systems of over 2,500 connections is
+A) Elevated storage tanks
+B) Hydropneumatic storage tanks
+C) Booster pumps
+D) Flow control valves
+E) Energy throttle valves
+
+
+3) Section 290.45(d)(2) states that a groundwater supply that serves fewer than 300 persons per day requires a pressure tank capacity of
+A) 220 gallons (or greater)
+B) 50% of maximum daily demand
+C) 15 gallons per minute
+D) transfer pump capacity sufficient to meet the maximum daily demand
+E) Emergency power sufficient to deliver 20% of the minimum required service pump capacity.
+
+4) Section 290.38(56) states that in the absence of historical data, a public water supply that meets the commission's minimum requirements for elevated storage capacity, may compute the peak hourly demand as
+A) Maximum daily demand prorated to an hourly rate
+B) 1.25 times the maximum daily demand prorated to an hourly rate
+C) 1.50 times the maximum daily demand prorated to an hourly rate
+D) 1.75 times the maximum daily demand prorated to an hourly rate
+E) 1.85 times the maximum daily demand prorated to an hourly rate
+
+
+5) Section 290.38(56) states that in the absence of historical data, a public water supply that uses pressure tanks (and booster pumps) for storage capacity, may compute the peak hourly demand as
+A) Maximum daily demand prorated to an hourly rate
+B) 1.25 times the maximum daily demand prorated to an hourly rate
+C) 1.50 times the maximum daily demand prorated to an hourly rate
+D) 1.75 times the maximum daily demand prorated to an hourly rate
+E) 1.85 times the maximum daily demand prorated to an hourly rate
+
+6) The minimum water distribution system pressure for non-fire flow conditions in Texas (RG-195) is
+A) 15 psi
+B) 20 psi
+C) 25 psi
+D) 30 psi
+E) 35 psi
+
+7) The maximum pipe velocity in Texas (RG-195) is
+A)  4 fps 
+B)  6 fps
+C)  8 fps
+D) 10 fps
+E) 12 fps
+
+8) The minimum free chlorine residual required in Texas water systems is
+A) 0.20 mg/L
+B) 0.50 mg/L
+C) 0.75 mg/L
+D) 1.00 mg/L
+E) 50.0 mg/L
+
+9) The minimum pipe diameter specified in the Texas code(s) is
+A) 1.75 inches
+B) 2.00 inches
+C) 2.50 inches
+D) 3.00 inches
+E) 8.00 inches
+
+###########################
+6) The minimum water distribution system pressure for non-fire flow conditions in Washington State (XXXX) is
+A) 15 psi
+B) 20 psi
+C) 25 psi
+D) 30 psi
+E) 35 psi
+
+7) The maximum pipe velocity in Washington State (XXXX) is
+A)  4 fps
+B)  6 fps
+C)  8 fps
+D) 10 fps
+E) 12 fps
+
+################
