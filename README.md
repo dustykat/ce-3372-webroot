@@ -10,3 +10,4 @@ Water Systems Design - webroot image, used for LTS maintenance and instructor sh
 
 - clone to laptop, modify this file, commit and push.
 - enable LFS in settings
+- relocate in laptop user/home directory
