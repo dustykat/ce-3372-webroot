@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel = "stylesheet" type = "text/css" href = "styles.css" >
+    </head>
+    <body>
+        
+        <div class="topnav">
+            <a class="active" href="../">Course Home Page</a>
+            <a href="http://atomickitty.ddns.net/moodle/">Moodle@atomickitty.ddns.net</a> -->
+            <a href="../0-Syllabus/syllabus.ce3372-2020-3.pdf">Syllabus</a>
+            <a href="../1-Lessons/">Lessons</a>
+            <a href="../2-Exercises/">Exercises</a>
+            <a href="../3-Readings/">Readings</a>
+            <a href="http://atomickitty.ddns.net/documents/mytoolbox-server/">Web-Based Toolkit</a>
+            <a href="http://atomickitty.ddns.net/web-services/epanet-in-a-box/">EPANET in a Box</a>
+            <a href="http://atomickitty.ddns.net/web-services/swmm-in-a-box/">SWMM in a Box</a>
+            <a href="http://54.243.252.9:8000/hub/login">Polaris@atomickitty.ddns.net (JupyterHub)</a>
+
+        </div>
+        
+	<div style="padding-left:16px">
+            <h2>CE 3372 Water Systems Design </h2>
+            <p>Catalog Description</p>
+           <p><strong>3372. Water Systems Design (3:3:0)</strong>. Prerequisite: CE 3305, 3354. Hydraulic analysis and design of municipal water distribution, stormwater collection, and wastewater collection systems. Oral and written presentations. (Communication Intensive)</p>
+
+        </div>
+        
+        
+
+        <button class="accordion">Description</button>
+        <div class="panel">
+	<p>Course description
+</p>
+        </div>
+        
+        <button class="accordion"> Distribution Systems (Lessons 1-11) </button>
+        <div class="panel">
+<p><a href="./Lesson01/"> Lesson-1 </a> Introduction; Syllabus; Moodle Site </p>
+<p><a href="./Lesson02/"> Lesson-2 </a> Design Guidelines - Water Supply </p>
+<p><a href="./Lesson03/"> Lesson-3 </a> Demand Estimation </p>
+<p><a href="./Lesson04/"> Lesson-4 </a> Pipe Head Loss Models </p>
+<p><a href="./Lesson05/"> Lesson-5 </a> Pipeline Hydraulics </p>
+<p><a href="./Lesson06/"> Lesson-6 </a> Pumping </p>
+<p><a href="./Lesson07/"> Lesson-7 </a> Drinking Water Storage </p>
+<p><a href="./Lesson08/"> Lesson-8 </a> Pipe Networks </p>
+<p><a href="./Lesson09/"> Lesson-9 </a> EPANET Introduction </p>
+<p><a href="./Lesson10/"> Lesson-10 </a> EPANET Pumps </p>
+<p><a href="./Lesson11/"> Lesson-11 </a> EPANET Extended Period Simulation</p>
+        </div>
+        
+        <button class="accordion"> Stormwater Collection Systems (Lessons 12-21) </button>
+        <div class="panel">
+
+<p><a href="./Lesson12/"> Lesson-12 </a> Design Guidelines - Storm Water Collection </p>
+<p><a href="./Lesson13/"> Lesson-13 </a> Open Channel Flow Principles </p>
+<p><a href="./Lesson14/"> Lesson-14 </a> Gradually Varied Flow Computations  </p>
+<p><a href="./Lesson15/"> Lesson-15 </a> Drainage Hydrology </p>
+<p><a href="./Lesson16/"> Lesson-16 </a> Rational Method for Sizing Inlets </p>
+<p><a href="./Lesson17/"> Lesson-17 </a> Rational Method for Sizing Conduits </p>
+<p><a href="./Lesson18/"> Lesson-18 </a> SWMM Introduction </p>
+<p><a href="./Lesson19/"> Lesson-19 </a> SWMM Hydrology </p>
+<p><a href="./Lesson20/"> Lesson-20 </a> SWMM Dual-Drainage Systems </p>
+<p><a href="./Lesson21/"> Lesson-21 </a> Stormwater Detention Ponds </p>
+
+</div>
+    	<button class="accordion">Sanitary Systems (Lessons 22-24) </button>
+        <div class="panel">
+<p><a href="./Lesson22/"> Lesson-22 </a> Design Guidelines - Waste Water Collection </p>
+<p><a href="./Lesson23/"> Lesson-23 </a> Sanitary Sewer Systems </p>
+<p><a href="./Lesson24/"> Lesson-24 </a> Outfall Erosion Control </p>
+
+        </div>
+<!-- JavaScripts for this page -->
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+    
+    for (i = 0; i < acc.length; i++) {
+        acc[i].onclick = function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight){
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            } 
+        }
+    }
+</script>
+
+    </body>
+</html>
