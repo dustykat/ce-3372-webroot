@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC >
+
+	<head>
+	<!This is a fucking comment!>
+		<title>Water Systems Lectures</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel = "stylesheet" type = "text/css" href = "styles.css" >
+	</head>
+
+	<body>
+<h1><tt>www.rtfmps.com</tt> <br><strong> Texas Tech University Course: CE 3372 <br> </font> </strong></h1>
+<div class="content">
+<div class="content-middle">
+
+<strong>CE 3372. Water Systems Design </strong> 
+Lecture 18: Introduction to SWMM
+<h2> LECTURES  </h2>
+
+</div>
+<hr />
+<div class="content-columns">
+<div class="content-column-left">
+<h2> Lecture 18: Presentation and Readings </h2>
+
+<p>
+<a href="./Lecture18.pdf"> Lecture-18 </a>
+Introduction to SWMM for drainage modeling
+</p>
+
+<p>
+<a href="./VideosInLecture"> Videos in Lecture </a>
+Assorted videos using SWMM (download to Windows, macOS); tour of interface;
+Nodes, inverts. and flooding; Example 1; Example 2
+</p>
+
+<p>
+<a href="./readings1.html"> Readings  </a> 
+Reading list for Lecture 18
+</p>
+<br><br><br><br>
+<hr><hr>
+
+<h2> Escape Routes </h2>
+<p><a href="http://www.rtfmps.com"> www.rtfmps.com (home page) </a></p>
+<p><a href="../"> parent directory </a></p>
+</div>
+
+<div class="content-column-right">
+<h2> Lecture 18: Exercises and Data </h2>
+
+<p>
+<a href="./SpreadsheetsInLecture/"> Spreadsheets used in Lecture </a>
+</p>
+
+<p>
+<a href="./SWMM-Files/"> SWMM Files in Lecture </a><br>
+Example 1: Flow in an open channel <br>
+Example 2: Flow in a conduit <br></p>
+
+
+
+<p>
+<a href="../../2-Homework/ES-16-2017-3/"> Exercise Set 16 </a>
+Exercise Set 16: Approximate rational method in SWMM <br><br>
+Check the syllabus for the due date. 
+</p>
+
+<hr><hr>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="content"><br>
+<br>
+</div>
+</div>
+</body>
+</html>
