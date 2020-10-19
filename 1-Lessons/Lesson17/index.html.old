@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC >
+
+	<head>
+	<!This is a fucking comment!>
+		<title>Water Systems Lectures</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel = "stylesheet" type = "text/css" href = "styles.css" >
+	</head>
+
+	<body>
+<h1><tt>www.rtfmps.com</tt> <br><strong> Texas Tech University Course: CE 3372 <br> </font> </strong></h1>
+<div class="content">
+<div class="content-middle">
+
+<strong>CE 3372. Water Systems Design </strong> 
+Lecture 17: Conduit Design
+<h2> LECTURES  </h2>
+
+</div>
+<hr />
+<div class="content-columns">
+<div class="content-column-left">
+<h2> Lecture 17: Presentation and Readings </h2>
+
+<p>
+<a href="./Lecture17.pdf"> Lecture-17 </a>
+Conduit size selection (initial estimates) using rational method storm sewer design.
+</p>
+
+<p>
+<a href="./readings1.html"> Readings  </a> 
+Reading list for Lecture 17
+</p>
+<br><br><br><br>
+<hr><hr>
+
+<h2> Escape Routes </h2>
+<p><a href="http://www.rtfmps.com/"> www.rtfmps.com (home page) </a></p>
+<p><a href="../"> parent directory </a></p>
+</div>
+
+<div class="content-column-right">
+<h2> Lecture 17: Exercises and Data </h2>
+
+<p>
+<a href="./SpreadsheetsInLecture/"> Spreadsheets used in Lecture </a>
+GoodwinStormSewer(.xlsx); 
+</p>
+
+
+
+<p>
+<a href="../../2-Homework/ES-15-2017-3/"> Exercise Set 15 </a>
+Exercise Set 15: Tanglewilde initial sewer design <br><br>
+Check the syllabus for the due date. 
+</p>
+
+<hr><hr>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="content"><br>
+<br>
+</div>
+</div>
+</body>
+</html>
