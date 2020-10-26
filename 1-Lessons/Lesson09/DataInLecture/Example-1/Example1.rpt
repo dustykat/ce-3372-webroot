@@ -1,0 +1,37 @@
+  Page 1                                           9/10/2015 11:47:21 AM
+  **********************************************************************
+  *                             E P A N E T                            *
+  *                     Hydraulic and Water Quality                    *
+  *                     Analysis for Pipe Networks                     *
+  *                           Version 2.0                              *
+  **********************************************************************
+  
+  Input File: Example1.net
+  
+  
+  
+  Link - Node Table:
+  ----------------------------------------------------------------------
+  Link           Start          End                Length  Diameter
+  ID             Node           Node                   ft        in
+  ----------------------------------------------------------------------
+  P1             UpperReservoir N1                  10560        24
+  2              N1             LowerReservoir         10        48
+  
+  Node Results:
+  ----------------------------------------------------------------------
+  Node                Demand      Head  Pressure   Quality
+  ID                     CFS        ft       psi          
+  ----------------------------------------------------------------------
+  N1                    0.00     10.00      4.33      0.00
+  UpperReservoir      -12.69     30.00      0.00      0.00 Reservoir
+  LowerReservoir       12.69     10.00      0.00      0.00 Reservoir
+  
+  Link Results:
+  ----------------------------------------------------------------------
+  Link                  Flow  VelocityUnit Headloss    Status
+  ID                     CFS       fps    ft/Kft
+  ----------------------------------------------------------------------
+  P1                   12.69      4.04      1.89      Open
+  2                    12.69      1.01      0.06      Open
+  
