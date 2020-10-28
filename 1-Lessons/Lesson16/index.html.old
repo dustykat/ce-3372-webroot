@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel = "stylesheet" type = "text/css" href = "styles.css" >
+    </head>
+    <body>
+        
+        <div class="topnav">
+            <a class="active" href="../../">Course Home Page</a>
+            <a href="../../0-Syllabus/syllabus.ce3372-2019-1.pdf">Syllabus</a>
+            <a href="../../1-Lessons/">Lessons</a>
+            <a href="../../2-Exercises/">Exercises</a>
+            <a href="../../3-Readings/">Readings</a>
+	    <a href="http://theodore-odroid.ttu.edu/documents/toolbox/">Toolkit</a>
+
+
+        </div>
+        
+	<div style="padding-left:16px">
+            <h2>CE 3372 Water Systems Design</h2>
+            <p>Catalog Description</p>
+           <p><strong>3372. Water Systems Design (3:3:0)</strong>. 
+Prerequisite: CE 3305, 3354. Hydraulic analysis and design of municipal water distribution, stormwater collection, and wastewater collection systems. 
+Oral and written presentations. (Communication Intensive)</p>
+
+           
+<p> leson name</p>
+        </div>
+        
+        
+
+        <button class="accordion">Lesson Description</button>
+        <div class="panel">
+	<p>
+This lesson introduces the EPANET computer program for pipe network analysis.
+The program computes steady state pressures and flows in a network given node elevations, demands, and pipe properties.<br>
+<br>
+The program is mature (20+ years of development) and is one of a few computation engines used for such simulation (KYPIPE is another computation engine).  Most professional software uses some variant of the EPANET engine (but their own interface); a few companies reversed engineered their own engines for specific computational speed-ups to support their clients.  The underlying intellectual technology is the same.
+ <br><br>
+The combination of the user interface, and the tested computation engine makes the program straightforward enough that a cat can use it if he can avoid chasing the mouse for sport!
+
+</p>
+        </div>
+        
+        <button class="accordion">Notes</button>
+        <div class="panel">
+<p>
+<a href="./PowerPointInLecture/"> Lesson Notes </a> 
+&nbsp Instructor notes used in face-to-face presentation. 
+</p>
+
+<p>
+<a href="../../3-Readings/EPANETbyExample/">link name</a>
+Cleveland, T.G., Tay, C.C., and Neale, C.M. (2015) EPANET by Example. Department of Civil and Environmental Engineering, Texas Tech University.
+</p>
+
+<p>
+<a href="../../3-Readings/Wurbs130-198/">link name</a>
+</a>
+citation
+</p>
+
+<p>
+<a href="../../3-Readings/Chin_27-48/">link name</a>
+</a>
+citation
+</p>
+
+<p>
+<a href="../../3-Readings/WaterDistributionSystems/">link name</a>
+citation
+</p>
+<hr/><hr/>
+
+
+
+
+
+
+        </div>
+        
+        <button class="accordion">Video Links</button>
+        <div class="panel">
+
+Links to related videos
+
+
+
+
+
+        </div>
+        <button class="accordion">Moodle Links</button>
+        <div class="panel">
+
+<p><a href="http://www.rtfmps.com/moodle/"> RTFMPS-MOODLE-SITE </a> Moodle site entry </p>
+
+</div>
+
+<button class="accordion">Data Links</button>
+<div class="panel">
+
+<p><a href="./DataInLecture/"> Supplemental Data in Lecture </a> 
+
+</p>
+
+<p><a href="./ScriptsInLecture/"> Spreadsheets/Scripts </a> Description of scripts, or links to web-based calculators </p>
+
+</div>
+
+
+<!-- JavaScripts for this page -->
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+    
+    for (i = 0; i < acc.length; i++) {
+        acc[i].onclick = function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight){
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            } 
+        }
+    }
+</script>
+
+    </body>
+</html>
