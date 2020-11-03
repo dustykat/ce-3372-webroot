@@ -1,0 +1,5 @@
+Lecture 17
+To-do list
+1) Goodwin Storm Sewer Detail Example (step-by-step) (video)
+2) Goowdin Storm Sewer into SWMM (step-by-step) (video+SWMM files)
+3) Tangelwood Storm Sewer Problem (into a homework assignment + inlet specifications)

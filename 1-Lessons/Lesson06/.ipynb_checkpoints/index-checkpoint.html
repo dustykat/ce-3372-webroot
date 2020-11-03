@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel = "stylesheet" type = "text/css" href = "styles.css" >
+    </head>
+    <body>
+        
+        <div class="topnav">
+            <a class="active" href="../../">Course Home Page</a>
+            <a href="../../0-Syllabus/syllabus.ce3372-2020-3.pdf">Syllabus</a>
+            <a href="../../1-Lessons/">Lessons</a>
+            <a href="../../2-Exercises/">Exercises</a>
+            <a href="../../3-Readings/">Readings</a>
+            <a href="http://theodore-odroid.ttu.edu/documents/toolbox/">Web Tools@theodore.odroid.ttu.edu</a>
+            <a href="http://atomickitty.net:6082/vnc.html?host=atomickitty.net&port=6082">EPANET in a Box</a>
+            <a href="http://atomickitty.net:6083/vnc.html?host=atomickitty.net&port=6083">SWMM in a Box</a>
+            <a href="http://54.243.252.9:8000/user/polaris/lab?">polaris@atk-aws.ddns.net (login as polaris)</a>
+
+        </div>
+        
+	<div style="padding-left:16px">
+            <h2>CE 3372 Water Systems Design</h2>
+            <p>Catalog Description</p>
+           <p><strong>3372. Water Systems Design (3:3:0)</strong>. 
+Prerequisite: CE 3305, 3354. Hydraulic analysis and design of municipal water distribution, stormwater collection, and wastewater collection systems. 
+Oral and written presentations. (Communication Intensive)</p>
+
+           
+<p> Pump and System Curves, Net Positive Suction Head </p>
+        </div>
+        
+        
+
+        <button class="accordion">Lesson Description</button>
+        <div class="panel">
+	<p>
+Review of pump types.  
+Pump curves as supplied for centrifugal, mixed, and axial-flow pumps.
+System curves for hydraulic networks.
+Net positive suction head considerations.
+Pump power.
+On-Line and spreadsheet tools.
+</p>
+        </div>
+        
+        <button class="accordion">Notes</button>
+        <div class="panel">
+<p><a href="./PowerPointInLecture/"> Lesson Notes </a> 
+&nbsp Instructor notes used in face-to-face presentation. 
+</p>
+
+<p>
+<a href="../../3-Readings/PumpSelection/"> Pump Selection </a>
+Walker, R. (1973) Pump Selection. Ann Arbor Science pp. 3-9
+</p>
+
+<p>
+<a href="../../3-Readings/PumpSuctionConditions/"> Pump Suction Conditions </a>
+Walker, R. (1973) Pump Selection. An Arbor Science pp. 11-31
+</p>
+
+<p>
+<a href="../../3-Readings/NPSHExplain/"> NPSH Explaination </a>
+Hauser, B. A. (1991). Practical Hydraulics Handbook. Lewis Publishers, Michigan. pp. 296-299
+</p>
+
+<p>
+<a href="../../3-Readings/LiftStationCityofHouston/"> Lift Station Design </a>
+City of Houston; List Station Design Guidelines
+</p>
+
+<p>
+<a href="../../3-Readings/LiftStationDesign/">Lift Station Design</a>
+Highway Stormwater Pump Station Design. FHWA-NHI-01-007
+</p>
+
+        </div>
+        
+        <button class="accordion">Video Links</button>
+        <div class="panel">
+<p><span><a href="https://youtu.be/wkdHShNi43c"> Lesson 6 Sec 002 (morning) (F2020) </a></span></p>
+<p><span><a href="https://youtu.be/ban_d9HwlYk"> Lesson 6 Sec 001 (evening) (F2020)</a></span></p>
+<hr>
+<p><span><a href="https://youtu.be/EpG9HmZhgGo"> Pumps and System Curves (2018), Part 1 </a></span></p>
+<p><span><a href="https://youtu.be/x9OismfQRoM"> Pumps and System Curves (2018), Part 2 </a></span></p>
+<!--<p><span><a href="https://youtu.be/IQcWwphn3mg"> Exercise Example (Interpreting Engineering Drawings) </a></span></p>-->
+
+        </div>
+<!--        <button class="accordion">Moodle Links</button>
+        <div class="panel">
+
+<p><a href="http://www.rtfmps.com/moodle/"> RTFMPS-MOODLE-SITE </a> Moodle site entry </p>
+
+</div> -->
+        
+
+<button class="accordion">Data Links</button>
+<div class="panel">
+
+<p><a href="./DataInLecture/"> Supplemental Data in Lecture </a> Description of the data </p>
+
+<p><a href="./ScriptsInLecture/"> Spreadsheets/Scripts </a> Description of scripts, or links to web-based calculators </p>
+
+</div>
+
+
+<!-- JavaScripts for this page -->
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+    
+    for (i = 0; i < acc.length; i++) {
+        acc[i].onclick = function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight){
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            } 
+        }
+    }
+</script>
+
+    </body>
+</html>

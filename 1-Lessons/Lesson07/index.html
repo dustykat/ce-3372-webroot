@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel = "stylesheet" type = "text/css" href = "styles.css" >
+    </head>
+    <body>
+        
+        <div class="topnav">
+            <a class="active" href="../../">Course Home Page</a>
+            <a href="../../0-Syllabus/syllabus.ce3372-2020-3.pdf">Syllabus</a>
+            <a href="../../1-Lessons/">Lessons</a>
+            <a href="../../2-Exercises/">Exercises</a>
+            <a href="../../3-Readings/">Readings</a>
+            <a href="http://theodore-odroid.ttu.edu/documents/toolbox/">Web Tools@theodore.odroid.ttu.edu</a>
+            <a href="http://atomickitty.net:6082/vnc.html?host=atomickitty.net&port=6082">EPANET in a Box</a>
+            <a href="http://atomickitty.net:6083/vnc.html?host=atomickitty.net&port=6083">SWMM in a Box</a>
+            <a href="http://54.243.252.9:8000/user/polaris/lab?">polaris@atk-aws.ddns.net (login as polaris)</a>
+
+        </div>
+        
+	<div style="padding-left:16px">
+            <h2>CE 3372 Water Systems Design</h2>
+            <p>Catalog Description</p>
+           <p><strong>3372. Water Systems Design (3:3:0)</strong>. 
+Prerequisite: CE 3305, 3354. Hydraulic analysis and design of municipal water distribution, stormwater collection, and wastewater collection systems. 
+Oral and written presentations. (Communication Intensive)</p>
+
+           
+<p> Storage Concepts in Water Supply  </p>
+        </div>
+        
+        
+
+        <button class="accordion">Lesson Description</button>
+        <div class="panel">
+	<p>
+Storage principles for service, fire, and emergency storage components.
+Examination of different kinds of storage tanks.
+Example calculation(s) for flow-equalization storage.
+</p>
+        </div>
+        
+        <button class="accordion">Notes</button>
+        <div class="panel">
+<p><a href="./PowerPointInLecture/"> Lesson Notes </a> 
+&nbsp Instructor notes used in face-to-face presentation. 
+</p>
+<p><a <p>
+<a href="../../3-Readings/Chapter5/"> Closed Conduit Flow </a> 
+Roberson, J.A., Cassidy, J.J., and Chaudry, M.H. (1988) Closed Conduits in "Hydraulic Engineering." 
+Houghton Mifflin Co. pp. 240-310 
+</p>
+
+<p>
+<a href="../../3-Readings/Chin_10-26/"> Closed Conduits </a>
+Chin, D. (2006). pp. 10-26 in "Water Resources Engineering, 2 ed." Prentice Hall, Inc.
+</p>
+
+<p>
+<a href="../../3-Readings/HydraulicsNotes/"> Notes on Hydraulics  </a>
+Work in progress -- largely replicates content in "Closed Conduit Flow" with some extensions
+</p>
+
+<p>
+<a href="../../3-Readings/WaterDistributionSystems/"> Water Distribution Systems </a>
+"Water Distribution Systems" in Land Development Handbook, Ed. S.O. Dewberry, Dewberry Inc., McGraw-Hill
+</p>
+
+
+
+        </div>
+        
+        <button class="accordion">Video Links</button>
+        <div class="panel">
+
+Links to related videos
+<p><a href="https://youtu.be/NMX6p50YDlM">Lesson 7 Sec 002 (morning) Storage Concepts in Drinking Water, Fall 2020</a></p>
+<p><a href="https://youtu.be/_4Nu3jfRafk">Lesson 7 Sec 001 (evening) Storage Concepts in Drinking Water, Fall 2020 </a></p>
+            <hr>
+<p><a href="https://youtu.be/YIoIstDRFNM">WSD-05-01 2019 (Storage Concepts)</a></p>
+<p><a href="https://youtu.be/4aG7tGO2nQE">WSD-05-02 2019 (Storage Examples)</a></p>
+
+        </div>
+<!--        <button class="accordion">Moodle Links</button>
+        <div class="panel">
+
+<p><a href="http://www.rtfmps.com/moodle/"> RTFMPS-MOODLE-SITE </a> Moodle site entry </p>
+
+</div> -->
+
+<button class="accordion">Data Links</button>
+<div class="panel">
+
+<p><a href="./DataInLecture/"> Supplemental Data in Lecture </a> Storage example problem statement </p>
+
+<p><a href="./ScriptsInLecture/"> Spreadsheets/Scripts </a> 
+    Storage example spreadsheet solution(s)(to be deprecated);
+    Storage example JupyterLab notebook (future semesters) </p>
+
+</div>
+
+
+<!-- JavaScripts for this page -->
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+    
+    for (i = 0; i < acc.length; i++) {
+        acc[i].onclick = function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight){
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            } 
+        }
+    }
+</script>
+
+    </body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel = "stylesheet" type = "text/css" href = "styles.css" >
+    </head>
+    <body>
+        
+        <div class="topnav">
+            <a class="active" href="../../">Course Home Page</a>
+            <a href="../../0-Syllabus/syllabus.ce3372-2020-3.pdf">Syllabus</a>
+            <a href="../../1-Lessons/">Lessons</a>
+            <a href="../../2-Exercises/">Exercises</a>
+            <a href="../../3-Readings/">Readings</a>
+            <a href="http://theodore-odroid.ttu.edu/documents/toolbox/">Web Tools@theodore.odroid.ttu.edu</a>
+            <a href="http://atomickitty.net:6082/vnc.html?host=atomickitty.net&port=6082">EPANET in a Box</a>
+            <a href="http://atomickitty.net:6083/vnc.html?host=atomickitty.net&port=6083">SWMM in a Box</a>
+            <a href="http://54.243.252.9:8000/user/polaris/lab?">polaris@atk-aws.ddns.net (login as polaris)</a>
+
+        </div>
+        
+	<div style="padding-left:16px">
+            <h2>CE 3372 Water Systems Design</h2>
+            <p>Catalog Description</p>
+           <p><strong>3372. Water Systems Design (3:3:0)</strong>. 
+Prerequisite: CE 3305, 3354. Hydraulic analysis and design of municipal water distribution, stormwater collection, and wastewater collection systems. 
+Oral and written presentations. (Communication Intensive)</p>
+
+           
+<p> Pipeline Head Loss Models </p>
+        </div>
+        
+        
+
+        <button class="accordion">Lesson Description</button>
+        <div class="panel">
+	<p>Review of pipe head loss models.
+</p>
+        </div>
+        
+        <button class="accordion">Notes</button>
+        <div class="panel">
+<p><a href="./PowerPointInLecture/"> Lesson Notes </a> 
+&nbsp Instructor notes used in face-to-face presentation. 
+</p>
+
+<p><a href="../../3-Readings/Chapter5/">Closed Conduit Flow&nbsp;</a>
+Roberson, J.A., Cassidy, J.J., and Chaudry, M.H. (1988) Closed Conduits in "Hydraulic Engineering." Houghton Mifflin Co. pp. 240-310</p>
+
+<p><a href="../../3-Readings/Chin_10-26/">Closed Conduits&nbsp;</a>
+Chin, D. (2006). pp. 10-26 in "Water Resources Engineering, 2 ed." Prentice Hall, Inc.</p>
+
+<p><a href="../../3-Readings/HydraulicsNotes/">Notes on Hydraulics&nbsp;&nbsp;</a>
+Work in progress -- largely replicates content in "Closed Condiut Flow" with some extensions</p>
+
+<p><a href="../../3-Readings/WaterDistributionSystems/">Water Distribution Systems&nbsp </a>
+"Water Distribution Systems" in Land Development Handbook, Ed. S.O. Dewberry, Dewberry Inc., McGraw-Hill</p>
+
+        </div>
+        
+        <button class="accordion">Video Links</button>
+        <div class="panel">
+
+Links to related videos
+
+<p><a href="https://youtu.be/4rNnce6N4Ek">Lesson 4 Sec 001 (Evening) </a></p>
+<p><a href="https://youtu.be/QRQsxvfF-mM">Lesson 4 Sec 002 (Morning)</a></p>
+<p><a href="https://youtu.be/kLsTU_Zqgy8">Hydraulic Analysis Example </a>  Using hydraulics principles and on-line toolkit to analyze a hypothetical water system (in Africa) to supply water from Lake Gulameta to a nearby school.
+<p><a href="https://youtu.be/0KxLNt0ht94">Hydraulic Analysis Example </a>  Using Hazen-Williams On-Line Calculator and hydraulic principles to find pump operating conditions.
+</p>
+
+        </div>
+<!--        <button class="accordion">Moodle Links</button>
+        <div class="panel">
+
+<p><a href="http://www.rtfmps.com/moodle/"> RTFMPS-MOODLE-SITE </a> Moodle site entry </p>
+
+</div> -->
+
+<button class="accordion">Data Links</button>
+<div class="panel">
+
+<p><a href="./DataInLecture/"> Supplemental Data in Lecture </a> Description of the data </p>
+
+<p><a href="./ScriptsInLecture/"> Spreadsheets/Scripts </a> Spreadsheets to compute flow between two reservoirs </p>
+
+</div>
+
+
+<!-- JavaScripts for this page -->
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+    
+    for (i = 0; i < acc.length; i++) {
+        acc[i].onclick = function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight){
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            } 
+        }
+    }
+</script>
+
+    </body>
+</html>
