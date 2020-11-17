@@ -1,0 +1,158 @@
+[TITLE]
+;;Project Title/Notes
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CFS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           04/26/2016
+START_TIME           00:00:00
+REPORT_START_DATE    04/26/2016
+REPORT_START_TIME    00:00:00
+END_DATE             04/26/2016
+END_TIME             06:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:15:00
+WET_STEP             00:05:00
+DRY_STEP             01:00:00
+ROUTING_STEP         0:00:30 
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         12.557
+MAX_TRIALS           8
+HEAD_TOLERANCE       0.005
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+
+[EVAPORATION]
+;;Evap Data      Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[JUNCTIONS]
+;;Junction       Invert     MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+5                10         10         0          0          0         
+6                20         10         0          0          0         
+7                32         10         0          0          0         
+8                10         10         0          0          0         
+9                20         10         0          0          0         
+10               30         10         0          0          0         
+11               10         10         0          0          0         
+12               20         10         0          0          0         
+13               32         8          0          0          0         
+14               10         10         0          0          0         
+15               20         10         0          0          0         
+16               30         10         0          0          0         
+
+[OUTFALLS]
+;;Outfall        Invert     Type       Stage Data       Gated   
+;;-------------- ---------- ---------- ---------------- --------
+1                0          FREE                        NO
+2                0          FREE                        NO
+3                0          NORMAL                      NO
+4                0          FIXED      3.5              NO
+
+[CONDUITS]
+;;Conduit        From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+1                14               1                1000       0.015      0          0          0          0         
+2                15               14               1000       0.01       0          0          0          0         
+3                16               15               1000       0.01       0          0          0          0         
+4                13               12               1000       0.01       0          2          0          0         
+5                12               11               1000       0.01       0          0          0          0         
+6                11               2                1000       0.01       0          0          0          0         
+7                10               9                1000       0.01       0          0          0          0         
+8                9                8                1000       0.01       0          0          0          0         
+9                8                3                1000       0.01       0          0          0          0         
+10               7                6                1000       0.01       0          2          0          0         
+11               6                5                1000       0.01       0          0          0          0         
+12               5                4                1000       0.01       0          0          0          0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ----------
+1                CIRCULAR     4                0          0          0          1                    
+2                CIRCULAR     4                0          0          0          1                    
+3                CIRCULAR     2                0          0          0          1                    
+4                CIRCULAR     2                0          0          0          1                    
+5                CIRCULAR     4                0          0          0          1                    
+6                CIRCULAR     4                0          0          0          1                    
+7                CIRCULAR     2                0          0          0          1                    
+8                CIRCULAR     4                0          0          0          1                    
+9                CIRCULAR     4                0          0          0          1                    
+10               CIRCULAR     2                0          0          0          1                    
+11               CIRCULAR     4                0          0          0          1                    
+12               CIRCULAR     4                0          0          0          1                    
+
+[INFLOWS]
+;;Node           Inflow           Time Series      Type     Funits   Fscale   Baseline Pattern
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- --------
+5                FLOW             ""               FLOW     1.0      1.0      110     
+6                FLOW             ""               FLOW     1.0      1.0      66      
+7                FLOW             ""               FLOW     1.0      1.0      20      
+8                FLOW             ""               FLOW     1.0      1.0      110     
+9                FLOW             ""               FLOW     1.0      1.0      66      
+10               FLOW             ""               FLOW     1.0      1.0      20      
+11               FLOW             ""               FLOW     1.0      1.0      110     
+12               FLOW             ""               FLOW     1.0      1.0      66      
+13               FLOW             ""               FLOW     1.0      1.0      20      
+14               FLOW             ""               FLOW     1.0      1.0      110     
+15               FLOW             ""               FLOW     1.0      1.0      66      
+16               FLOW             ""               FLOW     1.0      1.0      20      
+
+[REPORT]
+;;Reporting Options
+INPUT      NO
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 1156.589 -214.080 8843.411 10000.000
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+5                5939.226           314.234           
+6                3796.617           681.120           
+7                2064.920           1224.109          
+8                5939.226           3190.613          
+9                3825.968           3645.551          
+10               2006.218           4056.462          
+11               5865.849           5685.432          
+12               3821.839           6321.839          
+13               1925.287           6795.977          
+14               5880.524           7916.093          
+15               3811.292           8312.329          
+16               2079.595           8649.863          
+1                7626.897           7607.909          
+2                7788.326           5230.494          
+3                7859.195           2974.138          
+4                8031.609           215.517           
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
+
+[BACKDROP]
+FILE       "Z:\Users\cleveland\Dropbox\1-CE-TTU-Classes\CE3372-WaterSystemsDesign\CE3372-2016-3\2-Homework\ES18\E6-Solution\ES18-backdrop.bmp"
+DIMENSIONS 1156.589 0.000 8843.411 10000.000
