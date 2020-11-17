@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  17 NOV 2020 10:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  17 NOV 2020 11:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -338,7 +338,7 @@ Package lastpage Info: Please have a look at the pageslts package at
  <Image118.jpg, id=1, 614.295pt x 844.98083pt>
 File: Image118.jpg Graphic file (type jpg)
  <use Image118.jpg>
-Package pdftex.def Info: Image118.jpg used on input line 31.
+Package pdftex.def Info: Image118.jpg used on input line 32.
 (pdftex.def)             Requested size: 262.6982pt x 361.34999pt.
 
 
@@ -353,29 +353,43 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 File: Image119B.jpg Graphic file (type jpg)
 
 <use Image119B.jpg>
-Package pdftex.def Info: Image119B.jpg used on input line 40.
+Package pdftex.def Info: Image119B.jpg used on input line 41.
 (pdftex.def)             Requested size: 367.77373pt x 505.89pt.
  [2
 
- <./Image119B.jpg>] 
+ <./Image119B.jpg>]
+<SomewhereClipNodes.jpg, id=14, 1857.94125pt x 814.04124pt>
+File: SomewhereClipNodes.jpg Graphic file (type jpg)
+
+<use SomewhereClipNodes.jpg>
+Package pdftex.def Info: SomewhereClipNodes.jpg used on input line 63.
+(pdftex.def)             Requested size: 494.81853pt x 216.81pt.
+
+Overfull \hbox (25.06354pt too wide) in paragraph at lines 63--64
+ [][] 
+ []
+
+[3 <./SomewhereClipNodes.jpg>] 
 AED: lastpage setting LastPage
-[3] (./ce-3372-es8-2020-3.aux) ) 
+[4
+
+] (./ce-3372-es8-2020-3.aux) ) 
 Here is how much of TeX's memory you used:
- 3698 strings out of 493014
- 48200 string characters out of 6133351
- 119474 words of memory out of 5000000
- 7188 multiletter control sequences out of 15000+600000
+ 3704 strings out of 493014
+ 48340 string characters out of 6133351
+ 119482 words of memory out of 5000000
+ 7193 multiletter control sequences out of 15000+600000
  5159 words of font info for 19 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
- 42i,10n,43p,398b,245s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2016/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr12.pfb>
-Output written on ce-3372-es8-2020-3.pdf (3 pages, 24809568 bytes).
+ 42i,10n,43p,398b,311s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2016/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmr12.pfb>
+Output written on ce-3372-es8-2020-3.pdf (4 pages, 25794840 bytes).
 PDF statistics:
- 28 PDF objects out of 1000 (max. 8388607)
- 17 compressed objects within 1 object stream
+ 32 PDF objects out of 1000 (max. 8388607)
+ 19 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
