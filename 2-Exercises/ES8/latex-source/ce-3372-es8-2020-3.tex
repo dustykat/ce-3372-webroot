@@ -1,0 +1,98 @@
+\documentclass[12pt]{article}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{daves,fancyhdr,natbib,graphicx,dcolumn,amsmath,lastpage,url}
+\usepackage{amsmath,amssymb,epstopdf,longtable}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+\pagestyle{fancy}
+\lhead{CE 3372 -- Water Systems Design}
+\rhead{FALL 2020}
+\lfoot{ES-8}
+\cfoot{}
+\rfoot{Page \thepage\ of \pageref{LastPage}}
+\renewcommand\headrulewidth{0pt}
+
+
+\begin{document}
+\begin{center}
+{\textbf{{ CE 3372 -- Water Systems Design} \\ {Exercise Set 8}}}
+\end{center}
+
+\begin{enumerate}
+\item \section*{\small{Rational Method Conduit Sizing}}
+Figure \ref{fig:aerial} is an older (circa 1993) aerial image of a portion of Houston, Texas.   
+The red polygon is the drainage boundary for a storm sewer system that drains North from the part of the area near Westheimer Road to a tributary of Buffalo Bayou and East from the area.
+The drainage ditch is shown as the ``blue''   fuzzy line on the figure.  
+Drainage in the ditch is from West to East.
+The two main streets in the study area are highlighted in magenta.  
+\begin{figure}[h!] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[height=5in]{Image118.jpg} 
+   \caption{Tanglewilde Drive Study Area}
+   \label{fig:aerial}
+\end{figure}
+\clearpage
+
+Figure \ref{fig:survey} is a map showing storm drainage alignments and inlets location.  
+\begin{figure}[h!] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[height=7in]{Image119B.jpg} 
+   \caption{Tanglewilde Drive Storm Drain Inlet and Pipe Alignments}
+   \label{fig:survey}
+\end{figure}
+
+The figure shows land surface elevations in feet at the indicated locations.  
+A linear scale is shown in the legend.  
+Use the map(s) and:
+
+\begin{enumerate}
+\item Apply the rational design method to size the conduits for a 5-year storm, for Harris County, Texas.
+\item Specify the invert (flow line) elevations of the nodes (inlets and junction boxes).
+\item Specify the soffit (crown) elevations for the pipes at each node.
+\end{enumerate}
+
+\item \section*{\small{Somewhere USA Conduit Sizing}}
+
+Using the Somewhere USA basemap (Figure \ref{fig:swusa})
+, design a storm sewer system that takes drainage from the study area and discharges into the stream in the upper right corner of the drawing.  Use Houston IDM criteria.  The storm sewer will have inlets and conduits, which run in the streets (underneath the streets of course).
+
+\begin{figure}[h!] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[height=3in]{SomewhereClipNodes.jpg} 
+   \caption{Somewhere USA Study Area}
+   \label{fig:swusa}
+\end{figure}
+\clearpage
+
+\begin{enumerate}
+\item Apply the rational design method to size the conduits for a 5-year storm, for Harris County, Texas.
+\item Specify the invert (flow line) elevations of the nodes (inlets and junction boxes).
+\item Specify the soffit (crown) elevations for the pipes at each node.
+\item Construct a SWMM model of your drainage system, and demonstrate that the system can convey the 5-year, 3-hour storm to the outfall without surcharge.
+\end{enumerate}
+
+
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+\end{document}  
