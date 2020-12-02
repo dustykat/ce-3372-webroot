@@ -1,0 +1,158 @@
+[TITLE]
+;;Project Title/Notes
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CFS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           04/26/2017
+START_TIME           00:00:00
+REPORT_START_DATE    04/26/2017
+REPORT_START_TIME    00:00:00
+END_DATE             04/26/2017
+END_TIME             06:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:01:00
+WET_STEP             00:01:00
+DRY_STEP             01:00:00
+ROUTING_STEP         0:00:30 
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         12.557
+MAX_TRIALS           8
+HEAD_TOLERANCE       0.005
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+
+[EVAPORATION]
+;;Evap Data      Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[RAINGAGES]
+;;Gage           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+1                INTENSITY 1:00     1.0      TIMESERIES DESIGN-STORM    
+
+[SUBCATCHMENTS]
+;;Subcatchment   Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  Snow Pack       
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+1                1                4                6        65       2500     0.5      0                        
+2                1                4                5.1      55       2000     0.5      0                        
+3                1                5                3.5      70       2000     0.5      0                        
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+1                0.01       0.1        0.05       0.05       25         OUTLET    
+2                0.01       0.1        0.05       0.05       25         OUTLET    
+3                0.01       0.1        0.05       0.05       25         OUTLET    
+
+[INFILTRATION]
+;;Subcatchment   MaxRate    MinRate    Decay      DryTime    MaxInfil  
+;;-------------- ---------- ---------- ---------- ---------- ----------
+1                10         6          4          7          0         
+2                12         6          4          7          0         
+3                12         6          4          7          0         
+
+[JUNCTIONS]
+;;Junction       Invert     MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+4                6.34       10         0          0          0         
+5                3.92       10         0          0          0         
+6                2          10         0          0          0         
+
+[OUTFALLS]
+;;Outfall        Invert     Type       Stage Data       Gated   
+;;-------------- ---------- ---------- ---------------- --------
+7                0          FREE                        NO
+
+[CONDUITS]
+;;Conduit        From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+1                4                5                600        0.013      0          .5         0          0         
+2                5                6                600        0.013      0          0          0          0         
+3                6                7                600        0.013      0          0          0          0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ----------
+1                CIRCULAR     3                0          0          0          1                    
+2                CIRCULAR     3.5              0          0          0          1                    
+3                CIRCULAR     3.5              0          0          0          1                    
+
+[TIMESERIES]
+;;Time Series    Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+DESIGN-STORM                0          4.4       
+DESIGN-STORM                1          4.4       
+DESIGN-STORM                2          4.4       
+DESIGN-STORM                3          4.4       
+DESIGN-STORM                4          0         
+DESIGN-STORM                5          0         
+DESIGN-STORM                6          0         
+DESIGN-STORM                7          0         
+
+[REPORT]
+;;Reporting Options
+INPUT      NO
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 0.000 0.000 10000.000 10000.000
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+4                -371.901           8402.204          
+5                1584.022           8388.430          
+6                3415.978           8415.978          
+7                5234.160           8429.752          
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+1                -2162.534          9242.424          
+1                -633.609           9228.650          
+1                -647.383           8484.848          
+1                -2162.534          8512.397          
+1                -2148.760          9256.198          
+2                -2148.760          8319.559          
+2                -647.383           8333.333          
+2                -688.705           7617.080          
+2                -2176.309          7603.306          
+2                -2176.309          8388.430          
+3                -96.419            9228.650          
+3                1528.926           9228.650          
+3                1460.055           8457.300          
+3                -165.289           8484.848          
+3                -110.193           9201.102          
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+1                -2231.405          9641.873          
+
