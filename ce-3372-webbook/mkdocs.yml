@@ -6,6 +6,7 @@ nav:
 #  - About: about.md
   - Topics :
      - Lesson 1 Introduction : lesson1/lesson1.md
+     - Lesson 4 Pipeline Head Loss : lesson4/lesson4.md
       #- Data Models -- Machine Learning Methods :      
      
   #- Additional Readings: readings.md
