@@ -2,7 +2,8 @@
 
 ### Lesson 1. Introduction
 
-The title of the course is water systems design.  The catalog description is: > 3372.  Water Systems Design (3:3:0).Prerequesite: CE 33051, 33542.Hydraulic analysis and design of municipal water distribution, stormwater collection, and wastewater collection systems.  Oral and written presenta-tions.  (Writing Intensive)
+The title of the course is water systems design.  The catalog description is: 
+> CE 3372.  Water Systems Design (3:3:0).Prerequesite: CE 33051, 33542.Hydraulic analysis and design of municipal water distribution, stormwater collection, and wastewater collection systems.  Oral and written presentations.  (Writing Intensive)
 
 The general scope of the course is:
 - Examination of design guidance documents for drinking water distribution systems, a review of pipeline hydraulics, demand estimation, then a design project related to a drinking water distribution system. 
@@ -46,7 +47,7 @@ Systems to manage spatial and temporal distribution in support of non-human habi
 - “Desirable” <= Policy <= Value Judgment
 
 
-## Representative Water Systems (a photo essay)
+### Photo Essay of Some Water Systems 
 This brief photo essay is adapted from  
 > “Historical Urban Water Systems” by Dr. Robert Pitt, Department of Civil and Environmental Engineering, University of Alabama, Tuscaloosa, AL  35487  
 
