@@ -1,5 +1,15 @@
 site_name: CE 3372
 
+# navigation/site structure 
+nav:
+  - Home: index.md
+#  - About: about.md
+  - Topics :
+     - Lesson 1 Introduction : lesson1/lesson1.md
+      #- Data Models -- Machine Learning Methods :      
+     
+  #- Additional Readings: readings.md
+
 # active theme (mkdocs/readthedocs are free, they work differently wrt code blocks)
 theme:
     name: mkdocs
