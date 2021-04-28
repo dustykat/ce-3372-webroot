@@ -3,6 +3,7 @@ site_name: CE 3372
 # navigation/site structure 
 nav:
   - Home: index.md
+  - Syllabus: syllabus/syllabus.md
 #  - About: about.md
   - Topics :
      - Lesson 1 Introduction : lesson1/lesson1.md

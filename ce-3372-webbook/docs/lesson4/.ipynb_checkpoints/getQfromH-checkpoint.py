@@ -2,7 +2,7 @@
 # ipython module for pipeline hydraulics
 # computation engine #########################
 # import built in functions for log, sqrt
-from math import log,sqrt,log
+from math import log,sqrt
 # Define the prototype function
 def jainQ(pipe_diameter,pipe_length,roughness,viscosity,grabity,head_loss):
     egl_slope = head_loss/pipe_length
