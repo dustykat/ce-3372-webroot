@@ -34,3 +34,15 @@ Thus the two components required to estimate demand is how any people have to be
 ```python
 
 ```
+
+## Readings
+
+1. Gupta, R. S. 2017. Hydrology and Hydraulic Systems. Waveland Press, Inc. pp 1-19 [https://3.137.111.182/ce-3372-webbook/readings/WaterDemand-Gupta.pdf](https://3.137.111.182/ce-3372-webbook/readings/WaterDemand-Gupta.pdf)
+
+2. Nickerson G. 2008. "Water Distribution Systems" in Land Development Handbook, Ed. S.O. Dewberry, Dewberry Inc., McGraw-Hill [https://3.137.111.182/ce-3372-webbook/readings/water-distribution.pdf](https://3.137.111.182/ce-3372-webbook/readings/water-distribution.pdf)
+
+
+
+```python
+
+```
