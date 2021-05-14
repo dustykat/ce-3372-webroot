@@ -1,0 +1,34 @@
+site_name: CE 3372
+
+# navigation/site structure 
+nav:
+  - Home: index.md
+  - Syllabus: syllabus/syllabus.md
+#  - About: about.md
+  - Lessons :
+     - Lesson 1 Introduction : lesson1/lesson1.md
+     - Lesson 2 Course Software : lesson2/lesson2.md
+     - Lesson 4 Pipeline Head Loss : lesson4/lesson4.md
+      #- Data Models -- Machine Learning Methods :      
+  - Exercises :     
+     - ES-1 Los Angeles Aquaduct: exercise1/ES1.md  
+     - ES-2 Build a Topographic Map: exercise2/ES2.md 
+  #- Additional Readings: readings.md
+
+# active theme (mkdocs/readthedocs are free, they work differently wrt code blocks)
+theme:
+    name: mkdocs
+    highlightjs: true
+    hljs_languages:
+        - python
+
+# extensions to enable nice typesets 
+markdown_extensions:
+  - extra
+  - tables
+  - mdx_math:
+      enable_dollar_delimiter: True
+  - fenced_code # easier than indenting
+extra_javascript:
+  - https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML
+  - mathjaxhelper.js  # this file needs to be in the docs directory for site build

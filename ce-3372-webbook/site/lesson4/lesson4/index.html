@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Lesson 4 Pipeline Head Loss - CE 3372</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../..">CE 3372</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="../..">Home</a>
+                            </li>
+                            <li >
+                                <a href="../../syllabus/syllabus/">Syllabus</a>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lessons <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../lesson1/lesson1/">Lesson 1 Introduction</a>
+</li>
+                                    
+<li >
+    <a href="../../lesson2/lesson2/">Lesson 2 Course Software</a>
+</li>
+                                    
+<li class="active">
+    <a href="./">Lesson 4 Pipeline Head Loss</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Exercises <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../exercise1/ES1/">ES-1 Los Angeles Aquaduct</a>
+</li>
+                                    
+<li >
+    <a href="../../exercise2/ES2/">ES-2 Build a Topographic Map</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li >
+                                <a rel="next" href="../../lesson2/lesson2/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../../exercise1/ES1/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#ce-3372-water-systems-design">CE 3372 Water Systems Design</a></li>
+            <li><a href="#lesson-4-pipeline-head-loss-models">Lesson 4. Pipeline Head Loss Models</a></li>
+        <li class="main "><a href="#-">---</a></li>
+        <li class="main "><a href="#computing-discharge-from-specified-head-loss">Computing Discharge from Specified Head Loss</a></li>
+            <li><a href="#computational-thinkingdata-science-approach-engr-1330">Computational Thinking/Data Science Approach (ENGR 1330)</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h2 id="ce-3372-water-systems-design">CE 3372 Water Systems Design</h2>
+<h3 id="lesson-4-pipeline-head-loss-models">Lesson 4. Pipeline Head Loss Models</h3>
+<p>Water moves from higher to lower energy</p>
+<ul>
+<li>Path of least resistance</li>
+<li>Head is energy per unit weight of a fluid </li>
+<li>
+<p>Pumps are used to add energy to move water to a higher elevation or over a barrier </p>
+</li>
+<li>
+<p>Gravity flow: Change in elevation provides the required energy </p>
+</li>
+<li>Pressure flow: Change in pressure provides the required energy </li>
+</ul>
+<p>Flowing water encounters friction/resistance; hence there is loss of energy along a flow path. 
+The mean section velocity is related to cross sectional flow area and volumetric discharge as:</p>
+<p>
+<script type="math/tex; mode=display"> \bar{V} = \frac{Q}{A} </script>
+</p>
+<h4 id="continunity-at-junctions">Continunity at Junctions</h4>
+<pre><code class="python">
+</code></pre>
+
+<h2 id="-">---</h2>
+<h2 id="computing-discharge-from-specified-head-loss">Computing Discharge from Specified Head Loss</h2>
+<h3 id="computational-thinkingdata-science-approach-engr-1330">Computational Thinking/Data Science Approach (ENGR 1330)</h3>
+<p>CT/DS Approach
+* State the programming problem
+* Known (Inputs)
+* Unknown (Outputs)
+* Governing Equation(s)
+* Test the tool</p>
+<h4 id="state-the-programming-problem">State the programming problem</h4>
+<p>Build a tool that takes inputs for the Jain equation and produces an estimate of discharge</p>
+<p>Build an interface (notebook) that accepts the inputs, calls the function, and returns the computed discharge</p>
+<h4 id="known-inputs">Known (Inputs)</h4>
+<p>Engineer will specify: 
+* Diameter, D; 
+* Length of pipe, L; 
+* Roughness height, e; 
+* Viscosity, <script type="math/tex">\nu</script>; 
+* Gravitational acceleration constant, g;
+* Head loss</p>
+<h4 id="unknown-outputs">Unknown (Outputs)</h4>
+<p>The tool will compute and report Discharge, Q.</p>
+<h4 id="governing-equations">Governing Equation(s)</h4>
+<p>A compact form of the equation to be evaluated is
+<script type="math/tex; mode=display">\begin{equation}
+Q=-0.965 D^2 \sqrt{\frac{gDh_f}{L}}ln( \frac{k_s}{3.7D}+\frac{1.78\nu}{D\sqrt{\frac{gDh_f}{L}}} )
+\end{equation}</script>
+</p>
+<h4 id="test-the-tool">Test the tool</h4>
+<pre><code class="python">#computation engine
+# import built in functions for log, sqrt
+from math import log,sqrt,log
+# Define the prototype function
+def jainQ(pipe_diameter,pipe_length,roughness,viscosity,grabity,head_loss):
+    egl_slope = head_loss/pipe_length
+    t1 = sqrt(grabity*pipe_diameter*egl_slope)
+    t2 = roughness/(3.7*pipe_diameter)
+    t3 = 1.78*viscosity
+    jainQ = (-0.965*pipe_diameter**2)*t1*log(t2 + t3/(pipe_diameter*t1))
+    return jainQ
+</code></pre>
+
+<pre><code class="python"># interface engine
+# Get pipe diameter, use a simple error trap
+yes=0
+while yes == 0:
+    xnow = input(&quot;Enter Pipe Diameter \n&quot;)
+    try:
+        pipe_diameter = float(xnow)
+        yes =1
+    except:
+        print (&quot;Value should be numeric, try again \n&quot;)
+# Get pipe length, use a simple error trap
+yes=0
+while yes == 0:
+    xnow = input(&quot;Enter Pipe Length \n&quot;)
+    try:
+        pipe_length = float(xnow)
+        yes =1
+    except:
+        print (&quot;Value should be numeric, try again \n&quot;)
+# Get roughness, use a simple error trap
+yes=0
+while yes == 0:
+    xnow = input(&quot;Enter Pipe Roughness Height \n&quot;)
+    try:
+        roughness = float(xnow)
+        yes =1
+    except:
+        print (&quot;Value should be numeric, try again \n&quot;)
+# Get viscosity, use a simple error trap
+yes=0
+while yes == 0:
+    xnow = input(&quot;Enter liquid viscosity \n&quot;)
+    try:
+        viscosity = float(xnow)
+        yes =1
+    except:
+        print (&quot;Value should be numeric, try again \n&quot;)
+# Get grabity, use a simple error trap
+yes=0
+while yes == 0:
+    xnow = input(&quot;Enter gravitational acceleration constant (unit system appropriate) \n&quot;)
+    try:
+        grabity = float(xnow)
+        yes =1
+    except:
+        print (&quot;Value should be numeric, try again \n&quot;)
+# Get head loss, use a simple error trap
+yes=0
+while yes == 0:
+    xnow = input(&quot;Enter head loss \n&quot;)
+    try:
+        head_loss = float(xnow)
+        yes =1
+    except:
+        print (&quot;Value should be numeric, try again \n&quot;)
+</code></pre>
+
+<pre><code>Enter Pipe Diameter 
+ 2
+Enter Pipe Length 
+ 10560
+Enter Pipe Roughness Height 
+ 8.5e-5
+Enter liquid viscosity 
+ 1e-5
+Enter gravitational acceleration constant (unit system appropriate) 
+ 32.2
+Enter head loss 
+ 40
+</code></pre>
+<pre><code class="python"># now perform computation and construct output
+discharge = jainQ(pipe_diameter,pipe_length,roughness,viscosity,grabity,head_loss)
+# Echo inputs, and outputs
+print (&quot;Pipe Diameter : &quot;, pipe_diameter)
+print (&quot;Pipe Length : &quot;, pipe_length)
+print (&quot;Pipe Roughness Height : &quot;, roughness)
+print (&quot;Liquid Viscosity : &quot;, viscosity)
+print (&quot;Gravitational acceleration constant : &quot;,grabity) 
+print (&quot;Head loss : &quot;,head_loss)
+print (&quot;Discharge : &quot;,discharge)
+</code></pre>
+
+<pre><code>Pipe Diameter :  2.0
+Pipe Length :  10560.0
+Pipe Roughness Height :  8.5e-05
+Liquid Viscosity :  1e-05
+Gravitational acceleration constant :  32.2
+Head loss :  40.0
+Discharge :  19.8861362976099
+</code></pre>
+<h4 id="refine-the-tool-for-generalization">Refine the Tool for Generalization</h4>
+<p>The refinement step would wrap the three parts above into a single function/notebook for simple use/reuse. If we save all three parts to a single file, we can access the script as we wish (using a JupyterLab magic function trick below.  The run command is obvious, but the -i means run interactive, and we supply the script name) </p>
+<pre><code class="python">%run -i getQfromH.py
+</code></pre>
+
+<pre><code>Enter Pipe Diameter 
+ 2
+Enter Pipe Length 
+ 10560
+Enter Pipe Roughness Height 
+ 8.5e-5
+Enter liquid viscosity 
+ 1e-5
+Enter gravitational acceleration constant (unit system appropriate) 
+ 32.2
+Enter head loss 
+ 40
+
+
+Pipe Diameter :  2.0
+Pipe Length :  10560.0
+Pipe Roughness Height :  8.5e-05
+Liquid Viscosity :  1e-05
+Gravitational acceleration constant :  32.2
+Head loss :  40.0
+Discharge :  19.8861362976099
+</code></pre>
+<p>Lastly, we can put the script onto a server and access via a web interface.</p>
+<pre><code class="python">
+</code></pre></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" defer></script>
+        <script src="../../mathjaxhelper.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
