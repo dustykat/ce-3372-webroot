@@ -8,6 +8,7 @@ nav:
   - Lessons :
      - Lesson 1 Introduction : lesson1/lesson1.md
      - Lesson 2 Course Software : lesson2/lesson2.md
+     - Lesson 3 Design Guidelines : lesson3/lesson3.md
      - Lesson 4 Pipeline Head Loss : lesson4/lesson4.md
       #- Data Models -- Machine Learning Methods :      
   - Exercises :     
