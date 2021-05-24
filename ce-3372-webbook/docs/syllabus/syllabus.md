@@ -116,27 +116,27 @@ The course notes are located in a webbook at https://3.137.111.182/ce-3354-webbo
 ---
 (240 cumulative minutes)
 
-|date|topic|reading|homework|
+|date|topic|reading|homework due|
 |:---|:---|:---|:---|
 |24Aug21|Introduction <br> - Syllabus  <br> - Water Systems Overview  |ppXX-XX|none|
-|26Aug21|Required Software <br> - Installing EPANET <br> - Installing SWMM <br>Optional: Running on AWS (Cloud Server) |ppXX-XX|ES-1 LA Aquaduct|
+|26Aug21|Required Software <br> - Installing EPANET <br> - Installing SWMM <br>Optional: Running on AWS (Cloud Server) |ppXX-XX||
 
 ### Week 2
 ---
 (480 cumulative minutes)
 
-|date|topic|reading|homework|
+|date|topic|reading|homework due|
 |:---|:---|:---|:---|
-|31Aug21|Design Guidelines <br> - Source Documents <br> - Drinking Water Systems  |ppXX-XX|ES-2 Topographic Mapping|
-|2Sep21|Demand Estimation <br> - Population Models <br> - Temporal Variation <br>   |ppXX-XX|ES-3 Demand Estimation|
+|31Aug21|Design Guidelines <br> - Source Documents <br> - Drinking Water Systems  |ppXX-XX|ES-1 LA Aquaduct|
+|2Sep21|Demand Estimation <br> - Population Models <br> - Temporal Variation <br>   |ppXX-XX|ES-2 Topographic Mapping|
 
 ### Week 3 
 ---
 (720 cumulative minutes)
 
-|date|topic|reading|homework|
+|date|topic|reading|homework due|
 |:---|:---|:---|:---|
-|7Sep21|Pipeline Head Loss <br> - Darcy-Weisbach <br> - Chezy-Manning <br> - Hazen-Williams |ppXX-XX||
+|7Sep21|Pipeline Head Loss <br> - Darcy-Weisbach <br> - Chezy-Manning <br> - Hazen-Williams |ppXX-XX|ES-3 Demand Estimation|
 |9Sep21|Pipeline Hydraulics <br> - Gravity System <br> -  Pumped System <br> - EGL&HGL  |ppXX-XX|ES-4 Application of Head Loss Models|
 
 **Test 1 on BB for 48 hours**

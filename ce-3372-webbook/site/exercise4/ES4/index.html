@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Lesson 1 Introduction - CE 3372</title>
+        <title>ES-4 Application of Head Loss Models - CE 3372</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -48,12 +48,12 @@
                             <li >
                                 <a href="../../syllabus/syllabus/">Syllabus</a>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lessons <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
-<li class="active">
-    <a href="./">Lesson 1 Introduction</a>
+<li >
+    <a href="../../lesson1/lesson1/">Lesson 1 Introduction</a>
 </li>
                                     
 <li >
@@ -73,7 +73,7 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Exercises <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -89,8 +89,8 @@
     <a href="../../exercise3/ES3/">ES-3 Estimate Demand for Somewhere USA</a>
 </li>
                                     
-<li >
-    <a href="../../exercise4/ES4/">ES-4 Application of Head Loss Models</a>
+<li class="active">
+    <a href="./">ES-4 Application of Head Loss Models</a>
 </li>
                                 </ul>
                             </li>
@@ -103,12 +103,12 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../../syllabus/syllabus/">
+                                <a rel="next" href="../../exercise3/ES3/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
-                            <li >
-                                <a rel="prev" href="../../lesson2/lesson2/">
+                            <li class="disabled">
+                                <a rel="prev" >
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -120,79 +120,114 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#ce-3372-water-systems-design">CE 3372 Water Systems Design</a></li>
-            <li><a href="#lesson-1-introduction">Lesson 1. Introduction</a></li>
-            <li><a href="#water-systems-definitions">Water Systems Definition(s)</a></li>
-            <li><a href="#water-system-photos">Water System Photos</a></li>
-        <li class="main "><a href="#readings">Readings</a></li>
+        <li class="main active"><a href="#es-4">ES-4</a></li>
+            <li><a href="#purpose">Purpose:</a></li>
+            <li><a href="#background">Background</a></li>
+            <li><a href="#exercise-1">Exercise 1</a></li>
+            <li><a href="#exercise-2">Exercise 2</a></li>
+            <li><a href="#exercise-3">Exercise 3</a></li>
+            <li><a href="#exercise-4">Exercise 4</a></li>
+            <li><a href="#deliverables">Deliverables:</a></li>
+            <li><a href="#references">References</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h2 id="ce-3372-water-systems-design">CE 3372 Water Systems Design</h2>
-<h3 id="lesson-1-introduction">Lesson 1. Introduction</h3>
-<p>The title of the course is water systems design.  The catalog description is: </p>
-<blockquote>
-<p>CE 3372.  Water Systems Design (3:3:0).Prerequesite: CE 33051, 33542.Hydraulic analysis and design of municipal water distribution, stormwater collection, and wastewater collection systems.  Oral and written presentations.  (Writing Intensive)</p>
-</blockquote>
-<p>The general scope of the course is:</p>
-<ul>
-<li>Examination of design guidance documents for drinking water distribution systems, a review of pipeline hydraulics, demand estimation, then a design project related to a drinking water distribution system. </li></li>
-<li>The computer program EPANET is presented to provide a tool for the hydraulic modeling component of drinking water system design.</li></li>
-<li>Examination of design guidance for stormwater collection systems, presents a review of open channel hydraulics (as related to storm sewers),  capacity (hydrology)  estimation,  then  a  design  project  related  to  a  stormwater  collection system.</li></li>
-<li>The computer program SWMM 5 is presented to provide a tool for the hydrologic/hydraulic modeling component of the stormwater collection system design.</li></li>
-<li>Examination of design guidance for wastewater collection systems, then  a  design  project  related  to  a  stormwater  collection system.</li></li>
-</ul>
-<p>The graded components of the course are:</p>
-<ul>
-<li>Quizzes (administered on a learning management system); individual activity</li>
-<li>Exercises (collected on a learning management system); group activity</li>
-<li>Exams (administered on a learning management system); individual activity</li>
-<li>A design  report  (Three parts; collected  on  a  learning  management  system);  group activity</li>
-<li>A design  presentation  (administered  on  a  learning  management  system);  group activity</li>
-</ul>
-<h3 id="water-systems-definitions">Water Systems Definition(s)</h3>
-<p>The course title is Water Systems Design, so a natural question is what is meant by a water system?  In this course it refers to a water distribution system that conveys raw or treated water to customers, a storm water collection system that conveys storm water away from infrastructure to reduce flooding damages and activities of daily life inconvenience,and wastewater collection systems that convey wastewater to treatment facilities for eventual release of the water back into the environment (or intentional reuse).</p>
-<p>Water systems can be classified into three main categories (Chin, 2006; Mays, 2011):</p>
+<h1 id="es-4">ES-4</h1>
+<h2 id="purpose">Purpose:</h2>
+<p>Demonstrate application of head loss models in analysis of pressure and flow in water distribution systems.</p>
+<h2 id="background">Background</h2>
+<p>Equation 1 below is the Hazen-Williams discharge formula in US Customary Units.</p>
+<p>
+<script type="math/tex; mode=display"> Q=1.318~C_h~A~R^{0.63}~S^{0.54}~~~~~[1]</script>
+</p>
+<p>where;
+- <script type="math/tex">Q</script> is the discharge in <script type="math/tex">\frac{ft^3}{sec}</script>;
+- <script type="math/tex">A</script> is the cross section area of pipe in <script type="math/tex">ft^2</script>;
+- <script type="math/tex">D</script> is the pipe diameter.;
+- <script type="math/tex">C_h</script> is the Hazen-Williams friction coefficient (depends on pipe roughness);
+- <script type="math/tex">R</script> is the hydraulic radius in <script type="math/tex">ft</script>; and
+- <script type="math/tex">S</script> is the slope of the energy grade line (<script type="math/tex">\frac{h_f}{L}</script>); <script type="math/tex">L</script> is the length of pipe.</p>
+<p>Equation 2 below is the Hazen-Williams discharge formula in SI Units.</p>
+<p>
+<script type="math/tex; mode=display"> Q=0.849~C_h~A~R^{0.63}~S^{0.54}~~~~~[2]</script>
+</p>
+<p>where;
+- <script type="math/tex">Q</script> is the discharge in <script type="math/tex">\frac{m^3}{sec}</script>;
+- <script type="math/tex">A</script> is the cross section area of pipe in <script type="math/tex">m^2</script>;
+- <script type="math/tex">D</script> is the pipe diameter.;
+- <script type="math/tex">C_h</script> is the Hazen-Williams friction coefficient (depends on pipe roughness);
+- <script type="math/tex">R</script> is the hydraulic radius in <script type="math/tex">m</script>; and
+- <script type="math/tex">S</script> is the slope of the energy grade line (<script type="math/tex">\frac{h_f}{L}</script>); <script type="math/tex">L</script> is the length of pipe.</p>
+<p>Equation 3 below is a formula to estimate the required pipe diameter for a particular dis-charge, head loss, and roughness (Swamee and Jain, 1976).</p>
+<p>
+<script type="math/tex; mode=display">D= 0.66[k^{1.25}_s \times (\frac{LQ^2}{gh_f})^{4.75} + \nu Q^{9.4} \times (\frac{L}{gh_f})^{5.2}]^{0.04} ~~~~~[3]</script>
+</p>
+<p>where;
+- <script type="math/tex">D</script> is the pipe diameter;
+- <script type="math/tex">k_s</script> is the pipe roughness height;
+- <script type="math/tex">L</script> is the length of pipe;
+- <script type="math/tex">g</script> is the gravitational acceleration constant;
+- <script type="math/tex">Q</script> is the discharge in <script type="math/tex">L^3/T</script>;
+- <script type="math/tex">h_f</script> is the head loss in the pipe;
+- <script type="math/tex">\nu</script> is the viscosity of liquid in the pipe;</p>
+<hr />
+<h2 id="exercise-1">Exercise 1</h2>
+<p>a) Look up the Hazen-Williams loss coefficient (<script type="math/tex">C_h</script>) for enamel coated, steel pipe and cite your data source.  </p>
+<p>b) Estimate the head loss in a 10,000 foot length of 5-foot diameter, enamel coated steel pipe that carries carries 60<script type="math/tex">^o</script>F water at a discharge of 295 cubic-feet per second(cfs), using the appropriate Hazen-Williams head loss model.</p>
+<hr />
+<h2 id="exercise-2">Exercise 2</h2>
+<p>a) Look up the Hazen-Williams loss coefficient (<script type="math/tex">C_h</script>) for Acrylonite Butadiene Styrene(ABS) pipe and cite your data source.</p>
+<p>b) Estimate the head loss in a 3,050 meter length of 1.5-meter diameter, ABS pipethat carries carries 20<script type="math/tex">^o</script>C water at a discharge of 8.35 cubic-meters per second (cms),using the appropriate Hazen-Williams head loss model.</p>
+<hr />
+<h2 id="exercise-3">Exercise 3</h2>
+<p>a) Find the viscosity for water at 60<script type="math/tex">^o</script>F. Cite the source of your value.</p>
+<p>b)  Find the sand roughness height of cast-iron pipe.  Cite the source of your value.</p>
+<p>c)  Use the Swamee and Jain (1976) equation to estimate the diameter of a cast-iron pipe  needed to carry 60<script type="math/tex">^o</script>F water at a discharge of  10  cubic-feet per  second  (CFS)  between  two  reservoirs  2  miles  apart  with  an elevation difference between the water surfaces in the two reservoirs of 20 feet as depicted in Figure 1 below.</p>
+<p><img alt="" src="../PipeLine2Reservoirs.png" /></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Figure 1. Pipeline connecting two reservoirs</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="exercise-4">Exercise 4</h2>
+<p>Figure 2 is an aerial image of a parallel pipeline system in California.</p>
+<p><img alt="" src="../parallelpipes.png" /></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Figure 2. Parallel Pipeline System</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>The left pipeline is a 96-inch diameter steel pipe, whereas the right pipeline is a 108-inch diameter steel pipe.  Water at 50<script type="math/tex">^o</script>F has kinematic viscosity of <script type="math/tex">1.45 \times 10^{−5}~ft^2/s</script>. The  sand  roughness  of  ductile  iron  is  <script type="math/tex">1.64 \times 10^{-4}</script> ft.   If  the  head  difference  for  the one-mile long pipelines between the thrust blocks is 120 feet, determine the discharge in the 96-inch diameter pipe in cubic-feet-per-second.</p>
+<h2 id="deliverables">Deliverables:</h2>
+<p>A 1-2 page memorandum-type report with your solutions, showing the arithmetic used and listing data sources employed.</p>
+<h2 id="references">References</h2>
 <ol>
-<li>Water-control  systems  –  to  control  the  spatial  and  temporal  distribution  ofsurface runoff from rainfall events (drainage engineering).  They can also servea use role if the captured rainwater is used later on for water supply (rainwaterharvesting).</li>
-<li>Water-use system – to support human habitation and include water-treatmentsystems, water-distribution systems, wastewater-collection systems, and wastewater-treatment systems.</li>
-<li>Environmental restoration system – to manage spatial and temporal distributionof water (quality and quantity) in support of non-human habitation.</li>
-</ol>
-<h4 id="water-control-systems">Water Control Systems</h4>
-<p>Spatial and temporal distribution of surface runoff from rainfall events (drainage engineering)</p>
-<ul>
-<li>Flood control </li>
-<li>Storm water harvesting </li>
-<li>Capacity is based on AREA served </li>
-<li>Hydrologicaly dominated designs </li>
-</ul>
-<h4 id="water-use-systems">Water Use Systems</h4>
-<p>Spatial and temporal distribution in support of human habitation </p>
-<ul>
-<li>Water supply/treatment/distribution </li>
-<li>Waste water collection/treatment/discharge </li>
-<li>Capacity is based on POPULATION served </li>
-<li>Hydraulically dominated designs </li>
-</ul>
-<h4 id="environmental-restoration-systems">Environmental Restoration Systems</h4>
-<p>Systems to manage spatial and temporal distribution in support of non-human habitation </p>
-<ul>
-<li>Create “desirable” conditions </li>
-<li>“Desirable” &lt;= Policy &lt;= Value Judgment</li>
-</ul>
-<h3 id="water-system-photos">Water System Photos</h3>
-<p>This brief photo essay is adapted from  </p>
-<blockquote>
-<p>“Historical Urban Water Systems” by Dr. Robert Pitt, Department of Civil and Environmental Engineering, University of Alabama, Tuscaloosa, AL  35487  </p>
-</blockquote>
-<p>As we proceed through the tour, using the general definitions above, decide whether the picture represents a water control, water use, or environmental restoration system.  </p>
-<h2 id="readings">Readings</h2>
-<p>Introduction to Water Resources Engineering Pages 1-33 from Wurbs,R.A., and James, W.P. (2002) Water Resources Engineering, Prentice Hall. <a href="https://3.137.111.182/ce-3372-webbook/readings/Wurbs1-33.pdf">https://3.137.111.182/ce-3372-webbook/readings/Wurbs1-33.pdf</a></p>
-<p>Introduction to Water Resources Engineeirng Pages 1-11 from Mays, L.W. (2011) Water Resources Engineering, J. Wiley and Sons.<a href="https://3.137.111.182/ce-3372-webbook/readings/Mays1-11.pdf">https://3.137.111.182/ce-3372-webbook/readings/Mays1-11.pdf</a></p>
-<p>Introduction to Water Resources Engineering Pages 1-8 from Chin, D. A. (2006) Water-Resources Engineering, Pearson-Prentice Hall. <a href="https://3.137.111.182/ce-3372-webbook/readings/Chin1-8.pdf">https://3.137.111.182/ce-3372-webbook/readings/Chin1-8.pdf</a></p>
-<pre><code class="python">
-</code></pre></div>
+<li>Swamee and Jain, A. K., 1976. Explicit equations for pipe-flow problems. ASCE J. of Hyd.Div., 102(HY5) pp. 657-664</li>
+</ol></div>
         </div>
 
         <footer class="col-md-12">
