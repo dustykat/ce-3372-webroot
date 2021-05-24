@@ -19,6 +19,7 @@ nav:
      - ES-3 Estimate Demand for Somewhere USA: exercise3/ES3.md 
      - ES-4 Application of Head Loss Models: exercise4/ES4.md 
      - ES-7 Network Model in EPANET: exercise7/ES7.md 
+     - ES-8 Network Model with Pumps in EPANET: exercise8/ES8.md 
 #- Additional Readings: readings.md
 
 # active theme (mkdocs/readthedocs are free, they work differently wrt code blocks)
