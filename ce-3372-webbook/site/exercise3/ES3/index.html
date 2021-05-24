@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Lesson 4 Demand Estimation - CE 3372</title>
+        <title>ES-3 Estimate Demand for Somewhere USA - CE 3372</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -48,7 +48,7 @@
                             <li >
                                 <a href="../../syllabus/syllabus/">Syllabus</a>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lessons <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -64,8 +64,8 @@
     <a href="../../lesson3/lesson3/">Lesson 3 Design Guidelines</a>
 </li>
                                     
-<li class="active">
-    <a href="./">Lesson 4 Demand Estimation</a>
+<li >
+    <a href="../../lesson4/lesson4/">Lesson 4 Demand Estimation</a>
 </li>
                                     
 <li >
@@ -73,7 +73,7 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Exercises <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -85,8 +85,8 @@
     <a href="../../exercise2/ES2/">ES-2 Build a Topographic Map</a>
 </li>
                                     
-<li >
-    <a href="../../exercise3/ES3/">ES-3 Estimate Demand for Somewhere USA</a>
+<li class="active">
+    <a href="./">ES-3 Estimate Demand for Somewhere USA</a>
 </li>
                                 </ul>
                             </li>
@@ -99,12 +99,12 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../../lesson3/lesson3/">
+                                <a rel="next" href="../../exercise2/ES2/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
-                            <li >
-                                <a rel="prev" href="../../lesson5/lesson5/">
+                            <li class="disabled">
+                                <a rel="prev" >
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -116,49 +116,190 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#ce-3372-water-systems-design">CE 3372 Water Systems Design</a></li>
-            <li><a href="#lesson-4-demand-estimation">Lesson 4. Demand Estimation</a></li>
-        <li class="main "><a href="#readings">Readings</a></li>
+        <li class="main active"><a href="#es-3">ES-3</a></li>
+            <li><a href="#purpose">Purpose:</a></li>
+            <li><a href="#background">Background</a></li>
+            <li><a href="#exercise">Exercise</a></li>
+            <li><a href="#deliverables">Deliverables:</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h2 id="ce-3372-water-systems-design">CE 3372 Water Systems Design</h2>
-<h3 id="lesson-4-demand-estimation">Lesson 4. Demand Estimation</h3>
-<p>The need to estimate demand is required to size water systems to meet some purpose, or establish that the particular system is infeasible.</p>
-<p>The purposes can include:</p>
-<ul>
-<li>Municipal uses (drinking water, fire suppression, commercial use, ...)</li>
-<li>Industrial use (separate from municipal)</li>
-<li>Agriculture use</li>
-<li>Waste Assimilation use</li>
-<li>Navigation uses (outside scope this course)</li>
-</ul>
-<p>A simple relationship establishes municipal requirements:</p>
-<p>
-<script type="math/tex; mode=display"> Vl_{required} = P_{t+\Delta t} \times U_{per person}</script>
-</p>
-<p>where <script type="math/tex">V</script> is the volume required, <script type="math/tex">P</script> is the population, <script type="math/tex">U</script> is the per person usage.</p>
-<p>Thus the two components required to estimate demand is how any people have to be supplied, and how much each person uses.</p>
-<h4 id="population-models">Population Models</h4>
-<pre><code class="python">
-</code></pre>
-
-<h4 id="temporal-variation">Temporal Variation</h4>
-<pre><code class="python">
-</code></pre>
-
-<h2 id="readings">Readings</h2>
+<h1 id="es-3">ES-3</h1>
+<h2 id="purpose">Purpose:</h2>
+<p>Demonstrate ability to estimate demand for a subdivision-scale water distribution skeleton model.</p>
+<h2 id="background">Background</h2>
+<p>Figure 1 is a layout of a hydraulic network model for the Somewhere USA subdivision. The blue line segments are pipes and are labeled (P1, P2,...).  The blue circles are nodes and are labeled (N1, N2,...).  The yellow polygons represent the lots assigned to each node; for example, node N2 supplies the six (6) lots located near the node.</p>
+<p>Figure 1 is a subdivision conceptual map for Somewhere, USA. The numbers on the map are land surface elevations located at the decimal points in the drawing. Along the bottom edge of the map is a black line segment (with arrowheads at each end) that indicates a distance of 1,100 feet on the map. The black circle in the lower left hand corner is to be used as an origin for X-Y measurements for making XYZ data files.</p>
+<p><img alt="" src="../SomewhereUSANetworkMap.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Figure 1.  Water Distribution System Hydraulic Model for Somewhere USA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>The semester design project is the conceptual design and analysis of a water distribution, stormwater collection, and wastewater collection system for this subdivision. The water distribution system uses the skeleton layout above. The .png file is <a href="https://3.137.111.182/ce-3372-webbook/exercise3/SomewhereUSANetworkMap.png">located here</a> so you can render a larger graphic if needed.</p>
+<h2 id="exercise">Exercise</h2>
+<p>Estimate demand at nodes for the skeleton model by:</p>
 <ol>
-<li>
-<p>Gupta, R. S. 2017. Hydrology and Hydraulic Systems. Waveland Press, Inc. pp 1-19 <a href="https://3.137.111.182/ce-3372-webbook/readings/WaterDemand-Gupta.pdf">https://3.137.111.182/ce-3372-webbook/readings/WaterDemand-Gupta.pdf</a></p>
-</li>
-<li>
-<p>Nickerson G. 2008. "Water Distribution Systems" in Land Development Handbook, Ed. S.O. Dewberry, Dewberry Inc., McGraw-Hill <a href="https://3.137.111.182/ce-3372-webbook/readings/water-distribution.pdf">https://3.137.111.182/ce-3372-webbook/readings/water-distribution.pdf</a></p>
-</li>
+<li>Determine the number of lots served by each node, these will constitute the by-node service unit equivalent (SUE).</li>
+<li>Estimate the average daily demand (ADD), by-node, for distribution system usingSan Marcos, Texas water system design guidelines.</li>
+<li>Estimate the maximum daily demand (MDD), by-node, for the distribution systemusing San Marcos, Texas water system design guidelines.</li>
+<li>Estimate the maximum daily demand (MDD) + fire flow, by-node for the distribu-tion system using San Marcos, Texas water system design guidelines.</li>
+<li>Estimate  the  peak  hourly  demand  (PHD),  by-node,  for  the  distribution  systemusing San Marcos, Texas water system design guidelines.</li>
 </ol>
-<pre><code class="python">
-</code></pre></div>
+<h2 id="deliverables">Deliverables:</h2>
+<p>Use your estimates to produce a 1-page report on the artitmetic employed to estimate demand, and a complete version of Table 1 below.  Save the table (in a file) – you will need it later in the design project RP-1, and include the table in your report.</p>
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th>Table 1:  Node Demands for Somewhere USA Distribution System</th>
+<th align="right"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th align="left">Node ID</th>
+<th align="right">SUE</th>
+<th align="right">ADD</th>
+<th align="right">MDD</th>
+<th align="right">MDD+Fire</th>
+<th align="right">PHD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">N1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="left">N2</td>
+<td align="right">6</td>
+<td align="right">
+<script type="math/tex">\dots</script>
+</td>
+<td align="right">
+<script type="math/tex">\dots</script>
+</td>
+<td align="right">
+<script type="math/tex">\dots</script>
+</td>
+<td align="right">
+<script type="math/tex">\dots</script>
+</td>
+</tr>
+<tr>
+<td align="left">N3</td>
+<td align="right">11</td>
+<td align="right">
+<script type="math/tex">\dots</script>
+</td>
+<td align="right">
+<script type="math/tex">\dots</script>
+</td>
+<td align="right">
+<script type="math/tex">\dots</script>
+</td>
+<td align="right">
+<script type="math/tex">\dots</script>
+</td>
+</tr>
+<tr>
+<td align="left">
+<script type="math/tex">\dots</script>
+</td>
+<td align="right">
+<script type="math/tex">\dots</script>
+</td>
+<td align="right">
+<script type="math/tex">\dots</script>
+</td>
+<td align="right">
+<script type="math/tex">\dots</script>
+</td>
+<td align="right">
+<script type="math/tex">\dots</script>
+</td>
+<td align="right">
+<script type="math/tex">\dots</script>
+</td>
+</tr>
+<tr>
+<td align="left">N54</td>
+<td align="right">
+<script type="math/tex">\dots</script>
+</td>
+<td align="right">
+<script type="math/tex">\dots</script>
+</td>
+<td align="right">
+<script type="math/tex">\dots</script>
+</td>
+<td align="right">
+<script type="math/tex">\dots</script>
+</td>
+<td align="right">
+<script type="math/tex">\dots</script>
+</td>
+</tr>
+<tr>
+<td align="left">N55</td>
+<td align="right">
+<script type="math/tex">\dots</script>
+</td>
+<td align="right">
+<script type="math/tex">\dots</script>
+</td>
+<td align="right">
+<script type="math/tex">\dots</script>
+</td>
+<td align="right">
+<script type="math/tex">\dots</script>
+</td>
+<td align="right">
+<script type="math/tex">\dots</script>
+</td>
+</tr>
+<tr>
+<td align="left">N56</td>
+<td align="right">
+<script type="math/tex">\dots</script>
+</td>
+<td align="right">
+<script type="math/tex">\dots</script>
+</td>
+<td align="right">
+<script type="math/tex">\dots</script>
+</td>
+<td align="right">
+<script type="math/tex">\dots</script>
+</td>
+<td align="right">
+<script type="math/tex">\dots</script>
+</td>
+</tr>
+</tbody>
+</table></div>
         </div>
 
         <footer class="col-md-12">

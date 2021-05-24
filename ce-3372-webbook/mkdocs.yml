@@ -15,6 +15,7 @@ nav:
   - Exercises :     
      - ES-1 Los Angeles Aquaduct: exercise1/ES1.md  
      - ES-2 Build a Topographic Map: exercise2/ES2.md 
+     - ES-3 Estimate Demand for Somewhere USA: exercise3/ES3.md 
   #- Additional Readings: readings.md
 
 # active theme (mkdocs/readthedocs are free, they work differently wrt code blocks)
