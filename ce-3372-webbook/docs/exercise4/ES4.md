@@ -9,6 +9,7 @@ Equation 1 below is the Hazen-Williams discharge formula in US Customary Units.
 $$ Q=1.318~C_h~A~R^{0.63}~S^{0.54}~~~~~[1]$$
 
 where;
+
 - $Q$ is the discharge in $\frac{ft^3}{sec}$;
 - $A$ is the cross section area of pipe in $ft^2$;
 - $D$ is the pipe diameter.;
@@ -21,6 +22,7 @@ Equation 2 below is the Hazen-Williams discharge formula in SI Units.
 $$ Q=0.849~C_h~A~R^{0.63}~S^{0.54}~~~~~[2]$$
 
 where;
+
 - $Q$ is the discharge in $\frac{m^3}{sec}$;
 - $A$ is the cross section area of pipe in $m^2$;
 - $D$ is the pipe diameter.;
@@ -33,6 +35,7 @@ Equation 3 below is a formula to estimate the required pipe diameter for a parti
 $$D= 0.66[k^{1.25}_s \times (\frac{LQ^2}{gh_f})^{4.75} + \nu Q^{9.4} \times (\frac{L}{gh_f})^{5.2}]^{0.04} ~~~~~[3]$$
 
 where;
+
 - $D$ is the pipe diameter;
 - $k_s$ is the pipe roughness height;
 - $L$ is the length of pipe;
