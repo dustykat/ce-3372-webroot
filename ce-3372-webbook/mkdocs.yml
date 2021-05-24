@@ -5,18 +5,20 @@ nav:
   - Home: index.md
   - Syllabus: syllabus/syllabus.md
 #  - About: about.md
+#- Lesson Pages :  
   - Lessons :
      - Lesson 1 Introduction : lesson1/lesson1.md
      - Lesson 2 Course Software : lesson2/lesson2.md
      - Lesson 3 Design Guidelines : lesson3/lesson3.md
      - Lesson 4 Demand Estimation : lesson4/lesson4.md
      - Lesson 5 Pipeline Head Loss : lesson5/lesson5.md
-      #- Data Models -- Machine Learning Methods :      
+#- Exercise Pages :      
   - Exercises :     
      - ES-1 Los Angeles Aquaduct: exercise1/ES1.md  
      - ES-2 Build a Topographic Map: exercise2/ES2.md 
      - ES-3 Estimate Demand for Somewhere USA: exercise3/ES3.md 
-  #- Additional Readings: readings.md
+     - ES-4 Application of Head Loss Models: exercise4/ES4.md 
+#- Additional Readings: readings.md
 
 # active theme (mkdocs/readthedocs are free, they work differently wrt code blocks)
 theme:
