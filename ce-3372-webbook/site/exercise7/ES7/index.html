@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Lesson 3 Design Guidelines - CE 3372</title>
+        <title>ES-7 Network Model in EPANET - CE 3372</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -48,7 +48,7 @@
                             <li >
                                 <a href="../../syllabus/syllabus/">Syllabus</a>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lessons <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -60,8 +60,8 @@
     <a href="../../lesson2/lesson2/">Lesson 2 Course Software</a>
 </li>
                                     
-<li class="active">
-    <a href="./">Lesson 3 Design Guidelines</a>
+<li >
+    <a href="../../lesson3/lesson3/">Lesson 3 Design Guidelines</a>
 </li>
                                     
 <li >
@@ -73,7 +73,7 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Exercises <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -93,8 +93,8 @@
     <a href="../../exercise4/ES4/">ES-4 Application of Head Loss Models</a>
 </li>
                                     
-<li >
-    <a href="../../exercise7/ES7/">ES-7 Network Model in EPANET</a>
+<li class="active">
+    <a href="./">ES-7 Network Model in EPANET</a>
 </li>
                                 </ul>
                             </li>
@@ -107,12 +107,12 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../../lesson2/lesson2/">
+                                <a rel="next" href="../../exercise4/ES4/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
-                            <li >
-                                <a rel="prev" href="../../lesson4/lesson4/">
+                            <li class="disabled">
+                                <a rel="prev" >
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -124,17 +124,49 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#ce-3372-water-systems-design">CE 3372 Water Systems Design</a></li>
-            <li><a href="#lesson-3-design-guidelines">Lesson 3. Design Guidelines</a></li>
+        <li class="main active"><a href="#es-7">ES-7</a></li>
+            <li><a href="#purpose">Purpose:</a></li>
+            <li><a href="#background">Background</a></li>
+            <li><a href="#exercise-1">Exercise 1</a></li>
+            <li><a href="#exercise-2">Exercise 2</a></li>
+            <li><a href="#deliverables">Deliverables:</a></li>
+            <li><a href="#references">References</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h2 id="ce-3372-water-systems-design">CE 3372 Water Systems Design</h2>
-<h3 id="lesson-3-design-guidelines">Lesson 3. Design Guidelines</h3>
-<p>Placeholder</p>
-<pre><code class="python">
-</code></pre></div>
+<h1 id="es-7">ES-7</h1>
+<h2 id="purpose">Purpose:</h2>
+<ul>
+<li>Compute flow distribution in pipeline networks. </li>
+<li>Introduction to use of professional software (EPANET)</li>
+<li>Develop expertise in interpreting output to answer specific hydraulic questions</li>
+</ul>
+<h2 id="background">Background</h2>
+<p>Figure  1  is  a  five-pipe  network  with  a  water  supply  source  (a  reservoir,  not  shown) connected at Node 1, and demands at Nodes 1-5.<br />
+Table 1 is a list of the relevant pipe and node data.</p>
+<p><img alt="" src="../SimpleNetwork.png" /></p>
+<hr />
+<h2 id="exercise-1">Exercise 1</h2>
+<p>Build an EPANET model, using the Hazen-Williams head loss model of the network. From your preparation, or the completed model:</p>
+<p>a)  Write the node equations of continuity for Nodes 1-4.</p>
+<p>b)  Write the head loss equations for each of the pipes in the system.</p>
+<p>c)  Make a screen capture of the EPANET program showing your network map, with the Node ID and Node Pressures displayed on the map, and with the Pipe ID and Pipe Flow Rates on the map.</p>
+<hr />
+<h2 id="exercise-2">Exercise 2</h2>
+<p>a)  Make a table that lists each node name, node elevation, and the resultant pressurein U.S. Customary units.</p>
+<p>b)  Make a table that lists each pipe name,  length,  diameter,  Hazen-Williams coefficient, and the resultant flow rate in U.S. Customary units.</p>
+<p>c)  Determine the flow rate in each pipe of the network, for the case where the total head at Node 1 is 100 feet.</p>
+<p>d)  Determine the Darcy-Weisbach friction factor in each pipe of the network.</p>
+<p>e)  Using the results of your flow distribution, determine the head loss from Node 1 to Node 4.</p>
+<p>f)  Determine the head at Node 4</p>
+<p>g)  Identify the node with the lowest <strong>pressure</strong> in your solution.</p>
+<h2 id="deliverables">Deliverables:</h2>
+<p>A memorandum-type report with your solution, showing the requested equations, screen captures, tables and head loss calculations.</p>
+<h2 id="references">References</h2>
+<ol>
+<li>Rossman,  L.  (2000).   EPANET  2  users  manual.   Technical  Report  EPA/600/R-00/057,U.S. Environmental Protection Agency, National Risk Management Research LaboratoryCincinnati, OH 45268.</li>
+</ol></div>
         </div>
 
         <footer class="col-md-12">

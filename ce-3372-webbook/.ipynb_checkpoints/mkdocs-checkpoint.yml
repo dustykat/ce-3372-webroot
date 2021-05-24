@@ -18,6 +18,7 @@ nav:
      - ES-2 Build a Topographic Map: exercise2/ES2.md 
      - ES-3 Estimate Demand for Somewhere USA: exercise3/ES3.md 
      - ES-4 Application of Head Loss Models: exercise4/ES4.md 
+     - ES-7 Network Model in EPANET: exercise7/ES7.md 
 #- Additional Readings: readings.md
 
 # active theme (mkdocs/readthedocs are free, they work differently wrt code blocks)
