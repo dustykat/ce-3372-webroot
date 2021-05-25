@@ -119,7 +119,7 @@ The course notes are located in a webbook at https://3.137.111.182/ce-3354-webbo
 |date|topic|reading|homework due|
 |:---|:---|:---|:---|
 |24Aug21|Introduction <br> - Syllabus  <br> - Water Systems Overview  |ppXX-XX|none|
-|26Aug21|Required Software <br> - Installing EPANET <br> - Installing SWMM <br>Optional: Running on AWS (Cloud Server) |ppXX-XX||
+|26Aug21|Required Software <br> - Installing EPANET <br> - Installing SWMM <br>Optional: Running on AWS (Cloud Server) |ppXX-XX|none|
 
 ### Week 2
 ---
@@ -137,7 +137,7 @@ The course notes are located in a webbook at https://3.137.111.182/ce-3354-webbo
 |date|topic|reading|homework due|
 |:---|:---|:---|:---|
 |7Sep21|Pipeline Head Loss <br> - Darcy-Weisbach <br> - Chezy-Manning <br> - Hazen-Williams |ppXX-XX|ES-3 Demand Estimation|
-|9Sep21|Pipeline Hydraulics <br> - Gravity System <br> -  Pumped System <br> - EGL&HGL  |ppXX-XX|ES-4 Application of Head Loss Models|
+|9Sep21|Pipeline Hydraulics <br> - Gravity System <br> -  Pumped System <br> - EGL&HGL  |ppXX-XX|none|
 
 **Test 1 on BB for 48 hours**
 
@@ -147,8 +147,8 @@ The course notes are located in a webbook at https://3.137.111.182/ce-3354-webbo
 
 |date|topic|reading|homework|
 |:---|:---|:---|:---|
-|14Sep21|Pumping Systems <br> - Pump Types <br> - Pump Performance Curves <br> - Net Positive Suction Head |ppXX-XX|bb quiz1|
-|16Sep21|Drinking Water Storage <br> - Reservoir Types <br> - Flow Equalization <br> - Pressure Zones |ppXX-XX|bb quiz1|
+|14Sep21|Pumping Systems <br> - Pump Types <br> - Pump Performance Curves <br> - Net Positive Suction Head |ppXX-XX| none|
+|16Sep21|Drinking Water Storage <br> - Reservoir Types <br> - Flow Equalization <br> - Pressure Zones |ppXX-XX|ES-4 Application of Head Loss Models|
 
 ### Week 5
 ---
@@ -156,8 +156,8 @@ The course notes are located in a webbook at https://3.137.111.182/ce-3354-webbo
 
 |date|topic|reading|homework|
 |:---|:---|:---|:---|
-|21Sep21|Pipe Networks <br> - Network Topology (Types) <br> - Network Models <br> - Solution Arithmetic|ppXX-XX|bb quiz1|
-|23Sep21|EPANET Introduction <br> - Interface Tour <br> - Examples |ppXX-XX|ES-5 Network Hydraulics|
+|21Sep21|Pipe Networks <br> - Network Topology (Types) <br> - Network Models <br> - Solution Arithmetic|ppXX-XX|ES-5 Pump Selection|
+|23Sep21|EPANET Introduction <br> - Interface Tour <br> - Examples |ppXX-XX|none; *Future ES-6 Tank Sizing*|
 
 
 **Test 2 on BB for 48 hours**
@@ -168,8 +168,8 @@ The course notes are located in a webbook at https://3.137.111.182/ce-3354-webbo
 
 |date|topic|reading|homework|
 |:---|:---|:---|:---|
-|28Sep21|EPANET Pumps <br> - Example |ppXX-XX|bb quiz1|
-|30Sep21|EPANET Extended Period Simulation <br> - Eagle Pass Model (hydraulics) <br> - Water Quality Simulation Example |ppXX-XX|bb quiz1|
+|28Sep21|EPANET Pumps <br> - Example |ppXX-XX|none|
+|30Sep21|EPANET Extended Period Simulation <br> - Eagle Pass Model (hydraulics) <br> - Water Quality Simulation Example |ppXX-XX|ES-7 Network Hydraulics by EPANET|
 
 ### Week 7
 ---
@@ -177,8 +177,8 @@ The course notes are located in a webbook at https://3.137.111.182/ce-3354-webbo
 
 |date|topic|reading|homework|
 |:---|:---|:---|:---|
-|5Oct21|Design Guidelines <br> - Source Documents <br> – Storm Water Collection|ppXX-XX|bb quiz1| 
-|7Oct21|Hydrology Review <br> - Design Storms <br> - Rational Runoff Equation <br> - NRCS CN Model <br> - Infiltration Excess (Horton) <br> - Green-Ampt |ppXX-XX|ES-7 Design Storm|
+|5Oct21|Design Guidelines <br> - Source Documents <br> – Storm Water Collection|ppXX-XX|ES-8 Network Hydraulics by EPANET| 
+|7Oct21|Hydrology Review <br> - Design Storms <br> - Rational Runoff Equation <br> - NRCS CN Model <br> - Infiltration Excess (Horton) <br> - Green-Ampt |ppXX-XX|none; *future ES-8NX*|
 
 ### Week 8
 ---
@@ -186,8 +186,8 @@ The course notes are located in a webbook at https://3.137.111.182/ce-3354-webbo
 
 |date|topic|reading|homework|
 |:---|:---|:---|:---|
-|12Oct21|SWMM Introduction|ppXX-XX|bb quiz1|
-|14Oct21|Open Channel Hydraulics (Steady) <br> - Normal Flow <br> - Gradually Varied Flow <br> - SWMM Example |ppXX-XX|ES-6|
+|12Oct21|SWMM Introduction|ppXX-XX|none|
+|14Oct21|Open Channel Hydraulics (Steady) <br> - Normal Flow <br> - Gradually Varied Flow <br> - SWMM Example |ppXX-XX|ES-9 Design Storm|
 
 **Test 3 on BB for 48 hours**
 
@@ -197,7 +197,7 @@ The course notes are located in a webbook at https://3.137.111.182/ce-3354-webbo
 
 |date|topic|reading|homework|
 |:---|:---|:---|:---|
-|19Oct21|Open Channel Hydraulics (Unsteady) <br> - Continunity <br> - Momentum <br> - SWMM Example |ppXX-XX|bb quiz1|
+|19Oct21|Open Channel Hydraulics (Unsteady) <br> - Continunity <br> - Momentum <br> - SWMM Example |ppXX-XX|ES-10 Open Channel Steady Flow|
 |21Oct21|Stormwater Collection – Sizing Inlets |ppXX-XX|bb quiz1|
 
 ### Week 10
@@ -206,7 +206,7 @@ The course notes are located in a webbook at https://3.137.111.182/ce-3354-webbo
 
 |date|topic|reading|homework|
 |:---|:---|:---|:---|
-|26Oct21|Stormwater Collection <br> – Sizing Conduits (Rational Method) <br> - SWMM Example |ppXX-XX|bb quiz1|
+|26Oct21|Stormwater Collection <br> – Sizing Conduits (Rational Method) <br> - SWMM Example |ppXX-XX|ES-11 Inlet Sizing|
 |28Oct21|SWMM Hydrology <br> - Catchment Runoff <br> - Raingages <br> - SWMM Example|ppXX-XX||
 
 ### Week 11
@@ -215,8 +215,8 @@ The course notes are located in a webbook at https://3.137.111.182/ce-3354-webbo
 
 |date|topic|reading|homework|
 |:---|:---|:---|:---|
-|2Nov21|SWMM Dual Drainage <br> - Surface network <br> - Storm Sewer network |ppXX-XX|ES-8 Rational Method Conduit Sizing|
-|2Nov21|Green-Infrastructure <br> - Devices <br> - Performance|ppXX-XX|bb quiz1|
+|2Nov21|SWMM Dual Drainage <br> - Surface network <br> - Storm Sewer network |ppXX-XX|ES-12 Rational Method Conduit Sizing|
+|2Nov21|Green-Infrastructure <br> - Devices <br> - Performance|ppXX-XX|ES-13 SWMM Design/Sizing Somewhere USA|
 
 **Test 4 on BB for 48 hours**
 
@@ -226,8 +226,8 @@ The course notes are located in a webbook at https://3.137.111.182/ce-3354-webbo
 
 |date|topic|reading|homework|
 |:---|:---|:---|:---|
-|9Nov21|Stormwater Detention Ponds <br> - SWMM Example (hydraulics only)  |ppXX-XX|bb quiz1|
-|11Nov21|Outfall Considerations|ppXX-XX|bb quiz1|
+|9Nov21|Stormwater Detention Ponds <br> - SWMM Example (hydraulics only)  |ppXX-XX|ES-14 SWMM Model Tanglewilde|
+|11Nov21|Outfall Considerations|ppXX-XX|none|
 
 ### Week 13
 ---
@@ -235,8 +235,8 @@ The course notes are located in a webbook at https://3.137.111.182/ce-3354-webbo
 
 |date|topic|reading|homework|
 |:---|:---|:---|:---|
-|16Nov21|Sanitary Sewer Systems |ppXX-XX|bb quiz1|
-|18Nov21|Design Guidelines – Waste Water Collection |ppXX-XX|bb quiz1|
+|16Nov21|Sanitary Sewer Systems |ppXX-XX|ES-15 Outfall Erosion Potential|
+|18Nov21|Design Guidelines – Waste Water Collection |ppXX-XX|ES-16 SWMM Detention Pond|
 
 **Test 5 on BB for 48 hours**
 
@@ -246,51 +246,44 @@ The course notes are located in a webbook at https://3.137.111.182/ce-3354-webbo
 
 |date|topic|reading|homework|
 |:---|:---|:---|:---|
-|23Nov21|Project Progress Presentation(s) |ppXX-XX|bb quiz1|
-|30Nov21|Project Progress Presentation(s) |ppXX-XX|bb quiz1|
-
-
-
-
-```python
-
-```
+|23Nov21|Project Progress Presentation(s) |ppXX-XX|none|
+|30Nov21|Project Progress Presentation(s) |ppXX-XX|RP-1 Project Report|
 
 ---
 ## Course Assessment and Grading Criteria:
-There will be $\approx$ 20 homework assignments, five tests, and a final project report and presentation for this course.  
+There will be $\approx$ 15 homework assignments, five tests, and a final project report and presentation for this course.  
 <strong>Late</strong> assignments will be scored at 50% reduced value 
 
 Grades will be based on the following components; weighting is approximate:
 
-|Assessment Instrument|Weight(%)|
-|---|---:|
-|Test-1|10|
-|Test-2|10|
-|Test-3|10|
-|Test-4|10|
-|Test-5|10|
-|Homework|30|
-|Final Project Report (Team Scored)|10|
-|Project Presentation (Team Scored)|10|
-|Overall total|100|
+|Assessment Instrument|Weight(%)|Points|
+|---|---:|---:|
+|Test-1|10|100|
+|Test-2|10|100|
+|Test-3|10|100|
+|Test-4|10|100|
+|Test-5|10|100|
+|Homework|40|400|
+|Final Project Report (Team Scored)|5|50|
+|Project Presentation (Team Scored)|5|50|
+|Overall total|100|1000|
 
-Letter grades will be assigned using the following proportions:
+Letter grades will be assigned using the following quantile proportions of all assessment instruments:
 
-|Normalized Score Range|Letter Grade|
+|Quantile Range|Letter Grade|
 |:-|---:|
-|≥ 90|A| 
-|80-89|B|
-|70-79|C|
-|55-69|D|
-|< 55|F|
+|90-100|A| 
+|61-89|B|
+|41-60|C|
+|21-40|D|
+|0 - 20|F|
 
 <!-- Scores as Quantiles Ranges
 |81-100|A| 
 |61-80|B|
 |41-60|C|
 |21-40|D|
-|0-20|F|
+|<= 0-20|F|
 -->
 
 
@@ -338,6 +331,18 @@ I identify as an ally to the lesbian, gay, bisexual, transgender, queer, interse
 
 Office of LGBTQIA, Student Union Building Room 201, www.lgbtqia.ttu.edu, 806.742.5433
 Within the Center for Campus Life, the Office serves the Texas Tech community through facilitation and leadership of programming and advocacy efforts. This work is aimed at strengthening the lesbian, gay, bisexual, transgender, queer, intersex, and asexual (LGBTQIA) community and sustaining an inclusive campus that welcomes people of all sexual orientations, gender identities, and gender expressions.
+
+
+
+```python
+400/16
+```
+
+
+
+
+    25.0
+
 
 
 
