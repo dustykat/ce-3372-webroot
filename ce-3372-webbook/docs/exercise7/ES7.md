@@ -50,4 +50,6 @@ A memorandum-type report with your solution, showing the requested equations, sc
 ## References
 1. Rossman,  L.  (2000).   EPANET  2  users  manual.   Technical  Report  EPA/600/R-00/057,U.S. Environmental Protection Agency, National Risk Management Research LaboratoryCincinnati, OH 45268.
 
-2. <a href="https://3.137.111.182/ce-3372-webbook/exercise7/ES7-WS.md"> <img src="https://3.137.111.182/ce-3372-webbook/exercise7/easy-button.png" alt="EZ Button Link to ES-7 sample solution" style="width:42px;height:42px;"> </a> 
+2. <p> <a href="https://3.137.111.182/ce-3372-webbook/exercise7/ES7.net"> <img src="https://3.137.111.182/ce-3372-webbook/exercise7/easy-button.png" alt="EZ Button Link to ES-7 sample .net input file" style="width:42px;height:42px;"> </a> EZ Button Sample .net file </p>
+
+3. <p> <a href="https://3.137.111.182/ce-3372-webbook/exercise7/ES7-WS/"> <img src="https://3.137.111.182/ce-3372-webbook/exercise7/easy-button.png" alt="EZ Button Link to ES-7 sample solution" style="width:42px;height:42px;"> </a> EZ Button Solution Sketch </p>
