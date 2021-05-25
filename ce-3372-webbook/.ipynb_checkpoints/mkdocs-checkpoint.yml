@@ -20,8 +20,9 @@ nav:
      - ES-4 Application of Head Loss Models: exercise4/ES4.md 
      - ES-7 Network Model in EPANET: exercise7/ES7.md 
      - ES-8 Network Model with Pumps in EPANET: exercise8/ES8.md 
-     - ES-12 Rational Method Conduit Sizing: exercise12/ES12.md 
+     - ES-12 Conduit Sizing Tanglewilde: exercise12/ES12.md 
      - ES-13 SWMM Design/Sizing Somewhere USA: exercise13/ES13.md 
+     - ES-14 SWMM Model Tanglewilde: exercise14/ES14.md
 #- Additional Readings: readings.md
 
 # active theme (mkdocs/readthedocs are free, they work differently wrt code blocks)

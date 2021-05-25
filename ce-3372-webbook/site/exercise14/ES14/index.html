@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>ES-14 SWMM Model Tanglewilde - CE 3372</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../..">CE 3372</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="../..">Home</a>
+                            </li>
+                            <li >
+                                <a href="../../syllabus/syllabus/">Syllabus</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lessons <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../lesson1/lesson1/">Lesson 1 Introduction</a>
+</li>
+                                    
+<li >
+    <a href="../../lesson2/lesson2/">Lesson 2 Course Software</a>
+</li>
+                                    
+<li >
+    <a href="../../lesson3/lesson3/">Lesson 3 Design Guidelines</a>
+</li>
+                                    
+<li >
+    <a href="../../lesson4/lesson4/">Lesson 4 Demand Estimation</a>
+</li>
+                                    
+<li >
+    <a href="../../lesson5/lesson5/">Lesson 5 Pipeline Head Loss</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Exercises <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../exercise1/ES1/">ES-1 Los Angeles Aquaduct</a>
+</li>
+                                    
+<li >
+    <a href="../../exercise2/ES2/">ES-2 Build a Topographic Map</a>
+</li>
+                                    
+<li >
+    <a href="../../exercise3/ES3/">ES-3 Estimate Demand for Somewhere USA</a>
+</li>
+                                    
+<li >
+    <a href="../../exercise4/ES4/">ES-4 Application of Head Loss Models</a>
+</li>
+                                    
+<li >
+    <a href="../../exercise7/ES7/">ES-7 Network Model in EPANET</a>
+</li>
+                                    
+<li >
+    <a href="../../exercise8/ES8/">ES-8 Network Model with Pumps in EPANET</a>
+</li>
+                                    
+<li >
+    <a href="../../exercise12/ES12/">ES-12 Conduit Sizing Tanglewilde</a>
+</li>
+                                    
+<li >
+    <a href="../../exercise13/ES13/">ES-13 SWMM Design/Sizing Somewhere USA</a>
+</li>
+                                    
+<li class="active">
+    <a href="./">ES-14 SWMM Model Tanglewilde</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li >
+                                <a rel="next" href="../../exercise13/ES13/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="disabled">
+                                <a rel="prev" >
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#es-14">ES-14</a></li>
+            <li><a href="#purpose">Purpose:</a></li>
+            <li><a href="#background">Background</a></li>
+            <li><a href="#exercise">Exercise</a></li>
+            <li><a href="#deliverables">Deliverables:</a></li>
+            <li><a href="#references">References</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="es-14">ES-14</h1>
+<h2 id="purpose">Purpose:</h2>
+<p>Apply rational method conduit sizing to a small watershed.  </p>
+<h2 id="background">Background</h2>
+<p>Figure 1 is a map showing storm drainage alignments and inlets location.  The figure shows land surface elevations in feet at the indicated locations. A distance scale is shown in the legend.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><img alt="" src="../Image119B.png" /></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Figure 1. Tanglewilde Drive Storm Drain Inlet and Pipe Alignments</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>Image file @<a href="https://3.137.111.182/ce-3372-webbook/exercise12/Image119B.png">https://3.137.111.182/ce-3372-webbook/exercise12/Image119B.png</a></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>xyz-elevation file @<a href="https://3.137.111.182/ce-3372-webbook/exercise12/TanglewildeElevations.txt">https://3.137.111.182/ce-3372-webbook/exercise12/TanglewildeElevations.txt</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="exercise">Exercise</h2>
+<p>Using your initial maps and conduit sizing from an earlier exercise (ES-12), which covers the same location, test the design using SWMM (Rossman, 2009) for a 5-yr, 6-hour storm applied to the entire study area. </p>
+<p>You can neglect the inlet specifications for your design and assume water that reaches the inlet will enter the sewer system (if it can). The design should include (provisional) drawings that specify the junction invert elevations at the different locations, the conduit diameters and flowlines, and the location of the hydraulic grade line for the design storm.</p>
+<hr />
+<h2 id="deliverables">Deliverables:</h2>
+<p>Submit a technical memorandum with screen captures of the relevant components above. Include a description of how the results were obtained and a discussion and interpretation of the results.  Show representative calculations where appropriate.  </p>
+<h2 id="references">References</h2>
+<ol>
+<li>
+<p>Rossman, L. (2009). Storm Water Management Model user's manual version 5.0. Technical Report EPA/600/R-05/040, U.S. Environmental Protection Agency, National Risk Management Research Laboratory Cincinnati, OH 45268.<a href="https://3.137.111.182/ce-3372-webbook/readings/P100ERK4.pdf">https://3.137.111.182/ce-3372-webbook/readings/P100ERK4.pdf</a></p>
+</li>
+<li>
+<p>Gironas, J., L. A. Roesner, and J. Davis (2009). Storm Water Management Model applications manual. Technical Report EPA/600/R-09/077, U.S. Environmental Protection Agency, National Risk Management Research Laboratory Cincinnati, OH 45268. <a href="https://3.137.111.182/ce-3372-webbook/readings/Swmm_Apps_Manual.pdf">https://3.137.111.182/ce-3372-webbook/readings/Swmm_Apps_Manual.pdf</a></p>
+</li>
+<li>
+<p>Cleveland, T.G., and Botkins, W. (2008). Hypothetical Watershed Modeling - Block B. Harris County Flood Control District Research Report in Support of the Floodwise Block-B Study. <a href="https://3.137.111.182/ce-3372-webbook/readings/2008_1102_SWMM_Hypothetical.pdf">https://3.137.111.182/ce-3372-webbook/readings/2008_1102_SWMM_Hypothetical.pdf</a></p>
+</li>
+</ol></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" defer></script>
+        <script src="../../mathjaxhelper.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
