@@ -27,7 +27,7 @@ A short report (1 page) where you describe your map making activity, including h
 
 ## References
 
-1. U.S. Air Force (1985). *AFR 64-4 Survival, Evasion, Escape, and Rescue Manual Ch. 20 LAND NAVIGATION*  (... How to interpret topographic maps) [https://3.137.111.182/ce-3372-webbook/readings/Pages_from_SAF-Survival-Manual-644.pdf](https://3.137.111.182/ce-3372-webbook/readings/Pages_from_SAF-Survival-Manual-644.pdf)
+1. U.S. Air Force (1985). *AFR 64-4 Survival, Evasion, Escape, and Rescue Manual Ch. 20 LAND NAVIGATION*  (... How to interpret topographic maps) [https://3.137.111.182/ce-3372-webbook/readings/Pages_from_USAF-Survival-Manual-644.pdf](https://3.137.111.182/ce-3372-webbook/readings/Pages_from_USAF-Survival-Manual-644.pdf)
 
 2. Ammann, A., and Stone, A. L. 1991. Method for the Comparative Evaluation of Nontidal Wetlands in New Hampshire, Appendix E *Interpreting Topographic Maps* [https://3.137.111.182/ce-3372-webbook/readings/Topowatershed.pdf](https://3.137.111.182/ce-3372-webbook/readings/Topowatershed.pdf)
 
