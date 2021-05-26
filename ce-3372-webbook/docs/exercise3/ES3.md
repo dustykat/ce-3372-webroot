@@ -24,7 +24,7 @@ Estimate demand at nodes for the skeleton model by:
 
 ## Deliverables:
 
-Use your estimates to produce a 1-page report on the artitmetic employed to estimate demand, and a complete version of Table 1 below.  Save the table (in a file) – you will need it later in the design project RP-1, and include the table in your report.
+Use your estimates to produce a 1-page report on the arithmetic employed to estimate demand, and a complete version of Table 1 below.  Save the table (in a file) – you will need it later in the design project RP-1, and include the table in your report.
 
 ||Table 1:  Node Demands for Somewhere USA Distribution System||
 |:---|---|---:|
@@ -33,10 +33,19 @@ Use your estimates to produce a 1-page report on the artitmetic employed to esti
 |:------|------:|------:|------:|------:|------:|
 |N1  |   0|   0|   0|   0|   0|
 |N2  |   6|$\dots$|$\dots$|$\dots$|$\dots$|
-|N3  |  11|$\dots$|$\dots$|$\dots$|$\dots$|
+|N3  |  12|$\dots$|$\dots$|$\dots$|$\dots$|
 |$\dots$|$\dots$|$\dots$|$\dots$|$\dots$|$\dots$|
 |N54 |$\dots$|$\dots$|$\dots$|$\dots$|$\dots$|
 |N55 |$\dots$|$\dots$|$\dots$|$\dots$|$\dots$|
 |N56 |$\dots$|$\dots$|$\dots$|$\dots$|$\dots$|
 
+## References
 
+1. CITY OF SAN MARCOS, TEXAS (2019). *WATER DISTRIBUTIONSYSTEM DESIGN CRITERIA TECHNICAL MANUAL* [https://3.137.111.182/ce-3372-webbook/readings/SanMarcosTexasDesignManual.pdf](https://3.137.111.182/ce-3372-webbook/readings/SanMarcosTexasDesignManual.pdf)
+
+2. <p> <a href="https://3.137.111.182/ce-3372-webbook/exercise3/ES-3-demand.xlsx.pdf"> <img src="https://3.137.111.182/ce-3372-webbook/exercise3/easy-button.png" alt="EZ Button Link to ES-2 sample demand table" style="width:42px;height:42px;"> </a> EZ Button Link to example of a populated table </p>
+
+
+```python
+
+```
