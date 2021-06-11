@@ -142,6 +142,11 @@
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#ce-3372-water-systems-design">CE 3372 Water Systems Design</a></li>
             <li><a href="#lesson-5-pipeline-head-loss-models">Lesson 5. Pipeline Head Loss Models</a></li>
+            <li><a href="#head-loss-models-for-losses-in-closed-conduits">Head Loss Models (for losses in closed conduits)</a></li>
+            <li><a href="#darcy-weisbach">Darcy-Weisbach</a></li>
+            <li><a href="#hazen-williams">Hazen-Williams</a></li>
+            <li><a href="#chezy-mannings">Chezy-Mannings</a></li>
+            <li><a href="#fitting-minor-losses">Fitting (Minor) Losses</a></li>
         <li class="main "><a href="#-">---</a></li>
         <li class="main "><a href="#computing-discharge-from-specified-head-loss">Computing Discharge from Specified Head Loss</a></li>
             <li><a href="#computational-thinkingdata-science-approach-engr-1330">Computational Thinking/Data Science Approach (ENGR 1330)</a></li>
@@ -168,30 +173,61 @@ The mean section velocity is related to cross sectional flow area and volumetric
 <p>
 <script type="math/tex; mode=display"> \bar{V} = \frac{Q}{A} </script>
 </p>
+<h4 id="continunity-at-different-sections">Continunity at Different Sections</h4>
 <h4 id="continunity-at-junctions">Continunity at Junctions</h4>
+<h4 id="energy-equation">Energy Equation</h4>
+<h4 id="example-time-to-drain-a-storage-tank">Example: Time to Drain a Storage Tank</h4>
 <pre><code class="python">
 </code></pre>
 
+<h4 id="example-steady-discharge-between-two-reservoirs">Example: Steady Discharge between Two Reservoirs</h4>
+<pre><code class="python">
+</code></pre>
+
+<h3 id="head-loss-models-for-losses-in-closed-conduits">Head Loss Models (for losses in closed conduits)</h3>
+<h3 id="darcy-weisbach">Darcy-Weisbach</h3>
+<h4 id="reynolds-re_d-number">Reynolds' "<script type="math/tex">Re_d</script>" Number</h4>
+<h4 id="darcy-weisbach-f-factor">Darcy-Weisbach "<script type="math/tex">f</script>" Factor</h4>
+<pre><code class="python">
+</code></pre>
+
+<h3 id="hazen-williams">Hazen-Williams</h3>
+<h4 id="hazen-williams-c-factor">Hazen-Williams "C" Factor</h4>
+<h4 id="hydraulic-radius">Hydraulic Radius</h4>
+<pre><code class="python">
+</code></pre>
+
+<h3 id="chezy-mannings">Chezy-Mannings</h3>
+<h4 id="mannings-n">Mannings "n"</h4>
+<h4 id="hydraulic-radius_1">Hydraulic Radius</h4>
+<pre><code class="python">
+</code></pre>
+
+<h3 id="fitting-minor-losses">Fitting (Minor) Losses</h3>
 <h2 id="-">---</h2>
 <h2 id="computing-discharge-from-specified-head-loss">Computing Discharge from Specified Head Loss</h2>
 <h3 id="computational-thinkingdata-science-approach-engr-1330">Computational Thinking/Data Science Approach (ENGR 1330)</h3>
-<p>CT/DS Approach
-* State the programming problem
-* Known (Inputs)
-* Unknown (Outputs)
-* Governing Equation(s)
-* Test the tool</p>
+<p>CT/DS Approach</p>
+<ul>
+<li>State the programming problem</li>
+<li>Known (Inputs)</li>
+<li>Unknown (Outputs)</li>
+<li>Governing Equation(s)</li>
+<li>Test the tool</li>
+</ul>
 <h4 id="state-the-programming-problem">State the programming problem</h4>
 <p>Build a tool that takes inputs for the Jain equation and produces an estimate of discharge</p>
 <p>Build an interface (notebook) that accepts the inputs, calls the function, and returns the computed discharge</p>
 <h4 id="known-inputs">Known (Inputs)</h4>
-<p>Engineer will specify: 
-* Diameter, D; 
-* Length of pipe, L; 
-* Roughness height, e; 
-* Viscosity, <script type="math/tex">\nu</script>; 
-* Gravitational acceleration constant, g;
-* Head loss</p>
+<p>Engineer will specify: </p>
+<ul>
+<li>Diameter, D; </li>
+<li>Length of pipe, L; </li>
+<li>Roughness height, e; </li>
+<li>Viscosity, <script type="math/tex">\nu</script>; </li>
+<li>Gravitational acceleration constant, g;</li>
+<li>Head loss</li>
+</ul>
 <h4 id="unknown-outputs">Unknown (Outputs)</h4>
 <p>The tool will compute and report Discharge, Q.</p>
 <h4 id="governing-equations">Governing Equation(s)</h4>
@@ -203,7 +239,7 @@ Q=-0.965 D^2 \sqrt{\frac{gDh_f}{L}}ln( \frac{k_s}{3.7D}+\frac{1.78\nu}{D\sqrt{\f
 <h4 id="test-the-tool">Test the tool</h4>
 <pre><code class="python">#computation engine
 # import built in functions for log, sqrt
-from math import log,sqrt,log
+from math import log,sqrt
 # Define the prototype function
 def jainQ(pipe_diameter,pipe_length,roughness,viscosity,grabity,head_loss):
     egl_slope = head_loss/pipe_length
@@ -272,15 +308,15 @@ while yes == 0:
 </code></pre>
 
 <pre><code>Enter Pipe Diameter 
- 2
+ 1
 Enter Pipe Length 
- 10560
+ 1000
 Enter Pipe Roughness Height 
- 8.5e-5
+ 0.0026
 Enter liquid viscosity 
- 1e-5
+ 5e-5
 Enter gravitational acceleration constant (unit system appropriate) 
- 32.2
+ 32
 Enter head loss 
  40
 </code></pre>
@@ -296,13 +332,13 @@ print (&quot;Head loss : &quot;,head_loss)
 print (&quot;Discharge : &quot;,discharge)
 </code></pre>
 
-<pre><code>Pipe Diameter :  2.0
-Pipe Length :  10560.0
-Pipe Roughness Height :  8.5e-05
-Liquid Viscosity :  1e-05
-Gravitational acceleration constant :  32.2
+<pre><code>Pipe Diameter :  1.0
+Pipe Length :  1000.0
+Pipe Roughness Height :  0.0026
+Liquid Viscosity :  5e-05
+Gravitational acceleration constant :  32.0
 Head loss :  40.0
-Discharge :  19.8861362976099
+Discharge :  7.8110495900862835
 </code></pre>
 <h4 id="refine-the-tool-for-generalization">Refine the Tool for Generalization</h4>
 <p>The refinement step would wrap the three parts above into a single function/notebook for simple use/reuse. If we save all three parts to a single file, we can access the script as we wish (using a JupyterLab magic function trick below.  The run command is obvious, but the -i means run interactive, and we supply the script name) </p>
@@ -310,26 +346,26 @@ Discharge :  19.8861362976099
 </code></pre>
 
 <pre><code>Enter Pipe Diameter 
- 2
+ 1
 Enter Pipe Length 
- 10560
+ 1000
 Enter Pipe Roughness Height 
- 8.5e-5
+ 0.0026
 Enter liquid viscosity 
- 1e-5
+ 5e-5
 Enter gravitational acceleration constant (unit system appropriate) 
- 32.2
+ 32
 Enter head loss 
  40
 
 
-Pipe Diameter :  2.0
-Pipe Length :  10560.0
-Pipe Roughness Height :  8.5e-05
-Liquid Viscosity :  1e-05
-Gravitational acceleration constant :  32.2
+Pipe Diameter :  1.0
+Pipe Length :  1000.0
+Pipe Roughness Height :  0.0026
+Liquid Viscosity :  5e-05
+Gravitational acceleration constant :  32.0
 Head loss :  40.0
-Discharge :  19.8861362976099
+Discharge :  7.8110495900862835
 </code></pre>
 <p>Lastly, we can put the script onto a server and access via a web interface.</p>
 <pre><code class="python">
