@@ -15,13 +15,67 @@ The mean section velocity is related to cross sectional flow area and volumetric
 
 $$ \bar{V} = \frac{Q}{A} $$
 
+#### Continunity at Different Sections
+
 #### Continunity at Junctions
+
+#### Energy Equation
+
+
+#### Example: Time to Drain a Storage Tank
+
+
+```python
+
+```
+
+#### Example: Steady Discharge between Two Reservoirs
+
+
+```python
+
+```
+
+### Head Loss Models (for losses in closed conduits)
+
+### Darcy-Weisbach
+
+#### Reynolds' "$Re_d$" Number
+
+#### Darcy-Weisbach "$f$" Factor
+
+
+```python
+
+```
+
+### Hazen-Williams
+
+#### Hazen-Williams "C" Factor
+
+#### Hydraulic Radius
+
 
 
 
 ```python
 
 ```
+
+### Chezy-Mannings
+
+#### Mannings "n" 
+
+#### Hydraulic Radius
+
+
+
+
+```python
+
+```
+
+### Fitting (Minor) Losses
 
 ---
 ---
@@ -30,6 +84,7 @@ $$ \bar{V} = \frac{Q}{A} $$
 ### Computational Thinking/Data Science Approach (ENGR 1330)
 
 CT/DS Approach
+
 * State the programming problem
 * Known (Inputs)
 * Unknown (Outputs)
@@ -44,6 +99,7 @@ Build an interface (notebook) that accepts the inputs, calls the function, and r
 
 #### Known (Inputs)
 Engineer will specify: 
+
 * Diameter, D; 
 * Length of pipe, L; 
 * Roughness height, e; 
@@ -65,7 +121,7 @@ Q=-0.965 D^2 \sqrt{\frac{gDh_f}{L}}ln( \frac{k_s}{3.7D}+\frac{1.78\nu}{D\sqrt{\f
 ```python
 #computation engine
 # import built in functions for log, sqrt
-from math import log,sqrt,log
+from math import log,sqrt
 # Define the prototype function
 def jainQ(pipe_diameter,pipe_length,roughness,viscosity,grabity,head_loss):
     egl_slope = head_loss/pipe_length
@@ -136,15 +192,15 @@ while yes == 0:
 ```
 
     Enter Pipe Diameter 
-     2
+     1
     Enter Pipe Length 
-     10560
+     1000
     Enter Pipe Roughness Height 
-     8.5e-5
+     0.0026
     Enter liquid viscosity 
-     1e-5
+     5e-5
     Enter gravitational acceleration constant (unit system appropriate) 
-     32.2
+     32
     Enter head loss 
      40
 
@@ -163,13 +219,13 @@ print ("Head loss : ",head_loss)
 print ("Discharge : ",discharge)
 ```
 
-    Pipe Diameter :  2.0
-    Pipe Length :  10560.0
-    Pipe Roughness Height :  8.5e-05
-    Liquid Viscosity :  1e-05
-    Gravitational acceleration constant :  32.2
+    Pipe Diameter :  1.0
+    Pipe Length :  1000.0
+    Pipe Roughness Height :  0.0026
+    Liquid Viscosity :  5e-05
+    Gravitational acceleration constant :  32.0
     Head loss :  40.0
-    Discharge :  19.8861362976099
+    Discharge :  7.8110495900862835
 
 
 #### Refine the Tool for Generalization
@@ -182,26 +238,26 @@ The refinement step would wrap the three parts above into a single function/note
 ```
 
     Enter Pipe Diameter 
-     2
+     1
     Enter Pipe Length 
-     10560
+     1000
     Enter Pipe Roughness Height 
-     8.5e-5
+     0.0026
     Enter liquid viscosity 
-     1e-5
+     5e-5
     Enter gravitational acceleration constant (unit system appropriate) 
-     32.2
+     32
     Enter head loss 
      40
 
 
-    Pipe Diameter :  2.0
-    Pipe Length :  10560.0
-    Pipe Roughness Height :  8.5e-05
-    Liquid Viscosity :  1e-05
-    Gravitational acceleration constant :  32.2
+    Pipe Diameter :  1.0
+    Pipe Length :  1000.0
+    Pipe Roughness Height :  0.0026
+    Liquid Viscosity :  5e-05
+    Gravitational acceleration constant :  32.0
     Head loss :  40.0
-    Discharge :  19.8861362976099
+    Discharge :  7.8110495900862835
 
 
 Lastly, we can put the script onto a server and access via a web interface.
