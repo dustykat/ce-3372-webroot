@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>ES-7 Network Model in EPANET - CE 3372</title>
+        <title>Lesson 6 Pipeline Hydraulics - CE 3372</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -48,7 +48,7 @@
                             <li >
                                 <a href="../../syllabus/syllabus/">Syllabus</a>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lessons <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -72,12 +72,12 @@
     <a href="../../lesson5/lesson5/">Lesson 5 Pipeline Head Loss</a>
 </li>
                                     
-<li >
-    <a href="../../lesson6/lesson6/">Lesson 6 Pipeline Hydraulics</a>
+<li class="active">
+    <a href="./">Lesson 6 Pipeline Hydraulics</a>
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Exercises <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -97,8 +97,8 @@
     <a href="../../exercise4/ES4/">ES-4 Application of Head Loss Models</a>
 </li>
                                     
-<li class="active">
-    <a href="./">ES-7 Network Model in EPANET</a>
+<li >
+    <a href="../../exercise7/ES7/">ES-7 Network Model in EPANET</a>
 </li>
                                     
 <li >
@@ -127,12 +127,12 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../../exercise4/ES4/">
+                                <a rel="next" href="../../lesson5/lesson5/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../../exercise8/ES8/">
+                                <a rel="prev" href="../../exercise1/ES1/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -144,57 +144,49 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#es-7">ES-7</a></li>
-            <li><a href="#purpose">Purpose:</a></li>
-            <li><a href="#background">Background</a></li>
-            <li><a href="#exercise-1">Exercise 1</a></li>
-            <li><a href="#exercise-2">Exercise 2</a></li>
-            <li><a href="#deliverables">Deliverables:</a></li>
-            <li><a href="#references">References</a></li>
+        <li class="main active"><a href="#ce-3372-water-systems-design">CE 3372 Water Systems Design</a></li>
+            <li><a href="#lesson-6-pipeline-hydraulics">Lesson 6. Pipeline Hydraulics</a></li>
+            <li><a href="#linking-systems">Linking Systems</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="es-7">ES-7</h1>
-<h2 id="purpose">Purpose:</h2>
+<h2 id="ce-3372-water-systems-design">CE 3372 Water Systems Design</h2>
+<h3 id="lesson-6-pipeline-hydraulics">Lesson 6. Pipeline Hydraulics</h3>
+<h4 id="example-steady-discharge-between-reservoirs-using-on-line-tools">Example: Steady Discharge between Reservoirs (using on-line tools)</h4>
+<pre><code class="python">
+</code></pre>
+
+<h3 id="linking-systems">Linking Systems</h3>
+<p>A hydraulic system can be analysed as a set of linked components to make an otherwise complicated system easier to analyze.</p>
 <ul>
-<li>Compute flow distribution in pipeline networks. </li>
-<li>Introduction to use of professional software (EPANET)</li>
-<li>Develop expertise in interpreting output to answer specific hydraulic questions</li>
+<li>Idea is to decompose into smaller (hydraulically) independent parts, analyze the parts then reassemble (integrate) the parts to answer questions about the whole system</li>
 </ul>
-<h2 id="background">Background</h2>
-<p>Figure  1  is  a  five-pipe  network  with  a  water  supply  source  (a  reservoir,  not  shown) connected at Node 1, and demands at Nodes 1-5.<br />
-Table 1 is a list of the relevant pipe and node data.</p>
-<p><img alt="" src="../SimpleNetwork.png" /></p>
-<hr />
-<h2 id="exercise-1">Exercise 1</h2>
-<p>Build an EPANET model, using the Hazen-Williams head loss model of the network. From your preparation, or the completed model:</p>
-<p>a)  Write the node equations of continuity for Nodes 1-4.</p>
-<p>b)  Write the head loss equations for each of the pipes in the system.</p>
-<p>c)  Make a screen capture of the EPANET program showing your network map, with the Node ID and Node Pressures displayed on the map, and with the Pipe ID and Pipe Flow Rates on the map.</p>
-<hr />
-<h2 id="exercise-2">Exercise 2</h2>
-<p>a)  Make a table that lists each node name, node elevation, and the resultant pressurein U.S. Customary units.</p>
-<p>b)  Make a table that lists each pipe name,  length,  diameter,  Hazen-Williams coefficient, and the resultant flow rate in U.S. Customary units.</p>
-<p>c)  Determine the flow rate in each pipe of the network, for the case where the total head at Node 1 is 100 feet.</p>
-<p>d)  Determine the Darcy-Weisbach friction factor in each pipe of the network.</p>
-<p>e)  Using the results of your flow distribution, determine the head loss from Node 1 to Node 4.</p>
-<p>f)  Determine the head at Node 4</p>
-<p>g)  Identify the node with the lowest <strong>pressure</strong> in your solution.</p>
-<h2 id="deliverables">Deliverables:</h2>
-<p>A memorandum-type report with your solution, showing the requested equations, screen captures, tables and head loss calculations.</p>
-<h2 id="references">References</h2>
-<ol>
-<li>
-<p>Rossman,  L.  (2000).   EPANET  2  users  manual.   Technical  Report  EPA/600/R-00/057,U.S. Environmental Protection Agency, National Risk Management Research LaboratoryCincinnati, OH 45268.</p>
-</li>
-<li>
-<p><p> <a href="https://3.137.111.182/ce-3372-webbook/exercise7/ES7.net"> <img src="https://3.137.111.182/ce-3372-webbook/exercise7/easy-button.png" alt="EZ Button Link to ES-7 sample .net input file" style="width:42px;height:42px;"> </a> EZ Button Sample .net file </p></p>
-</li>
-<li>
-<p><p> <a href="https://3.137.111.182/ce-3372-webbook/exercise7/ES7-WS/"> <img src="https://3.137.111.182/ce-3372-webbook/exercise7/easy-button.png" alt="EZ Button Link to ES-7 sample solution" style="width:42px;height:42px;"> </a> EZ Button Solution Sketch </p></p>
-</li>
-</ol></div>
+<h4 id="example-rural-water-supply-to-a-village-school">Example: Rural Water Supply to a Village School</h4>
+<p><img alt="image.png" src="../africa-system.png" /></p>
+<p>The figure is an aerial image of a pipeline system with preliminary engineering sketches of the system (lower left panel) and a detail sketch of the terminal small storage tank (upper right panel). The 3,200 meter long pipeline lifts 25C water ( <script type="math/tex">\rho= 997 kg/m^3</script>,<script type="math/tex">\nu= 8.94 E-7 m^2/s</script>) from a treatment plant on the downstream face of Gulameta Dam through a 127 millimeter high-density polyethylene (HDPE) pipe (ks =0.0015 mm) to a large diameter at-grade cylindrical storage tank. A secondary, 800 meter long pipeline carries water from the large diameter storage tank to a small, cylindrical (D = 1 meter), elevated storage tank at the village school. Both storage tanks have float valves to prevent overflow and maintain the indicated water pool elevations.</p>
+<p>Analyze proposed system to determine anticipated behavior under various situations:</p>
+<ul>
+<li>Float valve fails at school</li>
+<li>Outlet valve accidently left open</li>
+<li>Pump operation under worst failure mode</li>
+<li>Pump fails, time until system fails/drains</li>
+<li>Float valve limited</li>
+<li>Oultet valve limited</li>
+</ul>
+<p><strong>Float Valve at School Fails</strong></p>
+<pre><code class="python">
+</code></pre>
+
+<p><strong>School Outlet Valve Left Open</strong></p>
+<pre><code class="python">
+</code></pre>
+
+<p><strong>Pump System Requirements</strong></p>
+<pre><code class="python">
+</code></pre>
+
+<p><strong>Pump System Fails, Time to Drain</strong></p></div>
         </div>
 
         <footer class="col-md-12">
