@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Lesson 5 Pipeline Head Loss - CE 3372</title>
+        <title>Lesson 14 Hydrology Review - CE 3372</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -68,8 +68,8 @@
     <a href="../../lesson4/lesson4/">Lesson 4 Demand Estimation</a>
 </li>
                                     
-<li class="active">
-    <a href="./">Lesson 5 Pipeline Head Loss</a>
+<li >
+    <a href="../../lesson5/lesson5/">Lesson 5 Pipeline Head Loss</a>
 </li>
                                     
 <li >
@@ -104,8 +104,8 @@
     <a href="../../lesson13/lesson13/">Lesson 13 Stormwater Design Guidelines</a>
 </li>
                                     
-<li >
-    <a href="../../lesson14/lesson14/">Lesson 14 Hydrology Review</a>
+<li class="active">
+    <a href="./">Lesson 14 Hydrology Review</a>
 </li>
                                 </ul>
                             </li>
@@ -159,12 +159,12 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../../lesson4/lesson4/">
+                                <a rel="next" href="../../lesson13/lesson13/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../../lesson6/lesson6/">
+                                <a rel="prev" href="../../exercise1/ES1/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -177,233 +177,25 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#ce-3372-water-systems-design">CE 3372 Water Systems Design</a></li>
-            <li><a href="#lesson-5-pipeline-head-loss-models">Lesson 5. Pipeline Head Loss Models</a></li>
-            <li><a href="#head-loss-models-for-losses-in-closed-conduits">Head Loss Models (for losses in closed conduits)</a></li>
-            <li><a href="#darcy-weisbach">Darcy-Weisbach</a></li>
-            <li><a href="#hazen-williams">Hazen-Williams</a></li>
-            <li><a href="#chezy-mannings">Chezy-Mannings</a></li>
-            <li><a href="#fitting-minor-losses">Fitting (Minor) Losses</a></li>
-        <li class="main "><a href="#-">---</a></li>
-        <li class="main "><a href="#computing-discharge-from-specified-head-loss">Computing Discharge from Specified Head Loss</a></li>
-            <li><a href="#computational-thinkingdata-science-approach-engr-1330">Computational Thinking/Data Science Approach (ENGR 1330)</a></li>
+            <li><a href="#lesson-14-hydrology-review">Lesson 14. Hydrology Review</a></li>
+            <li><a href="#concepts">Concepts</a></li>
+            <li><a href="#design-storms">Design Storms</a></li>
+            <li><a href="#rational-runoff-equation">Rational Runoff Equation</a></li>
+            <li><a href="#nrcs-cn-model">NRCS CN Model</a></li>
+            <li><a href="#infiltration-excess-horton">Infiltration Excess (Horton)</a></li>
+            <li><a href="#green-ampt">Green-Ampt</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
 <h2 id="ce-3372-water-systems-design">CE 3372 Water Systems Design</h2>
-<h3 id="lesson-5-pipeline-head-loss-models">Lesson 5. Pipeline Head Loss Models</h3>
-<p>Water moves from higher to lower energy</p>
-<ul>
-<li>Path of least resistance</li>
-<li>Head is energy per unit weight of a fluid </li>
-<li>
-<p>Pumps are used to add energy to move water to a higher elevation or over a barrier </p>
-</li>
-<li>
-<p>Gravity flow: Change in elevation provides the required energy </p>
-</li>
-<li>Pressure flow: Change in pressure provides the required energy </li>
-</ul>
-<p>Flowing water encounters friction/resistance; hence there is loss of energy along a flow path. 
-The mean section velocity is related to cross sectional flow area and volumetric discharge as:</p>
-<p>
-<script type="math/tex; mode=display"> \bar{V} = \frac{Q}{A} </script>
-</p>
-<h4 id="continunity-at-different-sections">Continunity at Different Sections</h4>
-<h4 id="continunity-at-junctions">Continunity at Junctions</h4>
-<h4 id="energy-equation">Energy Equation</h4>
-<h4 id="example-time-to-drain-a-storage-tank">Example: Time to Drain a Storage Tank</h4>
-<pre><code class="python">
-</code></pre>
-
-<h4 id="example-steady-discharge-between-two-reservoirs">Example: Steady Discharge between Two Reservoirs</h4>
-<pre><code class="python">
-</code></pre>
-
-<h3 id="head-loss-models-for-losses-in-closed-conduits">Head Loss Models (for losses in closed conduits)</h3>
-<h3 id="darcy-weisbach">Darcy-Weisbach</h3>
-<h4 id="reynolds-re_d-number">Reynolds' "<script type="math/tex">Re_d</script>" Number</h4>
-<h4 id="darcy-weisbach-f-factor">Darcy-Weisbach "<script type="math/tex">f</script>" Factor</h4>
-<pre><code class="python">
-</code></pre>
-
-<h3 id="hazen-williams">Hazen-Williams</h3>
-<h4 id="hazen-williams-c-factor">Hazen-Williams "C" Factor</h4>
-<h4 id="hydraulic-radius">Hydraulic Radius</h4>
-<pre><code class="python">
-</code></pre>
-
-<h3 id="chezy-mannings">Chezy-Mannings</h3>
-<h4 id="mannings-n">Mannings "n"</h4>
-<h4 id="hydraulic-radius_1">Hydraulic Radius</h4>
-<pre><code class="python">
-</code></pre>
-
-<h3 id="fitting-minor-losses">Fitting (Minor) Losses</h3>
-<h2 id="-">---</h2>
-<h2 id="computing-discharge-from-specified-head-loss">Computing Discharge from Specified Head Loss</h2>
-<h3 id="computational-thinkingdata-science-approach-engr-1330">Computational Thinking/Data Science Approach (ENGR 1330)</h3>
-<p>CT/DS Approach</p>
-<ul>
-<li>State the programming problem</li>
-<li>Known (Inputs)</li>
-<li>Unknown (Outputs)</li>
-<li>Governing Equation(s)</li>
-<li>Test the tool</li>
-</ul>
-<h4 id="state-the-programming-problem">State the programming problem</h4>
-<p>Build a tool that takes inputs for the Jain equation and produces an estimate of discharge</p>
-<p>Build an interface (notebook) that accepts the inputs, calls the function, and returns the computed discharge</p>
-<h4 id="known-inputs">Known (Inputs)</h4>
-<p>Engineer will specify: </p>
-<ul>
-<li>Diameter, D; </li>
-<li>Length of pipe, L; </li>
-<li>Roughness height, e; </li>
-<li>Viscosity, <script type="math/tex">\nu</script>; </li>
-<li>Gravitational acceleration constant, g;</li>
-<li>Head loss</li>
-</ul>
-<h4 id="unknown-outputs">Unknown (Outputs)</h4>
-<p>The tool will compute and report Discharge, Q.</p>
-<h4 id="governing-equations">Governing Equation(s)</h4>
-<p>A compact form of the equation to be evaluated is
-<script type="math/tex; mode=display">\begin{equation}
-Q=-0.965 D^2 \sqrt{\frac{gDh_f}{L}}ln( \frac{k_s}{3.7D}+\frac{1.78\nu}{D\sqrt{\frac{gDh_f}{L}}} )
-\end{equation}</script>
-</p>
-<h4 id="test-the-tool">Test the tool</h4>
-<pre><code class="python">#computation engine
-# import built in functions for log, sqrt
-from math import log,sqrt
-# Define the prototype function
-def jainQ(pipe_diameter,pipe_length,roughness,viscosity,grabity,head_loss):
-    egl_slope = head_loss/pipe_length
-    t1 = sqrt(grabity*pipe_diameter*egl_slope)
-    t2 = roughness/(3.7*pipe_diameter)
-    t3 = 1.78*viscosity
-    jainQ = (-0.965*pipe_diameter**2)*t1*log(t2 + t3/(pipe_diameter*t1))
-    return jainQ
-</code></pre>
-
-<pre><code class="python"># interface engine
-# Get pipe diameter, use a simple error trap
-yes=0
-while yes == 0:
-    xnow = input(&quot;Enter Pipe Diameter \n&quot;)
-    try:
-        pipe_diameter = float(xnow)
-        yes =1
-    except:
-        print (&quot;Value should be numeric, try again \n&quot;)
-# Get pipe length, use a simple error trap
-yes=0
-while yes == 0:
-    xnow = input(&quot;Enter Pipe Length \n&quot;)
-    try:
-        pipe_length = float(xnow)
-        yes =1
-    except:
-        print (&quot;Value should be numeric, try again \n&quot;)
-# Get roughness, use a simple error trap
-yes=0
-while yes == 0:
-    xnow = input(&quot;Enter Pipe Roughness Height \n&quot;)
-    try:
-        roughness = float(xnow)
-        yes =1
-    except:
-        print (&quot;Value should be numeric, try again \n&quot;)
-# Get viscosity, use a simple error trap
-yes=0
-while yes == 0:
-    xnow = input(&quot;Enter liquid viscosity \n&quot;)
-    try:
-        viscosity = float(xnow)
-        yes =1
-    except:
-        print (&quot;Value should be numeric, try again \n&quot;)
-# Get grabity, use a simple error trap
-yes=0
-while yes == 0:
-    xnow = input(&quot;Enter gravitational acceleration constant (unit system appropriate) \n&quot;)
-    try:
-        grabity = float(xnow)
-        yes =1
-    except:
-        print (&quot;Value should be numeric, try again \n&quot;)
-# Get head loss, use a simple error trap
-yes=0
-while yes == 0:
-    xnow = input(&quot;Enter head loss \n&quot;)
-    try:
-        head_loss = float(xnow)
-        yes =1
-    except:
-        print (&quot;Value should be numeric, try again \n&quot;)
-</code></pre>
-
-<pre><code>Enter Pipe Diameter 
- 1
-Enter Pipe Length 
- 1000
-Enter Pipe Roughness Height 
- 0.0026
-Enter liquid viscosity 
- 5e-5
-Enter gravitational acceleration constant (unit system appropriate) 
- 32
-Enter head loss 
- 40
-</code></pre>
-<pre><code class="python"># now perform computation and construct output
-discharge = jainQ(pipe_diameter,pipe_length,roughness,viscosity,grabity,head_loss)
-# Echo inputs, and outputs
-print (&quot;Pipe Diameter : &quot;, pipe_diameter)
-print (&quot;Pipe Length : &quot;, pipe_length)
-print (&quot;Pipe Roughness Height : &quot;, roughness)
-print (&quot;Liquid Viscosity : &quot;, viscosity)
-print (&quot;Gravitational acceleration constant : &quot;,grabity) 
-print (&quot;Head loss : &quot;,head_loss)
-print (&quot;Discharge : &quot;,discharge)
-</code></pre>
-
-<pre><code>Pipe Diameter :  1.0
-Pipe Length :  1000.0
-Pipe Roughness Height :  0.0026
-Liquid Viscosity :  5e-05
-Gravitational acceleration constant :  32.0
-Head loss :  40.0
-Discharge :  7.8110495900862835
-</code></pre>
-<h4 id="refine-the-tool-for-generalization">Refine the Tool for Generalization</h4>
-<p>The refinement step would wrap the three parts above into a single function/notebook for simple use/reuse. If we save all three parts to a single file, we can access the script as we wish (using a JupyterLab magic function trick below.  The run command is obvious, but the -i means run interactive, and we supply the script name) </p>
-<pre><code class="python">%run -i getQfromH.py
-</code></pre>
-
-<pre><code>Enter Pipe Diameter 
- 1
-Enter Pipe Length 
- 1000
-Enter Pipe Roughness Height 
- 0.0026
-Enter liquid viscosity 
- 5e-5
-Enter gravitational acceleration constant (unit system appropriate) 
- 32
-Enter head loss 
- 40
-
-
-Pipe Diameter :  1.0
-Pipe Length :  1000.0
-Pipe Roughness Height :  0.0026
-Liquid Viscosity :  5e-05
-Gravitational acceleration constant :  32.0
-Head loss :  40.0
-Discharge :  7.8110495900862835
-</code></pre>
-<p>Lastly, we can put the script onto a server and access via a web interface.</p>
+<h3 id="lesson-14-hydrology-review">Lesson 14. Hydrology Review</h3>
+<h3 id="concepts">Concepts</h3>
+<h3 id="design-storms">Design Storms</h3>
+<h3 id="rational-runoff-equation">Rational Runoff Equation</h3>
+<h3 id="nrcs-cn-model">NRCS CN Model</h3>
+<h3 id="infiltration-excess-horton">Infiltration Excess (Horton)</h3>
+<h3 id="green-ampt">Green-Ampt</h3>
 <pre><code class="python">
 </code></pre></div>
         </div>
