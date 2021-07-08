@@ -27,6 +27,12 @@ nav:
      - Lesson 18 Stormwater Collection - Sizing Inlets : lesson18/lesson18.md
      - Lesson 19 Stormwater Collection - Sizing Conduits : lesson19/lesson19.md
      - Lesson 20 SWMM Hydrology : lesson20/lesson20.md
+     - Lesson 21 SWMM Dual-Drainage : lesson21/lesson21.md
+     - Lesson 22 Green Infrastructure : lesson22/lesson22.md
+     - Lesson 23 Detention Ponds : lesson23/lesson23.md
+     - Lesson 24 Outfall Considerations : lesson24/lesson24.md
+     - Lesson 25 Sanitary Sewer Design Guidelines : lesson25/lesson25.md
+     - Lesson 26 Sanitary Sewer Hydraulics : lesson26/lesson26.md
 #- Exercise Pages :      
   - Exercises :     
      - ES-1 Los Angeles Aquaduct: exercise1/ES1.md  
