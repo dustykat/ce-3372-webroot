@@ -17,6 +17,8 @@ nav:
      - Lesson 8 Storage Systems : lesson8/lesson8.md
      - Lesson 9 Network Hydraulics : lesson9/lesson9.md
      - Lesson 10 EPANET Introduction : lesson10/lesson10.md
+     - Lesson 11 EPANET Pumps : lesson11/lesson11.md
+     - Lesson 12 EPANET Extended Period Simulations : lesson12/lesson12.md
 #- Exercise Pages :      
   - Exercises :     
      - ES-1 Los Angeles Aquaduct: exercise1/ES1.md  
