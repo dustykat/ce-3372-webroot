@@ -8,7 +8,7 @@
 - Infiltration
 - SWMM Example
 
-### Readings
+
 
 
 ### Collection Systems
@@ -111,6 +111,20 @@ Some further requirements are:
 
 ![](texasFig4.png)
 
+
+### Readings
+
+1. ["Wastewater Collection Systems" in Land Development Handbook, Ed. S.O. Dewberry, Dewberry Inc., McGraw-Hill](https://3.137.111.182/ce-3372-webroot/3-Readings/WasteWaterCollectionSystems/)
+ 
+2. [DESIGN OF A WASTEWATER COLLECTION SYSTEM FOR THE HISTORICAL CENTER OF PARATY, BRAZIL Choi 2003. Senior's Thesis, Civil and Environmental Engineering, Massachusetts Institute of Technology.](https://3.137.111.182/ce-3372-webroot/3-Readings/Choi2002-MSThesis-MIT/)
+
+3. [Texas Administrative Code - Collection Systems](https://3.137.111.182/ce-3372-webroot/3-Readings/TAC-217C/)
+
+4. [Seattle Public Works - Drainage and Wastewater Criteria](https://www.seattle.gov/Documents/Departments/SPU/Engineering/Public_Edit_v3_Ch8_DrainageWastewater_Final_Redacted.pdf)
+
+5. [Seattle Public Works - Modeling Criteria](https://www.seattle.gov/Documents/Departments/SPU/Engineering/v3_Ch7_DWW%20System%20Modeling_Final.pdf)
+
+6. [AWWA Wastewater Design Tools](https://www.awwa.org/Resources-Tools/Resource-Topics/Wastewater/Wastewater-Collection-Systems)
 
 
 ```python
