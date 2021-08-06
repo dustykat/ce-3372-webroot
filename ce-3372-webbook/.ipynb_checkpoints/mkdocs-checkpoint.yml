@@ -13,6 +13,26 @@ nav:
      - Lesson 4 Demand Estimation : lesson4/lesson4.md
      - Lesson 5 Pipeline Head Loss : lesson5/lesson5.md
      - Lesson 6 Pipeline Hydraulics : lesson6/lesson6.md
+     - Lesson 7 Pumping Systems : lesson7/lesson7.md
+     - Lesson 8 Storage Systems : lesson8/lesson8.md
+     - Lesson 9 Network Hydraulics : lesson9/lesson9.md
+     - Lesson 10 EPANET Introduction : lesson10/lesson10.md
+     - Lesson 11 EPANET Pumps : lesson11/lesson11.md
+     - Lesson 12 EPANET Extended Period Simulations : lesson12/lesson12.md
+     - Lesson 13 Stormwater Design Guidelines : lesson13/lesson13.md
+     - Lesson 14 Hydrology Review : lesson14/lesson14.md
+     - Lesson 15 SWMM Introduction : lesson15/lesson15.md
+     - Lesson 16 Open Channel Hydraulics (Steady) : lesson16/lesson16.md
+     - Lesson 17 Open Channel Hydraulics (Unsteady) : lesson17/lesson17.md
+     - Lesson 18 Stormwater Collection - Sizing Inlets : lesson18/lesson18.md
+     - Lesson 19 Stormwater Collection - Sizing Conduits : lesson19/lesson19.md
+     - Lesson 20 SWMM Hydrology : lesson20/lesson20.md
+     - Lesson 21 SWMM Dual-Drainage : lesson21/lesson21.md
+     - Lesson 22 Green Infrastructure : lesson22/lesson22.md
+     - Lesson 23 Detention Ponds : lesson23/lesson23.md
+     - Lesson 24 Outfall Considerations : lesson24/lesson24.md
+     - Lesson 25 Sanitary Sewer Design Guidelines : lesson25/lesson25.md
+     - Lesson 26 Sanitary Sewer Hydraulics : lesson26/lesson26.md
 #- Exercise Pages :      
   - Exercises :     
      - ES-1 Los Angeles Aquaduct: exercise1/ES1.md  
