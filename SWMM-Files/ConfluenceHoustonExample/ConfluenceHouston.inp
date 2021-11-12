@@ -1,0 +1,1150 @@
+[TITLE]
+;;Project Title/Notes
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CFS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           03/03/2011
+START_TIME           00:00:00
+REPORT_START_DATE    03/03/2011
+REPORT_START_TIME    00:00:00
+END_DATE             03/09/2011
+END_TIME             00:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          01:00:00
+WET_STEP             01:00:00
+DRY_STEP             01:00:00
+ROUTING_STEP         0:00:30 
+RULE_STEP            00:00:00
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         12.566
+MAX_TRIALS           8
+HEAD_TOLERANCE       0.005
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+2                20         0          0          0          0         
+4                31.5       0          0          0          0         
+5                44         0          0          0          0         
+6                43.75      0          0          0          0         
+7                62.5       0          0          0          0         
+8                81.25      0          0          0          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+1                -16        TIMESERIES DSFlowHydro      NO                       
+
+[STORAGE]
+;;Name           Elev.    MaxDepth   InitDepth  Shape      Curve Name/Params            N/A      Fevap    Psi      Ksat     IMD     
+;;-------------- -------- ---------- ----------- ---------- ---------------------------- -------- --------          -------- --------
+3                25       110        0          TABULAR    AllensLanding                0        0       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+1                8                7                2500       0.035      0          0          0          0         
+2                7                6                2500       0.035      0          0          0          0         
+3                6                3                2500       0.035      0          0          0          0         
+4                5                4                2500       0.035      0          0          0          0         
+5                4                3                2500       0.035      0          0          0          0         
+6                3                2                2500       0.035      0          0          0          0         
+7                2                1                2500       0.035      0          0          0          0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+1                IRREGULAR    WhiteOakUpstream 0          0          0          1                    
+2                IRREGULAR    WhiteOakUpstream 0          0          0          1                    
+3                IRREGULAR    WhiteOakUpstream 0          0          0          1                    
+4                IRREGULAR    BuffaloUpstream  0          0          0          1                    
+5                IRREGULAR    BuffaloUpstream  0          0          0          1                    
+6                IRREGULAR    BuffaloBayouDownstream 0          0          0          1                    
+7                IRREGULAR    BuffaloBayouDownstream 0          0          0          1                    
+
+[TRANSECTS]
+;;Transect Data in HEC-2 format
+;
+NC 0.01     0.01     0.01    
+X1 BuffaloUpstream   89       4879.4   5159.2   0.0      0.0      0.0      0.0      0.0     
+GR 46.74    3604.2   46.24    3694.2   43.24    3774.2   41.64    3804.2   40.44    3944.2  
+GR 38.64    4106.5   36.54    4467.3   35.74    4517.3   36.24    4547.3   35.14    4657.3  
+GR 36.54    4727.3   36.42    4737.1   35.81    4786     35.54    4807.3   35.16    4812.69 
+GR 35.16    4812.8   35.15    4812.91  34.84    4817.3   34.54    4818.7   32.74    4828.7  
+GR 30.14    4838.7   34.79    4851.7   34.78    4851.8   33.99    4869.2   29.42    4879.4  
+GR 28.29    4881.9   28.25    4882     28.2     4882.11  28.16    4882.2   17.8     4905.3  
+GR 10.01    4921.7   8.95     4926     8.93     4926.1   8.3      4933.4   11.5     4933.7  
+GR 8.13     4934.6   6.84     4937.4   2.25     4947.4   1.17     4956     0.35     4957.9  
+GR -3       4965.2   -7.73    4983.3   -9.93    4992.6   -10.52   4996.3   -11.52   5002.5  
+GR -5.95    5020.1   -3.96    5027.5   -2.98    5032     -2.92    5032.2   -1.94    5035.5  
+GR 0.34     5042     2.14     5046.9   5.42     5056.7   17.19    5090.6   22.54    5106    
+GR 22.71    5108.9   23.01    5119.5   22.72    5133     23.7     5138.4   23.95    5139.79 
+GR 23.97    5139.9   23.99    5140.01  26.63    5154.6   26.62    5154.7   26       5159.2  
+GR 22.14    5187.6   25.44    5188.7   28.64    5198.7   33.54    5218.7   34.74    5225    
+GR 40.24    5245     40.43    5261.2   40.43    5261.29  40.43    5261.4   40.43    5261.5  
+GR 40.94    5305     40.34    5326.9   40.73    5365.9   40.74    5366.9   40.74    5396.9  
+GR 41.54    5416.9   41.44    5426.9   40.44    5436.8   39.54    5466.8   42.34    5626.8  
+GR 44.74    5666.8   45.64    5706.8   47.24    5768     47.44    5828    
+;
+NC 0.01     0.01     0.01    
+X1 BuffaloBayouDownstream  38       4708.8   5116.8   0.0      0.0      0.0      0.0      0.0     
+GR 42.1     3444.4   38.8     3584.4   38.1     3604.4   38.1     3654.4   31.9     3774.4  
+GR 31.4     3814.4   34       4134.4   35.2     4164.4   34.3     4204.4   35.3     4234.4  
+GR 34.8     4304.4   35.9     4334.4   33.6     4364.4   33       4394.4   30.3     4414.4  
+GR 29.6     4424.4   30.3     4434.4   35.9     4464.4   34.6     4608.8   32       4708.8  
+GR 32.62    4730.2   26.29    4806.4   22.6     4879.1   0.07     4930.6   -9.41    4945.8  
+GR -16.14   4996     -15.3    5029.6   -0.94    5069.5   12.41    5086.1   21.32    5102.5  
+GR 32.62    5116.8   32.34    5127.1   31.8     5128.8   32.2     5148.8   36.6     5158.8  
+GR 41.7     5168.8   47.5     5178.8   48.9     5188.8  
+;
+NC 0.01     0.01     0.01    
+X1 WhiteOakUpstream  122      4477.7   5292.4   0.0      0.0      0.0      0.0      0.0     
+GR 50.48    4247.7   48.13    4257.7   45.44    4267.7   41.1     4277.7   37.37    4287.7  
+GR 33.89    4297.7   32.78    4307.7   32.5     4317.7   32.54    4327.7   32.25    4337.7  
+GR 31.64    4347.7   30.49    4357.7   30.32    4367.7   31.14    4377.7   36.41    4397.7  
+GR 38.57    4407.7   39.65    4417.7   40.3     4427.7   40.71    4467.7   40.4     4477.7  
+GR 38.43    4487.7   36.25    4497.7   33.65    4507.7   30.79    4517.7   28.18    4527.7  
+GR 23.55    4547.7   21.52    4557.7   20.14    4567.7   19.23    4577.7   18.82    4587.7  
+GR 16.53    4617.7   15.86    4651.6   14.61    4731.6   16.1     4801.6   16.11    4851.6  
+GR 15.17    4893.6   15.01    4903.6   13.21    4935.3   12.24    4947.51  12.14    4949.28 
+GR 10.77    4960.01  10.2     4963.39  9.07     4967.88  -0.3     4982.44  -1.72    4984.71 
+GR -2.47    4986.11  -2.94    4987.24  -3.18    4992.7   -3.3     4993.75  -4.3     5000    
+GR -4.1     5000.86  -3.99    5001.13  -3.29    5003.39  -3.11    5008.5   -1.91    5010.89 
+GR -0.74    5013.03  2.47     5019.05  3.92     5021.77  5.69     5025.43  5.79     5026.05 
+GR 7.19     5032     8.14     5035.85  10.81    5043.6   13.97    5063.6   14.42    5073.6  
+GR 14.17    5083.6   14.2     5093.6   15.48    5103.6   20.42    5123.6   28.69    5153.6  
+GR 30.96    5163.6   31.69    5173.6   29.67    5212.4   29.3     5222.4   29.16    5232.4  
+GR 29.62    5242.4   31.89    5252.4   35.02    5262.4   37.34    5272.4   41.72    5292.4  
+GR 45.74    5312.4   47.16    5322.4   47.59    5332.4   47.75    5342.4   47.28    5362.4  
+GR 44.52    5382.4   43.7     5392.4   43.35    5402.4   45.98    5422.4   46.48    5432.4  
+GR 43.71    5492.4   43.02    5502.4   39.7     5532.4   39.06    5542.4   39.08    5552.4  
+GR 39.32    5562.4   40.47    5582.4   38.58    5722.4   39.05    5742.4   38.24    5782.4  
+GR 38.03    5822.4   38.19    5832.4   38.61    5842.4   39.29    5852.4   39.5     5862.4  
+GR 39.41    5872.4   40.78    5942.4   40.39    5972.4   40.47    5982.4   40.98    5992.4  
+GR 42.24    6112.4   42.13    6122.4   41.71    6132.4   41.44    6202.4   42.09    6222.4  
+GR 42.14    6242.4   41.96    6252.4   42.11    6262.4   42.53    6272.4   43.41    6392.4  
+GR 46.12    6472.4   46.47    6521.7  
+
+[INFLOWS]
+;;Node           Constituent      Time Series      Type     Mfactor  Sfactor  Baseline Pattern
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- --------
+5                FLOW             BuffaloUpHydro   FLOW     1.0      1.0      1200    
+8                FLOW             WhiteOakHydro    FLOW     1.0      1.0      12000   
+
+[CURVES]
+;;Name           Type       X-Value    Y-Value   
+;;-------------- ---------- ---------- ----------
+AllensLanding    Storage    0          43560     
+AllensLanding               10         45000     
+AllensLanding               20         50000     
+AllensLanding               30         55000     
+AllensLanding               40         60000     
+AllensLanding               50         70000     
+AllensLanding               60         80000     
+AllensLanding               70         90000     
+AllensLanding               90         120000    
+AllensLanding               100        240000    
+AllensLanding               110        360000    
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+BuffaloUpHydro              0          95        
+BuffaloUpHydro              0.25       104       
+BuffaloUpHydro              0.5        114       
+BuffaloUpHydro              0.75       116       
+BuffaloUpHydro              1          113       
+BuffaloUpHydro              1.25       141       
+BuffaloUpHydro              1.5        126       
+BuffaloUpHydro              1.75       117       
+BuffaloUpHydro              2          96        
+BuffaloUpHydro              2.25       98        
+BuffaloUpHydro              2.5        98        
+BuffaloUpHydro              2.75       102       
+BuffaloUpHydro              3          117       
+BuffaloUpHydro              3.25       94        
+BuffaloUpHydro              3.5        97        
+BuffaloUpHydro              3.75       104       
+BuffaloUpHydro              4          103       
+BuffaloUpHydro              4.25       113       
+BuffaloUpHydro              4.5        115       
+BuffaloUpHydro              4.75       117       
+BuffaloUpHydro              5          116       
+BuffaloUpHydro              5.25       99        
+BuffaloUpHydro              5.5        108       
+BuffaloUpHydro              5.75       110       
+BuffaloUpHydro              6          92        
+BuffaloUpHydro              6.25       99        
+BuffaloUpHydro              6.5        86        
+BuffaloUpHydro              6.75       106       
+BuffaloUpHydro              7          109       
+BuffaloUpHydro              7.25       95        
+BuffaloUpHydro              7.5        106       
+BuffaloUpHydro              7.75       99        
+BuffaloUpHydro              8          99        
+BuffaloUpHydro              8.25       99        
+BuffaloUpHydro              8.5        98        
+BuffaloUpHydro              8.75       98        
+BuffaloUpHydro              9          98        
+BuffaloUpHydro              9.25       100       
+BuffaloUpHydro              9.5        106       
+BuffaloUpHydro              9.75       125       
+BuffaloUpHydro              10         141       
+BuffaloUpHydro              10.25      138       
+BuffaloUpHydro              10.5       151       
+BuffaloUpHydro              10.75      184       
+BuffaloUpHydro              11         262       
+BuffaloUpHydro              11.25      369       
+BuffaloUpHydro              11.5       524       
+BuffaloUpHydro              11.75      689       
+BuffaloUpHydro              12         898       
+BuffaloUpHydro              12.25      1200      
+BuffaloUpHydro              12.5       1390      
+BuffaloUpHydro              12.75      1640      
+BuffaloUpHydro              13         2060      
+BuffaloUpHydro              13.25      3170      
+BuffaloUpHydro              13.5       4570      
+BuffaloUpHydro              13.75      5670      
+BuffaloUpHydro              14         6520      
+BuffaloUpHydro              14.25      7600      
+BuffaloUpHydro              14.5       8420      
+BuffaloUpHydro              14.75      9290      
+BuffaloUpHydro              15         9754      
+BuffaloUpHydro              15.25      10242     
+BuffaloUpHydro              15.5       10754     
+BuffaloUpHydro              15.75      11292     
+BuffaloUpHydro              16         11856     
+BuffaloUpHydro              16.25      11708     
+BuffaloUpHydro              16.5       11562     
+BuffaloUpHydro              16.75      11417     
+BuffaloUpHydro              17         11274     
+BuffaloUpHydro              17.25      11133     
+BuffaloUpHydro              17.5       10994     
+BuffaloUpHydro              17.75      10857     
+BuffaloUpHydro              18         10721     
+BuffaloUpHydro              18.25      10587     
+BuffaloUpHydro              18.5       10455     
+BuffaloUpHydro              18.75      10324     
+BuffaloUpHydro              19         10195     
+BuffaloUpHydro              19.25      10068     
+BuffaloUpHydro              19.5       9942      
+BuffaloUpHydro              19.75      9817      
+BuffaloUpHydro              20         9910      
+BuffaloUpHydro              20.25      9520      
+BuffaloUpHydro              20.5       9090      
+BuffaloUpHydro              20.75      8600      
+BuffaloUpHydro              21         8140      
+BuffaloUpHydro              21.25      7700      
+BuffaloUpHydro              21.5       7250      
+BuffaloUpHydro              21.75      6790      
+BuffaloUpHydro              22         6400      
+BuffaloUpHydro              22.25      6030      
+BuffaloUpHydro              22.5       5690      
+BuffaloUpHydro              22.75      5400      
+BuffaloUpHydro              23         5100      
+BuffaloUpHydro              23.25      4900      
+BuffaloUpHydro              23.5       4690      
+BuffaloUpHydro              23.75      4510      
+BuffaloUpHydro              24         4330      
+BuffaloUpHydro              24.25      4170      
+BuffaloUpHydro              24.5       4010      
+BuffaloUpHydro              24.75      3860      
+BuffaloUpHydro              25         3720      
+BuffaloUpHydro              25.25      3570      
+BuffaloUpHydro              25.5       3450      
+BuffaloUpHydro              25.75      3320      
+BuffaloUpHydro              26         3190      
+BuffaloUpHydro              26.25      3090      
+BuffaloUpHydro              26.5       2980      
+BuffaloUpHydro              26.75      2870      
+BuffaloUpHydro              27         2780      
+BuffaloUpHydro              27.25      2680      
+BuffaloUpHydro              27.5       2580      
+BuffaloUpHydro              27.75      2500      
+BuffaloUpHydro              28         2420      
+BuffaloUpHydro              28.25      2300      
+BuffaloUpHydro              28.5       2270      
+BuffaloUpHydro              28.75      2210      
+BuffaloUpHydro              29         2140      
+BuffaloUpHydro              29.25      2070      
+BuffaloUpHydro              29.5       2010      
+BuffaloUpHydro              29.75      1950      
+BuffaloUpHydro              30         1900      
+BuffaloUpHydro              30.25      1840      
+BuffaloUpHydro              30.5       1790      
+BuffaloUpHydro              30.75      1740      
+BuffaloUpHydro              31         1700      
+BuffaloUpHydro              31.25      1650      
+BuffaloUpHydro              31.5       1610      
+BuffaloUpHydro              31.75      1570      
+BuffaloUpHydro              32         1520      
+BuffaloUpHydro              32.25      1490      
+BuffaloUpHydro              32.5       1460      
+BuffaloUpHydro              32.75      1420      
+BuffaloUpHydro              33         1390      
+BuffaloUpHydro              33.25      1350      
+BuffaloUpHydro              33.5       1320      
+BuffaloUpHydro              33.75      1290      
+BuffaloUpHydro              34         1260      
+BuffaloUpHydro              34.25      1230      
+BuffaloUpHydro              34.5       1200      
+BuffaloUpHydro              34.75      1180      
+BuffaloUpHydro              35         1150      
+BuffaloUpHydro              35.25      1100      
+BuffaloUpHydro              35.5       1100      
+BuffaloUpHydro              35.75      1080      
+BuffaloUpHydro              36         1060      
+BuffaloUpHydro              36.25      1030      
+BuffaloUpHydro              36.5       1000      
+BuffaloUpHydro              36.75      999       
+BuffaloUpHydro              37         981       
+BuffaloUpHydro              37.25      960       
+BuffaloUpHydro              37.5       939       
+BuffaloUpHydro              37.75      918       
+BuffaloUpHydro              38         898       
+BuffaloUpHydro              38.25      881       
+BuffaloUpHydro              38.5       869       
+BuffaloUpHydro              38.75      849       
+BuffaloUpHydro              39         829       
+BuffaloUpHydro              39.25      817       
+BuffaloUpHydro              39.5       802       
+BuffaloUpHydro              39.75      786       
+BuffaloUpHydro              40         775       
+BuffaloUpHydro              40.25      759       
+BuffaloUpHydro              40.5       752       
+BuffaloUpHydro              40.75      744       
+BuffaloUpHydro              41         729       
+BuffaloUpHydro              41.25      711       
+BuffaloUpHydro              41.5       700       
+BuffaloUpHydro              41.75      689       
+BuffaloUpHydro              42         678       
+BuffaloUpHydro              42.25      671       
+BuffaloUpHydro              42.5       664       
+BuffaloUpHydro              42.75      652       
+BuffaloUpHydro              43         645       
+BuffaloUpHydro              43.25      637       
+BuffaloUpHydro              43.5       629       
+BuffaloUpHydro              43.75      614       
+BuffaloUpHydro              44         607       
+BuffaloUpHydro              44.25      599       
+BuffaloUpHydro              44.5       588       
+BuffaloUpHydro              44.75      581       
+BuffaloUpHydro              45         570       
+BuffaloUpHydro              45.25      563       
+BuffaloUpHydro              45.5       556       
+BuffaloUpHydro              45.75      545       
+BuffaloUpHydro              46         538       
+BuffaloUpHydro              46.25      531       
+BuffaloUpHydro              46.5       524       
+BuffaloUpHydro              46.75      514       
+BuffaloUpHydro              47         507       
+BuffaloUpHydro              47.25      500       
+BuffaloUpHydro              47.5       493       
+BuffaloUpHydro              47.75      487       
+BuffaloUpHydro              48         485       
+BuffaloUpHydro              48.25      473       
+BuffaloUpHydro              48.5       467       
+BuffaloUpHydro              48.75      460       
+BuffaloUpHydro              49         454       
+BuffaloUpHydro              49.25      447       
+BuffaloUpHydro              49.5       441       
+BuffaloUpHydro              49.75      437       
+BuffaloUpHydro              50         428       
+BuffaloUpHydro              50.25      422       
+BuffaloUpHydro              50.5       415       
+BuffaloUpHydro              50.75      412       
+BuffaloUpHydro              51         406       
+BuffaloUpHydro              51.25      400       
+BuffaloUpHydro              51.5       394       
+BuffaloUpHydro              51.75      388       
+BuffaloUpHydro              52         384       
+BuffaloUpHydro              52.25      379       
+BuffaloUpHydro              52.5       373       
+BuffaloUpHydro              52.75      369       
+BuffaloUpHydro              53         366       
+BuffaloUpHydro              53.25      360       
+BuffaloUpHydro              53.5       357       
+BuffaloUpHydro              53.75      354       
+BuffaloUpHydro              54         351       
+BuffaloUpHydro              54.25      345       
+BuffaloUpHydro              54.5       339       
+BuffaloUpHydro              54.75      339       
+BuffaloUpHydro              55         337       
+BuffaloUpHydro              55.25      334       
+BuffaloUpHydro              55.5       331       
+BuffaloUpHydro              55.75      331       
+BuffaloUpHydro              56         328       
+BuffaloUpHydro              56.25      328       
+BuffaloUpHydro              56.5       323       
+BuffaloUpHydro              56.75      323       
+BuffaloUpHydro              57         322       
+BuffaloUpHydro              57.25      319       
+BuffaloUpHydro              57.5       319       
+BuffaloUpHydro              57.75      316       
+BuffaloUpHydro              58         312       
+BuffaloUpHydro              58.25      312       
+BuffaloUpHydro              58.5       312       
+BuffaloUpHydro              58.75      309       
+BuffaloUpHydro              59         306       
+BuffaloUpHydro              59.25      306       
+BuffaloUpHydro              59.5       306       
+BuffaloUpHydro              59.75      303       
+BuffaloUpHydro              60         303       
+BuffaloUpHydro              60.25      303       
+BuffaloUpHydro              60.5       303       
+BuffaloUpHydro              60.75      303       
+BuffaloUpHydro              61         300       
+BuffaloUpHydro              61.25      297       
+BuffaloUpHydro              61.5       294       
+BuffaloUpHydro              61.75      291       
+BuffaloUpHydro              62         285       
+BuffaloUpHydro              62.25      282       
+BuffaloUpHydro              62.5       279       
+BuffaloUpHydro              62.75      276       
+BuffaloUpHydro              63         274       
+BuffaloUpHydro              63.25      271       
+BuffaloUpHydro              63.5       271       
+BuffaloUpHydro              63.75      268       
+BuffaloUpHydro              64         268       
+BuffaloUpHydro              64.25      268       
+BuffaloUpHydro              64.5       268       
+BuffaloUpHydro              64.75      263       
+BuffaloUpHydro              65         262       
+BuffaloUpHydro              65.25      258       
+BuffaloUpHydro              65.5       253       
+BuffaloUpHydro              65.75      252       
+BuffaloUpHydro              66         248       
+BuffaloUpHydro              66.25      245       
+BuffaloUpHydro              66.5       245       
+BuffaloUpHydro              66.75      242       
+BuffaloUpHydro              67         239       
+BuffaloUpHydro              67.25      239       
+BuffaloUpHydro              67.5       239       
+BuffaloUpHydro              67.75      236       
+BuffaloUpHydro              68         236       
+BuffaloUpHydro              68.25      236       
+BuffaloUpHydro              68.5       233       
+BuffaloUpHydro              68.75      233       
+BuffaloUpHydro              69         230       
+BuffaloUpHydro              69.25      230       
+BuffaloUpHydro              69.5       230       
+BuffaloUpHydro              69.75      227       
+BuffaloUpHydro              70         227       
+BuffaloUpHydro              70.25      227       
+BuffaloUpHydro              70.5       223       
+BuffaloUpHydro              70.75      223       
+BuffaloUpHydro              71         220       
+BuffaloUpHydro              71.25      220       
+BuffaloUpHydro              71.5       217       
+BuffaloUpHydro              71.75      217       
+BuffaloUpHydro              72         215       
+BuffaloUpHydro              72.25      215       
+BuffaloUpHydro              72.5       212       
+BuffaloUpHydro              72.75      209       
+BuffaloUpHydro              73         206       
+BuffaloUpHydro              73.25      206       
+BuffaloUpHydro              73.5       202       
+BuffaloUpHydro              73.75      200       
+BuffaloUpHydro              74         200       
+BuffaloUpHydro              74.25      193       
+BuffaloUpHydro              74.5       193       
+BuffaloUpHydro              74.75      187       
+BuffaloUpHydro              75         184       
+BuffaloUpHydro              75.25      184       
+BuffaloUpHydro              75.5       181       
+BuffaloUpHydro              75.75      178       
+BuffaloUpHydro              76         175       
+BuffaloUpHydro              76.25      175       
+BuffaloUpHydro              76.5       172       
+BuffaloUpHydro              76.75      172       
+BuffaloUpHydro              77         169       
+BuffaloUpHydro              77.25      169       
+BuffaloUpHydro              77.5       166       
+BuffaloUpHydro              77.75      166       
+BuffaloUpHydro              78         166       
+BuffaloUpHydro              78.25      166       
+BuffaloUpHydro              78.5       166       
+BuffaloUpHydro              78.75      163       
+BuffaloUpHydro              79         163       
+BuffaloUpHydro              79.25      160       
+BuffaloUpHydro              79.5       160       
+BuffaloUpHydro              79.75      160       
+BuffaloUpHydro              80         160       
+BuffaloUpHydro              80.25      163       
+BuffaloUpHydro              80.5       166       
+BuffaloUpHydro              80.75      163       
+BuffaloUpHydro              81         163       
+BuffaloUpHydro              81.25      163       
+BuffaloUpHydro              81.5       163       
+BuffaloUpHydro              81.75      163       
+BuffaloUpHydro              82         163       
+BuffaloUpHydro              82.25      163       
+BuffaloUpHydro              82.5       163       
+BuffaloUpHydro              82.75      166       
+BuffaloUpHydro              83         169       
+BuffaloUpHydro              83.25      172       
+BuffaloUpHydro              83.5       175       
+BuffaloUpHydro              83.75      181       
+BuffaloUpHydro              84         184       
+BuffaloUpHydro              84.25      187       
+BuffaloUpHydro              84.5       190       
+BuffaloUpHydro              84.75      190       
+BuffaloUpHydro              85         193       
+BuffaloUpHydro              85.25      190       
+BuffaloUpHydro              85.5       190       
+BuffaloUpHydro              85.75      190       
+BuffaloUpHydro              86         187       
+BuffaloUpHydro              86.25      187       
+BuffaloUpHydro              86.5       184       
+BuffaloUpHydro              86.75      181       
+BuffaloUpHydro              87         181       
+BuffaloUpHydro              87.25      181       
+BuffaloUpHydro              87.5       178       
+BuffaloUpHydro              87.75      178       
+BuffaloUpHydro              88         178       
+BuffaloUpHydro              88.25      175       
+BuffaloUpHydro              88.5       175       
+BuffaloUpHydro              88.75      175       
+BuffaloUpHydro              89         172       
+BuffaloUpHydro              89.25      172       
+BuffaloUpHydro              89.5       172       
+BuffaloUpHydro              89.75      166       
+BuffaloUpHydro              90         166       
+BuffaloUpHydro              90.25      166       
+BuffaloUpHydro              90.5       163       
+BuffaloUpHydro              90.75      163       
+BuffaloUpHydro              91         160       
+BuffaloUpHydro              91.25      160       
+BuffaloUpHydro              91.5       157       
+BuffaloUpHydro              91.75      157       
+BuffaloUpHydro              92         157       
+BuffaloUpHydro              92.25      157       
+BuffaloUpHydro              92.5       155       
+BuffaloUpHydro              92.75      155       
+BuffaloUpHydro              93         157       
+BuffaloUpHydro              93.25      160       
+BuffaloUpHydro              93.5       160       
+BuffaloUpHydro              93.75      163       
+BuffaloUpHydro              94         163       
+BuffaloUpHydro              94.25      163       
+BuffaloUpHydro              94.5       163       
+BuffaloUpHydro              94.75      160       
+BuffaloUpHydro              95         160       
+BuffaloUpHydro              95.25      157       
+BuffaloUpHydro              95.5       157       
+BuffaloUpHydro              95.75      155       
+;
+WhiteOakHydro               0          228       
+WhiteOakHydro               0.5        197       
+WhiteOakHydro               1          199       
+WhiteOakHydro               1.5        203       
+WhiteOakHydro               2          195       
+WhiteOakHydro               2.5        192       
+WhiteOakHydro               3          189       
+WhiteOakHydro               3.5        173       
+WhiteOakHydro               4          168       
+WhiteOakHydro               4.5        161       
+WhiteOakHydro               5          156       
+WhiteOakHydro               5.5        156       
+WhiteOakHydro               6          168       
+WhiteOakHydro               6.5        186       
+WhiteOakHydro               7          250       
+WhiteOakHydro               7.5        307       
+WhiteOakHydro               8          406       
+WhiteOakHydro               8.5        506       
+WhiteOakHydro               9          580       
+WhiteOakHydro               9.5        641       
+WhiteOakHydro               10         653       
+WhiteOakHydro               10.5       758       
+WhiteOakHydro               11         916       
+WhiteOakHydro               11.5       1020      
+WhiteOakHydro               12         1060      
+WhiteOakHydro               12.5       986       
+WhiteOakHydro               13         945       
+WhiteOakHydro               13.5       880       
+WhiteOakHydro               14         842       
+WhiteOakHydro               14.5       842       
+WhiteOakHydro               15         831       
+WhiteOakHydro               15.5       862       
+WhiteOakHydro               16         982       
+WhiteOakHydro               16.5       1300      
+WhiteOakHydro               17         2510      
+WhiteOakHydro               17.5       5020      
+WhiteOakHydro               18         7110      
+WhiteOakHydro               18.5       8940      
+WhiteOakHydro               30         9110      
+WhiteOakHydro               30.5       8160      
+WhiteOakHydro               31         7270      
+WhiteOakHydro               31.5       6400      
+WhiteOakHydro               32         5570      
+WhiteOakHydro               32.5       4840      
+WhiteOakHydro               33         4240      
+WhiteOakHydro               33.5       3710      
+WhiteOakHydro               34         3270      
+WhiteOakHydro               34.5       2870      
+WhiteOakHydro               35         2590      
+WhiteOakHydro               35.5       2300      
+WhiteOakHydro               36         2130      
+WhiteOakHydro               36.5       1990      
+WhiteOakHydro               37         1890      
+WhiteOakHydro               37.5       1790      
+WhiteOakHydro               38         1730      
+WhiteOakHydro               38.5       1650      
+WhiteOakHydro               39         1620      
+WhiteOakHydro               39.5       1570      
+WhiteOakHydro               40         1510      
+WhiteOakHydro               40.5       1450      
+WhiteOakHydro               41         1400      
+WhiteOakHydro               41.5       1350      
+WhiteOakHydro               42         1300      
+WhiteOakHydro               42.5       1280      
+WhiteOakHydro               43         1220      
+WhiteOakHydro               43.5       1170      
+WhiteOakHydro               44         1130      
+WhiteOakHydro               44.5       1080      
+WhiteOakHydro               45         1060      
+WhiteOakHydro               45.5       1030      
+WhiteOakHydro               46         1010      
+WhiteOakHydro               46.5       967       
+WhiteOakHydro               47         948       
+WhiteOakHydro               47.5       905       
+WhiteOakHydro               48         880       
+WhiteOakHydro               48.5       842       
+WhiteOakHydro               49         842       
+WhiteOakHydro               49.5       808       
+WhiteOakHydro               50         775       
+WhiteOakHydro               50.5       784       
+WhiteOakHydro               51         765       
+WhiteOakHydro               51.5       755       
+WhiteOakHydro               52         742       
+WhiteOakHydro               52.5       723       
+WhiteOakHydro               53         701       
+WhiteOakHydro               53.5       689       
+WhiteOakHydro               54         665       
+WhiteOakHydro               54.5       656       
+WhiteOakHydro               55         647       
+WhiteOakHydro               55.5       636       
+WhiteOakHydro               56         618       
+WhiteOakHydro               56.5       596       
+WhiteOakHydro               57         585       
+WhiteOakHydro               57.5       574       
+WhiteOakHydro               58         558       
+WhiteOakHydro               58.5       539       
+WhiteOakHydro               59         536       
+WhiteOakHydro               59.5       521       
+WhiteOakHydro               60         506       
+WhiteOakHydro               60.5       503       
+WhiteOakHydro               61         491       
+WhiteOakHydro               61.5       485       
+WhiteOakHydro               62         482       
+WhiteOakHydro               62.5       468       
+WhiteOakHydro               63         462       
+WhiteOakHydro               63.5       451       
+WhiteOakHydro               64         438       
+WhiteOakHydro               64.5       435       
+WhiteOakHydro               65         435       
+WhiteOakHydro               65.5       435       
+WhiteOakHydro               66         438       
+WhiteOakHydro               66.5       448       
+WhiteOakHydro               67         448       
+WhiteOakHydro               67.5       435       
+WhiteOakHydro               68         419       
+WhiteOakHydro               68.5       391       
+WhiteOakHydro               69         374       
+WhiteOakHydro               69.5       369       
+WhiteOakHydro               70         361       
+WhiteOakHydro               70.5       355       
+WhiteOakHydro               71         353       
+WhiteOakHydro               71.5       342       
+WhiteOakHydro               72         340       
+WhiteOakHydro               72.5       335       
+WhiteOakHydro               73         337       
+WhiteOakHydro               73.5       345       
+WhiteOakHydro               74         342       
+WhiteOakHydro               74.5       337       
+WhiteOakHydro               75         337       
+WhiteOakHydro               75.5       331       
+WhiteOakHydro               76         327       
+WhiteOakHydro               76.5       325       
+WhiteOakHydro               77         320       
+WhiteOakHydro               77.5       304       
+WhiteOakHydro               78         294       
+WhiteOakHydro               78.5       299       
+WhiteOakHydro               79         268       
+WhiteOakHydro               79.5       260       
+WhiteOakHydro               80         250       
+WhiteOakHydro               80.5       239       
+WhiteOakHydro               81         223       
+;
+DSFlowHydro                 0          2.80609664
+DSFlowHydro                 0.5        2.71409536
+DSFlowHydro                 1          2.71984784
+DSFlowHydro                 1.5        2.73135184
+DSFlowHydro                 2          2.70546604
+DSFlowHydro                 2.5        2.696836  
+DSFlowHydro                 3          2.68820524
+DSFlowHydro                 3.5        2.64791884
+DSFlowHydro                 4          2.65079696
+DSFlowHydro                 4.5        2.68532816
+DSFlowHydro                 5          2.71697164
+DSFlowHydro                 5.5        2.70834256
+DSFlowHydro                 6          2.78022956
+DSFlowHydro                 6.5        2.926724  
+DSFlowHydro                 7          3.33351424
+DSFlowHydro                 7.5        3.80132096
+DSFlowHydro                 8          4.521604  
+DSFlowHydro                 8.5        5.267579  
+DSFlowHydro                 9          6.05802064
+DSFlowHydro                 9.5        7.06252876
+DSFlowHydro                 10         7.61694604
+DSFlowHydro                 10.5       8.58338384
+DSFlowHydro                 11         10.13533696
+DSFlowHydro                 11.5       13.307956 
+DSFlowHydro                 12         16.918324 
+DSFlowHydro                 12.5       19.38950656
+DSFlowHydro                 13         21.278651 
+DSFlowHydro                 13.5       23.574784 
+DSFlowHydro                 14         25.28761424
+DSFlowHydro                 14.5       27.13570304
+DSFlowHydro                 15         4.241505895196
+DSFlowHydro                 15.5       4.32930938143516
+DSFlowHydro                 16         4.66845807583516
+DSFlowHydro                 16.5       5.56163355199424
+DSFlowHydro                 17         8.88623108959324
+DSFlowHydro                 17.5       15.409221475991
+DSFlowHydro                 18         20.4561532991898
+DSFlowHydro                 18.5       24.5882931415884
+DSFlowHydro                 19         24.958555081587
+DSFlowHydro                 19.5       22.8598186967856
+DSFlowHydro                 20         20.828130367984
+DSFlowHydro                 20.5       18.780847759984
+DSFlowHydro                 21         16.771253087984
+DSFlowHydro                 21.5       14.9582287687824
+DSFlowHydro                 22         13.4361497767824
+DSFlowHydro                 22.5       12.0676906671824
+DSFlowHydro                 23         10.9145394063824
+DSFlowHydro                 23.5       9.85278007838236
+DSFlowHydro                 24         9.10193254878236
+DSFlowHydro                 24.5       8.31765703598236
+DSFlowHydro                 25         7.85478132158236
+DSFlowHydro                 25.5       7.47185355678236
+DSFlowHydro                 26         7.19737372478236
+DSFlowHydro                 26.5       6.922091135984
+DSFlowHydro                 27         6.756539231984
+DSFlowHydro                 27.5       6.53535259198556
+DSFlowHydro                 28         6.45227663758556
+DSFlowHydro                 28.5       6.31365671358556
+DSFlowHydro                 29         6.14704602558704
+DSFlowHydro                 29.5       5.98015011198704
+DSFlowHydro                 30         5.84085018398704
+DSFlowHydro                 30.5       5.70135025598704
+DSFlowHydro                 31         5.56165032798704
+DSFlowHydro                 31.5       5.50571435678704
+DSFlowHydro                 32         5.33771444318704
+DSFlowHydro                 32.5       5.19749170878844
+DSFlowHydro                 33         5.08517176318844
+DSFlowHydro                 33.5       4.94458901758976
+DSFlowHydro                 34         4.888298227991
+DSFlowHydro                 34.5       4.803806263991
+DSFlowHydro                 35         4.74743546879216
+DSFlowHydro                 35.5       4.62613595695216
+DSFlowHydro                 36         4.57248855407324
+DSFlowHydro                 36.5       4.45097575879324
+DSFlowHydro                 37         4.38025795519424
+DSFlowHydro                 37.5       4.27267543167424
+DSFlowHydro                 38         4.27267259903516
+DSFlowHydro                 38.5       4.17631662895516
+DSFlowHydro                 39         4.08270621799516
+DSFlowHydro                 39.5       4.108242132796
+DSFlowHydro                 40         28.258475 
+DSFlowHydro                 40.5       27.433675 
+DSFlowHydro                 41         26.50527104
+DSFlowHydro                 41.5       25.41916684
+DSFlowHydro                 42         24.37156876
+DSFlowHydro                 42.5       23.37228716
+DSFlowHydro                 43         22.306811 
+DSFlowHydro                 43.5       21.23488336
+DSFlowHydro                 44         20.30909164
+DSFlowHydro                 44.5       19.41317776
+DSFlowHydro                 45         18.56076544
+DSFlowHydro                 45.5       17.80951936
+DSFlowHydro                 46         17.052931 
+DSFlowHydro                 46.5       16.53521296
+DSFlowHydro                 47         15.97673984
+DSFlowHydro                 47.5       15.48160396
+DSFlowHydro                 48         15.02348176
+DSFlowHydro                 48.5       14.58288076
+DSFlowHydro                 49         14.13982976
+DSFlowHydro                 49.5       13.75046924
+DSFlowHydro                 50         13.36179916
+DSFlowHydro                 50.5       12.960979 
+DSFlowHydro                 51         12.64357504
+DSFlowHydro                 51.5       12.27044224
+DSFlowHydro                 52         11.91651584
+DSFlowHydro                 52.5       11.62655276
+DSFlowHydro                 53         11.30409104
+DSFlowHydro                 53.5       11.006779 
+DSFlowHydro                 54         10.769251 
+DSFlowHydro                 54.5       10.504571 
+DSFlowHydro                 55         10.24706704
+DSFlowHydro                 55.5       10.06077184
+DSFlowHydro                 56         9.84738304
+DSFlowHydro                 56.5       9.491491  
+DSFlowHydro                 57         9.36807116
+DSFlowHydro                 57.5       9.13149196
+DSFlowHydro                 58         8.89699216
+DSFlowHydro                 58.5       8.69435116
+DSFlowHydro                 59         8.51023436
+DSFlowHydro                 59.5       8.331179  
+DSFlowHydro                 60         8.18985964
+DSFlowHydro                 60.5       7.99655504
+DSFlowHydro                 61         7.854724  
+DSFlowHydro                 61.5       7.704475  
+DSFlowHydro                 62         7.60052524
+DSFlowHydro                 62.5       7.485499  
+DSFlowHydro                 63         7.36758784
+DSFlowHydro                 63.5       7.24403404
+DSFlowHydro                 64         7.10656204
+DSFlowHydro                 64.5       7.00745836
+DSFlowHydro                 65         6.91376524
+DSFlowHydro                 65.5       6.797899  
+DSFlowHydro                 66         6.701236  
+DSFlowHydro                 66.5       6.54637136
+DSFlowHydro                 67         6.43560016
+DSFlowHydro                 67.5       6.36630316
+DSFlowHydro                 68         6.19700864
+DSFlowHydro                 68.5       6.091396  
+DSFlowHydro                 69         5.9801    
+DSFlowHydro                 69.5       5.89375756
+DSFlowHydro                 70         5.76549484
+DSFlowHydro                 70.5       5.62309264
+DSFlowHydro                 71         5.62309264
+DSFlowHydro                 71.5       5.56719184
+DSFlowHydro                 72         5.51125904
+DSFlowHydro                 72.5       5.42729984
+DSFlowHydro                 73         5.34326864
+DSFlowHydro                 73.5       5.34046636
+DSFlowHydro                 74         5.29001164
+DSFlowHydro                 74.5       5.23111504
+DSFlowHydro                 75         5.17218316
+DSFlowHydro                 75.5       5.113216  
+DSFlowHydro                 76         5.057024  
+DSFlowHydro                 76.5       5.00923564
+DSFlowHydro                 77         4.97548876
+DSFlowHydro                 77.5       4.91921836
+DSFlowHydro                 78         4.86291596
+DSFlowHydro                 78.5       4.82911916
+DSFlowHydro                 79         4.78685696
+DSFlowHydro                 79.5       4.74175744
+DSFlowHydro                 80         4.71073964
+DSFlowHydro                 80.5       4.66560556
+DSFlowHydro                 81         4.64585296
+DSFlowHydro                 81.5       4.62327376
+DSFlowHydro                 82         4.58092396
+DSFlowHydro                 82.5       4.53008044
+DSFlowHydro                 83         4.49899664
+DSFlowHydro                 83.5       4.46790316
+DSFlowHydro                 84         4.4368    
+DSFlowHydro                 84.5       4.41700204
+DSFlowHydro                 85         4.39720016
+DSFlowHydro                 85.5       4.36324496
+DSFlowHydro                 86         4.34343244
+DSFlowHydro                 86.5       4.32078476
+DSFlowHydro                 87         4.29813196
+DSFlowHydro                 87.5       4.25564416
+DSFlowHydro                 88         4.23581036
+DSFlowHydro                 88.5       4.21313836
+DSFlowHydro                 89         4.181956  
+DSFlowHydro                 89.5       4.16210764
+DSFlowHydro                 90         4.13090944
+DSFlowHydro                 90.5       4.111051  
+DSFlowHydro                 91         4.09118864
+DSFlowHydro                 91.5       4.05996844
+DSFlowHydro                 92         4.040096  
+DSFlowHydro                 92.5       4.02021964
+DSFlowHydro                 93         4.00033936
+DSFlowHydro                 93.5       3.97193216
+DSFlowHydro                 94         3.95204236
+DSFlowHydro                 94.5       3.93214864
+DSFlowHydro                 95         3.912251  
+DSFlowHydro                 95.5       3.89519276
+DSFlowHydro                 96         3.88950604
+DSFlowHydro                 96.5       3.855379  
+DSFlowHydro                 97         3.83831116
+DSFlowHydro                 97.5       3.81839504
+DSFlowHydro                 98         3.80132096
+DSFlowHydro                 98.5       3.78139756
+DSFlowHydro                 99         3.76431724
+DSFlowHydro                 99.5       3.75292876
+DSFlowHydro                 100        3.7273    
+DSFlowHydro                 100.5      3.71021056
+DSFlowHydro                 101        3.69026924
+DSFlowHydro                 101.5      3.68172176
+DSFlowHydro                 102        3.66462464
+DSFlowHydro                 102.5      3.64752464
+DSFlowHydro                 103        3.63042176
+DSFlowHydro                 103.5      3.613316  
+DSFlowHydro                 104        3.60191056
+DSFlowHydro                 104.5      3.58765196
+DSFlowHydro                 105        3.570539  
+DSFlowHydro                 105.5      3.55912876
+DSFlowHydro                 106        3.55057024
+DSFlowHydro                 106.5      3.53345104
+DSFlowHydro                 107        3.52489036
+DSFlowHydro                 107.5      3.51632896
+DSFlowHydro                 108        3.50776684
+DSFlowHydro                 108.5      3.49064044
+DSFlowHydro                 109        3.47351116
+DSFlowHydro                 109.5      3.47351116
+DSFlowHydro                 110        3.46780076
+DSFlowHydro                 110.5      3.45923456
+DSFlowHydro                 111        3.45066764
+DSFlowHydro                 111.5      3.45066764
+DSFlowHydro                 112        3.4421    
+DSFlowHydro                 112.5      3.4421    
+DSFlowHydro                 113        3.427819  
+DSFlowHydro                 113.5      3.427819  
+DSFlowHydro                 114        3.42496256
+DSFlowHydro                 114.5      3.41639276
+DSFlowHydro                 115        3.41639276
+DSFlowHydro                 115.5      3.40782224
+DSFlowHydro                 116        3.39639376
+DSFlowHydro                 116.5      3.39639376
+DSFlowHydro                 117        3.39639376
+DSFlowHydro                 117.5      3.38782156
+DSFlowHydro                 118        3.37924864
+DSFlowHydro                 118.5      3.37924864
+DSFlowHydro                 119        3.37924864
+DSFlowHydro                 119.5      3.370675  
+DSFlowHydro                 120        3.370675  
+DSFlowHydro                 120.5      3.370675  
+DSFlowHydro                 121        3.370675  
+DSFlowHydro                 121.5      3.370675  
+DSFlowHydro                 122        3.36210064
+DSFlowHydro                 122.5      3.35352556
+DSFlowHydro                 123        3.34494976
+DSFlowHydro                 123.5      3.33637324
+DSFlowHydro                 124        3.31921804
+DSFlowHydro                 124.5      3.31063936
+DSFlowHydro                 125        3.30205996
+DSFlowHydro                 125.5      3.29347984
+DSFlowHydro                 126        3.28775936
+DSFlowHydro                 126.5      3.27917804
+DSFlowHydro                 127        3.27917804
+DSFlowHydro                 127.5      3.270596  
+DSFlowHydro                 128        3.270596  
+DSFlowHydro                 128.5      3.270596  
+DSFlowHydro                 129        3.270596  
+DSFlowHydro                 129.5      3.256291  
+DSFlowHydro                 130        3.25342976
+DSFlowHydro                 130.5      3.241984  
+DSFlowHydro                 131        3.227675  
+DSFlowHydro                 131.5      3.22481296
+DSFlowHydro                 132        3.213364  
+DSFlowHydro                 132.5      3.20477644
+DSFlowHydro                 133        3.20477644
+DSFlowHydro                 133.5      3.19618816
+DSFlowHydro                 134        3.18759916
+DSFlowHydro                 134.5      3.18759916
+DSFlowHydro                 135        3.18759916
+DSFlowHydro                 135.5      3.17900944
+DSFlowHydro                 136        3.17900944
+DSFlowHydro                 136.5      3.17900944
+DSFlowHydro                 137        3.170419  
+DSFlowHydro                 137.5      3.170419  
+DSFlowHydro                 138        3.16182784
+DSFlowHydro                 138.5      3.16182784
+DSFlowHydro                 139        3.16182784
+DSFlowHydro                 139.5      3.15323596
+DSFlowHydro                 140        3.15323596
+DSFlowHydro                 140.5      3.15323596
+DSFlowHydro                 141        3.141779  
+DSFlowHydro                 141.5      3.141779  
+DSFlowHydro                 142        3.13318544
+DSFlowHydro                 142.5      3.13318544
+DSFlowHydro                 143        3.12459116
+DSFlowHydro                 143.5      3.12459116
+DSFlowHydro                 144        3.11886124
+DSFlowHydro                 144.5      3.11886124
+DSFlowHydro                 145        3.11026576
+DSFlowHydro                 145.5      3.10166956
+DSFlowHydro                 146        3.09307264
+DSFlowHydro                 146.5      3.09307264
+DSFlowHydro                 147        3.08160896
+DSFlowHydro                 147.5      3.07587664
+DSFlowHydro                 148        3.07587664
+DSFlowHydro                 148.5      3.055811  
+DSFlowHydro                 149        3.055811  
+DSFlowHydro                 149.5      3.03860876
+DSFlowHydro                 150        3.03000656
+DSFlowHydro                 150.5      3.03000656
+DSFlowHydro                 151        3.02140364
+DSFlowHydro                 151.5      3.0128    
+DSFlowHydro                 152        3.00419564
+DSFlowHydro                 152.5      3.00419564
+DSFlowHydro                 153        2.99559056
+DSFlowHydro                 153.5      2.99559056
+DSFlowHydro                 154        2.98698476
+DSFlowHydro                 154.5      2.98698476
+DSFlowHydro                 155        2.97837824
+DSFlowHydro                 155.5      2.97837824
+DSFlowHydro                 156        2.97837824
+DSFlowHydro                 156.5      2.97837824
+DSFlowHydro                 157        2.97837824
+DSFlowHydro                 157.5      2.969771  
+DSFlowHydro                 158        2.969771  
+DSFlowHydro                 158.5      2.96116304
+DSFlowHydro                 159        2.96116304
+DSFlowHydro                 159.5      2.96116304
+DSFlowHydro                 160        2.96116304
+DSFlowHydro                 160.5      2.969771  
+DSFlowHydro                 161        2.97837824
+DSFlowHydro                 161.5      2.969771  
+DSFlowHydro                 162        2.969771  
+DSFlowHydro                 162.5      2.969771  
+DSFlowHydro                 163        2.969771  
+DSFlowHydro                 163.5      2.969771  
+DSFlowHydro                 164        2.969771  
+DSFlowHydro                 164.5      2.969771  
+DSFlowHydro                 165        2.969771  
+DSFlowHydro                 165.5      2.97837824
+DSFlowHydro                 166        2.98698476
+DSFlowHydro                 166.5      2.99559056
+DSFlowHydro                 167        3.00419564
+DSFlowHydro                 167.5      3.02140364
+DSFlowHydro                 168        3.03000656
+DSFlowHydro                 168.5      3.03860876
+DSFlowHydro                 169        3.04721024
+DSFlowHydro                 169.5      3.04721024
+DSFlowHydro                 170        3.055811  
+DSFlowHydro                 170.5      3.04721024
+DSFlowHydro                 171        3.04721024
+DSFlowHydro                 171.5      3.04721024
+DSFlowHydro                 172        3.03860876
+DSFlowHydro                 172.5      3.03860876
+DSFlowHydro                 173        3.03000656
+DSFlowHydro                 173.5      3.02140364
+DSFlowHydro                 174        3.02140364
+DSFlowHydro                 174.5      3.02140364
+DSFlowHydro                 175        3.0128    
+DSFlowHydro                 175.5      3.0128    
+DSFlowHydro                 176        3.0128    
+DSFlowHydro                 176.5      3.00419564
+DSFlowHydro                 177        3.00419564
+DSFlowHydro                 177.5      3.00419564
+DSFlowHydro                 178        2.99559056
+DSFlowHydro                 178.5      2.99559056
+DSFlowHydro                 179        2.99559056
+DSFlowHydro                 179.5      2.97837824
+DSFlowHydro                 180        2.97837824
+DSFlowHydro                 180.5      2.97837824
+DSFlowHydro                 181        2.969771  
+DSFlowHydro                 181.5      2.969771  
+DSFlowHydro                 182        2.96116304
+DSFlowHydro                 182.5      2.96116304
+DSFlowHydro                 183        2.95255436
+DSFlowHydro                 183.5      2.95255436
+DSFlowHydro                 184        2.95255436
+DSFlowHydro                 184.5      2.95255436
+DSFlowHydro                 185        2.94681484
+DSFlowHydro                 185.5      2.94681484
+DSFlowHydro                 186        2.95255436
+DSFlowHydro                 186.5      2.96116304
+DSFlowHydro                 187        2.96116304
+DSFlowHydro                 187.5      2.969771  
+DSFlowHydro                 188        2.969771  
+DSFlowHydro                 188.5      2.969771  
+DSFlowHydro                 189        2.969771  
+DSFlowHydro                 189.5      2.96116304
+DSFlowHydro                 190        2.96116304
+DSFlowHydro                 190.5      2.95255436
+DSFlowHydro                 191        2.95255436
+DSFlowHydro                 191.5      2.94681484
+
+[REPORT]
+;;Reporting Options
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS -1763.245 0.000 11763.245 10000.000
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+2                9471.218           1151.272          
+4                3018.742           3962.517          
+5                -1746.988          2315.930          
+6                5696.118           5582.329          
+7                3125.837           7469.880          
+8                943.775            10000.000         
+1                10769.746          4618.474          
+3                5361.446           3868.809          
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+2                4196.787           6492.637          
+2                4906.292           6037.483          
+3                6030.790           5207.497          
+3                6057.564           4832.664          
+3                5709.505           4404.284          
+3                5522.088           4096.386          
+4                -1439.090          2503.347          
+4                -1144.578          3012.048          
+4                -769.746           3520.750          
+4                -301.205           3761.714          
+4                287.818            3668.005          
+4                1238.286           3400.268          
+4                1894.244           3493.976          
+4                2643.909           3775.100          
+5                3527.443           4029.451          
+5                3902.276           4042.838          
+5                4303.882           4082.999          
+5                4825.971           4069.612          
+6                5495.315           3574.297          
+6                5749.665           2985.274          
+6                6004.016           2516.734          
+6                6472.557           2195.448          
+6                7155.288           1807.229          
+6                7918.340           1552.878          
+6                8815.261           1271.754          
+7                9658.635           1231.593          
+7                9765.730           1659.973          
+7                9645.248           2356.091          
+7                9524.766           2864.793          
+7                9457.831           3186.078          
+7                9417.671           3574.297          
+7                9444.444           4042.838          
+7                9792.503           4578.313          
+7                10368.139          4725.569          
+

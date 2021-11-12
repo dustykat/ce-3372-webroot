@@ -1,0 +1,176 @@
+[TITLE]
+;;Project Title/Notes
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CMS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           02/24/2021
+START_TIME           00:00:00
+REPORT_START_DATE    02/24/2021
+REPORT_START_TIME    00:00:00
+END_DATE             02/24/2021
+END_TIME             06:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:01:00
+WET_STEP             00:01:00
+DRY_STEP             00:01:00
+ROUTING_STEP         0:00:15 
+RULE_STEP            00:00:00
+
+INERTIAL_DAMPING     NONE
+NORMAL_FLOW_LIMITED  FROUDE
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         1.167
+MAX_TRIALS           8
+HEAD_TOLERANCE       0.0015
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+1                1.1        0          3.069      0          0         
+2                1.0        0          3.069      0          0         
+3                0.9        0          3.069      0          0         
+4                0.8        0          3.069      0          0         
+5                0.7        0          3.069      0          0         
+6                0.6        0          3.069      0          0         
+7                0.5        0          3.069      0          0         
+8                0.4        0          3.069      0          0         
+9                0.3        0          3.069      0          0         
+10               0.2        0          3.069      0          0         
+11               0.1        0          3.069      0          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+12               0          NORMAL                      NO                       
+
+[STORAGE]
+;;Name           Elev.    MaxDepth   InitDepth  Shape      Curve Name/Params            N/A      Fevap    Psi      Ksat     IMD     
+;;-------------- -------- ---------- ----------- ---------- ---------------------------- -------- --------          -------- --------
+Reservoir        0        16.1       4.069      TABULAR    BigReservoir                 0        0       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+1                Reservoir        1                100        0.013      1          0          110        0         
+2                1                2                100        0.013      0          0          110        0         
+3                2                3                100        0.013      0          0          110        0         
+4                3                4                100        0.013      0          0          110        0         
+5                4                5                100        0.013      0          0          110        0         
+6                5                6                100        0.013      0          0          110        0         
+7                6                7                100        0.013      0          0          110        0         
+8                7                8                100        0.013      0          0          110        0         
+9                8                9                100        0.013      0          0          110        0         
+10               9                10               100        0.013      0          0          110        0         
+11               10               11               100        0.013      0          0          110        0         
+LAST-LINK        11               12               100        0.013      0          0          110        0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+1                TRAPEZOIDAL  15               20         2          2          1                    
+2                TRAPEZOIDAL  15               20         2          2          1                    
+3                TRAPEZOIDAL  15               20         2          2          1                    
+4                TRAPEZOIDAL  15               20         2          2          1                    
+5                TRAPEZOIDAL  15               20         2          2          1                    
+6                TRAPEZOIDAL  15               20         2          2          1                    
+7                TRAPEZOIDAL  15               20         2          2          1                    
+8                TRAPEZOIDAL  15               20         2          2          1                    
+9                TRAPEZOIDAL  15               20         2          2          1                    
+10               TRAPEZOIDAL  15               20         2          2          1                    
+11               TRAPEZOIDAL  15               20         2          2          1                    
+LAST-LINK        TRAPEZOIDAL  15               20         2          2          1                    
+
+[CONTROLS]
+RULE 1
+IF SIMULATION TIME >= 1.0
+AND SIMULATION TIME <= 4.0
+THEN CONDUIT LAST-LINK STATUS = CLOSED
+ELSE CONDUIT LAST-LINK STATUS = OPEN
+
+RULE 2 
+IF SIMULATION TIME > 4.0
+THEN CONDUIT LAST-LINK STATUS = OPEN
+ELSE CONDUIT LAST-LINK STATUS = OPEN
+
+[CURVES]
+;;Name           Type       X-Value    Y-Value   
+;;-------------- ---------- ---------- ----------
+BigReservoir     Storage    0          0         
+BigReservoir                0.1        5000      
+BigReservoir                1          50000     
+BigReservoir                2          500000000 
+BigReservoir                3          600000000 
+BigReservoir                4          700000000 
+BigReservoir                5          800000000 
+BigReservoir                10         5000000000
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+NK-NukeStoppage             0          3.069     
+NK-NukeStoppage             1          3.069     
+NK-NukeStoppage             2          1         
+NK-NukeStoppage             3          1         
+NK-NukeStoppage             4          1         
+NK-NukeStoppage             5          1         
+NK-NukeStoppage             6          1         
+NK-NukeStoppage             7          1         
+NK-NukeStoppage             8          1         
+NK-NukeStoppage             9          1         
+NK-NukeStoppage             10         1         
+
+[REPORT]
+;;Reporting Options
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 0.000 0.000 10000.000 10000.000
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+1                -543.478           7355.072          
+2                199.275            7282.609          
+3                887.681            7246.377          
+4                1557.971           7210.145          
+5                2373.188           7210.145          
+6                2989.130           7192.029          
+7                3478.261           7173.913          
+8                4166.667           7155.797          
+9                4873.188           7137.681          
+10               5543.478           7137.681          
+11               6177.536           7119.565          
+12               6721.014           7119.565          
+Reservoir        -1413.043          7409.420          
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+

@@ -1,0 +1,272 @@
+[TITLE]
+;;Project Title/Notes
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CMS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           02/25/2021
+START_TIME           00:00:00
+REPORT_START_DATE    02/25/2021
+REPORT_START_TIME    00:00:00
+END_DATE             02/25/2021
+END_TIME             23:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:05:00
+WET_STEP             00:05:00
+DRY_STEP             00:05:00
+ROUTING_STEP         0:01:30 
+RULE_STEP            00:00:00
+
+INERTIAL_DAMPING     NONE
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         1.167
+MAX_TRIALS           8
+HEAD_TOLERANCE       0.0015
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+1                0          0          1          0          0         
+2                0          0          1          0          0         
+3                0          0          1          0          0         
+4                0          0          1          0          0         
+5                0          0          1          0          0         
+6                0          0          1          0          0         
+7                0          0          1          0          0         
+8                0          0          1          0          0         
+9                0          0          1          0          0         
+10               0          0          1          0          0         
+11               0          0          1          0          0         
+12               0          0          1          0          0         
+13               0          0          1          0          0         
+14               0          0          1          0          0         
+15               0          0          1          0          0         
+16               0          0          1          0          0         
+17               0          0          1          0          0         
+18               0          0          1          0          0         
+19               0          0          1          0          0         
+20               0          0          1          0          0         
+21               0          0          1          0          0         
+22               0          0          1          0          0         
+23               0          0          1          0          0         
+24               0          0          1          0          0         
+25               0          0          1          0          0         
+26               0          0          1          0          0         
+27               0          0          1          0          0         
+28               0          0          1          0          0         
+29               0          0          1          0          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+30               0          FREE                        NO                       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+1                1                2                1000       0.025      0          0          0          0         
+2                2                3                1000       0.025      0          0          0          0         
+3                3                4                1000       0.025      0          0          0          0         
+4                4                5                1000       0.025      0          0          0          0         
+5                5                6                1000       0.025      0          0          0          0         
+6                6                7                1000       0.025      0          0          0          0         
+7                7                8                1000       0.025      0          0          0          0         
+8                8                9                1000       0.025      0          0          0          0         
+9                9                10               1000       0.025      0          0          0          0         
+10               10               11               1000       0.025      0          0          0          0         
+11               11               12               1000       0.025      0          0          0          0         
+12               12               13               1000       0.025      0          0          0          0         
+13               13               14               1000       0.025      0          0          0          0         
+14               14               15               1000       0.025      0          0          0          0         
+15               15               16               1000       0.025      0          0          0          0         
+16               16               17               1000       0.025      0          0          0          0         
+17               17               18               1000       0.025      0          0          0          0         
+18               18               19               1000       0.025      0          0          0          0         
+19               19               20               1000       0.025      0          0          0          0         
+20               20               21               1000       0.025      0          0          0          0         
+21               21               22               1000       0.025      0          0          0          0         
+22               22               23               1000       0.025      0          0          0          0         
+23               23               24               1000       0.025      0          0          0          0         
+24               24               25               1000       0.025      0          0          0          0         
+25               25               26               1000       0.025      0          0          0          0         
+26               26               27               1000       0.025      0          0          0          0         
+27               27               28               1000       0.025      0          0          0          0         
+28               28               29               1000       0.025      0          0          0          0         
+29               29               30               1000       0.025      0          0          0          0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+1                RECT_OPEN    50               1          0          0          1                    
+2                RECT_OPEN    50               1          0          0          1                    
+3                RECT_OPEN    50               1          0          0          1                    
+4                RECT_OPEN    50               1          0          0          1                    
+5                RECT_OPEN    50               1          0          0          1                    
+6                RECT_OPEN    50               1          0          0          1                    
+7                RECT_OPEN    50               1          0          0          1                    
+8                RECT_OPEN    50               1          0          0          1                    
+9                RECT_OPEN    50               1          0          0          1                    
+10               RECT_OPEN    50               1          0          0          1                    
+11               RECT_OPEN    50               1          0          0          1                    
+12               RECT_OPEN    50               1          0          0          1                    
+13               RECT_OPEN    50               1          0          0          1                    
+14               RECT_OPEN    50               1          0          0          1                    
+15               RECT_OPEN    50               1          0          0          1                    
+16               RECT_OPEN    50               1          0          0          1                    
+17               RECT_OPEN    50               1          0          0          1                    
+18               RECT_OPEN    50               1          0          0          1                    
+19               RECT_OPEN    50               1          0          0          1                    
+20               RECT_OPEN    50               1          0          0          1                    
+21               RECT_OPEN    50               1          0          0          1                    
+22               RECT_OPEN    50               1          0          0          1                    
+23               RECT_OPEN    50               1          0          0          1                    
+24               RECT_OPEN    50               1          0          0          1                    
+25               RECT_OPEN    50               1          0          0          1                    
+26               RECT_OPEN    50               1          0          0          1                    
+27               RECT_OPEN    50               1          0          0          1                    
+28               RECT_OPEN    50               1          0          0          1                    
+29               RECT_OPEN    50               1          0          0          1                    
+
+[INFLOWS]
+;;Node           Constituent      Time Series      Type     Mfactor  Sfactor  Baseline Pattern
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- --------
+1                FLOW             InputHydrograph  FLOW     1.0      1.0              
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+InputHydrograph             0.0        0         
+InputHydrograph             0.08333333333333333 1.1       
+InputHydrograph             0.16666666666666666 8.3       
+InputHydrograph             0.25       16.7      
+InputHydrograph             0.3333333333333333 25.0      
+InputHydrograph             0.4166666666666667 33.3      
+InputHydrograph             0.5        41.7      
+InputHydrograph             0.5833333333333334 50.0      
+InputHydrograph             0.6666666666666666 58.3      
+InputHydrograph             0.75       66.7      
+InputHydrograph             0.8333333333333334 75.0      
+InputHydrograph             0.9166666666666666 83.3      
+InputHydrograph             1.0        91.7      
+InputHydrograph             1.0833333333333333 100.0     
+InputHydrograph             1.1666666666666667 95.3      
+InputHydrograph             1.25       90.6      
+InputHydrograph             1.3333333333333333 85.9      
+InputHydrograph             1.4166666666666667 81.3      
+InputHydrograph             1.5        76.6      
+InputHydrograph             1.5833333333333333 71.9      
+InputHydrograph             1.6666666666666667 67.2      
+InputHydrograph             1.75       62.5      
+InputHydrograph             1.8333333333333333 57.8      
+InputHydrograph             1.9166666666666667 53.1      
+InputHydrograph             2.0        48.4      
+InputHydrograph             2.0833333333333335 43.8      
+InputHydrograph             2.1666666666666665 39.1      
+InputHydrograph             2.25       34.4      
+InputHydrograph             2.3333333333333335 29.7      
+InputHydrograph             2.4166666666666665 25.0      
+InputHydrograph             2.5        20.3      
+InputHydrograph             2.5833333333333335 15.6      
+InputHydrograph             2.6666666666666665 10.9      
+InputHydrograph             2.75       6.3       
+InputHydrograph             2.8333333333333335 1.6       
+InputHydrograph             2.9166666666666665 1.1       
+InputHydrograph             3.0        1.1       
+InputHydrograph             3.0833333333333335 1.1       
+InputHydrograph             3.1666666666666665 1.1       
+InputHydrograph             3.25       1.1       
+InputHydrograph             3.3333333333333335 1.1       
+InputHydrograph             3.4166666666666665 1.1       
+InputHydrograph             3.5        1.1       
+InputHydrograph             3.5833333333333335 1.1       
+InputHydrograph             3.6666666666666665 1.1       
+InputHydrograph             3.75       1.1       
+InputHydrograph             3.8333333333333335 1.1       
+InputHydrograph             3.9166666666666665 1.1       
+InputHydrograph             4.0        1.1       
+InputHydrograph             4.083333333333333 1.1       
+InputHydrograph             4.166666666666667 1.1       
+InputHydrograph             4.25       1.1       
+InputHydrograph             4.333333333333333 1.1       
+InputHydrograph             4.416666666666667 1.1       
+InputHydrograph             4.5        1.1       
+InputHydrograph             4.583333333333333 1.1       
+InputHydrograph             4.666666666666667 1.1       
+InputHydrograph             4.75       1.1       
+InputHydrograph             4.833333333333333 1.1       
+InputHydrograph             4.916666666666667 1.1       
+InputHydrograph             5.0        0         
+InputHydrograph             27.77777777777778 0         
+
+[REPORT]
+;;Reporting Options
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 0.000 0.000 10000.000 10000.000
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+1                -3713.768          6322.464          
+2                -2844.203          6322.464          
+3                -2173.913          6322.464          
+4                -1485.507          6322.464          
+5                -833.333           6322.464          
+6                -72.464            6322.464          
+7                742.754            6286.232          
+8                1594.203           6268.116          
+9                2427.536           6286.232          
+10               3115.942           6286.232          
+11               3750.000           6286.232          
+12               4311.594           6304.348          
+13               4891.304           6304.348          
+14               5452.899           6304.348          
+15               6086.957           6304.348          
+16               6702.899           6286.232          
+17               7192.029           6304.348          
+18               7826.087           6304.348          
+19               8405.797           6304.348          
+20               9166.667           6304.348          
+21               9673.913           6286.232          
+22               10163.043          6268.116          
+23               10634.058          6268.116          
+24               11141.304          6268.116          
+25               11594.203          6268.116          
+26               11920.290          6250.000          
+27               12282.609          6213.768          
+28               12807.971          6213.768          
+29               13387.681          6231.884          
+30               13949.275          6213.768          
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+

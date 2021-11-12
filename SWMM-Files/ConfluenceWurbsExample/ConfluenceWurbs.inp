@@ -1,0 +1,439 @@
+[TITLE]
+;;Project Title/Notes
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CFS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           03/13/2020
+START_TIME           00:00:00
+REPORT_START_DATE    03/13/2020
+REPORT_START_TIME    00:00:00
+END_DATE             03/17/2020
+END_TIME             00:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:15:00
+WET_STEP             00:05:00
+DRY_STEP             01:00:00
+ROUTING_STEP         0:00:30 
+RULE_STEP            00:00:00
+
+INERTIAL_DAMPING     NONE
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         12.566
+MAX_TRIALS           8
+HEAD_TOLERANCE       0.005
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+2                265        0          0          0          0         
+3                265.8      0          0          0          0         
+4                266        0          0          0          0         
+5                266.2      0          0          0          0         
+6                267        0          0          0          0         
+7                268        0          0          0          0         
+8                269        0          0          0          0         
+9                269.8      0          0          0          0         
+10               270.5      0          0          0          0         
+11               271.2      0          0          0          0         
+12               269        0          0          0          0         
+13               270.5      0          0          0          0         
+14               270.6      0          0          0          0         
+15               271.2      0          0          0          0         
+16               280        0          0          0          0         
+17               275        0          0          0          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+1                260        FREE                        NO                       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+RS1-OUT          2                1                5000       0.01       0          0          0          0         
+RS2-1            3                2                200        0.01       0          0          0          0         
+RS3-2            4                3                400        0.01       0          0          0          0         
+RS4-3            4                5                60         0.01       0          0          0          0         
+RS5-4            6                5                100        0.01       0          0          0          0         
+RS6-5            7                6                200        0.01       0          0          0          0         
+RS7-6            8                7                200        0.01       0          0          0          0         
+RS8-7            9                8                200        0.01       0          0          0          0         
+RS9-8            10               9                200        0.01       0          0          0          0         
+RS10-9           11               10               200        0.01       0          0          0          0         
+RS_MAIN-10       17               11               5000       0.01       0          0          0          0         
+RS11-6           12               7                100        0.01       0          0          0          0         
+RS12-11          13               12               100        0.01       0          0          0          0         
+RS13-12          14               13               100        0.01       0          0          0          0         
+RS14-13          15               14               100        0.01       0          0          0          0         
+RS_TRIB-14       16               15               5000       0.01       0          0          0          0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+RS1-OUT          IRREGULAR    CS0              50         6          6          1                    
+RS2-1            IRREGULAR    CS0              50         6          6          1                    
+RS3-2            IRREGULAR    CS2              50         6          6          1                    
+RS4-3            IRREGULAR    CS3              50         6          6          1                    
+RS5-4            IRREGULAR    CS4              50         6          6          1                    
+RS6-5            IRREGULAR    CS5              50         6          6          1                    
+RS7-6            IRREGULAR    CS6              50         6          6          1                    
+RS8-7            IRREGULAR    CS7              50         6          6          1                    
+RS9-8            IRREGULAR    CS8              50         6          6          1                    
+RS10-9           IRREGULAR    CS9              50         6          6          1                    
+RS_MAIN-10       IRREGULAR    CS10             50         6          6          1                    
+RS11-6           IRREGULAR    CS11             50         6          6          1                    
+RS12-11          IRREGULAR    CS12             50         6          6          1                    
+RS13-12          IRREGULAR    CS13             50         6          6          1                    
+RS14-13          IRREGULAR    CS14             50         6          6          1                    
+RS_TRIB-14       TRAPEZOIDAL  30               50         6          6          1                    
+
+[TRANSECTS]
+;;Transect Data in HEC-2 format
+;
+;DownstreamMain
+NC 0.01     0.01     0.01    
+X1 CS0               8        200      270      0.0      0.0      0.0      0.0      0.0     
+GR 300      0        280      50       275      200      265      210      265      260     
+GR 275      270      280      420      300      450     
+;
+NC 0.01     0.01     0.01    
+X1 CS2               8        190      256.5    0.0      0.0      0.0      0.0      0.0     
+GR 300.8    0        280.8    47.5     275.8    190      265.8    199.5    265.8    247     
+GR 275.8    256.5    280.8    399      300.8    427.5   
+;
+NC 0.01     0.01     0.01    
+X1 CS3               8        200      270      0.0      0.0      0.0      0.0      0.0     
+GR 301      100      277      150      276.5    200      266.5    210      266      260     
+GR 277      270      278      320      302      350     
+;
+NC 0.01     0.01     0.01    
+X1 CS4               8        200      270      0.0      0.0      0.0      0.0      0.0     
+GR 301.2    100      277.2    150      276.7    200      266.7    210      266.2    260     
+GR 277.2    270      278.2    320      302.2    350     
+;
+NC 0.01     0.01     0.01    
+X1 CS5               8        180      280      0.0      0.0      0.0      0.0      0.0     
+GR 301      0        281      40       277      180      267      200      268      270     
+GR 278      280      282      400      302      430     
+;
+NC 0.01     0.01     0.01    
+X1 CS6               8        220      320      0.0      0.0      0.0      0.0      0.0     
+GR 302      0        282      20       278      220      268      240      269      300     
+GR 278      320      283      400      303      430     
+;
+NC 0.01     0.01     0.01    
+X1 CS7               8        120      200      0.0      0.0      0.0      0.0      0.0     
+GR 303      0        283      20       278      120      270      130      269      180     
+GR 278      200      283      300      303      350     
+;
+NC 0.01     0.01     0.01    
+X1 CS8               8        114      190      0.0      0.0      0.0      0.0      0.0     
+GR 303.8    0        283.8    19       278.8    114      270.8    123.5    269.8    171     
+GR 278.8    190      283.8    285      303.8    332.5   
+;
+NC 0.01     0.01     0.01    
+X1 CS10              8        114      190      0.0      0.0      0.0      0.0      0.0     
+GR 305.2    0        285.2    19       280.2    114      272.2    123.5    271.2    171     
+GR 280.2    190      285.2    285      305.2    332.5   
+;
+NC 0.01     0.01     0.01    
+X1 CS9               8        114      190      0.0      0.0      0.0      0.0      0.0     
+GR 304.5    0        284.5    19       279.5    114      271.5    123.5    270.5    171     
+GR 279.5    190      284.5    285      304.5    332.5   
+;
+NC 0.01     0.01     0.01    
+X1 CS11              8        120      170      0.0      0.0      0.0      0.0      0.0     
+GR 303      0        283      20       278      120      270      130      269      160     
+GR 278      170      283      270      303      300     
+;
+NC 0.01     0.01     0.01    
+X1 CS12              8        120      170      0.0      0.0      0.0      0.0      0.0     
+GR 304.5    0        284.5    20       279.5    120      271.5    130      270.5    160     
+GR 279.5    170      284.5    270      304.5    300     
+;
+NC 0.01     0.01     0.01    
+X1 CS13              8        120      170      0.0      0.0      0.0      0.0      0.0     
+GR 304.5    0        284.5    20       279.5    120      271.5    130      270.5    160     
+GR 279.5    170      284.5    270      304.5    300     
+;
+NC 0.01     0.01     0.01    
+X1 CS14              8        120      170      0.0      0.0      0.0      0.0      0.0     
+GR 305.2    0        285.2    20       280.2    120      272.2    130      271.2    160     
+GR 280.2    170      285.2    270      305.2    300     
+
+[INFLOWS]
+;;Node           Constituent      Time Series      Type     Mfactor  Sfactor  Baseline Pattern
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- --------
+16               FLOW             S16Hydro         FLOW     1.0      1.0              
+17               FLOW             S10Hydro         FLOW     1.0      1.0              
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+S10Hydro                    0          2000      
+S10Hydro                    1          2345.52   
+S10Hydro                    2          2691.05   
+S10Hydro                    3          3036.57   
+S10Hydro                    4          3941.16   
+S10Hydro                    5          4011.19   
+S10Hydro                    6          3697.82   
+S10Hydro                    7          3345.36   
+S10Hydro                    8          3379.03   
+S10Hydro                    9          3904.82   
+S10Hydro                    10         4268.34   
+S10Hydro                    11         4494.39   
+S10Hydro                    12         4723.08   
+S10Hydro                    13         4774.85   
+S10Hydro                    14         4003.63   
+S10Hydro                    15         2775.63   
+S10Hydro                    16         2000      
+S10Hydro                    17         2000      
+S10Hydro                    18         2000      
+S10Hydro                    19         2000      
+S10Hydro                    20         2000      
+S10Hydro                    21         2000      
+S10Hydro                    22         2000      
+S10Hydro                    23         2000      
+S10Hydro                    24         2000      
+S10Hydro                    25         2000      
+S10Hydro                    26         2000      
+S10Hydro                    27         2000      
+S10Hydro                    28         2000      
+S10Hydro                    29         2000      
+S10Hydro                    30         2000      
+S10Hydro                    31         2000      
+S10Hydro                    32         2000      
+S10Hydro                    33         2000      
+S10Hydro                    34         2000      
+S10Hydro                    35         2000      
+S10Hydro                    36         2000      
+S10Hydro                    37         2000      
+S10Hydro                    38         2000      
+S10Hydro                    39         2000      
+S10Hydro                    40         2000      
+S10Hydro                    41         2000      
+S10Hydro                    42         2000      
+S10Hydro                    43         2000      
+S10Hydro                    44         2000      
+S10Hydro                    45         2000      
+S10Hydro                    46         2000      
+S10Hydro                    47         2000      
+S10Hydro                    48         2000      
+S10Hydro                    49         2000      
+S10Hydro                    50         2000      
+S10Hydro                    51         2000      
+S10Hydro                    52         2000      
+S10Hydro                    53         2000      
+S10Hydro                    54         2000      
+S10Hydro                    55         2000      
+S10Hydro                    56         2000      
+S10Hydro                    57         2000      
+S10Hydro                    58         2000      
+S10Hydro                    59         2000      
+S10Hydro                    60         2000      
+S10Hydro                    61         2000      
+S10Hydro                    62         2000      
+S10Hydro                    63         2000      
+S10Hydro                    64         2000      
+S10Hydro                    65         2000      
+S10Hydro                    66         2000      
+S10Hydro                    67         2000      
+S10Hydro                    68         2000      
+S10Hydro                    69         2000      
+S10Hydro                    70         2000      
+S10Hydro                    71         2000      
+S10Hydro                    72         2000      
+S10Hydro                    73         2000      
+S10Hydro                    74         2000      
+S10Hydro                    75         2000      
+S10Hydro                    76         2000      
+S10Hydro                    77         2000      
+S10Hydro                    78         2000      
+S10Hydro                    79         2000      
+S10Hydro                    80         2000      
+S10Hydro                    81         2000      
+S10Hydro                    82         2000      
+S10Hydro                    83         2000      
+S10Hydro                    84         2000      
+S10Hydro                    85         2000      
+S10Hydro                    86         2000      
+S10Hydro                    87         2000      
+S10Hydro                    88         2000      
+S10Hydro                    89         2000      
+S10Hydro                    90         2000      
+S10Hydro                    91         2000      
+S10Hydro                    92         2000      
+S10Hydro                    93         2000      
+S10Hydro                    94         2000      
+S10Hydro                    95         2000      
+S10Hydro                    96         2000      
+S10Hydro                    97         2000      
+S10Hydro                    98         2000      
+S10Hydro                    99         2000      
+;
+S16Hydro                    0          500       
+S16Hydro                    1          930.35    
+S16Hydro                    2          1118.28   
+S16Hydro                    3          1083.19   
+S16Hydro                    4          694.42    
+S16Hydro                    5          635.93    
+S16Hydro                    6          582.92    
+S16Hydro                    7          529.18    
+S16Hydro                    8          1309.26   
+S16Hydro                    9          791.68    
+S16Hydro                    10         945.09    
+S16Hydro                    11         1074.69   
+S16Hydro                    12         1166.84   
+S16Hydro                    13         500       
+S16Hydro                    14         500       
+S16Hydro                    15         500       
+S16Hydro                    16         500       
+S16Hydro                    17         500       
+S16Hydro                    18         500       
+S16Hydro                    19         500       
+S16Hydro                    20         500       
+S16Hydro                    21         500       
+S16Hydro                    22         500       
+S16Hydro                    23         500       
+S16Hydro                    24         500       
+S16Hydro                    25         500       
+S16Hydro                    26         500       
+S16Hydro                    27         500       
+S16Hydro                    28         500       
+S16Hydro                    29         500       
+S16Hydro                    30         500       
+S16Hydro                    31         500       
+S16Hydro                    32         500       
+S16Hydro                    33         500       
+S16Hydro                    34         500       
+S16Hydro                    35         500       
+S16Hydro                    36         500       
+S16Hydro                    37         500       
+S16Hydro                    38         500       
+S16Hydro                    39         500       
+S16Hydro                    40         500       
+S16Hydro                    41         500       
+S16Hydro                    42         500       
+S16Hydro                    43         500       
+S16Hydro                    44         500       
+S16Hydro                    45         500       
+S16Hydro                    46         500       
+S16Hydro                    47         500       
+S16Hydro                    48         500       
+S16Hydro                    49         500       
+S16Hydro                    50         500       
+S16Hydro                    51         500       
+S16Hydro                    52         500       
+S16Hydro                    53         500       
+S16Hydro                    54         500       
+S16Hydro                    55         500       
+S16Hydro                    56         500       
+S16Hydro                    57         500       
+S16Hydro                    58         500       
+S16Hydro                    59         500       
+S16Hydro                    60         500       
+S16Hydro                    61         500       
+S16Hydro                    62         500       
+S16Hydro                    63         500       
+S16Hydro                    64         500       
+S16Hydro                    65         500       
+S16Hydro                    66         500       
+S16Hydro                    67         500       
+S16Hydro                    68         500       
+S16Hydro                    69         500       
+S16Hydro                    70         500       
+S16Hydro                    71         500       
+S16Hydro                    72         500       
+S16Hydro                    73         500       
+S16Hydro                    74         500       
+S16Hydro                    75         500       
+S16Hydro                    76         500       
+S16Hydro                    77         500       
+S16Hydro                    78         500       
+S16Hydro                    79         500       
+S16Hydro                    80         500       
+S16Hydro                    81         500       
+S16Hydro                    82         500       
+S16Hydro                    83         500       
+S16Hydro                    84         500       
+S16Hydro                    85         500       
+S16Hydro                    86         500       
+S16Hydro                    87         500       
+S16Hydro                    88         500       
+S16Hydro                    89         500       
+S16Hydro                    90         500       
+S16Hydro                    91         500       
+S16Hydro                    92         500       
+S16Hydro                    93         500       
+S16Hydro                    94         500       
+S16Hydro                    95         500       
+S16Hydro                    96         500       
+S16Hydro                    97         500       
+S16Hydro                    98         500       
+S16Hydro                    99         500       
+
+[REPORT]
+;;Reporting Options
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 0.000 0.000 10000.000 10000.000
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+2                5162.075           1150.729          
+3                5162.075           1944.895          
+4                5129.660           3630.470          
+5                5064.830           4035.656          
+6                4935.170           4440.843          
+7                4821.718           5170.178          
+8                4756.888           6061.588          
+9                4562.399           6920.583          
+10               4546.191           7714.749          
+11               4432.739           8492.707          
+12               3978.930           5559.157          
+13               3460.292           5721.232          
+14               3022.690           5786.062          
+15               2649.919           5915.721          
+16               1191.248           6385.737          
+17               4222.042           9870.340          
+1                5226.904           129.660           
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+RS10-9           4448.947           8427.877          
+
+
+[BACKDROP]
+FILE       "C:\Users\theodore\My Documents\EPA SWMM Projects\ConfluenceWurbs\confluence.bmp"
+DIMENSIONS 1226.050 0.000 8773.950 10000.000

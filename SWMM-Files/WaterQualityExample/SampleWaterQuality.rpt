@@ -1,0 +1,216 @@
+
+  EPA STORM WATER MANAGEMENT MODEL - VERSION 5.1 (Build 5.1.015)
+  --------------------------------------------------------------
+
+  
+  *********************************************************
+  NOTE: The summary statistics displayed in this report are
+  based on results found at every computational time step,  
+  not just on results from each reporting time step.
+  *********************************************************
+  
+  ****************
+  Analysis Options
+  ****************
+  Flow Units ............... CFS
+  Process Models:
+    Rainfall/Runoff ........ YES
+    RDII ................... NO
+    Snowmelt ............... NO
+    Groundwater ............ NO
+    Flow Routing ........... YES
+    Ponding Allowed ........ NO
+    Water Quality .......... YES
+  Infiltration Method ...... HORTON
+  Flow Routing Method ...... KINWAVE
+  Starting Date ............ 03/24/2021 00:00:00
+  Ending Date .............. 03/24/2021 09:00:00
+  Antecedent Dry Days ...... 10.0
+  Report Time Step ......... 00:05:00
+  Wet Time Step ............ 00:05:00
+  Dry Time Step ............ 00:05:00
+  Routing Time Step ........ 30.00 sec
+  
+  
+  **************************        Volume         Depth
+  Runoff Quantity Continuity     acre-feet        inches
+  **************************     ---------       -------
+  Total Precipitation ......         2.500         6.000
+  Evaporation Loss .........         0.000         0.000
+  Infiltration Loss ........         1.640         3.936
+  Surface Runoff ...........         0.860         2.064
+  Final Storage ............         0.000         0.000
+  Continuity Error (%) .....         0.000
+  
+  
+  **************************      FishFood
+  Runoff Quality Continuity            lbs
+  **************************    ----------
+  Initial Buildup ..........        49.663
+  Surface Buildup ..........         1.757
+  Wet Deposition ...........        67.937
+  Sweeping Removal .........         0.000
+  Infiltration Loss ........        44.563
+  BMP Removal ..............         0.000
+  Surface Runoff ...........        65.763
+  Remaining Buildup ........         9.030
+  Continuity Error (%) .....         0.000
+  
+  
+  **************************        Volume        Volume
+  Flow Routing Continuity        acre-feet      10^6 gal
+  **************************     ---------     ---------
+  Dry Weather Inflow .......         0.000         0.000
+  Wet Weather Inflow .......         0.860         0.280
+  Groundwater Inflow .......         0.000         0.000
+  RDII Inflow ..............         0.000         0.000
+  External Inflow ..........         0.000         0.000
+  External Outflow .........         0.860         0.280
+  Flooding Loss ............         0.000         0.000
+  Evaporation Loss .........         0.000         0.000
+  Exfiltration Loss ........         0.000         0.000
+  Initial Stored Volume ....         0.000         0.000
+  Final Stored Volume ......         0.000         0.000
+  Continuity Error (%) .....         0.004
+  
+  
+  **************************      FishFood
+  Quality Routing Continuity           lbs
+  **************************    ----------
+  Dry Weather Inflow .......         0.000
+  Wet Weather Inflow .......        65.763
+  Groundwater Inflow .......         0.000
+  RDII Inflow ..............         0.000
+  External Inflow ..........         0.000
+  External Outflow .........        62.046
+  Flooding Loss ............         0.000
+  Exfiltration Loss ........         0.000
+  Mass Reacted .............         3.766
+  Initial Stored Mass ......         0.000
+  Final Stored Mass ........         0.000
+  Continuity Error (%) .....        -0.075
+  
+  
+  ********************************
+  Highest Flow Instability Indexes
+  ********************************
+  All links are stable.
+  
+  
+  *************************
+  Routing Time Step Summary
+  *************************
+  Minimum Time Step           :    30.00 sec
+  Average Time Step           :    30.00 sec
+  Maximum Time Step           :    30.00 sec
+  Percent in Steady State     :     0.00
+  Average Iterations per Step :     1.04
+  Percent Not Converging      :     0.00
+  
+  
+  ***************************
+  Subcatchment Runoff Summary
+  ***************************
+  
+  ------------------------------------------------------------------------------------------------------------------------------
+                            Total      Total      Total      Total     Imperv       Perv      Total       Total     Peak  Runoff
+                           Precip      Runon       Evap      Infil     Runoff     Runoff     Runoff      Runoff   Runoff   Coeff
+  Subcatchment                 in         in         in         in         in         in         in    10^6 gal      CFS
+  ------------------------------------------------------------------------------------------------------------------------------
+  1                          6.00       0.00       0.00       3.94       0.00       2.06       2.06        0.28     2.76   0.344
+  
+  
+  ****************************
+  Subcatchment Washoff Summary
+  ****************************
+  
+  ----------------------------------
+                            FishFood
+  Subcatchment                   lbs
+  ----------------------------------
+  1                           65.763
+  ----------------------------------
+  System                      65.763
+  
+  
+  ******************
+  Node Depth Summary
+  ******************
+  
+  ---------------------------------------------------------------------------------
+                                 Average  Maximum  Maximum  Time of Max    Reported
+                                   Depth    Depth      HGL   Occurrence   Max Depth
+  Node                 Type         Feet     Feet     Feet  days hr:min        Feet
+  ---------------------------------------------------------------------------------
+  2                    JUNCTION     0.16     0.33    10.33     0  07:00        0.33
+  3                    OUTFALL      0.16     0.33     0.33     0  07:00        0.33
+  
+  
+  *******************
+  Node Inflow Summary
+  *******************
+  
+  -------------------------------------------------------------------------------------------------
+                                  Maximum  Maximum                  Lateral       Total        Flow
+                                  Lateral    Total  Time of Max      Inflow      Inflow     Balance
+                                   Inflow   Inflow   Occurrence      Volume      Volume       Error
+  Node                 Type           CFS      CFS  days hr:min    10^6 gal    10^6 gal     Percent
+  -------------------------------------------------------------------------------------------------
+  2                    JUNCTION      2.76     2.76     0  07:00        0.28        0.28       0.000
+  3                    OUTFALL       0.00     2.76     0  07:00           0        0.28       0.000
+  
+  
+  *********************
+  Node Flooding Summary
+  *********************
+  
+  No nodes were flooded.
+  
+  
+  ***********************
+  Outfall Loading Summary
+  ***********************
+  
+  -------------------------------------------------------------------------
+                         Flow       Avg       Max       Total         Total
+                         Freq      Flow      Flow      Volume      FishFood
+  Outfall Node           Pcnt       CFS       CFS    10^6 gal           lbs
+  -------------------------------------------------------------------------
+  3                     57.96      2.00      2.76       0.280        62.046
+  -------------------------------------------------------------------------
+  System                57.96      2.00      2.76       0.280        62.046
+  
+  
+  ********************
+  Link Flow Summary
+  ********************
+  
+  -----------------------------------------------------------------------------
+                                 Maximum  Time of Max   Maximum    Max/    Max/
+                                  |Flow|   Occurrence   |Veloc|    Full    Full
+  Link                 Type          CFS  days hr:min    ft/sec    Flow   Depth
+  -----------------------------------------------------------------------------
+  1                    CONDUIT      2.76     0  07:00     14.15    0.06    0.16
+  
+  
+  *************************
+  Conduit Surcharge Summary
+  *************************
+  
+  No conduits were surcharged.
+  
+  
+  ***************************
+  Link Pollutant Load Summary
+  ***************************
+  
+  ----------------------------------
+                            FishFood
+  Link                           lbs
+  ----------------------------------
+  1                           62.046
+  
+
+  Analysis begun on:  Thu Mar 25 02:09:26 2021
+  Analysis ended on:  Thu Mar 25 02:09:26 2021
+  Total elapsed time: < 1 sec

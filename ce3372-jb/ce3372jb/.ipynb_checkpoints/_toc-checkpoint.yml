@@ -1,0 +1,34 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+#- file: markdown
+#- file: notebooks
+- file: lessons/lesson01
+- file: lessons/lesson02
+- file: lessons/lesson03
+- file: lessons/lesson04
+- file: lessons/lesson05
+- file: lessons/lesson06
+- file: lessons/lesson07
+- file: lessons/lesson08
+- file: lessons/lesson09
+- file: lessons/lesson10
+- file: lessons/lesson11
+- file: lessons/lesson12
+- file: lessons/lesson13
+- file: lessons/lesson14
+- file: lessons/lesson15
+- file: lessons/lesson16
+- file: lessons/lesson17
+- file: lessons/lesson18
+- file: lessons/lesson19
+- file: lessons/lesson20
+- file: lessons/lesson23
+- file: lessons/lesson24
+- file: lessons/lesson25
+- file: lessons/lesson26
+- file: lessons/lesson27
+- file: lessons/lesson28

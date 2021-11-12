@@ -1,0 +1,1395 @@
+[TITLE]
+;;Project Title/Notes
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CFS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           03/03/2011
+START_TIME           00:00:00
+REPORT_START_DATE    03/03/2011
+REPORT_START_TIME    00:00:00
+END_DATE             03/09/2011
+END_TIME             00:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          01:00:00
+WET_STEP             01:00:00
+DRY_STEP             01:00:00
+ROUTING_STEP         0:00:30 
+RULE_STEP            00:00:00
+
+INERTIAL_DAMPING     NONE
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         12.566
+MAX_TRIALS           8
+HEAD_TOLERANCE       0.005
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+2                -8         0          0          0          0         
+4                31.5       0          0          0          0         
+5                44         0          0          0          0         
+6                43.75      0          0          0          0         
+7                62.5       0          0          0          0         
+8                81.25      0          0          0          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+1                -16        TIMESERIES BuffaloDSStage   NO                       
+
+[STORAGE]
+;;Name           Elev.    MaxDepth   InitDepth  Shape      Curve Name/Params            N/A      Fevap    Psi      Ksat     IMD     
+;;-------------- -------- ---------- ----------- ---------- ---------------------------- -------- --------          -------- --------
+3                25       110        0          TABULAR    AllensLanding                0        0       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+1                8                7                2500       0.035      0          0          0          0         
+2                7                6                2500       0.035      0          0          0          0         
+3                6                3                2500       0.035      0          0          0          0         
+4                5                4                2500       0.035      0          0          0          0         
+5                4                3                2500       0.035      0          0          0          0         
+6                3                2                2500       0.035      0          0          0          0         
+7                2                1                2500       0.035      0          0          0          0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+1                IRREGULAR    WhiteOakUpstream 0          0          0          1                    
+2                IRREGULAR    WhiteOakUpstream 0          0          0          1                    
+3                IRREGULAR    WhiteOakUpstream 0          0          0          1                    
+4                IRREGULAR    BuffaloUpstream  0          0          0          1                    
+5                IRREGULAR    BuffaloUpstream  0          0          0          1                    
+6                IRREGULAR    BuffaloBayouDownstream 0          0          0          1                    
+7                IRREGULAR    BuffaloBayouDownstream 0          0          0          1                    
+
+[TRANSECTS]
+;;Transect Data in HEC-2 format
+;
+NC 0.01     0.01     0.01    
+X1 BuffaloUpstream   89       4879.4   5159.2   0.0      0.0      0.0      0.0      0.0     
+GR 46.74    3604.2   46.24    3694.2   43.24    3774.2   41.64    3804.2   40.44    3944.2  
+GR 38.64    4106.5   36.54    4467.3   35.74    4517.3   36.24    4547.3   35.14    4657.3  
+GR 36.54    4727.3   36.42    4737.1   35.81    4786     35.54    4807.3   35.16    4812.69 
+GR 35.16    4812.8   35.15    4812.91  34.84    4817.3   34.54    4818.7   32.74    4828.7  
+GR 30.14    4838.7   34.79    4851.7   34.78    4851.8   33.99    4869.2   29.42    4879.4  
+GR 28.29    4881.9   28.25    4882     28.2     4882.11  28.16    4882.2   17.8     4905.3  
+GR 10.01    4921.7   8.95     4926     8.93     4926.1   8.3      4933.4   11.5     4933.7  
+GR 8.13     4934.6   6.84     4937.4   2.25     4947.4   1.17     4956     0.35     4957.9  
+GR -3       4965.2   -7.73    4983.3   -9.93    4992.6   -10.52   4996.3   -11.52   5002.5  
+GR -5.95    5020.1   -3.96    5027.5   -2.98    5032     -2.92    5032.2   -1.94    5035.5  
+GR 0.34     5042     2.14     5046.9   5.42     5056.7   17.19    5090.6   22.54    5106    
+GR 22.71    5108.9   23.01    5119.5   22.72    5133     23.7     5138.4   23.95    5139.79 
+GR 23.97    5139.9   23.99    5140.01  26.63    5154.6   26.62    5154.7   26       5159.2  
+GR 22.14    5187.6   25.44    5188.7   28.64    5198.7   33.54    5218.7   34.74    5225    
+GR 40.24    5245     40.43    5261.2   40.43    5261.29  40.43    5261.4   40.43    5261.5  
+GR 40.94    5305     40.34    5326.9   40.73    5365.9   40.74    5366.9   40.74    5396.9  
+GR 41.54    5416.9   41.44    5426.9   40.44    5436.8   39.54    5466.8   42.34    5626.8  
+GR 44.74    5666.8   45.64    5706.8   47.24    5768     47.44    5828    
+;
+NC 0.01     0.01     0.01    
+X1 BuffaloBayouDownstream  38       4708.8   5116.8   0.0      0.0      0.0      0.0      0.0     
+GR 42.1     3444.4   38.8     3584.4   38.1     3604.4   38.1     3654.4   31.9     3774.4  
+GR 31.4     3814.4   34       4134.4   35.2     4164.4   34.3     4204.4   35.3     4234.4  
+GR 34.8     4304.4   35.9     4334.4   33.6     4364.4   33       4394.4   30.3     4414.4  
+GR 29.6     4424.4   30.3     4434.4   35.9     4464.4   34.6     4608.8   32       4708.8  
+GR 32.62    4730.2   26.29    4806.4   22.6     4879.1   0.07     4930.6   -9.41    4945.8  
+GR -16.14   4996     -15.3    5029.6   -0.94    5069.5   12.41    5086.1   21.32    5102.5  
+GR 32.62    5116.8   32.34    5127.1   31.8     5128.8   32.2     5148.8   36.6     5158.8  
+GR 41.7     5168.8   47.5     5178.8   48.9     5188.8  
+;
+NC 0.01     0.01     0.01    
+X1 WhiteOakUpstream  122      4477.7   5292.4   0.0      0.0      0.0      0.0      0.0     
+GR 50.48    4247.7   48.13    4257.7   45.44    4267.7   41.1     4277.7   37.37    4287.7  
+GR 33.89    4297.7   32.78    4307.7   32.5     4317.7   32.54    4327.7   32.25    4337.7  
+GR 31.64    4347.7   30.49    4357.7   30.32    4367.7   31.14    4377.7   36.41    4397.7  
+GR 38.57    4407.7   39.65    4417.7   40.3     4427.7   40.71    4467.7   40.4     4477.7  
+GR 38.43    4487.7   36.25    4497.7   33.65    4507.7   30.79    4517.7   28.18    4527.7  
+GR 23.55    4547.7   21.52    4557.7   20.14    4567.7   19.23    4577.7   18.82    4587.7  
+GR 16.53    4617.7   15.86    4651.6   14.61    4731.6   16.1     4801.6   16.11    4851.6  
+GR 15.17    4893.6   15.01    4903.6   13.21    4935.3   12.24    4947.51  12.14    4949.28 
+GR 10.77    4960.01  10.2     4963.39  9.07     4967.88  -0.3     4982.44  -1.72    4984.71 
+GR -2.47    4986.11  -2.94    4987.24  -3.18    4992.7   -3.3     4993.75  -4.3     5000    
+GR -4.1     5000.86  -3.99    5001.13  -3.29    5003.39  -3.11    5008.5   -1.91    5010.89 
+GR -0.74    5013.03  2.47     5019.05  3.92     5021.77  5.69     5025.43  5.79     5026.05 
+GR 7.19     5032     8.14     5035.85  10.81    5043.6   13.97    5063.6   14.42    5073.6  
+GR 14.17    5083.6   14.2     5093.6   15.48    5103.6   20.42    5123.6   28.69    5153.6  
+GR 30.96    5163.6   31.69    5173.6   29.67    5212.4   29.3     5222.4   29.16    5232.4  
+GR 29.62    5242.4   31.89    5252.4   35.02    5262.4   37.34    5272.4   41.72    5292.4  
+GR 45.74    5312.4   47.16    5322.4   47.59    5332.4   47.75    5342.4   47.28    5362.4  
+GR 44.52    5382.4   43.7     5392.4   43.35    5402.4   45.98    5422.4   46.48    5432.4  
+GR 43.71    5492.4   43.02    5502.4   39.7     5532.4   39.06    5542.4   39.08    5552.4  
+GR 39.32    5562.4   40.47    5582.4   38.58    5722.4   39.05    5742.4   38.24    5782.4  
+GR 38.03    5822.4   38.19    5832.4   38.61    5842.4   39.29    5852.4   39.5     5862.4  
+GR 39.41    5872.4   40.78    5942.4   40.39    5972.4   40.47    5982.4   40.98    5992.4  
+GR 42.24    6112.4   42.13    6122.4   41.71    6132.4   41.44    6202.4   42.09    6222.4  
+GR 42.14    6242.4   41.96    6252.4   42.11    6262.4   42.53    6272.4   43.41    6392.4  
+GR 46.12    6472.4   46.47    6521.7  
+
+[INFLOWS]
+;;Node           Constituent      Time Series      Type     Mfactor  Sfactor  Baseline Pattern
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- --------
+5                FLOW             ""               FLOW     1.0      1.0      1200    
+8                FLOW             WhiteOakHydrograph FLOW     1.0      1.0      12000   
+
+[CURVES]
+;;Name           Type       X-Value    Y-Value   
+;;-------------- ---------- ---------- ----------
+AllensLanding    Storage    0          43560     
+AllensLanding               10         45000     
+AllensLanding               20         50000     
+AllensLanding               30         55000     
+AllensLanding               40         60000     
+AllensLanding               50         70000     
+AllensLanding               60         80000     
+AllensLanding               70         90000     
+AllensLanding               90         120000    
+AllensLanding               100        240000    
+AllensLanding               110        360000    
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+WhiteOakHydrograph            0          228       
+WhiteOakHydrograph            0.5        197       
+WhiteOakHydrograph            1          199       
+WhiteOakHydrograph            1.5        203       
+WhiteOakHydrograph            2          195       
+WhiteOakHydrograph            2.5        192       
+WhiteOakHydrograph            3          189       
+WhiteOakHydrograph            3.5        173       
+WhiteOakHydrograph            4          168       
+WhiteOakHydrograph            4.5        161       
+WhiteOakHydrograph            5          156       
+WhiteOakHydrograph            5.5        156       
+WhiteOakHydrograph            6          168       
+WhiteOakHydrograph            6.5        186       
+WhiteOakHydrograph            7          250       
+WhiteOakHydrograph            7.5        307       
+WhiteOakHydrograph            8          406       
+WhiteOakHydrograph            8.5        506       
+WhiteOakHydrograph            9          580       
+WhiteOakHydrograph            9.5        641       
+WhiteOakHydrograph            10         653       
+WhiteOakHydrograph            10.5       758       
+WhiteOakHydrograph            11         916       
+WhiteOakHydrograph            11.5       1020      
+WhiteOakHydrograph            12         1060      
+WhiteOakHydrograph            12.5       986       
+WhiteOakHydrograph            13         945       
+WhiteOakHydrograph            13.5       880       
+WhiteOakHydrograph            14         842       
+WhiteOakHydrograph            14.5       842       
+WhiteOakHydrograph            15         831       
+WhiteOakHydrograph            15.5       862       
+WhiteOakHydrograph            16         982       
+WhiteOakHydrograph            16.5       1300      
+WhiteOakHydrograph            17         2510      
+WhiteOakHydrograph            17.5       5020      
+WhiteOakHydrograph            18         7110      
+WhiteOakHydrograph            18.5       8940      
+WhiteOakHydrograph            30         9110      
+WhiteOakHydrograph            30.5       8160      
+WhiteOakHydrograph            31         7270      
+WhiteOakHydrograph            31.5       6400      
+WhiteOakHydrograph            32         5570      
+WhiteOakHydrograph            32.5       4840      
+WhiteOakHydrograph            33         4240      
+WhiteOakHydrograph            33.5       3710      
+WhiteOakHydrograph            34         3270      
+WhiteOakHydrograph            34.5       2870      
+WhiteOakHydrograph            35         2590      
+WhiteOakHydrograph            35.5       2300      
+WhiteOakHydrograph            36         2130      
+WhiteOakHydrograph            36.5       1990      
+WhiteOakHydrograph            37         1890      
+WhiteOakHydrograph            37.5       1790      
+WhiteOakHydrograph            38         1730      
+WhiteOakHydrograph            38.5       1650      
+WhiteOakHydrograph            39         1620      
+WhiteOakHydrograph            39.5       1570      
+WhiteOakHydrograph            40         1510      
+WhiteOakHydrograph            40.5       1450      
+WhiteOakHydrograph            41         1400      
+WhiteOakHydrograph            41.5       1350      
+WhiteOakHydrograph            42         1300      
+WhiteOakHydrograph            42.5       1280      
+WhiteOakHydrograph            43         1220      
+WhiteOakHydrograph            43.5       1170      
+WhiteOakHydrograph            44         1130      
+WhiteOakHydrograph            44.5       1080      
+WhiteOakHydrograph            45         1060      
+WhiteOakHydrograph            45.5       1030      
+WhiteOakHydrograph            46         1010      
+WhiteOakHydrograph            46.5       967       
+WhiteOakHydrograph            47         948       
+WhiteOakHydrograph            47.5       905       
+WhiteOakHydrograph            48         880       
+WhiteOakHydrograph            48.5       842       
+WhiteOakHydrograph            49         842       
+WhiteOakHydrograph            49.5       808       
+WhiteOakHydrograph            50         775       
+WhiteOakHydrograph            50.5       784       
+WhiteOakHydrograph            51         765       
+WhiteOakHydrograph            51.5       755       
+WhiteOakHydrograph            52         742       
+WhiteOakHydrograph            52.5       723       
+WhiteOakHydrograph            53         701       
+WhiteOakHydrograph            53.5       689       
+WhiteOakHydrograph            54         665       
+WhiteOakHydrograph            54.5       656       
+WhiteOakHydrograph            55         647       
+WhiteOakHydrograph            55.5       636       
+WhiteOakHydrograph            56         618       
+WhiteOakHydrograph            56.5       596       
+WhiteOakHydrograph            57         585       
+WhiteOakHydrograph            57.5       574       
+WhiteOakHydrograph            58         558       
+WhiteOakHydrograph            58.5       539       
+WhiteOakHydrograph            59         536       
+WhiteOakHydrograph            59.5       521       
+WhiteOakHydrograph            60         506       
+WhiteOakHydrograph            60.5       503       
+WhiteOakHydrograph            61         491       
+WhiteOakHydrograph            61.5       485       
+WhiteOakHydrograph            62         482       
+WhiteOakHydrograph            62.5       468       
+WhiteOakHydrograph            63         462       
+WhiteOakHydrograph            63.5       451       
+WhiteOakHydrograph            64         438       
+WhiteOakHydrograph            64.5       435       
+WhiteOakHydrograph            65         435       
+WhiteOakHydrograph            65.5       435       
+WhiteOakHydrograph            66         438       
+WhiteOakHydrograph            66.5       448       
+WhiteOakHydrograph            67         448       
+WhiteOakHydrograph            67.5       435       
+WhiteOakHydrograph            68         419       
+WhiteOakHydrograph            68.5       391       
+WhiteOakHydrograph            69         374       
+WhiteOakHydrograph            69.5       369       
+WhiteOakHydrograph            70         361       
+WhiteOakHydrograph            70.5       355       
+WhiteOakHydrograph            71         353       
+WhiteOakHydrograph            71.5       342       
+WhiteOakHydrograph            72         340       
+WhiteOakHydrograph            72.5       335       
+WhiteOakHydrograph            73         337       
+WhiteOakHydrograph            73.5       345       
+WhiteOakHydrograph            74         342       
+WhiteOakHydrograph            74.5       337       
+WhiteOakHydrograph            75         337       
+WhiteOakHydrograph            75.5       331       
+WhiteOakHydrograph            76         327       
+WhiteOakHydrograph            76.5       325       
+WhiteOakHydrograph            77         320       
+WhiteOakHydrograph            77.5       304       
+WhiteOakHydrograph            78         294       
+WhiteOakHydrograph            78.5       299       
+WhiteOakHydrograph            79         268       
+WhiteOakHydrograph            79.5       260       
+WhiteOakHydrograph            80         250       
+WhiteOakHydrograph            80.5       239       
+WhiteOakHydrograph            81         223       
+;
+BuffaloBayouUpstream            0          95        
+BuffaloBayouUpstream            0.25       104       
+BuffaloBayouUpstream            0.5        114       
+BuffaloBayouUpstream            0.75       116       
+BuffaloBayouUpstream            1          113       
+BuffaloBayouUpstream            1.25       141       
+BuffaloBayouUpstream            1.5        126       
+BuffaloBayouUpstream            1.75       117       
+BuffaloBayouUpstream            2          96        
+BuffaloBayouUpstream            2.25       98        
+BuffaloBayouUpstream            2.5        98        
+BuffaloBayouUpstream            2.75       102       
+BuffaloBayouUpstream            3          117       
+BuffaloBayouUpstream            3.25       94        
+BuffaloBayouUpstream            3.5        97        
+BuffaloBayouUpstream            3.75       104       
+BuffaloBayouUpstream            4          103       
+BuffaloBayouUpstream            4.25       113       
+BuffaloBayouUpstream            4.5        115       
+BuffaloBayouUpstream            4.75       117       
+BuffaloBayouUpstream            5          116       
+BuffaloBayouUpstream            5.25       99        
+BuffaloBayouUpstream            5.5        108       
+BuffaloBayouUpstream            5.75       110       
+BuffaloBayouUpstream            6          92        
+BuffaloBayouUpstream            6.25       99        
+BuffaloBayouUpstream            6.5        86        
+BuffaloBayouUpstream            6.75       106       
+BuffaloBayouUpstream            7          109       
+BuffaloBayouUpstream            7.25       95        
+BuffaloBayouUpstream            7.5        106       
+BuffaloBayouUpstream            7.75       99        
+BuffaloBayouUpstream            8          99        
+BuffaloBayouUpstream            8.25       99        
+BuffaloBayouUpstream            8.5        98        
+BuffaloBayouUpstream            8.75       98        
+BuffaloBayouUpstream            9          98        
+BuffaloBayouUpstream            9.25       100       
+BuffaloBayouUpstream            9.5        106       
+BuffaloBayouUpstream            9.75       125       
+BuffaloBayouUpstream            10         141       
+BuffaloBayouUpstream            10.25      138       
+BuffaloBayouUpstream            10.5       151       
+BuffaloBayouUpstream            10.75      184       
+BuffaloBayouUpstream            11         262       
+BuffaloBayouUpstream            11.25      369       
+BuffaloBayouUpstream            11.5       524       
+BuffaloBayouUpstream            11.75      689       
+BuffaloBayouUpstream            12         898       
+BuffaloBayouUpstream            12.25      1200      
+BuffaloBayouUpstream            12.5       1390      
+BuffaloBayouUpstream            12.75      1640      
+BuffaloBayouUpstream            13         2060      
+BuffaloBayouUpstream            13.25      3170      
+BuffaloBayouUpstream            13.5       4570      
+BuffaloBayouUpstream            13.75      5670      
+BuffaloBayouUpstream            14         6520      
+BuffaloBayouUpstream            14.25      7600      
+BuffaloBayouUpstream            14.5       8420      
+BuffaloBayouUpstream            14.75      9290      
+BuffaloBayouUpstream            15         9754      
+BuffaloBayouUpstream            15.25      10242     
+BuffaloBayouUpstream            15.5       10754     
+BuffaloBayouUpstream            15.75      11292     
+BuffaloBayouUpstream            16         11856     
+BuffaloBayouUpstream            16.25      11708     
+BuffaloBayouUpstream            16.5       11562     
+BuffaloBayouUpstream            16.75      11417     
+BuffaloBayouUpstream            17         11274     
+BuffaloBayouUpstream            17.25      11133     
+BuffaloBayouUpstream            17.5       10994     
+BuffaloBayouUpstream            17.75      10857     
+BuffaloBayouUpstream            18         10721     
+BuffaloBayouUpstream            18.25      10587     
+BuffaloBayouUpstream            18.5       10455     
+BuffaloBayouUpstream            18.75      10324     
+BuffaloBayouUpstream            19         10195     
+BuffaloBayouUpstream            19.25      10068     
+BuffaloBayouUpstream            19.5       9942      
+BuffaloBayouUpstream            19.75      9817      
+BuffaloBayouUpstream            20         9910      
+BuffaloBayouUpstream            20.25      9520      
+BuffaloBayouUpstream            20.5       9090      
+BuffaloBayouUpstream            20.75      8600      
+BuffaloBayouUpstream            21         8140      
+BuffaloBayouUpstream            21.25      7700      
+BuffaloBayouUpstream            21.5       7250      
+BuffaloBayouUpstream            21.75      6790      
+BuffaloBayouUpstream            22         6400      
+BuffaloBayouUpstream            22.25      6030      
+BuffaloBayouUpstream            22.5       5690      
+BuffaloBayouUpstream            22.75      5400      
+BuffaloBayouUpstream            23         5100      
+BuffaloBayouUpstream            23.25      4900      
+BuffaloBayouUpstream            23.5       4690      
+BuffaloBayouUpstream            23.75      4510      
+BuffaloBayouUpstream            24         4330      
+BuffaloBayouUpstream            24.25      4170      
+BuffaloBayouUpstream            24.5       4010      
+BuffaloBayouUpstream            24.75      3860      
+BuffaloBayouUpstream            25         3720      
+BuffaloBayouUpstream            25.25      3570      
+BuffaloBayouUpstream            25.5       3450      
+BuffaloBayouUpstream            25.75      3320      
+BuffaloBayouUpstream            26         3190      
+BuffaloBayouUpstream            26.25      3090      
+BuffaloBayouUpstream            26.5       2980      
+BuffaloBayouUpstream            26.75      2870      
+BuffaloBayouUpstream            27         2780      
+BuffaloBayouUpstream            27.25      2680      
+BuffaloBayouUpstream            27.5       2580      
+BuffaloBayouUpstream            27.75      2500      
+BuffaloBayouUpstream            28         2420      
+BuffaloBayouUpstream            28.25      2300      
+BuffaloBayouUpstream            28.5       2270      
+BuffaloBayouUpstream            28.75      2210      
+BuffaloBayouUpstream            29         2140      
+BuffaloBayouUpstream            29.25      2070      
+BuffaloBayouUpstream            29.5       2010      
+BuffaloBayouUpstream            29.75      1950      
+BuffaloBayouUpstream            30         1900      
+BuffaloBayouUpstream            30.25      1840      
+BuffaloBayouUpstream            30.5       1790      
+BuffaloBayouUpstream            30.75      1740      
+BuffaloBayouUpstream            31         1700      
+BuffaloBayouUpstream            31.25      1650      
+BuffaloBayouUpstream            31.5       1610      
+BuffaloBayouUpstream            31.75      1570      
+BuffaloBayouUpstream            32         1520      
+BuffaloBayouUpstream            32.25      1490      
+BuffaloBayouUpstream            32.5       1460      
+BuffaloBayouUpstream            32.75      1420      
+BuffaloBayouUpstream            33         1390      
+BuffaloBayouUpstream            33.25      1350      
+BuffaloBayouUpstream            33.5       1320      
+BuffaloBayouUpstream            33.75      1290      
+BuffaloBayouUpstream            34         1260      
+BuffaloBayouUpstream            34.25      1230      
+BuffaloBayouUpstream            34.5       1200      
+BuffaloBayouUpstream            34.75      1180      
+BuffaloBayouUpstream            35         1150      
+BuffaloBayouUpstream            35.25      1100      
+BuffaloBayouUpstream            35.5       1100      
+BuffaloBayouUpstream            35.75      1080      
+BuffaloBayouUpstream            36         1060      
+BuffaloBayouUpstream            36.25      1030      
+BuffaloBayouUpstream            36.5       1000      
+BuffaloBayouUpstream            36.75      999       
+BuffaloBayouUpstream            37         981       
+BuffaloBayouUpstream            37.25      960       
+BuffaloBayouUpstream            37.5       939       
+BuffaloBayouUpstream            37.75      918       
+BuffaloBayouUpstream            38         898       
+BuffaloBayouUpstream            38.25      881       
+BuffaloBayouUpstream            38.5       869       
+BuffaloBayouUpstream            38.75      849       
+BuffaloBayouUpstream            39         829       
+BuffaloBayouUpstream            39.25      817       
+BuffaloBayouUpstream            39.5       802       
+BuffaloBayouUpstream            39.75      786       
+BuffaloBayouUpstream            40         775       
+BuffaloBayouUpstream            40.25      759       
+BuffaloBayouUpstream            40.5       752       
+BuffaloBayouUpstream            40.75      744       
+BuffaloBayouUpstream            41         729       
+BuffaloBayouUpstream            41.25      711       
+BuffaloBayouUpstream            41.5       700       
+BuffaloBayouUpstream            41.75      689       
+BuffaloBayouUpstream            42         678       
+BuffaloBayouUpstream            42.25      671       
+BuffaloBayouUpstream            42.5       664       
+BuffaloBayouUpstream            42.75      652       
+BuffaloBayouUpstream            43         645       
+BuffaloBayouUpstream            43.25      637       
+BuffaloBayouUpstream            43.5       629       
+BuffaloBayouUpstream            43.75      614       
+BuffaloBayouUpstream            44         607       
+BuffaloBayouUpstream            44.25      599       
+BuffaloBayouUpstream            44.5       588       
+BuffaloBayouUpstream            44.75      581       
+BuffaloBayouUpstream            45         570       
+BuffaloBayouUpstream            45.25      563       
+BuffaloBayouUpstream            45.5       556       
+BuffaloBayouUpstream            45.75      545       
+BuffaloBayouUpstream            46         538       
+BuffaloBayouUpstream            46.25      531       
+BuffaloBayouUpstream            46.5       524       
+BuffaloBayouUpstream            46.75      514       
+BuffaloBayouUpstream            47         507       
+BuffaloBayouUpstream            47.25      500       
+BuffaloBayouUpstream            47.5       493       
+BuffaloBayouUpstream            47.75      487       
+BuffaloBayouUpstream            48         485       
+BuffaloBayouUpstream            48.25      473       
+BuffaloBayouUpstream            48.5       467       
+BuffaloBayouUpstream            48.75      460       
+BuffaloBayouUpstream            49         454       
+BuffaloBayouUpstream            49.25      447       
+BuffaloBayouUpstream            49.5       441       
+BuffaloBayouUpstream            49.75      437       
+BuffaloBayouUpstream            50         428       
+BuffaloBayouUpstream            50.25      422       
+BuffaloBayouUpstream            50.5       415       
+BuffaloBayouUpstream            50.75      412       
+BuffaloBayouUpstream            51         406       
+BuffaloBayouUpstream            51.25      400       
+BuffaloBayouUpstream            51.5       394       
+BuffaloBayouUpstream            51.75      388       
+BuffaloBayouUpstream            52         384       
+BuffaloBayouUpstream            52.25      379       
+BuffaloBayouUpstream            52.5       373       
+BuffaloBayouUpstream            52.75      369       
+BuffaloBayouUpstream            53         366       
+BuffaloBayouUpstream            53.25      360       
+BuffaloBayouUpstream            53.5       357       
+BuffaloBayouUpstream            53.75      354       
+BuffaloBayouUpstream            54         351       
+BuffaloBayouUpstream            54.25      345       
+BuffaloBayouUpstream            54.5       339       
+BuffaloBayouUpstream            54.75      339       
+BuffaloBayouUpstream            55         337       
+BuffaloBayouUpstream            55.25      334       
+BuffaloBayouUpstream            55.5       331       
+BuffaloBayouUpstream            55.75      331       
+BuffaloBayouUpstream            56         328       
+BuffaloBayouUpstream            56.25      328       
+BuffaloBayouUpstream            56.5       323       
+BuffaloBayouUpstream            56.75      323       
+BuffaloBayouUpstream            57         322       
+BuffaloBayouUpstream            57.25      319       
+BuffaloBayouUpstream            57.5       319       
+BuffaloBayouUpstream            57.75      316       
+BuffaloBayouUpstream            58         312       
+BuffaloBayouUpstream            58.25      312       
+BuffaloBayouUpstream            58.5       312       
+BuffaloBayouUpstream            58.75      309       
+BuffaloBayouUpstream            59         306       
+BuffaloBayouUpstream            59.25      306       
+BuffaloBayouUpstream            59.5       306       
+BuffaloBayouUpstream            59.75      303       
+BuffaloBayouUpstream            60         303       
+BuffaloBayouUpstream            60.25      303       
+BuffaloBayouUpstream            60.5       303       
+BuffaloBayouUpstream            60.75      303       
+BuffaloBayouUpstream            61         300       
+BuffaloBayouUpstream            61.25      297       
+BuffaloBayouUpstream            61.5       294       
+BuffaloBayouUpstream            61.75      291       
+BuffaloBayouUpstream            62         285       
+BuffaloBayouUpstream            62.25      282       
+BuffaloBayouUpstream            62.5       279       
+BuffaloBayouUpstream            62.75      276       
+BuffaloBayouUpstream            63         274       
+BuffaloBayouUpstream            63.25      271       
+BuffaloBayouUpstream            63.5       271       
+BuffaloBayouUpstream            63.75      268       
+BuffaloBayouUpstream            64         268       
+BuffaloBayouUpstream            64.25      268       
+BuffaloBayouUpstream            64.5       268       
+BuffaloBayouUpstream            64.75      263       
+BuffaloBayouUpstream            65         262       
+BuffaloBayouUpstream            65.25      258       
+BuffaloBayouUpstream            65.5       253       
+BuffaloBayouUpstream            65.75      252       
+BuffaloBayouUpstream            66         248       
+BuffaloBayouUpstream            66.25      245       
+BuffaloBayouUpstream            66.5       245       
+BuffaloBayouUpstream            66.75      242       
+BuffaloBayouUpstream            67         239       
+BuffaloBayouUpstream            67.25      239       
+BuffaloBayouUpstream            67.5       239       
+BuffaloBayouUpstream            67.75      236       
+BuffaloBayouUpstream            68         236       
+BuffaloBayouUpstream            68.25      236       
+BuffaloBayouUpstream            68.5       233       
+BuffaloBayouUpstream            68.75      233       
+BuffaloBayouUpstream            69         230       
+BuffaloBayouUpstream            69.25      230       
+BuffaloBayouUpstream            69.5       230       
+BuffaloBayouUpstream            69.75      227       
+BuffaloBayouUpstream            70         227       
+BuffaloBayouUpstream            70.25      227       
+BuffaloBayouUpstream            70.5       223       
+BuffaloBayouUpstream            70.75      223       
+BuffaloBayouUpstream            71         220       
+BuffaloBayouUpstream            71.25      220       
+BuffaloBayouUpstream            71.5       217       
+BuffaloBayouUpstream            71.75      217       
+BuffaloBayouUpstream            72         215       
+BuffaloBayouUpstream            72.25      215       
+BuffaloBayouUpstream            72.5       212       
+BuffaloBayouUpstream            72.75      209       
+BuffaloBayouUpstream            73         206       
+BuffaloBayouUpstream            73.25      206       
+BuffaloBayouUpstream            73.5       202       
+BuffaloBayouUpstream            73.75      200       
+BuffaloBayouUpstream            74         200       
+BuffaloBayouUpstream            74.25      193       
+BuffaloBayouUpstream            74.5       193       
+BuffaloBayouUpstream            74.75      187       
+BuffaloBayouUpstream            75         184       
+BuffaloBayouUpstream            75.25      184       
+BuffaloBayouUpstream            75.5       181       
+BuffaloBayouUpstream            75.75      178       
+BuffaloBayouUpstream            76         175       
+BuffaloBayouUpstream            76.25      175       
+BuffaloBayouUpstream            76.5       172       
+BuffaloBayouUpstream            76.75      172       
+BuffaloBayouUpstream            77         169       
+BuffaloBayouUpstream            77.25      169       
+BuffaloBayouUpstream            77.5       166       
+BuffaloBayouUpstream            77.75      166       
+BuffaloBayouUpstream            78         166       
+BuffaloBayouUpstream            78.25      166       
+BuffaloBayouUpstream            78.5       166       
+BuffaloBayouUpstream            78.75      163       
+BuffaloBayouUpstream            79         163       
+BuffaloBayouUpstream            79.25      160       
+BuffaloBayouUpstream            79.5       160       
+BuffaloBayouUpstream            79.75      160       
+BuffaloBayouUpstream            80         160       
+BuffaloBayouUpstream            80.25      163       
+BuffaloBayouUpstream            80.5       166       
+BuffaloBayouUpstream            80.75      163       
+BuffaloBayouUpstream            81         163       
+BuffaloBayouUpstream            81.25      163       
+BuffaloBayouUpstream            81.5       163       
+BuffaloBayouUpstream            81.75      163       
+BuffaloBayouUpstream            82         163       
+BuffaloBayouUpstream            82.25      163       
+BuffaloBayouUpstream            82.5       163       
+BuffaloBayouUpstream            82.75      166       
+BuffaloBayouUpstream            83         169       
+BuffaloBayouUpstream            83.25      172       
+BuffaloBayouUpstream            83.5       175       
+BuffaloBayouUpstream            83.75      181       
+BuffaloBayouUpstream            84         184       
+BuffaloBayouUpstream            84.25      187       
+BuffaloBayouUpstream            84.5       190       
+BuffaloBayouUpstream            84.75      190       
+BuffaloBayouUpstream            85         193       
+BuffaloBayouUpstream            85.25      190       
+BuffaloBayouUpstream            85.5       190       
+BuffaloBayouUpstream            85.75      190       
+BuffaloBayouUpstream            86         187       
+BuffaloBayouUpstream            86.25      187       
+BuffaloBayouUpstream            86.5       184       
+BuffaloBayouUpstream            86.75      181       
+BuffaloBayouUpstream            87         181       
+BuffaloBayouUpstream            87.25      181       
+BuffaloBayouUpstream            87.5       178       
+BuffaloBayouUpstream            87.75      178       
+BuffaloBayouUpstream            88         178       
+BuffaloBayouUpstream            88.25      175       
+BuffaloBayouUpstream            88.5       175       
+BuffaloBayouUpstream            88.75      175       
+BuffaloBayouUpstream            89         172       
+BuffaloBayouUpstream            89.25      172       
+BuffaloBayouUpstream            89.5       172       
+BuffaloBayouUpstream            89.75      166       
+BuffaloBayouUpstream            90         166       
+BuffaloBayouUpstream            90.25      166       
+BuffaloBayouUpstream            90.5       163       
+BuffaloBayouUpstream            90.75      163       
+BuffaloBayouUpstream            91         160       
+BuffaloBayouUpstream            91.25      160       
+BuffaloBayouUpstream            91.5       157       
+BuffaloBayouUpstream            91.75      157       
+BuffaloBayouUpstream            92         157       
+BuffaloBayouUpstream            92.25      157       
+BuffaloBayouUpstream            92.5       155       
+BuffaloBayouUpstream            92.75      155       
+BuffaloBayouUpstream            93         157       
+BuffaloBayouUpstream            93.25      160       
+BuffaloBayouUpstream            93.5       160       
+BuffaloBayouUpstream            93.75      163       
+BuffaloBayouUpstream            94         163       
+BuffaloBayouUpstream            94.25      163       
+BuffaloBayouUpstream            94.5       163       
+BuffaloBayouUpstream            94.75      160       
+BuffaloBayouUpstream            95         160       
+BuffaloBayouUpstream            95.25      157       
+BuffaloBayouUpstream            95.5       157       
+BuffaloBayouUpstream            95.75      155       
+;
+BuffaloDSFlow               0          129.90    
+BuffaloDSFlow               0.5        130.20    
+BuffaloDSFlow               1          100.57    
+BuffaloDSFlow               1.5        97.69     
+BuffaloDSFlow               2          123.01    
+BuffaloDSFlow               2.5        92.59     
+BuffaloDSFlow               3          103.60    
+BuffaloDSFlow               3.5        133.65    
+BuffaloDSFlow               4          112.36    
+BuffaloDSFlow               4.5        99.27     
+BuffaloDSFlow               5          154.88    
+BuffaloDSFlow               5.5        197.88    
+BuffaloDSFlow               6          158.80    
+BuffaloDSFlow               6.5        246.28    
+BuffaloDSFlow               7          637.84    
+BuffaloDSFlow               7.5        718.95    
+BuffaloDSFlow               8          2165.33   
+BuffaloDSFlow               8.5        3102.47   
+BuffaloDSFlow               9          4827.09   
+BuffaloDSFlow               9.5        5140.51   
+BuffaloDSFlow               10         7141.84   
+BuffaloDSFlow               10.5       6875.38   
+BuffaloDSFlow               11         8254.09   
+BuffaloDSFlow               11.5       9701.00   
+BuffaloDSFlow               12         13760.71  
+BuffaloDSFlow               12.5       16334.58  
+BuffaloDSFlow               13         14245.23  
+BuffaloDSFlow               13.5       19139.01  
+BuffaloDSFlow               14         18480.32  
+BuffaloDSFlow               14.5       17333.06  
+BuffaloDSFlow               15         24128.50  
+BuffaloDSFlow               15.5       19363.69  
+BuffaloDSFlow               16         21116.72  
+BuffaloDSFlow               16.5       24219.23  
+BuffaloDSFlow               17         25513.75  
+BuffaloDSFlow               17.5       24845.55  
+BuffaloDSFlow               18         22730.90  
+BuffaloDSFlow               18.5       19704.77  
+BuffaloDSFlow               19         20000.51  
+BuffaloDSFlow               19.5       24138.10  
+BuffaloDSFlow               20         25503.78  
+BuffaloDSFlow               20.5       23030.20  
+BuffaloDSFlow               21         23567.81  
+BuffaloDSFlow               21.5       18022.19  
+BuffaloDSFlow               22         22835.75  
+BuffaloDSFlow               22.5       20789.74  
+BuffaloDSFlow               23         16955.38  
+BuffaloDSFlow               23.5       22567.03  
+BuffaloDSFlow               24         17270.46  
+BuffaloDSFlow               24.5       19299.17  
+BuffaloDSFlow               25         17159.03  
+BuffaloDSFlow               25.5       15480.94  
+BuffaloDSFlow               26         18954.21  
+BuffaloDSFlow               26.5       14113.94  
+BuffaloDSFlow               27         13929.32  
+BuffaloDSFlow               27.5       12591.87  
+BuffaloDSFlow               28         12092.49  
+BuffaloDSFlow               28.5       13457.96  
+BuffaloDSFlow               29         12410.57  
+BuffaloDSFlow               29.5       11684.98  
+BuffaloDSFlow               30         10910.14  
+BuffaloDSFlow               30.5       9120.09   
+BuffaloDSFlow               31         9247.68   
+BuffaloDSFlow               31.5       7527.15   
+BuffaloDSFlow               32         8794.36   
+BuffaloDSFlow               32.5       7114.28   
+BuffaloDSFlow               33         6325.15   
+BuffaloDSFlow               33.5       6266.66   
+BuffaloDSFlow               34         6922.33   
+BuffaloDSFlow               34.5       6381.51   
+BuffaloDSFlow               35         6660.53   
+BuffaloDSFlow               35.5       5674.37   
+BuffaloDSFlow               36         5304.80   
+BuffaloDSFlow               36.5       4824.95   
+BuffaloDSFlow               37         4312.28   
+BuffaloDSFlow               37.5       4504.18   
+BuffaloDSFlow               38         4220.37   
+BuffaloDSFlow               38.5       4492.69   
+BuffaloDSFlow               39         3570.61   
+BuffaloDSFlow               39.5       4236.25   
+BuffaloDSFlow               40         3084.45   
+BuffaloDSFlow               40.5       2932.93   
+BuffaloDSFlow               41         4549.71   
+BuffaloDSFlow               41.5       4690.69   
+BuffaloDSFlow               42         4688.20   
+BuffaloDSFlow               42.5       2819.29   
+BuffaloDSFlow               43         2948.65   
+BuffaloDSFlow               43.5       2521.09   
+BuffaloDSFlow               44         2303.94   
+BuffaloDSFlow               44.5       1730.21   
+BuffaloDSFlow               45         1796.34   
+BuffaloDSFlow               45.5       1732.06   
+BuffaloDSFlow               46         1892.24   
+BuffaloDSFlow               46.5       1339.00   
+BuffaloDSFlow               47         1717.99   
+BuffaloDSFlow               47.5       1632.88   
+BuffaloDSFlow               48         1691.80   
+BuffaloDSFlow               48.5       1252.54   
+BuffaloDSFlow               49         1256.60   
+BuffaloDSFlow               49.5       1095.42   
+BuffaloDSFlow               50         1246.30   
+BuffaloDSFlow               50.5       960.85    
+BuffaloDSFlow               51         1141.21   
+BuffaloDSFlow               51.5       991.89    
+BuffaloDSFlow               52         929.54    
+BuffaloDSFlow               52.5       822.08    
+BuffaloDSFlow               53         896.64    
+BuffaloDSFlow               53.5       863.20    
+BuffaloDSFlow               54         898.52    
+BuffaloDSFlow               54.5       795.02    
+BuffaloDSFlow               55         962.05    
+BuffaloDSFlow               55.5       785.48    
+BuffaloDSFlow               56         651.89    
+BuffaloDSFlow               56.5       713.10    
+BuffaloDSFlow               57         805.01    
+BuffaloDSFlow               57.5       740.98    
+BuffaloDSFlow               58         622.49    
+BuffaloDSFlow               58.5       668.24    
+BuffaloDSFlow               59         700.55    
+BuffaloDSFlow               59.5       641.34    
+BuffaloDSFlow               60         572.89    
+BuffaloDSFlow               60.5       558.67    
+BuffaloDSFlow               61         579.59    
+BuffaloDSFlow               61.5       607.85    
+BuffaloDSFlow               62         582.53    
+BuffaloDSFlow               62.5       558.28    
+BuffaloDSFlow               63         449.68    
+BuffaloDSFlow               63.5       432.77    
+BuffaloDSFlow               64         441.00    
+BuffaloDSFlow               64.5       455.57    
+BuffaloDSFlow               65         514.56    
+BuffaloDSFlow               65.5       487.39    
+BuffaloDSFlow               66         478.44    
+BuffaloDSFlow               66.5       376.96    
+BuffaloDSFlow               67         497.70    
+BuffaloDSFlow               67.5       369.60    
+BuffaloDSFlow               68         446.52    
+BuffaloDSFlow               68.5       420.18    
+BuffaloDSFlow               69         407.70    
+BuffaloDSFlow               69.5       416.28    
+BuffaloDSFlow               70         392.50    
+BuffaloDSFlow               70.5       333.30    
+BuffaloDSFlow               71         360.07    
+BuffaloDSFlow               71.5       438.28    
+BuffaloDSFlow               72         418.56    
+BuffaloDSFlow               72.5       406.78    
+BuffaloDSFlow               73         284.53    
+BuffaloDSFlow               73.5       304.97    
+BuffaloDSFlow               74         345.37    
+BuffaloDSFlow               74.5       319.78    
+BuffaloDSFlow               75         296.06    
+BuffaloDSFlow               75.5       323.67    
+BuffaloDSFlow               76         249.22    
+BuffaloDSFlow               76.5       258.80    
+BuffaloDSFlow               77         341.07    
+BuffaloDSFlow               77.5       273.46    
+BuffaloDSFlow               78         280.32    
+BuffaloDSFlow               78.5       291.03    
+BuffaloDSFlow               79         266.07    
+BuffaloDSFlow               79.5       288.58    
+BuffaloDSFlow               80         292.51    
+BuffaloDSFlow               80.5       299.52    
+BuffaloDSFlow               81         264.84    
+BuffaloDSFlow               81.5       253.33    
+BuffaloDSFlow               82         201.26    
+BuffaloDSFlow               82.5       205.52    
+BuffaloDSFlow               83         233.00    
+BuffaloDSFlow               83.5       263.29    
+BuffaloDSFlow               84         186.83    
+BuffaloDSFlow               84.5       253.57    
+BuffaloDSFlow               85         217.78    
+BuffaloDSFlow               85.5       182.87    
+BuffaloDSFlow               86         168.09    
+BuffaloDSFlow               86.5       191.24    
+BuffaloDSFlow               87         230.67    
+BuffaloDSFlow               87.5       216.67    
+BuffaloDSFlow               88         238.35    
+BuffaloDSFlow               88.5       213.90    
+BuffaloDSFlow               89         234.73    
+BuffaloDSFlow               89.5       233.23    
+BuffaloDSFlow               90         191.62    
+BuffaloDSFlow               90.5       178.84    
+BuffaloDSFlow               91         192.24    
+BuffaloDSFlow               91.5       183.54    
+BuffaloDSFlow               92         234.68    
+BuffaloDSFlow               92.5       219.83    
+BuffaloDSFlow               93         196.02    
+BuffaloDSFlow               93.5       178.98    
+BuffaloDSFlow               94         198.33    
+BuffaloDSFlow               94.5       237.59    
+BuffaloDSFlow               95         196.46    
+BuffaloDSFlow               95.5       214.25    
+BuffaloDSFlow               96         202.04    
+BuffaloDSFlow               96.5       169.83    
+BuffaloDSFlow               97         169.33    
+BuffaloDSFlow               97.5       249.42    
+BuffaloDSFlow               98         200.12    
+BuffaloDSFlow               98.5       238.60    
+BuffaloDSFlow               99         185.19    
+BuffaloDSFlow               99.5       194.64    
+BuffaloDSFlow               100        208.18    
+BuffaloDSFlow               100.5      233.84    
+BuffaloDSFlow               101        196.21    
+BuffaloDSFlow               101.5      194.74    
+BuffaloDSFlow               102        198.12    
+BuffaloDSFlow               102.5      183.15    
+BuffaloDSFlow               103        174.90    
+BuffaloDSFlow               103.5      158.23    
+BuffaloDSFlow               104        167.54    
+BuffaloDSFlow               104.5      190.75    
+BuffaloDSFlow               105        203.64    
+BuffaloDSFlow               105.5      190.74    
+BuffaloDSFlow               106        202.14    
+BuffaloDSFlow               106.5      157.30    
+BuffaloDSFlow               107        159.24    
+BuffaloDSFlow               107.5      187.93    
+BuffaloDSFlow               108        164.56    
+BuffaloDSFlow               108.5      165.65    
+BuffaloDSFlow               109        128.29    
+BuffaloDSFlow               109.5      154.16    
+BuffaloDSFlow               110        170.83    
+BuffaloDSFlow               110.5      123.86    
+BuffaloDSFlow               111        123.25    
+BuffaloDSFlow               111.5      148.94    
+BuffaloDSFlow               112        156.60    
+BuffaloDSFlow               112.5      141.24    
+BuffaloDSFlow               113        172.78    
+BuffaloDSFlow               113.5      167.07    
+BuffaloDSFlow               114        170.84    
+BuffaloDSFlow               114.5      177.27    
+BuffaloDSFlow               115        152.97    
+BuffaloDSFlow               115.5      188.18    
+BuffaloDSFlow               116        187.83    
+BuffaloDSFlow               116.5      194.91    
+BuffaloDSFlow               117        136.98    
+BuffaloDSFlow               117.5      161.31    
+BuffaloDSFlow               118        151.85    
+BuffaloDSFlow               118.5      162.69    
+BuffaloDSFlow               119        159.35    
+BuffaloDSFlow               119.5      142.20    
+;
+BuffaloDSStage              0          2.80609664
+BuffaloDSStage              0.5        2.71409536
+BuffaloDSStage              1          2.71984784
+BuffaloDSStage              1.5        2.73135184
+BuffaloDSStage              2          2.70546604
+BuffaloDSStage              2.5        2.696836  
+BuffaloDSStage              3          2.68820524
+BuffaloDSStage              3.5        2.64791884
+BuffaloDSStage              4          2.65079696
+BuffaloDSStage              4.5        2.68532816
+BuffaloDSStage              5          2.71697164
+BuffaloDSStage              5.5        2.70834256
+BuffaloDSStage              6          2.78022956
+BuffaloDSStage              6.5        2.926724  
+BuffaloDSStage              7          3.33351424
+BuffaloDSStage              7.5        3.80132096
+BuffaloDSStage              8          4.521604  
+BuffaloDSStage              8.5        5.267579  
+BuffaloDSStage              9          6.05802064
+BuffaloDSStage              9.5        7.06252876
+BuffaloDSStage              10         7.61694604
+BuffaloDSStage              10.5       8.58338384
+BuffaloDSStage              11         10.13533696
+BuffaloDSStage              11.5       13.307956 
+BuffaloDSStage              12         16.918324 
+BuffaloDSStage              12.5       19.38950656
+BuffaloDSStage              13         21.278651 
+BuffaloDSStage              13.5       23.574784 
+BuffaloDSStage              14         25.28761424
+BuffaloDSStage              14.5       27.13570304
+BuffaloDSStage              15         4.241505895
+BuffaloDSStage              15.5       4.329309381
+BuffaloDSStage              16         4.668458076
+BuffaloDSStage              16.5       5.561633552
+BuffaloDSStage              17         8.88623109
+BuffaloDSStage              17.5       15.40922148
+BuffaloDSStage              18         20.4561533
+BuffaloDSStage              18.5       24.58829314
+BuffaloDSStage              19         24.95855508
+BuffaloDSStage              19.5       22.8598187
+BuffaloDSStage              20         20.82813037
+BuffaloDSStage              20.5       18.78084776
+BuffaloDSStage              21         16.77125309
+BuffaloDSStage              21.5       14.95822877
+BuffaloDSStage              22         13.43614978
+BuffaloDSStage              22.5       12.06769067
+BuffaloDSStage              23         10.91453941
+BuffaloDSStage              23.5       9.852780078
+BuffaloDSStage              24         9.101932549
+BuffaloDSStage              24.5       8.317657036
+BuffaloDSStage              25         7.854781322
+BuffaloDSStage              25.5       7.471853557
+BuffaloDSStage              26         7.197373725
+BuffaloDSStage              26.5       6.922091136
+BuffaloDSStage              27         6.756539232
+BuffaloDSStage              27.5       6.535352592
+BuffaloDSStage              28         6.452276638
+BuffaloDSStage              28.5       6.313656714
+BuffaloDSStage              29         6.147046026
+BuffaloDSStage              29.5       5.980150112
+BuffaloDSStage              30         5.840850184
+BuffaloDSStage              30.5       5.701350256
+BuffaloDSStage              31         5.561650328
+BuffaloDSStage              31.5       5.505714357
+BuffaloDSStage              32         5.337714443
+BuffaloDSStage              32.5       5.197491709
+BuffaloDSStage              33         5.085171763
+BuffaloDSStage              33.5       4.944589018
+BuffaloDSStage              34         4.888298228
+BuffaloDSStage              34.5       4.803806264
+BuffaloDSStage              35         4.747435469
+BuffaloDSStage              35.5       4.626135957
+BuffaloDSStage              36         4.572488554
+BuffaloDSStage              36.5       4.450975759
+BuffaloDSStage              37         4.380257955
+BuffaloDSStage              37.5       4.272675432
+BuffaloDSStage              38         4.272672599
+BuffaloDSStage              38.5       4.176316629
+BuffaloDSStage              39         4.082706218
+BuffaloDSStage              39.5       4.108242133
+BuffaloDSStage              40         28.258475 
+BuffaloDSStage              40.5       27.433675 
+BuffaloDSStage              41         26.50527104
+BuffaloDSStage              41.5       25.41916684
+BuffaloDSStage              42         24.37156876
+BuffaloDSStage              42.5       23.37228716
+BuffaloDSStage              43         22.306811 
+BuffaloDSStage              43.5       21.23488336
+BuffaloDSStage              44         20.30909164
+BuffaloDSStage              44.5       19.41317776
+BuffaloDSStage              45         18.56076544
+BuffaloDSStage              45.5       17.80951936
+BuffaloDSStage              46         17.052931 
+BuffaloDSStage              46.5       16.53521296
+BuffaloDSStage              47         15.97673984
+BuffaloDSStage              47.5       15.48160396
+BuffaloDSStage              48         15.02348176
+BuffaloDSStage              48.5       14.58288076
+BuffaloDSStage              49         14.13982976
+BuffaloDSStage              49.5       13.75046924
+BuffaloDSStage              50         13.36179916
+BuffaloDSStage              50.5       12.960979 
+BuffaloDSStage              51         12.64357504
+BuffaloDSStage              51.5       12.27044224
+BuffaloDSStage              52         11.91651584
+BuffaloDSStage              52.5       11.62655276
+BuffaloDSStage              53         11.30409104
+BuffaloDSStage              53.5       11.006779 
+BuffaloDSStage              54         10.769251 
+BuffaloDSStage              54.5       10.504571 
+BuffaloDSStage              55         10.24706704
+BuffaloDSStage              55.5       10.06077184
+BuffaloDSStage              56         9.84738304
+BuffaloDSStage              56.5       9.491491  
+BuffaloDSStage              57         9.36807116
+BuffaloDSStage              57.5       9.13149196
+BuffaloDSStage              58         8.89699216
+BuffaloDSStage              58.5       8.69435116
+BuffaloDSStage              59         8.51023436
+BuffaloDSStage              59.5       8.331179  
+BuffaloDSStage              60         8.18985964
+BuffaloDSStage              60.5       7.99655504
+BuffaloDSStage              61         7.854724  
+BuffaloDSStage              61.5       7.704475  
+BuffaloDSStage              62         7.60052524
+BuffaloDSStage              62.5       7.485499  
+BuffaloDSStage              63         7.36758784
+BuffaloDSStage              63.5       7.24403404
+BuffaloDSStage              64         7.10656204
+BuffaloDSStage              64.5       7.00745836
+BuffaloDSStage              65         6.91376524
+BuffaloDSStage              65.5       6.797899  
+BuffaloDSStage              66         6.701236  
+BuffaloDSStage              66.5       6.54637136
+BuffaloDSStage              67         6.43560016
+BuffaloDSStage              67.5       6.36630316
+BuffaloDSStage              68         6.19700864
+BuffaloDSStage              68.5       6.091396  
+BuffaloDSStage              69         5.9801    
+BuffaloDSStage              69.5       5.89375756
+BuffaloDSStage              70         5.76549484
+BuffaloDSStage              70.5       5.62309264
+BuffaloDSStage              71         5.62309264
+BuffaloDSStage              71.5       5.56719184
+BuffaloDSStage              72         5.51125904
+BuffaloDSStage              72.5       5.42729984
+BuffaloDSStage              73         5.34326864
+BuffaloDSStage              73.5       5.34046636
+BuffaloDSStage              74         5.29001164
+BuffaloDSStage              74.5       5.23111504
+BuffaloDSStage              75         5.17218316
+BuffaloDSStage              75.5       5.113216  
+BuffaloDSStage              76         5.057024  
+BuffaloDSStage              76.5       5.00923564
+BuffaloDSStage              77         4.97548876
+BuffaloDSStage              77.5       4.91921836
+BuffaloDSStage              78         4.86291596
+BuffaloDSStage              78.5       4.82911916
+BuffaloDSStage              79         4.78685696
+BuffaloDSStage              79.5       4.74175744
+BuffaloDSStage              80         4.71073964
+BuffaloDSStage              80.5       4.66560556
+BuffaloDSStage              81         4.64585296
+BuffaloDSStage              81.5       4.62327376
+BuffaloDSStage              82         4.58092396
+BuffaloDSStage              82.5       4.53008044
+BuffaloDSStage              83         4.49899664
+BuffaloDSStage              83.5       4.46790316
+BuffaloDSStage              84         4.4368    
+BuffaloDSStage              84.5       4.41700204
+BuffaloDSStage              85         4.39720016
+BuffaloDSStage              85.5       4.36324496
+BuffaloDSStage              86         4.34343244
+BuffaloDSStage              86.5       4.32078476
+BuffaloDSStage              87         4.29813196
+BuffaloDSStage              87.5       4.25564416
+BuffaloDSStage              88         4.23581036
+BuffaloDSStage              88.5       4.21313836
+BuffaloDSStage              89         4.181956  
+BuffaloDSStage              89.5       4.16210764
+BuffaloDSStage              90         4.13090944
+BuffaloDSStage              90.5       4.111051  
+BuffaloDSStage              91         4.09118864
+BuffaloDSStage              91.5       4.05996844
+BuffaloDSStage              92         4.040096  
+BuffaloDSStage              92.5       4.02021964
+BuffaloDSStage              93         4.00033936
+BuffaloDSStage              93.5       3.97193216
+BuffaloDSStage              94         3.95204236
+BuffaloDSStage              94.5       3.93214864
+BuffaloDSStage              95         3.912251  
+BuffaloDSStage              95.5       3.89519276
+BuffaloDSStage              96         3.88950604
+BuffaloDSStage              96.5       3.855379  
+BuffaloDSStage              97         3.83831116
+BuffaloDSStage              97.5       3.81839504
+BuffaloDSStage              98         3.80132096
+BuffaloDSStage              98.5       3.78139756
+BuffaloDSStage              99         3.76431724
+BuffaloDSStage              99.5       3.75292876
+BuffaloDSStage              100        3.7273    
+BuffaloDSStage              100.5      3.71021056
+BuffaloDSStage              101        3.69026924
+BuffaloDSStage              101.5      3.68172176
+BuffaloDSStage              102        3.66462464
+BuffaloDSStage              102.5      3.64752464
+BuffaloDSStage              103        3.63042176
+BuffaloDSStage              103.5      3.613316  
+BuffaloDSStage              104        3.60191056
+BuffaloDSStage              104.5      3.58765196
+BuffaloDSStage              105        3.570539  
+BuffaloDSStage              105.5      3.55912876
+BuffaloDSStage              106        3.55057024
+BuffaloDSStage              106.5      3.53345104
+BuffaloDSStage              107        3.52489036
+BuffaloDSStage              107.5      3.51632896
+BuffaloDSStage              108        3.50776684
+BuffaloDSStage              108.5      3.49064044
+BuffaloDSStage              109        3.47351116
+BuffaloDSStage              109.5      3.47351116
+BuffaloDSStage              110        3.46780076
+BuffaloDSStage              110.5      3.45923456
+BuffaloDSStage              111        3.45066764
+BuffaloDSStage              111.5      3.45066764
+BuffaloDSStage              112        3.4421    
+BuffaloDSStage              112.5      3.4421    
+BuffaloDSStage              113        3.427819  
+BuffaloDSStage              113.5      3.427819  
+BuffaloDSStage              114        3.42496256
+BuffaloDSStage              114.5      3.41639276
+BuffaloDSStage              115        3.41639276
+BuffaloDSStage              115.5      3.40782224
+BuffaloDSStage              116        3.39639376
+BuffaloDSStage              116.5      3.39639376
+BuffaloDSStage              117        3.39639376
+BuffaloDSStage              117.5      3.38782156
+BuffaloDSStage              118        3.37924864
+BuffaloDSStage              118.5      3.37924864
+BuffaloDSStage              119        3.37924864
+BuffaloDSStage              119.5      3.370675  
+BuffaloDSStage              120        3.370675  
+BuffaloDSStage              120.5      3.370675  
+BuffaloDSStage              121        3.370675  
+BuffaloDSStage              121.5      3.370675  
+BuffaloDSStage              122        3.36210064
+BuffaloDSStage              122.5      3.35352556
+BuffaloDSStage              123        3.34494976
+BuffaloDSStage              123.5      3.33637324
+BuffaloDSStage              124        3.31921804
+BuffaloDSStage              124.5      3.31063936
+BuffaloDSStage              125        3.30205996
+BuffaloDSStage              125.5      3.29347984
+BuffaloDSStage              126        3.28775936
+BuffaloDSStage              126.5      3.27917804
+BuffaloDSStage              127        3.27917804
+BuffaloDSStage              127.5      3.270596  
+BuffaloDSStage              128        3.270596  
+BuffaloDSStage              128.5      3.270596  
+BuffaloDSStage              129        3.270596  
+BuffaloDSStage              129.5      3.256291  
+BuffaloDSStage              130        3.25342976
+BuffaloDSStage              130.5      3.241984  
+BuffaloDSStage              131        3.227675  
+BuffaloDSStage              131.5      3.22481296
+BuffaloDSStage              132        3.213364  
+BuffaloDSStage              132.5      3.20477644
+BuffaloDSStage              133        3.20477644
+BuffaloDSStage              133.5      3.19618816
+BuffaloDSStage              134        3.18759916
+BuffaloDSStage              134.5      3.18759916
+BuffaloDSStage              135        3.18759916
+BuffaloDSStage              135.5      3.17900944
+BuffaloDSStage              136        3.17900944
+BuffaloDSStage              136.5      3.17900944
+BuffaloDSStage              137        3.170419  
+BuffaloDSStage              137.5      3.170419  
+BuffaloDSStage              138        3.16182784
+BuffaloDSStage              138.5      3.16182784
+BuffaloDSStage              139        3.16182784
+BuffaloDSStage              139.5      3.15323596
+BuffaloDSStage              140        3.15323596
+BuffaloDSStage              140.5      3.15323596
+BuffaloDSStage              141        3.141779  
+BuffaloDSStage              141.5      3.141779  
+BuffaloDSStage              142        3.13318544
+BuffaloDSStage              142.5      3.13318544
+BuffaloDSStage              143        3.12459116
+BuffaloDSStage              143.5      3.12459116
+BuffaloDSStage              144        3.11886124
+BuffaloDSStage              144.5      3.11886124
+BuffaloDSStage              145        3.11026576
+BuffaloDSStage              145.5      3.10166956
+BuffaloDSStage              146        3.09307264
+BuffaloDSStage              146.5      3.09307264
+BuffaloDSStage              147        3.08160896
+BuffaloDSStage              147.5      3.07587664
+BuffaloDSStage              148        3.07587664
+BuffaloDSStage              148.5      3.055811  
+BuffaloDSStage              149        3.055811  
+BuffaloDSStage              149.5      3.03860876
+BuffaloDSStage              150        3.03000656
+BuffaloDSStage              150.5      3.03000656
+BuffaloDSStage              151        3.02140364
+BuffaloDSStage              151.5      3.0128    
+BuffaloDSStage              152        3.00419564
+BuffaloDSStage              152.5      3.00419564
+BuffaloDSStage              153        2.99559056
+BuffaloDSStage              153.5      2.99559056
+BuffaloDSStage              154        2.98698476
+BuffaloDSStage              154.5      2.98698476
+BuffaloDSStage              155        2.97837824
+BuffaloDSStage              155.5      2.97837824
+BuffaloDSStage              156        2.97837824
+BuffaloDSStage              156.5      2.97837824
+BuffaloDSStage              157        2.97837824
+BuffaloDSStage              157.5      2.969771  
+BuffaloDSStage              158        2.969771  
+BuffaloDSStage              158.5      2.96116304
+BuffaloDSStage              159        2.96116304
+BuffaloDSStage              159.5      2.96116304
+BuffaloDSStage              160        2.96116304
+BuffaloDSStage              160.5      2.969771  
+BuffaloDSStage              161        2.97837824
+BuffaloDSStage              161.5      2.969771  
+BuffaloDSStage              162        2.969771  
+BuffaloDSStage              162.5      2.969771  
+BuffaloDSStage              163        2.969771  
+BuffaloDSStage              163.5      2.969771  
+BuffaloDSStage              164        2.969771  
+BuffaloDSStage              164.5      2.969771  
+BuffaloDSStage              165        2.969771  
+BuffaloDSStage              165.5      2.97837824
+BuffaloDSStage              166        2.98698476
+BuffaloDSStage              166.5      2.99559056
+BuffaloDSStage              167        3.00419564
+BuffaloDSStage              167.5      3.02140364
+BuffaloDSStage              168        3.03000656
+BuffaloDSStage              168.5      3.03860876
+BuffaloDSStage              169        3.04721024
+BuffaloDSStage              169.5      3.04721024
+BuffaloDSStage              170        3.055811  
+BuffaloDSStage              170.5      3.04721024
+BuffaloDSStage              171        3.04721024
+BuffaloDSStage              171.5      3.04721024
+BuffaloDSStage              172        3.03860876
+BuffaloDSStage              172.5      3.03860876
+BuffaloDSStage              173        3.03000656
+BuffaloDSStage              173.5      3.02140364
+BuffaloDSStage              174        3.02140364
+BuffaloDSStage              174.5      3.02140364
+BuffaloDSStage              175        3.0128    
+BuffaloDSStage              175.5      3.0128    
+BuffaloDSStage              176        3.0128    
+BuffaloDSStage              176.5      3.00419564
+BuffaloDSStage              177        3.00419564
+BuffaloDSStage              177.5      3.00419564
+BuffaloDSStage              178        2.99559056
+BuffaloDSStage              178.5      2.99559056
+BuffaloDSStage              179        2.99559056
+BuffaloDSStage              179.5      2.97837824
+BuffaloDSStage              180        2.97837824
+BuffaloDSStage              180.5      2.97837824
+BuffaloDSStage              181        2.969771  
+BuffaloDSStage              181.5      2.969771  
+BuffaloDSStage              182        2.96116304
+BuffaloDSStage              182.5      2.96116304
+BuffaloDSStage              183        2.95255436
+BuffaloDSStage              183.5      2.95255436
+BuffaloDSStage              184        2.95255436
+BuffaloDSStage              184.5      2.95255436
+BuffaloDSStage              185        2.94681484
+BuffaloDSStage              185.5      2.94681484
+BuffaloDSStage              186        2.95255436
+BuffaloDSStage              186.5      2.96116304
+BuffaloDSStage              187        2.96116304
+BuffaloDSStage              187.5      2.969771  
+BuffaloDSStage              188        2.969771  
+BuffaloDSStage              188.5      2.969771  
+BuffaloDSStage              189        2.969771  
+BuffaloDSStage              189.5      2.96116304
+BuffaloDSStage              190        2.96116304
+BuffaloDSStage              190.5      2.95255436
+BuffaloDSStage              191        2.95255436
+BuffaloDSStage              191.5      2.94681484
+
+[REPORT]
+;;Reporting Options
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS -1763.245 0.000 11763.245 10000.000
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+2                9471.218           1151.272          
+4                3018.742           3962.517          
+5                -1746.988          2315.930          
+6                5696.118           5582.329          
+7                3125.837           7469.880          
+8                943.775            10000.000         
+1                10769.746          4618.474          
+3                5361.446           3868.809          
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+2                4196.787           6492.637          
+2                4906.292           6037.483          
+3                6030.790           5207.497          
+3                6057.564           4832.664          
+3                5709.505           4404.284          
+3                5522.088           4096.386          
+4                -1439.090          2503.347          
+4                -1144.578          3012.048          
+4                -769.746           3520.750          
+4                -301.205           3761.714          
+4                287.818            3668.005          
+4                1238.286           3400.268          
+4                1894.244           3493.976          
+4                2643.909           3775.100          
+5                3527.443           4029.451          
+5                3902.276           4042.838          
+5                4303.882           4082.999          
+5                4825.971           4069.612          
+6                5495.315           3574.297          
+6                5749.665           2985.274          
+6                6004.016           2516.734          
+6                6472.557           2195.448          
+6                7155.288           1807.229          
+6                7918.340           1552.878          
+6                8815.261           1271.754          
+7                9658.635           1231.593          
+7                9765.730           1659.973          
+7                9645.248           2356.091          
+7                9524.766           2864.793          
+7                9457.831           3186.078          
+7                9417.671           3574.297          
+7                9444.444           4042.838          
+7                9792.503           4578.313          
+7                10368.139          4725.569          
+
+
+[BACKDROP]
+FILE       "C:\Users\theodore\My Documents\EPA SWMM Projects\ConfluenceHouston\HoustonBase.bmp"
+DIMENSIONS -1763.245 0.000 11763.245 10000.000
