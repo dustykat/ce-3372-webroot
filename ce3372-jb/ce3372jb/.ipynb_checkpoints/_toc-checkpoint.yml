@@ -6,9 +6,9 @@ root: intro
 chapters:
 #- file: markdown
 #- file: notebooks
-- file: lessons/lesson01
-- file: lessons/lesson02
-- file: lessons/lesson03
+- file: lessons/lesson01/lesson01
+- file: lessons/lesson02/lesson02
+- file: lessons/lesson03/lesson03
 - file: lessons/lesson04
 - file: lessons/lesson05
 - file: lessons/lesson06
