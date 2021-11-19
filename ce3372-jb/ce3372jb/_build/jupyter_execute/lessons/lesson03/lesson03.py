@@ -40,7 +40,10 @@
 
 # ## Population Models
 # 
-# <img src="popn-forecast.png" width="500">
+# <img src="http://54.243.252.9/ce-3372-webroot/ce3372-jb/ce3372jb/lessons/lesson03/popn-forecast.png" width="400">
+# 
+# 
+# 
 
 # **GEOMETRIC GROWTH (MATHEMATICAL)**
 # 
