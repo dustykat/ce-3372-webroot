@@ -1,9 +1,11 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Lesson 3. Demand Estimation
+# # Demand Estimation
 # 
-# The need to estimate demand is required to size water systems to meet some purpose, or establish that the particular system is infeasible.
+# Demand is required to size water systems to meet some purpose, or establish that the particular system is infeasible.
+
+# Estimates of demand are used to size water systems to meet some purpose, or establish that the particular system is infeasible.
 # 
 # The purposes can include:
 # 
@@ -12,9 +14,9 @@
 # - Agriculture use
 # - Waste Assimilation use
 # - Navigation uses (outside scope this course)
-
-# ---
 # 
+# ---
+
 # ## Water Needs for a City
 # 
 # Consider some generic urban area (cite textbook)
@@ -25,6 +27,7 @@
 # - Large Industrial Requirements 
 # - Waste Assimilation Requirements
 # 
+# ---
 
 # ### Municipal Requirements
 # 
@@ -35,15 +38,15 @@
 # where $V$ is the volume required, $P_{t}$ is the population at some moment, $U$ is the per person usage.
 # 
 # Thus the two components required to estimate demand is **how many people** have to be supplied, and **how much each** person uses.
-
 # 
+# ---
 
 # ## Population Models
 # 
 # <img src="http://54.243.252.9/ce-3372-webroot/ce3372-jb/ce3372jb/lessons/lesson03/popn-forecast.png" width="400">
 # 
 # 
-# 
+# ---
 
 # **GEOMETRIC GROWTH (MATHEMATICAL)**
 # 
@@ -53,6 +56,7 @@
 # 
 # where $K_p$ is the exponential growth constant 
 # 
+# ---
 
 # **ARITHMETIC GROWTH (MATHEMATICAL)**
 # 
@@ -61,6 +65,8 @@
 # $P_2 = P_1 + K_A(t_2-t_1)$
 # 
 # where $K_A$ is the slope of the growth curve 
+# 
+# ---
 
 # **DECLINING GROWTH (MATHEMATICAL)** 
 # 
@@ -69,8 +75,12 @@
 # $P_2 = P_1 + (P_{sat} - P_1)\cdot(1-e^{K_D(t_2-t_1)})$
 # 
 # where $K_D$ is the declining rate constant 
+# 
+# ---
 
 # ## Temporal Variation
+# 
+# ---
 
 # In[ ]:
 

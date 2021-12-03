@@ -1,0 +1,969 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pipeline Head Loss &#8212; CE 3372 Water Systems Design</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Lesson 5. Pipeline Hydraulics" href="../lesson05.html" />
+    <link rel="prev" title="Demand Estimation" href="../lesson03/lesson03.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/mylogo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">CE 3372 Water Systems Design</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to CE 3372 Water Systems Design
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson01/lesson01.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson02/lesson02.html">
+   Drinking Water Design Guidelines
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson03/lesson03.html">
+   Demand Estimation
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Pipeline Head Loss
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson05.html">
+   Lesson 5. Pipeline Hydraulics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson06/lesson06.html">
+   Pumping Systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson07.html">
+   Lesson 7. Storage Systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson08.html">
+   Lesson 8. Pipe Networks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson09.html">
+   Lesson 9. EPANET Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson10.html">
+   Lesson 10. EPANET Pumps and Valves
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson11.html">
+   Lesson 11. EPANET Extended Period Simulation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson12.html">
+   Lesson 12. Stormwater Design Guidelines
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson13.html">
+   Lesson 13. Stormwater Hydrology
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson14.html">
+   Lesson 14. SWMM Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson15.html">
+   Lesson 15. Steady Channel Hydraulics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson16.html">
+   Lesson 16. Unsteady Channel Hydraulics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson17.html">
+   Lesson 17. Stormwater Collection - Inlet Sizing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson18.html">
+   Lesson 18. Stormwater Conduit Sizing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson19.html">
+   Lesson 19. SWMM Hydrology
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson20.html">
+   Lesson 20. SWMM Dual-Drainage
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson23.html">
+   Lesson 24. GI Effects on Water Quality
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson24.html">
+   Lesson 23. Green Infrastructure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson25.html">
+   Lesson 25. Stormwater Detention Ponds
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson26.html">
+   Lesson 26. Inflow and Infiltration
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson27.html">
+   Lesson 27. Sanitary Sewer Guidelines
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson28.html">
+   Lesson 28. Outfall Considerations
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/lessons/lesson04/lesson04.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flessons/lesson04/lesson04.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/lessons/lesson04/lesson04.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#continunity-at-different-sections">
+   Continunity at Different Sections
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#continunity-at-junctions">
+   Continunity at Junctions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#energy-equation">
+   Energy Equation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-time-to-drain-a-storage-tank">
+     Example: Time to Drain a Storage Tank
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-steady-discharge-between-two-reservoirs">
+     Example: Steady Discharge between Two Reservoirs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#head-loss-models-for-losses-in-closed-conduits">
+   Head Loss Models (for losses in closed conduits)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#darcy-weisbach">
+     Darcy-Weisbach
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#reynolds-re-d-number">
+       Reynolds’ (
+       <span class="math notranslate nohighlight">
+        \(Re_d\)
+       </span>
+       ) Number
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#darcy-weisbach-f-factor">
+       Darcy-Weisbach “
+       <span class="math notranslate nohighlight">
+        \(f\)
+       </span>
+       ” Factor
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#using-the-d-w-model">
+       Using the D-W model
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hazen-williams">
+     Hazen-Williams
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#hazen-williams-c-factor">
+       Hazen-Williams “C” Factor
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#hydraulic-radius">
+       Hydraulic Radius
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#chezy-mannings">
+     Chezy-Mannings
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#mannings-n">
+       Mannings “n”
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Hydraulic Radius
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fitting-minor-losses">
+     Fitting (Minor) Losses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#computing-discharge-from-specified-head-loss">
+   Computing Discharge from Specified Head Loss
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#computational-thinking-data-science-approach-engr-1330">
+     Computational Thinking/Data Science Approach (ENGR 1330)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#state-the-programming-problem">
+       State the programming problem
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#known-inputs">
+       Known (Inputs)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#unknown-outputs">
+       Unknown (Outputs)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#governing-equation-s">
+       Governing Equation(s)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#build-and-test-the-tool">
+       Build and Test the tool
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#refine-the-tool-for-generalization">
+       Refine the Tool for Generalization
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#computing-diameter-from-specified-discharge">
+   Computing Diameter from Specified Discharge
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#readings">
+   Readings
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="pipeline-head-loss">
+<h1>Pipeline Head Loss<a class="headerlink" href="#pipeline-head-loss" title="Permalink to this headline">¶</a></h1>
+<p>Water moves from higher to lower energy</p>
+<ul class="simple">
+<li><p>Path of least resistance</p></li>
+<li><p>Head is energy per unit weight of a fluid</p></li>
+<li><p>Pumps are used to add energy to move water to a higher elevation or over a barrier</p></li>
+<li><p>Gravity flow: Change in elevation provides the required energy</p></li>
+<li><p>Pressure flow: Change in pressure provides the required energy</p></li>
+</ul>
+<p>Flowing water encounters friction/resistance; hence there is loss of energy along a flow path.
+The mean section velocity is related to cross sectional flow area and volumetric discharge as:</p>
+<div class="math notranslate nohighlight">
+\[ \bar{V} = \frac{Q}{A} \]</div>
+<div class="section" id="continunity-at-different-sections">
+<h2>Continunity at Different Sections<a class="headerlink" href="#continunity-at-different-sections" title="Permalink to this headline">¶</a></h2>
+<p>words</p>
+</div>
+<div class="section" id="continunity-at-junctions">
+<h2>Continunity at Junctions<a class="headerlink" href="#continunity-at-junctions" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="energy-equation">
+<h2>Energy Equation<a class="headerlink" href="#energy-equation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="example-time-to-drain-a-storage-tank">
+<h3>Example: Time to Drain a Storage Tank<a class="headerlink" href="#example-time-to-drain-a-storage-tank" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="example-steady-discharge-between-two-reservoirs">
+<h3>Example: Steady Discharge between Two Reservoirs<a class="headerlink" href="#example-steady-discharge-between-two-reservoirs" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="head-loss-models-for-losses-in-closed-conduits">
+<h2>Head Loss Models (for losses in closed conduits)<a class="headerlink" href="#head-loss-models-for-losses-in-closed-conduits" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="darcy-weisbach">
+<h3>Darcy-Weisbach<a class="headerlink" href="#darcy-weisbach" title="Permalink to this headline">¶</a></h3>
+<p>The Darcy-Weisbach frictional head-loss model for pipe flow is</p>
+<div class="math notranslate nohighlight">
+\[h_f = f \frac{L}{D}\frac{V^2}{2g}\]</div>
+<p>Frictional loss proportional to:</p>
+<ul class="simple">
+<li><p>Length</p></li>
+<li><p>Velocity<span class="math notranslate nohighlight">\(^2\)</span></p></li>
+</ul>
+<p>Inversely proportional to:</p>
+<ul class="simple">
+<li><p>Cross sectional area</p></li>
+</ul>
+<p>Loss coefficient (<span class="math notranslate nohighlight">\(f\)</span>) depends on</p>
+<ul class="simple">
+<li><p>Reynolds number (fluid and flow properties)</p></li>
+<li><p>Roughness height (pipe material properties)</p></li>
+</ul>
+<div class="section" id="reynolds-re-d-number">
+<h4>Reynolds’ (<span class="math notranslate nohighlight">\(Re_d\)</span>) Number<a class="headerlink" href="#reynolds-re-d-number" title="Permalink to this headline">¶</a></h4>
+<div class="math notranslate nohighlight">
+\[Re_d = \frac{\rho V D}{\mu} = \frac{V D}{\nu}\]</div>
+<p>Find viscosity as function of temperature from table look-up at <a class="reference external" href="http://54.243.252.9/toolbox/fluidmechanics/WaterPropertiesUS/WaterPropertiesUS.html">http://54.243.252.9/toolbox/fluidmechanics/WaterPropertiesUS/WaterPropertiesUS.html</a> or <a class="reference external" href="http://54.243.252.9/toolbox/fluidmechanics/WaterPropertiesSI/WaterPropertiesSI.html">http://54.243.252.9/toolbox/fluidmechanics/WaterPropertiesSI/WaterPropertiesSI.html</a> or other source.</p>
+</div>
+<div class="section" id="darcy-weisbach-f-factor">
+<h4>Darcy-Weisbach “<span class="math notranslate nohighlight">\(f\)</span>” Factor<a class="headerlink" href="#darcy-weisbach-f-factor" title="Permalink to this headline">¶</a></h4>
+<p>The friction factor is determined from a Moody Chart or Colebrook-White or Jain equation like:</p>
+<div class="math notranslate nohighlight">
+\[f = \frac{0.25}{[log10(\frac{k_s}{3.7D}+\frac{5.74}{Re^{0.9}})]^2}\]</div>
+<p>A web-application with a roughness height database is <a class="reference external" href="http://54.243.252.9/toolbox/Databases/RoughnessHeight/RoughnessHeight.html">http://54.243.252.9/toolbox/Databases/RoughnessHeight/RoughnessHeight.html</a></p>
+<p>A web-application to compute friction factor given <span class="math notranslate nohighlight">\(Re\)</span> and material properties (<span class="math notranslate nohighlight">\(k_s\)</span>) is <a class="reference external" href="http://54.243.252.9/toolbox/pipehydraulics/FrictionFactor/FrictionFactor.html">http://54.243.252.9/toolbox/pipehydraulics/FrictionFactor/FrictionFactor.html</a></p>
+</div>
+<div class="section" id="using-the-d-w-model">
+<h4>Using the D-W model<a class="headerlink" href="#using-the-d-w-model" title="Permalink to this headline">¶</a></h4>
+<p>To compute headloss is straightforward, first organize your data:</p>
+<ol class="simple">
+<li><p>Material type, lookup roughness height at <a class="reference external" href="http://54.243.252.9/cgi-bin/Databases/RoughnessHeight/RoughnessHeight.py">http://54.243.252.9/cgi-bin/Databases/RoughnessHeight/RoughnessHeight.py</a> or another source.  Remember to cite the source.</p></li>
+<li><p>Viscosity at desired operating temperature, lookup at <a class="reference external" href="http://54.243.252.9/toolbox/fluidmechanics/WaterPropertiesUS/WaterPropertiesUS.html">http://54.243.252.9/toolbox/fluidmechanics/WaterPropertiesUS/WaterPropertiesUS.html</a> or <a class="reference external" href="http://54.243.252.9/toolbox/fluidmechanics/WaterPropertiesSI/WaterPropertiesSI.html">http://54.243.252.9/toolbox/fluidmechanics/WaterPropertiesSI/WaterPropertiesSI.html</a> or another source.  Remember to cite the source.</p></li>
+<li><p>Use the pipe diameter and desired flowrate to compute a mean section velocity.</p></li>
+<li><p>Compute the Reynolds number; use the equation or <a class="reference external" href="http://54.243.252.9/toolbox/fluidmechanics/ReynoldsNumber/ReynoldsNumber.html">http://54.243.252.9/toolbox/fluidmechanics/ReynoldsNumber/ReynoldsNumber.html</a></p></li>
+<li><p>Compute the friction factor; use the Moody Chart or Jain equation or <a class="reference external" href="http://54.243.252.9/toolbox/pipehydraulics/FrictionFactor/FrictionFactor.html">http://54.243.252.9/toolbox/pipehydraulics/FrictionFactor/FrictionFactor.html</a></p></li>
+<li><p>Finally compute the head loss as <span class="math notranslate nohighlight">\(h_f = f \frac{L}{D}\frac{V^2}{2g}\)</span></p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="hazen-williams">
+<h3>Hazen-Williams<a class="headerlink" href="#hazen-williams" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="hazen-williams-c-factor">
+<h4>Hazen-Williams “C” Factor<a class="headerlink" href="#hazen-williams-c-factor" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="hydraulic-radius">
+<h4>Hydraulic Radius<a class="headerlink" href="#hydraulic-radius" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+<div class="section" id="chezy-mannings">
+<h3>Chezy-Mannings<a class="headerlink" href="#chezy-mannings" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="mannings-n">
+<h4>Mannings “n”<a class="headerlink" href="#mannings-n" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="id1">
+<h4>Hydraulic Radius<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+<div class="section" id="fitting-minor-losses">
+<h3>Fitting (Minor) Losses<a class="headerlink" href="#fitting-minor-losses" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="computing-discharge-from-specified-head-loss">
+<h2>Computing Discharge from Specified Head Loss<a class="headerlink" href="#computing-discharge-from-specified-head-loss" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="computational-thinking-data-science-approach-engr-1330">
+<h3>Computational Thinking/Data Science Approach (ENGR 1330)<a class="headerlink" href="#computational-thinking-data-science-approach-engr-1330" title="Permalink to this headline">¶</a></h3>
+<p>CT/DS Approach</p>
+<ul class="simple">
+<li><p>State the programming problem</p></li>
+<li><p>Known (Inputs)</p></li>
+<li><p>Unknown (Outputs)</p></li>
+<li><p>Governing Equation(s)</p></li>
+<li><p>Test the tool</p></li>
+</ul>
+<div class="section" id="state-the-programming-problem">
+<h4>State the programming problem<a class="headerlink" href="#state-the-programming-problem" title="Permalink to this headline">¶</a></h4>
+<p>Build a tool that takes inputs for the Jain equation and produces an estimate of discharge</p>
+<p>Build an interface (notebook) that accepts the inputs, calls the function, and returns the computed discharge</p>
+</div>
+<div class="section" id="known-inputs">
+<h4>Known (Inputs)<a class="headerlink" href="#known-inputs" title="Permalink to this headline">¶</a></h4>
+<p>Engineer will specify:</p>
+<ul class="simple">
+<li><p>Diameter, D;</p></li>
+<li><p>Length of pipe, L;</p></li>
+<li><p>Roughness height, e;</p></li>
+<li><p>Viscosity, <span class="math notranslate nohighlight">\(\nu\)</span>;</p></li>
+<li><p>Gravitational acceleration constant, g;</p></li>
+<li><p>Head loss</p></li>
+</ul>
+</div>
+<div class="section" id="unknown-outputs">
+<h4>Unknown (Outputs)<a class="headerlink" href="#unknown-outputs" title="Permalink to this headline">¶</a></h4>
+<p>The tool will compute and report Discharge, Q.</p>
+</div>
+<div class="section" id="governing-equation-s">
+<h4>Governing Equation(s)<a class="headerlink" href="#governing-equation-s" title="Permalink to this headline">¶</a></h4>
+<p>A compact form of the equation to be evaluated is</p>
+<p><span class="math notranslate nohighlight">\(
+Q=-0.965 D^2 \sqrt{\frac{gDh_f}{L}}ln( \frac{k_s}{3.7D}+\frac{1.78\nu}{D\sqrt{\frac{gDh_f}{L}}} )
+\)</span></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># #######prototype function for computation engine #########################</span>
+<span class="c1"># Define the prototype function</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">log</span><span class="p">,</span><span class="n">sqrt</span>
+<span class="k">def</span> <span class="nf">jainQ</span><span class="p">(</span><span class="n">pipe_diameter</span><span class="p">,</span><span class="n">pipe_length</span><span class="p">,</span><span class="n">roughness</span><span class="p">,</span><span class="n">viscosity</span><span class="p">,</span><span class="n">grabity</span><span class="p">,</span><span class="n">head_loss</span><span class="p">):</span>
+    <span class="n">egl_slope</span> <span class="o">=</span> <span class="n">head_loss</span><span class="o">/</span><span class="n">pipe_length</span>
+    <span class="n">t1</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">grabity</span><span class="o">*</span><span class="n">pipe_diameter</span><span class="o">*</span><span class="n">egl_slope</span><span class="p">)</span>
+    <span class="n">t2</span> <span class="o">=</span> <span class="n">roughness</span><span class="o">/</span><span class="p">(</span><span class="mf">3.7</span><span class="o">*</span><span class="n">pipe_diameter</span><span class="p">)</span>
+    <span class="n">t3</span> <span class="o">=</span> <span class="mf">1.78</span><span class="o">*</span><span class="n">viscosity</span>
+    <span class="n">jainQ</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.965</span><span class="o">*</span><span class="n">pipe_diameter</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">t1</span><span class="o">*</span><span class="n">log</span><span class="p">(</span><span class="n">t2</span> <span class="o">+</span> <span class="n">t3</span><span class="o">/</span><span class="p">(</span><span class="n">pipe_diameter</span><span class="o">*</span><span class="n">t1</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">jainQ</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="build-and-test-the-tool">
+<h4>Build and Test the tool<a class="headerlink" href="#build-and-test-the-tool" title="Permalink to this headline">¶</a></h4>
+<p>To build and test the tool, we have a couple of additional requirements:</p>
+<ul class="simple">
+<li><p>computation engine (above)</p></li>
+<li><p>interface engine (to get inputs to send to the computation engine)</p></li>
+<li><p>output engine (to actually run the computations, and present outputs)</p></li>
+</ul>
+<p>These added parts appear below</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># ############ Interface engine ##########################</span>
+<span class="k">def</span> <span class="nf">getInputs</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">pipe_diameter</span><span class="p">,</span><span class="n">pipe_length</span><span class="p">,</span><span class="n">roughness</span><span class="p">,</span><span class="n">viscosity</span><span class="p">,</span><span class="n">grabity</span><span class="p">,</span><span class="n">head_loss</span>
+<span class="c1"># Get pipe diameter, use a simple error trap</span>
+    <span class="n">yes</span><span class="o">=</span><span class="mi">0</span>
+    <span class="k">while</span> <span class="n">yes</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">xnow</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter Pipe Diameter </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">pipe_diameter</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">xnow</span><span class="p">)</span>
+            <span class="n">yes</span> <span class="o">=</span><span class="mi">1</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Value should be numeric, try again </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1"># Get pipe length, use a simple error trap</span>
+    <span class="n">yes</span><span class="o">=</span><span class="mi">0</span>
+    <span class="k">while</span> <span class="n">yes</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">xnow</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter Pipe Length </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">pipe_length</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">xnow</span><span class="p">)</span>
+            <span class="n">yes</span> <span class="o">=</span><span class="mi">1</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Value should be numeric, try again </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1"># Get roughness, use a simple error trap</span>
+    <span class="n">yes</span><span class="o">=</span><span class="mi">0</span>
+    <span class="k">while</span> <span class="n">yes</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">xnow</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter Pipe Roughness Height </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">roughness</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">xnow</span><span class="p">)</span>
+            <span class="n">yes</span> <span class="o">=</span><span class="mi">1</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Value should be numeric, try again </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1"># Get viscosity, use a simple error trap</span>
+    <span class="n">yes</span><span class="o">=</span><span class="mi">0</span>
+    <span class="k">while</span> <span class="n">yes</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">xnow</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter liquid viscosity </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">viscosity</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">xnow</span><span class="p">)</span>
+            <span class="n">yes</span> <span class="o">=</span><span class="mi">1</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Value should be numeric, try again </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1"># Get grabity, use a simple error trap</span>
+    <span class="n">yes</span><span class="o">=</span><span class="mi">0</span>
+    <span class="k">while</span> <span class="n">yes</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">xnow</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter gravitational acceleration constant (unit system appropriate) </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">grabity</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">xnow</span><span class="p">)</span>
+            <span class="n">yes</span> <span class="o">=</span><span class="mi">1</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Value should be numeric, try again </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1"># Get head loss, use a simple error trap</span>
+    <span class="n">yes</span><span class="o">=</span><span class="mi">0</span>
+    <span class="k">while</span> <span class="n">yes</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">xnow</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter head loss </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">head_loss</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">xnow</span><span class="p">)</span>
+            <span class="n">yes</span> <span class="o">=</span><span class="mi">1</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Value should be numeric, try again </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># ############### Supervisory Control and Output Engine #######################</span>
+<span class="n">getInputs</span><span class="p">()</span> <span class="c1"># call the interface</span>
+<span class="n">discharge</span> <span class="o">=</span> <span class="n">jainQ</span><span class="p">(</span><span class="n">pipe_diameter</span><span class="p">,</span><span class="n">pipe_length</span><span class="p">,</span><span class="n">roughness</span><span class="p">,</span><span class="n">viscosity</span><span class="p">,</span><span class="n">grabity</span><span class="p">,</span><span class="n">head_loss</span><span class="p">)</span> <span class="c1"># call the computation engine</span>
+<span class="c1"># output</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Pipe Diameter : &quot;</span><span class="p">,</span> <span class="n">pipe_diameter</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Pipe Length : &quot;</span><span class="p">,</span> <span class="n">pipe_length</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Pipe Roughness Height : &quot;</span><span class="p">,</span> <span class="n">roughness</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Liquid Viscosity : &quot;</span><span class="p">,</span> <span class="n">viscosity</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Gravitational acceleration constant : &quot;</span><span class="p">,</span><span class="n">grabity</span><span class="p">)</span> 
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Head loss : &quot;</span><span class="p">,</span><span class="n">head_loss</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Discharge : &quot;</span><span class="p">,</span><span class="n">discharge</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A cut and paste the code of the code above into a Jupyter Notebook should produce output like:</p>
+<p><img alt="" src="../../_images/ScreenCaptureJain.png" /></p>
+</div>
+<div class="section" id="refine-the-tool-for-generalization">
+<h4>Refine the Tool for Generalization<a class="headerlink" href="#refine-the-tool-for-generalization" title="Permalink to this headline">¶</a></h4>
+<p>The refinement step would wrap the above script into a single function/notebook for simple use/reuse. If we save to a single file, we can access the script as we wish (using a JupyterLab magic function).</p>
+<blockquote>
+<div><p>Or, we can put the script onto a server and access via a web interface as is done at <a class="reference external" href="http://54.243.252.9/toolbox/pipehydraulics/QGivenHeadLoss/QGivenHeadLoss.html">http://54.243.252.9/toolbox/pipehydraulics/QGivenHeadLoss/QGivenHeadLoss.html</a><br />
+The server-side python code is shown below as is the interface HTML</p>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The server-side code that performs the functions of input interface is listed below. On an apache web server the code would go in the webroot <code class="docutils literal notranslate"><span class="pre">/var/www/html/path-to-html/</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;!DOCTYPE html PUBLIC &gt;
+&lt;html&gt;&lt;head&gt;&lt;title&gt;Discharge Given Head Loss&lt;/title&gt;&lt;/head&gt;
+&lt;link rel = &quot;stylesheet&quot; type = &quot;text/css&quot; href = &quot;styles.css&quot; &gt;
+&lt;body&gt;
+&lt;h1&gt; Discharge in Pressure Conduit Given Head Loss &lt;/h1&gt;
+
+&lt;p&gt; Computes Discharge given Diameter, Material, and Head Loss using Swamee Jain (1976) &lt;/p&gt;
+&lt;img src = &quot;./QGivenHeadLoss.gif&quot;  &gt; &lt;br/&gt;
+&lt;p&gt;
+  D = Pipe diameter (in feet or meters) &lt;br/&gt;
+  g = Gravitational acceleration constant (32.2 ft/s^2 or 9.8 m/s^2) &lt;br/&gt;
+ hl = Head loss (in feet or meters) &lt;br/&gt;
+  L = Pipe length (feet or meters) &lt;br/&gt;
+ ks = Equivalent sand roughness height (a material property; in feet or meters) &lt;br/&gt;
+  v = Kinematic viscosity (in feet^2/second or meter^2/second)  &lt;br/&gt;
+
+&lt;br/&gt;
+Notes: &lt;br/&gt;
+Swamee and Jain, A. K., 1976. Explicit equations for pipe-flow problems.  &lt;br/&gt;
+ASCE J. of Hyd. Div., 102(HY5) pp. 657-664 &lt;br/&gt;&lt;br/&gt;
+
+&lt;/p&gt;
+
+&lt;form method =&quot;POST&quot;
+      action = &quot;http://54.243.252.9/cgi-bin/pipehydraulics/QGivenHeadLoss/QGivenHeadLoss.py&quot;&gt;
+
+
+Enter Value for Diameter (D in feet or meters) : &lt;br/&gt;
+&lt;input type = &quot;text&quot; name = &quot;diameter&quot;&gt;&lt;br/&gt;
+    
+Enter Value for Gravitational acceleration (g in feet/s^2 or meters/s^2) : &lt;br/&gt;
+&lt;input type = &quot;text&quot; name = &quot;gravity&quot;&gt;&lt;br/&gt;
+        
+Enter Value for Head loss (hl in feet or meters) : &lt;br/&gt;
+&lt;input type = &quot;text&quot; name = &quot;headloss&quot;&gt;&lt;br/&gt;
+                        
+Enter Value for Pipe Length (L in feet or meters) : &lt;br/&gt;
+&lt;input type = &quot;text&quot; name = &quot;length&quot;&gt;&lt;br/&gt;
+    
+Enter Value for Roughness height (ks in feet or meters): &lt;br/&gt;
+&lt;input type = &quot;text&quot; name = &quot;roughness&quot;&gt;&lt;br/&gt;
+    
+Enter Value for Kinematic viscosity (v in feet^2/second or meter^2/second): &lt;br/&gt;
+&lt;input type = &quot;text&quot; name = &quot;kinematic&quot;&gt;&lt;br/&gt;
+
+&lt;input type = &quot;submit&quot;&gt;
+&lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The server-side code that performs the functions of computation and output formatting is listed below. On an apache web server the code would go in cgi-bin, or another directory where you allow execution to occur. On my server this code is located in <code class="docutils literal notranslate"><span class="pre">/usr/lib/cgi-bin/path-to-script/</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python</span>
+<span class="c1"># QGivenHeadLoss.py</span>
+<span class="c1"># Computes Discharge given HeadLoss</span>
+<span class="c1"># Use HMTL POST method</span>
+<span class="c1"># Use PYTHON language</span>
+
+
+<span class="c1"># Import modules for CGI handling</span>
+<span class="kn">import</span> <span class="nn">cgi</span><span class="o">,</span> <span class="nn">cgitb</span> <span class="o">,</span> <span class="nn">time</span>
+<span class="c1"># Import log function</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span><span class="p">,</span><span class="n">log</span>
+
+
+<span class="c1"># Create instance of FieldStorage</span>
+<span class="n">form</span> <span class="o">=</span> <span class="n">cgi</span><span class="o">.</span><span class="n">FieldStorage</span><span class="p">()</span>
+
+<span class="c1"># Get inputs from fields</span>
+<span class="n">diameter</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">form</span><span class="o">.</span><span class="n">getvalue</span><span class="p">(</span><span class="s1">&#39;diameter&#39;</span><span class="p">))</span>
+<span class="n">gravity</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">form</span><span class="o">.</span><span class="n">getvalue</span><span class="p">(</span><span class="s1">&#39;gravity&#39;</span><span class="p">))</span>
+<span class="n">headloss</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">form</span><span class="o">.</span><span class="n">getvalue</span><span class="p">(</span><span class="s1">&#39;headloss&#39;</span><span class="p">))</span>
+<span class="n">length</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">form</span><span class="o">.</span><span class="n">getvalue</span><span class="p">(</span><span class="s1">&#39;length&#39;</span><span class="p">))</span>
+<span class="n">roughness</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">form</span><span class="o">.</span><span class="n">getvalue</span><span class="p">(</span><span class="s1">&#39;roughness&#39;</span><span class="p">))</span>
+<span class="n">kinematic</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">form</span><span class="o">.</span><span class="n">getvalue</span><span class="p">(</span><span class="s1">&#39;kinematic&#39;</span><span class="p">))</span>
+
+
+<span class="c1"># Perform arithmetic (assembly language style -- equation a bit too complex)</span>
+<span class="n">temp0</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span> <span class="n">gravity</span><span class="o">*</span><span class="n">diameter</span><span class="o">*</span><span class="n">headloss</span><span class="o">/</span><span class="n">length</span> <span class="p">)</span>
+<span class="n">temp1</span> <span class="o">=</span> <span class="n">roughness</span><span class="o">/</span><span class="p">(</span><span class="mf">3.7</span><span class="o">*</span><span class="n">diameter</span><span class="p">)</span>
+<span class="n">temp2</span> <span class="o">=</span> <span class="mf">1.784</span><span class="o">*</span><span class="n">kinematic</span>
+<span class="n">temp3</span> <span class="o">=</span> <span class="n">diameter</span><span class="o">*</span><span class="n">temp0</span>
+<span class="n">temp4</span> <span class="o">=</span> <span class="n">temp1</span> <span class="o">+</span> <span class="n">temp2</span><span class="o">/</span><span class="n">temp3</span>
+<span class="n">temp5</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.965</span><span class="o">*</span><span class="n">diameter</span><span class="o">**</span><span class="mf">2.0</span>
+<span class="n">discharge</span> <span class="o">=</span> <span class="n">temp5</span> <span class="o">*</span> <span class="n">temp0</span> <span class="o">*</span> <span class="n">log</span><span class="p">(</span> <span class="n">temp4</span> <span class="p">)</span>
+
+<span class="c1"># Prepare the output HTML</span>
+<span class="n">now</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%c</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span> <span class="s2">&quot;Content-type:text/html</span><span class="se">\r\n\r\n</span><span class="s2">&quot;</span>
+<span class="c1"># should have two returns and line feeds</span>
+<span class="nb">print</span> <span class="s2">&quot;&lt;html&gt;&quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;&lt;head&gt;&quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;&lt;title&gt;Discharge given Head Loss  using Jain (1976) using Python&lt;/title&gt;&quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;&lt;/head&gt;&quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;&lt;body&gt;&quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;Discharge given Head Loss using Jain (1976) using Python &lt;br/&gt;&lt;br/&gt; &quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;Host Name : 54.243.252.9 (AWS East) &lt;br/&gt;&quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;Run Date : &quot;</span> <span class="p">,</span> <span class="n">now</span> <span class="p">,</span><span class="s2">&quot; &lt;br/&gt; &quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;------ INPUT VALUES ------ &lt;br/&gt; &quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;-- USE CONSISTENT UNITS -- &lt;br/&gt; &quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;   Diameter = &quot;</span><span class="p">,</span> <span class="n">diameter</span> <span class="p">,</span><span class="s2">&quot; [L] &lt;br/&gt; &quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;          g = &quot;</span><span class="p">,</span> <span class="n">gravity</span> <span class="p">,</span><span class="s2">&quot; [L]/[T]^2  &lt;br/&gt; &quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;  Head Loss = &quot;</span><span class="p">,</span> <span class="n">headloss</span> <span class="p">,</span><span class="s2">&quot; [L] &lt;br/&gt; &quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;  Pipe Length = &quot;</span><span class="p">,</span> <span class="n">length</span> <span class="p">,</span><span class="s2">&quot; [L] &lt;br/&gt; &quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;  Roughness   = &quot;</span><span class="p">,</span> <span class="n">roughness</span> <span class="p">,</span><span class="s2">&quot; [L] &lt;br/&gt; &quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;  Kinematic Viscosity = &quot;</span><span class="p">,</span> <span class="n">kinematic</span> <span class="p">,</span><span class="s2">&quot; [L]^2/[T] &lt;br/&gt; &quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;------ COMPUTED DISCHARGE ----- &lt;br/&gt; &quot;</span>
+<span class="nb">print</span> <span class="s2">&quot; Roughness Ratio = &quot;</span><span class="p">,</span><span class="n">roughness</span><span class="o">/</span><span class="n">diameter</span><span class="p">,</span> <span class="s2">&quot; &lt;br/&gt; &quot;</span>
+<span class="c1"># begin debug -- comment out when working OK</span>
+<span class="c1">#print &quot; temp0 &quot;,temp0, &quot; &lt;br/&gt; &quot;</span>
+<span class="c1">#print &quot; temp1 &quot;,temp1, &quot; &lt;br/&gt; &quot;</span>
+<span class="c1">#print &quot; temp2 &quot;,temp2, &quot; &lt;br/&gt; &quot;</span>
+<span class="c1">#print &quot; temp3 &quot;,temp3, &quot; &lt;br/&gt; &quot;</span>
+<span class="c1">#print &quot; temp4 &quot;,temp4, &quot; &lt;br/&gt; &quot;</span>
+<span class="c1">#print &quot; temp5 &quot;,temp5, &quot; &lt;br/&gt; &quot;</span>
+<span class="c1"># end debugging</span>
+<span class="nb">print</span> <span class="s2">&quot;     Discharge = &quot;</span><span class="p">,</span> <span class="n">discharge</span><span class="p">,</span> <span class="s2">&quot; [L]^3/[T] &lt;br/&gt;&quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;&lt;/body&gt;&quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;&lt;/html&gt;&quot;</span>
+
+<span class="c1"># end of script</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="computing-diameter-from-specified-discharge">
+<h2>Computing Diameter from Specified Discharge<a class="headerlink" href="#computing-diameter-from-specified-discharge" title="Permalink to this headline">¶</a></h2>
+<p>A rearrangement of the previous model can provide a way to estimate diameter to convey a particular discharge.</p>
+<p><span class="math notranslate nohighlight">\(
+D=0.66[ k_s^{1.25}(\frac{LQ^2}{g h_f})^{4.75}+\nu Q^{9.4} (\frac{L}{g h_f})^{5.2}]^{0.04} 
+\)</span></p>
+<p>applying the same Computational Thinking principles, a similar tool can be built for frequent use, pretty much reusing the same scripts but a different computation engine to solve for diameter.  The scripting is left as an exercise.</p>
+<p>A web-based version is located at <a class="reference external" href="http://54.243.252.9/toolbox/pipehydraulics/DiameterGivenDischarge/DGivenQ.html">http://54.243.252.9/toolbox/pipehydraulics/DiameterGivenDischarge/DGivenQ.html</a></p>
+</div>
+<div class="section" id="readings">
+<h2>Readings<a class="headerlink" href="#readings" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Gupta, R. S. 2017. Hydrology and Hydraulic Systems. Waveland Press, Inc. pp 1-19 <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/3-Readings/WaterDemand-Gupta.pdf">http://54.243.252.9/ce-3372-webroot/3-Readings/WaterDemand-Gupta.pdf</a></p></li>
+<li><p>Nickerson G. 2008. “Water Distribution Systems” in Land Development Handbook, Ed. S.O. Dewberry, Dewberry Inc., McGraw-Hill <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/3-Readings/water-distribution.pdf">http://54.243.252.9/ce-3372-webroot/3-Readings/water-distribution.pdf</a></p></li>
+</ol>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lessons/lesson04"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../lesson03/lesson03.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Demand Estimation</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../lesson05.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Lesson 5. Pipeline Hydraulics</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Theodore G. Cleveland<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

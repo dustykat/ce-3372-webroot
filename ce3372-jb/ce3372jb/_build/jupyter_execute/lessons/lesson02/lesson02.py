@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Lesson 2. Drinking Water Design Guidelines
+# # Drinking Water Design Guidelines
 # 
 # Placeholder
 
