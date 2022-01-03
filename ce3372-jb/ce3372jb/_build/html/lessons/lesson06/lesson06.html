@@ -42,6 +42,8 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -52,6 +54,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Lesson 7. Storage Systems" href="../lesson07.html" />
+    <link rel="prev" title="Lesson 5. Pipeline Hydraulics" href="../lesson05/lesson05.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -111,6 +114,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../lesson04/lesson04.html">
    Pipeline Head Loss
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson05/lesson05.html">
+   Lesson 5. Pipeline Hydraulics
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -331,10 +339,145 @@
   <a class="reference internal nav-link" href="#types">
    Types
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#positive-fixed-displacement-pumps">
+     Positive (Fixed) Displacement Pumps
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#variable-displacement-pumps">
+     Variable Displacement Pumps
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#examples-of-fixed-displacement-pumps">
+     Examples of Fixed Displacement Pumps
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#images-of-positive-displacement-pumps">
+     Images of Positive Displacement Pumps
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#examples-of-variable-displacement-pumps">
+     Examples of Variable Displacement Pumps
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#images-of-variable-displacement-pumps">
+     Images of Variable Displacement Pumps
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#readings">
-   Readings
+  <a class="reference internal nav-link" href="#pump-selection">
+   Pump Selection
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#system-curve">
+     System Curve
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pump-curve-s">
+     Pump Curve(s)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#an-example-pump-curve-is-shown-below">
+       An example pump curve is shown below
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#another-example-curve-for-a-different-pump">
+       Another example curve for a different pump
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comparing-different-pumps">
+     Comparing Different Pumps
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiple-pumps">
+     Multiple Pumps
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#parallel-pumps">
+       Parallel Pumps
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#series-pumps">
+       Series Pumps
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#suction-requirements">
+     Suction Requirements
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#npsha-example">
+       NPSHa Example
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#problem-statement">
+       Problem Statement
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#solution-part-1">
+       Solution (part 1)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#solution-part-2">
+       Solution (part 2)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#solution-part-3">
+       Solution (part 3)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#solution-part-4">
+       Solution (part 4)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#solution-part-5">
+       Solution (part 5)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#solution-summary">
+       Solution Summary
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
   </a>
  </li>
 </ul>
@@ -375,34 +518,215 @@
 </div>
 <div class="section" id="types">
 <h2>Types<a class="headerlink" href="#types" title="Permalink to this headline">¶</a></h2>
-<p>Positive (Fixed) Displacement Pumps</p>
+<div class="section" id="positive-fixed-displacement-pumps">
+<h3>Positive (Fixed) Displacement Pumps<a class="headerlink" href="#positive-fixed-displacement-pumps" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Fixed volume of fluid is displaced each cycle regardless of
 system static head/pressure</p></li>
 <li><p>Lower flow rates and higher head than non-positive pumps</p></li>
 </ul>
-<p>Variable Displacement Pumps</p>
+</div>
+<div class="section" id="variable-displacement-pumps">
+<h3>Variable Displacement Pumps<a class="headerlink" href="#variable-displacement-pumps" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Varying volume of fluid is displaced dependent on system static
 head/pressure (back pressure)</p></li>
 </ul>
-<p>Fixed Displacement Pumps</p>
+</div>
+<div class="section" id="examples-of-fixed-displacement-pumps">
+<h3>Examples of Fixed Displacement Pumps<a class="headerlink" href="#examples-of-fixed-displacement-pumps" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Screw Pumps</p></li>
+<li><p>Progressive Cavity Pumps</p></li>
+<li><p>Reciprocating Pumps</p></li>
+</ul>
+</div>
+<div class="section" id="images-of-positive-displacement-pumps">
+<h3>Images of Positive Displacement Pumps<a class="headerlink" href="#images-of-positive-displacement-pumps" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Screw Pumps <img alt="" src="../../_images/screwpump.png" /></p></li>
 <li><p>Progressive Cavity Pumps <img alt="" src="../../_images/cavitypump.png" /></p></li>
 <li><p>Reciprocating Pumps <img alt="" src="../../_images/pistonpump.png" /></p></li>
 </ul>
-<p>Variable Displacement Pumps</p>
+</div>
+<div class="section" id="examples-of-variable-displacement-pumps">
+<h3>Examples of Variable Displacement Pumps<a class="headerlink" href="#examples-of-variable-displacement-pumps" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Centrifugal (Radial-Flow) Pumps</p></li>
 <li><p>Propeller Pumps (Axial-Flow)</p></li>
 <li><p>Jet Pumps (Mixed-Flow)</p></li>
 </ul>
+<p><img alt="" src="../../_images/pumpclassification.png" /></p>
 </div>
-<div class="section" id="readings">
-<h2>Readings<a class="headerlink" href="#readings" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="images-of-variable-displacement-pumps">
+<h3>Images of Variable Displacement Pumps<a class="headerlink" href="#images-of-variable-displacement-pumps" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Centrifugal (Radial-Flow) Pumps <img alt="" src="../../_images/centifrugalpump.png" /></p></li>
+<li><p>Propeller Pumps (Axial-Flow) <img alt="" src="../../_images/axialfrowpump.png" /></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A couple of explainatory videos are listed below.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=BaEHVpKc-1Q">Explaination of Centrifugal Pump</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?feature=player_detailpage&amp;v=ECv1VwW6RTo#t=122">Lab-Scale model of a flexible impeller pump(Variable-Cavity;Positive Displacement)</a></p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="pump-selection">
+<h2>Pump Selection<a class="headerlink" href="#pump-selection" title="Permalink to this headline">¶</a></h2>
+<p>A primary design activity is selecting or sizing a pump for a specific application.  The protocol is:</p>
+<ul class="simple">
+<li><p>Design conditions are specified by system hydraulics (i.e. energy equation at desired flow rate)</p></li>
+<li><p>Pump is selected from manufacturer catalogs that appears to meet nominal conditions</p></li>
+<li><p>A hydraulic system curve (Head vs Discharge) is prepared</p></li>
+<li><p>The system curve (or equation) is plotted onto the pump curve (manufacturer supplied)</p></li>
+<li><p>The matching point where the two curves intersect is the anticipated operating point</p></li>
+</ul>
+<p>A few secondary checks are:</p>
+<ul class="simple">
+<li><p>Is there some head range remaining?</p></li>
+<li><p>Flow range remaining?</p></li>
+<li><p>Is pump efficiency close to optimal for the particular pump?</p></li>
+<li><p>Is Net Positive Suction Head Available (NPSHa) large enough for the particular pump at the operating point (and start-up)?</p></li>
+</ul>
+<div class="section" id="system-curve">
+<h3>System Curve<a class="headerlink" href="#system-curve" title="Permalink to this headline">¶</a></h3>
+<p>A system (characteristic) curve is a plot of required head versus flow rate in a hydraulic system.<br />
+The curve depicts how much energy is needed to maintain a steady flow under the supplied conditions.</p>
+<p>The curve is constructed at the pump location and relates the required added head (at a particular flowrate) needed to be supplied by some pump.</p>
+<div class="math notranslate nohighlight">
+\[ H_p(Q) = h_{elev} + h_{loss}(Q)\]</div>
+<p>For example if the system schematic is</p>
+<p><img alt="" src="../../_images/system-schematic.png" /></p>
+<p>An equation of required head and discharge is</p>
+<p><img alt="" src="../../_images/system-equation.png" /></p>
+<p>The equation tells us that the added head has to be at least 30 meters just to keep the reservoirs at the two levels shown, if any flow is to occur the pump must supply more than 30 meters of head at a prescribed flow rate.  The zero flow head value is called the shutoff head.  The equation plots as the figure below</p>
+<p><img alt="" src="../../_images/system-curve.png" /></p>
+</div>
+<div class="section" id="pump-curve-s">
+<h3>Pump Curve(s)<a class="headerlink" href="#pump-curve-s" title="Permalink to this headline">¶</a></h3>
+<p>Pump curves are supplied by the manufacturer and convey performance of a specific pump.
+Information ususally includes:</p>
+<ul class="simple">
+<li><p>Discharge (Q) on the x-axis</p></li>
+<li><p>Head (<span class="math notranslate nohighlight">\(H_p\)</span>) on the left y-axis</p></li>
+<li><p>Pump power input on the right y-axis</p></li>
+<li><p>Pump efficiency (wire-to-water) as a percentage</p></li>
+<li><p>The speed of the pump (RPM)</p></li>
+<li><p>The required Net Positive Suction Head (<span class="math notranslate nohighlight">\(NPSH_r\)</span>)</p></li>
+</ul>
+<div class="section" id="an-example-pump-curve-is-shown-below">
+<h4>An example pump curve is shown below<a class="headerlink" href="#an-example-pump-curve-is-shown-below" title="Permalink to this headline">¶</a></h4>
+<p><img alt="" src="../../_images/pump-curve.png" /></p>
+</div>
+<div class="section" id="another-example-curve-for-a-different-pump">
+<h4>Another example curve for a different pump<a class="headerlink" href="#another-example-curve-for-a-different-pump" title="Permalink to this headline">¶</a></h4>
+<p><img alt="" src="../../_images/pump-curve-two.png" /></p>
+</div>
+</div>
+<div class="section" id="comparing-different-pumps">
+<h3>Comparing Different Pumps<a class="headerlink" href="#comparing-different-pumps" title="Permalink to this headline">¶</a></h3>
+<p><img alt="" src="../../_images/pumpA-B.png" /></p>
+</div>
+<div class="section" id="multiple-pumps">
+<h3>Multiple Pumps<a class="headerlink" href="#multiple-pumps" title="Permalink to this headline">¶</a></h3>
+<p>Various multi-pump combinations can be employed to meet hydraulic needs - a lot of flexibility can be achieved with a few pumps and ingenious plumbing.</p>
+<p><img alt="" src="../../_images/multi-pumps-one.png" /></p>
+<div class="section" id="parallel-pumps">
+<h4>Parallel Pumps<a class="headerlink" href="#parallel-pumps" title="Permalink to this headline">¶</a></h4>
+<p>Parallel pumps add discharge for a given working head.</p>
+<p><img alt="" src="../../_images/parallelpumps.png" /></p>
+</div>
+<div class="section" id="series-pumps">
+<h4>Series Pumps<a class="headerlink" href="#series-pumps" title="Permalink to this headline">¶</a></h4>
+<p>Series pumps add head for a given discharge.</p>
+<p><img alt="" src="../../_images/seriespumps.png" /></p>
+</div>
+</div>
+<div class="section" id="suction-requirements">
+<h3>Suction Requirements<a class="headerlink" href="#suction-requirements" title="Permalink to this headline">¶</a></h3>
+<p>The most common cause of pumping system failure is poor suction conditions.</p>
+<p>Cavitation occurs when liquid pressure is reduced to the vapor pressure of the liquid, then the liquid flashes to make small gas bubbles, which are unstable and collapse back into liquid - this rapid localized phase change process imparts large destructive energy into the pump impeller and housing and quickly destroys the pump itself in addition to creating loss of priming.</p>
+<p>In a pipe system with a pump, cavitation will occur when the absolute pressure at the inlet (eye) falls below the vapor pressure of the water.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The pump destruction described is not usually instant, but does happen pretty fast.  For example weeks to failure when the designer expects years between overhauls.</p>
+<p>High speed turbopumps  can fail in seconds when they are supposed to run for minutes.  Cavitation is a big deal in things like rocket ships, nuclear power plants (cooling system), and other high-risk applications; less so in Civil Engineering, usually our failures just cost time and money - a lift station failure during a flood could cause death, so we are not risk-free</p>
+</div>
+<p>Considerations</p>
+<ul class="simple">
+<li><p>Liquid must enter the pump eye under some pressure; this pressure is dictated by the hydraulic system and is called the Available Net Positive Suction Head <span class="math notranslate nohighlight">\(NPSH_a\)</span>.</p></li>
+<li><p>A centrifugal pump cannot lift water unless it is primed; the first stage impellers must be below the static HGL in the suction pit at startup.</p></li>
+<li><p>The manufacturer supplies a value for the minimum pressure the pump needs to operate; this pressure is called the Required Net Positive Suction Head <span class="math notranslate nohighlight">\(NPSH_r\)</span></p></li>
+<li><p>Proper pump operation without cavitation demands that $<span class="math notranslate nohighlight">\( NPSH_r &lt; NPSH_a \)</span>$</p></li>
+<li><p>Can calculate <span class="math notranslate nohighlight">\(NPSH_a\)</span> from</p></li>
+</ul>
+<p><img alt="" src="../../_images/npsha-formula.png" /></p>
+<ul class="simple">
+<li><p>An on-line calculator is located at <a class="reference external" href="http://54.243.252.9/toolbox/pipehydraulics/NPSHCalculatorUS/NPSHCalculatorUS.html">http://54.243.252.9/toolbox/pipehydraulics/NPSHCalculatorUS/NPSHCalculatorUS.html</a> ; the calculator is specific for US Customary Units, but would easily be adaptabe for SI units. The interface looks like</p></li>
+</ul>
+<p><img alt="" src="../../_images/npsha-calc.png" /></p>
+<div class="section" id="npsha-example">
+<h4>NPSHa Example<a class="headerlink" href="#npsha-example" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="problem-statement">
+<h4>Problem Statement<a class="headerlink" href="#problem-statement" title="Permalink to this headline">¶</a></h4>
+<p><img alt="" src="../../_images/NPSA-ex1.png" /></p>
+</div>
+<div class="section" id="solution-part-1">
+<h4>Solution (part 1)<a class="headerlink" href="#solution-part-1" title="Permalink to this headline">¶</a></h4>
+<p><img alt="" src="../../_images/NPSA-ex2.png" /></p>
+</div>
+<div class="section" id="solution-part-2">
+<h4>Solution (part 2)<a class="headerlink" href="#solution-part-2" title="Permalink to this headline">¶</a></h4>
+<p><img alt="" src="../../_images/NPSA-ex3.png" /></p>
+</div>
+<div class="section" id="solution-part-3">
+<h4>Solution (part 3)<a class="headerlink" href="#solution-part-3" title="Permalink to this headline">¶</a></h4>
+<p><img alt="" src="../../_images/NPSA-ex4.png" /></p>
+</div>
+<div class="section" id="solution-part-4">
+<h4>Solution (part 4)<a class="headerlink" href="#solution-part-4" title="Permalink to this headline">¶</a></h4>
+<p><img alt="" src="../../_images/NPSA-ex5.png" /></p>
+<p>We look up the liquid properties at <a class="reference external" href="http://54.243.252.9/toolbox/fluidmechanics/WaterPropertiesUS/WaterPropertiesUS.html">http://54.243.252.9/toolbox/fluidmechanics/WaterPropertiesUS/WaterPropertiesUS.html</a></p>
+</div>
+<div class="section" id="solution-part-5">
+<h4>Solution (part 5)<a class="headerlink" href="#solution-part-5" title="Permalink to this headline">¶</a></h4>
+<p>Now insert these intermediate values into the equation for <span class="math notranslate nohighlight">\(NPSH_a\)</span> paying close attention to how the equation is written in the calculator (the <span class="math notranslate nohighlight">\(H_{static}\)</span> sign is changed in the calculator in comparison to the equation presented above, the remaining terms are unchanged.</p>
+<p><img alt="" src="../../_images/NPSA-soln.png" /></p>
+</div>
+<div class="section" id="solution-summary">
+<h4>Solution Summary<a class="headerlink" href="#solution-summary" title="Permalink to this headline">¶</a></h4>
+<p><img alt="" src="../../_images/NPSA-soln2.png" /></p>
+</div>
+</div>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>That’s our quick overview of pumps as relevant for water systems.  Key points are:</p>
+<ul class="simple">
+<li><p>Need a system curve (we can get it out of EPANET for complicated layouts)</p></li>
+<li><p>Need some pump curves (internet, vendor websites)</p></li>
+<li><p>Find operating point</p></li>
+<li><p>Judge if there is some excess head and/or flow available (this would be desirable)</p></li>
+<li><p>Judge if close to best possible efficiency for the pump (can vary a little, but it would be dumb to operate a piss-po efficiency)</p></li>
+<li><p>Check suction conditions at startup and operation</p></li>
+<li><p>If all good, then have a pump</p></li>
+<li><p>Remember can run multiple pumps if a single pump is not available (really big pumps can be custom built, but we usually want to use off-the-shelf pumps)</p></li>
+</ul>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
-<li><p>Gupta, R. S. 2017. Hydrology and Hydraulic Systems. Waveland Press, Inc. pp 672-689</p></li>
+<li><p>Gupta, R. S. 2017. Hydrology and Hydraulic Systems. Waveland Press, Inc. pp xx-xx</p></li>
+<li><p>Pump Selection ; Walker, R. (1973) Pump Selection. Ann Arbor Science pp. 3-9 <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/3-Readings/PumpSelection/">http://54.243.252.9/ce-3372-webroot/3-Readings/PumpSelection/</a></p></li>
+<li><p>Pump Suction Conditions; Walker, R. (1973) Pump Selection. An Arbor Science pp. 11-31 <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/3-Readings/PumpSuctionConditions/">http://54.243.252.9/ce-3372-webroot/3-Readings/PumpSuctionConditions/</a></p></li>
+<li><p>Hauser, B. A. (1991). Practical Hydraulics Handbook. Lewis Publishers, Michigan. pp. 296-299
+<a class="reference external" href="http://54.243.252.9/ce-3372-webroot/3-Readings/NPSHExplain/">http://54.243.252.9/ce-3372-webroot/3-Readings/NPSHExplain/</a></p></li>
+<li><p>City of Houston; List Station Design Guidelines <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/3-Readings/LiftStationCityofHouston/">http://54.243.252.9/ce-3372-webroot/3-Readings/LiftStationCityofHouston/</a></p></li>
+<li><p>Highway Stormwater Pump Station Design. FHWA-NHI-01-007. <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/3-Readings/LiftStationDesign/">http://54.243.252.9/ce-3372-webroot/3-Readings/LiftStationDesign/</a></p></li>
 </ol>
 </div>
 </div>
@@ -436,6 +760,15 @@ head/pressure (back pressure)</p></li>
 
 <div class='prev-next-bottom'>
     
+    <div id="prev">
+        <a class="left-prev" href="../lesson05/lesson05.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Lesson 5. Pipeline Hydraulics</p>
+            </div>
+        </a>
+    </div>
      <div id="next">
         <a class="right-next" href="../lesson07.html" title="next page">
             <div class="prevnext-info">
