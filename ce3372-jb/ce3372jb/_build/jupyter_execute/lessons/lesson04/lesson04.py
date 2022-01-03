@@ -422,8 +422,19 @@
 # 
 # A web-based version is located at [http://54.243.252.9/toolbox/pipehydraulics/DiameterGivenDischarge/DGivenQ.html](http://54.243.252.9/toolbox/pipehydraulics/DiameterGivenDischarge/DGivenQ.html)
 
-# ## Readings
+# ## References
 # 
 # 1. Gupta, R. S. 2017. Hydrology and Hydraulic Systems. Waveland Press, Inc. pp 1-19 [http://54.243.252.9/ce-3372-webroot/3-Readings/WaterDemand-Gupta.pdf](http://54.243.252.9/ce-3372-webroot/3-Readings/WaterDemand-Gupta.pdf)
 # 
-# 2. Nickerson G. 2008. "Water Distribution Systems" in Land Development Handbook, Ed. S.O. Dewberry, Dewberry Inc., McGraw-Hill [http://54.243.252.9/ce-3372-webroot/3-Readings/water-distribution.pdf](http://54.243.252.9/ce-3372-webroot/3-Readings/water-distribution.pdf)
+# 2. Nickerson G. 2008. "Water Distribution Systems" in Land Development Handbook, Ed. S.O. Dewberry, Dewberry Inc., McGraw-Hill [http://54.243.252.9/ce-3372-webroot/3-Readings/WaterDistributionSystems/](http://54.243.252.9/ce-3372-webroot/3-Readings/WaterDistributionSystems/)
+# 
+# 3. Roberson, J.A., Cassidy, J.J., and Chaudry, M.H. (1988) Closed Conduits in "Hydraulic Engineering." Houghton Mifflin Co. pp. 240-310 [http://54.243.252.9/ce-3372-webroot/3-Readings/Chapter5/](http://54.243.252.9/ce-3372-webroot/3-Readings/Chapter5/)
+# 
+# 4. Chin, D. (2006). pp. 10-26 in "Water Resources Engineering, 2 ed." Prentice Hall, Inc. [http://54.243.252.9/ce-3372-webroot/3-Readings/Chin_10-26/](http://54.243.252.9/ce-3372-webroot/3-Readings/Chin_10-26/)
+# 
+
+# In[ ]:
+
+
+
+
