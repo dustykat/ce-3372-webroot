@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pumping Systems &#8212; CE 3372 Water Systems Design</title>
+    <title>Lesson 5. Pipeline Hydraulics &#8212; CE 3372 Water Systems Design</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -42,6 +42,8 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -51,7 +53,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Lesson 7. Storage Systems" href="../lesson07.html" />
+    <link rel="next" title="Pumping Systems" href="../lesson06/lesson06.html" />
+    <link rel="prev" title="Pipeline Head Loss" href="../lesson04/lesson04.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -115,6 +118,11 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
+   Lesson 5. Pipeline Hydraulics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson06/lesson06.html">
    Pumping Systems
   </a>
  </li>
@@ -259,7 +267,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/lessons/lesson06/lesson06.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/lessons/lesson05/lesson05.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -279,7 +287,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flessons/lesson06/lesson06.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flessons/lesson05/lesson05.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -300,7 +308,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/lessons/lesson06/lesson06.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/lessons/lesson05/lesson05.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -323,19 +331,21 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#background">
-   Background
+  <a class="reference internal nav-link" href="#example-steady-discharge-between-reservoirs-using-on-line-tools">
+   Example: Steady Discharge between Reservoirs (using on-line tools)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#types">
-   Types
+  <a class="reference internal nav-link" href="#linking-systems">
+   Linking Systems
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#readings">
-   Readings
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-rural-water-supply-to-a-village-school">
+     Example: Rural Water Supply to a Village School
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -348,62 +358,35 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="pumping-systems">
-<h1>Pumping Systems<a class="headerlink" href="#pumping-systems" title="Permalink to this headline">¶</a></h1>
-<p>Water moves from higher to lower energy</p>
-<ul class="simple">
-<li><p>Path of least resistance</p></li>
-<li><p>Head is energy per unit weight of a fluid</p></li>
-<li><p>Pumps are used to add energy to move water to a higher elevation, or over a barrier, or to increase system pressure.</p></li>
-</ul>
-<div class="section" id="background">
-<h2>Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h2>
-<p>A pump is a mechanical device that transfers energy into a liquid; used to</p>
-<ul class="simple">
-<li><p>Lift from lower to higher elevation (Lift stations)</p></li>
-<li><p>Increase pressure (Booster stations)</p></li>
-</ul>
-<p><img alt="" src="../../_images/pumpone.png" /></p>
-<p>The gas phase equivalent is a Compressor</p>
-<p>Pumps range substantially in size depending on application</p>
-<ul class="simple">
-<li><p>Small <br>
-<img alt="" src="../../_images/pumplittle.png" /></p></li>
-<li><p>Big <br>
-<img alt="" src="../../_images/pumpbig.png" /></p></li>
-</ul>
+  <div class="tex2jax_ignore mathjax_ignore section" id="lesson-5-pipeline-hydraulics">
+<h1>Lesson 5. Pipeline Hydraulics<a class="headerlink" href="#lesson-5-pipeline-hydraulics" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="example-steady-discharge-between-reservoirs-using-on-line-tools">
+<h2>Example: Steady Discharge between Reservoirs (using on-line tools)<a class="headerlink" href="#example-steady-discharge-between-reservoirs-using-on-line-tools" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="types">
-<h2>Types<a class="headerlink" href="#types" title="Permalink to this headline">¶</a></h2>
-<p>Positive (Fixed) Displacement Pumps</p>
+<div class="section" id="linking-systems">
+<h2>Linking Systems<a class="headerlink" href="#linking-systems" title="Permalink to this headline">¶</a></h2>
+<p>A hydraulic system can be analysed as a set of linked components to make an otherwise complicated system easier to analyze.</p>
 <ul class="simple">
-<li><p>Fixed volume of fluid is displaced each cycle regardless of
-system static head/pressure</p></li>
-<li><p>Lower flow rates and higher head than non-positive pumps</p></li>
+<li><p>Idea is to decompose into smaller (hydraulically) independent parts, analyze the parts then reassemble (integrate) the parts to answer questions about the whole system</p></li>
 </ul>
-<p>Variable Displacement Pumps</p>
+<div class="section" id="example-rural-water-supply-to-a-village-school">
+<h3>Example: Rural Water Supply to a Village School<a class="headerlink" href="#example-rural-water-supply-to-a-village-school" title="Permalink to this headline">¶</a></h3>
+<p><img alt="image.png" src="../../_images/africa-system.png" /></p>
+<p>The figure is an aerial image of a pipeline system with preliminary engineering sketches of the system (lower left panel) and a detail sketch of the terminal small storage tank (upper right panel). The 3,200 meter long pipeline lifts 25C water ( <span class="math notranslate nohighlight">\(\rho= 997 kg/m^3\)</span>,<span class="math notranslate nohighlight">\(\nu= 8.94 E-7 m^2/s\)</span>) from a treatment plant on the downstream face of Gulameta Dam through a 127 millimeter high-density polyethylene (HDPE) pipe (ks =0.0015 mm) to a large diameter at-grade cylindrical storage tank. A secondary, 800 meter long pipeline carries water from the large diameter storage tank to a small, cylindrical (D = 1 meter), elevated storage tank at the village school. Both storage tanks have float valves to prevent overflow and maintain the indicated water pool elevations.</p>
+<p>Analyze proposed system to determine anticipated behavior under various situations:</p>
 <ul class="simple">
-<li><p>Varying volume of fluid is displaced dependent on system static
-head/pressure (back pressure)</p></li>
+<li><p>Float valve fails at school</p></li>
+<li><p>Outlet valve accidently left open</p></li>
+<li><p>Pump operation under worst failure mode</p></li>
+<li><p>Pump fails, time until system fails/drains</p></li>
+<li><p>Float valve limited</p></li>
+<li><p>Oultet valve limited</p></li>
 </ul>
-<p>Fixed Displacement Pumps</p>
-<ul class="simple">
-<li><p>Screw Pumps <img alt="" src="../../_images/screwpump.png" /></p></li>
-<li><p>Progressive Cavity Pumps <img alt="" src="../../_images/cavitypump.png" /></p></li>
-<li><p>Reciprocating Pumps <img alt="" src="../../_images/pistonpump.png" /></p></li>
-</ul>
-<p>Variable Displacement Pumps</p>
-<ul class="simple">
-<li><p>Centrifugal (Radial-Flow) Pumps</p></li>
-<li><p>Propeller Pumps (Axial-Flow)</p></li>
-<li><p>Jet Pumps (Mixed-Flow)</p></li>
-</ul>
+<p><strong>Float Valve at School Fails</strong></p>
+<p><strong>School Outlet Valve Left Open</strong></p>
+<p><strong>Pump System Requirements</strong></p>
+<p><strong>Pump System Fails, Time to Drain</strong></p>
 </div>
-<div class="section" id="readings">
-<h2>Readings<a class="headerlink" href="#readings" title="Permalink to this headline">¶</a></h2>
-<ol class="simple">
-<li><p>Gupta, R. S. 2017. Hydrology and Hydraulic Systems. Waveland Press, Inc. pp 672-689</p></li>
-</ol>
 </div>
 </div>
 
@@ -420,7 +403,7 @@ head/pressure (back pressure)</p></li>
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./lessons/lesson06"
+            path: "./lessons/lesson05"
         },
         predefinedOutput: true
     }
@@ -436,11 +419,20 @@ head/pressure (back pressure)</p></li>
 
 <div class='prev-next-bottom'>
     
+    <div id="prev">
+        <a class="left-prev" href="../lesson04/lesson04.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Pipeline Head Loss</p>
+            </div>
+        </a>
+    </div>
      <div id="next">
-        <a class="right-next" href="../lesson07.html" title="next page">
+        <a class="right-next" href="../lesson06/lesson06.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Lesson 7. Storage Systems</p>
+                <p class="prevnext-title">Pumping Systems</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
