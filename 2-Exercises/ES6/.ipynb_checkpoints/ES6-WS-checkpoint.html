@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>ES5</title>
+<title>ES6-WS</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13082,16 +13082,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Download</strong> this file as a Jupyter Notebook@ <a href="http://54.243.252.9/ce-3372-webroot/2-Exercises/ES5/ES5.ipynb">http://54.243.252.9/ce-3372-webroot/2-Exercises/ES5/ES5.ipynb</a></p>
-<hr>
-<h1 id="ES-5">ES-5<a class="anchor-link" href="#ES-5">&#182;</a></h1><p>Copyright © 2021 Theodore G. Cleveland</p>
-<hr>
-<h2 id="Purpose:">Purpose:<a class="anchor-link" href="#Purpose:">&#182;</a></h2><p>Demonstrate application of EPANET for analysis of pressure and flow in water distribution systems.</p>
-<h2 id="Purpose:">Purpose:<a class="anchor-link" href="#Purpose:">&#182;</a></h2><ul>
-<li>Compute flow distribution in pipeline networks. </li>
-<li>Introduction to use of professional software (EPANET)</li>
-<li>Develop expertise in interpreting output to answer specific hydraulic questions</li>
-</ul>
+<h1 id="ES-5-EZ-Button-Solution-Sketch">ES-5 EZ Button Solution Sketch<a class="anchor-link" href="#ES-5-EZ-Button-Solution-Sketch">&#182;</a></h1><p>You still need to write the report!</p>
 
 </div>
 </div>
@@ -13101,7 +13092,14 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Background">Background<a class="anchor-link" href="#Background">&#182;</a></h2><p>Figure  1  is  a  five-pipe  network  with  a  water  supply  source  (a  reservoir,  not  shown) connected at Node 1, and demands at Nodes 1-5.<br>
 Table 1 is a list of the relevant pipe and node data.</p>
-<p><img src="http://54.243.252.9/ce-3372-webroot/2-Exercises/ES5/SimpleNetwork.png" alt=""></p>
+<p><img src="SimpleNetwork.png" alt=""></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 
 </div>
 </div>
@@ -13110,41 +13108,50 @@ Table 1 is a list of the relevant pipe and node data.</p>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<h2 id="Exercise-1">Exercise 1<a class="anchor-link" href="#Exercise-1">&#182;</a></h2><p>Using the Hazen-Williams head loss model of the network:</p>
-<ol>
-<li><p>Write the node equations of continuity for Nodes 1-4.</p>
-</li>
-<li><p>Write the head loss equations for each of the pipes in the system.</p>
-</li>
-</ol>
+<h2 id="Exercise-1">Exercise 1<a class="anchor-link" href="#Exercise-1">&#182;</a></h2><p>Build an EPANET model, using the Hazen-Williams head loss model of the network. From your preparation, or the completed model:</p>
+<p>a)  Write the node equations of continuity for Nodes 1-4.</p>
+<p>$[N1]~~Q_0 - Q_1 - Q_2  =  2$  The value of $Q_0$ is known at 10 cfs.</p>
+<p>$[N2]~~Q_1 - Q_3 - Q_5  =  4$</p>
+<p>$[N3]~~Q_2 - Q_4 - Q_5  =  3$</p>
+<p>$[N4]~~Q_3 + Q_4        =  1$</p>
+<p>b)  Write the head loss equations for each of the pipes in the system.</p>
+<p>$[P0]~~H_0 - H_1 = 0 $  This is the reservoir in the system, called a fixed grade node.  we know value of $H_0$</p>
+<p>$[P1]~~H_1 - 3.02*L_1*D^{-1.667}_1*\frac{4*Q_1}({\pi*D^2_1*C_{h-1}})^{1.85} - H_2  = 0 $</p>
+<p>$[P2]~~H_1 - 3.02*L_2*D^{-1.667}_2*\frac{4*Q_2}({\pi*D^2_2*C_{h-2}})^{1.85} - H_3  = 0 $</p>
+<p>$[P3]~~H_2 - 3.02*L_3*D^{-1.667}_3*\frac{4*Q_3}({\pi*D^2_3*C_{h-3}})^{1.85} - H_4  = 0 $</p>
+<p>$[P4]~~H_3 - 3.02*L_4*D^{-1.667}_4*\frac{4*Q_4}({\pi*D^2_4*C_{h-4}})^{1.85} - H_4  = 0 $</p>
+<p>$[P4]~~H_3 - 3.02*L_5*D^{-1.667}_5*\frac{4*Q_5}({\pi*D^2_5*C_{h-5}})^{1.85} - H_2  = 0 $</p>
+<p>c)  Make a screen capture of the EPANET program showing your network map, with the Node ID and Node Pressures displayed on the map, and with the Pipe ID and Pipe Flow Rates on the map.</p>
+<p><img src="epanet-screen-shot.png" alt=""></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Link to .inp file used in above figure. 1. <a href="http://54.243.252.9/ce-3372-webroot/2-Exercises/ES5/ES5.net"> <img src="http://54.243.252.9/ce-3372-webroot/2-Exercises/ES5/easy-button.png" alt="EZ Button Link to ES-1 sample solution" style="width:42px;height:42px;"> </a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<h2 id="Exercise-2">Exercise 2<a class="anchor-link" href="#Exercise-2">&#182;</a></h2><p>Build an EPANET model, using the Hazen-Williams head loss model of the network. Using the model:</p>
-<ol>
-<li><p>Make a screen capture of the EPANET program showing your network map, with the Node ID and Node Pressures displayed on the map, and with the Pipe ID and Pipe Flow Rates on the map.</p>
-</li>
-<li><p>Make a table that lists each node name, node elevation, and the resultant pressurein U.S. Customary units.</p>
-</li>
-<li><p>Make a table that lists each pipe name,  length,  diameter,  Hazen-Williams coefficient, and the resultant flow rate in U.S. Customary units.</p>
-</li>
-<li><p>Determine the flow rate in each pipe of the network, for the case where the total head at Node 1 is 100 feet.</p>
-</li>
-<li><p>Determine the Darcy-Weisbach friction factor in each pipe of the network.</p>
-</li>
-<li><p>Using the results of your flow distribution, determine the head loss from Node 1 to Node 4.</p>
-</li>
-<li><p>Determine the head at Node 4</p>
-</li>
-<li><p>Identify the node with the lowest <strong>pressure</strong> in your solution.</p>
-</li>
-</ol>
-<hr>
-<h2 id="Deliverables:">Deliverables:<a class="anchor-link" href="#Deliverables:">&#182;</a></h2><p>A brief report with your solution, showing the requested equations, screen captures, tables and head loss calculations.</p>
-<hr>
-<h2 id="References">References<a class="anchor-link" href="#References">&#182;</a></h2><ol>
-<li>Rossman,  L.  (2000).   EPANET  2  users  manual.   Technical  Report  EPA/600/R-00/057,U.S. Environmental Protection Agency, National Risk Management Research LaboratoryCincinnati, OH 45268.</li>
-</ol>
-<hr>
-<h2 id="Hints">Hints<a class="anchor-link" href="#Hints">&#182;</a></h2><p> <a href="http://54.243.252.9/ce-3372-webroot/2-Exercises/ES5/ES5.net"> <img src="http://54.243.252.9/ce-3372-webroot/2-Exercises/ES5/easy-button.png" alt="EZ Button Link to ES-5 sample .net input file" style="width:42px;height:42px;"> </a>  </p><p> <a href="http://54.243.252.9/ce-3372-webroot/2-Exercises/ES5/ES5-WS.html"> <img src="http://54.243.252.9/ce-3372-webroot/2-Exercises/ES5/easy-button.png" alt="EZ Button Link to ES-5 sample solution" style="width:42px;height:42px;"> </a>  </p>
+<h2 id="Exercise-2">Exercise 2<a class="anchor-link" href="#Exercise-2">&#182;</a></h2><p>a)  Make a table that lists each node name, node elevation, and the resultant pressurein U.S. Customary units.</p>
+<p>b)  Make a table that lists each pipe name,  length,  diameter,  Hazen-Williams coefficient, and the resultant flow rate in U.S. Customary units.</p>
+<p>c)  Determine the flow rate in each pipe of the network, for the case where the total head at Node 1 is 100 feet.</p>
+<p>d)  Determine the Darcy-Weisbach friction factor in each pipe of the network.</p>
+<p>Above all appear in the above screen capture.  Now from the EPANET report:</p>
+<p><img src="epanet-report.png" alt=""></p>
+<p>e)  Using the results of your flow distribution, determine the head loss from Node 1 to Node 4.</p>
+<p>$ H_1 = 50, H_4 = 20.93, Loss =29.07$. Loss won't change if $H_1$ increased to 100 ft.</p>
+<p>f)  Determine the head at Node 4</p>
+<p>$ H_4 = 70.93 $</p>
+<p>g)  Identify the node with the lowest <strong>pressure</strong> in your solution.</p>
+<p>$N_4$ has lowest pressure @ 30.73 when run with correct head at node 1.</p>
+
 </div>
 </div>
 </div>

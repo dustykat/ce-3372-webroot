@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>ES6-WS</title>
+<title>ES6</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13079,10 +13079,32 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="ES-5-EZ-Button-Solution-Sketch">ES-5 EZ Button Solution Sketch<a class="anchor-link" href="#ES-5-EZ-Button-Solution-Sketch">&#182;</a></h1><p>You still need to write the report!</p>
+<p><strong>Download</strong> this file as a Jupyter Notebook@ <a href="http://54.243.252.9/ce-3372-webroot/2-Exercises/ES6/ES6.ipynb">http://54.243.252.9/ce-3372-webroot/2-Exercises/ES6/ES6.ipynb</a></p>
+<hr>
+<h1 id="ES-6">ES-6<a class="anchor-link" href="#ES-6">&#182;</a></h1><p>Copyright © 2021 Theodore G. Cleveland</p>
+<hr>
+<h2 id="Purpose:">Purpose:<a class="anchor-link" href="#Purpose:">&#182;</a></h2><p>Demonstrate flow-equalization volume required for a storage tank to leverage some constant flow rate.</p>
+<ul>
+<li>Analyze daily water cumulative demand (from time varying outflows)</li>
+<li>Find equivalent constant draw rate</li>
+<li>Use double mass curve concept to find maximum deviations to size an equalization tank.</li>
+</ul>
 
 </div>
 </div>
@@ -13090,16 +13112,14 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Background">Background<a class="anchor-link" href="#Background">&#182;</a></h2><p>Figure  1  is  a  five-pipe  network  with  a  water  supply  source  (a  reservoir,  not  shown) connected at Node 1, and demands at Nodes 1-5.<br>
-Table 1 is a list of the relevant pipe and node data.</p>
-<p><img src="SimpleNetwork.png" alt=""></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem-Data">Problem Data<a class="anchor-link" href="#Problem-Data">&#182;</a></h2><p>Figure 1 is a plot of variable cumulative inflow volume versus time for a proposed flow-equalization tank location and the equivalent constant rate inflow for the same location.</p>
+<p><img src="http://54.243.252.9/ce-3372-webroot/2-Exercises/ES6/DraftCurve.png" alt=""></p>
+<figure>
+<figcaption >Figure 1. Time-varying water demand (cumulative) and constant-rate equivalent demand </figcaption>
+</figure><p>Table 1 is a list of time and cumulative volume inflow (same as the graph). A flow-equalization storage tank volume is to be determined.</p>
+<figure>
+<figcaption >Table 1. Variable Draft Table for Flow Equalization  </figcaption>
+</figure><p><img src="http://54.243.252.9/ce-3372-webroot/2-Exercises/ES6/DraftTable.png" alt=""></p>
 
 </div>
 </div>
@@ -13108,50 +13128,18 @@ Table 1 is a list of the relevant pipe and node data.</p>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<h2 id="Exercise-1">Exercise 1<a class="anchor-link" href="#Exercise-1">&#182;</a></h2><p>Build an EPANET model, using the Hazen-Williams head loss model of the network. From your preparation, or the completed model:</p>
-<p>a)  Write the node equations of continuity for Nodes 1-4.</p>
-<p>$[N1]~~Q_0 - Q_1 - Q_2  =  2$  The value of $Q_0$ is known at 10 cfs.</p>
-<p>$[N2]~~Q_1 - Q_3 - Q_5  =  4$</p>
-<p>$[N3]~~Q_2 - Q_4 - Q_5  =  3$</p>
-<p>$[N4]~~Q_3 + Q_4        =  1$</p>
-<p>b)  Write the head loss equations for each of the pipes in the system.</p>
-<p>$[P0]~~H_0 - H_1 = 0 $  This is the reservoir in the system, called a fixed grade node.  we know value of $H_0$</p>
-<p>$[P1]~~H_1 - 3.02*L_1*D^{-1.667}_1*\frac{4*Q_1}({\pi*D^2_1*C_{h-1}})^{1.85} - H_2  = 0 $</p>
-<p>$[P2]~~H_1 - 3.02*L_2*D^{-1.667}_2*\frac{4*Q_2}({\pi*D^2_2*C_{h-2}})^{1.85} - H_3  = 0 $</p>
-<p>$[P3]~~H_2 - 3.02*L_3*D^{-1.667}_3*\frac{4*Q_3}({\pi*D^2_3*C_{h-3}})^{1.85} - H_4  = 0 $</p>
-<p>$[P4]~~H_3 - 3.02*L_4*D^{-1.667}_4*\frac{4*Q_4}({\pi*D^2_4*C_{h-4}})^{1.85} - H_4  = 0 $</p>
-<p>$[P4]~~H_3 - 3.02*L_5*D^{-1.667}_5*\frac{4*Q_5}({\pi*D^2_5*C_{h-5}})^{1.85} - H_2  = 0 $</p>
-<p>c)  Make a screen capture of the EPANET program showing your network map, with the Node ID and Node Pressures displayed on the map, and with the Pipe ID and Pipe Flow Rates on the map.</p>
-<p><img src="epanet-screen-shot.png" alt=""></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Link to .inp file used in above figure. 1. <a href="http://54.243.252.9/ce-3372-webroot/2-Exercises/ES5/ES5.net"> <img src="http://54.243.252.9/ce-3372-webroot/2-Exercises/ES5/easy-button.png" alt="EZ Button Link to ES-1 sample solution" style="width:42px;height:42px;"> </a></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
+<p>Using the supplied problem data (either graph or table or both):</p>
+<ol>
+<li>Determine the cumulative volume of inflow (or draft) every 24 hours plotted on Figure 1 and tabulated in Table 1.</li>
+<li>Determine the constant flow rate (cubic feet per hour) from the constant drawdown curve plotted on Figure 1 and tabulated in Table 1.</li>
+<li>Determine the largest maximum absolute deviation between the constant drawdown line and the variable inflow curve indicated by Figure 1 and/or Table 1</li>
+<li>Determine the second largest maximum absolute deviation between the constant drawdown line and the variable inflow curve indicated by Figure 4 and/or Table 1 </li>
+<li>Determine a recommended flow equalization storage volume indicated by Figure 4 and/or Table 1 </li>
+</ol>
 <hr>
-<h2 id="Exercise-2">Exercise 2<a class="anchor-link" href="#Exercise-2">&#182;</a></h2><p>a)  Make a table that lists each node name, node elevation, and the resultant pressurein U.S. Customary units.</p>
-<p>b)  Make a table that lists each pipe name,  length,  diameter,  Hazen-Williams coefficient, and the resultant flow rate in U.S. Customary units.</p>
-<p>c)  Determine the flow rate in each pipe of the network, for the case where the total head at Node 1 is 100 feet.</p>
-<p>d)  Determine the Darcy-Weisbach friction factor in each pipe of the network.</p>
-<p>Above all appear in the above screen capture.  Now from the EPANET report:</p>
-<p><img src="epanet-report.png" alt=""></p>
-<p>e)  Using the results of your flow distribution, determine the head loss from Node 1 to Node 4.</p>
-<p>$ H_1 = 50, H_4 = 20.93, Loss =29.07$. Loss won't change if $H_1$ increased to 100 ft.</p>
-<p>f)  Determine the head at Node 4</p>
-<p>$ H_4 = 70.93 $</p>
-<p>g)  Identify the node with the lowest <strong>pressure</strong> in your solution.</p>
-<p>$N_4$ has lowest pressure @ 30.73 when run with correct head at node 1.</p>
-
+<h2 id="Deliverables:">Deliverables:<a class="anchor-link" href="#Deliverables:">&#182;</a></h2><p>A brief report with your solution, showing the requested values, intermediate calculations, and the recomended equalization storage requirement.</p>
+<hr>
+<h2 id="References">References<a class="anchor-link" href="#References">&#182;</a></h2><h2 id="1.-Gupta,-R.-S.-2017.-Hydrology-and-Hydraulic-Systems.-Waveland-Press,-Inc.-pp.-548-552">1. Gupta, R. S. 2017. Hydrology and Hydraulic Systems. Waveland Press, Inc. pp. 548-552<a class="anchor-link" href="#1.-Gupta,-R.-S.-2017.-Hydrology-and-Hydraulic-Systems.-Waveland-Press,-Inc.-pp.-548-552">&#182;</a></h2><h2 id="Hints">Hints<a class="anchor-link" href="#Hints">&#182;</a></h2>
 </div>
 </div>
 </div>
