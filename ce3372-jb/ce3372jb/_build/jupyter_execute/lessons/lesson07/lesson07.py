@@ -10,14 +10,16 @@
 # There are several scales of storage: 
 # - large (water supply reservoirs, like Lake Allen Henry)
 # <figure>
-# <!--<img src="http://54.243.252.9/ce-3372-webroot/ce3372-jb/ce3372jb/lessons/lesson07/LakeAlanHenry.png" width="400">-->
-# <img src="LakeAlanHenry.png" width="600"></figure>
+# <img src="http://54.243.252.9/ce-3372-webroot/ce3372-jb/ce3372jb/lessons/lesson07/LakeAlanHenry.png" width="600">
+# <!--<img src="LakeAlanHenry.png" width="600">-->
+# </figure>
 # - moderate (Southwest Lubbock Water Treatment)
 # <figure>
-# <!--<img src="http://54.243.252.9/ce-3372-webroot/ce3372-jb/ce3372jb/lessons/lesson07/LBB-SDWPlant.png" width="400">--><img src="LBB-SDWPlant.png" width="500">
+# <img src="http://54.243.252.9/ce-3372-webroot/ce3372-jb/ce3372jb/lessons/lesson07/LBB-SDWPlant.png" width="500"><!--<img src="LBB-SDWPlant.png" width="500">-->
 # - localized (storage tanks,  )
 # <figure>
-# <!--<img src="http://54.243.252.9/ce-3372-webroot/ce3372-jb/ce3372jb/lessons/lesson07/WaterTower.png" width="400">--><img src="WaterTower.png" width="400">
+# <img src="http://54.243.252.9/ce-3372-webroot/ce3372-jb/ce3372jb/lessons/lesson07/WaterTower.png" width="400">
+#     <!--<img src="WaterTower.png" width="400">-->
 # </figure>
 # 
 # The large scale systems are sized using water resources management principles, which are discussed to some extent in Gupta pp. 545-548.  The usual tool is called a ripple-chart or double mass curve (same thing, different names).  In local scale an identical tool is used, but at a much different (hourly) time-scale.
