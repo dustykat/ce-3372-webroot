@@ -55,7 +55,8 @@
 # 
 # :::{note}
 # Finding/building a modern database of such information would be a good data science 
-# project (ENGR 1330) :::
+# project (ENGR 1330) 
+# :::
 # 
 # Different demands that need to be accounted for: 
 # 1. Customer demand: Average use needed to meet non-emergency needs. 
