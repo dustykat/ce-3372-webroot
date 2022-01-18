@@ -17,23 +17,148 @@
 # 
 # $$ \bar{V} = \frac{Q}{A} $$
 
+# ---
 # 
-
 # ## Continunity at Different Sections
 # 
-# words
+# The continunity (conservation of mass) across two cross-sections of pipe as shown 
 # 
+# ![](continunity-section.png)
+# 
+# is $A_1 V_1 = A_2 V_2$. It is a statement that discharge is the same in each portion of pipe unless there is a loss somewhere.
+
 # ## Continunity at Junctions
 # 
+# A junction is a location where two or more conduits join together.  By convention (collective agreement) flow into a junction is a positive value, flow out from a junction is a negative value. External demands are conceptualized as flow **out** of the junction. While uncommon,flow injected into a junction it would be treated as a negative demand (in most computation tools!)
+# 
+# ![](continunity-junction.png) 
+# 
+# The continunity equation for the junction depicted above is $Q_1 - Q_2 - Q_3 - D = 0$ An easy way to remember continunity is $In - Out = 0$
+
+# ---
+# 
 # ## Energy Equation
+# 
+# The energy equation (modified bernoulli equation) relates the total dynamic head at two points in a system, accounting for frictional losses and any added head from a pump.
+# 
+# ![](nrg-eqn.png)
+# 
+# - $h_L$ = head losses (pipe loss + fitting losses)
+# - $h_p$ = added pump head
+# - $h_t$ = head loss to a turbine
+# 
 
+# The parts of the equation are illustrated below
+# 
+# ![](nrg-picture.png)
+# 
+# The left-most group is the total energy in the lower reservoir. 
+# The pump head provides the energy to lift from the suction side of the pump to the upper reservoir.  The water is physically moving upward in the suction pipe, while hydraulically flowing downhill to some minimum at the pump. After the pump supplies additional momentum the water has increased energy to continue its uphill trek to the upper reservoir.  The first group to the right of the equal sign is the total energy in the upper reservoir.  The last group is the total head loss in the system.
+# 
+# Observe that the HGL and EGL in the system slope downward in the direction of flow; further observe that nearly all groups are dependent on the discharge rate; added head required changes with $Q$ as does the head loss.
+# 
+# ---
+# 
+# The hydraulic grade line (HGL) is depicted below as is the energy grade line (EGL)
+# ![](hgl.png)
+# 
+# ---
+# 
+# ![](egl.png)
+
+# ---
+# 
+# We can combine continunity and energy to explain/predic common hydraulic behavior
+# 
 # ### Example: Time to Drain a Storage Tank
+# 
+# Imagine an ordinary bucket (diameter = 1 foot) with a ½-inch hole drilled at the base of the bucket.
+# 
+# #### Problem Statement
+# Develop an equation that estimates time-to-drain for different fill depths (with an unknown drainage coefficient).  Use measured data to infer the drainage coefficient.
+# 
+# ![](time2drain.png)
+# 
+# #### Sketch Situation; List Known Values
+# 
+# ![](time2drain-sketch.png)
+# 
+# The known values in this case are the tank area $A$ from its given diameter, the outlet area $a$ from its given diameter, and the starting depth $H$.
+# 
+# #### List Unknown Values
+# 
+# In this case the time to drain and the numerical value of a drainage coefficient that relates the constriction of the jet at the outlet.  We can keep it as an unknown variable and use the observations to find a numerical value for this particular bucket.
+# 
+# #### Governing Principles
+# 
+# - Conservation of mass (Continunity)
+# - Conservation of energy (Energy equation)
+# 
+# #### Solution
+# 
+# First use continunity:
+# 
+# ![](ttd-continunity.png)
+# 
+# Then use energy:
+# 
+# ![](ttd-nrg.png)
+# 
+# Now apply analysis (that Calculus stuff!)
+# 
+# ![](ttd-calculus-1.png)
+# 
+# Continue to tidy up the equation
+# 
+# ![](ttd-calculus-2.png)
+# 
+# Now we can construct a tool using Computational Thinking (ENGR-1330) methods
 
-# In[ ]:
+# In[1]:
 
 
+def HofT(time,Cd,Ho,D,d,g): #create our depth vs time function
+    import math
+    A = 0.25*math.pi*D**2
+    a = 0.25*math.pi*d**2
+    K = math.sqrt(2*g)*(a/A)
+    HofT = (math.sqrt(Ho)-time*Cd*K/2)**2 # if inner part is <0, then will throw an error
+    return(HofT)
 
 
+# In[2]:
+
+
+# now a quick test
+Ho = 1.0 # one foot depth
+D  = 1.0 # one foot diameter
+d  = 0.042 # 1/2 inch diameter (in feet)
+g  = 32.2 # grabity in US unitz
+Cd = 1
+time = 139
+print("Depth Remain at ",time," seconds is ",round(HofT(time,Cd,Ho,D,d,g),3)," feet")
+
+
+# Now put the function into a repetition structure and use trial-and-error to find a good value for Cd.  The goal is for remaining depth to be zero for all cases.
+
+# In[3]:
+
+
+D  = 1.0 # one foot diameter
+d  = 0.042 # 1/2 inch diameter (in feet)
+g  = 32.2 # grabity in US unitz
+Cd = 1.125    # Use 2, 1.5, 1.25, 1.125 will see values go up then down towards zero
+Ho = [1.00,0.75,0.53,0.29,0.00] # table of observed depths
+time = [127.85,106.41,84.71,57.94,0.00] # table of observed times
+how_many = len(Ho)
+print("For Cd = ", Cd)
+for i in range(how_many):
+    print("Depth Remain at ",time[i]," seconds is ",round(HofT(time[i],Cd,Ho[i],D,d,g),3)," feet")
+
+
+# The example illustrates the combination of analysis and computation to find a discharge coefficient for a cylindrical tank.  These kind of problems are especially fun when the tank geometry is weird and we normally use:
+# - Storage-Elevation or Depth-Area tables.
+# - Finite-difference type computations (rather than analytical functions)
 
 # ### Example: Steady Discharge between Two Reservoirs
 

@@ -127,7 +127,7 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lesson07.html">
+  <a class="reference internal" href="../lesson07/lesson07.html">
    Lesson 7. Storage Systems
   </a>
  </li>
@@ -349,6 +349,33 @@
     <a class="reference internal nav-link" href="#example-time-to-drain-a-storage-tank">
      Example: Time to Drain a Storage Tank
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#problem-statement">
+       Problem Statement
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sketch-situation-list-known-values">
+       Sketch Situation; List Known Values
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#list-unknown-values">
+       List Unknown Values
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#governing-principles">
+       Governing Principles
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#solution">
+       Solution
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#example-steady-discharge-between-two-reservoirs">
@@ -512,17 +539,141 @@
 The mean section velocity is related to cross sectional flow area and volumetric discharge as:</p>
 <div class="math notranslate nohighlight">
 \[ \bar{V} = \frac{Q}{A} \]</div>
+<hr class="docutils" />
 <div class="section" id="continunity-at-different-sections">
 <h2>Continunity at Different Sections<a class="headerlink" href="#continunity-at-different-sections" title="Permalink to this headline">¶</a></h2>
-<p>words</p>
+<p>The continunity (conservation of mass) across two cross-sections of pipe as shown</p>
+<p><img alt="" src="../../_images/continunity-section.png" /></p>
+<p>is <span class="math notranslate nohighlight">\(A_1 V_1 = A_2 V_2\)</span>. It is a statement that discharge is the same in each portion of pipe unless there is a loss somewhere.</p>
 </div>
 <div class="section" id="continunity-at-junctions">
 <h2>Continunity at Junctions<a class="headerlink" href="#continunity-at-junctions" title="Permalink to this headline">¶</a></h2>
+<p>A junction is a location where two or more conduits join together.  By convention (collective agreement) flow into a junction is a positive value, flow out from a junction is a negative value. External demands are conceptualized as flow <strong>out</strong> of the junction. While uncommon,flow injected into a junction it would be treated as a negative demand (in most computation tools!)</p>
+<p><img alt="" src="../../_images/continunity-junction.png" /></p>
+<p>The continunity equation for the junction depicted above is <span class="math notranslate nohighlight">\(Q_1 - Q_2 - Q_3 - D = 0\)</span> An easy way to remember continunity is <span class="math notranslate nohighlight">\(In - Out = 0\)</span></p>
 </div>
+<hr class="docutils" />
 <div class="section" id="energy-equation">
 <h2>Energy Equation<a class="headerlink" href="#energy-equation" title="Permalink to this headline">¶</a></h2>
+<p>The energy equation (modified bernoulli equation) relates the total dynamic head at two points in a system, accounting for frictional losses and any added head from a pump.</p>
+<p><img alt="" src="../../_images/nrg-eqn.png" /></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(h_L\)</span> = head losses (pipe loss + fitting losses)</p></li>
+<li><p><span class="math notranslate nohighlight">\(h_p\)</span> = added pump head</p></li>
+<li><p><span class="math notranslate nohighlight">\(h_t\)</span> = head loss to a turbine</p></li>
+</ul>
+<p>The parts of the equation are illustrated below</p>
+<p><img alt="" src="../../_images/nrg-picture.png" /></p>
+<p>The left-most group is the total energy in the lower reservoir.
+The pump head provides the energy to lift from the suction side of the pump to the upper reservoir.  The water is physically moving upward in the suction pipe, while hydraulically flowing downhill to some minimum at the pump. After the pump supplies additional momentum the water has increased energy to continue its uphill trek to the upper reservoir.  The first group to the right of the equal sign is the total energy in the upper reservoir.  The last group is the total head loss in the system.</p>
+<p>Observe that the HGL and EGL in the system slope downward in the direction of flow; further observe that nearly all groups are dependent on the discharge rate; added head required changes with <span class="math notranslate nohighlight">\(Q\)</span> as does the head loss.</p>
+<hr class="docutils" />
+<p>The hydraulic grade line (HGL) is depicted below as is the energy grade line (EGL)
+<img alt="" src="../../_images/hgl.png" /></p>
+<hr class="docutils" />
+<p><img alt="" src="../../_images/egl.png" /></p>
+<hr class="docutils" />
+<p>We can combine continunity and energy to explain/predic common hydraulic behavior</p>
 <div class="section" id="example-time-to-drain-a-storage-tank">
 <h3>Example: Time to Drain a Storage Tank<a class="headerlink" href="#example-time-to-drain-a-storage-tank" title="Permalink to this headline">¶</a></h3>
+<p>Imagine an ordinary bucket (diameter = 1 foot) with a ½-inch hole drilled at the base of the bucket.</p>
+<div class="section" id="problem-statement">
+<h4>Problem Statement<a class="headerlink" href="#problem-statement" title="Permalink to this headline">¶</a></h4>
+<p>Develop an equation that estimates time-to-drain for different fill depths (with an unknown drainage coefficient).  Use measured data to infer the drainage coefficient.</p>
+<p><img alt="" src="../../_images/time2drain.png" /></p>
+</div>
+<div class="section" id="sketch-situation-list-known-values">
+<h4>Sketch Situation; List Known Values<a class="headerlink" href="#sketch-situation-list-known-values" title="Permalink to this headline">¶</a></h4>
+<p><img alt="" src="../../_images/time2drain-sketch.png" /></p>
+<p>The known values in this case are the tank area <span class="math notranslate nohighlight">\(A\)</span> from its given diameter, the outlet area <span class="math notranslate nohighlight">\(a\)</span> from its given diameter, and the starting depth <span class="math notranslate nohighlight">\(H\)</span>.</p>
+</div>
+<div class="section" id="list-unknown-values">
+<h4>List Unknown Values<a class="headerlink" href="#list-unknown-values" title="Permalink to this headline">¶</a></h4>
+<p>In this case the time to drain and the numerical value of a drainage coefficient that relates the constriction of the jet at the outlet.  We can keep it as an unknown variable and use the observations to find a numerical value for this particular bucket.</p>
+</div>
+<div class="section" id="governing-principles">
+<h4>Governing Principles<a class="headerlink" href="#governing-principles" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Conservation of mass (Continunity)</p></li>
+<li><p>Conservation of energy (Energy equation)</p></li>
+</ul>
+</div>
+<div class="section" id="solution">
+<h4>Solution<a class="headerlink" href="#solution" title="Permalink to this headline">¶</a></h4>
+<p>First use continunity:</p>
+<p><img alt="" src="../../_images/ttd-continunity.png" /></p>
+<p>Then use energy:</p>
+<p><img alt="" src="../../_images/ttd-nrg.png" /></p>
+<p>Now apply analysis (that Calculus stuff!)</p>
+<p><img alt="" src="../../_images/ttd-calculus-1.png" /></p>
+<p>Continue to tidy up the equation</p>
+<p><img alt="" src="../../_images/ttd-calculus-2.png" /></p>
+<p>Now we can construct a tool using Computational Thinking (ENGR-1330) methods</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">HofT</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">Cd</span><span class="p">,</span><span class="n">Ho</span><span class="p">,</span><span class="n">D</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">g</span><span class="p">):</span> <span class="c1">#create our depth vs time function</span>
+    <span class="kn">import</span> <span class="nn">math</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="mf">0.25</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">D</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mf">0.25</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">d</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">K</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">g</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">a</span><span class="o">/</span><span class="n">A</span><span class="p">)</span>
+    <span class="n">HofT</span> <span class="o">=</span> <span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">Ho</span><span class="p">)</span><span class="o">-</span><span class="n">time</span><span class="o">*</span><span class="n">Cd</span><span class="o">*</span><span class="n">K</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="c1"># if inner part is &lt;0, then will throw an error</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">HofT</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># now a quick test</span>
+<span class="n">Ho</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="c1"># one foot depth</span>
+<span class="n">D</span>  <span class="o">=</span> <span class="mf">1.0</span> <span class="c1"># one foot diameter</span>
+<span class="n">d</span>  <span class="o">=</span> <span class="mf">0.042</span> <span class="c1"># 1/2 inch diameter (in feet)</span>
+<span class="n">g</span>  <span class="o">=</span> <span class="mf">32.2</span> <span class="c1"># grabity in US unitz</span>
+<span class="n">Cd</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">time</span> <span class="o">=</span> <span class="mi">139</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Depth Remain at &quot;</span><span class="p">,</span><span class="n">time</span><span class="p">,</span><span class="s2">&quot; seconds is &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">HofT</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">Cd</span><span class="p">,</span><span class="n">Ho</span><span class="p">,</span><span class="n">D</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">g</span><span class="p">),</span><span class="mi">3</span><span class="p">),</span><span class="s2">&quot; feet&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Depth Remain at  139  seconds is  0.0  feet
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now put the function into a repetition structure and use trial-and-error to find a good value for Cd.  The goal is for remaining depth to be zero for all cases.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">D</span>  <span class="o">=</span> <span class="mf">1.0</span> <span class="c1"># one foot diameter</span>
+<span class="n">d</span>  <span class="o">=</span> <span class="mf">0.042</span> <span class="c1"># 1/2 inch diameter (in feet)</span>
+<span class="n">g</span>  <span class="o">=</span> <span class="mf">32.2</span> <span class="c1"># grabity in US unitz</span>
+<span class="n">Cd</span> <span class="o">=</span> <span class="mf">1.125</span>    <span class="c1"># Use 2, 1.5, 1.25, 1.125 will see values go up then down towards zero</span>
+<span class="n">Ho</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.00</span><span class="p">,</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">0.53</span><span class="p">,</span><span class="mf">0.29</span><span class="p">,</span><span class="mf">0.00</span><span class="p">]</span> <span class="c1"># table of observed depths</span>
+<span class="n">time</span> <span class="o">=</span> <span class="p">[</span><span class="mf">127.85</span><span class="p">,</span><span class="mf">106.41</span><span class="p">,</span><span class="mf">84.71</span><span class="p">,</span><span class="mf">57.94</span><span class="p">,</span><span class="mf">0.00</span><span class="p">]</span> <span class="c1"># table of observed times</span>
+<span class="n">how_many</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">Ho</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;For Cd = &quot;</span><span class="p">,</span> <span class="n">Cd</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">how_many</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Depth Remain at &quot;</span><span class="p">,</span><span class="n">time</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="s2">&quot; seconds is &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">HofT</span><span class="p">(</span><span class="n">time</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">Cd</span><span class="p">,</span><span class="n">Ho</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">D</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">g</span><span class="p">),</span><span class="mi">3</span><span class="p">),</span><span class="s2">&quot; feet&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>For Cd =  1.125
+Depth Remain at  127.85  seconds is  0.0  feet
+Depth Remain at  106.41  seconds is  0.0  feet
+Depth Remain at  84.71  seconds is  0.003  feet
+Depth Remain at  57.94  seconds is  0.006  feet
+Depth Remain at  0.0  seconds is  0.0  feet
+</pre></div>
+</div>
+</div>
+</div>
+<p>The example illustrates the combination of analysis and computation to find a discharge coefficient for a cylindrical tank.  These kind of problems are especially fun when the tank geometry is weird and we normally use:</p>
+<ul class="simple">
+<li><p>Storage-Elevation or Depth-Area tables.</p></li>
+<li><p>Finite-difference type computations (rather than analytical functions)</p></li>
+</ul>
+</div>
 </div>
 <div class="section" id="example-steady-discharge-between-two-reservoirs">
 <h3>Example: Steady Discharge between Two Reservoirs<a class="headerlink" href="#example-steady-discharge-between-two-reservoirs" title="Permalink to this headline">¶</a></h3>
