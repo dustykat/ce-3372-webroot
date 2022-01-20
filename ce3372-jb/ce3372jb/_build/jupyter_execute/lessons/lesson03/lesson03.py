@@ -1,13 +1,14 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# 
 # # Demand Estimation
+# 
+# Demand is required to size water systems to meet some purpose, or establish that the particular system is infeasible.
 # 
 # :::{Note}
 # This entire section is not yet complete - until so done, refer to [Demand Estimation.pdf](http://54.243.252.9/ce-3372-webroot/1-Lessons/Lesson03/PowerPointInLecture/OldContent/CE3372-Lesson-3.pdf).  The content is identical.  As the content is moved here obsolete parts will be identified, and newer ideas inserted.
 # :::
-# 
-# Demand is required to size water systems to meet some purpose, or establish that the particular system is infeasible.
 
 # Estimates of demand are used to size water systems to meet some purpose, or establish that the particular system is infeasible.
 # 
@@ -19,7 +20,6 @@
 # - Waste Assimilation use
 # - Navigation uses (outside scope this course)
 # 
-# ---
 
 # ## Water Needs for a City
 # 
@@ -31,7 +31,7 @@
 # - Large Industrial Requirements 
 # - Waste Assimilation Requirements
 # 
-# ---
+# 
 
 # ### Municipal Requirements
 # 
@@ -43,14 +43,12 @@
 # 
 # Thus the two components required to estimate demand is **how many people** have to be supplied, and **how much each** person uses.
 # 
-# ---
+# 
 
 # ## Population Models
 # 
 # <img src="http://54.243.252.9/ce-3372-webroot/ce3372-jb/ce3372jb/lessons/lesson03/popn-forecast.png" width="400">
 # 
-# 
-# ---
 
 # **GEOMETRIC GROWTH (MATHEMATICAL)**
 # 
@@ -60,7 +58,7 @@
 # 
 # where $K_p$ is the exponential growth constant 
 # 
-# ---
+# 
 
 # **ARITHMETIC GROWTH (MATHEMATICAL)**
 # 
@@ -70,7 +68,7 @@
 # 
 # where $K_A$ is the slope of the growth curve 
 # 
-# ---
+# 
 
 # **DECLINING GROWTH (MATHEMATICAL)** 
 # 
@@ -80,11 +78,11 @@
 # 
 # where $K_D$ is the declining rate constant 
 # 
-# ---
+# 
 
 # ## Temporal Variation
 # 
-# ---
+# The demand is not constant, methods to consider the demand variation within some planning interval are available.
 
 # In[ ]:
 
