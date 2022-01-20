@@ -3,6 +3,10 @@
 
 # # Demand Estimation
 # 
+# :::{Note}
+# This entire section is not yet complete - until so done, refer to [Demand Estimation.pdf](http://54.243.252.9/ce-3372-webroot/1-Lessons/Lesson03/PowerPointInLecture/OldContent/CE3372-Lesson-3.pdf).  The content is identical.  As the content is moved here obsolete parts will be identified, and newer ideas inserted.
+# :::
+# 
 # Demand is required to size water systems to meet some purpose, or establish that the particular system is infeasible.
 
 # Estimates of demand are used to size water systems to meet some purpose, or establish that the particular system is infeasible.
