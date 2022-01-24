@@ -83,6 +83,8 @@
 # ## Temporal Variation
 # 
 # The demand is not constant, methods to consider the demand variation within some planning interval are available.
+# 
+# [Water Demand Variation Tool](http://54.243.252.9/toolbox/pipehydraulics/WaterDemandVariation/WaterDemandVariation.html)
 
 # In[ ]:
 
