@@ -446,11 +446,6 @@
        Mannings “n”
       </a>
      </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id1">
-       Hydraulic Radius
-      </a>
-     </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -729,24 +724,68 @@ Depth Remain at  0.0  seconds is  0.0  feet
 </div>
 <div class="section" id="hazen-williams">
 <h3>Hazen-Williams<a class="headerlink" href="#hazen-williams" title="Permalink to this headline">¶</a></h3>
+<p>The Hazen-Williams head loss model is for water only, while a bit contrived it is used in the USA extensively.</p>
+<p><img alt="" src="../../_images/HW-formula.png" /></p>
+<p>The model expresses frictional loss</p>
+<ul class="simple">
+<li><p>proportional to Length</p></li>
+<li><p>proportional to Velocity^(1.8)</p></li>
+<li><p>Inversely proportional to cross section area (as hydraulic radius)</p></li>
+</ul>
+<p>The Loss coefficient (<span class="math notranslate nohighlight">\(C_h\)</span>) depends on</p>
+<ul class="simple">
+<li><p>Pipe material, finish, and age</p></li>
+</ul>
+<p>The model should be restricted to:</p>
+<ul class="simple">
+<li><p>Turbulent flow only (Re&gt;4000)</p></li>
+<li><p>WATER ONLY!</p></li>
+</ul>
+<p>The discharge form for a circular conduit (aka pipe) is</p>
+<p><img alt="" src="../../_images/HWQ-formula.png" /></p>
+<p>The leading constant changes for US Customary and SI Units.</p>
 <div class="section" id="hazen-williams-c-factor">
 <h4>Hazen-Williams “C” Factor<a class="headerlink" href="#hazen-williams-c-factor" title="Permalink to this headline">¶</a></h4>
+<p>These are generally tabulated and you can look up values on the internet.</p>
+<p><img alt="" src="../../_images/CH-table.png" /></p>
 </div>
 <div class="section" id="hydraulic-radius">
 <h4>Hydraulic Radius<a class="headerlink" href="#hydraulic-radius" title="Permalink to this headline">¶</a></h4>
+<p>HW is often presented as a velocity equation using the hydraulic radius</p>
+<p><img alt="" src="../../_images/HW-RH-formula.png" /></p>
+<p>The hydraulic radius is the ratio of cross section flow area to wetted perimeter</p>
+<p><img alt="" src="../../_images/RH-formula.png" /></p>
+<p>A full circular pipe has a hydraulic radius equal to 1/4 of the pipe inside diameter</p>
+<p><img alt="" src="../../_images/RH-Geometry.png" /></p>
 </div>
 </div>
 <div class="section" id="chezy-mannings">
 <h3>Chezy-Mannings<a class="headerlink" href="#chezy-mannings" title="Permalink to this headline">¶</a></h3>
+<p>The Chezy-Mannings head loss model, while common in open channel flow and culverts, is not often used on pressure-pipe systems, but it is sometimes applied in large diameter pipes and tunnels (siphons).</p>
+<p><img alt="" src="../../_images/CM-formula.png" /></p>
+<p>Frictional loss proportional to</p>
+<ul class="simple">
+<li><p>Length, Velocity^2</p></li>
+<li><p>Inversely proportional to</p></li>
+<li><p>Cross section area (as hydraulic radius)</p></li>
+</ul>
+<p>Loss coefficient depends on</p>
+<ul class="simple">
+<li><p>Material, finish</p></li>
+</ul>
+<p>The constant in the denominator changes for US Customary and SI Units.</p>
 <div class="section" id="mannings-n">
 <h4>Mannings “n”<a class="headerlink" href="#mannings-n" title="Permalink to this headline">¶</a></h4>
-</div>
-<div class="section" id="id1">
-<h4>Hydraulic Radius<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<p>These are generally tabulated; for example:</p>
+<p><a class="reference external" href="https://www.engineeringtoolbox.com/mannings-roughness-d_799.html">https://www.engineeringtoolbox.com/mannings-roughness-d_799.html</a></p>
 </div>
 </div>
 <div class="section" id="fitting-minor-losses">
 <h3>Fitting (Minor) Losses<a class="headerlink" href="#fitting-minor-losses" title="Permalink to this headline">¶</a></h3>
+<p>Fittings, joints, elbows, inlets, outlets cause additional head
+loss. Called “minor” loss not because of magnitude, but because
+they occur over short distances.</p>
+<p><img alt="" src="../../_images/MinorLoss.png" /></p>
 </div>
 </div>
 <div class="section" id="computing-discharge-from-specified-head-loss">

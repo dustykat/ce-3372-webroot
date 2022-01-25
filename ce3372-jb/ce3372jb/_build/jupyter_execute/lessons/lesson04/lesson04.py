@@ -223,11 +223,49 @@ for i in range(how_many):
 
 # ### Hazen-Williams
 # 
+# The Hazen-Williams head loss model is for water only, while a bit contrived it is used in the USA extensively.
+# 
+# ![](HW-formula.png)
+# 
+# The model expresses frictional loss 
+# 
+# - proportional to Length
+# - proportional to Velocity^(1.8)
+# - Inversely proportional to cross section area (as hydraulic radius)
+# 
+# The Loss coefficient ($C_h$) depends on
+# - Pipe material, finish, and age
+# 
+# The model should be restricted to:
+# 
+# - Turbulent flow only (Re>4000)
+# - WATER ONLY!
+# 
+# The discharge form for a circular conduit (aka pipe) is
+# 
+# ![](HWQ-formula.png)
+# 
+# The leading constant changes for US Customary and SI Units.
+# 
 # #### Hazen-Williams "C" Factor
+# 
+# These are generally tabulated and you can look up values on the internet.
+# 
+# ![](CH-table.png)
 # 
 # #### Hydraulic Radius
 # 
+# HW is often presented as a velocity equation using the hydraulic radius
 # 
+# ![](HW-RH-formula.png)
+# 
+# The hydraulic radius is the ratio of cross section flow area to wetted perimeter
+# 
+# ![](RH-formula.png)
+# 
+# A full circular pipe has a hydraulic radius equal to 1/4 of the pipe inside diameter
+# 
+# ![](RH-Geometry.png)
 
 # In[ ]:
 
@@ -237,10 +275,27 @@ for i in range(how_many):
 
 # ### Chezy-Mannings
 # 
+# The Chezy-Mannings head loss model, while common in open channel flow and culverts, is not often used on pressure-pipe systems, but it is sometimes applied in large diameter pipes and tunnels (siphons).
+# 
+# ![](CM-formula.png)
+# 
+# Frictional loss proportional to
+# 
+# - Length, Velocity^2
+# - Inversely proportional to
+# - Cross section area (as hydraulic radius)
+# 
+# Loss coefficient depends on
+# 
+# - Material, finish
+# 
+# The constant in the denominator changes for US Customary and SI Units.
+# 
 # #### Mannings "n" 
 # 
-# #### Hydraulic Radius
+# These are generally tabulated; for example:
 # 
+# [https://www.engineeringtoolbox.com/mannings-roughness-d_799.html](https://www.engineeringtoolbox.com/mannings-roughness-d_799.html)
 # 
 
 # In[ ]:
@@ -250,6 +305,12 @@ for i in range(how_many):
 
 
 # ### Fitting (Minor) Losses
+# 
+# Fittings, joints, elbows, inlets, outlets cause additional head
+# loss. Called “minor” loss not because of magnitude, but because
+# they occur over short distances.
+# 
+# ![](MinorLoss.png)
 # 
 
 # ## Computing Discharge from Specified Head Loss
