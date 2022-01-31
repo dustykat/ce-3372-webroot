@@ -221,6 +221,572 @@
 # - If all good, then have a pump
 # - Remember can run multiple pumps if a single pump is not available (really big pumps can be custom built, but we usually want to use off-the-shelf pumps)
 
+# In[ ]:
+
+
+
+
+
+# ## Linking Systems 
+# 
+# A hydraulic system can be analysed as a set of linked components to make an otherwise complicated system easier to analyze.
+# 
+# - Idea is to decompose into smaller (hydraulically) independent parts, analyze the parts then reassemble (integrate) the parts to answer questions about the whole system
+# 
+# ### Example: Rural Water Supply to a Village School
+# 
+# ![image.png](africa-system.png)
+# 
+# The figure is an aerial image of a pipeline system with preliminary engineering sketches of the system (lower left panel) and a detail sketch of the terminal small storage tank (upper right panel). The 3,200 meter long pipeline lifts 25C water ( $\rho= 997 kg/m^3$,$\nu= 8.94 E-7 m^2/s$) from a treatment plant on the downstream face of Gulameta Dam through a 127 millimeter high-density polyethylene (HDPE) pipe (ks =0.0015 mm) to a large diameter at-grade cylindrical storage tank. A secondary, 800 meter long pipeline carries water from the large diameter storage tank to a small, cylindrical (D = 1 meter), elevated storage tank at the village school. Both storage tanks have float valves to prevent overflow and maintain the indicated water pool elevations.
+# 
+# Analyze proposed system to determine anticipated behavior under various situations:
+# 
+# - Float valve fails at school
+# - Outlet valve accidently left open
+# - Pump operation under worst failure mode
+# - Pump fails, time until system fails/drains
+# - Float valve limited
+# - Oultet valve limited
+
+# **Float Valve at School Fails**
+# 
+# > Get dimensions
+# 
+# ![](africa-1.png)
+# 
+# > Get material properties, and loss coefficients
+# 
+# ![](africa-2.png)
+# 
+# > Apply On-Line Tool or JupyterLab script
+# 
+# ![](africa-3.png)
+# 
+# The JupyterLab script is shown below, but needs modification for the minor losses. Hence the two values are sort of close, but without all losses the JupyterLab script as shown overestimates the discharge. 
+
+# In[1]:
+
+
+# modified from getQfromH.py
+# ipython module for pipeline hydraulics
+# computation engine #########################
+# import built in functions for log, sqrt
+from math import log,sqrt
+# Define the prototype function
+def jainQ(pipe_diameter,pipe_length,roughness,viscosity,grabity,head_loss):
+    egl_slope = head_loss/pipe_length
+    t1 = sqrt(grabity*pipe_diameter*egl_slope)
+    t2 = roughness/(3.7*pipe_diameter)
+    t3 = 1.78*viscosity
+    jainQ = (-0.965*pipe_diameter**2)*t1*log(t2 + t3/(pipe_diameter*t1))
+    return jainQ
+# values from Example
+pipe_diameter = 0.127
+pipe_length = 800.0
+roughness = 0.000007
+viscosity = 1.0e-06
+grabity = 9.8
+head_loss = 14.3
+# disable above and insert interface engine here
+#
+# now perform computation and construct output
+discharge = jainQ(pipe_diameter,pipe_length,roughness,viscosity,grabity,head_loss)
+# Echo inputs, and outputs
+print ("Pipe Diameter : ", pipe_diameter)
+print ("Pipe Length : ", pipe_length)
+print ("Pipe Roughness Height : ", roughness)
+print ("Liquid Viscosity : ", viscosity)
+print ("Gravitational acceleration constant : ",grabity) 
+print ("Head loss : ",head_loss)
+print ("Discharge : ",round(discharge*1000,3)," liters/sec")
+
+
+# **School Outlet Valve Left Open**
+# 
+# Treat as a hole in the tank, assume supply side is unchanged and maintains downstream water level
+# 
+# ![](africa-44.png)
+# 
+# > JupyterLab script for hole in tank (future version this book)
+
+# In[ ]:
+
+
+
+
+
+# **Pump System Requirements**
+# 
+# > Here we will examine the pump requirements to sustain flow to the intermediate tank (on the hill) at 16 liters per second.  Why 16?  Its the larger of the two probable failure modes, so we will use that value.
+# 
+# Our analysis in this case is the system to the left side of the tank on the hill.  Ultimately we will use the energy equation written here as:
+# 
+# $$H_{supply} + h_p(Q) = H_{tank} + h_l(Q)$$
+# 
+# We are really looking for the value of $h_p(Q)$ for $Q=16~\frac{l}{s}$ and then would look for a pump that can deliver the flow into our operating conditions.
+# 
+# A quick rearrangement gives us
+# 
+# $$  h_p(Q) = H_{tank} - H_{supply} + h_l(Q)$$
+# 
+# Now for the $h_l(Q)$ term:
+# 
+# $$h_l(Q) = \frac{8f(Q)LQ^2}{\pi^2 g D^5 } + \sum K_{fittings} \frac{8Q^2}{\pi^2 g D^4}$$
+# 
+# or after some algebra:
+# 
+# $$h_l(Q) = \frac{8Q^2}{\pi^2 g D^4}(\frac{f(Q)L}{D}+ \sum K_{fittings})$$
+# 
+# Notice $f$ is a function of $Q$ so there will be some iteration involved if we already know the pump parameters.  
+# 
+# An easy way to estimate the system is to make guesses at a pump curve and use the on-line tool to predict behavior and stop when we have the correct flowrate.
+# 
+# ![](q2res-pump.png)
+# 
+# 
+
+# Here is the code for the web interface
+# 
+# ```
+# !DOCTYPE html PUBLIC >
+# <html><head><title>NewANTS </title></head>
+# <link rel = "stylesheet" type = "text/css" href = "styles.css" >
+# <body>
+# <h1> Discharge Between Two Reservoirs </h1>
+# 
+# <img src = "./Q2ReservoirWithPump.gif" width = "600" height = "250" > <br/>
+# 
+# 
+# <p>Pipeline connecting two reservoirs. Pool elevations are Z1 and Z2. </br>
+#    Pipeline length is L, diameter is D, sand roughness height is ks. </br>
+#    Pipeline can be analyzed with entrance and exit loss coefficients (Ki and Ke). </br>
+#    Pipline can be analyzed with 2 fitting (Kf) loss coefficients. </br>
+#    A three point pump performance curve is supplied -- shutoff head is one point. </br>
+#    Calculator solves for flow rate in the pipeline. </br></br>
+#    Uses Jain equation to make initial flow estimate,then Newton's method to refine the estimate.</p>
+# 
+# 
+# <p><a href="#"> Detailed Explaination </a> (Under Construction) </p>
+# 
+# 
+# <form method ="POST"
+#       action = "http://54.243.252.9/cgi-bin/pipehydraulics/2QReservoirWithPump/2QReservoirWithPump.py">
+# 
+# <table style= "width:70%">
+#     <tr><td> <u>Pipeline Parameters</u> </td><td> <u>Fittings Parameters</u> </td></tr>
+#     <tr>
+#         <td>
+#             Pool Elevation (Z1): <br/> <input type = "text" name = "h1"><br/>
+#                 </td>
+#         <td>
+#             Inlet Loss (Kin): <br/> <input type = "text" name = "kinlet"><br/>
+#                 </td>
+#     </tr>
+#     <tr>
+#         <td>
+#             Pool Elevation (Z2): <br/> <input type = "text" name = "h2"><br/>
+#                 </td>
+#         <td>
+#             Exit Loss (Ke) : <br/> <input type = "text" name = "koutlet"><br/>
+#                 </td>
+#     </tr>
+#     <tr>
+#         <td>
+#             Pipeline Length (L) : <br/> <input type = "text" name = "length"><br/>
+#                 </td>
+#         <td>
+#             Fitting Loss (Kf) : <br/> <input type = "text" name = "kfit1"><br/>
+#                 </td>
+#     </tr>
+#     <tr>
+#         <td>
+#             Pipeline Diameter (D) : <br/> <input type = "text" name = "diameter"><br/>
+#                 </td>
+#         <td>
+#             Fitting Loss (Kf) : <br/> <input type = "text" name = "kfit2"><br/>
+#                 </td>
+#     </tr>
+#     <tr>
+#         <td>
+#             Sand Roughness Height (ks) : <br/> <input type = "text" name = "ksand"><br/>
+#                 </td>
+#         <td>
+#             Use zero fitting values to ignore minor losses <br/>
+#                 </td>
+#     </tr>
+# </table>
+# <hr></hr>
+# <table style= "width:60%">
+#     <tr><td> <u>Fluid Parameters</u> </td><td> </td></tr>
+#     <tr>
+#         <td>
+#             Kinematic Viscosity (nu) : <br/> <input type = "text" name = "viscosity"><br/>
+#                 </td>
+#         <td>
+#             Gravitational Acceleration (g) : <br/> <input type = "text" name = "gravity"><br/>
+#                 </td>
+#     </tr>
+# </table>
+# <hr></hr>
+# <u>Pump Performance Parameters</u>
+# <table style= "width:60%">
+#     <tr><td> <u>Pumping Added Head</u> </td><td> <u>Pumping Flowrate</u></td></tr>
+#     <tr>
+#         <td>
+#             Head at Q=0 (Hshut): <br/> <input type = "text" name = "hshut"><br/>
+#                 </td>
+#         <td>
+#             Q@Hp_0 (Q_0):  <br/>0.0
+#             </br>
+#                 </td>
+#     </tr>
+#     <tr>
+#         <td>
+#             Head at Q=Q1 (Hone): <br/> <input type = "text" name = "hone"><br/>
+#                 </td>
+#         <td>
+#             Q@Hp_1 (Q_1): <br/> <input type = "text" name = "qone"><br/>
+#                 </td>
+#     </tr>
+# 
+#     <tr>
+#         <td>
+#             Head at Q=Q2 (Htwo): <br/> <input type = "text" name = "htwo"><br/>
+#                 </td>
+#         <td>
+#             Q@Hp_2 (Q_2): <br/> <input type = "text" name = "qtwo"><br/>
+#                 </td>
+#     </tr>
+# 
+# </table>
+# 
+# 
+# 
+# <input type = "submit">
+# </form>
+# </body>
+# </html>
+# ```
+# 
+# Here is the code for the computation engine wrapper
+# 
+# ```
+# #!/usr/bin/python
+# # 
+# # Uses HMTL POST method
+# # Computer Name(s): localhost on Theodore's MacBook Pro 15
+# #                 : theodores-pro.ttu.edu on Theodore's MacPro
+# import cgi, cgitb , time  # Import modules for CGI handling
+# import subprocess  # Import subprocess module for handling system calls
+# # Create instance of FieldStorage 
+# form = cgi.FieldStorage()
+# # Get inputs from fields
+# h1 = float(form.getvalue('h1'))
+# kinlet = float(form.getvalue('kinlet'))
+# hshut = float(form.getvalue('hshut'))
+# h2 = float(form.getvalue('h2'))
+# koutlet = float(form.getvalue('koutlet'))
+# hone= float(form.getvalue('hone'))
+# length = float(form.getvalue('length'))
+# kfit1 = float(form.getvalue('kfit1'))
+# htwo= float(form.getvalue('htwo'))
+# diameter = float(form.getvalue('diameter'))
+# kfit2 = float(form.getvalue('kfit2'))
+# qone= float(form.getvalue('qone'))
+# ksand = float(form.getvalue('ksand'))
+# qtwo= float(form.getvalue('qtwo'))
+# viscosity = float(form.getvalue('viscosity'))
+# gravity = float(form.getvalue('gravity'))
+# # some constants
+# qshut = float(0.0)
+# # Build the input file
+# ofile = open("/var/www/atkaws/OK2Write/pipehydraulics/Q2ReservoirWithPump/input.dat","w") # open a file to transfer input stream to R
+# ofile.write(repr(h1) + "\n")
+# ofile.write(repr(h2)+ "\n")
+# ofile.write(repr(length)+ "\n")
+# ofile.write(repr(diameter)+ "\n")
+# ofile.write(repr(ksand)+ "\n")
+# ofile.write(repr(viscosity) + "\n")
+# ofile.write(repr(gravity)+ "\n")
+# ofile.write(repr(kinlet)+ "\n")
+# ofile.write(repr(koutlet)+ "\n")
+# ofile.write(repr(kfit1)+ "\n")
+# ofile.write(repr(kfit2)+ "\n")
+# ofile.write(repr(hshut)+ "\n")
+# ofile.write(repr(hone)+ "\n")
+# ofile.write(repr(htwo)+ "\n")
+# ofile.write(repr(qone)+ "\n")
+# ofile.write(repr(qtwo)+ "\n")
+# ofile.close()
+# # Build the system command
+# path_to_Rscript = "/usr/bin/Rscript"
+# commando = path_to_Rscript + " 2QReservoirWithPump.R"
+# return_code = 1  #  Set return code to 1 (Fail)
+# # Here we run 1D-AD-Sauty, and PIPE stdout to the 1D_AD_OgataBanks object
+# _2QReservoir = subprocess.Popen(commando, stdout=subprocess.PIPE, shell = True)  # run process
+# output, err = _2QReservoir.communicate() # capture output from stdout (command line)
+# return_code = _2QReservoir.returncode # capture the return code
+# # Here we capture the output and process
+# # need to read the output file
+# ofile = open("/var/www/atkaws/OK2Write/pipehydraulics/Q2ReservoirWithPump/output.dat","r") # open a file to recover output stream from R
+# # process the output stream from R script
+# xyz = [] # null list to capture each triple
+# how_many_lines = 0
+# for line in ofile:
+#    xyz.append([float(n) for n in line.split(",")])
+#    how_many_lines += 1
+# ofile.close()
+# #ncols = len(xyz[0]) # get number of columns, should be 3
+# # assign names
+# flow = xyz[0][0]
+# addedHead = xyz[1][0]
+# frictionLoss = xyz[2][0]
+# staticLift = xyz[3][0]
+# frictionFactor = xyz[4][0]
+# pumpShut = xyz[5][0]
+# pumpCoef = xyz[6][0]
+# # Here we get the graphic
+# plotfile = ' <img src = "/toolbox/pipehydraulics/Q2ReservoirWithPump/Q2ReservoirWithPump.gif" width = "400" height = "200" > '
+# # Prepare the output HTML 
+# now = time.strftime("%c")
+# print "Content-type:text/html\r\n\r\n"  # should have two returns and line feeds
+# print "<html>"
+# print "<style> table, th, td {border: 1px solid black;} </style>"
+# print "<head>"
+# print "<title> Discharge Between Two Reservoirs </title>"
+# print "</head>"
+# print "<body>"
+# print "Machine Name : theodore-odroid.ttu.edu (arm7) <br/>"
+# print "Run Date : " , now ," <br/> "
+# print "COMMAND TO RUN : ", commando, "<br/> <br/>"
+# print "Return Code : ",return_code, " <br/> <br/>"
+# #######################################
+# print "<table style="""" "width:50%" """ ">"
+# print "<tr>"
+# print "<td>INPUT VALUES </td> <td> </td><td></td> <td> </td>"
+# # alignment for ease of program maintenance, extra spaces are ignored in program run
+# print "</tr>"
+# print "<tr> <td> Pool Elevation 1 (Z1) = </td> <td> ",       h1, " </td> <td>  meters </td> <td></td></tr> "
+# print "<tr> <td> Pool Elevation 2 (Z2) = </td> <td> ",       h2 , " </td> <td> meters  </td> <td></td></tr> "
+# print "<tr> <td> Pipeline Length (L) = </td> <td> ",   length, " </td> <td> meters </td><td></td> </tr> "
+# print "<tr> <td> Pipeline Diameter (D) = </td> <td> ", diameter, " </td> <td> meters</td> <td></td></tr> "
+# print "<tr> <td> Sand Roughness Height (ks) = </td> <td> ", ksand, " </td> <td>   meters </td><td></td> </tr> "
+# print "<tr> <td> Kinematic Viscosity  (nu) = </td> <td> ", viscosity, " </td> <td> meters^2/second </td> <td></td></tr> "
+# print "<tr> <td> Gravitational Acceleration (g) = </td> <td> ", gravity, " </td> <td> meters/second^2 </td><td></td> </tr> "
+# print "<tr> <td> Inlet Loss Coefficient (Ki) = </td> <td> ", kinlet, " </td> <td> </td> <td></td></tr> "
+# print "<tr> <td> Outlet Loss Coefficient (Ke) = </td> <td> ", koutlet, " </td> <td> </td> <td></td></tr> "
+# print "<tr> <td> Fitting Loss Coefficient (Kf) = </td> <td> ", kfit1, " </td> <td>  </td> <td></td></tr> "
+# print "<tr> <td> Fitting Loss Coefficient (Kf) = </td> <td> ", kfit2, " </td> <td> </td> <td></td></tr> "
+# print "<tr> <td> Pump Shutoff Head (Hp@Q_0) = </td> <td> ", hshut, " </td> <td> Discharge (Q_0) </td> <td>",qshut,"</td></tr> "
+# print "<tr> <td> Pump Point One (Hp@Q_1) = </td> <td> ", hone, " </td> <td> Discharge (Q_1) </td> <td>",qone,"</td></tr> "
+# print "<tr> <td> Pump Point Two (Hp@Q_2) = </td> <td> ", htwo, " </td> <td> Discharge (Q_2) </td> <td>",qtwo,"</td></tr> "
+# print "</table><br/>"
+# ########################################
+# print plotfile
+# ########################################
+# print "<table style="""" "width:50%" """ ">"
+# print "<tr> <td>COMPUTED RESULT</td> <td> </td> <td> </td> "
+# print "<tr> <td> Discharge  = </td> <td> ", flow , "</td> <td> m^3/sec </td> </tr> "
+# print "<tr> <td> Added Head  = </td> <td> ", addedHead , "</td> <td>  m </td> </tr> "
+# print "<tr> <td> Friction Losses  = </td> <td> ", frictionLoss , "</td> <td> m </td> </tr> "
+# print "<tr> <td> Static Lift  = </td> <td> ", staticLift , "</td> <td> m </td> </tr> "
+# print "<tr> <td> Pipeline Friction Factor  = </td> <td> ", frictionFactor , "</td> <td>  </td> </tr> "
+# print "<tr> <td> Fitted Pump Shutoff  = </td> <td> ", pumpShut , "</td> <td> m </td> </tr> "
+# print "<tr> <td> Pump Constant  = </td> <td> ", pumpCoef , "</td> <td> m/Q^2 </td> </tr> "
+# print "</table><br/>"
+# ########################################
+# print "</body>"
+# print "</html>"
+# # end of script
+# ```
+# 
+# Here is the actual computation engine (in R)
+# 
+# ```
+# # Flow between two reserviors (for CE 3372) 
+# #############################################################
+# ############## Forward Define Support Functions #############
+# #############################################################
+# # Jain Friction Factor Function -- Tested OK 23 SEP16
+# friction_factor <- function( roughness , diameter , reynolds ){
+#   temp1 <- roughness /(3.7* diameter );
+#   temp2 <- 5.74/( reynolds^(0.9) );
+#   temp3 <- log10 ( temp1 + temp2 );
+#   temp3 <- temp3 ^2;
+#   friction_factor <- 0.25/ temp3 ;
+#   return ( friction_factor )
+# }
+# # Velocity Function
+# velocity <- function( diameter , discharge ){
+#   velocity <- discharge /(0.25* pi* diameter^2)
+#   return ( velocity )
+# }
+# # Reynolds Number Function
+# reynolds_number <- function( velocity , diameter ,mu){
+#   reynolds_number <- abs ( velocity )* diameter /mu
+#   return ( reynolds_number )
+# }
+# # Jain Equation (Initial Guess Pipeline Only)
+# jain <- function(h1,h2,lenght,diameter,gravity,viscosity,ksand){
+#   term1 <- sqrt( gravity*((h1-h2)/length))
+#   term2 <- ksand/(3.7*diameter)
+#   term3 <- 1.78*viscosity/(term1*diameter^(3/2))
+#   term4 <- log10(term2+term3)
+#   jain <- -2.22*(diameter^(5/2))*term1*term4
+#   return(jain)
+# }
+# ############ Function to Get 3-Point Pump Curve #############
+# get_pump_parm <- function(hshut,hone,htwo,qshut,qone,qtwo){
+# # fit a quadratic model to the 3-point pump curve
+#   amat <- matrix(0,nrow=3,ncol=2,byrow=TRUE)
+#   bvec <- numeric(0)
+#   pumpcrv <- numeric(0)
+# # build the amat matrix
+#   for (irow in 1:3){
+#     amat[irow,1] <- 1
+#   }
+#   amat[1,2] <- qshut^2
+#   amat[2,2] <- qone^2
+#   amat[3,2] <- qtwo^2
+# # build the bvec
+#   bvec[1] <- hshut
+#   bvec[2] <- hone
+#   bvec[3] <- htwo
+# # solve the linear system
+#   pumpcrv <- solve(t(amat)%*%amat,t(amat)%*%bvec)
+#   return(pumpcrv)
+# }
+# ###############################################################
+# # here is the actual pump curve function
+# hpump <- function(hshutoff,pumpconst,flowrate){
+#   hpump <- hshutoff + pumpconst*abs(flowrate)*flowrate
+#   return(hpump)
+# }
+# ###############################################################
+# # Pipeline Function for Newton's Method
+# func <- function(h1,h2,fricfact,kinlet,koutlet,kfit1,kfit2,length,diameter,flow,gravity,hshutoff,pumpconst){
+#   # collect terms
+#   coeff1 <- (fricfact*length/diameter)+kinlet+koutlet+kfit1+kfit2
+#   geom1 <- 8/(gravity*diameter^4*pi^2)
+#   func <- h1 + hpump(hshutoff,pumpconst,flow) - h2 - coeff1*geom1*abs(flow)*flow
+#   return(func)
+# }
+# # Finite-Difference Derivative Function
+# dfdx <- function(h1,h2,fricfact,kinlet,koutlet,kfit1,kfit2,length,diameter,flow,gravity,hshutoff,pumpconst)
+# {
+#   # dfdx <- exp (x) + 10* sin(x);
+#   dfdx <- ( func (h1,h2,fricfact,kinlet,koutlet,kfit1,kfit2,length,diameter,flow+1.0e-06,gravity,hshutoff,pumpconst) - func (h1,h2,fricfact,kinlet>
+#   return ( dfdx );
+# }
+# ####### Enable for CGI-BIN ##########
+# zz <- file("/var/www/atkaws/OK2Write/pipehydraulics/Q2ReservoirWithPump/input.dat","r")
+# #zz <- file("input.txt","r")
+# # Open a connection to zz
+# h1 <- as.numeric(readLines(zz, n=1, ok=TRUE, warn=TRUE,encoding="unknown",skipNul = FALSE))
+# h2 <- as.numeric(readLines(zz, n=1, ok=TRUE, warn=TRUE,encoding="unknown",skipNul = FALSE))
+# length <- as.numeric(readLines(zz, n=1, ok=TRUE, warn=TRUE,encoding="unknown",skipNul = FALSE))
+# diameter <- as.numeric(readLines(zz, n=1, ok=TRUE, warn=TRUE,encoding="unknown",skipNul = FALSE))
+# ksand <- as.numeric(readLines(zz, n=1, ok=TRUE, warn=TRUE,encoding="unknown",skipNul = FALSE))
+# viscosity <- as.numeric(readLines(zz, n=1, ok=TRUE, warn=TRUE,encoding="unknown",skipNul = FALSE))
+# gravity <- as.numeric(readLines(zz, n=1, ok=TRUE, warn=TRUE,encoding="unknown",skipNul = FALSE))
+# kinlet <- as.numeric(readLines(zz, n=1, ok=TRUE, warn=TRUE,encoding="unknown",skipNul = FALSE))
+# koutlet <- as.numeric(readLines(zz, n=1, ok=TRUE, warn=TRUE,encoding="unknown",skipNul = FALSE))
+# kfit1 <- as.numeric(readLines(zz, n=1, ok=TRUE, warn=TRUE,encoding="unknown",skipNul = FALSE))
+# kfit2 <- as.numeric(readLines(zz, n=1, ok=TRUE, warn=TRUE,encoding="unknown",skipNul = FALSE))
+# # 
+# hshut <- as.numeric(readLines(zz, n=1, ok=TRUE, warn=TRUE,encoding="unknown",skipNul = FALSE))
+# hone <- as.numeric(readLines(zz, n=1, ok=TRUE, warn=TRUE,encoding="unknown",skipNul = FALSE))
+# htwo <- as.numeric(readLines(zz, n=1, ok=TRUE, warn=TRUE,encoding="unknown",skipNul = FALSE))
+# qone <- as.numeric(readLines(zz, n=1, ok=TRUE, warn=TRUE,encoding="unknown",skipNul = FALSE))
+# qtwo <- as.numeric(readLines(zz, n=1, ok=TRUE, warn=TRUE,encoding="unknown",skipNul = FALSE))
+# close(zz)
+# ######################################
+# 
+# 
+# #### testing -- disable for CGI BIN ###
+# # h1 <- 1006.3
+# # h2 <-  992.0
+# # diameter <- 0.127
+# # ksand <- 0.0000015
+# # viscosity <- 8.94e-7
+# # kinlet <- 1
+# # koutlet <- 1
+# # kfit1 <- 1
+# # kfit2 <- 1
+# # length <- 800
+# # gravity <- 9.8
+# 
+# #######################################
+# # make initial guess
+# hsmall <- min(h1,h2)
+# hbig <- max(h1,h2)
+# flow <- jain(hbig,hsmall,length,diameter,gravity,viscosity,ksand)
+# #flow <- 0.27
+# # get the pump curve
+# qshut <- 0.0
+# myPump <- get_pump_parm(hshut,hone,htwo,qshut,qone,qtwo)
+# # set pump constants
+# hshutoff <- myPump[1]
+# pumpconst <- myPump[2]
+# #message("flow = ",flow)
+# HowMany <- 100
+# HowSmall <- 1e-9
+# for (i in 1:HowMany){
+# # compute current friction factor 
+#     flow_velocity <- velocity(diameter , flow)
+#     reynolds <- reynolds_number(flow_velocity , diameter , viscosity)
+#     fricfact <- friction_factor(ksand, diameter, reynolds)
+# # compute head loss equation
+#     f1<-func(h1,h2,fricfact,kinlet,koutlet,kfit1,kfit2,length,diameter,flow,gravity,hshutoff,pumpconst)
+# # compute derivative wrt flow
+#     f2<-dfdx(h1,h2,fricfact,kinlet,koutlet,kfit1,kfit2,length,diameter,flow,gravity,hshutoff,pumpconst)
+# # compute the update
+#     qnew <- flow - f1/f2
+# #    message("func = ",f1)
+# #    message("dfdx = ",f2)
+# #    message("new flow = ",qnew)
+# # test for stopping
+#     if ( abs (qnew - flow ) < HowSmall ){
+#         message (' Update not changing ')
+#         flow <- qnew
+#         print ( cbind (flow ,qnew , f1))
+#         break
+#     }
+#     if ( abs (f1) < HowSmall ) {
+#         message (' Function value close to zero ', f1)
+#         flow <- qnew
+#         print ( cbind (flow ,qnew , f1))
+#         break
+#     }
+# # next iteration
+#     flow <- qnew
+# }
+# print ( cbind (flow ,qnew , f1))
+# outfile <- file("/var/www/atkaws/OK2Write/pipehydraulics/Q2ReservoirWithPump/output.dat","w")
+# #outfile <- file("output.txt","w")
+# write(flow,outfile) # flowrate
+# write(hpump(hshutoff,pumpconst,flow),outfile) #added head
+# write((h1+hpump(hshutoff,pumpconst,flow)-h2),outfile) # friction losses
+# write((h2-h1),outfile) # static lift
+# write(fricfact,outfile) # friction factor in pipeline
+# write(myPump[1],outfile) # fitted pump shutoff
+# write(myPump[2],outfile) # fitted pump constant
+# close(outfile)
+# 
+# 
+# ```
+# 
+
+# **Pump System Fails, Time to Drain**
+# 
+# > This portion of example moved to after pumps
+
+# In[ ]:
+
+
+
+
+
 # ## References
 # 
 # 1. Gupta, R. S. 2017. Hydrology and Hydraulic Systems. Waveland Press, Inc. pp xx-xx

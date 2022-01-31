@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Lesson 5. Pipeline Hydraulics
+# # Pipeline Hydraulics
 # 
 # ## Example: Steady Discharge between Reservoirs (using on-line tools)
 # 
@@ -20,13 +20,19 @@
 # 
 # ![image.png](ex1-2.png)
 # 
+# [Link to tool](http://54.243.252.9/toolbox/Databases/RoughnessHeight/RoughnessHeight.html)
+# 
 # - Millimeters to Feet
 # 
 # ![image.png](ex1-3.png)
 # 
+# [Link to tool](http://54.243.252.9/toolbox/ordinarytools/UnitsConverterTool/UnitsConverterTool.html)
+# 
 # - Water Properties
 # 
 # ![image.png](ex1-4.png)
+# 
+# [Link to tool](http://54.243.252.9/toolbox/fluidmechanics/WaterPropertiesUS/WaterPropertiesUS.html)
 # 
 # - Minor Loss Coefficients
 # 
@@ -39,6 +45,9 @@
 # ### Apply Tool
 # 
 # ![image.png](ex1-7.png)
+# 
+# [Link to tool](http://54.243.252.9/toolbox/pipehydraulics/Q2Reservoir/Q2Reservoir.html)
+# 
 # 
 # ### Or using our Jupyter Script
 # 

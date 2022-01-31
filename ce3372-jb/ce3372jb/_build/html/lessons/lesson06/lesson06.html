@@ -53,8 +53,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Lesson 7. Storage Systems" href="../lesson07.html" />
-    <link rel="prev" title="Lesson 5. Pipeline Hydraulics" href="../lesson05/lesson05.html" />
+    <link rel="next" title="Lesson 7. Storage Systems" href="../lesson07/lesson07.html" />
+    <link rel="prev" title="Pipeline Hydraulics" href="../lesson05/lesson05.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -118,7 +118,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../lesson05/lesson05.html">
-   Lesson 5. Pipeline Hydraulics
+   Pipeline Hydraulics
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -127,7 +127,7 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lesson07.html">
+  <a class="reference internal" href="../lesson07/lesson07.html">
    Lesson 7. Storage Systems
   </a>
  </li>
@@ -476,6 +476,18 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linking-systems">
+   Linking Systems
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-rural-water-supply-to-a-village-school">
+     Example: Rural Water Supply to a Village School
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references">
    References
   </a>
@@ -717,6 +729,545 @@ Information ususally includes:</p>
 <li><p>Remember can run multiple pumps if a single pump is not available (really big pumps can be custom built, but we usually want to use off-the-shelf pumps)</p></li>
 </ul>
 </div>
+<div class="section" id="linking-systems">
+<h2>Linking Systems<a class="headerlink" href="#linking-systems" title="Permalink to this headline">¶</a></h2>
+<p>A hydraulic system can be analysed as a set of linked components to make an otherwise complicated system easier to analyze.</p>
+<ul class="simple">
+<li><p>Idea is to decompose into smaller (hydraulically) independent parts, analyze the parts then reassemble (integrate) the parts to answer questions about the whole system</p></li>
+</ul>
+<div class="section" id="example-rural-water-supply-to-a-village-school">
+<h3>Example: Rural Water Supply to a Village School<a class="headerlink" href="#example-rural-water-supply-to-a-village-school" title="Permalink to this headline">¶</a></h3>
+<p><img alt="image.png" src="../../_images/africa-system1.png" /></p>
+<p>The figure is an aerial image of a pipeline system with preliminary engineering sketches of the system (lower left panel) and a detail sketch of the terminal small storage tank (upper right panel). The 3,200 meter long pipeline lifts 25C water ( <span class="math notranslate nohighlight">\(\rho= 997 kg/m^3\)</span>,<span class="math notranslate nohighlight">\(\nu= 8.94 E-7 m^2/s\)</span>) from a treatment plant on the downstream face of Gulameta Dam through a 127 millimeter high-density polyethylene (HDPE) pipe (ks =0.0015 mm) to a large diameter at-grade cylindrical storage tank. A secondary, 800 meter long pipeline carries water from the large diameter storage tank to a small, cylindrical (D = 1 meter), elevated storage tank at the village school. Both storage tanks have float valves to prevent overflow and maintain the indicated water pool elevations.</p>
+<p>Analyze proposed system to determine anticipated behavior under various situations:</p>
+<ul class="simple">
+<li><p>Float valve fails at school</p></li>
+<li><p>Outlet valve accidently left open</p></li>
+<li><p>Pump operation under worst failure mode</p></li>
+<li><p>Pump fails, time until system fails/drains</p></li>
+<li><p>Float valve limited</p></li>
+<li><p>Oultet valve limited</p></li>
+</ul>
+<p><strong>Float Valve at School Fails</strong></p>
+<blockquote>
+<div><p>Get dimensions</p>
+</div></blockquote>
+<p><img alt="" src="../../_images/africa-11.png" /></p>
+<blockquote>
+<div><p>Get material properties, and loss coefficients</p>
+</div></blockquote>
+<p><img alt="" src="../../_images/africa-21.png" /></p>
+<blockquote>
+<div><p>Apply On-Line Tool or JupyterLab script</p>
+</div></blockquote>
+<p><img alt="" src="../../_images/africa-31.png" /></p>
+<p>The JupyterLab script is shown below, but needs modification for the minor losses. Hence the two values are sort of close, but without all losses the JupyterLab script as shown overestimates the discharge.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># modified from getQfromH.py</span>
+<span class="c1"># ipython module for pipeline hydraulics</span>
+<span class="c1"># computation engine #########################</span>
+<span class="c1"># import built in functions for log, sqrt</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">log</span><span class="p">,</span><span class="n">sqrt</span>
+<span class="c1"># Define the prototype function</span>
+<span class="k">def</span> <span class="nf">jainQ</span><span class="p">(</span><span class="n">pipe_diameter</span><span class="p">,</span><span class="n">pipe_length</span><span class="p">,</span><span class="n">roughness</span><span class="p">,</span><span class="n">viscosity</span><span class="p">,</span><span class="n">grabity</span><span class="p">,</span><span class="n">head_loss</span><span class="p">):</span>
+    <span class="n">egl_slope</span> <span class="o">=</span> <span class="n">head_loss</span><span class="o">/</span><span class="n">pipe_length</span>
+    <span class="n">t1</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">grabity</span><span class="o">*</span><span class="n">pipe_diameter</span><span class="o">*</span><span class="n">egl_slope</span><span class="p">)</span>
+    <span class="n">t2</span> <span class="o">=</span> <span class="n">roughness</span><span class="o">/</span><span class="p">(</span><span class="mf">3.7</span><span class="o">*</span><span class="n">pipe_diameter</span><span class="p">)</span>
+    <span class="n">t3</span> <span class="o">=</span> <span class="mf">1.78</span><span class="o">*</span><span class="n">viscosity</span>
+    <span class="n">jainQ</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.965</span><span class="o">*</span><span class="n">pipe_diameter</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">t1</span><span class="o">*</span><span class="n">log</span><span class="p">(</span><span class="n">t2</span> <span class="o">+</span> <span class="n">t3</span><span class="o">/</span><span class="p">(</span><span class="n">pipe_diameter</span><span class="o">*</span><span class="n">t1</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">jainQ</span>
+<span class="c1"># values from Example</span>
+<span class="n">pipe_diameter</span> <span class="o">=</span> <span class="mf">0.127</span>
+<span class="n">pipe_length</span> <span class="o">=</span> <span class="mf">800.0</span>
+<span class="n">roughness</span> <span class="o">=</span> <span class="mf">0.000007</span>
+<span class="n">viscosity</span> <span class="o">=</span> <span class="mf">1.0e-06</span>
+<span class="n">grabity</span> <span class="o">=</span> <span class="mf">9.8</span>
+<span class="n">head_loss</span> <span class="o">=</span> <span class="mf">14.3</span>
+<span class="c1"># disable above and insert interface engine here</span>
+<span class="c1">#</span>
+<span class="c1"># now perform computation and construct output</span>
+<span class="n">discharge</span> <span class="o">=</span> <span class="n">jainQ</span><span class="p">(</span><span class="n">pipe_diameter</span><span class="p">,</span><span class="n">pipe_length</span><span class="p">,</span><span class="n">roughness</span><span class="p">,</span><span class="n">viscosity</span><span class="p">,</span><span class="n">grabity</span><span class="p">,</span><span class="n">head_loss</span><span class="p">)</span>
+<span class="c1"># Echo inputs, and outputs</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Pipe Diameter : &quot;</span><span class="p">,</span> <span class="n">pipe_diameter</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Pipe Length : &quot;</span><span class="p">,</span> <span class="n">pipe_length</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Pipe Roughness Height : &quot;</span><span class="p">,</span> <span class="n">roughness</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Liquid Viscosity : &quot;</span><span class="p">,</span> <span class="n">viscosity</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Gravitational acceleration constant : &quot;</span><span class="p">,</span><span class="n">grabity</span><span class="p">)</span> 
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Head loss : &quot;</span><span class="p">,</span><span class="n">head_loss</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Discharge : &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">discharge</span><span class="o">*</span><span class="mi">1000</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="s2">&quot; liters/sec&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pipe Diameter :  0.127
+Pipe Length :  800.0
+Pipe Roughness Height :  7e-06
+Liquid Viscosity :  1e-06
+Gravitational acceleration constant :  9.8
+Head loss :  14.3
+Discharge :  21.185  liters/sec
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>School Outlet Valve Left Open</strong></p>
+<p>Treat as a hole in the tank, assume supply side is unchanged and maintains downstream water level</p>
+<p><img alt="" src="../../_images/africa-441.png" /></p>
+<blockquote>
+<div><p>JupyterLab script for hole in tank (future version this book)</p>
+</div></blockquote>
+<p><strong>Pump System Requirements</strong></p>
+<blockquote>
+<div><p>Here we will examine the pump requirements to sustain flow to the intermediate tank (on the hill) at 16 liters per second.  Why 16?  Its the larger of the two probable failure modes, so we will use that value.</p>
+</div></blockquote>
+<p>Our analysis in this case is the system to the left side of the tank on the hill.  Ultimately we will use the energy equation written here as:</p>
+<div class="math notranslate nohighlight">
+\[H_{supply} + h_p(Q) = H_{tank} + h_l(Q)\]</div>
+<p>We are really looking for the value of <span class="math notranslate nohighlight">\(h_p(Q)\)</span> for <span class="math notranslate nohighlight">\(Q=16~\frac{l}{s}\)</span> and then would look for a pump that can deliver the flow into our operating conditions.</p>
+<p>A quick rearrangement gives us</p>
+<div class="math notranslate nohighlight">
+\[  h_p(Q) = H_{tank} - H_{supply} + h_l(Q)\]</div>
+<p>Now for the <span class="math notranslate nohighlight">\(h_l(Q)\)</span> term:</p>
+<div class="math notranslate nohighlight">
+\[h_l(Q) = \frac{8f(Q)LQ^2}{\pi^2 g D^5 } + \sum K_{fittings} \frac{8Q^2}{\pi^2 g D^4}\]</div>
+<p>or after some algebra:</p>
+<div class="math notranslate nohighlight">
+\[h_l(Q) = \frac{8Q^2}{\pi^2 g D^4}(\frac{f(Q)L}{D}+ \sum K_{fittings})\]</div>
+<p>Notice <span class="math notranslate nohighlight">\(f\)</span> is a function of <span class="math notranslate nohighlight">\(Q\)</span> so there will be some iteration involved if we already know the pump parameters.</p>
+<p>An easy way to estimate the system is to make guesses at a pump curve and use the on-line tool to predict behavior and stop when we have the correct flowrate.</p>
+<p><img alt="" src="../../_images/q2res-pump.png" /></p>
+<p>Here is the code for the web interface</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!DOCTYPE html PUBLIC &gt;
+&lt;html&gt;&lt;head&gt;&lt;title&gt;NewANTS &lt;/title&gt;&lt;/head&gt;
+&lt;link rel = &quot;stylesheet&quot; type = &quot;text/css&quot; href = &quot;styles.css&quot; &gt;
+&lt;body&gt;
+&lt;h1&gt; Discharge Between Two Reservoirs &lt;/h1&gt;
+
+&lt;img src = &quot;./Q2ReservoirWithPump.gif&quot; width = &quot;600&quot; height = &quot;250&quot; &gt; &lt;br/&gt;
+
+
+&lt;p&gt;Pipeline connecting two reservoirs. Pool elevations are Z1 and Z2. &lt;/br&gt;
+   Pipeline length is L, diameter is D, sand roughness height is ks. &lt;/br&gt;
+   Pipeline can be analyzed with entrance and exit loss coefficients (Ki and Ke). &lt;/br&gt;
+   Pipline can be analyzed with 2 fitting (Kf) loss coefficients. &lt;/br&gt;
+   A three point pump performance curve is supplied -- shutoff head is one point. &lt;/br&gt;
+   Calculator solves for flow rate in the pipeline. &lt;/br&gt;&lt;/br&gt;
+   Uses Jain equation to make initial flow estimate,then Newton&#39;s method to refine the estimate.&lt;/p&gt;
+
+
+&lt;p&gt;&lt;a href=&quot;#&quot;&gt; Detailed Explaination &lt;/a&gt; (Under Construction) &lt;/p&gt;
+
+
+&lt;form method =&quot;POST&quot;
+      action = &quot;http://54.243.252.9/cgi-bin/pipehydraulics/2QReservoirWithPump/2QReservoirWithPump.py&quot;&gt;
+
+&lt;table style= &quot;width:70%&quot;&gt;
+    &lt;tr&gt;&lt;td&gt; &lt;u&gt;Pipeline Parameters&lt;/u&gt; &lt;/td&gt;&lt;td&gt; &lt;u&gt;Fittings Parameters&lt;/u&gt; &lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;
+            Pool Elevation (Z1): &lt;br/&gt; &lt;input type = &quot;text&quot; name = &quot;h1&quot;&gt;&lt;br/&gt;
+                &lt;/td&gt;
+        &lt;td&gt;
+            Inlet Loss (Kin): &lt;br/&gt; &lt;input type = &quot;text&quot; name = &quot;kinlet&quot;&gt;&lt;br/&gt;
+                &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;
+            Pool Elevation (Z2): &lt;br/&gt; &lt;input type = &quot;text&quot; name = &quot;h2&quot;&gt;&lt;br/&gt;
+                &lt;/td&gt;
+        &lt;td&gt;
+            Exit Loss (Ke) : &lt;br/&gt; &lt;input type = &quot;text&quot; name = &quot;koutlet&quot;&gt;&lt;br/&gt;
+                &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;
+            Pipeline Length (L) : &lt;br/&gt; &lt;input type = &quot;text&quot; name = &quot;length&quot;&gt;&lt;br/&gt;
+                &lt;/td&gt;
+        &lt;td&gt;
+            Fitting Loss (Kf) : &lt;br/&gt; &lt;input type = &quot;text&quot; name = &quot;kfit1&quot;&gt;&lt;br/&gt;
+                &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;
+            Pipeline Diameter (D) : &lt;br/&gt; &lt;input type = &quot;text&quot; name = &quot;diameter&quot;&gt;&lt;br/&gt;
+                &lt;/td&gt;
+        &lt;td&gt;
+            Fitting Loss (Kf) : &lt;br/&gt; &lt;input type = &quot;text&quot; name = &quot;kfit2&quot;&gt;&lt;br/&gt;
+                &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;
+            Sand Roughness Height (ks) : &lt;br/&gt; &lt;input type = &quot;text&quot; name = &quot;ksand&quot;&gt;&lt;br/&gt;
+                &lt;/td&gt;
+        &lt;td&gt;
+            Use zero fitting values to ignore minor losses &lt;br/&gt;
+                &lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+&lt;hr&gt;&lt;/hr&gt;
+&lt;table style= &quot;width:60%&quot;&gt;
+    &lt;tr&gt;&lt;td&gt; &lt;u&gt;Fluid Parameters&lt;/u&gt; &lt;/td&gt;&lt;td&gt; &lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;
+            Kinematic Viscosity (nu) : &lt;br/&gt; &lt;input type = &quot;text&quot; name = &quot;viscosity&quot;&gt;&lt;br/&gt;
+                &lt;/td&gt;
+        &lt;td&gt;
+            Gravitational Acceleration (g) : &lt;br/&gt; &lt;input type = &quot;text&quot; name = &quot;gravity&quot;&gt;&lt;br/&gt;
+                &lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+&lt;hr&gt;&lt;/hr&gt;
+&lt;u&gt;Pump Performance Parameters&lt;/u&gt;
+&lt;table style= &quot;width:60%&quot;&gt;
+    &lt;tr&gt;&lt;td&gt; &lt;u&gt;Pumping Added Head&lt;/u&gt; &lt;/td&gt;&lt;td&gt; &lt;u&gt;Pumping Flowrate&lt;/u&gt;&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;
+            Head at Q=0 (Hshut): &lt;br/&gt; &lt;input type = &quot;text&quot; name = &quot;hshut&quot;&gt;&lt;br/&gt;
+                &lt;/td&gt;
+        &lt;td&gt;
+            Q@Hp_0 (Q_0):  &lt;br/&gt;0.0
+            &lt;/br&gt;
+                &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;
+            Head at Q=Q1 (Hone): &lt;br/&gt; &lt;input type = &quot;text&quot; name = &quot;hone&quot;&gt;&lt;br/&gt;
+                &lt;/td&gt;
+        &lt;td&gt;
+            Q@Hp_1 (Q_1): &lt;br/&gt; &lt;input type = &quot;text&quot; name = &quot;qone&quot;&gt;&lt;br/&gt;
+                &lt;/td&gt;
+    &lt;/tr&gt;
+
+    &lt;tr&gt;
+        &lt;td&gt;
+            Head at Q=Q2 (Htwo): &lt;br/&gt; &lt;input type = &quot;text&quot; name = &quot;htwo&quot;&gt;&lt;br/&gt;
+                &lt;/td&gt;
+        &lt;td&gt;
+            Q@Hp_2 (Q_2): &lt;br/&gt; &lt;input type = &quot;text&quot; name = &quot;qtwo&quot;&gt;&lt;br/&gt;
+                &lt;/td&gt;
+    &lt;/tr&gt;
+
+&lt;/table&gt;
+
+
+
+&lt;input type = &quot;submit&quot;&gt;
+&lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre></div>
+</div>
+<p>Here is the code for the computation engine wrapper</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python</span>
+<span class="c1"># </span>
+<span class="c1"># Uses HMTL POST method</span>
+<span class="c1"># Computer Name(s): localhost on Theodore&#39;s MacBook Pro 15</span>
+<span class="c1">#                 : theodores-pro.ttu.edu on Theodore&#39;s MacPro</span>
+<span class="kn">import</span> <span class="nn">cgi</span><span class="o">,</span> <span class="nn">cgitb</span> <span class="o">,</span> <span class="nn">time</span>  <span class="c1"># Import modules for CGI handling</span>
+<span class="kn">import</span> <span class="nn">subprocess</span>  <span class="c1"># Import subprocess module for handling system calls</span>
+<span class="c1"># Create instance of FieldStorage </span>
+<span class="n">form</span> <span class="o">=</span> <span class="n">cgi</span><span class="o">.</span><span class="n">FieldStorage</span><span class="p">()</span>
+<span class="c1"># Get inputs from fields</span>
+<span class="n">h1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">form</span><span class="o">.</span><span class="n">getvalue</span><span class="p">(</span><span class="s1">&#39;h1&#39;</span><span class="p">))</span>
+<span class="n">kinlet</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">form</span><span class="o">.</span><span class="n">getvalue</span><span class="p">(</span><span class="s1">&#39;kinlet&#39;</span><span class="p">))</span>
+<span class="n">hshut</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">form</span><span class="o">.</span><span class="n">getvalue</span><span class="p">(</span><span class="s1">&#39;hshut&#39;</span><span class="p">))</span>
+<span class="n">h2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">form</span><span class="o">.</span><span class="n">getvalue</span><span class="p">(</span><span class="s1">&#39;h2&#39;</span><span class="p">))</span>
+<span class="n">koutlet</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">form</span><span class="o">.</span><span class="n">getvalue</span><span class="p">(</span><span class="s1">&#39;koutlet&#39;</span><span class="p">))</span>
+<span class="n">hone</span><span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">form</span><span class="o">.</span><span class="n">getvalue</span><span class="p">(</span><span class="s1">&#39;hone&#39;</span><span class="p">))</span>
+<span class="n">length</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">form</span><span class="o">.</span><span class="n">getvalue</span><span class="p">(</span><span class="s1">&#39;length&#39;</span><span class="p">))</span>
+<span class="n">kfit1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">form</span><span class="o">.</span><span class="n">getvalue</span><span class="p">(</span><span class="s1">&#39;kfit1&#39;</span><span class="p">))</span>
+<span class="n">htwo</span><span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">form</span><span class="o">.</span><span class="n">getvalue</span><span class="p">(</span><span class="s1">&#39;htwo&#39;</span><span class="p">))</span>
+<span class="n">diameter</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">form</span><span class="o">.</span><span class="n">getvalue</span><span class="p">(</span><span class="s1">&#39;diameter&#39;</span><span class="p">))</span>
+<span class="n">kfit2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">form</span><span class="o">.</span><span class="n">getvalue</span><span class="p">(</span><span class="s1">&#39;kfit2&#39;</span><span class="p">))</span>
+<span class="n">qone</span><span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">form</span><span class="o">.</span><span class="n">getvalue</span><span class="p">(</span><span class="s1">&#39;qone&#39;</span><span class="p">))</span>
+<span class="n">ksand</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">form</span><span class="o">.</span><span class="n">getvalue</span><span class="p">(</span><span class="s1">&#39;ksand&#39;</span><span class="p">))</span>
+<span class="n">qtwo</span><span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">form</span><span class="o">.</span><span class="n">getvalue</span><span class="p">(</span><span class="s1">&#39;qtwo&#39;</span><span class="p">))</span>
+<span class="n">viscosity</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">form</span><span class="o">.</span><span class="n">getvalue</span><span class="p">(</span><span class="s1">&#39;viscosity&#39;</span><span class="p">))</span>
+<span class="n">gravity</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">form</span><span class="o">.</span><span class="n">getvalue</span><span class="p">(</span><span class="s1">&#39;gravity&#39;</span><span class="p">))</span>
+<span class="c1"># some constants</span>
+<span class="n">qshut</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="c1"># Build the input file</span>
+<span class="n">ofile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;/var/www/atkaws/OK2Write/pipehydraulics/Q2ReservoirWithPump/input.dat&quot;</span><span class="p">,</span><span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="c1"># open a file to transfer input stream to R</span>
+<span class="n">ofile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">h1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">ofile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">h2</span><span class="p">)</span><span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">ofile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">length</span><span class="p">)</span><span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">ofile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">diameter</span><span class="p">)</span><span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">ofile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">ksand</span><span class="p">)</span><span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">ofile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">viscosity</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">ofile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">gravity</span><span class="p">)</span><span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">ofile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">kinlet</span><span class="p">)</span><span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">ofile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">koutlet</span><span class="p">)</span><span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">ofile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">kfit1</span><span class="p">)</span><span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">ofile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">kfit2</span><span class="p">)</span><span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">ofile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">hshut</span><span class="p">)</span><span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">ofile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">hone</span><span class="p">)</span><span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">ofile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">htwo</span><span class="p">)</span><span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">ofile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">qone</span><span class="p">)</span><span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">ofile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">qtwo</span><span class="p">)</span><span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">ofile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="c1"># Build the system command</span>
+<span class="n">path_to_Rscript</span> <span class="o">=</span> <span class="s2">&quot;/usr/bin/Rscript&quot;</span>
+<span class="n">commando</span> <span class="o">=</span> <span class="n">path_to_Rscript</span> <span class="o">+</span> <span class="s2">&quot; 2QReservoirWithPump.R&quot;</span>
+<span class="n">return_code</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1">#  Set return code to 1 (Fail)</span>
+<span class="c1"># Here we run 1D-AD-Sauty, and PIPE stdout to the 1D_AD_OgataBanks object</span>
+<span class="n">_2QReservoir</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="n">commando</span><span class="p">,</span> <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span> <span class="n">shell</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>  <span class="c1"># run process</span>
+<span class="n">output</span><span class="p">,</span> <span class="n">err</span> <span class="o">=</span> <span class="n">_2QReservoir</span><span class="o">.</span><span class="n">communicate</span><span class="p">()</span> <span class="c1"># capture output from stdout (command line)</span>
+<span class="n">return_code</span> <span class="o">=</span> <span class="n">_2QReservoir</span><span class="o">.</span><span class="n">returncode</span> <span class="c1"># capture the return code</span>
+<span class="c1"># Here we capture the output and process</span>
+<span class="c1"># need to read the output file</span>
+<span class="n">ofile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;/var/www/atkaws/OK2Write/pipehydraulics/Q2ReservoirWithPump/output.dat&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="c1"># open a file to recover output stream from R</span>
+<span class="c1"># process the output stream from R script</span>
+<span class="n">xyz</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># null list to capture each triple</span>
+<span class="n">how_many_lines</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">ofile</span><span class="p">:</span>
+   <span class="n">xyz</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="nb">float</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)])</span>
+   <span class="n">how_many_lines</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">ofile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="c1">#ncols = len(xyz[0]) # get number of columns, should be 3</span>
+<span class="c1"># assign names</span>
+<span class="n">flow</span> <span class="o">=</span> <span class="n">xyz</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">addedHead</span> <span class="o">=</span> <span class="n">xyz</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">frictionLoss</span> <span class="o">=</span> <span class="n">xyz</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">staticLift</span> <span class="o">=</span> <span class="n">xyz</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">frictionFactor</span> <span class="o">=</span> <span class="n">xyz</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">pumpShut</span> <span class="o">=</span> <span class="n">xyz</span><span class="p">[</span><span class="mi">5</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">pumpCoef</span> <span class="o">=</span> <span class="n">xyz</span><span class="p">[</span><span class="mi">6</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="c1"># Here we get the graphic</span>
+<span class="n">plotfile</span> <span class="o">=</span> <span class="s1">&#39; &lt;img src = &quot;/toolbox/pipehydraulics/Q2ReservoirWithPump/Q2ReservoirWithPump.gif&quot; width = &quot;400&quot; height = &quot;200&quot; &gt; &#39;</span>
+<span class="c1"># Prepare the output HTML </span>
+<span class="n">now</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%c</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="s2">&quot;Content-type:text/html</span><span class="se">\r\n\r\n</span><span class="s2">&quot;</span>  <span class="c1"># should have two returns and line feeds</span>
+<span class="nb">print</span> <span class="s2">&quot;&lt;html&gt;&quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;&lt;style&gt; table, th, td {border: 1px solid black;} &lt;/style&gt;&quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;&lt;head&gt;&quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;&lt;title&gt; Discharge Between Two Reservoirs &lt;/title&gt;&quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;&lt;/head&gt;&quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;&lt;body&gt;&quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;Machine Name : theodore-odroid.ttu.edu (arm7) &lt;br/&gt;&quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;Run Date : &quot;</span> <span class="p">,</span> <span class="n">now</span> <span class="p">,</span><span class="s2">&quot; &lt;br/&gt; &quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;COMMAND TO RUN : &quot;</span><span class="p">,</span> <span class="n">commando</span><span class="p">,</span> <span class="s2">&quot;&lt;br/&gt; &lt;br/&gt;&quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;Return Code : &quot;</span><span class="p">,</span><span class="n">return_code</span><span class="p">,</span> <span class="s2">&quot; &lt;br/&gt; &lt;br/&gt;&quot;</span>
+<span class="c1">#######################################</span>
+<span class="nb">print</span> <span class="s2">&quot;&lt;table style=&quot;&quot;&quot;&quot; &quot;width:50%&quot; &quot;&quot;&quot;</span> <span class="s2">&quot;&gt;&quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;&lt;tr&gt;&quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;&lt;td&gt;INPUT VALUES &lt;/td&gt; &lt;td&gt; &lt;/td&gt;&lt;td&gt;&lt;/td&gt; &lt;td&gt; &lt;/td&gt;&quot;</span>
+<span class="c1"># alignment for ease of program maintenance, extra spaces are ignored in program run</span>
+<span class="nb">print</span> <span class="s2">&quot;&lt;/tr&gt;&quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;&lt;tr&gt; &lt;td&gt; Pool Elevation 1 (Z1) = &lt;/td&gt; &lt;td&gt; &quot;</span><span class="p">,</span>       <span class="n">h1</span><span class="p">,</span> <span class="s2">&quot; &lt;/td&gt; &lt;td&gt;  meters &lt;/td&gt; &lt;td&gt;&lt;/td&gt;&lt;/tr&gt; &quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;&lt;tr&gt; &lt;td&gt; Pool Elevation 2 (Z2) = &lt;/td&gt; &lt;td&gt; &quot;</span><span class="p">,</span>       <span class="n">h2</span> <span class="p">,</span> <span class="s2">&quot; &lt;/td&gt; &lt;td&gt; meters  &lt;/td&gt; &lt;td&gt;&lt;/td&gt;&lt;/tr&gt; &quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;&lt;tr&gt; &lt;td&gt; Pipeline Length (L) = &lt;/td&gt; &lt;td&gt; &quot;</span><span class="p">,</span>   <span class="n">length</span><span class="p">,</span> <span class="s2">&quot; &lt;/td&gt; &lt;td&gt; meters &lt;/td&gt;&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;&lt;tr&gt; &lt;td&gt; Pipeline Diameter (D) = &lt;/td&gt; &lt;td&gt; &quot;</span><span class="p">,</span> <span class="n">diameter</span><span class="p">,</span> <span class="s2">&quot; &lt;/td&gt; &lt;td&gt; meters&lt;/td&gt; &lt;td&gt;&lt;/td&gt;&lt;/tr&gt; &quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;&lt;tr&gt; &lt;td&gt; Sand Roughness Height (ks) = &lt;/td&gt; &lt;td&gt; &quot;</span><span class="p">,</span> <span class="n">ksand</span><span class="p">,</span> <span class="s2">&quot; &lt;/td&gt; &lt;td&gt;   meters &lt;/td&gt;&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;&lt;tr&gt; &lt;td&gt; Kinematic Viscosity  (nu) = &lt;/td&gt; &lt;td&gt; &quot;</span><span class="p">,</span> <span class="n">viscosity</span><span class="p">,</span> <span class="s2">&quot; &lt;/td&gt; &lt;td&gt; meters^2/second &lt;/td&gt; &lt;td&gt;&lt;/td&gt;&lt;/tr&gt; &quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;&lt;tr&gt; &lt;td&gt; Gravitational Acceleration (g) = &lt;/td&gt; &lt;td&gt; &quot;</span><span class="p">,</span> <span class="n">gravity</span><span class="p">,</span> <span class="s2">&quot; &lt;/td&gt; &lt;td&gt; meters/second^2 &lt;/td&gt;&lt;td&gt;&lt;/td&gt; &lt;/tr&gt; &quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;&lt;tr&gt; &lt;td&gt; Inlet Loss Coefficient (Ki) = &lt;/td&gt; &lt;td&gt; &quot;</span><span class="p">,</span> <span class="n">kinlet</span><span class="p">,</span> <span class="s2">&quot; &lt;/td&gt; &lt;td&gt; &lt;/td&gt; &lt;td&gt;&lt;/td&gt;&lt;/tr&gt; &quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;&lt;tr&gt; &lt;td&gt; Outlet Loss Coefficient (Ke) = &lt;/td&gt; &lt;td&gt; &quot;</span><span class="p">,</span> <span class="n">koutlet</span><span class="p">,</span> <span class="s2">&quot; &lt;/td&gt; &lt;td&gt; &lt;/td&gt; &lt;td&gt;&lt;/td&gt;&lt;/tr&gt; &quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;&lt;tr&gt; &lt;td&gt; Fitting Loss Coefficient (Kf) = &lt;/td&gt; &lt;td&gt; &quot;</span><span class="p">,</span> <span class="n">kfit1</span><span class="p">,</span> <span class="s2">&quot; &lt;/td&gt; &lt;td&gt;  &lt;/td&gt; &lt;td&gt;&lt;/td&gt;&lt;/tr&gt; &quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;&lt;tr&gt; &lt;td&gt; Fitting Loss Coefficient (Kf) = &lt;/td&gt; &lt;td&gt; &quot;</span><span class="p">,</span> <span class="n">kfit2</span><span class="p">,</span> <span class="s2">&quot; &lt;/td&gt; &lt;td&gt; &lt;/td&gt; &lt;td&gt;&lt;/td&gt;&lt;/tr&gt; &quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;&lt;tr&gt; &lt;td&gt; Pump Shutoff Head (Hp@Q_0) = &lt;/td&gt; &lt;td&gt; &quot;</span><span class="p">,</span> <span class="n">hshut</span><span class="p">,</span> <span class="s2">&quot; &lt;/td&gt; &lt;td&gt; Discharge (Q_0) &lt;/td&gt; &lt;td&gt;&quot;</span><span class="p">,</span><span class="n">qshut</span><span class="p">,</span><span class="s2">&quot;&lt;/td&gt;&lt;/tr&gt; &quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;&lt;tr&gt; &lt;td&gt; Pump Point One (Hp@Q_1) = &lt;/td&gt; &lt;td&gt; &quot;</span><span class="p">,</span> <span class="n">hone</span><span class="p">,</span> <span class="s2">&quot; &lt;/td&gt; &lt;td&gt; Discharge (Q_1) &lt;/td&gt; &lt;td&gt;&quot;</span><span class="p">,</span><span class="n">qone</span><span class="p">,</span><span class="s2">&quot;&lt;/td&gt;&lt;/tr&gt; &quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;&lt;tr&gt; &lt;td&gt; Pump Point Two (Hp@Q_2) = &lt;/td&gt; &lt;td&gt; &quot;</span><span class="p">,</span> <span class="n">htwo</span><span class="p">,</span> <span class="s2">&quot; &lt;/td&gt; &lt;td&gt; Discharge (Q_2) &lt;/td&gt; &lt;td&gt;&quot;</span><span class="p">,</span><span class="n">qtwo</span><span class="p">,</span><span class="s2">&quot;&lt;/td&gt;&lt;/tr&gt; &quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;&lt;/table&gt;&lt;br/&gt;&quot;</span>
+<span class="c1">########################################</span>
+<span class="nb">print</span> <span class="n">plotfile</span>
+<span class="c1">########################################</span>
+<span class="nb">print</span> <span class="s2">&quot;&lt;table style=&quot;&quot;&quot;&quot; &quot;width:50%&quot; &quot;&quot;&quot;</span> <span class="s2">&quot;&gt;&quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;&lt;tr&gt; &lt;td&gt;COMPUTED RESULT&lt;/td&gt; &lt;td&gt; &lt;/td&gt; &lt;td&gt; &lt;/td&gt; &quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;&lt;tr&gt; &lt;td&gt; Discharge  = &lt;/td&gt; &lt;td&gt; &quot;</span><span class="p">,</span> <span class="n">flow</span> <span class="p">,</span> <span class="s2">&quot;&lt;/td&gt; &lt;td&gt; m^3/sec &lt;/td&gt; &lt;/tr&gt; &quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;&lt;tr&gt; &lt;td&gt; Added Head  = &lt;/td&gt; &lt;td&gt; &quot;</span><span class="p">,</span> <span class="n">addedHead</span> <span class="p">,</span> <span class="s2">&quot;&lt;/td&gt; &lt;td&gt;  m &lt;/td&gt; &lt;/tr&gt; &quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;&lt;tr&gt; &lt;td&gt; Friction Losses  = &lt;/td&gt; &lt;td&gt; &quot;</span><span class="p">,</span> <span class="n">frictionLoss</span> <span class="p">,</span> <span class="s2">&quot;&lt;/td&gt; &lt;td&gt; m &lt;/td&gt; &lt;/tr&gt; &quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;&lt;tr&gt; &lt;td&gt; Static Lift  = &lt;/td&gt; &lt;td&gt; &quot;</span><span class="p">,</span> <span class="n">staticLift</span> <span class="p">,</span> <span class="s2">&quot;&lt;/td&gt; &lt;td&gt; m &lt;/td&gt; &lt;/tr&gt; &quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;&lt;tr&gt; &lt;td&gt; Pipeline Friction Factor  = &lt;/td&gt; &lt;td&gt; &quot;</span><span class="p">,</span> <span class="n">frictionFactor</span> <span class="p">,</span> <span class="s2">&quot;&lt;/td&gt; &lt;td&gt;  &lt;/td&gt; &lt;/tr&gt; &quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;&lt;tr&gt; &lt;td&gt; Fitted Pump Shutoff  = &lt;/td&gt; &lt;td&gt; &quot;</span><span class="p">,</span> <span class="n">pumpShut</span> <span class="p">,</span> <span class="s2">&quot;&lt;/td&gt; &lt;td&gt; m &lt;/td&gt; &lt;/tr&gt; &quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;&lt;tr&gt; &lt;td&gt; Pump Constant  = &lt;/td&gt; &lt;td&gt; &quot;</span><span class="p">,</span> <span class="n">pumpCoef</span> <span class="p">,</span> <span class="s2">&quot;&lt;/td&gt; &lt;td&gt; m/Q^2 &lt;/td&gt; &lt;/tr&gt; &quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;&lt;/table&gt;&lt;br/&gt;&quot;</span>
+<span class="c1">########################################</span>
+<span class="nb">print</span> <span class="s2">&quot;&lt;/body&gt;&quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;&lt;/html&gt;&quot;</span>
+<span class="c1"># end of script</span>
+</pre></div>
+</div>
+<p>Here is the actual computation engine (in R)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Flow between two reserviors (for CE 3372) </span>
+<span class="c1">#############################################################</span>
+<span class="c1">############## Forward Define Support Functions #############</span>
+<span class="c1">#############################################################</span>
+<span class="c1"># Jain Friction Factor Function -- Tested OK 23 SEP16</span>
+<span class="n">friction_factor</span> <span class="o">&lt;-</span> <span class="n">function</span><span class="p">(</span> <span class="n">roughness</span> <span class="p">,</span> <span class="n">diameter</span> <span class="p">,</span> <span class="n">reynolds</span> <span class="p">){</span>
+  <span class="n">temp1</span> <span class="o">&lt;-</span> <span class="n">roughness</span> <span class="o">/</span><span class="p">(</span><span class="mf">3.7</span><span class="o">*</span> <span class="n">diameter</span> <span class="p">);</span>
+  <span class="n">temp2</span> <span class="o">&lt;-</span> <span class="mf">5.74</span><span class="o">/</span><span class="p">(</span> <span class="n">reynolds</span><span class="o">^</span><span class="p">(</span><span class="mf">0.9</span><span class="p">)</span> <span class="p">);</span>
+  <span class="n">temp3</span> <span class="o">&lt;-</span> <span class="n">log10</span> <span class="p">(</span> <span class="n">temp1</span> <span class="o">+</span> <span class="n">temp2</span> <span class="p">);</span>
+  <span class="n">temp3</span> <span class="o">&lt;-</span> <span class="n">temp3</span> <span class="o">^</span><span class="mi">2</span><span class="p">;</span>
+  <span class="n">friction_factor</span> <span class="o">&lt;-</span> <span class="mf">0.25</span><span class="o">/</span> <span class="n">temp3</span> <span class="p">;</span>
+  <span class="k">return</span> <span class="p">(</span> <span class="n">friction_factor</span> <span class="p">)</span>
+<span class="p">}</span>
+<span class="c1"># Velocity Function</span>
+<span class="n">velocity</span> <span class="o">&lt;-</span> <span class="n">function</span><span class="p">(</span> <span class="n">diameter</span> <span class="p">,</span> <span class="n">discharge</span> <span class="p">){</span>
+  <span class="n">velocity</span> <span class="o">&lt;-</span> <span class="n">discharge</span> <span class="o">/</span><span class="p">(</span><span class="mf">0.25</span><span class="o">*</span> <span class="n">pi</span><span class="o">*</span> <span class="n">diameter</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>
+  <span class="k">return</span> <span class="p">(</span> <span class="n">velocity</span> <span class="p">)</span>
+<span class="p">}</span>
+<span class="c1"># Reynolds Number Function</span>
+<span class="n">reynolds_number</span> <span class="o">&lt;-</span> <span class="n">function</span><span class="p">(</span> <span class="n">velocity</span> <span class="p">,</span> <span class="n">diameter</span> <span class="p">,</span><span class="n">mu</span><span class="p">){</span>
+  <span class="n">reynolds_number</span> <span class="o">&lt;-</span> <span class="nb">abs</span> <span class="p">(</span> <span class="n">velocity</span> <span class="p">)</span><span class="o">*</span> <span class="n">diameter</span> <span class="o">/</span><span class="n">mu</span>
+  <span class="k">return</span> <span class="p">(</span> <span class="n">reynolds_number</span> <span class="p">)</span>
+<span class="p">}</span>
+<span class="c1"># Jain Equation (Initial Guess Pipeline Only)</span>
+<span class="n">jain</span> <span class="o">&lt;-</span> <span class="n">function</span><span class="p">(</span><span class="n">h1</span><span class="p">,</span><span class="n">h2</span><span class="p">,</span><span class="n">lenght</span><span class="p">,</span><span class="n">diameter</span><span class="p">,</span><span class="n">gravity</span><span class="p">,</span><span class="n">viscosity</span><span class="p">,</span><span class="n">ksand</span><span class="p">){</span>
+  <span class="n">term1</span> <span class="o">&lt;-</span> <span class="n">sqrt</span><span class="p">(</span> <span class="n">gravity</span><span class="o">*</span><span class="p">((</span><span class="n">h1</span><span class="o">-</span><span class="n">h2</span><span class="p">)</span><span class="o">/</span><span class="n">length</span><span class="p">))</span>
+  <span class="n">term2</span> <span class="o">&lt;-</span> <span class="n">ksand</span><span class="o">/</span><span class="p">(</span><span class="mf">3.7</span><span class="o">*</span><span class="n">diameter</span><span class="p">)</span>
+  <span class="n">term3</span> <span class="o">&lt;-</span> <span class="mf">1.78</span><span class="o">*</span><span class="n">viscosity</span><span class="o">/</span><span class="p">(</span><span class="n">term1</span><span class="o">*</span><span class="n">diameter</span><span class="o">^</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+  <span class="n">term4</span> <span class="o">&lt;-</span> <span class="n">log10</span><span class="p">(</span><span class="n">term2</span><span class="o">+</span><span class="n">term3</span><span class="p">)</span>
+  <span class="n">jain</span> <span class="o">&lt;-</span> <span class="o">-</span><span class="mf">2.22</span><span class="o">*</span><span class="p">(</span><span class="n">diameter</span><span class="o">^</span><span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span><span class="o">*</span><span class="n">term1</span><span class="o">*</span><span class="n">term4</span>
+  <span class="k">return</span><span class="p">(</span><span class="n">jain</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="c1">############ Function to Get 3-Point Pump Curve #############</span>
+<span class="n">get_pump_parm</span> <span class="o">&lt;-</span> <span class="n">function</span><span class="p">(</span><span class="n">hshut</span><span class="p">,</span><span class="n">hone</span><span class="p">,</span><span class="n">htwo</span><span class="p">,</span><span class="n">qshut</span><span class="p">,</span><span class="n">qone</span><span class="p">,</span><span class="n">qtwo</span><span class="p">){</span>
+<span class="c1"># fit a quadratic model to the 3-point pump curve</span>
+  <span class="n">amat</span> <span class="o">&lt;-</span> <span class="n">matrix</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">nrow</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">ncol</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">byrow</span><span class="o">=</span><span class="n">TRUE</span><span class="p">)</span>
+  <span class="n">bvec</span> <span class="o">&lt;-</span> <span class="n">numeric</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+  <span class="n">pumpcrv</span> <span class="o">&lt;-</span> <span class="n">numeric</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="c1"># build the amat matrix</span>
+  <span class="k">for</span> <span class="p">(</span><span class="n">irow</span> <span class="ow">in</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">){</span>
+    <span class="n">amat</span><span class="p">[</span><span class="n">irow</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="mi">1</span>
+  <span class="p">}</span>
+  <span class="n">amat</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">qshut</span><span class="o">^</span><span class="mi">2</span>
+  <span class="n">amat</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">qone</span><span class="o">^</span><span class="mi">2</span>
+  <span class="n">amat</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">qtwo</span><span class="o">^</span><span class="mi">2</span>
+<span class="c1"># build the bvec</span>
+  <span class="n">bvec</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">hshut</span>
+  <span class="n">bvec</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">hone</span>
+  <span class="n">bvec</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">htwo</span>
+<span class="c1"># solve the linear system</span>
+  <span class="n">pumpcrv</span> <span class="o">&lt;-</span> <span class="n">solve</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="n">amat</span><span class="p">)</span><span class="o">%*%</span><span class="n">amat</span><span class="p">,</span><span class="n">t</span><span class="p">(</span><span class="n">amat</span><span class="p">)</span><span class="o">%*%</span><span class="n">bvec</span><span class="p">)</span>
+  <span class="k">return</span><span class="p">(</span><span class="n">pumpcrv</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="c1">###############################################################</span>
+<span class="c1"># here is the actual pump curve function</span>
+<span class="n">hpump</span> <span class="o">&lt;-</span> <span class="n">function</span><span class="p">(</span><span class="n">hshutoff</span><span class="p">,</span><span class="n">pumpconst</span><span class="p">,</span><span class="n">flowrate</span><span class="p">){</span>
+  <span class="n">hpump</span> <span class="o">&lt;-</span> <span class="n">hshutoff</span> <span class="o">+</span> <span class="n">pumpconst</span><span class="o">*</span><span class="nb">abs</span><span class="p">(</span><span class="n">flowrate</span><span class="p">)</span><span class="o">*</span><span class="n">flowrate</span>
+  <span class="k">return</span><span class="p">(</span><span class="n">hpump</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="c1">###############################################################</span>
+<span class="c1"># Pipeline Function for Newton&#39;s Method</span>
+<span class="n">func</span> <span class="o">&lt;-</span> <span class="n">function</span><span class="p">(</span><span class="n">h1</span><span class="p">,</span><span class="n">h2</span><span class="p">,</span><span class="n">fricfact</span><span class="p">,</span><span class="n">kinlet</span><span class="p">,</span><span class="n">koutlet</span><span class="p">,</span><span class="n">kfit1</span><span class="p">,</span><span class="n">kfit2</span><span class="p">,</span><span class="n">length</span><span class="p">,</span><span class="n">diameter</span><span class="p">,</span><span class="n">flow</span><span class="p">,</span><span class="n">gravity</span><span class="p">,</span><span class="n">hshutoff</span><span class="p">,</span><span class="n">pumpconst</span><span class="p">){</span>
+  <span class="c1"># collect terms</span>
+  <span class="n">coeff1</span> <span class="o">&lt;-</span> <span class="p">(</span><span class="n">fricfact</span><span class="o">*</span><span class="n">length</span><span class="o">/</span><span class="n">diameter</span><span class="p">)</span><span class="o">+</span><span class="n">kinlet</span><span class="o">+</span><span class="n">koutlet</span><span class="o">+</span><span class="n">kfit1</span><span class="o">+</span><span class="n">kfit2</span>
+  <span class="n">geom1</span> <span class="o">&lt;-</span> <span class="mi">8</span><span class="o">/</span><span class="p">(</span><span class="n">gravity</span><span class="o">*</span><span class="n">diameter</span><span class="o">^</span><span class="mi">4</span><span class="o">*</span><span class="n">pi</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>
+  <span class="n">func</span> <span class="o">&lt;-</span> <span class="n">h1</span> <span class="o">+</span> <span class="n">hpump</span><span class="p">(</span><span class="n">hshutoff</span><span class="p">,</span><span class="n">pumpconst</span><span class="p">,</span><span class="n">flow</span><span class="p">)</span> <span class="o">-</span> <span class="n">h2</span> <span class="o">-</span> <span class="n">coeff1</span><span class="o">*</span><span class="n">geom1</span><span class="o">*</span><span class="nb">abs</span><span class="p">(</span><span class="n">flow</span><span class="p">)</span><span class="o">*</span><span class="n">flow</span>
+  <span class="k">return</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="c1"># Finite-Difference Derivative Function</span>
+<span class="n">dfdx</span> <span class="o">&lt;-</span> <span class="n">function</span><span class="p">(</span><span class="n">h1</span><span class="p">,</span><span class="n">h2</span><span class="p">,</span><span class="n">fricfact</span><span class="p">,</span><span class="n">kinlet</span><span class="p">,</span><span class="n">koutlet</span><span class="p">,</span><span class="n">kfit1</span><span class="p">,</span><span class="n">kfit2</span><span class="p">,</span><span class="n">length</span><span class="p">,</span><span class="n">diameter</span><span class="p">,</span><span class="n">flow</span><span class="p">,</span><span class="n">gravity</span><span class="p">,</span><span class="n">hshutoff</span><span class="p">,</span><span class="n">pumpconst</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="c1"># dfdx &lt;- exp (x) + 10* sin(x);</span>
+  <span class="n">dfdx</span> <span class="o">&lt;-</span> <span class="p">(</span> <span class="n">func</span> <span class="p">(</span><span class="n">h1</span><span class="p">,</span><span class="n">h2</span><span class="p">,</span><span class="n">fricfact</span><span class="p">,</span><span class="n">kinlet</span><span class="p">,</span><span class="n">koutlet</span><span class="p">,</span><span class="n">kfit1</span><span class="p">,</span><span class="n">kfit2</span><span class="p">,</span><span class="n">length</span><span class="p">,</span><span class="n">diameter</span><span class="p">,</span><span class="n">flow</span><span class="o">+</span><span class="mf">1.0e-06</span><span class="p">,</span><span class="n">gravity</span><span class="p">,</span><span class="n">hshutoff</span><span class="p">,</span><span class="n">pumpconst</span><span class="p">)</span> <span class="o">-</span> <span class="n">func</span> <span class="p">(</span><span class="n">h1</span><span class="p">,</span><span class="n">h2</span><span class="p">,</span><span class="n">fricfact</span><span class="p">,</span><span class="n">kinlet</span><span class="o">&gt;</span>
+  <span class="k">return</span> <span class="p">(</span> <span class="n">dfdx</span> <span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">####### Enable for CGI-BIN ##########</span>
+<span class="n">zz</span> <span class="o">&lt;-</span> <span class="n">file</span><span class="p">(</span><span class="s2">&quot;/var/www/atkaws/OK2Write/pipehydraulics/Q2ReservoirWithPump/input.dat&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="c1">#zz &lt;- file(&quot;input.txt&quot;,&quot;r&quot;)</span>
+<span class="c1"># Open a connection to zz</span>
+<span class="n">h1</span> <span class="o">&lt;-</span> <span class="k">as</span><span class="o">.</span><span class="n">numeric</span><span class="p">(</span><span class="n">readLines</span><span class="p">(</span><span class="n">zz</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ok</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">warn</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;unknown&quot;</span><span class="p">,</span><span class="n">skipNul</span> <span class="o">=</span> <span class="n">FALSE</span><span class="p">))</span>
+<span class="n">h2</span> <span class="o">&lt;-</span> <span class="k">as</span><span class="o">.</span><span class="n">numeric</span><span class="p">(</span><span class="n">readLines</span><span class="p">(</span><span class="n">zz</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ok</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">warn</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;unknown&quot;</span><span class="p">,</span><span class="n">skipNul</span> <span class="o">=</span> <span class="n">FALSE</span><span class="p">))</span>
+<span class="n">length</span> <span class="o">&lt;-</span> <span class="k">as</span><span class="o">.</span><span class="n">numeric</span><span class="p">(</span><span class="n">readLines</span><span class="p">(</span><span class="n">zz</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ok</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">warn</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;unknown&quot;</span><span class="p">,</span><span class="n">skipNul</span> <span class="o">=</span> <span class="n">FALSE</span><span class="p">))</span>
+<span class="n">diameter</span> <span class="o">&lt;-</span> <span class="k">as</span><span class="o">.</span><span class="n">numeric</span><span class="p">(</span><span class="n">readLines</span><span class="p">(</span><span class="n">zz</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ok</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">warn</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;unknown&quot;</span><span class="p">,</span><span class="n">skipNul</span> <span class="o">=</span> <span class="n">FALSE</span><span class="p">))</span>
+<span class="n">ksand</span> <span class="o">&lt;-</span> <span class="k">as</span><span class="o">.</span><span class="n">numeric</span><span class="p">(</span><span class="n">readLines</span><span class="p">(</span><span class="n">zz</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ok</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">warn</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;unknown&quot;</span><span class="p">,</span><span class="n">skipNul</span> <span class="o">=</span> <span class="n">FALSE</span><span class="p">))</span>
+<span class="n">viscosity</span> <span class="o">&lt;-</span> <span class="k">as</span><span class="o">.</span><span class="n">numeric</span><span class="p">(</span><span class="n">readLines</span><span class="p">(</span><span class="n">zz</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ok</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">warn</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;unknown&quot;</span><span class="p">,</span><span class="n">skipNul</span> <span class="o">=</span> <span class="n">FALSE</span><span class="p">))</span>
+<span class="n">gravity</span> <span class="o">&lt;-</span> <span class="k">as</span><span class="o">.</span><span class="n">numeric</span><span class="p">(</span><span class="n">readLines</span><span class="p">(</span><span class="n">zz</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ok</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">warn</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;unknown&quot;</span><span class="p">,</span><span class="n">skipNul</span> <span class="o">=</span> <span class="n">FALSE</span><span class="p">))</span>
+<span class="n">kinlet</span> <span class="o">&lt;-</span> <span class="k">as</span><span class="o">.</span><span class="n">numeric</span><span class="p">(</span><span class="n">readLines</span><span class="p">(</span><span class="n">zz</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ok</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">warn</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;unknown&quot;</span><span class="p">,</span><span class="n">skipNul</span> <span class="o">=</span> <span class="n">FALSE</span><span class="p">))</span>
+<span class="n">koutlet</span> <span class="o">&lt;-</span> <span class="k">as</span><span class="o">.</span><span class="n">numeric</span><span class="p">(</span><span class="n">readLines</span><span class="p">(</span><span class="n">zz</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ok</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">warn</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;unknown&quot;</span><span class="p">,</span><span class="n">skipNul</span> <span class="o">=</span> <span class="n">FALSE</span><span class="p">))</span>
+<span class="n">kfit1</span> <span class="o">&lt;-</span> <span class="k">as</span><span class="o">.</span><span class="n">numeric</span><span class="p">(</span><span class="n">readLines</span><span class="p">(</span><span class="n">zz</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ok</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">warn</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;unknown&quot;</span><span class="p">,</span><span class="n">skipNul</span> <span class="o">=</span> <span class="n">FALSE</span><span class="p">))</span>
+<span class="n">kfit2</span> <span class="o">&lt;-</span> <span class="k">as</span><span class="o">.</span><span class="n">numeric</span><span class="p">(</span><span class="n">readLines</span><span class="p">(</span><span class="n">zz</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ok</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">warn</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;unknown&quot;</span><span class="p">,</span><span class="n">skipNul</span> <span class="o">=</span> <span class="n">FALSE</span><span class="p">))</span>
+<span class="c1"># </span>
+<span class="n">hshut</span> <span class="o">&lt;-</span> <span class="k">as</span><span class="o">.</span><span class="n">numeric</span><span class="p">(</span><span class="n">readLines</span><span class="p">(</span><span class="n">zz</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ok</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">warn</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;unknown&quot;</span><span class="p">,</span><span class="n">skipNul</span> <span class="o">=</span> <span class="n">FALSE</span><span class="p">))</span>
+<span class="n">hone</span> <span class="o">&lt;-</span> <span class="k">as</span><span class="o">.</span><span class="n">numeric</span><span class="p">(</span><span class="n">readLines</span><span class="p">(</span><span class="n">zz</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ok</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">warn</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;unknown&quot;</span><span class="p">,</span><span class="n">skipNul</span> <span class="o">=</span> <span class="n">FALSE</span><span class="p">))</span>
+<span class="n">htwo</span> <span class="o">&lt;-</span> <span class="k">as</span><span class="o">.</span><span class="n">numeric</span><span class="p">(</span><span class="n">readLines</span><span class="p">(</span><span class="n">zz</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ok</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">warn</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;unknown&quot;</span><span class="p">,</span><span class="n">skipNul</span> <span class="o">=</span> <span class="n">FALSE</span><span class="p">))</span>
+<span class="n">qone</span> <span class="o">&lt;-</span> <span class="k">as</span><span class="o">.</span><span class="n">numeric</span><span class="p">(</span><span class="n">readLines</span><span class="p">(</span><span class="n">zz</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ok</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">warn</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;unknown&quot;</span><span class="p">,</span><span class="n">skipNul</span> <span class="o">=</span> <span class="n">FALSE</span><span class="p">))</span>
+<span class="n">qtwo</span> <span class="o">&lt;-</span> <span class="k">as</span><span class="o">.</span><span class="n">numeric</span><span class="p">(</span><span class="n">readLines</span><span class="p">(</span><span class="n">zz</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ok</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">warn</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;unknown&quot;</span><span class="p">,</span><span class="n">skipNul</span> <span class="o">=</span> <span class="n">FALSE</span><span class="p">))</span>
+<span class="n">close</span><span class="p">(</span><span class="n">zz</span><span class="p">)</span>
+<span class="c1">######################################</span>
+
+
+<span class="c1">#### testing -- disable for CGI BIN ###</span>
+<span class="c1"># h1 &lt;- 1006.3</span>
+<span class="c1"># h2 &lt;-  992.0</span>
+<span class="c1"># diameter &lt;- 0.127</span>
+<span class="c1"># ksand &lt;- 0.0000015</span>
+<span class="c1"># viscosity &lt;- 8.94e-7</span>
+<span class="c1"># kinlet &lt;- 1</span>
+<span class="c1"># koutlet &lt;- 1</span>
+<span class="c1"># kfit1 &lt;- 1</span>
+<span class="c1"># kfit2 &lt;- 1</span>
+<span class="c1"># length &lt;- 800</span>
+<span class="c1"># gravity &lt;- 9.8</span>
+
+<span class="c1">#######################################</span>
+<span class="c1"># make initial guess</span>
+<span class="n">hsmall</span> <span class="o">&lt;-</span> <span class="nb">min</span><span class="p">(</span><span class="n">h1</span><span class="p">,</span><span class="n">h2</span><span class="p">)</span>
+<span class="n">hbig</span> <span class="o">&lt;-</span> <span class="nb">max</span><span class="p">(</span><span class="n">h1</span><span class="p">,</span><span class="n">h2</span><span class="p">)</span>
+<span class="n">flow</span> <span class="o">&lt;-</span> <span class="n">jain</span><span class="p">(</span><span class="n">hbig</span><span class="p">,</span><span class="n">hsmall</span><span class="p">,</span><span class="n">length</span><span class="p">,</span><span class="n">diameter</span><span class="p">,</span><span class="n">gravity</span><span class="p">,</span><span class="n">viscosity</span><span class="p">,</span><span class="n">ksand</span><span class="p">)</span>
+<span class="c1">#flow &lt;- 0.27</span>
+<span class="c1"># get the pump curve</span>
+<span class="n">qshut</span> <span class="o">&lt;-</span> <span class="mf">0.0</span>
+<span class="n">myPump</span> <span class="o">&lt;-</span> <span class="n">get_pump_parm</span><span class="p">(</span><span class="n">hshut</span><span class="p">,</span><span class="n">hone</span><span class="p">,</span><span class="n">htwo</span><span class="p">,</span><span class="n">qshut</span><span class="p">,</span><span class="n">qone</span><span class="p">,</span><span class="n">qtwo</span><span class="p">)</span>
+<span class="c1"># set pump constants</span>
+<span class="n">hshutoff</span> <span class="o">&lt;-</span> <span class="n">myPump</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">pumpconst</span> <span class="o">&lt;-</span> <span class="n">myPump</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="c1">#message(&quot;flow = &quot;,flow)</span>
+<span class="n">HowMany</span> <span class="o">&lt;-</span> <span class="mi">100</span>
+<span class="n">HowSmall</span> <span class="o">&lt;-</span> <span class="mf">1e-9</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="ow">in</span> <span class="mi">1</span><span class="p">:</span><span class="n">HowMany</span><span class="p">){</span>
+<span class="c1"># compute current friction factor </span>
+    <span class="n">flow_velocity</span> <span class="o">&lt;-</span> <span class="n">velocity</span><span class="p">(</span><span class="n">diameter</span> <span class="p">,</span> <span class="n">flow</span><span class="p">)</span>
+    <span class="n">reynolds</span> <span class="o">&lt;-</span> <span class="n">reynolds_number</span><span class="p">(</span><span class="n">flow_velocity</span> <span class="p">,</span> <span class="n">diameter</span> <span class="p">,</span> <span class="n">viscosity</span><span class="p">)</span>
+    <span class="n">fricfact</span> <span class="o">&lt;-</span> <span class="n">friction_factor</span><span class="p">(</span><span class="n">ksand</span><span class="p">,</span> <span class="n">diameter</span><span class="p">,</span> <span class="n">reynolds</span><span class="p">)</span>
+<span class="c1"># compute head loss equation</span>
+    <span class="n">f1</span><span class="o">&lt;-</span><span class="n">func</span><span class="p">(</span><span class="n">h1</span><span class="p">,</span><span class="n">h2</span><span class="p">,</span><span class="n">fricfact</span><span class="p">,</span><span class="n">kinlet</span><span class="p">,</span><span class="n">koutlet</span><span class="p">,</span><span class="n">kfit1</span><span class="p">,</span><span class="n">kfit2</span><span class="p">,</span><span class="n">length</span><span class="p">,</span><span class="n">diameter</span><span class="p">,</span><span class="n">flow</span><span class="p">,</span><span class="n">gravity</span><span class="p">,</span><span class="n">hshutoff</span><span class="p">,</span><span class="n">pumpconst</span><span class="p">)</span>
+<span class="c1"># compute derivative wrt flow</span>
+    <span class="n">f2</span><span class="o">&lt;-</span><span class="n">dfdx</span><span class="p">(</span><span class="n">h1</span><span class="p">,</span><span class="n">h2</span><span class="p">,</span><span class="n">fricfact</span><span class="p">,</span><span class="n">kinlet</span><span class="p">,</span><span class="n">koutlet</span><span class="p">,</span><span class="n">kfit1</span><span class="p">,</span><span class="n">kfit2</span><span class="p">,</span><span class="n">length</span><span class="p">,</span><span class="n">diameter</span><span class="p">,</span><span class="n">flow</span><span class="p">,</span><span class="n">gravity</span><span class="p">,</span><span class="n">hshutoff</span><span class="p">,</span><span class="n">pumpconst</span><span class="p">)</span>
+<span class="c1"># compute the update</span>
+    <span class="n">qnew</span> <span class="o">&lt;-</span> <span class="n">flow</span> <span class="o">-</span> <span class="n">f1</span><span class="o">/</span><span class="n">f2</span>
+<span class="c1">#    message(&quot;func = &quot;,f1)</span>
+<span class="c1">#    message(&quot;dfdx = &quot;,f2)</span>
+<span class="c1">#    message(&quot;new flow = &quot;,qnew)</span>
+<span class="c1"># test for stopping</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="nb">abs</span> <span class="p">(</span><span class="n">qnew</span> <span class="o">-</span> <span class="n">flow</span> <span class="p">)</span> <span class="o">&lt;</span> <span class="n">HowSmall</span> <span class="p">){</span>
+        <span class="n">message</span> <span class="p">(</span><span class="s1">&#39; Update not changing &#39;</span><span class="p">)</span>
+        <span class="n">flow</span> <span class="o">&lt;-</span> <span class="n">qnew</span>
+        <span class="nb">print</span> <span class="p">(</span> <span class="n">cbind</span> <span class="p">(</span><span class="n">flow</span> <span class="p">,</span><span class="n">qnew</span> <span class="p">,</span> <span class="n">f1</span><span class="p">))</span>
+        <span class="k">break</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="nb">abs</span> <span class="p">(</span><span class="n">f1</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">HowSmall</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="n">message</span> <span class="p">(</span><span class="s1">&#39; Function value close to zero &#39;</span><span class="p">,</span> <span class="n">f1</span><span class="p">)</span>
+        <span class="n">flow</span> <span class="o">&lt;-</span> <span class="n">qnew</span>
+        <span class="nb">print</span> <span class="p">(</span> <span class="n">cbind</span> <span class="p">(</span><span class="n">flow</span> <span class="p">,</span><span class="n">qnew</span> <span class="p">,</span> <span class="n">f1</span><span class="p">))</span>
+        <span class="k">break</span>
+    <span class="p">}</span>
+<span class="c1"># next iteration</span>
+    <span class="n">flow</span> <span class="o">&lt;-</span> <span class="n">qnew</span>
+<span class="p">}</span>
+<span class="nb">print</span> <span class="p">(</span> <span class="n">cbind</span> <span class="p">(</span><span class="n">flow</span> <span class="p">,</span><span class="n">qnew</span> <span class="p">,</span> <span class="n">f1</span><span class="p">))</span>
+<span class="n">outfile</span> <span class="o">&lt;-</span> <span class="n">file</span><span class="p">(</span><span class="s2">&quot;/var/www/atkaws/OK2Write/pipehydraulics/Q2ReservoirWithPump/output.dat&quot;</span><span class="p">,</span><span class="s2">&quot;w&quot;</span><span class="p">)</span>
+<span class="c1">#outfile &lt;- file(&quot;output.txt&quot;,&quot;w&quot;)</span>
+<span class="n">write</span><span class="p">(</span><span class="n">flow</span><span class="p">,</span><span class="n">outfile</span><span class="p">)</span> <span class="c1"># flowrate</span>
+<span class="n">write</span><span class="p">(</span><span class="n">hpump</span><span class="p">(</span><span class="n">hshutoff</span><span class="p">,</span><span class="n">pumpconst</span><span class="p">,</span><span class="n">flow</span><span class="p">),</span><span class="n">outfile</span><span class="p">)</span> <span class="c1">#added head</span>
+<span class="n">write</span><span class="p">((</span><span class="n">h1</span><span class="o">+</span><span class="n">hpump</span><span class="p">(</span><span class="n">hshutoff</span><span class="p">,</span><span class="n">pumpconst</span><span class="p">,</span><span class="n">flow</span><span class="p">)</span><span class="o">-</span><span class="n">h2</span><span class="p">),</span><span class="n">outfile</span><span class="p">)</span> <span class="c1"># friction losses</span>
+<span class="n">write</span><span class="p">((</span><span class="n">h2</span><span class="o">-</span><span class="n">h1</span><span class="p">),</span><span class="n">outfile</span><span class="p">)</span> <span class="c1"># static lift</span>
+<span class="n">write</span><span class="p">(</span><span class="n">fricfact</span><span class="p">,</span><span class="n">outfile</span><span class="p">)</span> <span class="c1"># friction factor in pipeline</span>
+<span class="n">write</span><span class="p">(</span><span class="n">myPump</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">outfile</span><span class="p">)</span> <span class="c1"># fitted pump shutoff</span>
+<span class="n">write</span><span class="p">(</span><span class="n">myPump</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">outfile</span><span class="p">)</span> <span class="c1"># fitted pump constant</span>
+<span class="n">close</span><span class="p">(</span><span class="n">outfile</span><span class="p">)</span>
+
+
+</pre></div>
+</div>
+<p><strong>Pump System Fails, Time to Drain</strong></p>
+<blockquote>
+<div><p>This portion of example moved to after pumps</p>
+</div></blockquote>
+</div>
+</div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
@@ -765,12 +1316,12 @@ Information ususally includes:</p>
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Lesson 5. Pipeline Hydraulics</p>
+                <p class="prevnext-title">Pipeline Hydraulics</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="../lesson07.html" title="next page">
+        <a class="right-next" href="../lesson07/lesson07.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
                 <p class="prevnext-title">Lesson 7. Storage Systems</p>
