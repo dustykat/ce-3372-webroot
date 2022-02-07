@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Lesson 7. Storage Systems
+# # Storage Systems
 # 
 # Storage is used in water supply, storm water management, and wastewater systems for several reasons. 
 # 
@@ -117,7 +117,7 @@
 # - Supply during shutdowns for repairs
 
 # <figure>
-# <img src="http://54.243.252.9/ce-3372-webroot/ce3372-jb/ce3372jb/lessons/lesson07/stor-compartments.png" width="400">
+# <img src="http://54.243.252.9/ce-3372-webroot/ce3372-jb/ce3372jb/lessons/lesson07/stor-compartments.png" height="600">
 # </figure>
 # 
 # ### Flow-Equalization
@@ -157,11 +157,11 @@
 # - Read required storage as sum of two maximum ordinates
 
 # <figure>
-# <img src="http://54.243.252.9/ce-3372-webroot/ce3372-jb/ce3372jb/lessons/lesson07/mass-flow-diagram-one.png" width="400">
+# <img src="http://54.243.252.9/ce-3372-webroot/ce3372-jb/ce3372jb/lessons/lesson07/mass-flow-diagram-one.png" height="400">
 # </figure>
 
 # <figure>
-# <img src="http://54.243.252.9/ce-3372-webroot/ce3372-jb/ce3372jb/lessons/lesson07/mass-flow-12hour.png" width="400">
+# <img src="http://54.243.252.9/ce-3372-webroot/ce3372-jb/ce3372jb/lessons/lesson07/mass-flow-12hour.png" height="400">
 # </figure>
 
 # <figure>
