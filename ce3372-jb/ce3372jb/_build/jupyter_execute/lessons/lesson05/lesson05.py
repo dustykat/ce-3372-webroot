@@ -174,32 +174,6 @@ print ("Discharge : ",round(discharge*1000,3)," liters/sec")
 # 
 # > JupyterLab script for hole in tank (future version this book)
 
-# In[ ]:
-
-
-
-
-
-# **Pump System Requirements**
-# 
-# > This portion of example moved to after pumps
-
-# In[ ]:
-
-
-
-
-
-# **Pump System Fails, Time to Drain**
-# 
-# > This portion of example moved to after pumps
-
-# In[ ]:
-
-
-
-
-
 # ## References
 # 
 # 1. Gupta, R. S. 2017. Hydrology and Hydraulic Systems (4-th Ed). Waveland Press, Inc. pp 633-661 
