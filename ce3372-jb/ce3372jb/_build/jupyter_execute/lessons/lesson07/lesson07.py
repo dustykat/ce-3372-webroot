@@ -165,11 +165,15 @@
 # </figure>
 
 # <figure>
-# <img src="http://54.243.252.9/ce-3372-webroot/ce3372-jb/ce3372jb/lessons/lesson07/MF-spreadsheet-1.png" width="400">
+# <img src="http://54.243.252.9/ce-3372-webroot/ce3372-jb/ce3372jb/lessons/lesson07/MF-spreadsheet-1.png" height="500">
 # </figure>
 # 
 # <figure>
-# <img src="http://54.243.252.9/ce-3372-webroot/ce3372-jb/ce3372jb/lessons/lesson07/MF-spreadsheet-2.png" width="400">
+# <img src="http://54.243.252.9/ce-3372-webroot/ce3372-jb/ce3372jb/lessons/lesson07/MF-spreadsheet-2.png" height="500">
+# </figure>
+# 
+# <figure>
+# <img src="http://54.243.252.9/ce-3372-webroot/ce3372-jb/ce3372jb/lessons/lesson07/MF-spreadsheet-3.png" height="500">
 # </figure>
 
 # ## References
