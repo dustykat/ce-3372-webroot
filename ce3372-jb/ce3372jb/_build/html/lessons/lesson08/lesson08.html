@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lesson 8. Pipe Networks &#8212; CE 3372 Water Systems Design</title>
+    <title>Pipe Networks &#8212; CE 3372 Water Systems Design</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -53,7 +53,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Lesson 9. EPANET Introduction" href="../lesson09.html" />
+    <link rel="next" title="EPANET Introduction" href="../lesson09/lesson09.html" />
     <link rel="prev" title="Storage Systems" href="../lesson07/lesson07.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -133,21 +133,21 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Lesson 8. Pipe Networks
+   Pipe Networks
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lesson09.html">
-   Lesson 9. EPANET Introduction
+  <a class="reference internal" href="../lesson09/lesson09.html">
+   EPANET Introduction
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lesson10.html">
+  <a class="reference internal" href="../lesson10/lesson10.html">
    Lesson 10. EPANET Pumps and Valves
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lesson11.html">
+  <a class="reference internal" href="../lesson11/lesson11.html">
    Lesson 11. EPANET Extended Period Simulation
   </a>
  </li>
@@ -376,28 +376,28 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#laminar-flow-eqn-2-36-pg-17-cite-chin2006">
-       Laminar flow (Eqn 2.36, pg. 17~\cite{chin2006}) :
+      <a class="reference internal nav-link" href="#laminar-flow-eqn-2-36-pg-17-chin-d-2006">
+       Laminar flow (Eqn 2.36, pg. 17 Chin, D. (2006)) :
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#hydraulically-smooth-pipes-eqn-2-34-pg-16-cite-chin2006">
-       Hydraulically Smooth Pipes(Eqn 2.34 pg. 16~\cite{chin2006}):
+      <a class="reference internal nav-link" href="#hydraulically-smooth-pipes-eqn-2-34-pg-16-chin-d-2006">
+       Hydraulically Smooth Pipes(Eqn 2.34 pg. 16 Chin, D. (2006)):
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#hydraulically-rough-pipes-eqn-2-34-pg-16-cite-chin2006">
-       Hydraulically Rough Pipes(Eqn 2.34 pg. 16~\cite{chin2006}):
+      <a class="reference internal nav-link" href="#hydraulically-rough-pipes-eqn-2-34-pg-16-chin-d-2006">
+       Hydraulically Rough Pipes(Eqn 2.34 pg. 16 Chin, D. (2006)):
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#transitional-pipes-colebrook-white-formula-eqn-2-35-pg-17-cite-chin2006">
-       Transitional Pipes (Colebrook-White Formula)(Eqn 2.35 pg. 17~\cite{chin2006}):
+      <a class="reference internal nav-link" href="#transitional-pipes-colebrook-white-formula-eqn-2-35-pg-17-chin-d-2006">
+       Transitional Pipes (Colebrook-White Formula)(Eqn 2.35 pg. 17 Chin, D. (2006)):
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#transitional-pipes-jain-formula-eqn-2-39-pg-19-cite-chin2006">
-       Transitional Pipes (Jain Formula)(Eqn 2.39 pg. 19~\cite{chin2006}):
+      <a class="reference internal nav-link" href="#transitional-pipes-jain-formula-eqn-2-39-pg-19-chin-d-2006">
+       Transitional Pipes (Jain Formula)(Eqn 2.39 pg. 19 Chin, D. (2006)):
       </a>
      </li>
     </ul>
@@ -487,6 +487,11 @@
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#readings">
+   Readings
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -498,8 +503,8 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="lesson-8-pipe-networks">
-<h1>Lesson 8. Pipe Networks<a class="headerlink" href="#lesson-8-pipe-networks" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="pipe-networks">
+<h1>Pipe Networks<a class="headerlink" href="#pipe-networks" title="Permalink to this headline">¶</a></h1>
 <p>Network Hydraulics</p>
 <p>Examples</p>
 <div class="admonition note">
@@ -650,24 +655,24 @@ f=\sigma(Re_D,\frac{k_s}{D})
 \end{equation}
 \)</span></p>
 <p>The structure of <span class="math notranslate nohighlight">\(\sigma\)</span> is determined experimentally.  Over the last century the structure is generally accepted to be one of the following depending on flow conditions and pipe properties</p>
-<div class="section" id="laminar-flow-eqn-2-36-pg-17-cite-chin2006">
-<h4>Laminar flow (Eqn 2.36, pg. 17~\cite{chin2006}) :<a class="headerlink" href="#laminar-flow-eqn-2-36-pg-17-cite-chin2006" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="laminar-flow-eqn-2-36-pg-17-chin-d-2006">
+<h4>Laminar flow (Eqn 2.36, pg. 17 Chin, D. (2006)) :<a class="headerlink" href="#laminar-flow-eqn-2-36-pg-17-chin-d-2006" title="Permalink to this headline">¶</a></h4>
 <p><span class="math notranslate nohighlight">\(\begin{equation}
 f=\frac{64}{Re_D}
 \label{eqn:friction-factor-laminar}
 \end{equation}
 \)</span></p>
 </div>
-<div class="section" id="hydraulically-smooth-pipes-eqn-2-34-pg-16-cite-chin2006">
-<h4>Hydraulically Smooth Pipes(Eqn 2.34 pg. 16~\cite{chin2006}):<a class="headerlink" href="#hydraulically-smooth-pipes-eqn-2-34-pg-16-cite-chin2006" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="hydraulically-smooth-pipes-eqn-2-34-pg-16-chin-d-2006">
+<h4>Hydraulically Smooth Pipes(Eqn 2.34 pg. 16 Chin, D. (2006)):<a class="headerlink" href="#hydraulically-smooth-pipes-eqn-2-34-pg-16-chin-d-2006" title="Permalink to this headline">¶</a></h4>
 <p><span class="math notranslate nohighlight">\(\begin{equation}
 \frac{1}{\sqrt{f}}=-2 log_{10} (\frac{2.51}{Re_d \sqrt{f} })
 \label{eqn:friction-factor-smooth}
 \end{equation}
 \)</span></p>
 </div>
-<div class="section" id="hydraulically-rough-pipes-eqn-2-34-pg-16-cite-chin2006">
-<h4>Hydraulically Rough Pipes(Eqn 2.34 pg. 16~\cite{chin2006}):<a class="headerlink" href="#hydraulically-rough-pipes-eqn-2-34-pg-16-cite-chin2006" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="hydraulically-rough-pipes-eqn-2-34-pg-16-chin-d-2006">
+<h4>Hydraulically Rough Pipes(Eqn 2.34 pg. 16 Chin, D. (2006)):<a class="headerlink" href="#hydraulically-rough-pipes-eqn-2-34-pg-16-chin-d-2006" title="Permalink to this headline">¶</a></h4>
 <p><span class="math notranslate nohighlight">\(
 \begin{equation}
 \frac{1}{\sqrt{f}}=-2 log_{10} (\frac{\frac{k_e}{D}} {3.7})
@@ -675,8 +680,8 @@ f=\frac{64}{Re_D}
 \end{equation}
 \)</span></p>
 </div>
-<div class="section" id="transitional-pipes-colebrook-white-formula-eqn-2-35-pg-17-cite-chin2006">
-<h4>Transitional Pipes (Colebrook-White Formula)(Eqn 2.35 pg. 17~\cite{chin2006}):<a class="headerlink" href="#transitional-pipes-colebrook-white-formula-eqn-2-35-pg-17-cite-chin2006" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="transitional-pipes-colebrook-white-formula-eqn-2-35-pg-17-chin-d-2006">
+<h4>Transitional Pipes (Colebrook-White Formula)(Eqn 2.35 pg. 17 Chin, D. (2006)):<a class="headerlink" href="#transitional-pipes-colebrook-white-formula-eqn-2-35-pg-17-chin-d-2006" title="Permalink to this headline">¶</a></h4>
 <p><span class="math notranslate nohighlight">\(
 \begin{equation}
 \frac{1}{\sqrt{f}}=-2 log_{10} (\frac{\frac{k_e}{D}} {3.7} + \frac{2.51}{Re_d \sqrt{f} } )
@@ -684,8 +689,8 @@ f=\frac{64}{Re_D}
 \end{equation}
 \)</span></p>
 </div>
-<div class="section" id="transitional-pipes-jain-formula-eqn-2-39-pg-19-cite-chin2006">
-<h4>Transitional Pipes (Jain Formula)(Eqn 2.39 pg. 19~\cite{chin2006}):<a class="headerlink" href="#transitional-pipes-jain-formula-eqn-2-39-pg-19-cite-chin2006" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="transitional-pipes-jain-formula-eqn-2-39-pg-19-chin-d-2006">
+<h4>Transitional Pipes (Jain Formula)(Eqn 2.39 pg. 19 Chin, D. (2006)):<a class="headerlink" href="#transitional-pipes-jain-formula-eqn-2-39-pg-19-chin-d-2006" title="Permalink to this headline">¶</a></h4>
 <p><span class="math notranslate nohighlight">\(\begin{equation}
 f=\frac{0.25}{[log_{10} (\frac{\frac{k_e}{D}} {3.7} + \frac{5.74}{Re_d^{0.9} } )]  ^2}
 \label{eqn:friction-factor-Jain}
@@ -698,7 +703,7 @@ f=\frac{0.25}{[log_{10} (\frac{\frac{k_e}{D}} {3.7} + \frac{5.74}{Re_d^{0.9} } )
 <p>Several methods are used to produce solutions (estimates of discharge, head loss, and pressure) in a network.<br />
 An early one, that only involves analysis of loops is the Hardy-Cross method.<br />
 A later one, more efficient, is a Newton-Raphson method that uses node equations to balance discharges and demands, and loop equations to balance head losses.</p>
-<p>However, a rather ingenious method exists developed by \cite{Haman1971}, where the flow distribution and head values are determined simultaneously.   The task here is to  outline the \cite{Haman1971} method on the problem below – first some necessary definitions and analysis.</p>
+<p>However, a rather ingenious method exists developed by Hamam, Y.M., and Brameller, A. (1971), where the flow distribution and head values are determined simultaneously.  The task here is to  outline the  method on the problem below – first some necessary definitions and analysis.</p>
 <p>The fundamental procedure is:</p>
 <ul class="simple">
 <li><p>Continuity is written at nodes (node equations).</p></li>
@@ -797,7 +802,7 @@ The importance is that all the information needed to find a solution is containe
 <span class="mi">0</span> <span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span>
 <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="o">-</span><span class="mi">1</span>
 <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span>
-<span class="mi">0</span> <span class="mi">4</span> <span class="mi">3</span> <span class="mi">1</span> <span class="o">-</span><span class="mi">000</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> 
+<span class="mi">0</span> <span class="mi">4</span> <span class="mi">3</span> <span class="mi">1</span> <span class="o">-</span><span class="mi">300</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> 
 
 </pre></div>
 </div>
@@ -1567,6 +1572,22 @@ Passwd:  <code class="docutils literal notranslate"><span class="pre">vnc#3372$1
 </div>
 </div>
 </div>
+<div class="section" id="readings">
+<h2>Readings<a class="headerlink" href="#readings" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Cleveland, T. G. (2015) Water Systems Design Notes to Accompany CE 3372 at TTU, Department of Civil, Environmental, and Construction Engineering, Whitacre College of Engineering. <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/1-Lessons/Lesson08/PowerPointInLecture/CE3372-Lesson-8.key.pdf">http://54.243.252.9/ce-3372-webroot/1-Lessons/Lesson08/PowerPointInLecture/CE3372-Lesson-8.key.pdf</a></p></li>
+<li><p>Hydraulics of Pipelines and Pipe Networks Wurbs, R.A., and James, W. P. (2002) Water Resources Engineering, Prentice Hall; pp.130-156; and 156-198. <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/3-Readings/Wurbs130-198/">http://54.243.252.9/ce-3372-webroot/3-Readings/Wurbs130-198/</a></p></li>
+<li><p>Pipe Networks Chin, D. (2006). pp. 27-48 in “Water Resources Engineering, 2 ed.” Prentice Hall, Inc. <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/3-Readings/Chin_27-48/">http://54.243.252.9/ce-3372-webroot/3-Readings/Chin_27-48/</a></p></li>
+<li><p>Water Distribution Systems “Water Distribution Systems” in Land Development Handbook, Ed. S.O. Dewberry, Dewberry Inc., McGraw-Hill <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/3-Readings/WaterDistributionSystems/">http://54.243.252.9/ce-3372-webroot/3-Readings/WaterDistributionSystems/</a></p></li>
+<li><p>Hamam, Y.M., and Brameller, A. (1971) “Hybrid method for the solution of piping networks.” Proc. IEEE, Vol. 118, No. 11, pp 1607-1612. <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/3-Readings/HamamAndBrameller/">http://54.243.252.9/ce-3372-webroot/3-Readings/HamamAndBrameller/</a></p></li>
+<li><p>Jeppson, R.W. (1977) Analysis of Flow in Pipe Networks, Ann Arbor Science pp. 115-129 <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/3-Readings/NewtonRaphsonTheory/">http://54.243.252.9/ce-3372-webroot/3-Readings/NewtonRaphsonTheory/</a></p></li>
+<li><p>Jeppson, R.W. (1977) Analysis of Flow in Pipe Networks, Ann Arbor Science pp. 53-69 <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/3-Readings/FlowInPipeNetworks/">http://54.243.252.9/ce-3372-webroot/3-Readings/FlowInPipeNetworks/</a></p></li>
+<li><p>Roberson, J.A., Cassidy, J.J., and Chaudry, M.H. (1988) Closed Conduits in “Hydraulic Engineering.” Houghton Mifflin Co. pp. 240-310 <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/3-Readings/Chapter5/">http://54.243.252.9/ce-3372-webroot/3-Readings/Chapter5/</a></p></li>
+<li><p>Cleveland, T. G. (2013) Water Systems Design Notes to Accompany CE 3372 at TTU, Department of Civil, Environmental, and Construction Engineering, Whitacre College of Engineering. <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/3-Readings/HydraulicsNotes/">http://54.243.252.9/ce-3372-webroot/3-Readings/HydraulicsNotes/</a></p></li>
+<li><p>Computational Hydraulics in R (for CE 3305) <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/3-Readings/CFMinR/">http://54.243.252.9/ce-3372-webroot/3-Readings/CFMinR/</a></p></li>
+<li><p>Yoo, D.H. and Singh V. P. (2005) Two Methods for the Computation of Commercial Pipe Friction Factors. ASCE Journal of Hydraulic Engineering, 2005, 131(8): 694-704 <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/3-Readings/FrictionFactor/">http://54.243.252.9/ce-3372-webroot/3-Readings/FrictionFactor/</a></p></li>
+</ol>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -1608,10 +1629,10 @@ Passwd:  <code class="docutils literal notranslate"><span class="pre">vnc#3372$1
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="../lesson09.html" title="next page">
+        <a class="right-next" href="../lesson09/lesson09.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Lesson 9. EPANET Introduction</p>
+                <p class="prevnext-title">EPANET Introduction</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

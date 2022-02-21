@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Lesson 8. Pipe Networks
+# # Pipe Networks
 # 
 # Network Hydraulics
 # 
@@ -180,33 +180,33 @@
 # 
 # The structure of $\sigma$ is determined experimentally.  Over the last century the structure is generally accepted to be one of the following depending on flow conditions and pipe properties
 # 
-# #### Laminar flow (Eqn 2.36, pg. 17~\cite{chin2006}) :  
+# #### Laminar flow (Eqn 2.36, pg. 17 Chin, D. (2006)) :  
 # $\begin{equation}
 # f=\frac{64}{Re_D}
 # \label{eqn:friction-factor-laminar}
 # \end{equation}
 # $
-# #### Hydraulically Smooth Pipes(Eqn 2.34 pg. 16~\cite{chin2006}):
+# #### Hydraulically Smooth Pipes(Eqn 2.34 pg. 16 Chin, D. (2006)):
 # $\begin{equation}
 # \frac{1}{\sqrt{f}}=-2 log_{10} (\frac{2.51}{Re_d \sqrt{f} })
 # \label{eqn:friction-factor-smooth}
 # \end{equation}
 # $
-# #### Hydraulically Rough Pipes(Eqn 2.34 pg. 16~\cite{chin2006}):
+# #### Hydraulically Rough Pipes(Eqn 2.34 pg. 16 Chin, D. (2006)):
 # $
 # \begin{equation}
 # \frac{1}{\sqrt{f}}=-2 log_{10} (\frac{\frac{k_e}{D}} {3.7})
 # \label{eqn:friction-factor-rough}
 # \end{equation}
 # $
-# #### Transitional Pipes (Colebrook-White Formula)(Eqn 2.35 pg. 17~\cite{chin2006}):
+# #### Transitional Pipes (Colebrook-White Formula)(Eqn 2.35 pg. 17 Chin, D. (2006)):
 # $
 # \begin{equation}
 # \frac{1}{\sqrt{f}}=-2 log_{10} (\frac{\frac{k_e}{D}} {3.7} + \frac{2.51}{Re_d \sqrt{f} } )
 # \label{eqn:friction-factor-CW}
 # \end{equation}
 # $
-# #### Transitional Pipes (Jain Formula)(Eqn 2.39 pg. 19~\cite{chin2006}):
+# #### Transitional Pipes (Jain Formula)(Eqn 2.39 pg. 19 Chin, D. (2006)):
 # $\begin{equation}
 # f=\frac{0.25}{[log_{10} (\frac{\frac{k_e}{D}} {3.7} + \frac{5.74}{Re_d^{0.9} } )]  ^2}
 # \label{eqn:friction-factor-Jain}
@@ -218,7 +218,7 @@
 # An early one, that only involves analysis of loops is the Hardy-Cross method.  
 # A later one, more efficient, is a Newton-Raphson method that uses node equations to balance discharges and demands, and loop equations to balance head losses.  
 # 
-# However, a rather ingenious method exists developed by \cite{Haman1971}, where the flow distribution and head values are determined simultaneously.   The task here is to  outline the \cite{Haman1971} method on the problem below -- first some necessary definitions and analysis.
+# However, a rather ingenious method exists developed by Hamam, Y.M., and Brameller, A. (1971), where the flow distribution and head values are determined simultaneously.  The task here is to  outline the  method on the problem below -- first some necessary definitions and analysis.
 # 
 # The fundamental procedure is:
 # 
@@ -340,7 +340,7 @@
 # 0 1 -1 0 0 1
 # 0 0 0 1 -1 -1
 # 0 0 1 0 1 0
-# 0 4 3 1 -000 0 0 0 0 0 
+# 0 4 3 1 -300 0 0 0 0 0 
 # 
 # ```
 # 
@@ -1124,3 +1124,35 @@ if verbose == 'true' :
 # 
 # The example is saved on the AWS host as Lesson8-Example.net
 # 
+
+# ## Readings
+# 1. Cleveland, T. G. (2015) Water Systems Design Notes to Accompany CE 3372 at TTU, Department of Civil, Environmental, and Construction Engineering, Whitacre College of Engineering. [http://54.243.252.9/ce-3372-webroot/1-Lessons/Lesson08/PowerPointInLecture/CE3372-Lesson-8.key.pdf](http://54.243.252.9/ce-3372-webroot/1-Lessons/Lesson08/PowerPointInLecture/CE3372-Lesson-8.key.pdf)
+# 
+# 2. Hydraulics of Pipelines and Pipe Networks Wurbs, R.A., and James, W. P. (2002) Water Resources Engineering, Prentice Hall; pp.130-156; and 156-198. [http://54.243.252.9/ce-3372-webroot/3-Readings/Wurbs130-198/](http://54.243.252.9/ce-3372-webroot/3-Readings/Wurbs130-198/)
+# 
+# 3. Pipe Networks Chin, D. (2006). pp. 27-48 in "Water Resources Engineering, 2 ed." Prentice Hall, Inc. [http://54.243.252.9/ce-3372-webroot/3-Readings/Chin_27-48/](http://54.243.252.9/ce-3372-webroot/3-Readings/Chin_27-48/)
+# 
+# 4. Water Distribution Systems "Water Distribution Systems" in Land Development Handbook, Ed. S.O. Dewberry, Dewberry Inc., McGraw-Hill [http://54.243.252.9/ce-3372-webroot/3-Readings/WaterDistributionSystems/](http://54.243.252.9/ce-3372-webroot/3-Readings/WaterDistributionSystems/)
+# 
+# 5. Hamam, Y.M., and Brameller, A. (1971) "Hybrid method for the solution of piping networks." Proc. IEEE, Vol. 118, No. 11, pp 1607-1612. [http://54.243.252.9/ce-3372-webroot/3-Readings/HamamAndBrameller/](http://54.243.252.9/ce-3372-webroot/3-Readings/HamamAndBrameller/)
+# 
+# 6. Jeppson, R.W. (1977) Analysis of Flow in Pipe Networks, Ann Arbor Science pp. 115-129 [http://54.243.252.9/ce-3372-webroot/3-Readings/NewtonRaphsonTheory/](http://54.243.252.9/ce-3372-webroot/3-Readings/NewtonRaphsonTheory/)
+# 
+# 7. Jeppson, R.W. (1977) Analysis of Flow in Pipe Networks, Ann Arbor Science pp. 53-69 [http://54.243.252.9/ce-3372-webroot/3-Readings/FlowInPipeNetworks/](http://54.243.252.9/ce-3372-webroot/3-Readings/FlowInPipeNetworks/)
+# 
+# 8. Roberson, J.A., Cassidy, J.J., and Chaudry, M.H. (1988) Closed Conduits in "Hydraulic Engineering." Houghton Mifflin Co. pp. 240-310 [http://54.243.252.9/ce-3372-webroot/3-Readings/Chapter5/](http://54.243.252.9/ce-3372-webroot/3-Readings/Chapter5/)
+# 
+# 9. Cleveland, T. G. (2013) Water Systems Design Notes to Accompany CE 3372 at TTU, Department of Civil, Environmental, and Construction Engineering, Whitacre College of Engineering. [http://54.243.252.9/ce-3372-webroot/3-Readings/HydraulicsNotes/](http://54.243.252.9/ce-3372-webroot/3-Readings/HydraulicsNotes/)
+# 
+# 10. Computational Hydraulics in R (for CE 3305) [http://54.243.252.9/ce-3372-webroot/3-Readings/CFMinR/](http://54.243.252.9/ce-3372-webroot/3-Readings/CFMinR/)
+# 
+# 11. Yoo, D.H. and Singh V. P. (2005) Two Methods for the Computation of Commercial Pipe Friction Factors. ASCE Journal of Hydraulic Engineering, 2005, 131(8): 694-704 [http://54.243.252.9/ce-3372-webroot/3-Readings/FrictionFactor/](http://54.243.252.9/ce-3372-webroot/3-Readings/FrictionFactor/)
+# 
+# 
+# 
+
+# In[ ]:
+
+
+
+
