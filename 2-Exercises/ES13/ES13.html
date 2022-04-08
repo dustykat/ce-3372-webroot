@@ -13082,16 +13082,16 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Download</strong> this file as a Jupyter Notebook@ <a href="http://54.243.252.9/ce-3372-webroot/2-Exercises/ES13/ES13.ipynb">http://54.243.252.9/ce-3372-webroot/2-Exercises/ES14/ES14.ipynb</a></p>
+<p><strong>Download</strong> this file as a Jupyter Notebook@ <a href="http://54.243.252.9/ce-3372-webroot/2-Exercises/ES13/ES13.ipynb">ES13.ipynb</a></p>
 <hr>
-<h1 id="ES-13">ES-13<a class="anchor-link" href="#ES-13">&#182;</a></h1><p>Copyright © 2021 Theodore G. Cleveland</p>
+<h1 id="ES-13">ES-13<a class="anchor-link" href="#ES-13">&#182;</a></h1><p>Copyright © 2022 Theodore G. Cleveland</p>
 <hr>
-<h2 id="Purpose:">Purpose:<a class="anchor-link" href="#Purpose:">&#182;</a></h2><p>Demonstrate application of SWMM for analysis of a detention pond as a stormwater control strategy.</p>
+<h2 id="Purpose:">Purpose:<a class="anchor-link" href="#Purpose:">&#182;</a></h2><p>Demonstrate conduit sizing using Rational equation method for eventual application of SWMM for analysis of a storm drainage system.</p>
 <hr>
 <h2 id="Objectives:">Objectives:<a class="anchor-link" href="#Objectives:">&#182;</a></h2><ul>
-<li>Compute depth and discharge in a detention pond using SWMM</li>
-<li>Introduction to use of professional software (SWMM)</li>
-<li>Develop expertise in interpreting output to answer specific hydraulic questions</li>
+<li>Determine drainage areas to each inlet</li>
+<li>Determine inlet times and pipe travel times, to size conduits for a storm drain system.</li>
+<li>Prepare data for hydraulic model testing in SWMM</li>
 </ul>
 
 </div>
@@ -13102,20 +13102,22 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
 <h2 id="Problem-Statement">Problem Statement<a class="anchor-link" href="#Problem-Statement">&#182;</a></h2><p>Figure 1 is an older (circa 1993) aerial image of a portion of Houston, Texas. The red polygon is the drainage boundary for a storm sewer system that drains North from the part of the area near Westheimer Road to a tributary of Buffalo Bayou and East from the area. The
-drainage ditch is shown as the “blue” fuzzy line on the figure. Drainage in the ditch is from
-West to East. The two main streets in the study area are highlighted in magenta.</p>
+drainage ditch is shown as the “blue” fuzzy line on the figure.</p>
 <figure>
     <img src="http://54.243.252.9/ce-3372-webroot/2-Exercises/ES13/Image118.png" alt="Trulli" style="width:70%">
     <figcaption align = "center">
-         <b><br>Tanglewilde Drive Study Area</b>
+         <b>Figure 1. Tanglewilde Drive Study Area</b>
     </figcaption>
-</figure>
+</figure><p>Drainage in the ditch is from
+West to East. The two main streets in the study area are highlighted in magenta.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>Figure 2 is a map showing storm drainage alignments and inlets location.</p>
 <figure>
     <img src="http://54.243.252.9/ce-3372-webroot/2-Exercises/ES13/Image119B.png" alt="Trulli" style="width:70%">
     <figcaption align = "center">
@@ -13128,7 +13130,6 @@ West to East. The two main streets in the study area are highlighted in magenta.
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Figure 2 is a map showing storm drainage alignments and inlets location.</p>
 <p>The figure shows land surface elevations in feet at the indicated locations. A linear scale is shown in the legend. Use the map(s) and:</p>
 <ol>
 <li>Construct a land surface elevation contour map using the provided elevation and locations. Get the file from <a href="http:/54.243.252.9/ce-3372-webroot/2-Exercises/ES13/TanglewildeElevations.txt">Here</a></li>
@@ -13155,10 +13156,7 @@ West to East. The two main streets in the study area are highlighted in magenta.
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
 <h2 id="References">References<a class="anchor-link" href="#References">&#182;</a></h2><ol>
-<li><p>Rossman, L. (2009). Storm Water Management Model user’s manual version 5.0. Technical Report<br> EPA/600/R-05/040, U.S. Environmental Protection Agency, National Risk Management Research Laboratory Cincinnati, OH 45268</p>
-</li>
-<li><p>Plan View Image (larger format) <a href="http://54.243.252.9/ce-3372-webroot/2-Exercises/ES14/ES15-ImageAnalysisBase.pdf">http://54.243.252.9/ce-3372-webroot/2-Exercises/ES14/ES15-ImageAnalysisBase.pdf</a></p>
-</li>
+<li>Rossman, L. (2009). Storm Water Management Model user’s manual version 5.0. Technical Report<br> EPA/600/R-05/040, U.S. Environmental Protection Agency, National Risk Management Research Laboratory Cincinnati, OH 45268</li>
 </ol>
 <hr>
 
