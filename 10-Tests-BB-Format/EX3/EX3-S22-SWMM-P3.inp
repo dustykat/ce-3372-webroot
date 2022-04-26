@@ -1,0 +1,173 @@
+[TITLE]
+;;Project Title/Notes
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CFS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         ELEVATION
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           04/26/2017
+START_TIME           00:00:00
+REPORT_START_DATE    04/26/2017
+REPORT_START_TIME    00:00:00
+END_DATE             04/26/2017
+END_TIME             06:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:01:00
+WET_STEP             00:01:00
+DRY_STEP             00:01:00
+ROUTING_STEP         0:00:30 
+RULE_STEP            00:00:00
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         12.557
+MAX_TRIALS           8
+HEAD_TOLERANCE       0.005
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+PuffyTheCloud    INTENSITY 1:00     1.0      TIMESERIES DESIGN-STORM    
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+DA_1             PuffyTheCloud    4                6        65       2500     0.5      0                        
+DA_2             PuffyTheCloud    4                5.1      55       2000     0.5      0                        
+DA_3             PuffyTheCloud    5                3.5      70       2000     0.5      0                        
+DA_4             PuffyTheCloud    1                11       60       800      0.5      0                        
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+DA_1             0.01       0.1        0.05       0.05       25         OUTLET    
+DA_2             0.01       0.1        0.05       0.05       25         OUTLET    
+DA_3             0.01       0.1        0.05       0.05       25         OUTLET    
+DA_4             0.01       0.1        0.05       0.05       25         OUTLET    
+
+[INFILTRATION]
+;;Subcatchment   Param1     Param2     Param3     Param4     Param5    
+;;-------------- ---------- ---------- ---------- ---------- ----------
+DA_1             10         6          4          7          0         
+DA_2             12         6          4          7          0         
+DA_3             12         6          4          7          0         
+DA_4             3.0        0.5        4          7          0         
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+4                25         6          0          0          0         
+5                23.92      6          0          0          0         
+6                23         3          0          0          0         
+1                26         6          0          0          0         
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+7                21         FREE                        NO                       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+1                4                5                600        0.013      25         24.420     0          0         
+2                5                6                600        0.013      23.92      23         0          0         
+3                6                7                1800       0.013      23         21         0          0         
+4                1                5                800        0.013      26         25.920     0          0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+1                CIRCULAR     2                0          0          0          1                    
+2                CIRCULAR     2                0          0          0          1                    
+3                CIRCULAR     2                0          0          0          1                    
+4                CIRCULAR     2                0          0          0          1                    
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+DESIGN-STORM                0          4.4       
+DESIGN-STORM                1          4.4       
+DESIGN-STORM                2          4.4       
+DESIGN-STORM                3          4.4       
+DESIGN-STORM                4          0         
+DESIGN-STORM                5          0         
+DESIGN-STORM                6          0         
+DESIGN-STORM                7          0         
+
+[REPORT]
+;;Reporting Options
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS -2604.683 0.000 10000.000 10000.000
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+4                -378.997           8379.791          
+5                1584.022           8388.430          
+6                3506.021           8379.791          
+1                1589.644           7108.014          
+7                5283.024           8379.791          
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+DA_1             -2156.000          9686.411          
+DA_1             -640.321           9686.411          
+DA_1             -647.383           8484.848          
+DA_1             -2156.000          8501.742          
+DA_1             -2148.760          9256.198          
+DA_2             -2148.760          8319.559          
+DA_2             -647.383           8333.333          
+DA_2             -640.321           6620.209          
+DA_2             -2173.422          6602.787          
+DA_2             -2176.309          8388.430          
+DA_3             1641.909           9668.990          
+DA_3             3384.070           9668.990          
+DA_3             3384.070           8536.585          
+DA_3             1641.909           8571.429          
+DA_3             1641.909           9198.606          
+DA_4             2052.561           5445.495          
+DA_4             3080.436           4818.318          
+DA_4             4334.791           5375.809          
+DA_4             4090.889           6595.321          
+DA_4             3237.230           7222.499          
+DA_4             2139.669           7100.548          
+DA_4             1460.227           6490.791          
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+PuffyTheCloud    422.397            9547.038          
+
