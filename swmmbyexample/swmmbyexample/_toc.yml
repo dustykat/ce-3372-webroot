@@ -4,6 +4,16 @@
 format: jb-book
 root: intro
 chapters:
+- file: examples/introduction/introduction
+
+- file: examples/example00/example00 #starting SWMM in the shared environment
+  sections:
+  - file: examples/example00/abstract
+  - file: examples/example00/background
+  - file: examples/example00/dataassembly
+  - file: examples/example00/modelassembly
+  - file: examples/example00/runandinterpret
+  
 - file: examples/example01/example01
   sections:
   - file: examples/example01/abstract
