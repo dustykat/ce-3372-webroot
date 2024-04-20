@@ -15,9 +15,9 @@ chapters:
 - file: lessons/lesson06/lesson06
 - file: lessons/lesson07/lesson07
 - file: lessons/lesson08/lesson08
-- file: lessons/lesson09/lesson09
-- file: lessons/lesson10/lesson10
-- file: lessons/lesson11/lesson11
+- file: lessons/epanet_intro/epanet_intro
+- file: lessons/epanet_pumps/epanet_pumps
+- file: lessons/epanet_eps/epanet_eps
 - file: lessons/lesson12
 - file: lessons/lesson13
 - file: lessons/lesson14
