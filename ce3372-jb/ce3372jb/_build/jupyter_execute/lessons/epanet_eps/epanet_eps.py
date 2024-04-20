@@ -34,9 +34,3 @@
 # 4. Water Quality Modeling
 # 5. Example(s)
 #   - Eagle Pass Hydraulics Example
-
-# In[ ]:
-
-
-
-

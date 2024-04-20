@@ -201,9 +201,3 @@
 # 5. Water Distribution Systems "Water Distribution Systems" in Land Development Handbook, Ed. S.O. Dewberry, Dewberry Inc., McGraw-Hill [http://54.243.252.9/ce-3372-webroot/3-Readings/WaterDistributionSystems/](http://54.243.252.9/ce-3372-webroot/3-Readings/WaterDistributionSystems/)
 # 
 # 
-
-# In[ ]:
-
-
-
-
