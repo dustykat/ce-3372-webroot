@@ -36,19 +36,17 @@
 #   - Three-reservoirs to a common junction
 #   - Loop network
 
-# # EPANET Introduction
-# 
-# This lesson is a brief overview of the EPANET software available from the mighty internet, either by download or using the shared version at [http://freeswmm.ddns.net](http://freeswmm.ddns.net).
+# This lesson is a brief overview of the EPANET software available from the mighty internet, either by download or use the shared version at [http://freeswmm.ddns.net](http://freeswmm.ddns.net).
 # 
 # ## About EPANET
 # 
-# EPA-NET is a computer program that performs hydraulics computations in pressure-pipe systems. 
+# EPANET is a computer program that performs hydraulics computations in pressure-pipe systems. 
 # Most of the problems in the preceding chapters can be solved or well approximated using EPA-NET.
 # The remainder of this lesson shows how to use EPA-NET by a series of representative examples. 
 # These examples are at best a subset of the capabilities of the program, but should be enough to get one started. 
 # The program requires some hydraulic insight to interpret the results as well as detect data entry or conceptualization errors.
 # 
-# EPA-NET models are comprised of nodes, links,and reservoirs. 
+# EPANET models are comprised of nodes, links,and reservoirs. 
 # Pumps are treated as special links (that add head). 
 # Valves are also treated as special links depending on the valve types.
 # All **working** models must have a reservoir (or storage tank)!
@@ -75,10 +73,7 @@
 # Nodes, reservoirs, tanks, pipes, pumps, and valves are selected from the hydraulic components in the icon menu.
 # 
 # 
-# ## Example of a Minimal Model
-# 
-# ## A Workshop based on EPANET by Example 
-# 
+# ## Examples from EPANET by Example 
 
 # ### Example 1: Flow in a Single Pipe 
 # 
@@ -203,8 +198,6 @@
 # ```
 # 
 
-# 
-
 # ### Example 2: Flow Between Two Reservoirs 
 # 
 # This example represents the situation where the total head is known at two points on a
@@ -249,12 +242,6 @@
 # ```{note}
 # This example was saved as `Lesson8-Example.net` on the AWS shared desktop from the "live" demonstration if you wish to run it.  It can also be downloaded from [http://54.243.252.9/ce-3372-webroot/EPANET-Files/EX1/EX1.net](http://54.243.252.9/ce-3372-webroot/EPANET-Files/EX1/EX1.net).  The background map is available as [http://54.243.252.9/ce-3372-webroot/EPANET-Files/EX1/EX1.bmp](http://54.243.252.9/ce-3372-webroot/EPANET-Files/EX1/EX1.bmp) as demonstrated in the lecture.
 # ```
-
-# In[ ]:
-
-
-
-
 
 # ### Example 3: Three-Reservoirs Connected to a Common Junction
 # 
@@ -305,12 +292,6 @@
 # ```{note}
 # This example was saved as `Lesson9-EX3.net` on the AWS shared desktop if you wish to run it there.  It can also be downloaded from [http://54.243.252.9/ce-3372-webroot/EPANET-Files/EX3/EX3.net](http://54.243.252.9/ce-3372-webroot/EPANET-Files/EX3/EX3.net).  The background map is available as [http://54.243.252.9/ce-3372-webroot/EPANET-Files/EX3/EX3.bmp](http://54.243.252.9/ce-3372-webroot/EPANET-Files/EX3/EX3.bmp) as demonstrated in the lecture.
 # ```
-
-# In[ ]:
-
-
-
-
 
 # ### Example 4: A Simple Network 
 # 

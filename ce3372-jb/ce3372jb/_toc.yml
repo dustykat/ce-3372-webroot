@@ -10,6 +10,7 @@ chapters:
 - file: lessons/lesson02/lesson02
 - file: lessons/lesson03/lesson03
 - file: lessons/design_drawings/design_drawings
+- file: lessons/qgis_topography/qgis_topography
 - file: lessons/lesson04/lesson04
 - file: lessons/lesson05/lesson05
 - file: lessons/lesson06/lesson06

@@ -335,69 +335,50 @@
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   EPANET Introduction
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#readings">
+   Readings
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#readings">
-     Readings
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#videos">
-     Videos
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#lesson-outline">
-     Lesson Outline
-    </a>
-   </li>
-  </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   EPANET Introduction
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#videos">
+   Videos
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#about-epanet">
-     About EPANET
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lesson-outline">
+   Lesson Outline
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#about-epanet">
+   About EPANET
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#examples-from-epanet-by-example">
+   Examples from EPANET by Example
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-1-flow-in-a-single-pipe">
+     Example 1: Flow in a Single Pipe
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example-of-a-minimal-model">
-     Example of a Minimal Model
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-2-flow-between-two-reservoirs">
+     Example 2: Flow Between Two Reservoirs
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-workshop-based-on-epanet-by-example">
-     A Workshop based on EPANET by Example
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-3-three-reservoirs-connected-to-a-common-junction">
+     Example 3: Three-Reservoirs Connected to a Common Junction
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#example-1-flow-in-a-single-pipe">
-       Example 1: Flow in a Single Pipe
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#example-2-flow-between-two-reservoirs">
-       Example 2: Flow Between Two Reservoirs
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#example-3-three-reservoirs-connected-to-a-common-junction">
-       Example 3: Three-Reservoirs Connected to a Common Junction
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#example-4-a-simple-network">
-       Example 4: A Simple Network
-      </a>
-     </li>
-    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-4-a-simple-network">
+     Example 4: A Simple Network
+    </a>
    </li>
   </ul>
  </li>
@@ -448,19 +429,16 @@
 <li><p>Three-reservoirs to a common junction</p></li>
 <li><p>Loop network</p></li>
 </ul>
+<p>This lesson is a brief overview of the EPANET software available from the mighty internet, either by download or use the shared version at <a class="reference external" href="http://freeswmm.ddns.net">http://freeswmm.ddns.net</a>.</p>
 </div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="id1">
-<h1>EPANET Introduction<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<p>This lesson is a brief overview of the EPANET software available from the mighty internet, either by download or using the shared version at <a class="reference external" href="http://freeswmm.ddns.net">http://freeswmm.ddns.net</a>.</p>
 <div class="section" id="about-epanet">
 <h2>About EPANET<a class="headerlink" href="#about-epanet" title="Permalink to this headline">¶</a></h2>
-<p>EPA-NET is a computer program that performs hydraulics computations in pressure-pipe systems.
+<p>EPANET is a computer program that performs hydraulics computations in pressure-pipe systems.
 Most of the problems in the preceding chapters can be solved or well approximated using EPA-NET.
 The remainder of this lesson shows how to use EPA-NET by a series of representative examples.
 These examples are at best a subset of the capabilities of the program, but should be enough to get one started.
 The program requires some hydraulic insight to interpret the results as well as detect data entry or conceptualization errors.</p>
-<p>EPA-NET models are comprised of nodes, links,and reservoirs.
+<p>EPANET models are comprised of nodes, links,and reservoirs.
 Pumps are treated as special links (that add head).
 Valves are also treated as special links depending on the valve types.
 All <strong>working</strong> models must have a reservoir (or storage tank)!</p>
@@ -480,11 +458,8 @@ The main defaults of importance are the head loss equations (Darcy-Weisbach, Haz
 <p>The defaults are set from the main menu in <code class="docutils literal notranslate"><span class="pre">/Project/Defaults</span></code> then using the tabs in the dialog.
 Nodes, reservoirs, tanks, pipes, pumps, and valves are selected from the hydraulic components in the icon menu.</p>
 </div>
-<div class="section" id="example-of-a-minimal-model">
-<h2>Example of a Minimal Model<a class="headerlink" href="#example-of-a-minimal-model" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="a-workshop-based-on-epanet-by-example">
-<h2>A Workshop based on EPANET by Example<a class="headerlink" href="#a-workshop-based-on-epanet-by-example" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="examples-from-epanet-by-example">
+<h2>Examples from EPANET by Example<a class="headerlink" href="#examples-from-epanet-by-example" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="example-1-flow-in-a-single-pipe">
 <h3>Example 1: Flow in a Single Pipe<a class="headerlink" href="#example-1-flow-in-a-single-pipe" title="Permalink to this headline">¶</a></h3>
 <p>The simplest model to consider is from an earlier exercise in the course.</p>
