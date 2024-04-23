@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Topographic Map from XYZ coordinates
+# # Simple Maps from XYZ data
 # 
 # :::{admonition} Course Website
 # [link to webster](http://54.243.252.9/ce-3372-webroot/)
