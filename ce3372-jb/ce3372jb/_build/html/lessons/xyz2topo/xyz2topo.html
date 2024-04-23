@@ -395,19 +395,19 @@
 <p>The .png file is <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/2-Exercises/ES2/SomewhereUSABaseMap.png">http://54.243.252.9/ce-3372-webroot/2-Exercises/ES2/SomewhereUSABaseMap.png</a> so you can render a larger graphic if needed.</p>
 </div>
 <p>To construct a topographic contour map of the area:</p>
-<ol class="simple">
+<ul class="simple">
 <li><p>Use the indicated origin and find X,Y, and Z coordinates for each displayed elevation. Include example measurements for one or two points (as if someone else would have to check your work)</p></li>
-<li><p>Arrange those coordinates into an ASCII (text) file where each row of the file is a coordinate triple. (See the example at bottom of this document)</p></li>
+<li><p>Arrange those coordinates into an ASCII (text) file where each row of the file is a coordinate triple. For this example the data are stored in a file named <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372-jb/ce3372jb/lessons/xyz2topo/XYZSomewhereUSA.txt">XYZSomewhereUSA.txt</a>, which looks like:</p></li>
 <li><p>Use the ASCII file to make a topographic map</p></li>
-</ol>
+</ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The software choice is yours; you can always use <a class="reference external" href="http://54.243.252.9/toolbox/ordinarytools/SimpleContourMap/">http://54.243.252.9/toolbox/ordinarytools/SimpleContourMap/</a> if you wish.  The credentials are username==<code class="docutils literal notranslate"><span class="pre">TTUStudent</span></code> password==<code class="docutils literal notranslate"><span class="pre">id10t</span></code></p>
 </div>
-<ol class="simple">
+<ul class="simple">
 <li><p>Overlay the topographic map onto the base map (the script below requires analyst trial-and-error to get the plot windows to align nicely)</p></li>
-<li><p>Export the XYZ grid to ascii for GIS uses (need to fix coordinate system to a georeferenced origin (this step is not illustrated below)</p></li>
-</ol>
+<li><p>Export the XYZ grid to ascii for GIS uses (need to fix coordinate system to a georeferenced origin – this step is not illustrated)</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># CCMR from ENGR-1330:</span>
@@ -450,7 +450,7 @@
 <span class="n">levels</span><span class="o">=</span><span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span><span class="mi">71</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
     <span class="n">levels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
-<span class="n">CS</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">levels</span><span class="p">,</span> <span class="n">linewidths</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">CS</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">levels</span><span class="p">,</span> <span class="n">linewidths</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># read how to change color scheme</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">clabel</span><span class="p">(</span><span class="n">CS</span><span class="p">,</span> <span class="n">inline</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Contour Plot from Gridded Data File&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">3328</span><span class="p">])</span>

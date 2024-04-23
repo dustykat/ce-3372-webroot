@@ -37,16 +37,16 @@
 
 # To construct a topographic contour map of the area:
 # 
-# 1. Use the indicated origin and find X,Y, and Z coordinates for each displayed elevation. Include example measurements for one or two points (as if someone else would have to check your work)
-# 2. Arrange those coordinates into an ASCII (text) file where each row of the file is a coordinate triple. (See the example at bottom of this document)
-# 3. Use the ASCII file to make a topographic map 
+# - Use the indicated origin and find X,Y, and Z coordinates for each displayed elevation. Include example measurements for one or two points (as if someone else would have to check your work)
+# - Arrange those coordinates into an ASCII (text) file where each row of the file is a coordinate triple. For this example the data are stored in a file named [XYZSomewhereUSA.txt](http://54.243.252.9/ce-3372-webroot/ce3372-jb/ce3372jb/lessons/xyz2topo/XYZSomewhereUSA.txt), which looks like:
+# - Use the ASCII file to make a topographic map 
 # 
 # :::{note}
 # The software choice is yours; you can always use [http://54.243.252.9/toolbox/ordinarytools/SimpleContourMap/](http://54.243.252.9/toolbox/ordinarytools/SimpleContourMap/) if you wish.  The credentials are username==`TTUStudent` password==`id10t` 
 # :::
 # 
-# 4. Overlay the topographic map onto the base map (the script below requires analyst trial-and-error to get the plot windows to align nicely) 
-# 5. Export the XYZ grid to ascii for GIS uses (need to fix coordinate system to a georeferenced origin (this step is not illustrated below)
+# - Overlay the topographic map onto the base map (the script below requires analyst trial-and-error to get the plot windows to align nicely) 
+# - Export the XYZ grid to ascii for GIS uses (need to fix coordinate system to a georeferenced origin -- this step is not illustrated)
 
 # In[1]:
 
@@ -91,9 +91,15 @@ if flag:
 levels=[]
 for i in range(26,71,1):
     levels.append(float(i))
-CS = ax.contour(X, Y, Z, levels, linewidths=3)
+CS = ax.contour(X, Y, Z, levels, linewidths=1) # read how to change color scheme
 ax.clabel(CS, inline=2, fontsize=12)
 ax.set_title('Contour Plot from Gridded Data File')
 ax.set_xlim([0,3328])
 ax.set_ylim([0,1442]);
+
+
+# In[ ]:
+
+
+
 
