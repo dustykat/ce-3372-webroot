@@ -1,0 +1,101 @@
+Quiz: Effects of Urban Development on Floods
+Question 1
+
+What hydrologic change commonly occurs in urban areas compared to rural areas?
+A. Increased infiltration and reduced surface runoff
+B. Decreased flood frequency and peak discharge
+C. Increased surface runoff and reduced infiltration
+D. Reduced frequency of high-flow events
+
+Answer:
+C. Increased surface runoff and reduced infiltration
+Question 2
+
+Which factor primarily contributes to higher flood peaks in urban areas?
+A. Increased vegetation coverage
+B. Enhanced groundwater recharge
+C. Impermeable surfaces and drainage networks
+D. Greater soil moisture storage
+
+Answer:
+C. Impermeable surfaces and drainage networks
+Question 3
+
+How do urban drainage systems influence runoff?
+A. They increase overland flow distances, delaying peak discharge.
+B. They reduce runoff by storing water in vegetated areas.
+C. They decrease the travel time of runoff to streams.
+D. They redirect runoff into groundwater recharge zones.
+
+Answer:
+C. They decrease the travel time of runoff to streams.
+Question 4
+
+What is a key hydraulic effect of stream channel modifications in urban areas?
+A. Increased channel storage capacity during floods
+B. Reduced sediment transport rates
+C. Backwater effects due to channel constrictions
+D. Greater aquifer recharge rates
+
+Answer:
+C. Backwater effects due to channel constrictions
+Question 5
+
+Why do small floods increase more dramatically than large floods in urbanized areas?
+A. Soil saturation reduces runoff during large storms.
+B. Smaller floods are less affected by urban drainage changes.
+C. Urban surfaces amplify small storm responses.
+D. Channel modifications target large flood reduction only.
+
+Answer:
+C. Urban surfaces amplify small storm responses.
+Question 6
+
+Which urban development feature can exacerbate streambank erosion?
+A. Vegetated riparian zones
+B. Undersized culverts
+C. Rainwater harvesting systems
+D. Permeable pavements
+
+Answer:
+B. Undersized culverts
+Question 7
+
+What was the primary impact of urbanization observed in Mercer Creek, Washington?
+A. Reduced annual maximum discharge
+B. Delayed peak discharge times during storms
+C. Increased flood volume and peak discharge
+D. Stabilized discharge rates over time
+
+Answer:
+C. Increased flood volume and peak discharge
+Question 8
+
+Which method can help reduce urban flood hazards?
+A. Replacing vegetation with impermeable surfaces
+B. Constructing larger stormwater conveyance channels
+C. Constricting floodplains to concentrate flow
+D. Eliminating all riparian vegetation
+
+Answer:
+B. Constructing larger stormwater conveyance channels
+Question 9
+
+Why are real-time streamflow gaging stations valuable in urban areas?
+A. They enhance sediment transport during floods.
+B. They provide data for immediate flood management decisions.
+C. They eliminate the need for rainfall records.
+D. They prevent stormwater runoff entirely.
+
+Answer:
+B. They provide data for immediate flood management decisions.
+Question 10
+
+What is a key conclusion about the effects of urbanization on floods?
+A. Urbanization generally reduces flood risks.
+B. Urbanization primarily impacts small streams in large basins.
+C. Urbanization increases the size and frequency of floods.
+D. Urbanization has no measurable impact on flood characteristics.
+
+Answer:
+C. Urbanization increases the size and frequency of floods.

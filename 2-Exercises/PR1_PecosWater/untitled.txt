@@ -1,0 +1,37 @@
+Engineering Design Problem Statement
+
+Project Overview:
+The City of Pecos, Texas, has identified a critical need to develop an alternate water supply in anticipation of the current wellfield reaching the end of its service life within the next 5-10 years. To ensure the city's long-term water security, an alternate wellfield has been identified, and property rights for its development have been secured. This wellfield is located approximately 30 miles south of the city center.
+
+Your task is to design the components necessary to transport water from this alternate wellfield to Pecos and ensure adequate storage for future demand. This includes:
+
+    Wellfield Collector Network: Design the network of wells and collection lines that will efficiently gather water from the wellfield and deliver it to a central collection point.
+
+    Transmission Pipeline: Design the transmission pipeline system that will carry water from the wellfield to the city’s water treatment and distribution facilities. Consider hydraulic design principles to size the pipeline appropriately based on flow rates and friction losses over the 30-mile distance.
+
+    Storage Facilities: Design intermediate storage facilities as necessary, as well as terminal storage to ensure there is sufficient water available for city consumption during peak demand periods or in case of pipeline interruptions. Storage should accommodate both daily use and emergency reserves.
+
+Assumptions and Constraints:
+
+    The city currently uses approximately X million gallons per day (MGD), and projected growth should be accounted for over a 20-year horizon.
+    The alternate wellfield is estimated to produce Y MGD, with fluctuations due to seasonal variations.
+    Transmission pipeline materials and layout should be designed considering local terrain and minimizing environmental impacts.
+    Intermediate storage facilities may be required based on pipeline hydraulic design and system pressures.
+
+Deliverables:
+
+    Design the wellfield layout, including the number and spacing of wells, and the pipe network to the collector point.
+    Size the transmission pipeline and provide justification for your selection (e.g., diameter, material).
+    Determine the volume of intermediate and terminal storage facilities required and provide recommendations on their placement.
+
+Additional Information:
+
+    Drawings, maps, and relevant data will be provided to assist with the design process.
+    Be prepared to explain the rationale behind your design decisions, including considerations of cost, energy use, and reliability.
+
+Submission Requirements:
+
+    A detailed design report with calculations, maps, and diagrams to support your wellfield, pipeline, and storage facility designs.
+    A final presentation summarizing your design choices, challenges, and proposed solutions.
+
+This problem statement provides clarity on expectations and allows room for students to apply engineering principles while also considering real-world constraints. You can adjust "X" and "Y" depending on the actual water usage and production figures you'll provide.

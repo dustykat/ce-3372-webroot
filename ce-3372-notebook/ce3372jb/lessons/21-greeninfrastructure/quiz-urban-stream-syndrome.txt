@@ -1,0 +1,91 @@
+Quiz: Urban Stream Syndrome
+Question 1
+
+What is the primary driver of the urban stream syndrome?
+A. Deforestation of riparian zones
+B. Urban stormwater runoff and impervious surfaces
+C. Agricultural runoff
+D. Groundwater pumping
+
+Answer: B. Urban stormwater runoff and impervious surfaces
+Question 2
+
+Which of the following is a consistent symptom of the urban stream syndrome?
+A. Increased species richness
+B. Decreased channel complexity
+C. Increased retention of organic matter
+D. Reduced occurrence of high-flow events
+
+Answer: B. Decreased channel complexity
+Question 3
+
+How does urbanization typically affect stream hydrographs?
+A. Reduces the frequency of high-flow events
+B. Makes streams less "flashy"
+C. Leads to more frequent and larger flow events
+D. Stabilizes peak flow rates
+
+Answer: C. Leads to more frequent and larger flow events
+Question 4
+
+Which pollutant is commonly elevated in urban streams?
+A. Nitrogen
+B. Mercury
+C. Carbon monoxide
+D. Calcium
+
+Answer: A. Nitrogen
+Question 5
+
+What is one effect of reduced baseflow in urban streams?
+A. Improved water temperature stability
+B. Increased dissolved oxygen levels
+C. Increased diel variation in dissolved oxygen
+D. Reduced sediment loads
+
+Answer: C. Increased diel variation in dissolved oxygen
+Question 6
+
+What restoration strategy is unlikely to fully address urban stream syndrome on its own?
+A. Dispersed stormwater treatment
+B. End-of-pipe stormwater treatment
+C. Riparian revegetation
+D. Integrated urban stream management
+
+Answer: B. End-of-pipe stormwater treatment
+Question 7
+
+What is a common shift observed in the biotic composition of urban streams?
+A. Increased abundance of sensitive fish species
+B. Dominance by tolerant macroinvertebrates and species-poor assemblages
+C. Increased abundance of shredder macroinvertebrates
+D. Replacement of diatoms with cyanobacteria
+
+Answer: B. Dominance by tolerant macroinvertebrates and species-poor assemblages
+Question 8
+
+What role do riparian forests play in mitigating urban stream syndrome?
+A. They reduce channel incision and stabilize banks.
+B. They prevent urban runoff entirely.
+C. They increase flashiness in hydrographs.
+D. They eliminate all stormwater pollutants.
+
+Answer: A. They reduce channel incision and stabilize banks.
+Question 9
+
+How does the presence of impervious surfaces connected to streams affect urban stream health?
+A. It improves habitat complexity.
+B. It accelerates pollutant delivery and reduces water infiltration.
+C. It reduces the likelihood of eutrophication.
+D. It increases organic matter storage.
+
+Answer: B. It accelerates pollutant delivery and reduces water infiltration.
+Question 10
+
+What is a critical component of successful urban stream restoration?
+A. Focus solely on instream habitat enhancement
+B. Address social, economic, and ecological factors
+C. Implement universal solutions across all urban areas
+D. Ignore human behaviors and attitudes
+
+Answer: B. Address social, economic, and ecological factors

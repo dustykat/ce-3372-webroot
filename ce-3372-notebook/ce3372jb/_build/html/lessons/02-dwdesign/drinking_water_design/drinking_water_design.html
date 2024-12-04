@@ -1,0 +1,927 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2. Drinking Water Design &#8212; CE 3372 Water Systems Design</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="2.1 Raw Water Transmission Design" href="../water_transmission_design/water_transmission_design.html" />
+    <link rel="prev" title="1. Introduction" href="../../01-introduction/introduction.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/mylogo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">CE 3372 Water Systems Design</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../intro.html">
+   Welcome to CE 3372 Water Systems Design
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../01-introduction/introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
+   2. Drinking Water Design
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../water_transmission_design/water_transmission_design.html">
+     2.1 Raw Water Transmission Design
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../03-drawings/design_drawings/design_drawings.html">
+   3. Drawings and Maps
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../03-drawings/xyz2topo/xyz2topo.html">
+     3.1 Simple Maps from XYZ data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../03-drawings/qgis_topography/qgis_topography.html">
+     3.2 QGIS Topography
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../04-demands/demand-forcasting.html">
+   4. Demand Estimation
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../055-headloss/headloss.html">
+   5. Pipeline Head Loss
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../05-pipeline_hydraulics/pipelinehydraulics.html">
+     Pipeline Hydraulics
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../06-pumping/pumps.html">
+   6. Pumping Systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../07-storage/storage.html">
+   7. Storage Systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../08-networks/networks.html">
+   8. Pipe Networks
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../21-greeninfrastructure/greeninfrastructure.html">
+   21. Green Infrastructure
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../21-greeninfrastructure/21.1waterquality.html">
+     21.1 GI and Water Quality
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../25-swmm_intro/swmm_intro.html">
+   25. SWMM Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../32-sanitarydesign/sanitarydesign.html">
+   32. Sanitary Sewer Guidelines
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/lessons/02-dwdesign/drinking_water_design/drinking_water_design.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flessons/02-dwdesign/drinking_water_design/drinking_water_design.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/lessons/02-dwdesign/drinking_water_design/drinking_water_design.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#readings">
+   Readings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#videos">
+   Videos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lesson-outline">
+   Lesson Outline
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#design-concepts">
+   Design Concepts
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#four-questions-to-inform-design">
+   Four Questions to Inform Design
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-much-water">
+     How Much Water?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#transmission-and-distribution-mains">
+     Transmission and Distribution Mains
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#distribution-system-types">
+     Distribution System Types
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#branched-system">
+       Branched System
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#looped-system">
+       Looped System
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#appurtenances">
+       Appurtenances
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#guidance-documents">
+   Guidance Documents
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rg-195-texas-drinking-water-systems-guidelines">
+     RG-195 Texas Drinking Water Systems Guidelines
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#representative-regulations">
+     Representative Regulations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#professional-literature">
+     Professional Literature
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#existing-data">
+     Existing Data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#important-considerations-for-water-distribution-system-design">
+   Important considerations for water distribution system design
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#planning-a-water-distribution-system-design-factors-to-consider">
+     Planning a water distribution system design: factors to consider
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#key-aspects-of-water-distribution-layout-design">
+     Key aspects of water distribution layout design
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#software-aided-design">
+   Software Aided Design
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#workflow-for-distribution-system-design-using-computer-software">
+   Workflow for Distribution System Design Using Computer Software
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="drinking-water-design">
+<h1>2. Drinking Water Design<a class="headerlink" href="#drinking-water-design" title="Permalink to this headline">¶</a></h1>
+<div class="admonition-course-website admonition">
+<p class="admonition-title">Course Website</p>
+<p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/">http://54.243.252.9/ce-3372-webroot/</a></p>
+</div>
+<div class="section" id="readings">
+<h2>Readings<a class="headerlink" href="#readings" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-textbook admonition">
+<p class="admonition-title">Textbook</p>
+<p><a class="reference external" href="https://www.waveland.com/browse.php?t=384">Gupta, R.S., 2017. Hydrology and Hydraulic Systems, pp XX-XX</a></p>
+</div>
+<div class="admonition-additional-readings admonition">
+<p class="admonition-title">Additional Readings</p>
+<ol class="simple">
+<li><p>TCEQ (2012) Rules and Regulations for Public Water Systems, Publication RG-195 <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/3-Readings/Texas-RG-195/rg-195.pdf">http://54.243.252.9/ce-3372-webroot/3-Readings/Texas-RG-195/rg-195.pdf</a></p></li>
+<li><p>Krueger D. W., and Smitha C. W. (2012) Infrastructure Design Manual, City of Houston, Department of Public Works and Engineering <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/3-Readings/HoustonDesignManual/Houston.idm.pdf">http://54.243.252.9/ce-3372-webroot/3-Readings/HoustonDesignManual/Houston.idm.pdf</a></p></li>
+<li><p>City of Lubbock (2018) Minimum Design Standards and Specifications, City of Lubbock Engineering. <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/3-Readings/LubbockTexasDesignManual/LubbockTexasDesignManual.pdf">http://54.243.252.9/ce-3372-webroot/3-Readings/LubbockTexasDesignManual/LubbockTexasDesignManual.pdf</a></p></li>
+<li><p>City of San Marcos, Texas (2019) WATER DISTRIBUTION SYSTEM DESIGN CRITERIA TECHNICAL MANUAL<a class="reference external" href="http://54.243.252.9/ce-3372-webroot/3-Readings/SanMarcosTexasDesignManual/SanMarcosTexasDesignManual.pdf">http://54.243.252.9/ce-3372-webroot/3-Readings/SanMarcosTexasDesignManual/SanMarcosTexasDesignManual.pdf</a></p></li>
+<li><p><a class="reference external" href="https://design.maji.go.tz/index.php/Chapter_Five:_Pipelines_Design#Looped_System">Ministry of Water (date) Title (where)</a></p></li>
+</ol>
+<!-- Introduction to Water Resources Engineering Pages 1-33 from Wurbs,R.A., and James, W.P. (2002) Water Resources Engineering, Prentice Hall. [http://54.243.252.9/ce-3372-webroot/3-Readings/Wurbs1-33/](http://54.243.252.9/ce-3372-webroot/3-Readings/Wurbs1-33/Wurbs1-33.pdf)
+
+Introduction to Water Resources Engineeirng Pages 1-11 from Mays, L.W. (2011) Water Resources Engineering, J. Wiley and Sons.[http://54.243.252.9/ce-3372-webroot/3-Readings/Mays1-11/](http://54.243.252.9/ce-3372-webroot/3-Readings/Mays1-11/Mays1-11.pdf)
+
+Introduction to Water Resources Engineering Pages 1-8 from Chin, D. A. (2006) Water-Resources Engineering, Pearson-Prentice Hall. [http://54.243.252.9/ce-3372-webroot/3-Readings/Chin1-8/](http://54.243.252.9/ce-3372-webroot/3-Readings/Chin1-8/Chin1-8.pdf) -->
+</div>
+</div>
+<div class="section" id="videos">
+<h2>Videos<a class="headerlink" href="#videos" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=9NYs3Y-IjGw">none</a></p></li>
+</ol>
+</div>
+<div class="section" id="lesson-outline">
+<h2>Lesson Outline<a class="headerlink" href="#lesson-outline" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Design Concepts</p></li>
+<li><p>Four Questions to Inform Design</p></li>
+<li><p>Guidance Documents</p></li>
+</ol>
+<hr class="docutils" />
+<p>Designing drinking water supply and treatment systems is a complex process that requires careful attention to a wide range of factors, including demand estimation, water source protection, treatment processes, storage, and distribution. Engineers must ensure that systems are designed to meet current and future demand while maintaining water quality and public health standards. To guide this process, various design manuals and standards, such as the American Water Works Association (AWWA) Manuals and the Ten States Standards, provide comprehensive guidelines on the planning, design, and construction of water supply and treatment facilities. These guides cover everything from pipe sizing and pump station design to water treatment plant processes and distribution network hydraulics, helping engineers adhere to best practices and regulatory requirements.</p>
+<p>A key aspect of drinking water system design is hydraulics, which governs how water flows through pipes, pumps, and treatment processes. Hydraulics is essential for determining the correct pipe sizes, pump capacities, and tank elevations required to maintain adequate pressure and flow throughout the system. For instance, the design of a distribution network must consider head losses due to friction in pipes, and ensure that water reaches all consumers at a sufficient pressure, typically between 40 and 80 psi. Tools such as Bernoulli’s equation and the Manning formula are commonly used to calculate these parameters, allowing engineers to optimize system efficiency while ensuring that water quality is maintained through proper residence time in storage tanks and pipes.</p>
+<p>In treatment plant design, hydraulic considerations also play a crucial role in the functioning of various processes, such as filtration, sedimentation, and chemical dosing. Each treatment stage must be designed to accommodate the flow rate of incoming raw water and ensure that the water is adequately treated before entering the distribution system. Hydraulic grade lines (HGL) and energy considerations are used to design systems that allow for gravity flow where possible, minimizing the need for excessive pumping and reducing operational costs. The layout of treatment facilities, including the placement of pumps, tanks, and pipelines, is dictated by hydraulic design to ensure the smooth movement of water through the system.</p>
+<p>Furthermore, surge protection and transient analysis are vital in large-scale water distribution systems to prevent water hammer effects, which can cause damage to pipes and valves when sudden changes in flow or pressure occur. Detailed hydraulic modeling, often using software such as EPANET or WaterGEMS, allows engineers to simulate real-world conditions, optimize system design, and ensure long-term reliability.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="design-concepts">
+<h2>Design Concepts<a class="headerlink" href="#design-concepts" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Design generalities are paraphrased from [] and [].</p>
+</div>
+<ul class="simple">
+<li><p>Design is the management of constraints.</p></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Non-negotiable</strong> constraints are dictated by laws of physics, chemistry (and to some extent
+mankind); examples of these are: water flows downhill unless power (lift station) and
+money (capital cost to build, operation cost to pay for electricity to run pumps) are
+applied; Chemical disinfection residual will decay over time unless replenished; this
+constraint encourages using treated water relatively quickly.</p></li>
+<li><p><strong>Negotiable constraints</strong> are the design variables that can be adjusted to satisfy the non-
+negotiable constraints and the desired system performance; the main components of this
+category are money to pay for things, time to build (and operate), aesthetics (pipe
+alignment/channel geometry); system performance under various anticipated conditions.</p></li>
+</ul>
+</div></blockquote>
+<hr class="docutils" />
+<p>The water system designer’s goal is to satisfy a need (some level of
+performance) by manipulating the negotiable constraints.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Analytical tools (models) are used to test the design before committing to an actual build (presumably so that full-scale experiment fails are avoided).</p></li>
+</ul>
+</div></blockquote>
+<p>Design guidelines are encapsulated in</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>regulatory documents,</p></li>
+<li><p>design manuals,</p></li>
+<li><p>professional literature,</p></li>
+<li><p>and manufacturer’s literature</p></li>
+</ul>
+</div></blockquote>
+<p>These guidelines collectively represent centuries of observation and experimentation (and a lot of failures); the value is that they generally work, and reduce commercial risk for routine water
+system components.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="four-questions-to-inform-design">
+<h2>Four Questions to Inform Design<a class="headerlink" href="#four-questions-to-inform-design" title="Permalink to this headline">¶</a></h2>
+<p>Four basic questions in water distribution design are:</p>
+<blockquote>
+<div><ol class="simple">
+<li><p>How much water will be used?</p></li>
+<li><p>Where are the water supply locations?</p></li>
+<li><p>Where are the water consumption locations?</p></li>
+<li><p>What is the water use as a function of time?</p></li>
+</ol>
+</div></blockquote>
+<hr class="docutils" />
+<div class="section" id="how-much-water">
+<h3>How Much Water?<a class="headerlink" href="#how-much-water" title="Permalink to this headline">¶</a></h3>
+<p>This question is related to the demand for water.</p>
+<blockquote>
+<div><p>When designing new systems, calculating demands is not a straightforward process.
+The designer needs to know the expected demands, possible fire demands, and future expansions.</p>
+</div></blockquote>
+<p>There are some publications that provide average demands for residential,commercial facilities, and production/industrial facilities.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Finding/building a modern database of such information would be a good data science
+project (ENGR 1330)</p>
+</div>
+<p>Different demands that need to be accounted for:</p>
+<ol class="simple">
+<li><p>Customer demand: Average use needed to meet non-emergency needs.</p></li>
+<li><p>Fire flow demand:  The computed system capacity required for ensuring minimum fire protection while maintaining a minimum working pressure in the system. This demand is often stipulated in municipal design guidelines either explicitly or by virtue of fire hydrant location and spacing and flowrate/hydrant</p></li>
+<li><p>Ultimate expansion of the system (forecast the future)</p></li>
+</ol>
+<hr class="docutils" />
+<p>Water distribution systems convey water from a <strong>source</strong> to a customer.</p>
+<blockquote>
+<div><p>Ground water: Series of municipal wells usually requiring chemical treatment, at least to the extent of chlorinating (disinfecting). <br>
+Surface water: Drawn from lakes or rivers just below the surface. Ocean-desalination plants on or near coastal regions. <br>
+Precipitation: Large municipal reservoirs collecting rain runoff and snowmelt (rainwater harvesting).</p>
+</div></blockquote>
+</div>
+<hr class="docutils" />
+<div class="section" id="transmission-and-distribution-mains">
+<h3>Transmission and Distribution Mains<a class="headerlink" href="#transmission-and-distribution-mains" title="Permalink to this headline">¶</a></h3>
+<p><strong>Transmission lines</strong> are conduits that carry large volumes of water, great distances, such as between a raw water source and a treatment plant and/or local storage facilities.<br />
+<strong>Distribution lines</strong> are smaller pipes, valves, hydrants, fittings, and appurtenances, that deliver treated potable water to the customers.</p>
+</div>
+<div class="section" id="distribution-system-types">
+<h3>Distribution System Types<a class="headerlink" href="#distribution-system-types" title="Permalink to this headline">¶</a></h3>
+<p>A water distribution system’s design is crucial to providing customers with good water quality at an acceptable pressure level. A good distribution system configuration also helps meet the required water demands and limit the number of customers who run out of water during outages. The three most common distribution design configurations are:</p>
+<ul class="simple">
+<li><p>Arterial loop systems. This design surrounds the distribution system with a large-diameter water main that provides adequate flow to the interconnecting distribution system from different locations. This layout design creates greater flexibility by supplying water to the distribution system from multiple locations.</p></li>
+<li><p>Grid systems. This configuration allows water to circulate through the entire system, which is typically fed by an arterial main or a single transmission line. The layout structure distributes water to multiple areas with better quality, pressure and flow rate.</p></li>
+<li><p>Tree systems. This configuration is fed by one large water main that branches off into smaller distribution mains, which may result in reduced water pressure and flow.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Arterial loop and Grid systems are practically the same thing; if your client is skeptical about loops, then sell grids (and visa versa)</p>
+</div>
+<p><img alt="" src="../../../_images/system-type.png" /></p>
+<hr class="docutils" />
+<div class="section" id="branched-system">
+<h4>Branched System<a class="headerlink" href="#branched-system" title="Permalink to this headline">¶</a></h4>
+<p>Also referred to as a Dead-end System, the size of the main line in this distribution system decreases as its distance from the source increases, in consideration that the further pipes have to carry less water. The design of a branched system is generally straightforward, where the direction of water flow in all pipes and the flow rate can be readily determined.</p>
+<p>Advantages:</p>
+<ul class="simple">
+<li><p>Lower costs: Avoiding construction of pipes and appurtenances just to create a looped system reduces the cost.</p></li>
+<li><p>In smaller rural communities, branched systems may be the only type that is feasible, logistically and monetarily.</p></li>
+</ul>
+<p>Disadvantages:</p>
+<ul class="simple">
+<li><p>Main breaks take all downstream customers out of service.</p></li>
+<li><p>Branched systems cause poor chlorine residuals in low demand areas and may require periodic flushing of hydrants in order to pull chlorinated water into the system.</p></li>
+<li><p>Velocities are faster, head losses greater and capacity reduced especially during high demand.</p></li>
+<li><p>Fire protection is at risk due to inability to isolate a break.</p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="looped-system">
+<h4>Looped System<a class="headerlink" href="#looped-system" title="Permalink to this headline">¶</a></h4>
+<p>A distribution network is looped when there are only a few or no pipe dead-ends, such that water can move through the system freely.</p>
+<p>Advantages:</p>
+<ul class="simple">
+<li><p>Fluid velocities are lower, reducing head losses, resulting in greater capacity.</p></li>
+<li><p>Main breaks can be isolated to minimize loss of service to customers.</p></li>
+<li><p>Fire protection is greater due to greater capacity and ability to isolate breaks.</p></li>
+<li><p>Looped systems usually provide better residual chlorine content due to inline mixing and fewer dead ends.</p></li>
+</ul>
+<p>Disadvantages:</p>
+<ul class="simple">
+<li><p>Looped systems generally cost more because there are pipes that become inadvertently redundant in order to create the loops.</p></li>
+</ul>
+<p>A major design consideration is to ensure that if any section of the distribution main fails or needs repair, that section can be isolated without disrupting service to all or a great number of users in the network.</p>
+</div>
+<div class="section" id="appurtenances">
+<h4>Appurtenances<a class="headerlink" href="#appurtenances" title="Permalink to this headline">¶</a></h4>
+<p>Appurtenances are common accessories of a functional water distribution system that aid the operators and improve the water quality. Examples of such appurtenances include:</p>
+<ul class="simple">
+<li><p>Pipes.</p></li>
+<li><p>Valves.</p></li>
+<li><p>Elbow and bend fittings.</p></li>
+<li><p>Service saddles.</p></li>
+<li><p>Pressure release valves; Blow-offs.</p></li>
+<li><p>Fire hydrants.</p></li>
+<li><p>Air release and vacuum valves.</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="guidance-documents">
+<h2>Guidance Documents<a class="headerlink" href="#guidance-documents" title="Permalink to this headline">¶</a></h2>
+<p>Regulatory guidance documents are a principal tool in system design, along
+with the designers creativity, and the owners access to right-of-way.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The U.S. EPA (Environmental Protection Agency) writes federal regulations for
+construction, maintenance, treatment and operation of potable water facilities.</p></li>
+<li><p>State’s EPAs(or equivalents) are charged with regulating the standards and
+permitting. States may write more stringent regulations if they do not violate
+the intent of the federal code. The various documents are precise, but teduous.</p></li>
+</ul>
+</div></blockquote>
+<div class="section" id="rg-195-texas-drinking-water-systems-guidelines">
+<h3>RG-195 Texas Drinking Water Systems Guidelines<a class="headerlink" href="#rg-195-texas-drinking-water-systems-guidelines" title="Permalink to this headline">¶</a></h3>
+<p><img alt="" src="../../../_images/rg195-cover.png" /></p>
+<p>A collection of relevant guidelines for use in Texas are contained in the document <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/3-Readings/Texas-RG-195/rg-195.pdf">http://54.243.252.9/ce-3372-webroot/3-Readings/Texas-RG-195/rg-195.pdf</a></p>
+</div>
+<hr class="docutils" />
+<div class="section" id="representative-regulations">
+<h3>Representative Regulations<a class="headerlink" href="#representative-regulations" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><em>Visit each jurisdiction’s website for current design guidance!</em>  The contents change from time to time - some the copies referenced here are over a decade old; they are fine for use in this class but not for actual engineering design.  As examples consider: <br></p>
+<blockquote>
+<div><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/3-Readings/WashingtonWaterSystemDesignManual2009/WashingtonWaterSystemDesignManual2009.pdf">Washington State Water System Manual 2009</a><br>
+<a class="reference external" href="http://54.243.252.9/ce-3372-webroot/3-Readings/WashingtonWaterSystemDesignManual2018/WashingtonWaterSystemDesignManual2018.pdf">Washington State Water System Manual 2018</a></p>
+</div></blockquote>
+</div></blockquote>
+<p>Here are a few Texas cities as examples</p>
+<p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/3-Readings/HoustonDesignManual/Houston.idm.pdf">City of Houston</a> manual</p>
+<p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/3-Readings/LubbockTexasDesignManual/LubbockTexasDesignManual.pdf">City of Lubbock</a> manual</p>
+<p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/3-Readings/SanMarcosTexasDesignManual/SanMarcosTexasDesignManual.pdf">City of San Marcos</a> manual.  <em>I specify this one for your homework assignments, because it is not too long, so things are easy for you to find</em></p>
+<p>Use the manual for the locality of your project!</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="professional-literature">
+<h3>Professional Literature<a class="headerlink" href="#professional-literature" title="Permalink to this headline">¶</a></h3>
+<p><img alt="" src="../../../_images/professional-literature.png" /></p>
+<p>For unusual situations the designer will likely have to visit the professional literature for guidance</p>
+<blockquote>
+<div><p>Order of preference for a designer will be:</p>
+<ul class="simple">
+<li><p>a manual of practice,</p></li>
+<li><p>vendor literature,</p></li>
+<li><p>and finally the academic literature.</p></li>
+</ul>
+</div></blockquote>
+<p>A manual of practice or even vendor literature is preferred over the academic literature simply because of a perception that the technologies are proven in these documents (proven in the litigation sense).</p>
+</div>
+<div class="section" id="existing-data">
+<h3>Existing Data<a class="headerlink" href="#existing-data" title="Permalink to this headline">¶</a></h3>
+<p>The designer will need reliable sources to determine <strong>demands</strong>.</p>
+<ul class="simple">
+<li><p>Obviously a discussion with the owners is critical but the actual quantities will have to be calculated for a design situation.</p></li>
+<li><p>A land use plan or zoning map will help to determine the future demands.</p></li>
+</ul>
+<p>The demands need to be compiled and situated on an area map.</p>
+<ul class="simple">
+<li><p>Once complete this map can help determine node locations and pipe diameter for the system schematic</p></li>
+</ul>
+<p><strong>PIPE DIAMETER</strong></p>
+<ul class="simple">
+<li><p>The selected pipe diameters affect system hydraulics.</p></li>
+<li><p>The trench is the biggest cost, and the hydraulics should be used to set adequate pipe sizes.</p></li>
+<li><p>Designers need to determine the proper pipe size in order to meet peak demands and fire protection while maintaining an adequate dynamic pressure in the system.</p></li>
+</ul>
+<p><strong>PRESSURE ZONES</strong></p>
+<ul class="simple">
+<li><p>Pressure zones are set up to regulate pressure in locations where large grade changes will create too much pressure at the lower end of the system and not enough pressure in the higher ends.</p></li>
+<li><p>More than an 80 feet differential will require a pressure zone.</p></li>
+<li><p>In areas of even larger grade differentials, such as hill country or mountain communities, several consecutive pressure zones may be needed.</p></li>
+</ul>
+<p>The following equations can assist in determining the HGLs
+for the pressure zones.</p>
+<p><span class="math notranslate nohighlight">\(HGL_{min}\)</span> = Highest Elevation + (2.31x Minimum Working Pressure)<br />
+<span class="math notranslate nohighlight">\(HGL_{max}\)</span> = Lowest Elevation + (2.31x Maximum Working Pressure)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hglmin</span><span class="p">(</span><span class="n">pressure</span><span class="p">,</span><span class="n">elevation</span><span class="p">):</span>
+    <span class="n">hglmin</span> <span class="o">=</span> <span class="n">elevation</span><span class="o">+</span><span class="mf">2.31</span><span class="o">*</span><span class="n">pressure</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">hglmin</span><span class="p">)</span>
+    
+<span class="k">def</span> <span class="nf">hglmax</span><span class="p">(</span><span class="n">pressure</span><span class="p">,</span><span class="n">elevation</span><span class="p">):</span>
+    <span class="n">hglmax</span> <span class="o">=</span> <span class="n">elevation</span><span class="o">+</span><span class="mf">2.31</span><span class="o">*</span><span class="n">pressure</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">hglmax</span><span class="p">)</span>
+    
+<span class="n">pmin</span> <span class="o">=</span> <span class="mi">30</span> <span class="c1"># pressure in psi (about 2 atm)</span>
+<span class="n">pmax</span> <span class="o">=</span> <span class="mi">90</span> <span class="c1"># pressure in psi (about 6 atm)</span>
+<span class="n">emin</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1"># low elevation in feet</span>
+<span class="n">emax</span> <span class="o">=</span> <span class="mi">95</span> <span class="c1"># high elevation in feet</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">hglmin</span><span class="p">(</span><span class="n">pmin</span><span class="p">,</span><span class="n">emax</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hglmax</span><span class="p">(</span><span class="n">pmax</span><span class="p">,</span><span class="n">emin</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>164.3
+212.9
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>JUNCTION LOCATION AND ELEVATION</strong></p>
+<ul class="simple">
+<li><p>Location of junctions will depend more upon the planned layout of the project site than the affect they will have upon the hydraulic model.</p></li>
+<li><p>In general grid distribution node locations have little affect upon the overall model since there are customer demands along the real system between nodes. Node locations and their elevations are more relative in large transmission mains.</p></li>
+<li><p>Nodes generally should be placed at the lowest elevation of a looped system where the grades uctuate signicantly.</p></li>
+</ul>
+<p><strong>MATERIALS</strong></p>
+<ul class="simple">
+<li><p>The pipe materials will effect system performance.</p></li>
+<li><p>Water distribution systems are built from ductile iron pipe, ABS, PVC, and HDPE.</p></li>
+<li><p>All are good materials for specific applications and various fittings to join different materials are available.</p></li>
+<li><p>Different jurisdictions may specify specific materials; the designer needs to read the guidance document for the specific locale.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="important-considerations-for-water-distribution-system-design">
+<h2>Important considerations for water distribution system design<a class="headerlink" href="#important-considerations-for-water-distribution-system-design" title="Permalink to this headline">¶</a></h2>
+<p>Around 2.2 million miles of underground pipes support the drinking water infrastructure system in the United States. The aging water system, however, requires upgrades in thousands of communities across the nation to prevent water main breaks and a daily loss of billions of gallons of treated water. If you are a municipal leader, it can be challenging to decide whether to implement upgrades or design a replacement distribution system for your community.</p>
+<p>Below, are some important factors that can influence conceptual or design decisions for water system upgrades or replacements, and aspects to consider while developing system layout plans.</p>
+<div class="section" id="planning-a-water-distribution-system-design-factors-to-consider">
+<h3>Planning a water distribution system design: factors to consider<a class="headerlink" href="#planning-a-water-distribution-system-design-factors-to-consider" title="Permalink to this headline">¶</a></h3>
+<p>Whether a community needs an upgrade, an expansion or a replacement system, planning is critical for designing an effective water distribution system. Beyond primary concerns, like availability, reliability and quality of water in an area, the community size, type and average usage can also guide water distribution system designs. After initial project review comes layout and permitting, followed by design plans and production. Construction only commences after these planning stages are complete.</p>
+<p>Design elements can be significantly influenced by certain factors. The table below lists important details to consider, and explains why and how they might shape the initial designs of a water system during the planning stage.</p>
+<p>|FACTOR |WHY |HOW|
+|:::|:::|:::|
+|Age|- Built in the 1970s and 1980s, the average water network pipe is about 45 years old. <br> - Some U.S. systems have pipes older that one century.|Replacing worn components in older systems must be a priority.|
+|Geography/climate|-Extreme temperatures, topography, elevation, soil composition and local geology influence decisions about installation and materials.|- Varying elevations need greater pumping capacity than flat terrain.<br>- Freezing temperatures influence choice of pipe materials and installation depth.|
+|Water usage |- Partial service line replacements may increase lead levels in drinking water if they disturb lead-bearing pipe scale <br>- Scale, the build-up of minerals coating pipe interiors affects hydraulics.<br><br>| -Critical factors affecting distribution pipe size and storage and pumping facility size include:<br>- Average Day Demand.<br>- Peak Hour Demand.<br>- Fire Flow Demand.<br>More demand = greater capacity.|
+|Environmental requirements|- Local, state and federal regulations dictate minimum drinking water quality.<br>- System design standards may include permits for installation, excavation and offset distances from other facilities.|- Designs must meet state and local standards for water quality and distribution systems, which may differ from federal regulations.
+|Project budget|- Building or expanding water distribution systems is an expensive project that requires significant funding.|- The project budget in terms of funding and costs determines the scope of the project. <br> Funding could be shared by the customers or funded through grants or government revolving loan programs. <br> - More money = broader scope.|
+Demand forecasts|- Projections for population growth and fire protection requirements should influence designs for water distribution systems.|Design plans must include elements of expansibility to accommodate increasing populations. <br> - More money = broader scope.|</p>
+<p>These initial design considerations, in turn, determine the layout of a water distribution system. Below, are some common system layout types, configurations and the roles of various appurtenances.</p>
+</div>
+<div class="section" id="key-aspects-of-water-distribution-layout-design">
+<h3>Key aspects of water distribution layout design<a class="headerlink" href="#key-aspects-of-water-distribution-layout-design" title="Permalink to this headline">¶</a></h3>
+<p>The layout of a water distribution system involves input from several teams, including the utility engineering department, engineering consultants, distribution operators or field operators, and others. Most design input focuses on the logistics and implementation of a water distribution system.</p>
+<p><strong>Layout</strong></p>
+<p>The distribution layout of a water system includes disinfection treatment facilities, pipelines (mains and services), and appurtenances like valves and fire hydrants. Engineers typically calculate a water system distribution layout using parameters like:</p>
+<ul class="simple">
+<li><p>Flow rate.</p></li>
+<li><p>Water demands.</p></li>
+<li><p>Pressure.</p></li>
+<li><p>Other Utilities.</p></li>
+<li><p>Material selection.</p></li>
+<li><p>Municipal ordinances.</p></li>
+<li><p>Flow velocity.</p></li>
+<li><p>Fire flow requirements.</p></li>
+<li><p>Topography.</p></li>
+<li><p>Construction budget/funding.</p></li>
+<li><p>Right-of-way limitations.</p></li>
+<li><p>Environmental regulations/requirements.</p></li>
+</ul>
+<p>It is worth noting that several of these parameters are usually considered during the initial planning phase, but input from field operators can help refine layout design calculations.</p>
+<p>Notice that most of the manuals (above) spend considerable space explaining how
+drawings are to be submitted for approval.  The actual layout is flexible (within right-of-way) and up to the hydraulic
+engineer to some extent.</p>
+<p>A designer would typically use some version of the following workflow to design a water distribution system:</p>
+<ol class="simple">
+<li><p>Set up the distribution system grid on the area plan. Aerial photo plots to scale are excellent tools</p></li>
+<li><p>Allocate average daily demands at nodes;</p></li>
+<li><p>Determine the peak factors;</p></li>
+<li><p>Estimate fire demands;</p></li>
+<li><p>Project demands for future expansion of the service areas;</p></li>
+<li><p>Test design(s) using a hydraulic model;</p></li>
+<li><p>Choose a design that is feasible economically and hydraulically that satisfies end user needs.</p></li>
+</ol>
+<p>A node is considered a junction point in a system where a demand can be attributed/assigned.</p>
+<blockquote>
+<div><p>Models use the nodes to calculate the system demands, pressures, water quality, and velocity.  These items are usually prescribed in guidance documents with minimum/maximum acceptable values.</p>
+</div></blockquote>
+<p>Models are used to test the design before commiting to a real-world build.</p>
+<blockquote>
+<div><p>The practical design of a water system without the use of water distribution modeling software is possible, but requires a logical, economical approach of laying out the system (and some roll-your-own calculations).</p>
+</div></blockquote>
+<p>Professional quality software is inexpensive (free) so there is really no good reason to design a system without using a hydraulic model - hence the guidance documents almost expect a model.</p>
+<p>Commercial value-added software is usually far easier for a designer to use and integrated into other design tools, but is computationally about the same as free software</p>
+<blockquote>
+<div><p>A designer should use commercial software when it is available to them, the time savings can more than justify the license costs.</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="software-aided-design">
+<h2>Software Aided Design<a class="headerlink" href="#software-aided-design" title="Permalink to this headline">¶</a></h2>
+<p>There are several pipe network analysis software (also called network simulation software, or hydraulic network modeling software) that mathematically solve hydraulic equations for all interconnections, branches and loops of the pipe network. With the advent of such powerful software, the conventional methods of water distribution design have been mostly discarded. The computer software requires the designer to create a water supply system model by inputting in the computer program information that includes pipe lengths, junctions or node elevations, connectivity of the pipes and nodes, demand in each node, information on pumps, elevations of reservoirs, elevations, and yield of sources.</p>
+<p>Among the current software available on the web and from proprietary sources, the EPANET is often used. EPANET is public domain software developed by Water Supply and Water Resources Division (formerly the Drinking Water Research Division) of the U.S. Environmental Protection Agency that can be downloaded for free on the internet. The software tracks the flow of water in each pipe, the pressure at each node, and the height of water in each tank.</p>
+<p>The important features of EPANET for distribution network design is its ability to:</p>
+<ul class="simple">
+<li><p>Handle systems of any size;</p></li>
+<li><p>Compute friction head loss using the Hazen-Williams, the Darcy Weisback, or the Chezy-Manning head loss formula;</p></li>
+<li><p>Includes minor head losses for bends, fittings, etc.;</p></li>
+<li><p>Models constant or variable speed pumps;</p></li>
+<li><p>Allows storage tanks to have any shape;</p></li>
+<li><p>Allows control rules to change valve settings in response to system hydraulics.</p></li>
+</ul>
+<p>The design process using EPANET usually involves the (a) layout of the system configuration including locations of sources and storage facilities, (b) determination of the distribution of demands to the nodes, input of network data, running hydraulic simulation, viewing results in any of the variety of formats, modifying the model by editing the network data, and modifying the model until the design criteria are met or results are acceptable.</p>
+</div>
+<div class="section" id="workflow-for-distribution-system-design-using-computer-software">
+<h2>Workflow for Distribution System Design Using Computer Software<a class="headerlink" href="#workflow-for-distribution-system-design-using-computer-software" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Base Mapping <br>Detailed maps of the project area should be gathered as a basis for pipeline alignment, distance and elevations. These should be obtained from field topographical surveys or certified suppliers of map products. For preliminary analyses, the Google Earth (<a class="reference external" href="http://earth.google.com">http://earth.google.com</a>) internet site which makes it possible to view and print aerial images of the area being designed may be used. <br><br> The information in the maps should be correlated to produce a base map, on which the proposed system layout will be drawn. The designer should conduct an visual inspection of the whole project area to verify, validate and update the information on the source maps. The resulting base map must include positions and information on roads, streets, rivers, creeks, elevations, topographic contours and locations of built-up areas. It should also provide relevant information like potential large consumers, e.g., swine and poultry farms. Ideally, the base map should be scaled to some useful coordinate reference system (WGS; UTM; …).</p></li>
+<li><p>Water Demand Projection <br> The average day demand for the design year will be the basis of the hydraulic network analysis. The demand condition will be varied by adjusting the demand factor; that is 1 for the average day demand condition, 1.3 for the maximum day demand and 2.5 – 3 for the peak-hour demand.</p></li>
+<li><p>Tentative Layout <br> Using the base map, the designer should next develop a tentative layout of the pipe network, which should also show the positions of the source facilities and reservoir(s). Pipelines are to be laid on road right of way, and the network should cover the target consumers. Nodes are placed at locations for pipe junctions, street or road junctions and intersections, locations for water points, demand centres, and not more than 100 metres from the nearest node. In systems where it is expected that pressure will be generally low or fluctuating, nodes are placed at the highest points of the service area.</p></li>
+<li><p>Distribution of Demands <br> It is important to plot the town or community boundaries and the service area delineation on the base map. Once the tentative layout (with nodes) is plotted on the base map, the service area should be sub-divided into node areas. This will give the designer a working idea of the respective number of houses within the area covered by each node.<br><br>The projected average day demand for the design year is distributed to all the nodes within its delineated service area. The distribution of demands should take into consideration the relative number of houses for the different node areas.</p></li>
+<li><p>Encoding of Input Data <br> Most of the hydraulic analysis software have common input data requirements. These data are grouped into pipe data and node data. Pipe data are the assigned pipe number, pipe diameter (mm), C-value, the pipe nodes, and length (m). Node data are node number, elevation (m), and water demand (lps). Usually, the values of the design criteria are required by computer software.</p></li>
+<li><p>Hydraulic Network Simulation <br> With all the data having been input by the designer, the software can proceed with its hydraulic run. The software computes the head losses (m) in each pipe, the rate of head loss (m/km) in each pipe, the flow velocities (m/s), and the pressure in each node (m).<br><br>The model is run for: (a) its peak-hour demand condition, to check for the minimum value of the pressure in the system; and (b) its minimum demand condition, to check for the value of the  maximum pressure in the network. <br><br> Operational simulations are then conducted to simulate a typical varying demand (hourly variation; …) to identify min/max pressures, check operation rules, size pumps and storage elements, determine water age in the network.</p></li>
+<li><p>Examination of Hydraulic Run Results <br>Usually, all possible hydraulic parameters can be shown from the computer run results. Of these parameters, the designer must examine two important results very closely: (a) The low system pressure points that are below the prescribed minimum pressure and the affected nodes, and (b) the pipes that have high head loss per km in excess of pipeline criteria. <br><br>The designer must also examine the balancing flows of the reservoir and analyze if the reservoir discharge or inflow is reasonable for its storage size.</p></li>
+<li><p>Adjusting Assumed Parameters of the Elements<br> Based on the results of the computer simulation, the designer will improve the network model by adjusting the pipe and node data for specific elements, particularly for those that did not meet the design criteria. For example, for pipes that have high resulting head losses, the designer will have to increase the pipe size to the next larger diameter. If there is a system pressure that is below the prescribed minimum, the designer could replace some of the pipes leading to the affected node with a larger diameter. The height of the reservoir could be adjusted if needed to achieve a good system pressure. <br><br>The adjusted model is run again in the software. After the run, the results are examined and the model readjusted. The above cycle is repeated until an acceptable hydraulic model is achieved.</p></li>
+<li><p>Finalizing the Network Configuration<br> The model is subjected to repeated simulation and data adjustments until an acceptable network configuration is reached.</p></li>
+<li><p>Reporting Results <br> A modeling report is usually necessary to exlain the modeling findings, and final design and will usually accompany various permit and funding applications (i.e. construction, environmental, …)</p></li>
+</ol>
+<div class="admonition-summary admonition">
+<p class="admonition-title">Summary</p>
+<p>The design of drinking water supply and treatment systems must balance multiple hydraulic and operational considerations to ensure efficient, safe, and sustainable water delivery. Design guides and manuals provide critical frameworks that ensure compliance with regulatory standards and best practices, while hydraulic analysis ensures that systems are capable of delivering water efficiently to all users. Through careful planning and adherence to established design principles, engineers can create robust drinking water systems that serve communities for decades to come.</p>
+</div>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lessons/02-dwdesign/drinking_water_design"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../../01-introduction/introduction.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">1. Introduction</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../water_transmission_design/water_transmission_design.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">2.1 Raw Water Transmission Design</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Theodore G. Cleveland<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

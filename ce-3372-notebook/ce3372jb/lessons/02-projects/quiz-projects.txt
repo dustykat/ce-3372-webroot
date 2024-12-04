@@ -1,0 +1,84 @@
+Based on the provided content, I'll generate a 10-question multiple-choice quiz focusing on key concepts from the document to ensure students have read and understood the material. Here’s the quiz:
+Quiz: Semester Design Projects
+
+Purpose: Test comprehension of the content in "Semester Design Project(s)."
+
+Question 1
+What is the primary reason the course divides students into small design teams?
+A. To reduce workload for each student.
+B. To address ABET outcomes emphasizing teamwork and communication.
+C. To simplify project tasks for easier grading.
+D. To focus on individual problem-solving skills.
+Correct Answer: B
+
+Question 2
+How is an engineering project defined in the course materials?
+A. A permanent structure designed to fulfill a recurring need.
+B. A temporary endeavor undertaken to produce a unique product or service.
+C. A collaborative task completed over multiple years.
+D. A series of experiments to refine an existing solution.
+Correct Answer: B
+
+Question 3
+What is the city of Pecos' projected maximum daily water consumption during peak periods?
+A. 2.7 MGD
+B. 3.02 MGD
+C. 3.9 MGD
+D. 9.5 MGD
+Correct Answer: C
+
+Question 4
+Which of the following is NOT part of the Pecos water supply project tasks?
+A. Designing a wellfield collector network.
+B. Building a new water treatment facility.
+C. Sizing a transmission pipeline.
+D. Performing water-hammer analysis.
+Correct Answer: B
+
+Question 5
+What is the purpose of intermediate storage facilities in the Pecos project?
+A. To replace existing treatment facilities.
+B. To ensure adequate water availability during peak demand or pipeline interruptions.
+C. To reduce environmental impact.
+D. To lower construction costs.
+Correct Answer: B
+
+Question 6
+What is the main focus of the second project, the LIA Industrial Park?
+A. Designing a drainage system for a 100-acre light industrial site.
+B. Building new storage tanks for the industrial park.
+C. Replacing outdated pipeline infrastructure.
+D. Implementing a new hydrology software model.
+Correct Answer: A
+
+Question 7
+Which deliverable is common to both projects?
+A. Water quality testing results.
+B. Hydraulic modeling plots and analysis.
+C. Recommendations for green infrastructure.
+D. Installation of relief valves.
+Correct Answer: B
+
+Question 8
+What is emphasized in project presentations as part of the course requirements?
+A. Detailed calculations only.
+B. Team collaboration and communication literacy.
+C. A polished visual design with minimal content.
+D. Solely individual contributions to the project.
+Correct Answer: B
+
+Question 9
+What critical analysis is required to address pipeline pressure changes during sudden shutdowns?
+A. Air relief modeling.
+B. Water-hammer analysis.
+C. Pumping efficiency analysis.
+D. Terrain impact modeling.
+Correct Answer: B
+
+Question 10
+According to the document, what is a key benefit of preparing a well-organized design report?
+A. It eliminates the need for oral presentations.
+B. It acts as a professional record showcasing technical skills.
+C. It replaces the need for teamwork in projects.
+D. It minimizes instructor feedback requirements.
+Correct Answer: B

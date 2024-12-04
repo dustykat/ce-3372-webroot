@@ -1,0 +1,18 @@
+Here’s a suggested structure for your 5-question ranking form to evaluate engineering students' presentations:
+
+    Clarity and Organization
+        Was the presentation well-structured, with a clear introduction, body, and conclusion?
+
+    Content Quality
+        Did the presentation demonstrate a thorough understanding of the topic, with accurate and relevant information?
+
+    Visual and Verbal Communication
+        Were slides or visual aids engaging and easy to understand? Did the speaker communicate ideas clearly and confidently?
+
+    Engagement and Delivery
+        Did the presenter maintain audience interest, use appropriate tone and pace, and respond effectively to questions?
+
+    Professionalism and Teamwork (if applicable)
+        Did the presenter display professionalism in behavior, attire, and preparation? For team presentations, did all members contribute effectively?
+
+Let me know if you’d like to refine these or focus on specific areas!

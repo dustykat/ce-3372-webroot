@@ -1,0 +1,23 @@
+
+
+ES1: Demonstrate ability to summarize engineering literature, and communicating that summary in writing. LA Aqueduct
+
+
+
+
+What should be able to do?
+
+Distribution:
+
+Large Scale: - Given a proposed alignment and water source, design a transmission system to convey water to a demand center.  Develop control rules to size storage tanks and maintain desired system pressures
+
+PR1_PecosWater
+
+Drainage:
+
+Small Scale - Given a Map, estimate discharge at some control point.  Design a drainage system to address changes in real estate. Evaluate if changes have adverse impact.
+
+PR2_LBBFish
+
+
+http://ndl.ethernet.edu.et/bitstream/123456789/87985/4/P.K.%20Swamee%20and%20A.K.%20Sharma%20%282008%29%20Design%20of%20Water%20Supply%20Pipe%20Network.pdf

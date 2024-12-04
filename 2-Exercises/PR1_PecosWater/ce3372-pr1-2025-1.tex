@@ -1,0 +1,66 @@
+\documentclass[12pt]{article}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{daves,fancyhdr,natbib,graphicx,dcolumn,amsmath,lastpage,url}
+\usepackage{amsmath,amssymb,epstopdf,longtable}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+\pagestyle{fancy}
+\lhead{CE 3372 -- Water Systems Design}
+\rhead{SPRING 2025}
+\lfoot{PR1}
+\cfoot{}
+\rfoot{Page \thepage\ of \pageref{LastPage}}
+\renewcommand\headrulewidth{0pt}
+
+
+
+\begin{document}
+\begin{center}
+{\textbf{{ CE 3372 Engineering Hydrology} \\ {Project PR1}}}
+\end{center}
+
+\section*{Project Overview:}
+The City of Pecos, Texas, has identified a critical need to develop an alternate water supply in anticipation of the current wellfield reaching the end of its service life within the next 5-10 years. To ensure the city's long-term water security, an alternate wellfield has been identified, and property rights for its development have been secured. This wellfield is located approximately 30 miles south of the city center.
+
+Your task is to design the components necessary to transport water from this alternate wellfield to Pecos and ensure adequate storage for future demand. This design includes:
+
+\begin{enumerate}
+\item Wellfield Collector Network: Design the network of wells and collection lines that will efficiently gather water from the wellfield and deliver it to a central collection point.
+\item Transmission Pipeline: Design the transmission pipeline system that will carry water from the wellfield to the city’s water treatment and distribution facilities. Consider hydraulic design principles to size the pipeline appropriately based on flow rates and friction losses over the 30-mile distance.
+\item Storage Facilities: Design intermediate storage facilities as necessary, as well as terminal storage to ensure there is sufficient water available for city consumption during peak demand periods or in case of pipeline interruptions. Storage should accommodate both daily use and emergency reserves.
+\end{enumerate}
+
+Assumptions and Constraints:
+
+    The city currently uses approximately X million gallons per day (MGD), and projected growth should be accounted for over a 20-year horizon.
+    The alternate wellfield is estimated to produce Y MGD, with fluctuations due to seasonal variations.
+    Transmission pipeline materials and layout should be designed considering local terrain and minimizing environmental impacts.
+    Intermediate storage facilities may be required based on pipeline hydraulic design and system pressures.
+
+Deliverables:
+
+\begin{itemize}
+\item Design the wellfield pipe network to the collector point. The well locations are already established from a preliminary study conducted during the water rights acquistion process.
+\item Size the transmission pipeline and provide justification for your selection (e.g., diameter, material).
+\item Determine the volume of intermediate and terminal storage facilities required and provide recommendations on their placement.
+\item Demonstrate using a hydraulic model that the system can deliver the required raw water to replace the existing supply, under variable demand conditions.  Identify using the model locations of low pressure, and high pressure. Produce plots of the energy grade line under various demsnd conditions.  Identify locations where pressure relief valves, air relief valves, and flow-control valves are required.
+\item Determine using water-hammer analysis the anticipated pressure changes during sudden shutdown of the transmission pipeline.
+\end{itemize}
+
+
+Additional Information:
+\begin{itemize}
+\item Drawings, maps, and relevant data will be provided to assist with the design process.
+\item Be prepared to explain the rationale behind your design decisions, including considerations of cost, energy use, and reliability.
+\end{itemize}
+Submission Requirements:
+\begin{itemize}
+\item A detailed design report with calculations, maps, and diagrams to support your wellfield, pipeline, and storage facility designs.
+\item A final presentation summarizing your design choices, challenges, and proposed solutions.
+\end{itemize}
+This problem statement provides clarity on expectations and allows room for students to apply engineering principles while also considering real-world constraints. You can adjust "X" and "Y" depending on the actual water usage and production figures you'll provide.
+
+
+\end{document}  
