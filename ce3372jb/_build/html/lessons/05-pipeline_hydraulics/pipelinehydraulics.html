@@ -1,0 +1,765 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Pipeline Hydraulics &#8212; CE 3372 Water Systems Design</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lessons/05-pipeline_hydraulics/pipelinehydraulics';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="6. Pumping Systems" href="../06-pumping/pumps.html" />
+    <link rel="prev" title="5. Pipeline Head Loss" href="../055-headloss/headloss.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/mylogo.png" class="logo__image only-light" alt="CE 3372 Water Systems Design - Home"/>
+    <script>document.write(`<img src="../../_static/mylogo.png" class="logo__image only-dark" alt="CE 3372 Water Systems Design - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome to CE 3372 Water Systems Design
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01-introduction/introduction.html">1. Introduction</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02-dwdesign/drinking_water_design/drinking_water_design.html">2. Drinking Water Design</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02-dwdesign/water_transmission_design/water_transmission_design.html">2.1 Raw Water Transmission Design</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-drawings/design_drawings/design_drawings.html">3. Drawings and Maps</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-drawings/xyz2topo/xyz2topo.html">3.1 Simple Maps from XYZ data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-drawings/qgis_topography/qgis_topography.html">3.2 QGIS Topography</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../04-demands/demand-forcasting.html">4. Demand Estimation</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../055-headloss/headloss.html">5. Pipeline Head Loss</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Pipeline Hydraulics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../06-pumping/pumps.html">6. Pumping Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-storage/storage.html">7. Storage Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08-networks/networks.html">8. Pipe Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../12-pipeline_transients/pipeline_transients.html">12. Pipeline Transients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../13-epanet_intro/epanet_intro.html">13. EPANET Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../15-epanet_pumps/epanet_pumps.html">15. EPANET Pumps, Tanks, and Valves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../17-epanet_eps/epanet_eps.html">17. EPANET Extended Period Simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../19-swdesign/swdesign.html">19. Storm Water Design</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../21-greeninfrastructure/greeninfrastructure.html">21. Green Infrastructure</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../21-greeninfrastructure/21.1waterquality.html">21.1 GI and Water Quality</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../25-swmm_intro/swmm_intro.html">25. SWMM Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../26-swmm_hydrology/swmmhydrology.html">25. SWMM Hydrology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../32-sanitarydesign/sanitarydesign.html">32. Sanitary Sewer Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../33-outfalls/outfalls.html">33. Outfall Considerations</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flessons/05-pipeline_hydraulics/pipelinehydraulics.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/lessons/05-pipeline_hydraulics/pipelinehydraulics.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Pipeline Hydraulics</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-steady-discharge-between-reservoirs-using-on-line-tools">Example: Steady Discharge between Reservoirs (using on-line tools)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-statement">Problem Statement</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#known-values">Known Values</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consolidate-values-for-data-input">Consolidate Values for Data Input</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apply-tool">Apply Tool</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#or-using-our-jupyter-script">Or using our Jupyter Script</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linking-systems">Linking Systems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-rural-water-supply-to-a-village-school">Example: Rural Water Supply to a Village School</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="pipeline-hydraulics">
+<h1>Pipeline Hydraulics<a class="headerlink" href="#pipeline-hydraulics" title="Link to this heading">#</a></h1>
+<section id="example-steady-discharge-between-reservoirs-using-on-line-tools">
+<h2>Example: Steady Discharge between Reservoirs (using on-line tools)<a class="headerlink" href="#example-steady-discharge-between-reservoirs-using-on-line-tools" title="Link to this heading">#</a></h2>
+<p>Here we examine a relatively simple hydraulics question - what is the discharge in the pipe for the situation depicted</p>
+</section>
+<section id="problem-statement">
+<h2>Problem Statement<a class="headerlink" href="#problem-statement" title="Link to this heading">#</a></h2>
+<p><img alt="image.png" src="../../_images/ex1-1.png" /></p>
+<section id="known-values">
+<h3>Known Values<a class="headerlink" href="#known-values" title="Link to this heading">#</a></h3>
+<p>Use tables and references to find known values</p>
+<ul class="simple">
+<li><p>Roughness height:</p></li>
+</ul>
+<p><img alt="image.png" src="../../_images/ex1-2.png" /></p>
+<p><a class="reference external" href="http://54.243.252.9/toolbox/Databases/RoughnessHeight/RoughnessHeight.html">Link to tool</a></p>
+<ul class="simple">
+<li><p>Millimeters to Feet</p></li>
+</ul>
+<p><img alt="image.png" src="../../_images/ex1-3.png" /></p>
+<p><a class="reference external" href="http://54.243.252.9/toolbox/ordinarytools/UnitsConverterTool/UnitsConverterTool.html">Link to tool</a></p>
+<ul class="simple">
+<li><p>Water Properties</p></li>
+</ul>
+<p><img alt="image.png" src="../../_images/ex1-4.png" /></p>
+<p><a class="reference external" href="http://54.243.252.9/toolbox/fluidmechanics/WaterPropertiesUS/WaterPropertiesUS.html">Link to tool</a></p>
+<ul class="simple">
+<li><p>Minor Loss Coefficients</p></li>
+</ul>
+<p><img alt="image.png" src="../../_images/ex1-5.png" /></p>
+</section>
+<section id="consolidate-values-for-data-input">
+<h3>Consolidate Values for Data Input<a class="headerlink" href="#consolidate-values-for-data-input" title="Link to this heading">#</a></h3>
+<p><img alt="image.png" src="../../_images/ex1-6.png" /></p>
+</section>
+<section id="apply-tool">
+<h3>Apply Tool<a class="headerlink" href="#apply-tool" title="Link to this heading">#</a></h3>
+<p><img alt="image.png" src="../../_images/ex1-7.png" /></p>
+<p><a class="reference external" href="http://54.243.252.9/toolbox/pipehydraulics/Q2Reservoir/Q2Reservoir.html">Link to tool</a></p>
+</section>
+<section id="or-using-our-jupyter-script">
+<h3>Or using our Jupyter Script<a class="headerlink" href="#or-using-our-jupyter-script" title="Link to this heading">#</a></h3>
+<p>Our script below applied to the same inputs</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># modified from getQfromH.py</span>
+<span class="c1"># ipython module for pipeline hydraulics</span>
+<span class="c1"># computation engine #########################</span>
+<span class="c1"># import built in functions for log, sqrt</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">log</span><span class="p">,</span><span class="n">sqrt</span>
+<span class="c1"># Define the prototype function</span>
+<span class="k">def</span> <span class="nf">jainQ</span><span class="p">(</span><span class="n">pipe_diameter</span><span class="p">,</span><span class="n">pipe_length</span><span class="p">,</span><span class="n">roughness</span><span class="p">,</span><span class="n">viscosity</span><span class="p">,</span><span class="n">grabity</span><span class="p">,</span><span class="n">head_loss</span><span class="p">):</span>
+    <span class="n">egl_slope</span> <span class="o">=</span> <span class="n">head_loss</span><span class="o">/</span><span class="n">pipe_length</span>
+    <span class="n">t1</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">grabity</span><span class="o">*</span><span class="n">pipe_diameter</span><span class="o">*</span><span class="n">egl_slope</span><span class="p">)</span>
+    <span class="n">t2</span> <span class="o">=</span> <span class="n">roughness</span><span class="o">/</span><span class="p">(</span><span class="mf">3.7</span><span class="o">*</span><span class="n">pipe_diameter</span><span class="p">)</span>
+    <span class="n">t3</span> <span class="o">=</span> <span class="mf">1.78</span><span class="o">*</span><span class="n">viscosity</span>
+    <span class="n">jainQ</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.965</span><span class="o">*</span><span class="n">pipe_diameter</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">t1</span><span class="o">*</span><span class="n">log</span><span class="p">(</span><span class="n">t2</span> <span class="o">+</span> <span class="n">t3</span><span class="o">/</span><span class="p">(</span><span class="n">pipe_diameter</span><span class="o">*</span><span class="n">t1</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">jainQ</span>
+<span class="c1"># values from Example</span>
+<span class="n">pipe_diameter</span> <span class="o">=</span> <span class="mf">2.0</span>
+<span class="n">pipe_length</span> <span class="o">=</span> <span class="mf">10680.0</span>
+<span class="n">roughness</span> <span class="o">=</span> <span class="mf">0.00328</span>
+<span class="n">viscosity</span> <span class="o">=</span> <span class="mf">1.41e-05</span>
+<span class="n">grabity</span> <span class="o">=</span> <span class="mf">32.2</span>
+<span class="n">head_loss</span> <span class="o">=</span> <span class="mf">20.0</span>
+<span class="c1"># disable above and insert interface engine here</span>
+<span class="c1">#</span>
+<span class="c1"># now perform computation and construct output</span>
+<span class="n">discharge</span> <span class="o">=</span> <span class="n">jainQ</span><span class="p">(</span><span class="n">pipe_diameter</span><span class="p">,</span><span class="n">pipe_length</span><span class="p">,</span><span class="n">roughness</span><span class="p">,</span><span class="n">viscosity</span><span class="p">,</span><span class="n">grabity</span><span class="p">,</span><span class="n">head_loss</span><span class="p">)</span>
+<span class="c1"># Echo inputs, and outputs</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Pipe Diameter : &quot;</span><span class="p">,</span> <span class="n">pipe_diameter</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Pipe Length : &quot;</span><span class="p">,</span> <span class="n">pipe_length</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Pipe Roughness Height : &quot;</span><span class="p">,</span> <span class="n">roughness</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Liquid Viscosity : &quot;</span><span class="p">,</span> <span class="n">viscosity</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Gravitational acceleration constant : &quot;</span><span class="p">,</span><span class="n">grabity</span><span class="p">)</span> 
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Head loss : &quot;</span><span class="p">,</span><span class="n">head_loss</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Discharge : &quot;</span><span class="p">,</span><span class="n">discharge</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pipe Diameter :  2.0
+Pipe Length :  10680.0
+Pipe Roughness Height :  0.00328
+Liquid Viscosity :  1.41e-05
+Gravitational acceleration constant :  32.2
+Head loss :  20.0
+Discharge :  10.24529705017876
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><p>Results are close, but not identical. Why? <em>The JupyterLab script did not include the minor loss terms</em></p>
+</div></blockquote>
+</section>
+</section>
+<section id="linking-systems">
+<h2>Linking Systems<a class="headerlink" href="#linking-systems" title="Link to this heading">#</a></h2>
+<p>A hydraulic system can be analysed as a set of linked components to make an otherwise complicated system easier to analyze.</p>
+<ul class="simple">
+<li><p>Idea is to decompose into smaller (hydraulically) independent parts, analyze the parts then reassemble (integrate) the parts to answer questions about the whole system</p></li>
+</ul>
+<section id="example-rural-water-supply-to-a-village-school">
+<h3>Example: Rural Water Supply to a Village School<a class="headerlink" href="#example-rural-water-supply-to-a-village-school" title="Link to this heading">#</a></h3>
+<p><img alt="image.png" src="../../_images/africa-system.png" /></p>
+<p>The figure is an aerial image of a pipeline system with preliminary engineering sketches of the system (lower left panel) and a detail sketch of the terminal small storage tank (upper right panel). The 3,200 meter long pipeline lifts 25C water ( <span class="math notranslate nohighlight">\(\rho= 997 kg/m^3\)</span>,<span class="math notranslate nohighlight">\(\nu= 8.94 E-7 m^2/s\)</span>) from a treatment plant on the downstream face of Gulameta Dam through a 127 millimeter high-density polyethylene (HDPE) pipe (ks =0.0015 mm) to a large diameter at-grade cylindrical storage tank. A secondary, 800 meter long pipeline carries water from the large diameter storage tank to a small, cylindrical (D = 1 meter), elevated storage tank at the village school. Both storage tanks have float valves to prevent overflow and maintain the indicated water pool elevations.</p>
+<p>Analyze proposed system to determine anticipated behavior under various situations:</p>
+<ul class="simple">
+<li><p>Float valve fails at school</p></li>
+<li><p>Outlet valve accidently left open</p></li>
+<li><p>Pump operation under worst failure mode</p></li>
+<li><p>Pump fails, time until system fails/drains</p></li>
+<li><p>Float valve limited</p></li>
+<li><p>Oultet valve limited</p></li>
+</ul>
+<p><strong>Float Valve at School Fails</strong></p>
+<blockquote>
+<div><p>Get dimensions</p>
+</div></blockquote>
+<p><img alt="" src="../../_images/africa-1.png" /></p>
+<blockquote>
+<div><p>Get material properties, and loss coefficients</p>
+</div></blockquote>
+<p><img alt="" src="../../_images/africa-2.png" /></p>
+<blockquote>
+<div><p>Apply On-Line Tool or JupyterLab script</p>
+</div></blockquote>
+<p><img alt="" src="../../_images/africa-3.png" /></p>
+<p>The JupyterLab script is shown below, but needs modification for the minor losses. Hence the two values are sort of close, but without all losses the JupyterLab script as shown overestimates the discharge.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># modified from getQfromH.py</span>
+<span class="c1"># ipython module for pipeline hydraulics</span>
+<span class="c1"># computation engine #########################</span>
+<span class="c1"># import built in functions for log, sqrt</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">log</span><span class="p">,</span><span class="n">sqrt</span>
+<span class="c1"># Define the prototype function</span>
+<span class="k">def</span> <span class="nf">jainQ</span><span class="p">(</span><span class="n">pipe_diameter</span><span class="p">,</span><span class="n">pipe_length</span><span class="p">,</span><span class="n">roughness</span><span class="p">,</span><span class="n">viscosity</span><span class="p">,</span><span class="n">grabity</span><span class="p">,</span><span class="n">head_loss</span><span class="p">):</span>
+    <span class="n">egl_slope</span> <span class="o">=</span> <span class="n">head_loss</span><span class="o">/</span><span class="n">pipe_length</span>
+    <span class="n">t1</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">grabity</span><span class="o">*</span><span class="n">pipe_diameter</span><span class="o">*</span><span class="n">egl_slope</span><span class="p">)</span>
+    <span class="n">t2</span> <span class="o">=</span> <span class="n">roughness</span><span class="o">/</span><span class="p">(</span><span class="mf">3.7</span><span class="o">*</span><span class="n">pipe_diameter</span><span class="p">)</span>
+    <span class="n">t3</span> <span class="o">=</span> <span class="mf">1.78</span><span class="o">*</span><span class="n">viscosity</span>
+    <span class="n">jainQ</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.965</span><span class="o">*</span><span class="n">pipe_diameter</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">t1</span><span class="o">*</span><span class="n">log</span><span class="p">(</span><span class="n">t2</span> <span class="o">+</span> <span class="n">t3</span><span class="o">/</span><span class="p">(</span><span class="n">pipe_diameter</span><span class="o">*</span><span class="n">t1</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">jainQ</span>
+<span class="c1"># values from Example</span>
+<span class="n">pipe_diameter</span> <span class="o">=</span> <span class="mf">0.127</span>
+<span class="n">pipe_length</span> <span class="o">=</span> <span class="mf">800.0</span>
+<span class="n">roughness</span> <span class="o">=</span> <span class="mf">0.000007</span>
+<span class="n">viscosity</span> <span class="o">=</span> <span class="mf">1.0e-06</span>
+<span class="n">grabity</span> <span class="o">=</span> <span class="mf">9.8</span>
+<span class="n">head_loss</span> <span class="o">=</span> <span class="mf">14.3</span>
+<span class="c1"># disable above and insert interface engine here</span>
+<span class="c1">#</span>
+<span class="c1"># now perform computation and construct output</span>
+<span class="n">discharge</span> <span class="o">=</span> <span class="n">jainQ</span><span class="p">(</span><span class="n">pipe_diameter</span><span class="p">,</span><span class="n">pipe_length</span><span class="p">,</span><span class="n">roughness</span><span class="p">,</span><span class="n">viscosity</span><span class="p">,</span><span class="n">grabity</span><span class="p">,</span><span class="n">head_loss</span><span class="p">)</span>
+<span class="c1"># Echo inputs, and outputs</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Pipe Diameter : &quot;</span><span class="p">,</span> <span class="n">pipe_diameter</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Pipe Length : &quot;</span><span class="p">,</span> <span class="n">pipe_length</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Pipe Roughness Height : &quot;</span><span class="p">,</span> <span class="n">roughness</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Liquid Viscosity : &quot;</span><span class="p">,</span> <span class="n">viscosity</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Gravitational acceleration constant : &quot;</span><span class="p">,</span><span class="n">grabity</span><span class="p">)</span> 
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Head loss : &quot;</span><span class="p">,</span><span class="n">head_loss</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Discharge : &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">discharge</span><span class="o">*</span><span class="mi">1000</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="s2">&quot; liters/sec&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pipe Diameter :  0.127
+Pipe Length :  800.0
+Pipe Roughness Height :  7e-06
+Liquid Viscosity :  1e-06
+Gravitational acceleration constant :  9.8
+Head loss :  14.3
+Discharge :  21.185  liters/sec
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>School Outlet Valve Left Open</strong></p>
+<p>Treat as a hole in the tank, assume supply side is unchanged and maintains downstream water level</p>
+<p><img alt="" src="../../_images/africa-44.png" /></p>
+<blockquote>
+<div><p>JupyterLab script for hole in tank (future version this book)</p>
+</div></blockquote>
+</section>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Gupta, R. S. 2017. Hydrology and Hydraulic Systems (4-th Ed). Waveland Press, Inc. pp 633-661</p></li>
+<li><p>Nickerson G. 2008. “Water Distribution Systems” in Land Development Handbook, Ed. S.O. Dewberry, Dewberry Inc., McGraw-Hill <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/3-Readings/WaterDistributionSystems/">http://54.243.252.9/ce-3372-webroot/3-Readings/WaterDistributionSystems/</a></p></li>
+<li><p>Wurbs, R.A., and James, W. P. (2002) “Hydraulics of Pipelines and Pipe Networks” in <em>Water Resources Engineering, Prentice Hall; pp.130-156; and 156-198</em>.<a class="reference external" href="http://54.243.252.9/ce-3372-webroot/3-Readings/Wurbs130-198/">http://54.243.252.9/ce-3372-webroot/3-Readings/Wurbs130-198/</a></p></li>
+<li><p>Roberson, J.A., Cassidy, J.J., and Chaudry, M.H. (1988) Closed Conduits in “Hydraulic Engineering.” Houghton Mifflin Co. pp. 240-310 <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/3-Readings/Chapter5/">http://54.243.252.9/ce-3372-webroot/3-Readings/Chapter5/</a></p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lessons/05-pipeline_hydraulics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../055-headloss/headloss.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">5. Pipeline Head Loss</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../06-pumping/pumps.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">6. Pumping Systems</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-steady-discharge-between-reservoirs-using-on-line-tools">Example: Steady Discharge between Reservoirs (using on-line tools)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-statement">Problem Statement</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#known-values">Known Values</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consolidate-values-for-data-input">Consolidate Values for Data Input</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apply-tool">Apply Tool</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#or-using-our-jupyter-script">Or using our Jupyter Script</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linking-systems">Linking Systems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-rural-water-supply-to-a-village-school">Example: Rural Water Supply to a Village School</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Theodore G. Cleveland
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
