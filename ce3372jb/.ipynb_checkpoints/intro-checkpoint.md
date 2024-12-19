@@ -12,12 +12,17 @@ kernelspec:
   
 ---
 
-# Welcome to CE 3372 Water Systems Design
+# CE 3372 Water Systems Design
 
 This is the electronic instructor's notes for Dr. Cleveland's section(s) of CE 3372 at Texas Tech University.
+
 These instructor's notes are intended to **parallel** the regular textbook: [https://www.amazon.com/Hydrology-Hydraulic-Systems-Ram-Gupta/dp/1577664558](https://www.amazon.com/Hydrology-Hydraulic-Systems-Ram-Gupta/dp/1577664558)
 
 The course content is entirely deployed on a web server hosted at Amazon Web Services at [http://54.243.252.9/ce-3372-webroot/](http://54.243.252.9/ce-3372-webroot/)  This book is located on the same server at [http://54.243.252.9/ce-3372-webroot/ce3372-jb/ce3372jb/\_build/html](http://54.243.252.9/ce-3372-webroot/ce3372-jb/ce3372jb/_build/html)
+
+:::{note}
+2025 update
+:::
 
 ## Suggested Citation
 
@@ -27,7 +32,7 @@ The course content is entirely deployed on a web server hosted at Amazon Web Ser
     
 Copyright © 2021 Cleveland et. al., *The contents of this book are licensed for free consumption under the following license: [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)*
 
-The links in the active book themselves may access **other** other copyrighted materials.  I have taken efforts to correctly attribute such links, but have likely missed some - if you find these please let me know so we can properly attribute (or replace with a public domain equivalent)!  
+The links in the active book themselves may access **other** copyrighted materials.  I have taken efforts to correctly attribute such links, but have likely missed some - if you find these please let me know so we can properly attribute (or replace with a public domain equivalent)!  
 
 :::{note}
 The information below is of use to other potential institutional users of this book. 

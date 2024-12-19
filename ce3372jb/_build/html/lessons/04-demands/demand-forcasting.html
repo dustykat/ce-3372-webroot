@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -177,7 +177,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../../intro.html">
-                    Welcome to CE 3372 Water Systems Design
+                    CE 3372 Water Systems Design
                 </a>
             </li>
         </ul>
@@ -211,7 +211,9 @@
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../25-swmm_intro/swmm_intro.html">25. SWMM Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../26-swmm_hydrology/swmmhydrology.html">25. SWMM Hydrology</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../32-sanitarydesign/sanitarydesign.html">32. Sanitary Sewer Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../31-sanitarydesign/sanitarydesign.html">31. Sanitary Sewer Guidelines</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../32-inflowinfiltration/inflowinfiltration.html">32. Inflow and Infiltration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../33-outfalls/outfalls.html">33. Outfall Considerations</a></li>
 </ul>
 
@@ -408,13 +410,54 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readings">Readings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#videos">Videos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lesson-outline">Lesson Outline</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#water-supply-demands">Water Supply Demands</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-demand">Types of Demand</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#water-needs-for-a-city">Water Needs for a City</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#categories-of-requirements">Categories of Requirements</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#municipal-requirements">Municipal Requirements</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#population-models">Population Models</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#temporal-variation">Temporal Variation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readings">Readings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#population-forecasting">Population Forecasting</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graphical-methods">Graphical Methods</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-methods">Mathematical Methods</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#longer-term-forecasting">Longer-Term Forecasting</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-forecasting">Comparison Forecasting:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#component-techniques">Component Techniques</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advantages-of-longer-term-forecasting">Advantages of Longer-Term Forecasting</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#water-usage">Water Usage</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#components">Components</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#per-capita-usage">Per Capita Usage</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#average-daily-usage">Average Daily Usage</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#categories">Categories</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estimation-tools">Estimation Tools</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#image-placeholder">Image Placeholder</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage-variation">Usage Variation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fire-demand">Fire Demand</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#industrial-demand">Industrial Demand</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waste-assimilation-demand">Waste Assimilation Demand</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#irrigation-and-other-demands">Irrigation and Other Demands</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Categories</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Image Placeholder</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-section">End of Section</a></li>
 </ul>
             </nav>
         </div>
@@ -428,11 +471,48 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="demand-estimation">
 <h1>4. Demand Estimation<a class="headerlink" href="#demand-estimation" title="Link to this heading">#</a></h1>
-<p>Demand estimates are required to size water systems to meet some purpose, or establish that the particular system is infeasible.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This entire section is not yet complete - until so done, refer to <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/1-Lessons/Lesson03/PowerPointInLecture/OldContent/CE3372-Lesson-3.pdf">Demand Estimation.pdf</a>.  The content is identical.  As the content is moved here obsolete parts will be identified, and newer ideas inserted.</p>
+<div class="admonition-course-website admonition">
+<p class="admonition-title">Course Website</p>
+<p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/">http://54.243.252.9/ce-3372-webroot/</a></p>
 </div>
+<p>Demand estimates are required to size water systems to meet some purpose, or establish that the particular system is infeasible.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This section is incomplete</p>
+</div>
+<section id="readings">
+<h2>Readings<a class="headerlink" href="#readings" title="Link to this heading">#</a></h2>
+<div class="admonition-textbook admonition">
+<p class="admonition-title">Textbook</p>
+<p><a class="reference external" href="https://www.waveland.com/browse.php?t=384">Gupta, R.S., 2017. Hydrology and Hydraulic Systems, pp 1-39</a></p>
+</div>
+<div class="admonition-additional-readings admonition">
+<p class="admonition-title">Additional Readings</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/1-Lessons/Lesson03/PowerPointInLecture/OldContent/CE3372-Lesson-3.pdf">Cleveland, T. G. (2020) <em>Water Systems Design Notes (Demand Estimation) to accompany CE-3372</em>, Department of Civil, Environmental, and Construction Engineering, Whitacre College of Engineering.</a></p></li>
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/3-Readings/WaterDemand-Gupta.pdf">Gupta, R. S. 2017. Hydrology and Hydraulic Systems. Waveland Press, Inc. pp 1-19</a></p></li>
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/3-Readings/water-distribution.pdf">Nickerson G. 2008. “Water Distribution Systems” in Land Development Handbook, Ed. S.O. Dewberry, Dewberry Inc., McGraw-Hill</a></p></li>
+<li><p><a class="reference external" href="https://www.bnibooks.com/products/land-development-handbook-4th-edition?variant=37677778108576&amp;amp;country=US&amp;amp;currency=USD&amp;amp;utm_medium=product_sync&amp;amp;utm_source=google&amp;amp;utm_content=sag_organic&amp;amp;utm_campaign=sag_organic&amp;amp;utm_source=google&amp;amp;utm_medium=pmax&amp;amp;utm_campaign=450A&amp;amp;gad_source=1&amp;amp;gclid=EAIaIQobChMIiZqYx5y0igMVky5ECB1uUxmGEAQYASABEgLtlfD_BwE">Land Development Handbook 4ed. 2019.</a> The most useful $200 you will spend in Civil Engineering - this is an upgrade to the copy I used for the excerpt above.  If you buy one get a physcial book - they don’t break, work anytime the lights are on, and you can use it for squashing bugs.</p></li>
+<li><p>Frauenthal, J.C. 1980. <em>Introduction to Population Modeling</em>. Birkhäuser, Boston. (Internet Archive has a copy one can borrow, but no free PDFs on the mighty internet)</p></li>
+</ol>
+</div>
+</section>
+<section id="videos">
+<h2>Videos<a class="headerlink" href="#videos" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=9NYs3Y-IjGw">none</a></p></li>
+</ol>
+</section>
+<section id="lesson-outline">
+<h2>Lesson Outline<a class="headerlink" href="#lesson-outline" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>topic1</p></li>
+<li><p>topic2</p></li>
+<li><p>topic3</p></li>
+</ol>
+</section>
+<section id="water-supply-demands">
+<h2>Water Supply Demands<a class="headerlink" href="#water-supply-demands" title="Link to this heading">#</a></h2>
 <p>Estimates of demand are used to size water systems to meet some purpose, or establish that the particular system is infeasible.</p>
 <p>The purposes can include:</p>
 <ul class="simple">
@@ -442,52 +522,419 @@ document.write(`
 <li><p>Waste Assimilation use</p></li>
 <li><p>Navigation uses (outside scope this course)</p></li>
 </ul>
+<section id="types-of-demand">
+<h3>Types of Demand<a class="headerlink" href="#types-of-demand" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Withdrawal</strong>: Water removed from a stream, lake, or aquifer to supply users. This water is moved to satisfy the use.</p></li>
+<li><p><strong>Non-Withdrawal</strong>: On-site uses such as navigation or recreation where water remains in its original location.</p></li>
+<li><p><strong>Consumptive</strong>: The portion of withdrawal that is no longer available for further use, as it is incorporated into crops, animals, or industrial processes.</p></li>
+</ol>
+</section>
+</section>
 <section id="water-needs-for-a-city">
 <h2>Water Needs for a City<a class="headerlink" href="#water-needs-for-a-city" title="Link to this heading">#</a></h2>
-<p>Consider some generic urban area (cite textbook)</p>
+<p>Consider some generic urban area (figure from Gupta)</p>
 <p><img alt="" src="../../_images/demand-diagram.png" /></p>
-<ul class="simple">
-<li><p>Municipal Requirements</p></li>
-<li><p>Large Industrial Requirements</p></li>
+<section id="categories-of-requirements">
+<h3>Categories of Requirements<a class="headerlink" href="#categories-of-requirements" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Municipal Requirements (Drinking Water Supply)</p></li>
+<li><p>Large Industrial Requirements (Potable and Non-Potable)</p></li>
 <li><p>Waste Assimilation Requirements</p></li>
-</ul>
+</ol>
+</section>
 <section id="municipal-requirements">
 <h3>Municipal Requirements<a class="headerlink" href="#municipal-requirements" title="Link to this heading">#</a></h3>
-<p>A simple relationship establishes municipal requirements:</p>
+<p>A relatively simple relationship establishes municipal requirements:</p>
 <div class="math notranslate nohighlight">
-\[ V_{required} = P_{t} \times U_{per person}\]</div>
-<p>where <span class="math notranslate nohighlight">\(V\)</span> is the volume required, <span class="math notranslate nohighlight">\(P_{t}\)</span> is the population at some moment, <span class="math notranslate nohighlight">\(U\)</span> is the per person usage.</p>
+\[ V_{req} = P_{t} \times U_{per person}\]</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(V_{req}\)</span> is the volume required,</p></li>
+<li><p><span class="math notranslate nohighlight">\(P_{t}\)</span> is the population at some moment,</p></li>
+<li><p><span class="math notranslate nohighlight">\(U_{per person}\)</span> is the per person usage.</p></li>
+</ul>
 <p>Thus the two components required to estimate demand is <strong>how many people</strong> have to be supplied, and <strong>how much each</strong> person uses.</p>
+<p>Notice time is in the relationship.  Conservation practices can influence <span class="math notranslate nohighlight">\(U\)</span>, and growth or decline in <span class="math notranslate nohighlight">\(P\)</span> can also influence the volume required.</p>
+<p>An alternative form is:</p>
+<div class="math notranslate nohighlight">
+\[ V = P \times \frac{V}{P} \]</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( V \)</span>: Volume</p></li>
+<li><p><span class="math notranslate nohighlight">\( P \)</span>: Population</p></li>
+<li><p><span class="math notranslate nohighlight">\( \frac{V}{P} \)</span>: Volume per person</p></li>
+</ul>
 </section>
 </section>
-<section id="population-models">
-<h2>Population Models<a class="headerlink" href="#population-models" title="Link to this heading">#</a></h2>
-<p><img alt="" src="../../_images/popn-forecast.png" /></p>
-<!-- <img src="http://54.243.252.9/ce-3372-webroot/ce3372-jb/ce3372jb/lessons/lesson03/popn-forecast.png" width="400"> -->
-<p><strong>GEOMETRIC GROWTH (MATHEMATICAL)</strong></p>
-<p>When the growth curve is in the exponential phase</p>
-<p><span class="math notranslate nohighlight">\(P_2 = P_1*e^{K_p(t_2-t_1)}\)</span></p>
-<p>where <span class="math notranslate nohighlight">\(K_p\)</span> is the exponential growth constant</p>
-<p><strong>ARITHMETIC GROWTH (MATHEMATICAL)</strong></p>
-<p>When the growth curve is roughly a straight line, then</p>
-<p><span class="math notranslate nohighlight">\(P_2 = P_1 + K_A(t_2-t_1)\)</span></p>
-<p>where <span class="math notranslate nohighlight">\(K_A\)</span> is the slope of the growth curve</p>
-<p><strong>DECLINING GROWTH (MATHEMATICAL)</strong></p>
-<p>When the growth curve approaching the carrying capacity of the region</p>
-<p><span class="math notranslate nohighlight">\(P_2 = P_1 + (P_{sat} - P_1)\cdot(1-e^{K_D(t_2-t_1)})\)</span></p>
-<p>where <span class="math notranslate nohighlight">\(K_D\)</span> is the declining rate constant</p>
+<section id="population-forecasting">
+<h2>Population Forecasting<a class="headerlink" href="#population-forecasting" title="Link to this heading">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Population forecasting is usually outside realm of engineers; they can surely handle the arithmetic, but converting census estimates, and economic development incentives is beyond most engineer’s experiences.  We can make provisional estimates for feasibility, then bring in profe$$ionals for the complete analysis.</p>
+</div>
+<section id="graphical-methods">
+<h3>Graphical Methods<a class="headerlink" href="#graphical-methods" title="Link to this heading">#</a></h3>
+<p>Graphical representations can be used for near future population estimates.</p>
+<p><img alt="" src="../../_images/populationgrowth.png" /></p>
+<p>Recent history is used to determine where the target population is on the growth curve</p>
+<ul class="simple">
+<li><p>Short-term forecasting includes:</p>
+<ul>
+<li><p>Declining growth</p></li>
+<li><p>Arithmetic growth</p></li>
+<li><p>Geometric growth</p></li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The curve above is identical in structure to resource capacity limited growth that you learned in Environmental Engineering (CE 3309).  Examples that will follow such a curve are yeast cells in a sugar rich environment. Dextrose (glucose) is a simple sugar and is the primary energy source for yeast. It is readily taken up by yeast cells and metabolized through glycolysis, followed by either fermentation (anaerobic conditions) or respiration (aerobic conditions).  In aerobic conditions the yeast cells will multiply until nearly all the dextrose is used, then the growth rate declines dramatically.  The asymptote is determined to some extent by the amount of sugar originally present.</p>
+</div>
+<p>An alternative to actually drawing curves (although quite useful) is to determine the portion of interest on the curve and perform the arithmetic.</p>
 </section>
-<section id="temporal-variation">
-<h2>Temporal Variation<a class="headerlink" href="#temporal-variation" title="Link to this heading">#</a></h2>
-<p>The demand is not constant, methods to consider the demand variation within some planning interval are available.</p>
-<p><a class="reference external" href="http://54.243.252.9/toolbox/pipehydraulics/WaterDemandVariation/WaterDemandVariation.html">Water Demand Variation Tool</a></p>
-</section>
-<section id="readings">
-<h2>Readings<a class="headerlink" href="#readings" title="Link to this heading">#</a></h2>
+<section id="mathematical-methods">
+<h3>Mathematical Methods<a class="headerlink" href="#mathematical-methods" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
-<li><p>Gupta, R. S. 2017. Hydrology and Hydraulic Systems. Waveland Press, Inc. pp 1-19 <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/3-Readings/WaterDemand-Gupta.pdf">http://54.243.252.9/ce-3372-webroot/3-Readings/WaterDemand-Gupta.pdf</a></p></li>
-<li><p>Nickerson G. 2008. “Water Distribution Systems” in Land Development Handbook, Ed. S.O. Dewberry, Dewberry Inc., McGraw-Hill <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/3-Readings/water-distribution.pdf">http://54.243.252.9/ce-3372-webroot/3-Readings/water-distribution.pdf</a></p></li>
+<li><p><strong>Geometric Growth</strong>:
+<span class="math notranslate nohighlight">\( P_2 = P_1 \cdot e^{K_P (t_2 - t_1)} \)</span></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( K_P \)</span>: Exponential growth constant (units of recipricol time)</p></li>
+</ul>
+</li>
+<li><p><strong>Arithmetic Growth</strong>:
+<span class="math notranslate nohighlight">\( P_2 = P_1 + K_A (t_2 - t_1) \)</span></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( K_A \)</span>: Slope of the growth curve (units of recipricol time)</p></li>
+</ul>
+</li>
+<li><p><strong>Declining Growth</strong>:
+<span class="math notranslate nohighlight">\( P_2 = P_1 + (P_{sat} - P_1) \cdot (1 - e^{-K_D (t_2 - t_1)}) \)</span></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( K_D \)</span>: Declining rate constant (units of recipricol time)</p></li>
+</ul>
+</li>
 </ol>
+</section>
+</section>
+<section id="longer-term-forecasting">
+<h2>Longer-Term Forecasting<a class="headerlink" href="#longer-term-forecasting" title="Link to this heading">#</a></h2>
+<p>Longer-term population forecasting is a critical aspect of urban and regional planning. It helps in predicting future water demand and ensuring sustainable resource management. This approach uses historical census data and more complex techniques to estimate population growth over decades.</p>
+<section id="comparison-forecasting">
+<h3>Comparison Forecasting:<a class="headerlink" href="#comparison-forecasting" title="Link to this heading">#</a></h3>
+<p>Projects growth by comparing with geographically similar areas.</p>
+<ol class="arabic simple">
+<li><p><strong>Ratio Method (Transposition)</strong>:</p>
+<ul class="simple">
+<li><p>Ratio: <span class="math notranslate nohighlight">\( P_t = P_0 \cdot \frac{P'_t}{P'_0} \)</span></p></li>
+<li><p>Where:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\( P_t \)</span>: Future population of the target area</p></li>
+<li><p><span class="math notranslate nohighlight">\( P_0 \)</span>: Current population of the target area</p></li>
+<li><p><span class="math notranslate nohighlight">\( P'_t \)</span>: Future population of the reference area</p></li>
+<li><p><span class="math notranslate nohighlight">\( P'_0 \)</span>: Current population of the reference area</p></li>
+</ul>
+</li>
+<li><p>Example: If a nearby city with similar characteristics has shown consistent growth, its population ratios can help estimate the target area’s growth.</p></li>
+</ul>
+</li>
+<li><p><strong>Correlation Method</strong>:</p>
+<ul class="simple">
+<li><p>Uses statistical techniques, such as ordinary least squares (OLS), to fit a predictive equation.</p></li>
+<li><p>Formula:</p></li>
+<li><p>Correlation: <span class="math notranslate nohighlight">\( P_t = a \cdot P'_t + b \)</span>
+Where:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\( P_t \)</span>: Target area’s population</p></li>
+<li><p><span class="math notranslate nohighlight">\( P'_t \)</span>: Reference area’s population</p></li>
+<li><p><span class="math notranslate nohighlight">\( a, b \)</span>: Coefficients derived from historical data</p></li>
+</ul>
+</li>
+<li><p>Example: This method is particularly useful when multiple reference areas are available for comparison.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="component-techniques">
+<h3>Component Techniques<a class="headerlink" href="#component-techniques" title="Link to this heading">#</a></h3>
+<p>Component-based forecasting divides population dynamics into smaller measurable parts to understand the influences of births, deaths, and migration.</p>
+<ol class="arabic simple">
+<li><p><strong>Births and Deaths</strong>:</p>
+<ul class="simple">
+<li><p>Birth rate (B) and death rate (D) determine the natural increase or decrease in population.</p></li>
+<li><p>Formula:
+<span class="math notranslate nohighlight">\( P_t = P_0 + (B - D) \cdot \Delta t \)</span></p></li>
+</ul>
+</li>
+<li><p><strong>Net Migration (M)</strong>:</p>
+<ul class="simple">
+<li><p>Accounts for people moving in or out of the area.</p></li>
+<li><p>Formula:
+<span class="math notranslate nohighlight">\( P_t = P_0 + (B - D \pm M) \cdot \Delta t \)</span>
+Where:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\( M \)</span>: Net migration rate</p></li>
+<li><p><span class="math notranslate nohighlight">\( \Delta t \)</span>: Time interval in years</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Composite Models</strong>:</p>
+<ul class="simple">
+<li><p>Combine multiple demographic factors (e.g., age distribution, economic conditions).</p></li>
+<li><p>These models require significant data and computational resources but provide more accurate predictions.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="advantages-of-longer-term-forecasting">
+<h3>Advantages of Longer-Term Forecasting<a class="headerlink" href="#advantages-of-longer-term-forecasting" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Provides a detailed understanding of population trends.</p></li>
+<li><p>Helps design infrastructure that meets future needs.</p></li>
+<li><p>Incorporates economic and social factors for robust predictions.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Long-term forcasting using population dynamics models is a specalist sport.  In the 1980’s the solutions to the dynamic systems were by means of Routh Arrays.</p>
+<p>The Routh Array is a mathematical tool used in control theory and differential equations to determine the stability of a system by analyzing the characteristic equation of a linear system. In the context of population dynamics models, it can be adapted to assess the stability of equilibrium points in systems governed by differential equations.</p>
+<p>Application in Population Dynamics</p>
+<p>Population dynamics models often involve differential equations describing the growth or decline of a population. Stability analysis determines whether the population will converge to an equilibrium (e.g., carrying capacity) or diverge (e.g., unbounded growth or extinction).</p>
+<p>The Routh Array helps in this analysis by examining the characteristic equation derived from the linearized system of differential equations around an equilibrium point. The characteristic equation typically takes the form:</p>
+<div class="math notranslate nohighlight">
+\[P(s)=a_ns^n+a_{n−1}s^{n−1}+\dots+a_0=0 \]</div>
+<p>where <span class="math notranslate nohighlight">\(s\)</span> represents the eigenvalues, and <span class="math notranslate nohighlight">\(a_i\)</span> are coefficients related to the model’s parameters.  (You did similar work with Lagrangian polynomials in Engineering Mathematics)</p>
+<p>Steps in Using the Routh Array:</p>
+<ol class="arabic simple">
+<li><p>Construct the Characteristic Polynomial: Derive it from the population model’s linearized system.</p></li>
+<li><p>Build the Routh Array:
+Organize the coefficients of the polynomial into a tabular form.
+Populate the rows of the array using a recursive formula derived from the coefficients.</p></li>
+<li><p>Determine Stability:</p>
+<ul class="simple">
+<li><p>Check the signs of the first column of the array.</p></li>
+<li><p>If all entries in the first column are positive, the system is stable (all roots have negative real parts).</p></li>
+<li><p>Any sign change indicates potential instability (roots with positive real parts).</p></li>
+</ul>
+</li>
+</ol>
+<p>Advantages:</p>
+<ul class="simple">
+<li><p>Efficient Stability Check: The Routh Array provides stability information without explicitly solving for eigenvalues.</p></li>
+<li><p>Insightful for Complex Models: Useful for models with higher-order dynamics where solving characteristic equations is challenging.</p></li>
+</ul>
+<p>Example in Population Dynamics</p>
+<p>Consider a population model with logistic growth and additional dynamics, leading to a characteristic equation like:</p>
+<div class="math notranslate nohighlight">
+\[s^3+3s^2+3s+1=0\]</div>
+<p>Using the Routh Array, we can determine whether small perturbations around the equilibrium will return to stability or diverge.
+Limitations</p>
+<ul class="simple">
+<li><p>Applicable only to linearized models (near equilibrium points).</p></li>
+<li><p>Requires the system’s differential equations to be representable in polynomial form.</p></li>
+</ul>
+<p>This method provides a systematic way to analyze stability, making it a valuable tool in theoretical studies of population dynamics and their control mechanisms.</p>
+<p>Today (2023) we would simply build a numerical model of the dynamic system, and perturb the model and see how it responds.  In the 1980’s computers were not readily available, so mathematicians invented these clever techniques.</p>
+</div>
+</section>
+</section>
+<section id="water-usage">
+<h2>Water Usage<a class="headerlink" href="#water-usage" title="Link to this heading">#</a></h2>
+<section id="components">
+<h3>Components<a class="headerlink" href="#components" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Average Daily Demand</strong></p></li>
+<li><p><strong>Hourly Variation</strong></p></li>
+<li><p><strong>Fire Demand</strong></p></li>
+</ol>
+</section>
+<section id="per-capita-usage">
+<h3>Per Capita Usage<a class="headerlink" href="#per-capita-usage" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Design life varies by system component.</p></li>
+<li><p>Maintenance and replacement must account for component failures within the overall design life.</p></li>
+</ul>
+</section>
+</section>
+<section id="average-daily-usage">
+<h2>Average Daily Usage<a class="headerlink" href="#average-daily-usage" title="Link to this heading">#</a></h2>
+<section id="categories">
+<h3>Categories<a class="headerlink" href="#categories" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Residential</strong>: Includes drinking, landscaping, and street cleaning. Typically, two demand peaks (morning and evening).</p></li>
+<li><p><strong>Commercial</strong>: Hotels, offices, and shopping centers. Demand is less variable.</p></li>
+<li><p><strong>Industrial</strong>: Fabrication, cooling, and refining. Varies by industry.</p></li>
+</ol>
+</section>
+<section id="estimation-tools">
+<h3>Estimation Tools<a class="headerlink" href="#estimation-tools" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/3-Readings/USGSCircular1200/circular1200.pdf">USGS Circular 1200</a></strong>: Maps and tables for gross estimates.</p></li>
+<li><p><strong>Approximations</strong>: Preliminary designs.</p></li>
+<li><p><strong>Per-Connection Calculations</strong>: Based on flow rates and plumbing capacity.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://extension.psu.edu/water-system-planning-estimating-water-needs">Water System Planning: Estimating Water Needs</a></p></li>
+<li><p><a class="reference external" href="https://thunderbirdproducts.com/blogs/resource/flow-rate">Flow Rate; Thunderbird Products</a></p></li>
+<li><p><a class="reference external" href="https://forms.iapmo.org/email_marketing/codespotlight/2018/Jan25.htm">2015 Uniform Plumbing Code</a></p></li>
+<li><p><a class="reference external" href="https://www.tceq.texas.gov/permitting/water_rights/wr_technical-resources/plumbing-fixtures">Regulatory Decree</a></p></li>
+</ul>
+</li>
+</ol>
+<section id="image-placeholder">
+<h4>Image Placeholder<a class="headerlink" href="#image-placeholder" title="Link to this heading">#</a></h4>
+<p><img alt="Placeholder for water usage estimation diagram" src="lessons/04-demands/path/to/image" /></p>
+</section>
+</section>
+</section>
+<section id="usage-variation">
+<h2>Usage Variation<a class="headerlink" href="#usage-variation" title="Link to this heading">#</a></h2>
+<ul>
+<li><p>Seasonal, daily, and special events (e.g., Super Bowl halftime).</p></li>
+<li><p>Rule-of-thumb estimate for usage variation:</p>
+<div class="math notranslate nohighlight">
+\[ \%U = \frac{180\%}{T^{0.1}} \]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( T \)</span>: Duration in days</p></li>
+</ul>
+</li>
+</ul>
+<p><a class="reference external" href="http://54.243.252.9/toolbox/pipehydraulics/WaterDemandVariation/WaterDemandVariation.html">Water Demand Variation Tool</a> (Online Calculator that implements the above expression, with some input guidance)</p>
+<p><img alt="" src="../../_images/UsageMultiplier.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#### Python Template for Estimation</span>
+<span class="kn">import</span> <span class="nn">math</span>
+
+<span class="k">def</span> <span class="nf">usage_multiplier</span><span class="p">(</span><span class="n">duration_days</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate usage multiplier U based on duration.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">duration_days</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Duration must be greater than 0.&quot;</span><span class="p">)</span>
+    <span class="n">U</span> <span class="o">=</span> <span class="mf">1.80</span> <span class="o">/</span> <span class="p">(</span><span class="n">duration_days</span> <span class="o">**</span> <span class="mf">0.1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">U</span>
+
+<span class="c1"># Example usage</span>
+<span class="n">duration</span> <span class="o">=</span> <span class="mi">7</span>  <span class="c1"># duration in days</span>
+<span class="n">U</span> <span class="o">=</span> <span class="n">usage_multiplier</span><span class="p">(</span><span class="n">duration</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Usage multiplier U for </span><span class="si">{</span><span class="n">duration</span><span class="si">}</span><span class="s2"> days: </span><span class="si">{</span><span class="n">U</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> gallons per capita per day&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Usage multiplier U for 7 days: 1.48 gallons per capita per day
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="fire-demand">
+<h2>Fire Demand<a class="headerlink" href="#fire-demand" title="Link to this heading">#</a></h2>
+<ul>
+<li><p>High withdrawal rates required during emergencies.</p></li>
+<li><p>Fire flow calculation (cite source):</p></li>
+<li><div class="math notranslate nohighlight">
+\[ Q_{fire,GPM} = 1020 \cdot P \cdot (1 - 0.01P) \]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( P \)</span>: Population in thousands</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="k">def</span> <span class="nf">fire_demand</span><span class="p">(</span><span class="n">population_thousands</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate fire flow demand based on population.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">population_thousands</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Population must be greater than 0.&quot;</span><span class="p">)</span>
+    <span class="n">Q_fire</span> <span class="o">=</span> <span class="mi">1020</span> <span class="o">*</span> <span class="n">population_thousands</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mf">0.01</span> <span class="o">*</span> <span class="n">population_thousands</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">Q_fire</span>
+
+<span class="c1"># Example usage</span>
+<span class="n">population</span> <span class="o">=</span> <span class="mi">25</span>  <span class="c1"># Population in thousands</span>
+<span class="n">Q_fire</span> <span class="o">=</span> <span class="n">fire_demand</span><span class="p">(</span><span class="n">population</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Fire flow demand for a population of </span><span class="si">{</span><span class="n">population</span><span class="si">}</span><span class="s2">k: </span><span class="si">{</span><span class="n">Q_fire</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> GPM&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fire flow demand for a population of 25k: 19125.00 GPM
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="industrial-demand">
+<h2>Industrial Demand<a class="headerlink" href="#industrial-demand" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Self-supply for large industries or community-supplied estimates based on usage rates:</p>
+<ul>
+<li><p>Thermal Power: 80 gal/kWh</p></li>
+<li><p>Steel Production: 35,000 gal/ton</p></li>
+<li><p>Petroleum Refining: 770 gal/barrel</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="waste-assimilation-demand">
+<h2>Waste Assimilation Demand<a class="headerlink" href="#waste-assimilation-demand" title="Link to this heading">#</a></h2>
+<ul>
+<li><p>Estimated using methods like TMDL or DO Sag.</p></li>
+<li><p>Preliminary values (Gupta pp. 19-22):</p></li>
+<li><div class="math notranslate nohighlight">
+\[ Q_W = \frac{Q_S}{40 - 0.38 \cdot \%T} \]</div>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="k">def</span> <span class="nf">wasteflow</span><span class="p">(</span><span class="n">Q_stream</span><span class="p">,</span><span class="n">treatment</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate waste flow demand based on source flow and treatment fraction.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">treatment</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;treatment percent be greater than 0.&quot;</span><span class="p">)</span>
+    <span class="n">Q_waste</span> <span class="o">=</span> <span class="n">Q_stream</span> <span class="o">/</span> <span class="p">(</span><span class="mi">40</span> <span class="o">-</span> <span class="mf">0.38</span> <span class="o">*</span> <span class="n">treatment</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">Q_waste</span>
+
+<span class="c1"># Example usage</span>
+<span class="n">Q_stream</span> <span class="o">=</span> <span class="mi">40</span>  <span class="c1"># stream flow in MGD</span>
+<span class="n">treatment</span> <span class="o">=</span> <span class="mi">60</span> <span class="c1"># treatment percentage</span>
+<span class="n">Q_waste</span> <span class="o">=</span> <span class="n">wasteflow</span><span class="p">(</span><span class="n">Q_stream</span><span class="p">,</span><span class="n">treatment</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Receiving Stream Flow before Discharge </span><span class="si">{</span><span class="n">Q_stream</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> MGD&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Treated Sewage Assimilative Capacity </span><span class="si">{</span><span class="n">treatment</span><span class="si">}</span><span class="s2">%: </span><span class="si">{</span><span class="n">Q_waste</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> MGD&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total Stream Flow after Discharge </span><span class="si">{</span><span class="n">Q_waste</span><span class="o">+</span><span class="n">Q_stream</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> MGD&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving Stream Flow before Discharge 40.00 MGD
+Treated Sewage Assimilative Capacity 60%: 2.33 MGD
+Total Stream Flow after Discharge 42.33 MGD
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="irrigation-and-other-demands">
+<h2>Irrigation and Other Demands<a class="headerlink" href="#irrigation-and-other-demands" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h3>Categories<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Irrigation</strong>: Biomass, evapotranspiration, and losses.</p></li>
+<li><p><strong>Other Uses</strong>:</p>
+<ul class="simple">
+<li><p>Hydropower: Run-of-river or storage release.</p></li>
+<li><p>Navigation: River regulation or artificial canals.</p></li>
+</ul>
+</li>
+</ol>
+<section id="id2">
+<h4>Image Placeholder<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<p><img alt="Placeholder for irrigation and navigation demands" src="lessons/04-demands/path/to/image" /></p>
+</section>
+</section>
+</section>
+<section id="end-of-section">
+<h2>End of Section<a class="headerlink" href="#end-of-section" title="Link to this heading">#</a></h2>
 </section>
 </section>
 
@@ -555,13 +1002,54 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readings">Readings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#videos">Videos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lesson-outline">Lesson Outline</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#water-supply-demands">Water Supply Demands</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-demand">Types of Demand</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#water-needs-for-a-city">Water Needs for a City</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#categories-of-requirements">Categories of Requirements</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#municipal-requirements">Municipal Requirements</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#population-models">Population Models</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#temporal-variation">Temporal Variation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readings">Readings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#population-forecasting">Population Forecasting</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graphical-methods">Graphical Methods</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-methods">Mathematical Methods</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#longer-term-forecasting">Longer-Term Forecasting</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-forecasting">Comparison Forecasting:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#component-techniques">Component Techniques</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advantages-of-longer-term-forecasting">Advantages of Longer-Term Forecasting</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#water-usage">Water Usage</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#components">Components</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#per-capita-usage">Per Capita Usage</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#average-daily-usage">Average Daily Usage</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#categories">Categories</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estimation-tools">Estimation Tools</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#image-placeholder">Image Placeholder</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage-variation">Usage Variation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fire-demand">Fire Demand</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#industrial-demand">Industrial Demand</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waste-assimilation-demand">Waste Assimilation Demand</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#irrigation-and-other-demands">Irrigation and Other Demands</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Categories</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Image Placeholder</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-section">End of Section</a></li>
 </ul>
   </nav></div>
 

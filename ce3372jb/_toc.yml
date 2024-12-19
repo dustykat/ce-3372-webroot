@@ -50,8 +50,8 @@ chapters:
 #- file: lessons/28-swmm_storage
 #- file: lessons/29-swmm_pumps
 #- file: lessons/30-swmm_water_surface
-#- file: lessons/31-inflowinfiltration
-- file: lessons/32-sanitarydesign/sanitarydesign
+- file: lessons/31-sanitarydesign/sanitarydesign
+- file: lessons/32-inflowinfiltration/inflowinfiltration
 - file: lessons/33-outfalls/outfalls
 #- file: lessons/lesson26
 #- file: lessons/lesson27
