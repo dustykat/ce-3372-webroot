@@ -440,7 +440,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-advanced-optional">Exercise 2 (Advanced; optional)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#now-to-repeat-the-analysis-using-epanet">Now to repeat the analysis using EPANET</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet-solutions">Spreadsheet Solutions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis-using-epanet">Analysis using EPANET</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hardware-requirements">Hardware Requirements</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#running-epanet-on-a-mac">Running EPANET on a Mac</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#running-epanet-on-amazon-web-services">Running EPANET on Amazon Web Services</a></li>
@@ -1433,8 +1434,18 @@ h_p = H_{\text{shutoff}} - K_{pump}Q^2
 <p>Starting with values of shutoff head (116’) and a pump constant (0.05) and exponent (2) to supply water to the nodes; assume the supply node is as shown and all the nodes are at elevation 100’ (thus the pump must lift 100’).</p>
 </section>
 </section>
-<section id="now-to-repeat-the-analysis-using-epanet">
-<h2>Now to repeat the analysis using EPANET<a class="headerlink" href="#now-to-repeat-the-analysis-using-epanet" title="Link to this heading">#</a></h2>
+<section id="spreadsheet-solutions">
+<h2>Spreadsheet Solutions<a class="headerlink" href="#spreadsheet-solutions" title="Link to this heading">#</a></h2>
+<p>A computer spreadsheet can also be employed to solve these kind of network problems, although at the node-arc matrix grows in size, the spreadsheet becomes hard to navigate.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/8-Spreadsheets/MyNetworkModel.xlsx">Excel Spreadsheet version of Exercise 1 (above)</a></p></li>
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/8-Spreadsheets/pipeline.xls">Excel Spreadsheet</a> Solution to <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/1-Lessons/Lesson08/ScriptsInLecture/Problem4/ce4333-2017-2-es8.pdf">Practical Computational Hydraulics in R – Exercise 8</a></p></li>
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/8-Spreadsheets/Template-Network.xlsx">Excel Spreadsheet</a> Solution to <a class="reference external" href="http://freeswmm.ddns.net/ects-epanet/ects-epanet-notes/_build/html/lessons/lesson01/pythonhydraulicsmodule.html">Example 2 at Freeswmm.ddns.net</a></p></li>
+</ul>
+<p>In these spreadsheets, the spreadsheet is used as a programming tool, so you have to understand the concepts of iteration, circular referencing (its necessary in these models) and how to start and reset calculations.</p>
+</section>
+<section id="analysis-using-epanet">
+<h2>Analysis using EPANET<a class="headerlink" href="#analysis-using-epanet" title="Link to this heading">#</a></h2>
 <section id="hardware-requirements">
 <h3>Hardware Requirements<a class="headerlink" href="#hardware-requirements" title="Link to this heading">#</a></h3>
 <section id="running-epanet-on-a-mac">
@@ -1643,7 +1654,8 @@ Passwd:  <code class="docutils literal notranslate"><span class="pre">vnc#3372$1
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-advanced-optional">Exercise 2 (Advanced; optional)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#now-to-repeat-the-analysis-using-epanet">Now to repeat the analysis using EPANET</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet-solutions">Spreadsheet Solutions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis-using-epanet">Analysis using EPANET</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hardware-requirements">Hardware Requirements</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#running-epanet-on-a-mac">Running EPANET on a Mac</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#running-epanet-on-amazon-web-services">Running EPANET on Amazon Web Services</a></li>
