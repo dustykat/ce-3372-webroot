@@ -3,6 +3,7 @@
 
 title: CE 3372 Water Systems Design
 author: Theodore G. Cleveland
+copyright: "2025"  # Copyright year to be placed in the footer
 logo: wsimage.png
 
 # Force re-execution of notebooks on each build.
