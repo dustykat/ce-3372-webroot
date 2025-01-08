@@ -155,8 +155,8 @@
       
     
     
-    <img src="../../../_static/mylogo.png" class="logo__image only-light" alt="CE 3372 Water Systems Design - Home"/>
-    <script>document.write(`<img src="../../../_static/mylogo.png" class="logo__image only-dark" alt="CE 3372 Water Systems Design - Home"/>`);</script>
+    <img src="../../../_static/wsimage.png" class="logo__image only-light" alt="CE 3372 Water Systems Design - Home"/>
+    <script>document.write(`<img src="../../../_static/wsimage.png" class="logo__image only-dark" alt="CE 3372 Water Systems Design - Home"/>`);</script>
   
   
 </a></div>
@@ -187,11 +187,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../02-dwdesign/water_transmission_design/water_transmission_design.html">2.1 Raw Water Transmission Design</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">3. Drawings and Maps</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../xyz2topo/xyz2topo.html">3.1 Simple Maps from XYZ data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qgis_topography/qgis_topography.html">3.2 QGIS Topography</a></li>
-</ul>
-</details></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Drawings and Maps</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="../../04-demands/demand-forcasting.html">4. Demand Estimation</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../055-headloss/headloss.html">5. Pipeline Head Loss</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../05-pipeline_hydraulics/pipelinehydraulics.html">5.1 Pipeline Hydraulics</a></li>
@@ -205,6 +202,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../15-epanet_pumps/epanet_pumps.html">15. EPANET Pumps, Tanks, and Valves</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../17-epanet_eps/epanet_eps.html">17. EPANET Extended Period Simulation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../19-swdesign/swdesign.html">19. Storm Water Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../20-inletsizing/inlets.html">20. Stormwater Collection - Inlet Sizing</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../21-greeninfrastructure/greeninfrastructure.html">21. Green Infrastructure</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../21-greeninfrastructure/21.1waterquality.html">21.1 GI and Water Quality</a></li>
 </ul>
@@ -410,9 +408,26 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">3. Drawings and Maps</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readings">Readings</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#videos">Videos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lesson-outline">Lesson Outline</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#presentation-graphics">Presentation Graphics</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-use-presentation-graphics">Why Use Presentation Graphics?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-graphics">Types of Graphics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#psychology-of-graphs">Psychology of Graphs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#precision-and-audience">Precision and Audience</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#color">Color</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shading-and-size">Shading and Size</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#volume-area">Volume/Area</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#angle-slope-and-curvature">Angle, Slope, and Curvature</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#length">Length</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grouped-vs-stacked-bar-charts">Grouped vs. Stacked Bar Charts</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pitfalls-to-avoid">Pitfalls to Avoid</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-drawings">Design Drawings</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plan-view-requirements">Plan View Requirements</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-elevation-view-requirements">Profile (Elevation) View Requirements</a></li>
@@ -422,6 +437,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-a-sanitary-sewer-line">Example 2. A sanitary sewer line</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-3-a-storm-drain-system">Example 3. A storm drain system</a></li>
 </ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -460,8 +478,92 @@ document.write(`
 <section id="lesson-outline">
 <h2>Lesson Outline<a class="headerlink" href="#lesson-outline" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
+<li><p>Presentation graphics</p></li>
 <li><p>Design Drawings</p></li>
+<li><p>GIS topography</p></li>
+<li><p>XYZ to Topographic maps (in absence of GIS coverages)</p></li>
 </ol>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="presentation-graphics">
+<h1>Presentation Graphics<a class="headerlink" href="#presentation-graphics" title="Link to this heading">#</a></h1>
+<p>Clear and effective communication is a cornerstone of engineering design. While design drawings provide precise technical details and GIS tools offer spatial context, presentation graphics serve as the bridge between raw data and actionable insights. They simplify complex information, making it accessible and compelling for decision-makers and stakeholders. <!--In this section, we’ll explore the role of presentation graphics in engineering, their design principles, and how they complement design drawings, GIS tools, and topographic representations to create a comprehensive narrative for any project.--></p>
+<p>The primary goal of engineering and science studies is to support decision-making with credible, data-driven conclusions. While decisions can be made arbitrarily (e.g., flipping a coin), science and data enhance <strong>credibility</strong>.</p>
+<section id="why-use-presentation-graphics">
+<h2>Why Use Presentation Graphics?<a class="headerlink" href="#why-use-presentation-graphics" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Decisions require explanation and support.</p></li>
+<li><p>Written materials may imply potential litigation, making clear presentation essential.</p></li>
+<li><p>Graphics simplify and clarify complex information.</p></li>
+</ul>
+</section>
+<section id="types-of-graphics">
+<h2>Types of Graphics<a class="headerlink" href="#types-of-graphics" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Graphs</strong>: Highlight relationships, differentiate “signal” from “noise.”</p></li>
+<li><p><strong>Tables</strong>: Present similar data but are harder to interpret.</p></li>
+<li><p><strong>Maps</strong>: Depict spatial relationships effectively.</p></li>
+<li><p><strong>Thematic Maps</strong>: Show grouped spatial relationships.</p></li>
+</ul>
+</section>
+<section id="psychology-of-graphs">
+<h2>Psychology of Graphs<a class="headerlink" href="#psychology-of-graphs" title="Link to this heading">#</a></h2>
+<section id="precision-and-audience">
+<h3>Precision and Audience<a class="headerlink" href="#precision-and-audience" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Use lower precision for general audiences.</p></li>
+<li><p>Use higher precision for technical audiences.</p></li>
+</ul>
+</section>
+<section id="color">
+<h3>Color<a class="headerlink" href="#color" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Hot colors (e.g., red) appear larger than cool colors (e.g., blue) of the same size; pastels avoid this bias.</p></li>
+<li><p>Avoid “newspaper” graphics.</p></li>
+<li><p>Use color lines instead of B&amp;W where feasible.</p></li>
+<li><p>Be cautious with red/green combinations—common colorblindness affects perception.</p></li>
+</ul>
+</section>
+<section id="shading-and-size">
+<h3>Shading and Size<a class="headerlink" href="#shading-and-size" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Shading is hard to interpret in thematic maps with varying area sizes; limit to ~5 distinguishable shades.</p></li>
+</ul>
+</section>
+<section id="volume-area">
+<h3>Volume/Area<a class="headerlink" href="#volume-area" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Pie charts only show large differences well; prefer ordered bar graphs.</p></li>
+<li><p>Pie charts with percentages indicate poor (graphics) design.</p></li>
+</ul>
+</section>
+<section id="angle-slope-and-curvature">
+<h3>Angle, Slope, and Curvature<a class="headerlink" href="#angle-slope-and-curvature" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Hard to perceive; plot differences when variations matter.</p></li>
+<li><p>Use raw data when uniformity is key.</p></li>
+</ul>
+</section>
+<section id="length">
+<h3>Length<a class="headerlink" href="#length" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Judging lengths is difficult without a common scale; color and shading distort perception.</p></li>
+</ul>
+</section>
+<section id="grouped-vs-stacked-bar-charts">
+<h3>Grouped vs. Stacked Bar Charts<a class="headerlink" href="#grouped-vs-stacked-bar-charts" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Favor dot charts or boxplots for better clarity.</p></li>
+</ul>
+</section>
+</section>
+<section id="pitfalls-to-avoid">
+<h2>Pitfalls to Avoid<a class="headerlink" href="#pitfalls-to-avoid" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Perspective</strong>: Distorts scales; acceptable for marketing but not technical presentations.</p></li>
+<li><p><strong>Scale Breaks</strong>: Must be obvious (e.g., in financial charts).</p></li>
+<li><p><strong>Overlapping Histograms</strong>: Confusing and unclear.</p></li>
+</ul>
 </section>
 <section id="design-drawings">
 <h2>Design Drawings<a class="headerlink" href="#design-drawings" title="Link to this heading">#</a></h2>
@@ -605,9 +707,26 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">3. Drawings and Maps</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readings">Readings</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#videos">Videos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lesson-outline">Lesson Outline</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#presentation-graphics">Presentation Graphics</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-use-presentation-graphics">Why Use Presentation Graphics?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-graphics">Types of Graphics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#psychology-of-graphs">Psychology of Graphs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#precision-and-audience">Precision and Audience</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#color">Color</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shading-and-size">Shading and Size</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#volume-area">Volume/Area</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#angle-slope-and-curvature">Angle, Slope, and Curvature</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#length">Length</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grouped-vs-stacked-bar-charts">Grouped vs. Stacked Bar Charts</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pitfalls-to-avoid">Pitfalls to Avoid</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-drawings">Design Drawings</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plan-view-requirements">Plan View Requirements</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-elevation-view-requirements">Profile (Elevation) View Requirements</a></li>
@@ -617,6 +736,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-a-sanitary-sewer-line">Example 2. A sanitary sewer line</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-3-a-storm-drain-system">Example 3. A storm drain system</a></li>
 </ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>
