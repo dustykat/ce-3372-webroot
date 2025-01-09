@@ -7,6 +7,8 @@ chapters:
 #- file: markdown
 #- file: notebooks
 - file: lessons/01-introduction/introduction
+  sections:
+  - file: lessons/02-projects/projects
 ##
 - file: lessons/02-dwdesign/drinking_water_design/drinking_water_design
   sections:
