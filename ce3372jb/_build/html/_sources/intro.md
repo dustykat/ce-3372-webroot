@@ -28,7 +28,7 @@ The course content is entirely deployed on a web server hosted at Amazon Web Ser
 
 ## Suggested Citation
 
-<font color=blue>Theodore G. Cleveland (2022), *Water Systems Design: Instructor's Notes for CE 3372 at TTU*. Department of Civil, Environmental, and Construction Engineering, Whitacre College of Engineering, DOI (pending).</font>
+<font color=blue>Theodore G. Cleveland (2022), *Water Systems Design: Instructor's Notes for CE 3372 at TTU*. Department of Civil, Environmental, and Construction Engineering, Whitacre College of Engineering, https://doi.org/10.18738/T8/TOKMNQ.</font>
 
 ## Copyright Information
     
