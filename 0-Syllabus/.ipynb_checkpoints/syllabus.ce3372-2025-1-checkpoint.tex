@@ -15,6 +15,15 @@
 \rfoot{Page \thepage\ of \pageref{LastPage}}
 \renewcommand\headrulewidth{0pt}
 
+\usepackage{draftwatermark}
+
+% Set the watermark text
+\SetWatermarkText{DRAFT}
+
+% Customize the watermark
+\SetWatermarkScale{4}  % Adjust the scale (default is 1)
+\SetWatermarkColor[gray]{0.8}  % Set color (gray scale: 0.0 = black, 1.0 = white)
+\SetWatermarkAngle{45}  % Set the angle (default is 45 degrees)
 
 
 \begin{document}
@@ -23,18 +32,17 @@
 %%%%%% BEGIN SYLLABUS COMPONENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%2010-0814TGC%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{{Course Location, Textbook, Instructor Contact Information}}
 \begin{tabular}{p{1.5in}p{5.0in}}
-Class Meetings:  &    18:30-19:50 , T-TH, CE 001 (Section 001) \\
-~ &    11:00-12:20 , T-TH, CE 211 (Section 002) \\
+Class Meetings:  &    14:00-14:50 , MWF, CE 205 (Section 001) \\
 Instructor: & Theodore G. Cleveland, CE Room 203F \\
 TA: & none \\
-Office Hours: & Open Door Policy \\
-%~ & T. Cleveland MW 08:00 - 10:00 \\
+Office Hours:  & T. Cleveland MWF 10:00 - 11:00 \\
+~ & T. Cleveland F 13:00-14:00\\
 Telephone: & (806)834-5101 \\
 %Cell Phone: & (832) 722-4185 (more reliable than office phone) \\
 E-mail: & \texttt{theodore.cleveland@ttu.edu}\\
-Web: & \texttt{http://atomickitty.ddns.net/} \\
+Website: & \texttt{http://54.243.252.9/ce-3372-webroot/} \\
 %%%%%%2010-0814TGC%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Textbook(s) : &  materials on server; representative list at end of document. \\ 
+Textbook(s) : &  cite{Gupta2017} \\ 
 %~ & \cite{Wurbs2002}& \cite{Chin2006} & \cite{mays2011} \\
 %~ & \cite{ncees2008} & \cite{rossman2000} & \cite{rossman2009} \\
 %~ & \cite{gironas2009} & and more ... & \\
@@ -63,19 +71,35 @@ During this course the student will
 
 \end{enumerate}
 
-\subsection*{ABET Program Outcomes}
-A subset of the ABET Program Outcomes are addressed in CE 3372, these outcomes are listed below:\footnote{Item 3[b] below is only partially fulfilled --- in this course students will analyze and interpret data, design of experiments is beyond the scope of the class.}
+\subsection*{{ABET Program Outcomes}}
+This course specifically addresses the outcomes listed below.  Only the primary outcome is assessed as part of the CECE Continuous Improvement Program.
 
+\textbf{Primary Outcomes}
+\begin{itemize}
+\item (2.)an ability \textbf{to apply engineering design to produce solutions that meet specified needs}
+with consideration of public health, safety, and welfare, as well as global, cultural, social,
+environmental, and economic factors.\footnote{The boldface portion is the main emphasis in this course}
+\item (3.) \textbf{an ability to communicate effectively with a range of audiences}
+\item (5.) \textbf{an ability to function effectively on a team whose members together provide
+leadership, create a collaborative and inclusive environment, establish goals,
+plan tasks, and meet objectives}
+\end{itemize}
 
-\begin{tabular}{p{0.5in}p{5.5in}}
-\texttt{3[a].}  & Ability to apply knowledge of mathematics, science, and engineering.\\
-\texttt{3[b].}  & Ability to design and conduct experiments, as well as to analyze and interpret data.\\
-\texttt{3[e].}  & Ability to identify, formulate, and solve engineering problems.\\
-\texttt{3[i].}   & Recognition of need for life-long learning.\\
-\texttt{3[k].}  & Ability to use the techniques, skills, and modern engineering tools necessary for engineering practice.\\
-\texttt{8[d].}  & Proficiency in water resources engineering.\\
-\end{tabular}
-%\newpage
+\textbf{Secondary Outcomes}
+
+\begin{itemize}
+\item (7.) An ability to acquire and apply new knowledge as needed, using appropriate learning strategies.
+\end{itemize}
+
+\subsubsection*{{About ABET EAC Criteria}}
+
+The outcomes above (primary and secondary) are a subset of those prescribed in ABET EAC General Criteria for Bacculerate Programs \citep{ABET2024}
+
+\quote{\textbf{Criteria 3, Student Outcomes}: The program must have documented student outcomes that support the program educational objectives. Attainment of these outcomes prepares graduates to enter the professional practice of engineering. Student outcomes are outcomes (1) through (7), plus any additional outcomes that may be articulated by the program.}
+
+The primary outcomes (above) are assessed as part of the CECE Continuous Improvement Program that is prescribed in ABET EAC General Criteria for Bacculerate Programs \citep{ABET2024}
+
+\quote{\textbf{Criteria 4, Continuous Improvement}: The program must regularly use appropriate, documented processes for assessing and evaluating the extent to which the student outcomes are being attained. The results of these evaluations must be systematically utilized as input for the program’s continuous improvement actions. Other available information may also be used to assist in the continuous improvement of the program.}
 
 
 
@@ -263,6 +287,11 @@ DATE & TOPIC & READINGS \\
 \begin{thebibliography}{}
 \bibitem[Gupta(2017)]{Gupta2017}
 Gupta, R.S. 2017. Hydrology and Hydraulic Systems 4th ed. Waveland Press, Inc. ISBN 978-1-4786-3091-3 888p.
+
+\bibitem[ABET(2024)]{ABET2024}
+ABET (2024) Criteria for Accrediting ENGINEERING PROGRAMS. 
+ABET, 415 North Charles St., Baltimore, MD 21201 
+[FREE DOWNLOAD] @ \url{https://www.abet.org/wp-content/uploads/2023/03/23-24-EAC-Criteria_FINAL2.pdf}
 
 \bibitem[\protect\citeauthoryear{Chin}{Chin}{2006}]{Chin2006}
 Chin, D. (2006). 
