@@ -439,8 +439,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#per-capita-usage">Per Capita Usage</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#average-daily-usage">Average Daily Usage</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#categories">Categories</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#average-daily-demand-add"><strong>Average Daily Demand (ADD)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estimation-techniques-for-average-daily-demand"><strong>Estimation Techniques for Average Daily Demand</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estimation-tools">Estimation Tools</a></li>
 </ul>
 </li>
@@ -449,7 +449,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#industrial-demand">Industrial Demand</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waste-assimilation-demand">Waste Assimilation Demand</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#irrigation-and-other-demands">Irrigation and Other Demands</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Categories</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#categories">Categories</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-section">End of Section</a></li>
@@ -787,20 +787,114 @@ Limitations</p>
 </ul>
 </section>
 </section>
-<section id="average-daily-usage">
-<h2>Average Daily Usage<a class="headerlink" href="#average-daily-usage" title="Link to this heading">#</a></h2>
-<section id="categories">
-<h3>Categories<a class="headerlink" href="#categories" title="Link to this heading">#</a></h3>
+<section id="average-daily-demand-add">
+<h2><strong>Average Daily Demand (ADD)</strong><a class="headerlink" href="#average-daily-demand-add" title="Link to this heading">#</a></h2>
+<p><strong>Description</strong>:<br />
+Average Daily Demand (ADD) refers to the average volume of water required by a system over a 24-hour period, typically measured in gallons per day (GPD) or cubic meters per day (m³/day). It serves as a baseline for designing water systems, ensuring that infrastructure components like pipes, pumps, and storage facilities are adequately sized to meet typical daily needs.</p>
+<p><strong>Significance in Water System Design</strong>:</p>
+<ul class="simple">
+<li><p><strong>Baseline Capacity</strong>: Determines the system’s normal operating requirements.</p></li>
+<li><p><strong>Foundation for Variability Analysis</strong>: Serves as the basis for calculating peak demands (e.g., maximum daily demand, peak hourly demand).</p></li>
+<li><p><strong>Resource Planning</strong>: Helps in assessing long-term supply adequacy and operational costs.</p></li>
+</ul>
+<p><strong>Components of Average Daily Demand</strong>:</p>
 <ol class="arabic simple">
-<li><p><strong>Residential</strong>: Includes drinking, landscaping, and street cleaning. Typically, two demand peaks (morning and evening).</p></li>
-<li><p><strong>Commercial</strong>: Hotels, offices, and shopping centers. Demand is less variable.</p></li>
-<li><p><strong>Industrial</strong>: Fabrication, cooling, and refining. Varies by industry.</p></li>
+<li><p><strong>Residential Demand</strong>: Includes indoor uses like drinking, cooking, and bathing, as well as outdoor uses like irrigation.</p></li>
+<li><p><strong>Commercial Demand</strong>: Accounts for hotels, offices, and retail spaces, which often have predictable but distinct patterns.</p></li>
+<li><p><strong>Industrial Demand</strong>: Includes water-intensive processes like cooling, fabrication, or cleaning.</p></li>
+<li><p><strong>Institutional Demand</strong>: Hospitals, schools, and other facilities that cater to public needs.</p></li>
+<li><p><strong>Public Uses</strong>: Firefighting, street cleaning, and park irrigation.</p></li>
 </ol>
+<hr class="docutils" />
+<section id="estimation-techniques-for-average-daily-demand">
+<h3><strong>Estimation Techniques for Average Daily Demand</strong><a class="headerlink" href="#estimation-techniques-for-average-daily-demand" title="Link to this heading">#</a></h3>
+<p>Below are common methods and tools for estimating ADD, along with a brief description of their applications:</p>
+<ol class="arabic simple">
+<li><p><strong>Per Capita Consumption Method</strong>:</p>
+<ul class="simple">
+<li><p><strong>Description</strong>: Estimates based on the average water usage per person in the service area.</p></li>
+<li><p><strong>Formula</strong>:<br />
+$<span class="math notranslate nohighlight">\(
+\text{ADD} = P \times U
+\)</span>$<br />
+Where:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\( P \)</span>: Population in the service area.</p></li>
+<li><p><span class="math notranslate nohighlight">\( U \)</span>: Per capita usage (gallons/person/day or liters/person/day).</p></li>
+</ul>
+</li>
+<li><p><strong>Application</strong>: Suitable for municipal systems with population and usage statistics.</p></li>
+</ul>
+</li>
+<li><p><strong>Historical Records</strong>:</p>
+<ul class="simple">
+<li><p><strong>Description</strong>: Uses historical water usage data to compute the average over a specific period.</p></li>
+<li><p><strong>Application</strong>: Best for established systems with reliable metering data.</p></li>
+</ul>
+</li>
+<li><p><strong>Land Use Method</strong>:</p>
+<ul class="simple">
+<li><p><strong>Description</strong>: Estimates demand based on the type and size of land use (e.g., residential, commercial, industrial).</p></li>
+<li><p><strong>Application</strong>: Useful in urban planning where land use zoning is known.</p></li>
+</ul>
+</li>
+<li><p><strong>Regression Models</strong>:</p>
+<ul class="simple">
+<li><p><strong>Description</strong>: Statistical models that correlate water demand with variables such as temperature, population, and economic activity.</p></li>
+<li><p><strong>Application</strong>: Ideal for analyzing demand influenced by multiple factors.</p></li>
+</ul>
+</li>
+<li><p><strong>Design Standards and Guidelines</strong>:</p>
+<ul class="simple">
+<li><p><strong>Description</strong>: Use of standardized values from codes or guidelines, such as the Uniform Plumbing Code or American Water Works Association (AWWA) standards.</p></li>
+<li><p><strong>Application</strong>: Preliminary designs where specific local data is unavailable.</p></li>
+</ul>
+</li>
+<li><p><strong>USGS Circular 1200</strong>:</p>
+<ul class="simple">
+<li><p><strong>Description</strong>: Provides maps and tables for regional water usage estimates based on past studies.</p></li>
+<li><p><strong>Application</strong>: Useful for broad regional studies or areas lacking metering infrastructure.</p></li>
+</ul>
+</li>
+<li><p><strong>Water Balance Approach</strong>:</p>
+<ul class="simple">
+<li><p><strong>Description</strong>: Computes demand as the difference between total supply and losses (e.g., unaccounted-for water, leaks).</p></li>
+<li><p><strong>Application</strong>: Systems requiring loss quantification.</p></li>
+</ul>
+</li>
+<li><p><strong>Benchmarking with Similar Communities</strong>:</p>
+<ul class="simple">
+<li><p><strong>Description</strong>: Uses data from demographically and geographically similar communities to estimate ADD.</p></li>
+<li><p><strong>Application</strong>: Helpful for new or rapidly developing areas.</p></li>
+</ul>
+</li>
+<li><p><strong>Usage Monitoring and Surveys</strong>:</p>
+<ul class="simple">
+<li><p><strong>Description</strong>: Direct measurements from flow meters or household surveys to estimate individual and community usage.</p></li>
+<li><p><strong>Application</strong>: Best for targeted studies or refining existing estimates.</p></li>
+</ul>
+</li>
+</ol>
+<hr class="docutils" />
+<p><strong>Illustrative Example</strong>:<br />
+A city with a population of 50,000 and an average per capita usage of 120 gallons/day would have:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{ADD} = 50,000 \times 120 = 6,000,000 \, \text{GPD} \, (6 \, \text{MGD})
+\]</div>
+<p>This baseline can be further analyzed to determine infrastructure requirements for peak flows and storage.</p>
+<hr class="docutils" />
+<!--
+### Categories
+1. **Residential**: Includes drinking, landscaping, and street cleaning. Typically, two demand peaks (morning and evening).
+2. **Commercial**: Hotels, offices, and shopping centers. Demand is less variable.
+3. **Industrial**: Fabrication, cooling, and refining. Varies by industry.
+-->
 </section>
 <section id="estimation-tools">
 <h3>Estimation Tools<a class="headerlink" href="#estimation-tools" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
-<li><p><strong><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/3-Readings/USGSCircular1200/circular1200.pdf">USGS Circular 1200</a></strong>: Maps and tables for gross estimates.</p></li>
+<li><p><strong><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/3-Readings/USGSCircular1200/circular1200.pdf">USGS Circular 1200</a></strong>: Maps and tables for gross estimates. (about 30 years old at time of this writing, undoubtably more recent data are available)</p></li>
 <li><p><strong>Approximations</strong>: Preliminary designs.</p></li>
 <li><p><strong>Per-Connection Calculations</strong>: Based on flow rates and plumbing capacity.</p>
 <ul class="simple">
@@ -972,8 +1066,8 @@ Total Stream Flow after Discharge 42.33 MGD
 </section>
 <section id="irrigation-and-other-demands">
 <h2>Irrigation and Other Demands<a class="headerlink" href="#irrigation-and-other-demands" title="Link to this heading">#</a></h2>
-<section id="id1">
-<h3>Categories<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<section id="categories">
+<h3>Categories<a class="headerlink" href="#categories" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p><strong>Irrigation</strong>: Biomass, evapotranspiration, and losses.</p></li>
 <li><p><strong>Other Uses</strong>:</p>
@@ -1082,8 +1176,8 @@ Total Stream Flow after Discharge 42.33 MGD
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#per-capita-usage">Per Capita Usage</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#average-daily-usage">Average Daily Usage</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#categories">Categories</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#average-daily-demand-add"><strong>Average Daily Demand (ADD)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estimation-techniques-for-average-daily-demand"><strong>Estimation Techniques for Average Daily Demand</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estimation-tools">Estimation Tools</a></li>
 </ul>
 </li>
@@ -1092,7 +1186,7 @@ Total Stream Flow after Discharge 42.33 MGD
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#industrial-demand">Industrial Demand</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waste-assimilation-demand">Waste Assimilation Demand</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#irrigation-and-other-demands">Irrigation and Other Demands</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Categories</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#categories">Categories</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-section">End of Section</a></li>
