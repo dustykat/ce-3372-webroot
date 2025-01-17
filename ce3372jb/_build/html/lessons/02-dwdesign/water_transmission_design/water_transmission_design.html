@@ -182,7 +182,10 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../01-introduction/introduction.html">1. Introduction</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../01-introduction/introduction.html">1. Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../02-projects/projects.html">1.2 Semester Design Project(s)</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../drinking_water_design/drinking_water_design.html">2. Drinking Water Design</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">2.1 Raw Water Transmission Design</a></li>
 </ul>
@@ -414,6 +417,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transmission-systems">Transmission Systems</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determination-of-transmission-pipe-size">Determination of Transmission Pipe Size</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maximum-pressure">Maximum Pressure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minimum-pressure">Minimum Pressure</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#design-considerations">Design Considerations</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#appurtenances-for-transmission-mains">Appurtenances For Transmission Mains</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#valves">Valves</a></li>
@@ -486,6 +490,49 @@ document.write(`
 <section id="maximum-pressure">
 <h3>Maximum Pressure<a class="headerlink" href="#maximum-pressure" title="Link to this heading">#</a></h3>
 <p>The pipe material should be selected to withstand the highest possible pressure that can occur in the pipeline. For a gravity system, the worst-case scenario is for pressure to be at its maximum during shut-off at the downstream end when the static pressure is too high. For the transmission line design, a maximum computed HGL based on a minimum supply rate equivalent to 0.3 times the average day demand should be examined. However, practical experience from the ground suggests that there is no need to limit the maximum allowable pressure to 60m head. Instead, considerations should be given on the basis of the economic grounds. However, in any circumstances where the maximum allowable pressure be exceeded, break pressure tanks should be installed along the main. The break pressure tank will limit the static pressure by providing an open water surface at certain points of the transmission line. Design of transmission line is usually undertaken with the use of hydraulic computer software, which is discussed elsewhere.</p>
+</section>
+<section id="minimum-pressure">
+<h3>Minimum Pressure<a class="headerlink" href="#minimum-pressure" title="Link to this heading">#</a></h3>
+<p>In general, minimum pressure requirements for raw water pipelines (used to transport untreated water from sources like rivers, reservoirs, or wells to treatment facilities) vary depending on factors like system design, local regulations, and operating conditions. While there is no universal standard, here are some common guidelines and references:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Raw water can be transported in an aqueduct at grade, open channel - so the minimum pressure would be “zero.”  Treated water (potable and yummy) is typically transported in pressurized systems RG-195 has Texas requirements for this kind of water.  Listed below are guidlines as well as reasons for the values.</p>
+</div>
+<p><strong>General Guidelines</strong></p>
+<ol class="arabic simple">
+<li><p>Minimum Pressures:</p></li>
+</ol>
+<ul class="simple">
+<li><p>10 psi to 20 psi (~0.7 to 1.4 bar): Often considered the minimum pressure to avoid cavitation, ensure flow stability, and reduce the risk of pipe collapse.</p></li>
+<li><p>15 psi to 25 psi (~1 to 1.7 bar): Typical design minimum for gravity-fed raw water pipelines.</p></li>
+<li><p>30 psi (~2 bar): Commonly used for pressurized systems to ensure reliability under varying conditions. (This is probably for treated water - not specified in source documents)</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>Pipeline Material Considerations:</p></li>
+</ol>
+<ul class="simple">
+<li><p>For materials like ductile iron or steel, the system can handle lower pressures, but factors like surge and water hammer effects must be considered.</p></li>
+<li><p><strong>Plastic pipes</strong> (e.g., PVC or HDPE) are <strong>sensitive</strong> to vacuum or very <strong>low pressures</strong>, necessitating a <strong>minimum pressure of 10 psi to avoid pipe deformation</strong>.</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p>Hydraulic Grade Line (HGL):</p></li>
+</ol>
+<ul class="simple">
+<li><p>Designers ensure the <strong>HGL always remains above the pipeline elevation to maintain positive pressure.</strong></p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Your semester project is a raw water system.  Using HDPE as the material sets a minimum pressure based on its resistance to external loads, given it will be buried you need to consider hydraulic limits + overburden from surrounding backfill.  Operational (variable demands) considerations will play a role, hence use of varying demand simulations to identify potential failure conditions.</p>
+</div>
+<p><strong>Example from Practice:</strong></p>
+<ol class="arabic simple">
+<li><p>American Water Works Association (AWWA) standards for raw water pipelines (e.g., AWWA C600 for installation and testing of pipelines) suggest <strong>maintaining pressures to avoid negative or zero-pressure conditions.</strong></p></li>
+<li><p>In gravity-fed systems, pressure below 10 psi may lead to cavitation or vapor pockets, reducing efficiency and risking damage.</p></li>
+</ol>
+<p><strong>Specific Use Case:</strong></p>
+<ol class="arabic simple">
+<li><p>In areas prone to elevation changes, systems are designed with pressure-sustaining valves or air-release valves to maintain positive pressure throughout the system.</p></li>
+</ol>
 </section>
 <section id="design-considerations">
 <h3>Design Considerations<a class="headerlink" href="#design-considerations" title="Link to this heading">#</a></h3>
@@ -672,6 +719,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transmission-systems">Transmission Systems</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determination-of-transmission-pipe-size">Determination of Transmission Pipe Size</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maximum-pressure">Maximum Pressure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minimum-pressure">Minimum Pressure</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#design-considerations">Design Considerations</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#appurtenances-for-transmission-mains">Appurtenances For Transmission Mains</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#valves">Valves</a></li>
