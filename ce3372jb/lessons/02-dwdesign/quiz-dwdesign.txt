@@ -1,0 +1,69 @@
+1. What is the primary function of a raw water transmission system?
+
+    a) Treating water before distribution
+    b) Transporting raw water from a source to a terminal reservoir or distribution system ✅
+    c) Monitoring water quality in pipelines
+    d) Designing fire protection systems
+
+2. What is the recommended head loss for a transmission pipeline using pumping systems?
+
+    a) 5-10 m/km ✅
+    b) 2-3 m/km
+    c) 10-15 m/km
+    d) No specific recommendation
+
+3. Which type of valve ensures one-way water flow in a pipeline?
+
+    a) Isolation valve
+    b) Check valve ✅
+    c) Pressure relief valve
+    d) Air release valve
+
+4. What is a key difference between grid and branched water distribution systems?
+
+    a) Grid systems have higher velocities than branched systems.
+    b) Branched systems allow for isolation of pipe breaks.
+    c) Grid systems maintain better chlorine residuals and flow flexibility than branched systems. ✅
+    d) Branched systems are less expensive but more reliable than grid systems.
+
+5. According to the guidance, what is a critical consideration for pipe material selection?
+
+    a) Environmental aesthetics
+    b) Resistance to external and internal pressures ✅
+    c) Compatibility with fire hydrants
+    d) Water quality improvement
+
+6. What is the typical pressure range to maintain in a drinking water distribution system?
+
+    a) 10-30 psi
+    b) 20-40 psi
+    c) 40-80 psi ✅
+    d) 80-120 psi
+
+7. Why are looped water distribution systems advantageous?
+
+    a) They reduce pipe costs significantly.
+    b) They ensure fire protection and better residual chlorine content. ✅
+    c) They prevent water hammer effects.
+    d) They are easier to construct in rural areas.
+
+8. What is the main purpose of hydraulic modeling in water system design?
+
+    a) To create aesthetic maps of water pipelines
+    b) To predict water quality changes over time
+    c) To simulate real-world conditions and optimize system design ✅
+    d) To eliminate the need for physical inspection
+
+9. What is the function of a break pressure tank in a raw water transmission system?
+
+    a) To isolate pipe breaks
+    b) To regulate static pressure along the pipeline ✅
+    c) To improve water quality
+    d) To reduce chlorine decay
+
+10. When using EPANET for hydraulic modeling, what is one key feature?
+
+    a) It only supports gravity-fed systems.
+    b) It includes modeling for pumps, tanks, and minor losses. ✅
+    c) It requires proprietary software licenses.
+    d) It cannot handle large distribution systems.
