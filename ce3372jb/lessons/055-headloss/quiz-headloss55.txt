@@ -1,0 +1,128 @@
+# **Pipeline Head Loss - CE 3372 Water Systems Design**
+## **Multiple Choice Quiz (10 Questions)**
+
+### **Question 1**  
+What is the primary cause of head loss in a pipeline system?  
+
+A) Evaporation of water in the pipe  
+B) Friction between the water and pipe walls  
+C) Expansion of the pipe due to temperature changes  
+D) Gravitational energy converting into pressure energy  
+
+**Correct Answer:** B) Friction between the water and pipe walls  
+
+---
+
+### **Question 2**  
+Which equation is most commonly used to calculate frictional head loss in pressurized pipelines?  
+
+A) Bernoulli’s Equation  
+B) Darcy-Weisbach Equation  
+C) Manning’s Equation  
+D) Reynolds Transport Equation  
+
+**Correct Answer:** B) Darcy-Weisbach Equation  
+
+---
+
+### **Question 3**  
+In the Darcy-Weisbach equation, what does the friction factor depend on?  
+
+A) Pipe length and diameter only  
+B) Reynolds number and pipe roughness  
+C) Water velocity and pressure  
+D) Gravity and water density  
+
+**Correct Answer:** B) Reynolds number and pipe roughness  
+
+---
+
+### **Question 4**  
+Which of the following head loss models is **only applicable to water flow** and widely used in the U.S.?  
+
+A) Darcy-Weisbach Equation  
+B) Hazen-Williams Equation  
+C) Chezy-Manning Equation  
+D) Colebrook-White Equation  
+
+**Correct Answer:** B) Hazen-Williams Equation  
+
+---
+
+### **Question 5**  
+The **Moody Chart** is used to determine which parameter in the Darcy-Weisbach equation?  
+
+A) Pipe diameter  
+B) Flow velocity  
+C) Friction factor  
+D) Hydraulic radius  
+
+**Correct Answer:** C) Friction factor  
+
+---
+
+### **Question 6**  
+What is the primary limitation of the Hazen-Williams equation?  
+
+A) It is only valid for turbulent flow of **water**  
+B) It requires iterative solutions to compute velocity  
+C) It cannot be used for pipes longer than 500 meters  
+D) It does not account for pipe roughness  
+
+**Correct Answer:** A) It is only valid for turbulent flow of **water**  
+
+---
+
+### **Question 7**  
+Which factor **increases** head loss in a pipeline system?  
+
+A) Decreasing pipe roughness  
+B) Decreasing flow velocity  
+C) Increasing pipe length  
+D) Increasing hydraulic radius  
+
+**Correct Answer:** C) Increasing pipe length  
+
+---
+
+### **Question 8**  
+What is the significance of the **Energy Grade Line (EGL)** in pipeline analysis?  
+
+A) It represents the total energy at any point in the system, including velocity head  
+B) It shows only the pressure head at each point in the system  
+C) It is always lower than the Hydraulic Grade Line (HGL)  
+D) It indicates the maximum allowable pipe velocity  
+
+**Correct Answer:** A) It represents the total energy at any point in the system, including velocity head  
+
+---
+
+### **Question 9**  
+Which of the following **does NOT** contribute to minor (local) losses in a pipeline?  
+
+A) Pipe elbows and bends  
+B) Pipe material roughness  
+C) Valve openings and closings  
+D) Sudden expansions or contractions in pipe diameter  
+
+**Correct Answer:** B) Pipe material roughness  
+
+---
+
+### **Question 10**  
+In the **Swamee-Jain Equation**, what is the main advantage compared to the Colebrook-White equation?  
+
+A) It is **explicit**, meaning it does not require iteration  
+B) It is applicable to both laminar and turbulent flow  
+C) It does not require knowledge of pipe roughness  
+D) It accounts for open-channel flow conditions  
+
+**Correct Answer:** A) It is **explicit**, meaning it does not require iteration  
+
+---
+
+### **Quiz Notes:**
+- This quiz covers **head loss equations, energy concepts, and hydraulic principles**.
+- It assesses knowledge of **Darcy-Weisbach, Hazen-Williams, minor losses, and computational approaches**.
+- Questions are structured to test **conceptual understanding, practical applications, and limitations of different head loss models**.
+

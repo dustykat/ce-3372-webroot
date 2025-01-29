@@ -1,0 +1,67 @@
+# **Pipeline Hydraulics - CE 3372 Water Systems Design**
+## **Multiple Choice Quiz (5 Questions)**
+
+### **Question 1**  
+What is the primary purpose of pipeline hydraulics analysis?  
+
+A) To determine the cost of pipeline installation  
+B) To predict flow rates, pressure losses, and system behavior under different conditions  
+C) To assess pipeline color and material aesthetics  
+D) To estimate the lifespan of a pipeline  
+
+**Correct Answer:** B) To predict flow rates, pressure losses, and system behavior under different conditions  
+
+---
+
+### **Question 2**  
+Which equation is commonly used to estimate flow rate between two reservoirs in a pipeline system?  
+
+A) Bernoulli’s Equation  
+B) Hazen-Williams Equation  
+C) Darcy-Weisbach Equation  
+D) Manning’s Equation  
+
+**Correct Answer:** C) Darcy-Weisbach Equation  
+
+---
+
+### **Question 3**  
+Which of the following factors affects head loss in a pipeline?  
+
+A) Pipe diameter, length, and roughness  
+B) Water color and taste  
+C) Elevation of surrounding terrain  
+D) Atmospheric pressure changes  
+
+**Correct Answer:** A) Pipe diameter, length, and roughness  
+
+---
+
+### **Question 4**  
+In a **pipeline system linking two reservoirs**, what will happen if the **minor losses** (due to bends, valves, and fittings) are not considered in the analysis?  
+
+A) The predicted flow rate will be **overestimated**  
+B) The predicted flow rate will be **underestimated**  
+C) The pipeline will fail immediately  
+D) The pressure in the system will increase beyond safe limits  
+
+**Correct Answer:** A) The predicted flow rate will be **overestimated**  
+
+---
+
+### **Question 5**  
+Which of the following is an **advantage** of breaking down a pipeline system into smaller hydraulically independent parts for analysis?  
+
+A) It simplifies complex problems, making system behavior easier to predict  
+B) It reduces the need for friction factor calculations  
+C) It eliminates the effects of minor losses in the system  
+D) It allows for direct measurement of energy grade lines without calculations  
+
+**Correct Answer:** A) It simplifies complex problems, making system behavior easier to predict  
+
+---
+
+### **Quiz Notes:**
+- This quiz tests knowledge of **pipeline hydraulics, head loss factors, and flow analysis techniques**.  
+- Questions assess understanding of **hydraulic equations, pipeline roughness, and system behavior**.  
+

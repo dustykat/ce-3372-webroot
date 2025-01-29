@@ -1,0 +1,51 @@
+5-Question Multiple Choice Quiz on Demand Estimation (CE 3372 - Water Systems Design)
+Question 1:
+
+What is the primary reason for estimating water demand in a municipal water system?
+
+A) To ensure that the water supply meets future demand and system feasibility
+B) To maximize the profit of water distribution companies
+C) To prevent the need for wastewater treatment
+D) To encourage unlimited water use by residents
+
+Correct Answer: A) To ensure that the water supply meets future demand and system feasibility
+Question 2:
+
+Which of the following is NOT a factor considered in population forecasting for water demand estimation?
+
+A) Economic growth and development
+B) Historical water usage patterns
+C) The color of local water storage tanks
+D) Demographic trends and migration patterns
+
+Correct Answer: C) The color of local water storage tanks
+Question 3:
+
+Which of the following best describes Average Daily Demand (ADD) in water systems?
+
+A) The maximum volume of water used in a single hour during the year
+B) The total amount of water used in one month divided by the number of days in the month
+C) The average volume of water required by a system over a 24-hour period
+D) The amount of water lost due to leaks in a distribution system
+
+Correct Answer: C) The average volume of water required by a system over a 24-hour period
+Question 4:
+
+What is the key difference between water demand estimation for fire protection and regular municipal supply?
+
+A) Fire protection demand requires very high flow rates for short durations
+B) Fire protection demand considers only indoor water use
+C) Fire protection demand is included in irrigation calculations
+D) Regular municipal supply does not require pressure management
+
+Correct Answer: A) Fire protection demand requires very high flow rates for short durations
+Question 5:
+
+Which of the following best describes non-withdrawal water use?
+
+A) Water that is permanently removed from the water cycle due to industrial consumption
+B) Water used for navigation, recreation, and hydroelectric power that remains in its original location
+C) Water that is pumped from groundwater and returned directly to the ocean
+D) Water stored in a reservoir but never used
+
+Correct Answer: B) Water used for navigation, recreation, and hydroelectric power that remains in its original location
