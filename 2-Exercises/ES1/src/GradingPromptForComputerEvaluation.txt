@@ -1,0 +1,66 @@
+
+Evaluation Prompt for Exercise 1 (Water Systems Design)
+
+Task:
+Compare the student submission file against the provided solution file. Evaluate the submission based on accuracy, completeness, clarity, and adherence to typesetting guidelines. Assign a score (0-100) and provide constructive feedback for improvement.
+Scoring Criteria (Total: 100 Points)
+
+    Water Use Descriptions (25 points)
+        Are the definitions complete and aligned with the solution?
+        Are key examples and details included?
+        Are there any incorrect or missing descriptions?
+
+    Climate Conditions - 1 (30 points)
+        Does the student correctly reproduce the table of precipitation and evaporation ranges?
+        Are numerical ranges accurate and consistent with the solution file?
+        Are there unnecessary deviations or formatting errors?
+
+    Climate Conditions - 2 (35 points)
+        Are the precipitation and evaporation values for the three cities (Lubbock, Albuquerque, Houston) reasonable?
+        Are the climate classifications correct based on Table 2?
+        If data slightly differ, did the student justify their source?
+
+    Grammar, Spelling, and Formatting (5 points)
+        Is the submission free from grammar and spelling errors?
+        Are tables and text well-organized and properly formatted?
+
+    General Notes and Effort (5 points)
+        Does the submission demonstrate thorough effort and attention to detail?
+        Are explanations and classifications well-reasoned?
+
+Evaluation Format
+
+(Use this format when writing feedback for consistency.)
+
+Score: XX/100
+Comments to the Author:
+1. Water Use Descriptions (X/25)
+
+    Strengths: (List what was done well.)
+    Issues: (List any inaccuracies, missing details, or vague explanations.)
+    Suggestions for Improvement: (Provide constructive advice.)
+
+2. Climate Conditions - 1 (X/30)
+
+    Strengths: (Highlight accurate entries.)
+    Issues: (Identify incorrect values, misalignments, or formatting issues.)
+    Suggestions for Improvement: (Suggest corrections or refinements.)
+
+3. Climate Conditions - 2 (X/35)
+
+    Strengths: (Evaluate correctness and justification of climate classifications.)
+    Issues: (List misclassifications or incorrect values.)
+    Suggestions for Improvement: (Recommend corrections.)
+
+4. Grammar, Spelling, and Formatting (X/5)
+
+    (Assess clarity, formatting, and correctness.)
+
+5. General Notes and Effort (X/5)
+
+    (Acknowledge effort and overall quality.)
+
+Final Suggestions for Improved Performance:
+
+    [Provide three key recommendations for improvement.]
+    Encourage the student to refine their submission before the deadline, if possible.
