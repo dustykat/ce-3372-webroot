@@ -1,0 +1,39 @@
+File is not typeset, it is an image.  The reading program cannot parse the file.
+
+You need to get away from handwriting and typeset your answers.
+
+EEWeb and similar tools (ReMarkable, OneNote, ...) are workable - they convert your handwriting into digital text (in the background).  If you insist on handwritten content use one of these tools.
+Submission Issue: Unreadable Handwritten PDF
+
+Thank you for submitting "CE 3372 ES1.pdf." However, this file appears to be a photographed or scanned handwritten document without machine-readable text. As a result, it cannot be processed effectively for evaluation.
+Why is This an Issue?
+
+    OCR (Optical Character Recognition) is required to extract text from scanned images, but this file does not appear to contain recognized digital text.
+    Handwriting may be inconsistent or unclear, leading to incorrect interpretations if OCR is attempted.
+    Evaluation tools rely on machine-readable text to compare your submission against the solution file and provide detailed feedback.
+
+How to Submit a Machine-Readable PDF:
+
+To ensure your work is properly evaluated, consider using one of these methods:
+
+    Typeset the Document and Save as PDF
+        Use Microsoft Word, Google Docs, or LaTeX to write your responses.
+        Save the final document as a PDF file before submitting.
+
+    Use an OCR-Compatible Writing Tool
+        If you prefer handwriting, use a tablet with OCR support, such as:
+            EEWeb, ReMarkable, OneNote, GoodNotes, or Notability
+            These tools convert handwriting to digital text before saving as a PDF.
+
+    Use a High-Quality OCR Scanner
+        If you must scan a handwritten document, ensure it is processed with OCR software like:
+            Adobe Acrobat (OCR feature)
+            CamScanner (with OCR enabled)
+            Google Drive (Scan with OCR option)
+
+Next Steps:
+
+🔹 Please re-submit your work in a machine-readable format following the guidelines above.
+
+
+Thank you for your effort, and I look forward to reviewing your properly formatted submission!
