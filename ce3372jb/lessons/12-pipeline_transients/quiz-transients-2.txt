@@ -1,0 +1,40 @@
+Quiz 2: Advanced Applications of Pipeline Transients
+Question 1:
+What is the celerity of a pressure wave in a pipeline primarily dependent on?
+a) Fluid velocity and pipe diameter
+b) Fluid density, pipe elasticity, and pipe wall thickness
+c) Pipe length and fluid viscosity
+d) Wave frequency and pipe roughness
+Answer: b) Fluid density, pipe elasticity, and pipe wall thickness
+
+Question 2:
+What is the relationship between pressure and velocity during a transient event?
+a) Pressure decreases as velocity decreases.
+b) Pressure increases as velocity decreases.
+c) Pressure and velocity are independent.
+d) Pressure decreases linearly with velocity.
+Answer: b) Pressure increases as velocity decreases.
+
+Question 3:
+What is a key limitation of rigid column theory in pipeline transient analysis?
+a) It ignores inertial forces.
+b) It assumes wave propagation effects are negligible.
+c) It requires extremely long simulation times.
+d) It cannot predict pressure or velocity changes.
+Answer: b) It assumes wave propagation effects are negligible.
+
+Question 4:
+Which computational method is commonly used for solving pipeline transient equations?
+a) Explicit finite-difference methods
+b) Laplace transforms
+c) Fourier series
+d) Newton-Raphson method
+Answer: a) Explicit finite-difference methods
+
+Question 5:
+What happens if the valve closure time in a pipeline transient is too short?
+a) Friction losses are reduced.
+b) Pressure waves may exceed the pipe’s pressure rating.
+c) Flow velocity stabilizes instantly.
+d) Cavitation is avoided.
+Answer: b) Pressure waves may exceed the pipe’s pressure rating.

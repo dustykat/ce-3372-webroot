@@ -1,0 +1,40 @@
+Quiz 1: Fundamentals of Pipe Networks
+Question 1:
+What is the purpose of analyzing pipe networks in water systems design?
+a) To reduce pipe roughness
+b) To predict flow rates, head losses, and pressures
+c) To minimize pipe material costs
+d) To determine water quality parameters
+Answer: b) To predict flow rates, head losses, and pressures
+
+Question 2:
+What does the continuity equation ensure in a pipe network?
+a) That all pipes have the same diameter
+b) That the flow entering a node equals the flow leaving the node
+c) That energy losses are minimized
+d) That friction factors are constant
+Answer: b) That the flow entering a node equals the flow leaving the node
+
+Question 3:
+Which of the following is a primary method for solving pipe network problems?
+a) Euler’s Method
+b) Hardy-Cross Method
+c) Bernoulli’s Principle
+d) Fourier Transform Method
+Answer: b) Hardy-Cross Method
+
+Question 4:
+What does the Darcy-Weisbach equation calculate in a pipe network?
+a) Flow velocity
+b) Head loss due to friction
+c) Pipe diameter
+d) Water pressure
+Answer: b) Head loss due to friction
+
+Question 5:
+Which property is critical for determining Reynolds number in pipe flow?
+a) Pipe roughness height
+b) Fluid velocity
+c) Pipe diameter
+d) All of the above
+Answer: d) All of the above

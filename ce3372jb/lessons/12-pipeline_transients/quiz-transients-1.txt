@@ -1,0 +1,40 @@
+Quiz 1: Fundamentals of Pipeline Transients
+Question 1:
+What is the primary cause of pipeline transients?
+a) Gradual pipe wear
+b) Sudden changes in flow conditions, such as valve closures or pump failures
+c) Steady-state flow conditions
+d) Pipe material degradation
+Answer: b) Sudden changes in flow conditions, such as valve closures or pump failures
+
+Question 2:
+What is the assumption in rigid column theory?
+a) The pipe walls are elastic, and the fluid is compressible.
+b) The fluid is incompressible, and the pipe walls are rigid.
+c) The pipe walls are elastic, and the fluid is incompressible.
+d) The fluid is compressible, and the pipe walls are rigid.
+Answer: b) The fluid is incompressible, and the pipe walls are rigid.
+
+Question 3:
+What equation is used to calculate the head loss due to friction in a pipeline?
+a) Bernoulli’s Equation
+b) Darcy-Weisbach Equation
+c) Momentum Equation
+d) Continuity Equation
+Answer: b) Darcy-Weisbach Equation
+
+Question 4:
+Which factor does rigid column theory primarily consider in its calculations?
+a) Wave propagation effects
+b) Frictional and inertial forces
+c) Elastic deformation of pipe walls
+d) Compressibility of the fluid
+Answer: b) Frictional and inertial forces
+
+Question 5:
+How can pipeline transients be mitigated effectively?
+a) Increasing pipe diameter
+b) Gradual valve closures or controlled pump shutdowns
+c) Using more rigid materials for the pipe
+d) Reducing fluid density
+Answer: b) Gradual valve closures or controlled pump shutdowns

@@ -1,0 +1,40 @@
+Quiz 2: Advanced Concepts in Pipe Network Design
+Question 1:
+What is the purpose of adding pumps in a pipe network?
+a) To increase pipe diameter
+b) To add head and overcome elevation or friction losses
+c) To decrease flow velocity
+d) To improve water quality
+Answer: b) To add head and overcome elevation or friction losses
+
+Question 2:
+How is head loss typically distributed in a pipe network with multiple loops?
+a) Equally across all pipes
+b) Proportional to flow rates and pipe lengths
+c) Based on pipe roughness alone
+d) Inversely proportional to the number of nodes
+Answer: b) Proportional to flow rates and pipe lengths
+
+Question 3:
+Which of the following factors does not directly affect the friction factor in pipe flow?
+a) Pipe material
+b) Fluid viscosity
+c) Pipe length
+d) Surface roughness
+Answer: c) Pipe length
+
+Question 4:
+What type of matrix is often used in computational solutions for pipe networks?
+a) Identity matrix
+b) Node-arc incidence matrix
+c) Pressure gradient matrix
+d) Velocity transformation matrix
+Answer: b) Node-arc incidence matrix
+
+Question 5:
+What is a common stopping criterion in iterative methods for pipe network solutions?
+a) Flow velocity becomes zero
+b) Update vector magnitude approaches zero
+c) Pump efficiency reaches maximum
+d) Reynolds number exceeds 4000
+Answer: b) Update vector magnitude approaches zero

@@ -1,0 +1,40 @@
+5-Question Multiple Choice Quiz: Storage Systems in Water Systems Design
+Question 1:
+What is the primary purpose of equalizing storage in a water system?
+a) To maintain water quality by reducing retention times
+b) To balance variable flow rates and meet peak demands
+c) To store emergency water for fire suppression
+d) To eliminate the need for booster pumps
+Answer: b) To balance variable flow rates and meet peak demands
+
+Question 2:
+What type of storage is used to ensure system functionality during repairs or power outages?
+a) Flow-equalization storage
+b) Operating storage
+c) Emergency storage
+d) Fire storage
+Answer: c) Emergency storage
+
+Question 3:
+Which type of storage device is commonly used to maintain water pressure in localized zones?
+a) Surface reservoirs
+b) Elevated tanks
+c) Underground storage reservoirs
+d) Hydropillar tanks
+Answer: b) Elevated tanks
+
+Question 4:
+What is a typical desirable hydraulic retention time (HRT) for treated water storage to ensure disinfection and water quality?
+a) 1-3 days
+b) 6-10 days
+c) 12-15 days
+d) 20+ days
+Answer: b) 6-10 days
+
+Question 5:
+How is the required operating storage volume determined for a 24-hour design day?
+a) By calculating the sum of average daily demand and peak hourly flow
+b) By plotting cumulative draft versus time and finding the sum of two maximum ordinates
+c) By multiplying average daily demand by the hydraulic retention time
+d) By determining the maximum hourly demand and dividing by average flow rate
+Answer: b) By plotting cumulative draft versus time and finding the sum of two maximum ordinates

@@ -1,0 +1,40 @@
+5-Question Multiple Choice Quiz: Pumping Systems in Water Systems Design
+Question 1:
+What is the primary purpose of a pump in a water system?
+a) To reduce water temperature
+b) To lift water to higher elevations, increase pressure, or overcome barriers
+c) To filter impurities from the water
+d) To control the direction of water flow
+Answer: b) To lift water to higher elevations, increase pressure, or overcome barriers
+
+Question 2:
+Which of the following describes a positive displacement pump?
+a) The volume of fluid displaced per cycle varies with system pressure.
+b) It displaces a fixed volume of fluid regardless of system pressure.
+c) It relies on gravity to maintain flow.
+d) It operates only in open channels.
+Answer: b) It displaces a fixed volume of fluid regardless of system pressure.
+
+Question 3:
+What is the most common cause of pumping system failure?
+a) Excessive pump speed
+b) Poor suction conditions leading to cavitation
+c) Improper alignment of pump curves
+d) Overly high efficiency of the pump
+Answer: b) Poor suction conditions leading to cavitation
+
+Question 4:
+When designing a pump system, which curve is essential to evaluate alongside a pump's performance curve?
+a) Efficiency curve
+b) System curve (Head vs. Flow)
+c) Suction pressure curve
+d) Power input curve
+Answer: b) System curve (Head vs. Flow)
+
+Question 5:
+What is the function of a pump operating in parallel with another pump?
+a) To add more head for a given discharge
+b) To increase discharge for a given head
+c) To stabilize suction pressure
+d) To increase pump efficiency
+Answer: b) To increase discharge for a given head
