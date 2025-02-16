@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.8.30)  5 FEB 2025 17:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.8.30)  15 FEB 2025 23:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -449,7 +449,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 Here is how much of TeX's memory you used:
  5172 strings out of 480247
  78591 string characters out of 5896151
- 374996 words of memory out of 5000000
+ 374998 words of memory out of 5000000
  23034 multiletter control sequences out of 15000+600000
  475125 words of font info for 50 fonts, out of 8000000 for 9000
  15 hyphenation exceptions out of 8191
@@ -465,7 +465,7 @@ live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on ce-3372-2025-1-es4.pdf (5 pages, 1163700 bytes).
+Output written on ce-3372-2025-1-es4.pdf (5 pages, 1164151 bytes).
 PDF statistics:
  78 PDF objects out of 1000 (max. 8388607)
  45 compressed objects within 1 object stream
