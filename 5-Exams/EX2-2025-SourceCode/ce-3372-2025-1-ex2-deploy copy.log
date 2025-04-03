@@ -1,0 +1,934 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  3 APR 2025 16:15
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**"ce-3372-2025-1-ex2-deploy copy.tex"
+(./ce-3372-2025-1-ex2-deploy copy.tex
+LaTeX2e <2016/03/31>
+Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/parskip/parskip.sty
+Package: parskip 2001/04/09 non-zero parskip adjustments
+) (./daves.sty
+Dave's standard definitions: Last modified Friday, July 7, 1995.
+.....dbt changed footnote indentation
+.....dbt changed labels to arabic
+.....dbt included milestone charts
+\mile@i=\count87
+\mile@j=\count88
+\mile@startmonth=\count89
+\mile@endmonth=\count90
+\mile@major=\count91
+\mile@month=\dimen103
+\mile@width=\dimen104
+\mile@shift=\dimen105
+\mile@trheight=\dimen106
+\mile@trdepth=\dimen107
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+\fancy@headwidth=\skip43
+\f@ncyO@elh=\skip44
+\f@ncyO@erh=\skip45
+\f@ncyO@olh=\skip46
+\f@ncyO@orh=\skip47
+\f@ncyO@elf=\skip48
+\f@ncyO@erf=\skip49
+\f@ncyO@olf=\skip50
+\f@ncyO@orf=\skip51
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip52
+\bibsep=\skip53
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count92
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2016/05/09 v1.0r Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/01/02 v1.10 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 96.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count93
+))
+\Gin@req@height=\dimen108
+\Gin@req@width=\dimen109
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/tools/dcolumn.sty
+Package: dcolumn 2014/10/28 v1.06 decimal alignment package (DPC)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/tools/array.sty
+Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen110
+\extrarowheight=\dimen111
+\NC@list=\toks15
+\extratabsurround=\skip54
+\backup@length=\skip55
+))
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2016/03/10 v2.15b AMS math features
+\@mathmargin=\skip56
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks16
+\ex@=\dimen112
+))
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen113
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count94
+LaTeX Info: Redefining \frac on input line 199.
+\uproot@=\count95
+\leftroot@=\count96
+LaTeX Info: Redefining \overline on input line 297.
+\classnum@=\count97
+\DOTSCASE@=\count98
+LaTeX Info: Redefining \ldots on input line 394.
+LaTeX Info: Redefining \dots on input line 397.
+LaTeX Info: Redefining \cdots on input line 518.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen114
+LaTeX Font Info:    Redeclaring font encoding OML on input line 634.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
+\macc@depth=\count99
+\c@MaxMatrixCols=\count100
+\dotsspace@=\muskip10
+\c@parentequation=\count101
+\dspbrk@lvl=\count102
+\tag@help=\toks17
+\row@=\count103
+\column@=\count104
+\maxfields@=\count105
+\andhelp@=\toks18
+\eqnshift@=\dimen115
+\alignsep@=\dimen116
+\tagshift@=\dimen117
+\tagwidth@=\dimen118
+\totwidth@=\dimen119
+\lineht@=\dimen120
+\@envbody=\toks19
+\multlinegap=\skip57
+\multlinetaggap=\skip58
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2739.
+LaTeX Info: Redefining \] on input line 2740.
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/lastpage/lastpage.sty
+Package: lastpage 2015/03/29 v1.2m Refers to last page's name (HMM; JPG)
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/epstopdf.sty
+Package: epstopdf 2016/05/15 v2.6 Conversion with epstopdf on the fly (HO)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+))
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2016/05/10 v0.21 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+)))
+(/usr/local/texlive/2016/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
+\LTleft=\skip59
+\LTright=\skip60
+\LTpre=\skip61
+\LTpost=\skip62
+\LTchunksize=\count106
+\LTcapwidth=\dimen121
+\LT@head=\box28
+\LT@firsthead=\box29
+\LT@foot=\box30
+\LT@lastfoot=\box31
+\LT@cols=\count107
+\LT@rows=\count108
+\c@LT@tables=\count109
+\c@LT@chunks=\count110
+\LT@p@ftn=\toks21
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/paralist/paralist.sty
+Package: paralist 2015/12/30 v2.5 Extended list environments
+\pltopsep=\skip63
+\plpartopsep=\skip64
+\plitemsep=\skip65
+\plparsep=\skip66
+\pl@lab=\toks22
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+Package: pdfpages 2016/04/19 v0.5f Insert pages of external PDF documents (AM)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count111
+\calc@Bcount=\count112
+\calc@Adimen=\dimen122
+\calc@Bdimen=\dimen123
+\calc@Askip=\skip67
+\calc@Bskip=\skip68
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count113
+\calc@Cskip=\skip69
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+Package: eso-pic 2015/07/21 v2.0g eso-pic (RN)
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/atbegshi.sty
+Package: atbegshi 2016/05/16 v1.17 At begin shipout hook (HO)
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+))
+\AM@pagewidth=\dimen124
+\AM@pageheight=\dimen125
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/pdfpages/pppdftex.def
+File: pppdftex.def 2016/04/19 v0.5f Pdfpages driver for pdfTeX (AM)
+)
+\AM@pagebox=\box32
+\AM@global@opts=\toks23
+\AM@toc@title=\toks24
+\c@AM@survey=\count114
+\AM@templatesizebox=\box33
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2016/04/07 v1.8p multicolumn formatting (FMi)
+\c@tracingmulticols=\count115
+\mult@box=\box34
+\multicol@leftmargin=\dimen126
+\c@unbalance=\count116
+\c@collectmore=\count117
+\doublecol@number=\count118
+\multicoltolerance=\count119
+\multicolpretolerance=\count120
+\full@width=\dimen127
+\page@free=\dimen128
+\premulticols=\dimen129
+\postmulticols=\dimen130
+\multicolsep=\skip70
+\multicolbaselineskip=\skip71
+\partial@page=\box35
+\last@line=\box36
+\maxbalancingoverflow=\dimen131
+\mult@rightbox=\box37
+\mult@grightbox=\box38
+\mult@gfirstbox=\box39
+\mult@firstbox=\box40
+\@tempa=\box41
+\@tempa=\box42
+\@tempa=\box43
+\@tempa=\box44
+\@tempa=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\@tempa=\box50
+\@tempa=\box51
+\@tempa=\box52
+\@tempa=\box53
+\@tempa=\box54
+\@tempa=\box55
+\@tempa=\box56
+\@tempa=\box57
+\c@columnbadness=\count121
+\c@finalcolumnbadness=\count122
+\last@try=\dimen132
+\multicolovershoot=\dimen133
+\multicolundershoot=\dimen134
+\mult@nat@firstbox=\box58
+\colbreak@box=\box59
+\mc@col@check@num=\count123
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2016/04/27 v1.618033 publication quality tables
+\heavyrulewidth=\dimen135
+\lightrulewidth=\dimen136
+\cmidrulewidth=\dimen137
+\belowrulesep=\dimen138
+\belowbottomsep=\dimen139
+\aboverulesep=\dimen140
+\abovetopsep=\dimen141
+\cmidrulesep=\dimen142
+\cmidrulekern=\dimen143
+\defaultaddspace=\dimen144
+\@cmidla=\count124
+\@cmidlb=\count125
+\@aboverulesep=\dimen145
+\@belowrulesep=\dimen146
+\@thisruleclass=\count126
+\@lastruleclass=\count127
+\@thisrulewidth=\dimen147
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/local/texlive/2016/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count128
+\Gm@cntv=\count129
+\c@Gm@tempcnt=\count130
+\Gm@bindingoffset=\dimen148
+\Gm@wd@mp=\dimen149
+\Gm@odd@mp=\dimen150
+\Gm@even@mp=\dimen151
+\Gm@layoutwidth=\dimen152
+\Gm@layoutheight=\dimen153
+\Gm@layouthoffset=\dimen154
+\Gm@layoutvoffset=\dimen155
+\Gm@dimlist=\toks25
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/ms/ragged2e.sty
+Package: ragged2e 2009/05/21 v2.1 ragged2e Package (MS)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/ms/everysel.sty
+Package: everysel 2011/10/28 v1.2 EverySelectfont Package (MS)
+)
+\CenteringLeftskip=\skip72
+\RaggedLeftLeftskip=\skip73
+\RaggedRightLeftskip=\skip74
+\CenteringRightskip=\skip75
+\RaggedLeftRightskip=\skip76
+\RaggedRightRightskip=\skip77
+\CenteringParfillskip=\skip78
+\RaggedLeftParfillskip=\skip79
+\RaggedRightParfillskip=\skip80
+\JustifyingParfillskip=\skip81
+\CenteringParindent=\skip82
+\RaggedLeftParindent=\skip83
+\RaggedRightParindent=\skip84
+\JustifyingParindent=\skip85
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count131
+\lst@gtempboxa=\box60
+\lst@token=\toks26
+\lst@length=\count132
+\lst@currlwidth=\dimen156
+\lst@column=\count133
+\lst@pos=\count134
+\lst@lostspace=\dimen157
+\lst@width=\dimen158
+\lst@newlines=\count135
+\lst@lineno=\count136
+\lst@maxwidth=\dimen159
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+\c@lstnumber=\count137
+\lst@skipnumbers=\count138
+\lst@framebox=\box61
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2015/06/04 1.6 listings configuration
+))
+Package: listings 2015/06/04 1.6 (Carsten Heinz)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen160
+\captionmargin@=\dimen161
+\captionwidth=\dimen162
+\caption@tempdima=\dimen163
+\caption@indent=\dimen164
+\caption@parindent=\dimen165
+\caption@hangindent=\dimen166
+)
+\c@ContinuedFloat=\count139
+Package caption Info: listings package is loaded.
+Package caption Info: longtable package is loaded.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/caption/ltcaption.sty
+Package: ltcaption 2013/06/09 v1.4-94 longtable captions (AR)
+))
+(./ce-3372-2025-1-ex2-deploy copy.aux)
+\openout1 = `"ce-3372-2025-1-ex2-deploy copy.aux"'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+
+(/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count140
+\scratchdimen=\dimen167
+\scratchbox=\box62
+\nofMPsegments=\count141
+\nofMParguments=\count142
+\everyMPshowfont=\toks27
+\MPscratchCnt=\count143
+\MPscratchDim=\dimen168
+\MPnumerator=\count144
+\makeMPintoPDFobject=\count145
+\everyMPtoPDFconversion=\toks28
+)
+Package lastpage Info: Please have a look at the pageslts package at
+(lastpage)             https://www.ctan.org/pkg/pageslts
+(lastpage)             ! on input line 63.
+\AtBeginShipoutBox=\box63
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/pdflscape.sty
+Package: pdflscape 2016/05/14 v0.11 Display of landscape pages in PDF (HO)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: letterpaper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(90.3375pt, 433.62001pt, 90.3375pt)
+* v-part:(T,H,B)=(72.26999pt, 650.43001pt, 72.26999pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=433.62001pt
+* \textheight=650.43001pt
+* \oddsidemargin=18.0675pt
+* \evensidemargin=18.0675pt
+* \topmargin=-37.0pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=44.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+ABD: EverySelectfont initializing macros
+LaTeX Info: Redefining \selectfont on input line 63.
+\c@lstlisting=\count146
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+Package caption Info: We need package `ragged2e' on input line 63.
+LaTeX Font Info:    Try loading font information for U+msa on input line 91.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 91.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+Underfull \hbox (badness 10000) in paragraph at lines 85--95
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 85--95
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 85--95
+
+ []
+
+<2018Pipeline.jpg, id=1, 500.87125pt x 366.36874pt>
+File: 2018Pipeline.jpg Graphic file (type jpg)
+ <use 2018Pipeline.jpg>
+Package pdftex.def Info: 2018Pipeline.jpg used on input line 99.
+(pdftex.def)             Requested size: 469.75499pt x 343.62079pt.
+
+Overfull \hbox (36.13498pt too wide) in paragraph at lines 99--100
+ [][] 
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[1{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+ <./2018Pipeline.jpg>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[2
+
+]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[3
+
+]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[4
+
+]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[5
+
+] <ScreenShot.png, id=27, 1021.8175pt x 674.52pt>
+File: ScreenShot.png Graphic file (type png)
+ <use ScreenShot.png>
+Package pdftex.def Info: ScreenShot.png used on input line 224.
+(pdftex.def)             Requested size: 469.75499pt x 310.08742pt.
+
+Overfull \hbox (65.50967pt too wide) in paragraph at lines 224--225
+[][] 
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[6
+
+ <./ScreenShot.png>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[7
+
+]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[8
+
+]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[9
+
+]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[10
+
+] <CircularSewerToo.jpg, id=46, 352.31625pt x 323.2075pt>
+File: CircularSewerToo.jpg Graphic file (type jpg)
+
+<use CircularSewerToo.jpg>
+Package pdftex.def Info: CircularSewerToo.jpg used on input line 314.
+(pdftex.def)             Requested size: 137.31255pt x 125.96657pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[11
+
+ <./CircularSewerToo.jpg>]
+<TriangleChannel.jpg, id=50, 346.29375pt x 285.065pt>
+File: TriangleChannel.jpg Graphic file (type jpg)
+
+<use TriangleChannel.jpg>
+Package pdftex.def Info: TriangleChannel.jpg used on input line 338.
+(pdftex.def)             Requested size: 158.99377pt x 130.88354pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[12
+
+ <./TriangleChannel.jpg>]
+<PipeOnSlope.jpg, id=54, 295.1025pt x 183.68625pt>
+File: PipeOnSlope.jpg Graphic file (type jpg)
+ <use PipeOnSlope.jpg>
+Package pdftex.def Info: PipeOnSlope.jpg used on input line 365.
+(pdftex.def)             Requested size: 144.54pt x 89.9706pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[13
+
+ <./PipeOnSlope.jpg>] <DrainageCase1.jpg, id=60, 882.29625pt x 301.125pt>
+File: DrainageCase1.jpg Graphic file (type jpg)
+
+<use DrainageCase1.jpg>
+Package pdftex.def Info: DrainageCase1.jpg used on input line 399.
+(pdftex.def)             Requested size: 433.62pt x 147.99364pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 418--419
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 418--419
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 419--420
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 419--420
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 420--421
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 420--421
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 421--422
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 421--422
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 422--423
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 422--423
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 423--424
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 423--424
+
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[14
+
+ <./DrainageCase1.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 424--425
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 424--425
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 425--426
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 425--426
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 426--427
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 426--427
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 427--428
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 427--428
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 428--429
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 428--429
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 429--430
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 429--430
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 429--430
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 430--431
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 430--431
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 431--432
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 431--432
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 432--433
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 432--433
+
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[15] 
+AED: lastpage setting LastPage
+(./ce-3372-2025-1-ex2-deploy copy.aux) ) 
+Here is how much of TeX's memory you used:
+ 7703 strings out of 493014
+ 111360 string characters out of 6133351
+ 208298 words of memory out of 5000000
+ 11094 multiletter control sequences out of 15000+600000
+ 10890 words of font info for 43 fonts, out of 8000000 for 9000
+ 1142 hyphenation exceptions out of 8191
+ 42i,12n,43p,497b,491s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2016/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/font
+s/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2016/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2016/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2016/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmss10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmssbx10.pfb>
+Output written on "ce-3372-2025-1-ex2-deploy copy.pdf" (15 pages, 519128 bytes)
+.
+PDF statistics:
+ 101 PDF objects out of 1000 (max. 8388607)
+ 66 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+
