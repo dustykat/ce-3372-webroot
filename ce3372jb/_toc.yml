@@ -45,16 +45,17 @@ chapters:
 
 - file: lessons/25-swmm_intro/swmm_intro
 - file: lessons/26-swmm_hydrology/swmmhydrology
-#- file: lessons/27-swmm_conduits
-#- file: lessons/28-swmm_storage
-#- file: lessons/29-swmm_pumps
+- file: lessons/27-swmm_conduits/27swmm.conduits
+- file: lessons/28-swmm_storage/28swmm.storage
+- file: lessons/28.1-swmm_pumps/28.1swmm.pumps
 - file: lessons/29-greeninfrastructure/greeninfrastructure
   sections:
   - file: lessons/29-greeninfrastructure/21.1waterquality
 #- file: lessons/22-
 #- file: lessons/23-
 #- file: lessons/24-
-#- file: lessons/30-swmm_water_surface
+- file: lessons/30-swmm_water_surface/30swmm.watersurface.steady
+- file: lessons/30-swmm_water_surface/30swmm.watersurface.unsteady
 - file: lessons/31-sanitarydesign/sanitarydesign
 - file: lessons/32-inflowinfiltration/inflowinfiltration
 - file: lessons/33-outfalls/outfalls
