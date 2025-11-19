@@ -1,0 +1,1002 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1.2 Semester Design Project(s) &#8212; CE 3372 Water Systems Design</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lessons/02-projects/projects';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="2. Drinking Water Design" href="../02-dwdesign/drinking_water_design/drinking_water_design.html" />
+    <link rel="prev" title="1. Introduction" href="../01-introduction/introduction.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/wsimage.png" class="logo__image only-light" alt="CE 3372 Water Systems Design - Home"/>
+    <script>document.write(`<img src="../../_static/wsimage.png" class="logo__image only-dark" alt="CE 3372 Water Systems Design - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    CE 3372 Water Systems Design
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01-introduction/introduction.html">1. Introduction</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1.2 Semester Design Project(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-dwdesign/drinking_water_design/drinking_water_design.html">2. Drinking Water Design</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../02-dwdesign/water_transmission_design/water_transmission_design.html">2.1 Raw Water Transmission Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-drawings/design_drawings/design_drawings.html">3. Drawings and Maps</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../03-drawings/xyz2topo/xyz2topo.html">3.1 Simple Maps from XYZ data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-drawings/qgis_topography/qgis_topography.html">3.2 QGIS Topography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04-demands/demand-forcasting.html">4. Demand Estimation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../055-headloss/headloss.html">5. Pipeline Head Loss</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../05-pipeline_hydraulics/pipelinehydraulics.html">5.1 Pipeline Hydraulics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../06-pumping/pumps.html">6. Pumping Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-storage/storage.html">7. Storage Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08-networks/networks.html">8. Pipe Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../12-pipeline_transients/pipeline_transients.html">12. Pipeline Transients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../13-epanet_intro/epanet_intro.html">13. EPANET Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../15-epanet_pumps/epanet_pumps.html">15. EPANET Pumps, Tanks, and Valves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../17-epanet_eps/epanet_eps.html">16. EPANET Extended Period Simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../20-swdesign/swdesign.html">20. Storm Water Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../21-hydrologyreview/HydrologyReview.html">21. Storm Water Hydrology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../22-conduitsizing/conduitsizing.html">22. Stormwater Conduit Sizing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../23-inletsizing/inlets.html">20. Stormwater Collection - Inlet Sizing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../25-swmm_intro/swmm_intro.html">25. SWMM Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../26-swmm_hydrology/swmmhydrology.html">25. SWMM Hydrology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../27-swmm_conduits/27swmm.conduits.html">Lesson 18. Stormwater Conduit Sizing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../28-swmm_storage/28swmm.storage.html">28. Stormwater Detention Ponds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../28.1-swmm_pumps/28.1swmm.pumps.html">28. SWMM Pumps</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../29-greeninfrastructure/greeninfrastructure.html">29. Green Infrastructure</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../29-greeninfrastructure/21.1waterquality.html">21.1 GI and Water Quality</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../30-swmm_water_surface/30swmm.watersurface.steady.html">Lesson 15. Steady Channel Hydraulics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../30-swmm_water_surface/30swmm.watersurface.unsteady.html">Lesson 16. Unsteady Channel Hydraulics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../31-sanitarydesign/sanitarydesign.html">31. Sanitary Sewer Guidelines</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../32-inflowinfiltration/inflowinfiltration.html">32. Inflow and Infiltration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../33-outfalls/outfalls.html">33. Outfall Considerations</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flessons/02-projects/projects.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/lessons/02-projects/projects.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>1.2 Semester Design Project(s)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readings">Readings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#videos">Videos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outline">Outline</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-an-engineering-project">What is an Engineering “Project”?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-design-teams-and-abet-outcomes">Introduction to Design Teams and ABET Outcomes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-presentations-demonstrating-communication-proficiency">Project Presentations: Demonstrating Communication Proficiency</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-project-presentations">Introduction to Project Presentations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#purpose-of-project-presentations">Purpose of Project Presentations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-of-the-project-presentation">Structure of the Project Presentation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#guidelines-for-effective-presentations">Guidelines for Effective Presentations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assessment-criteria">Assessment Criteria</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-reports-communicating-technical-work-effectively">Design Reports: Communicating Technical Work Effectively</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-design-reports">Introduction to Design Reports</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#purpose-of-design-reports">Purpose of Design Reports</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-of-the-design-report">Structure of the Design Report</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#guidelines-for-writing-an-effective-design-report">Guidelines for Writing an Effective Design Report</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#report-formatting">Report Formatting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Assessment Criteria</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Conclusion</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-1-pecos-tx-water-supply-update">Project 1: Pecos TX Water Supply Update</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#project-overview">Project Overview:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-and-constraints">Assumptions and Constraints:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#design-tasks">Design Tasks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deliverables">Deliverables:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-2-lia-industrial-park">Project 2: LIA Industrial Park</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Project Overview:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Deliverables:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-section">End of Section</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="semester-design-project-s">
+<h1>1.2 Semester Design Project(s)<a class="headerlink" href="#semester-design-project-s" title="Link to this heading">#</a></h1>
+<div class="admonition-course-website admonition">
+<p class="admonition-title">Course Website</p>
+<p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/">http://54.243.252.9/ce-3372-webroot/</a></p>
+</div>
+<section id="readings">
+<h2>Readings<a class="headerlink" href="#readings" title="Link to this heading">#</a></h2>
+<div class="admonition-textbook admonition">
+<p class="admonition-title">Textbook</p>
+<p><a class="reference external" href="https://www.waveland.com/browse.php?t=384">Gupta, R.S., 2017. Hydrology and Hydraulic Systems, pp XX-XX</a></p>
+</div>
+<div class="admonition-additional-readings admonition">
+<p class="admonition-title">Additional Readings</p>
+<ol class="arabic simple">
+<li><p>TCEQ (2012) Rules and Regulations for Public Water Systems, Publication RG-195 <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/3-Readings/Texas-RG-195/rg-195.pdf">http://54.243.252.9/ce-3372-webroot/3-Readings/Texas-RG-195/rg-195.pdf</a></p></li>
+<li><p>Krueger D. W., and Smitha C. W. (2012) Infrastructure Design Manual, City of Houston, Department of Public Works and Engineering <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/3-Readings/HoustonDesignManual/Houston.idm.pdf">http://54.243.252.9/ce-3372-webroot/3-Readings/HoustonDesignManual/Houston.idm.pdf</a></p></li>
+<li><p>City of Lubbock (2018) Minimum Design Standards and Specifications, City of Lubbock Engineering. <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/3-Readings/LubbockTexasDesignManual/LubbockTexasDesignManual.pdf">http://54.243.252.9/ce-3372-webroot/3-Readings/LubbockTexasDesignManual/LubbockTexasDesignManual.pdf</a></p></li>
+<li><p>City of San Marcos, Texas (2019) WATER DISTRIBUTION SYSTEM DESIGN CRITERIA TECHNICAL MANUAL<a class="reference external" href="http://54.243.252.9/ce-3372-webroot/3-Readings/SanMarcosTexasDesignManual/SanMarcosTexasDesignManual.pdf">http://54.243.252.9/ce-3372-webroot/3-Readings/SanMarcosTexasDesignManual/SanMarcosTexasDesignManual.pdf</a></p></li>
+<li><p><a class="reference external" href="https://design.maji.go.tz/index.php/Chapter_Five:_Pipelines_Design#Looped_System">Ministry of Water (date) Title (where)</a></p></li>
+</ol>
+<!-- Introduction to Water Resources Engineering Pages 1-33 from Wurbs,R.A., and James, W.P. (2002) Water Resources Engineering, Prentice Hall. [http://54.243.252.9/ce-3372-webroot/3-Readings/Wurbs1-33/](http://54.243.252.9/ce-3372-webroot/3-Readings/Wurbs1-33/Wurbs1-33.pdf)
+
+Introduction to Water Resources Engineeirng Pages 1-11 from Mays, L.W. (2011) Water Resources Engineering, J. Wiley and Sons.[http://54.243.252.9/ce-3372-webroot/3-Readings/Mays1-11/](http://54.243.252.9/ce-3372-webroot/3-Readings/Mays1-11/Mays1-11.pdf)
+
+Introduction to Water Resources Engineering Pages 1-8 from Chin, D. A. (2006) Water-Resources Engineering, Pearson-Prentice Hall. [http://54.243.252.9/ce-3372-webroot/3-Readings/Chin1-8/](http://54.243.252.9/ce-3372-webroot/3-Readings/Chin1-8/Chin1-8.pdf) -->
+</div>
+</section>
+<section id="videos">
+<h2>Videos<a class="headerlink" href="#videos" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=9NYs3Y-IjGw">none</a></p></li>
+</ol>
+</section>
+<section id="outline">
+<h2>Outline<a class="headerlink" href="#outline" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>What is an Engineering Project?</p></li>
+<li><p>Design Teams: Demonstrating Collaboration (as per ABET)</p></li>
+<li><p>Project Presentations: Demonstrating Communication Proficiency (as per TTU)</p></li>
+<li><p>Project Reports: Communicating Technical Work Effectively</p></li>
+<li><p>Problem Statement: Pecos Water Supply</p></li>
+<li><p>Problem Statement: LIA Industrial Park</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="what-is-an-engineering-project">
+<h2>What is an Engineering “Project”?<a class="headerlink" href="#what-is-an-engineering-project" title="Link to this heading">#</a></h2>
+<p>In engineering, a <strong>project</strong> is defined as a <strong>temporary endeavor</strong> undertaken to produce a <strong>unique product or service</strong>. Projects have specific goals, timelines, and constraints, which must be managed efficiently to meet the defined objectives. For this class, we will be working on two major projects, each involving design, analysis, and optimization of engineering systems.</p>
+<p>Key characteristics of an engineering project:</p>
+<ul class="simple">
+<li><p><strong>Temporary</strong>: A project has a defined start and end date, with clear milestones and deliverables.</p></li>
+<li><p><strong>Unique</strong>: Each project aims to create something distinct, whether it’s a product, service, or solution to a problem.</p></li>
+<li><p><strong>Goal-oriented</strong>: Projects are undertaken to achieve specific goals, such as solving a problem or fulfilling a need.</p></li>
+</ul>
+<p>Both of the projects you will work on this semester will involve applying these principles, requiring you to design systems with unique specifications, optimize solutions, and meet the project deadlines.</p>
+</section>
+<hr class="docutils" />
+<section id="introduction-to-design-teams-and-abet-outcomes">
+<h2>Introduction to Design Teams and ABET Outcomes<a class="headerlink" href="#introduction-to-design-teams-and-abet-outcomes" title="Link to this heading">#</a></h2>
+<p>In this course, you will be working in <strong>small design teams</strong> to solve two distinct engineering problems. The class structure is divided into small teams for several reasons, most importantly to address <strong>ABET (Accreditation Board for Engineering and Technology) outcomes</strong> that emphasize the development of teamwork, communication, and problem-solving skills. By collaborating in teams, you will engage with real-world engineering challenges that require interdisciplinary knowledge, decision-making, and design thinking. This mirrors the collaborative nature of modern engineering projects where professionals from various backgrounds must work together to find effective solutions.</p>
+<p>Working in design teams also provides a unique opportunity for you to enhance the following key skills that are central to your education and future career:</p>
+<ul class="simple">
+<li><p><strong>Teamwork and collaboration</strong>: Working effectively in groups to solve problems and complete projects.</p></li>
+<li><p><strong>Communication</strong>: Learning how to clearly articulate technical ideas and solutions, both verbally and in writing.</p></li>
+<li><p><strong>Leadership</strong>: Developing skills in project management and leadership roles within a team setting.</p></li>
+<li><p><strong>Critical thinking</strong>: Analyzing complex engineering problems and applying practical solutions.</p></li>
+</ul>
+<p>By completing these design projects, you will demonstrate your ability to address these ABET outcomes through practical application in engineering design tasks.</p>
+</section>
+<section id="project-presentations-demonstrating-communication-proficiency">
+<h2>Project Presentations: Demonstrating Communication Proficiency<a class="headerlink" href="#project-presentations-demonstrating-communication-proficiency" title="Link to this heading">#</a></h2>
+<section id="introduction-to-project-presentations">
+<h3>Introduction to Project Presentations<a class="headerlink" href="#introduction-to-project-presentations" title="Link to this heading">#</a></h3>
+<p>In addition to the technical components of your design projects, <strong>project presentations</strong> are an integral part of this course. Presenting your project not only allows you to share your solutions but also serves as an opportunity to demonstrate your <strong>communication literacy</strong> — a key requirement of the university’s general education program. These presentations will be your platform to communicate complex engineering concepts to a non-expert audience, making them a valuable tool for developing both technical and soft skills.</p>
+</section>
+<section id="purpose-of-project-presentations">
+<h3>Purpose of Project Presentations<a class="headerlink" href="#purpose-of-project-presentations" title="Link to this heading">#</a></h3>
+<p>Project presentations serve several purposes:</p>
+<ul class="simple">
+<li><p><strong>Demonstrating Your Work</strong>: Presenting your design solution to the class, instructors, and possibly external reviewers will showcase the outcome of your analysis, decisions, and teamwork. It is a chance to highlight your technical proficiency and project management skills.</p></li>
+<li><p><strong>Communication Literacy</strong>: As part of the university’s curriculum, communication literacy involves the ability to clearly and effectively present ideas, research, and technical information. By delivering a well-structured presentation, you demonstrate your ability to distill complex ideas and present them in a manner that is accessible and engaging.</p></li>
+<li><p><strong>Professional Development</strong>: In the real world, engineers frequently present their work to clients, stakeholders, and colleagues. These presentations simulate that environment, helping you to build confidence in speaking, answering questions, and justifying your design decisions.</p></li>
+<li><p><strong>Team Collaboration</strong>: Presenting as a team allows each member to practice leadership, collaboration, and coordination skills. It is important to deliver a cohesive presentation where all team members contribute, showing both individual and collective proficiency.</p></li>
+</ul>
+</section>
+<section id="structure-of-the-project-presentation">
+<h3>Structure of the Project Presentation<a class="headerlink" href="#structure-of-the-project-presentation" title="Link to this heading">#</a></h3>
+<p>Your project presentation should follow a clear structure to ensure it communicates your project effectively. The general framework should include:</p>
+<ol class="arabic simple">
+<li><p><strong>Introduction</strong>:</p>
+<ul class="simple">
+<li><p>Introduce yourself and your team.</p></li>
+<li><p>Provide a brief overview of the project (what the project is, the problem being solved, and its significance).</p></li>
+</ul>
+</li>
+<li><p><strong>Problem Statement</strong>:</p>
+<ul class="simple">
+<li><p>Clearly define the engineering problem you are solving.</p></li>
+<li><p>Discuss the requirements, constraints, and any external factors influencing the design.</p></li>
+</ul>
+</li>
+<li><p><strong>Design Process and Analysis</strong>:</p>
+<ul class="simple">
+<li><p>Walk through your design process, explaining the key decisions you made, the assumptions you considered, and the tools or methods used to analyze the system (e.g., calculations, simulations, etc.).</p></li>
+<li><p>For the water supply pipeline, describe the operational analysis, valve placement, and water hammer analysis.</p></li>
+<li><p>For the drainage system, discuss the considerations for pipe sizing, stormwater management, and drainage layout.</p></li>
+</ul>
+</li>
+<li><p><strong>Results and Solutions</strong>:</p>
+<ul class="simple">
+<li><p>Present the outcomes of your design work. This could include system designs, calculations, simulations, and other relevant results.</p></li>
+<li><p>Use visuals such as diagrams, graphs, and charts to help illustrate your design and findings clearly.</p></li>
+</ul>
+</li>
+<li><p><strong>Challenges and Lessons Learned</strong>:</p>
+<ul class="simple">
+<li><p>Discuss any challenges you faced during the project and how you overcame them.</p></li>
+<li><p>Reflect on any lessons learned and areas for future improvement in both your design and communication skills.</p></li>
+</ul>
+</li>
+<li><p><strong>Conclusion and Recommendations</strong>:</p>
+<ul class="simple">
+<li><p>Summarize the main points of your presentation.</p></li>
+<li><p>Provide any recommendations for future work or further analysis that could improve the design or address unresolved issues.</p></li>
+</ul>
+</li>
+<li><p><strong>Q&amp;A</strong>:</p>
+<ul class="simple">
+<li><p>End the presentation by inviting questions from the audience. Be prepared to defend your design choices, explain calculations, and discuss your assumptions. This is an important part of demonstrating your ability to communicate effectively and confidently.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="guidelines-for-effective-presentations">
+<h3>Guidelines for Effective Presentations<a class="headerlink" href="#guidelines-for-effective-presentations" title="Link to this heading">#</a></h3>
+<p>To ensure your presentation is clear and engaging, consider the following guidelines:</p>
+<ul class="simple">
+<li><p><strong>Clarity</strong>: Keep your slides simple and free of clutter. Focus on key points and use visuals to support your message. Avoid overwhelming your audience with excessive text or technical jargon.</p></li>
+<li><p><strong>Structure</strong>: Maintain a logical flow throughout your presentation. Ensure each section transitions smoothly to the next.</p></li>
+<li><p><strong>Practice</strong>: Rehearse your presentation multiple times to ensure you are comfortable with the content and timing. Make sure all team members have an opportunity to present and participate.</p></li>
+<li><p><strong>Engagement</strong>: Engage your audience with eye contact, clear speech, and enthusiasm about your project. A well-delivered presentation can make a lasting impression.</p></li>
+<li><p><strong>Time Management</strong>: Ensure your presentation stays within the allotted time. Aim for clarity and brevity in your explanations, while being thorough enough to cover all important points.</p></li>
+<li><p><strong>Visual Aids</strong>: Use visuals (charts, graphs, diagrams, etc.) effectively to help explain complex ideas. Ensure your visuals are readable and relevant to the content you are presenting.</p></li>
+</ul>
+</section>
+<section id="assessment-criteria">
+<h3>Assessment Criteria<a class="headerlink" href="#assessment-criteria" title="Link to this heading">#</a></h3>
+<p>Your project presentation will be assessed based on several factors, including:</p>
+<ul class="simple">
+<li><p><strong>Content</strong>: Is the presentation well-structured? Does it address all relevant aspects of the project?</p></li>
+<li><p><strong>Clarity and Communication</strong>: Are the ideas communicated clearly and concisely? Did you use appropriate language for the intended audience?</p></li>
+<li><p><strong>Visuals</strong>: Are the visuals effective in supporting your points? Are they clear, accurate, and easy to understand?</p></li>
+<li><p><strong>Engagement</strong>: Did you engage with the audience, both during the presentation and during the Q&amp;A session?</p></li>
+<li><p><strong>Team Coordination</strong>: Did all team members contribute, and was the presentation cohesive and well-coordinated?</p></li>
+</ul>
+</section>
+<section id="conclusion">
+<h3>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h3>
+<p>The project presentations are an essential part of this course, providing you with the opportunity to develop and demonstrate your communication literacy. By presenting your work effectively, you will not only showcase your technical abilities but also your capacity to explain complex engineering concepts to others. These presentations are a valuable learning experience and an important step toward becoming a well-rounded, professional engineer.</p>
+<p>Good luck with your presentations, and remember that this is your chance to shine and demonstrate the hard work you’ve put into your design projects!</p>
+</section>
+</section>
+<section id="design-reports-communicating-technical-work-effectively">
+<h2>Design Reports: Communicating Technical Work Effectively<a class="headerlink" href="#design-reports-communicating-technical-work-effectively" title="Link to this heading">#</a></h2>
+<section id="introduction-to-design-reports">
+<h3>Introduction to Design Reports<a class="headerlink" href="#introduction-to-design-reports" title="Link to this heading">#</a></h3>
+<p>In addition to your project presentations, <strong>design reports</strong> play a crucial role in documenting and communicating your work throughout the semester. A design report is a comprehensive document that outlines the engineering problem, the design process, the analysis conducted, and the final solution. This report serves as a formal record of your team’s work and is an essential skill for engineers to master.</p>
+<p>As with your presentations, design reports are also a critical component of the university’s <strong>communication literacy</strong> requirement. By preparing a thorough, well-organized report, you demonstrate your ability to communicate complex engineering concepts in writing, ensuring that your technical findings and design decisions are clearly understood by a professional audience. These reports provide a tangible way for you to reflect on the design process and showcase your communication proficiency.</p>
+</section>
+<section id="purpose-of-design-reports">
+<h3>Purpose of Design Reports<a class="headerlink" href="#purpose-of-design-reports" title="Link to this heading">#</a></h3>
+<p>Design reports serve several key purposes:</p>
+<ul class="simple">
+<li><p><strong>Documentation</strong>: The report acts as a formal record of your project, providing all relevant technical information, calculations, assumptions, and decisions in a single, coherent document.</p></li>
+<li><p><strong>Clear Communication</strong>: A well-written report communicates your design solution in a way that is clear, structured, and professional. This helps ensure that your work can be easily understood by others, including faculty, industry professionals, and future collaborators.</p></li>
+<li><p><strong>Reflection</strong>: The report provides you with an opportunity to reflect on your design process, identify challenges you encountered, and articulate how you solved them. This is an important step in learning how to approach engineering problems systematically and document your findings.</p></li>
+<li><p><strong>Professional Development</strong>: Design reports are a standard form of communication in the engineering profession. Writing clear, concise, and well-organized reports is a critical skill for your future career, where you will be expected to present design work and project results to stakeholders, clients, and colleagues.</p></li>
+</ul>
+</section>
+<section id="structure-of-the-design-report">
+<h3>Structure of the Design Report<a class="headerlink" href="#structure-of-the-design-report" title="Link to this heading">#</a></h3>
+<p>Your design report should follow a clear, structured format to ensure all important aspects of your project are covered. The <strong>typical</strong> sections of a design report include:</p>
+<ol class="arabic simple">
+<li><p><strong>Title Page</strong>:</p>
+<ul class="simple">
+<li><p>The title of the project, the names of team members, course details, and the submission date.</p></li>
+</ul>
+</li>
+<li><p><strong>Abstract</strong>:</p>
+<ul class="simple">
+<li><p>A brief summary of the entire project, including the problem, design process, key results, and conclusion. The abstract should be concise but informative, providing an overview of the report.</p></li>
+</ul>
+</li>
+<li><p><strong>Introduction</strong>:</p>
+<ul class="simple">
+<li><p>Provide an overview of the engineering problem being solved.</p></li>
+<li><p>Describe the purpose of the project, the scope of work, and the objectives. Mention any background information that helps to set the context of the design.</p></li>
+</ul>
+</li>
+<li><p><strong>Problem Definition</strong>:</p>
+<ul class="simple">
+<li><p>Clearly state the engineering problem you are addressing.</p></li>
+<li><p>Discuss any constraints, requirements, and assumptions that guide your design.</p></li>
+</ul>
+</li>
+<li><p><strong>Design Process and Methodology</strong>:</p>
+<ul class="simple">
+<li><p>Outline the design process you followed, including research, data collection, analysis, and any tools or methods you used (such as simulations, software, calculations, etc.).</p></li>
+<li><p>For the water supply pipeline, explain the decisions made about tank operations, pressure and air-relief valve locations, and the water hammer analysis.</p></li>
+<li><p>For the drainage system, explain your considerations for stormwater management, sizing, and the layout of the drainage system.</p></li>
+</ul>
+</li>
+<li><p><strong>Results and Discussion</strong>:</p>
+<ul class="simple">
+<li><p>Present the results of your design work, including any calculations, data analysis, and visual aids (e.g., charts, graphs, tables).</p></li>
+<li><p>Discuss how your design meets the requirements, handles constraints, and addresses the problem defined in the earlier sections.</p></li>
+</ul>
+</li>
+<li><p><strong>Challenges and Lessons Learned</strong>:</p>
+<ul class="simple">
+<li><p>Reflect on any challenges encountered during the project and how your team overcame them. Discuss any lessons learned and how this will inform future work.</p></li>
+</ul>
+</li>
+<li><p><strong>Conclusion</strong>:</p>
+<ul class="simple">
+<li><p>Summarize the findings and the final design solution.</p></li>
+<li><p>Provide recommendations for future work, improvements, or further analysis.</p></li>
+</ul>
+</li>
+<li><p><strong>References</strong>:</p>
+<ul class="simple">
+<li><p>List all the references used in your research and design work. This includes textbooks, journal articles, websites, and any other sources that informed your design decisions.</p></li>
+</ul>
+</li>
+<li><p><strong>Appendices</strong> (if applicable):</p></li>
+</ol>
+<ul class="simple">
+<li><p>Include any additional materials that support the report but are too detailed for the main body (e.g., detailed calculations, full datasets, software code).</p></li>
+</ul>
+</section>
+<section id="guidelines-for-writing-an-effective-design-report">
+<h3>Guidelines for Writing an Effective Design Report<a class="headerlink" href="#guidelines-for-writing-an-effective-design-report" title="Link to this heading">#</a></h3>
+<p>To ensure your design report is clear, professional, and well-organized, consider the following writing tips:</p>
+<ul class="simple">
+<li><p><strong>Clarity</strong>: Use simple, clear, and concise language. Avoid overly technical jargon unless it is necessary and well-explained.</p></li>
+<li><p><strong>Organization</strong>: Follow the structured format outlined above. Ensure that each section logically flows into the next.</p></li>
+<li><p><strong>Figures and Tables</strong>: Use visuals (graphs, tables, and diagrams) to support and clarify your text. Ensure that all visuals are well-labeled, referenced in the text, and easy to understand.</p></li>
+<li><p><strong>Consistency</strong>: Be consistent in your use of terminology, units, and formatting throughout the report. This helps avoid confusion and ensures a professional presentation.</p></li>
+<li><p><strong>Proofreading</strong>: Carefully proofread your report for spelling, grammar, and formatting errors. A report with mistakes can undermine its professionalism.</p></li>
+<li><p><strong>Be Concise</strong>: While your report should be thorough, avoid unnecessary verbosity. Focus on providing relevant information in a clear and straightforward manner.</p></li>
+</ul>
+</section>
+<section id="report-formatting">
+<h3>Report Formatting<a class="headerlink" href="#report-formatting" title="Link to this heading">#</a></h3>
+<p>A well-formatted report makes it easier for your audience to follow your arguments and understand your design. In the accompanying document, you will find a template outlining the specific formatting requirements for your design report. You can access the full <strong><a class="reference internal" href="#"><span class="xref myst">Design Report Template and Guidelines</span></a></strong> document here.</p>
+</section>
+<section id="id1">
+<h3>Assessment Criteria<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Your design report will be evaluated based on several factors, including:</p>
+<ul class="simple">
+<li><p><strong>Content</strong>: Does the report address all key components of the project? Is the design process clearly explained? Are results and conclusions well-supported?</p></li>
+<li><p><strong>Clarity</strong>: Is the report easy to read and understand? Is the language clear and concise?</p></li>
+<li><p><strong>Organization</strong>: Is the report well-organized, following the suggested structure and logically presenting information?</p></li>
+<li><p><strong>Visuals</strong>: Are the visuals effective in supporting the text? Are they well-organized and clearly labeled?</p></li>
+<li><p><strong>Professionalism</strong>: Is the report written and formatted professionally? Are references appropriately cited?</p></li>
+</ul>
+</section>
+<section id="id2">
+<h3>Conclusion<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>Design reports are a fundamental aspect of engineering communication. By preparing a detailed, clear, and well-organized report, you will document your design process, present your findings, and demonstrate your ability to communicate complex technical work in writing. These skills are vital for your development as an engineer and will be valuable in your future career.</p>
+<p>Remember, the design report is not just an academic exercise—it is a key piece of your professional engineering portfolio. Take pride in the work you do, and use the report as an opportunity to showcase your technical and communication skills.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="project-1-pecos-tx-water-supply-update">
+<h2>Project 1: Pecos TX Water Supply Update<a class="headerlink" href="#project-1-pecos-tx-water-supply-update" title="Link to this heading">#</a></h2>
+<section id="project-overview">
+<h3>Project Overview:<a class="headerlink" href="#project-overview" title="Link to this heading">#</a></h3>
+<p>The City of Pecos, Texas, has identified a critical need to develop an alternate water supply in anticipation of the current wellfield reaching the end of its service life within the next 5-10 years. To ensure the city’s long-term water security, an alternate wellfield has been identified, and property rights for its development have been secured. This wellfield is located approximately 30 miles south of the city center.</p>
+<p>Your goal is to design the components necessary to transport water from this alternate wellfield to Pecos and ensure adequate storage for future demand. This design includes:</p>
+<ol class="arabic simple">
+<li><p>Wellfield Collector Network: Design the network of wells and collection lines that will efficiently gather water from the wellfield and deliver it to a central collection point.</p></li>
+<li><p>Transmission Pipeline: Design the transmission pipeline system that will carry water from the wellfield to the city’s water treatment and distribution facilities. Consider hydraulic design principles to size the pipeline appropriately based on flow rates and friction losses over the 30-mile distance.</p></li>
+<li><p>Storage Facilities: Design intermediate storage facilities as necessary, as well as terminal storage to ensure there is sufficient water available for city consumption during peak demand periods or in case of pipeline interruptions. Storage should accommodate both daily use and emergency reserves.</p></li>
+</ol>
+</section>
+<section id="assumptions-and-constraints">
+<h3>Assumptions and Constraints:<a class="headerlink" href="#assumptions-and-constraints" title="Link to this heading">#</a></h3>
+<p>The city’s average daily water consumption is approximately 2.7 million gallons per day (MGD), with a peak of 3.9 million gallons per day.  The city’s water plant has a capacity of 9.5 million gallons per day. The alternate wellfield is estimated to be able to produce a maximum of 3.02 MGD, with fluctuations due to seasonal variations. Transmission pipeline materials and layout should be designed considering local terrain and minimizing environmental impacts. Intermediate storage facilities may be required based on pipeline hydraulic design and system pressures.</p>
+<p>You will need to apply concepts from fluid mechanics, hydraulics, and system optimization to design a pipeline that operates safely and efficiently. Your solution should address all of the technical requirements while considering cost-effectiveness and operational feasibility.</p>
+</section>
+<section id="design-tasks">
+<h3>Design Tasks<a class="headerlink" href="#design-tasks" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Validate the design of the wellfield pipe network to the collector point. The well locations are already established from a preliminary study conducted during the water rights acquistion process.</p></li>
+<li><p>Validate the design of the transmission pipeline and provide justification for the selections (e.g., diameter, material).</p></li>
+<li><p>Determine the volume of intermediate and terminal storage facilities required and provide recommendations on their placement.</p></li>
+<li><p>Demonstrate using a hydraulic model that the system can deliver the required raw water to replace the existing supply, under variable demand conditions. Identify using the model locations of low pressure, and high pressure. Produce plots of the energy grade line under various demsnd conditions. Identify locations where pressure relief valves, air relief valves, and flow-control valves are required.</p></li>
+<li><p>Determine using water-hammer analysis the anticipated pressure changes during sudden shutdown of the transmission pipeline.</p></li>
+</ol>
+</section>
+<section id="deliverables">
+<h3>Deliverables:<a class="headerlink" href="#deliverables" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>A detailed <strong>pipeline layout</strong> and <strong>operational strategy</strong> for maintaining storage tank levels, supported by hydraulic modeling.</p></li>
+<li><p>The <strong>locations</strong> for pressure and air-relief valves.</p></li>
+<li><p>A presentation for pipe sizing and system capacity.</p></li>
+<li><p>A <strong>modeling report</strong>, including the selected pipeline material and justification.</p></li>
+</ul>
+<p>Deliverables</p>
+<p>Each team must submit the following as part of their final project package:</p>
+<ul class="simple">
+<li><p><strong>Project Presentation:</strong> documenting pipeline sizing, operations, and system capacity</p>
+<ul>
+<li><p>A concise, visually engaging presentation summarizing your decisions on pipeline sizing and overall system capacity.</p></li>
+<li><p>Highlight the key considerations, such as anticipated flow rates, material selection, and cost-effectiveness.</p></li>
+</ul>
+</li>
+<li><p><strong>Project Report</strong> documenting the hydraulic model setup, assumptions, results, and interpretation.:</p>
+<ul>
+<li><p>Include details on the selected pipeline materials, diameter, and justification for your choices based on hydraulic performance, durability, and cost.</p></li>
+<li><p>A detailed layout of the transmission pipeline, including all key components such as wellfield collector lines, intermediate storage facilities, and terminal storage.</p></li>
+<li><p>A comprehensive operational strategy outlining how storage tank levels will be maintained under varying demand scenarios, supported by hydraulic modeling results.</p></li>
+<li><p>A map or schematic identifying the precise locations for pressure relief valves, air relief valves, and flow-control valves.</p></li>
+<li><p>A justification for each valve’s placement, based on hydraulic modeling and system pressure analysis.</p></li>
+<li><p>Provide plots of the energy grade line and pressure profiles under varying demand conditions, identifying critical points of low and high pressure.</p></li>
+<li><p>Document findings from the water hammer analysis, including anticipated pressure surges and recommendations for mitigating risks.</p></li>
+</ul>
+</li>
+</ul>
+<p>Additional Resources</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/2-Exercises/PR1_PecosWater/ce3372-pr1-2025-1.pdf">Link to PDF Description (same content as above)</a></p></li>
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/2-Exercises/PR1_PecosWater/WEST_PECOS_WATER_SYSTEM.kmz">KMZ file for GIS use (should work in ArcGIS or QGIS)</a></p></li>
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/2-Exercises/PR1_PecosWater/PecosPipelineBasemap.bmp">PecosPipelineBasemap.bmp (a basemap for use in EPANET - its only an image!)</a></p></li>
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/2-Exercises/PR1_PecosWater/Wellfield.pdf">Wellfield drawing (shows well relative locations, and connection diagram)</a>  A <code class="docutils literal notranslate"><span class="pre">.jpg</span></code> file is at same URL, modify extension if you need the much larger <code class="docutils literal notranslate"><span class="pre">.jpg</span></code> file.</p></li>
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/2-Exercises/PR1_PecosWater/Pump%20report.pdf">Pump report (well pump performance curves)</a></p></li>
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/2-Exercises/PR1_PecosWater/SampleReport.pdf">Example Report (Mock-Up)</a></p></li>
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/2-Exercises/PR1_PecosWater/ReportAbstract.pdf">Example Report (Abstract)</a></p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="project-2-lia-industrial-park">
+<h2>Project 2: LIA Industrial Park<a class="headerlink" href="#project-2-lia-industrial-park" title="Link to this heading">#</a></h2>
+<section id="id3">
+<h3>Project Overview:<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>In the second project, you will design a <strong>small drainage system</strong> for a <strong>100-acre light industrial site</strong>. The drainage system must effectively handle runoff, ensuring proper water flow while avoiding flooding or damage to the site.</p>
+<p>Your tasks in this project include:</p>
+<ul class="simple">
+<li><p><strong>Drainage Design</strong>: Calculate the required drainage capacity based on the site’s characteristics, such as land slope, soil type, and expected rainfall.</p></li>
+<li><p><strong>Pipe Sizing</strong>: Determine the appropriate pipe sizes for the drainage system, ensuring that water is efficiently conveyed away from the site.</p></li>
+<li><p><strong>Stormwater Management</strong>: Consider best practices for managing stormwater and preventing environmental damage, including the integration of <strong>green infrastructure</strong> solutions where possible.</p></li>
+</ul>
+<p>You will need to apply knowledge from hydrology, fluid dynamics, and environmental engineering to design a drainage system that meets all performance criteria and complies with relevant regulations.</p>
+</section>
+<section id="id4">
+<h3>Deliverables:<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>A detailed <strong>drainage layout</strong> showing pipe locations, inlets, and outlets.</p></li>
+<li><p>A <strong>calculation report</strong> for pipe sizing and system capacity.</p></li>
+<li><p>A presentation for pipe sizing and system capacity.</p></li>
+<li><p>Recommendations for <strong>stormwater management</strong>, including any green infrastructure solutions.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id5">
+<h2>Conclusion<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<p>These two projects provide simplified hands-on experience in solving real-world engineering problems. By working in teams, you will practice critical skills such as design, analysis, problem-solving, and communication. The projects are designed to challenge you, while also ensuring that you gain practical experience that aligns with ABET’s expectations for engineering education.</p>
+</section>
+<section id="end-of-section">
+<h2>End of Section<a class="headerlink" href="#end-of-section" title="Link to this heading">#</a></h2>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lessons/02-projects"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../01-introduction/introduction.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">1. Introduction</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../02-dwdesign/drinking_water_design/drinking_water_design.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">2. Drinking Water Design</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readings">Readings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#videos">Videos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outline">Outline</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-an-engineering-project">What is an Engineering “Project”?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-design-teams-and-abet-outcomes">Introduction to Design Teams and ABET Outcomes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-presentations-demonstrating-communication-proficiency">Project Presentations: Demonstrating Communication Proficiency</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-project-presentations">Introduction to Project Presentations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#purpose-of-project-presentations">Purpose of Project Presentations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-of-the-project-presentation">Structure of the Project Presentation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#guidelines-for-effective-presentations">Guidelines for Effective Presentations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assessment-criteria">Assessment Criteria</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-reports-communicating-technical-work-effectively">Design Reports: Communicating Technical Work Effectively</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-design-reports">Introduction to Design Reports</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#purpose-of-design-reports">Purpose of Design Reports</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-of-the-design-report">Structure of the Design Report</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#guidelines-for-writing-an-effective-design-report">Guidelines for Writing an Effective Design Report</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#report-formatting">Report Formatting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Assessment Criteria</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Conclusion</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-1-pecos-tx-water-supply-update">Project 1: Pecos TX Water Supply Update</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#project-overview">Project Overview:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-and-constraints">Assumptions and Constraints:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#design-tasks">Design Tasks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deliverables">Deliverables:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-2-lia-industrial-park">Project 2: LIA Industrial Park</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Project Overview:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Deliverables:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-section">End of Section</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Theodore G. Cleveland
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

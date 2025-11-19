@@ -1,0 +1,1149 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>12. Pipeline Transients &#8212; CE 3372 Water Systems Design</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lessons/12-pipeline_transients/pipeline_transients';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="13. EPANET Introduction" href="../13-epanet_intro/epanet_intro.html" />
+    <link rel="prev" title="8. Pipe Networks" href="../08-networks/networks.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/wsimage.png" class="logo__image only-light" alt="CE 3372 Water Systems Design - Home"/>
+    <script>document.write(`<img src="../../_static/wsimage.png" class="logo__image only-dark" alt="CE 3372 Water Systems Design - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    CE 3372 Water Systems Design
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01-introduction/introduction.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-projects/projects.html">1.2 Semester Design Project(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-dwdesign/drinking_water_design/drinking_water_design.html">2. Drinking Water Design</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../02-dwdesign/water_transmission_design/water_transmission_design.html">2.1 Raw Water Transmission Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-drawings/design_drawings/design_drawings.html">3. Drawings and Maps</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../03-drawings/xyz2topo/xyz2topo.html">3.1 Simple Maps from XYZ data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-drawings/qgis_topography/qgis_topography.html">3.2 QGIS Topography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04-demands/demand-forcasting.html">4. Demand Estimation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../055-headloss/headloss.html">5. Pipeline Head Loss</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../05-pipeline_hydraulics/pipelinehydraulics.html">5.1 Pipeline Hydraulics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../06-pumping/pumps.html">6. Pumping Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-storage/storage.html">7. Storage Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08-networks/networks.html">8. Pipe Networks</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">12. Pipeline Transients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../13-epanet_intro/epanet_intro.html">13. EPANET Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../15-epanet_pumps/epanet_pumps.html">15. EPANET Pumps, Tanks, and Valves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../17-epanet_eps/epanet_eps.html">16. EPANET Extended Period Simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../20-swdesign/swdesign.html">20. Storm Water Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../21-hydrologyreview/HydrologyReview.html">21. Storm Water Hydrology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../22-conduitsizing/conduitsizing.html">22. Stormwater Conduit Sizing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../23-inletsizing/inlets.html">20. Stormwater Collection - Inlet Sizing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../25-swmm_intro/swmm_intro.html">25. SWMM Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../26-swmm_hydrology/swmmhydrology.html">25. SWMM Hydrology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../27-swmm_conduits/27swmm.conduits.html">Lesson 18. Stormwater Conduit Sizing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../28-swmm_storage/28swmm.storage.html">28. Stormwater Detention Ponds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../28.1-swmm_pumps/28.1swmm.pumps.html">28. SWMM Pumps</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../29-greeninfrastructure/greeninfrastructure.html">29. Green Infrastructure</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../29-greeninfrastructure/21.1waterquality.html">21.1 GI and Water Quality</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../30-swmm_water_surface/30swmm.watersurface.steady.html">Lesson 15. Steady Channel Hydraulics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../30-swmm_water_surface/30swmm.watersurface.unsteady.html">Lesson 16. Unsteady Channel Hydraulics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../31-sanitarydesign/sanitarydesign.html">31. Sanitary Sewer Guidelines</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../32-inflowinfiltration/inflowinfiltration.html">32. Inflow and Infiltration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../33-outfalls/outfalls.html">33. Outfall Considerations</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flessons/12-pipeline_transients/pipeline_transients.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/lessons/12-pipeline_transients/pipeline_transients.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>12. Pipeline Transients</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readings">Readings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#videos">Videos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lesson-outline">Lesson Outline</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rigid-column-theory">Rigid Column Theory</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relevant-equations">Relevant Equations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#engineering-applications">Engineering Applications:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-calculation">Example Calculation:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations">Limitations:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elastic-pipe-theory">Elastic Pipe Theory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-explicit-finite-difference-model">An Explicit Finite-Difference Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example-implementation">An Example Implementation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-section">End of Section</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="pipeline-transients">
+<h1>12. Pipeline Transients<a class="headerlink" href="#pipeline-transients" title="Link to this heading">#</a></h1>
+<div class="admonition-course-website admonition">
+<p class="admonition-title">Course Website</p>
+<p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/">http://54.243.252.9/ce-3372-webroot/</a></p>
+</div>
+<section id="readings">
+<h2>Readings<a class="headerlink" href="#readings" title="Link to this heading">#</a></h2>
+<div class="admonition-textbook admonition">
+<p class="admonition-title">Textbook</p>
+<p><a class="reference external" href="https://www.waveland.com/browse.php?t=384">Gupta, R.S., 2017. Hydrology and Hydraulic Systems, pp 668</a></p>
+</div>
+<div class="admonition-additional-readings admonition">
+<p class="admonition-title">Additional Readings</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/ce3105notes/lessons/laboratory9/Essentials_of_Hydraulics.pdf">Julien, P. Y. (2022) pp. 109-140 from <em>Essentials of Hydraulics</em>. Cambridge University Press. ISBN 978-1-108-81630-4. DOI: 10.1017/9781108907466</a></p></li>
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/ce3105notes/lessons/laboratory9/Crowe-et-al.-2009-Engineering-Fluid-Mechnaics-Excerpt.pdf">Crowe, C. T., Elger, D. F. , Williams, B.C., Roberson, J. A. (2009). pp 187-192 from <em>Engineering Fluid Mechanics, 9th Edition</em>. J. Wiley &amp; Sons. ISBN 0-471-66161-9</a></p></li>
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/ce3105notes/lessons/laboratory9/ElementsOfComputationalHydraulicsExcerpt.pdf">Koutitas, C. G. (1983) pp. 55-64 from <em>Elements of computational hydraulics</em>. Pentech Press</a></p></li>
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/ce3105notes/lessons/laboratory9/ModernAnalysisandControlofUnsteadyFlowinPipelines.pdf">Watters, G. Z. (1979). pp 1-46 from <em>Modern analysis and control of unsteady flow in pipelines.</em> Ann Arbor Science Publishers.</a></p></li>
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/lessons/12-pipeline_transients/RigidColumn-ValveClosure.pdf">Cleveland, T. G. (2022). <em>Rigid Column Theory - Valve Closing over a Finite Time Interval</em> Notes to accompany CE 3372, Water Systems Design</a></p></li>
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/lessons/12-pipeline_transients/RigidColumn-ValveOpen.pdf">Cleveland, T. G. (2022). <em>Rigid Column Theory - Sudden Valve Opening</em> Notes to accompany CE 3372, Water Systems Design</a></p></li>
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/lessons/12-pipeline_transients/RigidColumn-ValveCloseBetweenTwoReservoirs.pdf">Cleveland, T. G. (2022). <em>Rigid Column Theory - Valve Closing over a Finite Time Interval Between Two Reservoirs</em> Notes to accompany CE 3372, Water Systems Design</a></p></li>
+</ol>
+</div>
+</section>
+<section id="videos">
+<h2>Videos<a class="headerlink" href="#videos" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=oIH5I6ydPmo&amp;amp;list=PLzjMUPcAiPfc7U0XZxCNywx2TS0mwjP6Y&amp;amp;index=1">Water Hammer Theory Explained (Part 1)</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=OioX9NNHpYo&amp;amp;list=PLzjMUPcAiPfc7U0XZxCNywx2TS0mwjP6Y&amp;amp;index=2">Water Hammer Theory Explained (Part 2)</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=xoLmVFAFjn4">What is Water Hammer?</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/52hi9r73_OM">Storm Water Exiting Sewer System on Marsha Sharp Freeway - 1</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/olfAjbK4kYg">Storm Water Exiting Sewer System on Marsha Sharp Freeway - 2</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/Myo5gcfFDRA">Storm Water Exiting Sewer System on Marsha Sharp Freewa - 3</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/PggRxRU7V2o">Storm Water Exiting Sewer System on Marsha Sharp Freewa - 4</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=4BkFp5CL4q0">Storm Manhole cover</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=voMH3AAV27E">Crazy Manhole cover Lifted by air pressure in Auckland torrential downpour</a> Its not always water, air is a fluid too.</p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=aspPJ2Wcaig">How to Collapse a Pipe by Closing a Valve</a></p></li>
+</ol>
+</section>
+<section id="lesson-outline">
+<h2>Lesson Outline<a class="headerlink" href="#lesson-outline" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Background</p></li>
+<li><p>Rigid Pipe Theory</p></li>
+<li><p>Elastic Pipe Theory</p></li>
+<li><p>Calculations</p></li>
+</ol>
+</section>
+<section id="background">
+<h2>Background<a class="headerlink" href="#background" title="Link to this heading">#</a></h2>
+<p>Unsteady flow in closed conduits is important for estimating the forces involved from a sudden change in discharge from a pump failing (or starting), or the closing (or opening) of a valve. The flow variation will create a pressure wave traveling along the pipe.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These waves will travel in alternating directions as they find boundaries as each end of the disturbed discharge conduit – in some sense the pipeline becomes a resonant chamber.  Over time the magnitude of the waves will decrease as friction dissipates the energy.  During these transients high and low pressures are applied to the pipe walls and fixtures and can concievably damage them.</p>
+</div>
+<p>The engineering/computational goal is to estimate the magnitude and timing of these extreme pressures to evaluate the safety of the conduit, or design a pump shutdown (or startup) or valve operation protocol to control these extreme pressures to some acceptable magnitude.</p>
+</section>
+<section id="rigid-column-theory">
+<h2>Rigid Column Theory<a class="headerlink" href="#rigid-column-theory" title="Link to this heading">#</a></h2>
+<p>Rigid column theory models the behavior of fluid in a pipeline during transient events (e.g., valve closures or pump starts/stops) by assuming:</p>
+<ul class="simple">
+<li><p>The fluid is incompressible.</p></li>
+<li><p>The pipe walls are rigid.</p></li>
+<li><p>Transients are dominated by inertial and frictional forces.</p></li>
+</ul>
+<p>The theory provides a simplified framework to estimate maximum and minimum pressures and velocities during transient conditions, primarily for short pipelines or slow transient processes.</p>
+<section id="relevant-equations">
+<h3>Relevant Equations<a class="headerlink" href="#relevant-equations" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>Continuity Equation:
+<span class="math notranslate nohighlight">\(Q=A \cdot v\)</span></p>
+<p>Where:</p>
+<p><span class="math notranslate nohighlight">\(Q\)</span>: is the flow rate (<span class="math notranslate nohighlight">\(\frac{m^3}{s}\)</span>),</p>
+<p><span class="math notranslate nohighlight">\(A\)</span>: is the cross-sectional area of the pipe (<span class="math notranslate nohighlight">\(m^2\)</span>), and</p>
+<p><span class="math notranslate nohighlight">\(v\)</span>: is the velocity of the fluid (<span class="math notranslate nohighlight">\(\frac{m}{s}\)</span>)</p>
+</li>
+<li><p>Momentum Equation: The change in velocity over time is governed by:</p>
+<p><span class="math notranslate nohighlight">\(\rho L \frac{dv}{dt}=(P_1 - P_2) - \frac{f \rho v^2 L}{2D}\)</span></p>
+<p>Where:</p>
+<p><span class="math notranslate nohighlight">\(\rho\)</span>: is the fluid density ($\frac{kg}{m^3}),</p>
+<p><span class="math notranslate nohighlight">\(L\)</span>: is the length of the pipeline (<span class="math notranslate nohighlight">\(m\)</span>),</p>
+<p><span class="math notranslate nohighlight">\(P_1,P_2\)</span>: are pressures at the upstream and downstream ends (<span class="math notranslate nohighlight">\(Pa\)</span>)</p>
+<p><span class="math notranslate nohighlight">\(f\)</span>: is the Darcy-Weisbach friction factor (dimensionless)</p>
+<p><span class="math notranslate nohighlight">\(D\)</span>: is the pipe diameter (<span class="math notranslate nohighlight">\(m\)</span>)</p>
+</li>
+<li><p>Head Loss Due to Friction:</p>
+<p><span class="math notranslate nohighlight">\(h_f=f\frac{L}{D}\frac{v^2}{2g}\)</span></p>
+<p>Where:</p>
+<p><span class="math notranslate nohighlight">\(h_f\)</span>: is the friction loss (<span class="math notranslate nohighlight">\(m\)</span>), and</p>
+<p><span class="math notranslate nohighlight">\(g\)</span>: is the gravitational acceleration ($9.81 \frac{m}{s^2})</p>
+</li>
+<li><p>Pressure-Head Relationship:</p>
+<p><span class="math notranslate nohighlight">\(P=\rho g H\)</span></p>
+<p>Where:</p>
+<p><span class="math notranslate nohighlight">\(H\)</span>: Pressure head (<span class="math notranslate nohighlight">\(m\)</span>)</p>
+</li>
+<li><p>Maximum and Minimum Pressures:</p>
+<p>During a transient event (e.g., sudden valve closure), the fluid velocity changes rapidly, leading to variations in pressure.
+The maximum pressure can be estimated using:</p>
+<ul>
+<li><p>Maximum Pressure at the Upstream End:</p>
+<p><span class="math notranslate nohighlight">\(P_{max}=P_{static}+\rho v_0 \frac{L}{t_{close}}\)</span></p>
+<p>Where:</p>
+<p><span class="math notranslate nohighlight">\(P_{static}\)</span>: is the static pressure (<span class="math notranslate nohighlight">\(Pa\)</span>)</p>
+<p><span class="math notranslate nohighlight">\(v_0\)</span>: is the initial velocity (<span class="math notranslate nohighlight">\(\frac{m}{s}\)</span>)</p>
+<p><span class="math notranslate nohighlight">\(t_{close}\)</span>: is the valve closure time (<span class="math notranslate nohighlight">\(s\)</span>)</p>
+</li>
+<li><p>Minimum Pressure at the Downstream End:</p>
+<p><span class="math notranslate nohighlight">\(P_{max}=P_{static}-\rho v_0 \frac{L}{t_{close}}\)</span></p>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="engineering-applications">
+<h3>Engineering Applications:<a class="headerlink" href="#engineering-applications" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Pipeline Design for Pressure Ratings: Use PmaxPmax​ to ensure the pipe material can withstand transient pressures.</p></li>
+<li><p>Mitigation Strategies: Estimate <span class="math notranslate nohighlight">\(t_{close}\)</span> (closure time) to minimize pressure surges: Gradual valve closures reduce <span class="math notranslate nohighlight">\(P_{max}\)</span>.</p></li>
+<li><p>Determine Safety Margins: Incorporate a factor of safety to <span class="math notranslate nohighlight">\(P_{max}\)</span> to account for unanticipated conditions, like partial blockages or additional friction.</p></li>
+</ul>
+</section>
+<section id="example-calculation">
+<h3>Example Calculation:<a class="headerlink" href="#example-calculation" title="Link to this heading">#</a></h3>
+<p>A steel pipeline (diameter <span class="math notranslate nohighlight">\(D=0.5 m\)</span>, length <span class="math notranslate nohighlight">\(L=500 m\)</span>) carries water (<span class="math notranslate nohighlight">\(\rho=1000 kg/m^3\)</span>) at an initial velocity of <span class="math notranslate nohighlight">\(v_0=2.0 m/s\)</span>. The valve is closed linearly over <span class="math notranslate nohighlight">\(t_{close}=5 s\)</span>. Static pressure is <span class="math notranslate nohighlight">\(P_{static}=2.0 bar\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Rigid Column Calculations</span>
+
+<span class="k">def</span> <span class="nf">rigid_column_pressure</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">diameter</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="n">v_initial</span><span class="p">,</span> <span class="n">t_close</span><span class="p">,</span> <span class="n">p_static</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculate maximum and minimum pressures for a rigid column in a pipeline.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters:</span>
+<span class="sd">        length (float): Length of the pipeline (m).</span>
+<span class="sd">        diameter (float): Diameter of the pipeline (m).</span>
+<span class="sd">        rho (float): Density of the fluid (kg/m^3).</span>
+<span class="sd">        v_initial (float): Initial velocity of the fluid (m/s).</span>
+<span class="sd">        t_close (float): Valve closure time (s).</span>
+<span class="sd">        p_static (float): Static pressure (Pa).</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        tuple: Maximum and minimum pressures (Pa).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Compute maximum and minimum pressures</span>
+    <span class="n">p_max</span> <span class="o">=</span> <span class="n">p_static</span> <span class="o">+</span> <span class="n">rho</span> <span class="o">*</span> <span class="n">v_initial</span> <span class="o">*</span> <span class="p">(</span><span class="n">length</span> <span class="o">/</span> <span class="n">t_close</span><span class="p">)</span>
+    <span class="n">p_min</span> <span class="o">=</span> <span class="n">p_static</span> <span class="o">-</span> <span class="n">rho</span> <span class="o">*</span> <span class="n">v_initial</span> <span class="o">*</span> <span class="p">(</span><span class="n">length</span> <span class="o">/</span> <span class="n">t_close</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">p_max</span><span class="p">,</span> <span class="n">p_min</span>
+
+
+<span class="c1"># Input values</span>
+<span class="n">length</span> <span class="o">=</span> <span class="mf">500.0</span>  <span class="c1"># m</span>
+<span class="n">diameter</span> <span class="o">=</span> <span class="mf">0.5</span>  <span class="c1"># m</span>
+<span class="n">rho</span> <span class="o">=</span> <span class="mf">1000.0</span>  <span class="c1"># kg/m^3</span>
+<span class="n">v_initial</span> <span class="o">=</span> <span class="mf">2.0</span>  <span class="c1"># m/s</span>
+<span class="n">t_close</span> <span class="o">=</span> <span class="mf">5.0</span>  <span class="c1"># s</span>
+<span class="n">p_static</span> <span class="o">=</span> <span class="mf">2.0e05</span>  <span class="c1"># Pa (1 bar = 100,000 Pa)</span>
+
+<span class="c1"># Perform calculations</span>
+<span class="n">p_max</span><span class="p">,</span> <span class="n">p_min</span> <span class="o">=</span> <span class="n">rigid_column_pressure</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">diameter</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="n">v_initial</span><span class="p">,</span> <span class="n">t_close</span><span class="p">,</span> <span class="n">p_static</span><span class="p">)</span>
+
+<span class="c1"># Output results with right justification</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="s1">&#39;Maximum Pressure:&#39;</span><span class="si">:</span><span class="s2">&lt;20</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">p_max</span><span class="si">:</span><span class="s2">&gt;15.3f</span><span class="si">}</span><span class="s2"> Pascal&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="s1">&#39;Minimum Pressure:&#39;</span><span class="si">:</span><span class="s2">&lt;20</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">p_min</span><span class="si">:</span><span class="s2">&gt;15.3f</span><span class="si">}</span><span class="s2"> Pascal&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Maximum Pressure:         400000.000 Pascal
+Minimum Pressure:              0.000 Pascal
+</pre></div>
+</div>
+</div>
+</div>
+<p>Cavitation may occur if <span class="math notranslate nohighlight">\(P_{min}\)</span> drops below vapor pressure.</p>
+</section>
+<section id="limitations">
+<h3>Limitations:<a class="headerlink" href="#limitations" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>No Wave Propagation: Cannot predict water hammer oscillations or wave reflections.</p></li>
+<li><p>Simplified Friction Effects: Assumes steady-state friction factors.</p></li>
+<li><p>Relatively Short Pipeline Focus: Not suitable for long pipelines with significant compressibility effects.</p></li>
+</ul>
+<p>Rigid column theory provides a simple yet powerful method for quick estimates of transient pressures, serving as a starting point for more detailed analyses using elastic pipe theory or computational fluid dynamics.</p>
+</section>
+</section>
+<section id="elastic-pipe-theory">
+<h2>Elastic Pipe Theory<a class="headerlink" href="#elastic-pipe-theory" title="Link to this heading">#</a></h2>
+<p>If instead of rigid pipe, and incompressible liquid the conduit walls are treated as elastic material, and the liquid is compressible the velocity of a wave along the conduit is</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{equation}
+c = \sqrt{\frac{1}{\rho(\frac{1}{E_f}+\frac{D}{E_c \cdot e})}}
+\end{equation}
+\)</span></p>
+<p>The value <span class="math notranslate nohighlight">\(c\)</span> is called the celerity, <span class="math notranslate nohighlight">\(E_f\)</span> is the fluid modulus of elasticity, <span class="math notranslate nohighlight">\(D\)</span> is the conduit diameter, <span class="math notranslate nohighlight">\(E_c\)</span> is the pipe material modulus of elasticity, <span class="math notranslate nohighlight">\(e\)</span> is the conduit wall thickness.
+Typical values for water are <span class="math notranslate nohighlight">\(E_f~=~2.2 \times 10^9~\text{Pa}\)</span> and for steel <span class="math notranslate nohighlight">\(E_c~=~160 \times 10^9~\text{Pa}\)</span>.</p>
+<p>The pipe is approximated as a series of steel rings (all in line, negligible Poisson ratio) with uniform internal pressure in each ring (but can be different for adjacent rings).
+The relative pressure head inside the pipe at any given ring is related to the pipe diameter as</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{equation}
+H = \frac{2c^2}{g} \times \frac{\frac{d}{2}-\frac{d_0}{2}}{\frac{d}{2}}
+\end{equation}
+\)</span></p>
+<p>where <span class="math notranslate nohighlight">\(\frac{d}{2}\)</span> is the radius under pressure head <span class="math notranslate nohighlight">\(H\)</span> and <span class="math notranslate nohighlight">\(\frac{d_0}{2}\)</span> is the radius when pressure head is zero gage.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>1 atmosphere absolute.  It is usually easier to work with gage pressure in practice.</p>
+</div>
+<p>The continuity equation is written for each ring, and a force balance is written between each ring.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The time to drain problem from elementary fluid mechanics is similar to a series of tanks, where the tanks represent a ring where the change in depth (head) is related to outflow velocity; the outflow velocity is related to force at the outlet – in that case the pressure force of the water above the outlet; Bernoulli’s equation for that case simplified the work considerably.  Here we will have a series of tanks (rings) that communicate pressure head and velocity between them.  We will ultimately arrive at a staggered spatial and temporal grid.</p>
+</div>
+<p>The resulting coupled set of differential equations are</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{gather}
+\begin{matrix}
+\frac{\partial V}{\partial t} &amp;+ V\frac{\partial V}{\partial x} &amp;+ g\frac{\partial H}{\partial x} &amp; = &amp;- \frac{2 \tau_0}{r} \\
+\\
+\frac{\partial H}{\partial t} &amp;+ V\frac{\partial H}{\partial x} &amp;+ \frac{c^2}{g}\frac{\partial V}{\partial x} &amp; = &amp; 0\\
+\end{matrix}
+\end{gather}
+\)</span></p>
+<p>The shear wall stress is <span class="math notranslate nohighlight">\(\tau_0\)</span> and the entire term is usefully approximated as</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{equation}
+\frac{2 \tau_0}{r} = \frac{fV|V|}{2d}
+\end{equation}
+\)</span></p>
+<p>where <span class="math notranslate nohighlight">\(f\)</span> is a friction factor (Darcy-Wiesbach).</p>
+<p>The finite-difference approximation of the above equations is challenging for a variety of reasons, however a useful simplification can be achieved by neglecting the non-linear terms and assuming friction terms are small relative to the time-scale of the problem at a particular location.  The resulting simplified model is</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{gather}
+\begin{matrix}
+\frac{\partial V}{\partial t} &amp; + g\frac{\partial H}{\partial x} &amp;+ \frac{fV|V|}{2d}&amp; = &amp; 0 \\
+\\
+\frac{\partial H}{\partial t} &amp; + \frac{c^2}{g}\frac{\partial V}{\partial x}&amp; &amp; = &amp; 0\\
+\end{matrix}
+\end{gather}
+\)</span></p>
+<p>The model is completed by specification of initial and boundary conditions.
+The velocity and pressure heads are determined before the initiation of the flow change.<br />
+For the development herein, we will use the simplest boundary conditions which are a specified head at one end of our pipeline (a reservoir) and a specified velocity at the other end of our pipeline.</p>
+<p>A reasonably simple model of a valve-type condition is</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{equation}
+V(t) = \frac{A(t)}{A_0} \sqrt{2gH(t)}
+\end{equation}
+\)</span></p>
+<p>where <span class="math notranslate nohighlight">\(A(t)\)</span> is the time varying open area of the conduit at the valve, and <span class="math notranslate nohighlight">\(A_0\)</span> is the cross sectional area of the conduit when fully open.
+For an instant close or open <span class="math notranslate nohighlight">\(A(t)\)</span> is a step function.</p>
+</section>
+<section id="an-explicit-finite-difference-model">
+<h2>An Explicit Finite-Difference Model<a class="headerlink" href="#an-explicit-finite-difference-model" title="Link to this heading">#</a></h2>
+<p>An explicit finite-difference scheme (much like the tank-drain model, but there are coupled components of <span class="math notranslate nohighlight">\(H\)</span> and <span class="math notranslate nohighlight">\(V\)</span>) can be constructed using a staggered space-time grid like that depicted below:</p>
+<p><img alt="" src="../../_images/StaggeredSpaceTimeGrid.png" /></p>
+<p>The figure depicts the spatial dimension along the horizontal axis.<br />
+Each index value (i, i+1, i+2, <span class="math notranslate nohighlight">\(\dots\)</span>) labeled as a circle in the figure represents the interface between two “rings”, and fluid flow values are computed at these locations.  Each index value labeled as a triangle in the figure represents the space within a “ring” and the head values are computed at these locations.<br />
+Thus in the figure, location i (solid vertical lines) is the interface between rings i-1 and i.
+The values of head in the i-1 and i ring determine the velocity that traverses the ring interface.
+For instance if the head in i-1 is larger than in ring i, flow should be from left to right in that time interval.</p>
+<p>A similar staggered structure is depicted in the vertical time domain.
+Time levels are treated in the same fashion where all the head values are used to update velocity values, then these updated velocity values are in turn used to update the head values.</p>
+<p>The boundary conditions are applied at each end of the computational domain – Typically node 1 where head is a fixed value, and velocity depends on the head in node 2, and node N, where velocity is determined from the valve model, and head at N-1 is computed.</p>
+<p>The application of the finite-difference equations to the linearized set of partial differential equations for any interior node (of either type) is</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{gather}
+\begin{matrix}
+\frac{V_i^{n+3/2}-V_i^{n+1/2}}{\Delta t}  &amp;+~g\frac{H_i^{n+1}-H_{i-1}^{n+1/2}}{\Delta x} &amp;+~\frac{fV_i^{n+1/2}|V_i^{n+1/2}|}{2d} &amp;= &amp; 0 \\
+\\
+\frac{H_i^{n+1}-H_i^{n}}{\Delta t}  &amp;+~\frac{c^2}{g}\frac{V_{i+1}^{n+1/2}-V_{i}^{n+1/2}}{\Delta x} &amp; &amp;= &amp; 0\\
+\end{matrix}
+\end{gather}
+\)</span></p>
+</section>
+<section id="an-example-implementation">
+<h2>An Example Implementation<a class="headerlink" href="#an-example-implementation" title="Link to this heading">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The script presented is within the scope of ENGR 1330, and as such you are expected to be able to modify and use it as part of the data analysis for the semester water supply project.</p>
+</div>
+<p>The figure below is a sketch showing a pipeline supplied by a reservoir on the left with constant head of 5 meters.  The reservoir will be quite large relative to the volume in the pipeline – think of Lake Mead on Boulder Canyon (Hoover Dam), and the pipeline is a supply pipe to a water treatment plant for a nearby community.</p>
+<p><img alt="" src="../../_images/PipelineExample.png" /></p>
+<p>The pipeline itself is 6 kilometers long (about 3.5 miles), with a diameter of 0.5 meters (about 18 inches) , and the pipe wall thickness is 4 millimeters (a little under 1/4 inch thick).  The steady flow velocity with the valve open is 9.9 meters/second (30 feet per second – really fast for real pipes).</p>
+<p>The valve is closed over a 2 second interval, with linear decrease in outlet area during the closure.  Neglecting frictional losses in the system, compute and plot the pressures at the valve for a 250-second duration.</p>
+<p>The script to accomplish these computations is shown below:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>The code includes provision for the friction term, here we will just set it to zero.</p></li>
+<li><p>The code also sets time step size based on the Courant condition.</p></li>
+<li><p>The Courant number must equal unity for the algorithm to be stable.</p></li>
+</ul>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pipeline Transients using Explicit Finite Differences (linearized formulation)</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Function for calculating celerity</span>
+<span class="k">def</span> <span class="nf">celerity</span><span class="p">(</span><span class="n">density</span><span class="p">,</span> <span class="n">elasticity_fluid</span><span class="p">,</span> <span class="n">elasticity_solid</span><span class="p">,</span> <span class="n">diameter</span><span class="p">,</span> <span class="n">thickness</span><span class="p">):</span>
+    <span class="n">temp1</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">elasticity_fluid</span>
+    <span class="n">temp2</span> <span class="o">=</span> <span class="n">diameter</span> <span class="o">/</span> <span class="p">(</span><span class="n">elasticity_solid</span> <span class="o">*</span> <span class="n">thickness</span><span class="p">)</span>
+    <span class="n">temp3</span> <span class="o">=</span> <span class="n">temp1</span> <span class="o">+</span> <span class="n">temp2</span>
+    <span class="n">temp4</span> <span class="o">=</span> <span class="n">density</span> <span class="o">*</span> <span class="n">temp3</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="n">temp4</span><span class="p">)</span>
+
+<span class="c1"># Simulation conditions</span>
+<span class="c1"># Fluid properties</span>
+<span class="n">density</span> <span class="o">=</span> <span class="mi">1000</span>  <span class="c1"># kg/m^3</span>
+<span class="n">elasticity_fluid</span> <span class="o">=</span> <span class="mf">2.0e9</span>  <span class="c1"># Pa</span>
+<span class="n">elasticity_solid</span> <span class="o">=</span> <span class="mf">160.0e9</span>  <span class="c1"># Pa</span>
+<span class="n">diameter</span> <span class="o">=</span> <span class="mf">0.500</span>  <span class="c1"># m</span>
+<span class="n">thickness</span> <span class="o">=</span> <span class="mf">0.004</span>  <span class="c1"># m</span>
+<span class="n">cc</span> <span class="o">=</span> <span class="n">celerity</span><span class="p">(</span><span class="n">density</span><span class="p">,</span> <span class="n">elasticity_fluid</span><span class="p">,</span> <span class="n">elasticity_solid</span><span class="p">,</span> <span class="n">diameter</span><span class="p">,</span> <span class="n">thickness</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Celerity: </span><span class="si">{</span><span class="n">cc</span><span class="si">}</span><span class="s2"> m/s&quot;</span><span class="p">)</span>
+
+<span class="c1"># Simulation properties</span>
+<span class="n">deltax</span> <span class="o">=</span> <span class="mi">600</span>  <span class="c1"># meters</span>
+<span class="n">courant_ratio</span> <span class="o">=</span> <span class="mf">1.0</span>  <span class="c1"># select Courant ratio to set time step</span>
+<span class="n">deltat</span> <span class="o">=</span> <span class="n">courant_ratio</span> <span class="o">*</span> <span class="p">(</span><span class="n">deltax</span> <span class="o">/</span> <span class="n">cc</span><span class="p">)</span>  <span class="c1"># force to be Courant number for stability</span>
+
+<span class="c1"># Allocate head and velocity vectors, assign initial values</span>
+<span class="n">start_head</span> <span class="o">=</span> <span class="mf">5.0</span>  <span class="c1"># meters</span>
+<span class="n">start_velo</span> <span class="o">=</span> <span class="mf">9.9</span>  <span class="c1"># meters/second</span>
+<span class="n">pipe_length</span> <span class="o">=</span> <span class="mi">6000</span>  <span class="c1"># meters</span>
+<span class="n">close_time</span> <span class="o">=</span> <span class="mf">5.0</span>  <span class="c1"># seconds</span>
+<span class="n">simulation_duration</span> <span class="o">=</span> <span class="mi">250</span>  <span class="c1"># seconds</span>
+<span class="n">friction_factor</span> <span class="o">=</span> <span class="mf">0.000</span>  <span class="c1"># Moody Chart</span>
+<span class="n">cell_count</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">pipe_length</span> <span class="o">/</span> <span class="n">deltax</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="n">head</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="n">cell_count</span><span class="p">,</span> <span class="n">start_head</span><span class="p">)</span>  <span class="c1"># initial head values</span>
+<span class="n">velocity</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="n">cell_count</span><span class="p">,</span> <span class="n">start_velo</span><span class="p">)</span>  <span class="c1"># initial velocity values</span>
+
+<span class="c1"># Friction modified properties</span>
+<span class="k">if</span> <span class="n">friction_factor</span> <span class="o">&gt;</span> <span class="mf">0.0</span><span class="p">:</span>
+    <span class="n">courant_ratio</span> <span class="o">=</span> <span class="mf">0.99</span>  <span class="c1"># modify Courant ratio to set time step</span>
+    <span class="n">deltat</span> <span class="o">=</span> <span class="n">courant_ratio</span> <span class="o">*</span> <span class="p">(</span><span class="n">deltax</span> <span class="o">/</span> <span class="n">cc</span><span class="p">)</span>  <span class="c1"># force to be Courant number for stability</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+<span class="c1"># Useful constants</span>
+<span class="n">dtdx</span> <span class="o">=</span> <span class="n">deltat</span> <span class="o">/</span> <span class="n">deltax</span>
+<span class="n">cc2g</span> <span class="o">=</span> <span class="n">cc</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mf">9.81</span>
+<span class="n">do2</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="n">diameter</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># used when friction included</span>
+
+<span class="c1"># Allocate some output vectors</span>
+<span class="n">etime</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># time steps</span>
+<span class="n">head_valve</span> <span class="o">=</span> <span class="p">[</span><span class="n">head</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>  <span class="c1"># head at valve</span>
+<span class="n">velocity_tank</span> <span class="o">=</span> <span class="p">[</span><span class="n">velocity</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>  <span class="c1"># velocity at tank</span>
+
+<span class="c1"># Time Stepping Loop</span>
+<span class="n">max_iter</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">simulation_duration</span> <span class="o">/</span> <span class="n">deltat</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">itime</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">max_iter</span><span class="p">):</span>
+    <span class="n">etime</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">etime</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">deltat</span><span class="p">)</span>
+    
+    <span class="c1"># Valve closure model</span>
+    <span class="n">close_ratio</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="p">(</span><span class="n">etime</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">close_time</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">close_ratio</span> <span class="o">&gt;</span> <span class="mf">0.0</span><span class="p">:</span>
+        <span class="n">velocity</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">close_ratio</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="mf">9.81</span> <span class="o">*</span> <span class="n">head</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">velocity</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+    
+    <span class="c1"># Update velocity</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">cell_count</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">friction</span> <span class="o">=</span> <span class="n">friction_factor</span> <span class="o">*</span> <span class="n">velocity</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="nb">abs</span><span class="p">(</span><span class="n">velocity</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">*</span> <span class="n">do2</span>
+        <span class="n">velocity</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-=</span> <span class="mf">9.81</span> <span class="o">*</span> <span class="n">dtdx</span> <span class="o">*</span> <span class="p">(</span><span class="n">head</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">head</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="n">deltat</span> <span class="o">*</span> <span class="n">friction</span>
+    
+    <span class="c1"># Update head</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">cell_count</span><span class="p">):</span>
+        <span class="n">head</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-=</span> <span class="n">cc2g</span> <span class="o">*</span> <span class="n">dtdx</span> <span class="o">*</span> <span class="p">(</span><span class="n">velocity</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">velocity</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
+    
+    <span class="c1"># Store results</span>
+    <span class="n">head_valve</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">head</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">velocity_tank</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">velocity</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="c1"># Report results</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Maximum head at valve: </span><span class="si">{</span><span class="nb">max</span><span class="p">(</span><span class="n">head_valve</span><span class="p">)</span><span class="si">}</span><span class="s2"> meters&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Minimum head at valve: </span><span class="si">{</span><span class="nb">min</span><span class="p">(</span><span class="n">head_valve</span><span class="p">)</span><span class="si">}</span><span class="s2"> meters&quot;</span><span class="p">)</span>
+
+<span class="c1"># Plot results</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+
+<span class="c1"># Head at valve plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">etime</span><span class="p">,</span> <span class="n">head_valve</span><span class="p">,</span> <span class="s1">&#39;r-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Time (seconds)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Head at Valve (meters)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Head at Valve Over Time&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Velocity at tank plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">etime</span><span class="p">,</span> <span class="n">velocity_tank</span><span class="p">,</span> <span class="s1">&#39;b-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Time (seconds)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Velocity at Tank (meters/sec)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Velocity at Tank Over Time&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Celerity: 883.4522085987725 m/s
+Maximum head at valve: 896.5572747327076 meters
+Minimum head at valve: -886.5572747327074 meters
+</pre></div>
+</div>
+<img alt="../../_images/069db75cbda9d1086c6a9854381f8c91f0386e2d18061e2eb4af92894ea5abae.png" src="../../_images/069db75cbda9d1086c6a9854381f8c91f0386e2d18061e2eb4af92894ea5abae.png" />
+</div>
+</div>
+<p>The script seems elaborate, but it is quite simple.  The major initial components are:</p>
+<ol class="arabic simple">
+<li><p>import numerical python (numpy) and plotting packages</p></li>
+<li><p>Define a prototype function for the celerity.</p></li>
+<li><p>Next material properties and simulation characteristics are supplied.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For the script to be more general, one would probably move a lot of these assignments into a file read structure.</p>
+</div>
+<p>Once everything is ready, the algorithm begins time-stepping. Within any single time step the following activities are performed:</p>
+<ol class="arabic simple">
+<li><p>Determine the downstream velocity at the valve based on the required closure model.</p></li>
+<li><p>Update the velocity in each interior interface (1 to the section before the valve).</p></li>
+<li><p>Update the head in each interior cell (2 to the last cell, which is upstream of the valve).</p></li>
+<li><p>Record the head at the valve, and the velocity at the tank exit.</p></li>
+<li><p>When the requisite time steps are completed, then report and plot the results.</p></li>
+</ol>
+<p>For this particular example the friction factor was set to 0, and the Courant ratio was set to 1.</p>
+<p>The head at the valve oscillates from <span class="math notranslate nohighlight">\(+\Delta~H\)</span> to <span class="math notranslate nohighlight">\(-\Delta~H\)</span>, and the velocity repeatedly changes direction an value from +9.9 t0 -9.9 meters per second, exactly phase shifted relative to head by one-half cycle.
+The time for the values to change is twice the pipeline length divided by the wave speed.</p>
+<p>Now if we add the friction term say <span class="math notranslate nohighlight">\(f=0.015\)</span> which would be a value for a smooth pipe (especially at the flow velocities in the example) the effect of frictional damping is evident in the simulation and is displayed below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pipeline Transients using Explicit Finite Differences (linearized formulation)</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Function for calculating celerity</span>
+<span class="k">def</span> <span class="nf">celerity</span><span class="p">(</span><span class="n">density</span><span class="p">,</span> <span class="n">elasticity_fluid</span><span class="p">,</span> <span class="n">elasticity_solid</span><span class="p">,</span> <span class="n">diameter</span><span class="p">,</span> <span class="n">thickness</span><span class="p">):</span>
+    <span class="n">temp1</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">elasticity_fluid</span>
+    <span class="n">temp2</span> <span class="o">=</span> <span class="n">diameter</span> <span class="o">/</span> <span class="p">(</span><span class="n">elasticity_solid</span> <span class="o">*</span> <span class="n">thickness</span><span class="p">)</span>
+    <span class="n">temp3</span> <span class="o">=</span> <span class="n">temp1</span> <span class="o">+</span> <span class="n">temp2</span>
+    <span class="n">temp4</span> <span class="o">=</span> <span class="n">density</span> <span class="o">*</span> <span class="n">temp3</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="n">temp4</span><span class="p">)</span>
+
+<span class="c1"># Simulation conditions</span>
+<span class="c1"># Fluid properties</span>
+<span class="n">density</span> <span class="o">=</span> <span class="mi">1000</span>  <span class="c1"># kg/m^3</span>
+<span class="n">elasticity_fluid</span> <span class="o">=</span> <span class="mf">2.0e9</span>  <span class="c1"># Pa</span>
+<span class="n">elasticity_solid</span> <span class="o">=</span> <span class="mf">160.0e9</span>  <span class="c1"># Pa</span>
+<span class="n">diameter</span> <span class="o">=</span> <span class="mf">0.500</span>  <span class="c1"># m</span>
+<span class="n">thickness</span> <span class="o">=</span> <span class="mf">0.004</span>  <span class="c1"># m</span>
+<span class="n">cc</span> <span class="o">=</span> <span class="n">celerity</span><span class="p">(</span><span class="n">density</span><span class="p">,</span> <span class="n">elasticity_fluid</span><span class="p">,</span> <span class="n">elasticity_solid</span><span class="p">,</span> <span class="n">diameter</span><span class="p">,</span> <span class="n">thickness</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Celerity: </span><span class="si">{</span><span class="n">cc</span><span class="si">}</span><span class="s2"> m/s&quot;</span><span class="p">)</span>
+
+<span class="c1"># Simulation properties</span>
+<span class="n">deltax</span> <span class="o">=</span> <span class="mi">600</span>  <span class="c1"># meters</span>
+<span class="n">courant_ratio</span> <span class="o">=</span> <span class="mf">1.00</span>  <span class="c1"># select Courant ratio to set time step</span>
+<span class="n">deltat</span> <span class="o">=</span> <span class="n">courant_ratio</span> <span class="o">*</span> <span class="p">(</span><span class="n">deltax</span> <span class="o">/</span> <span class="n">cc</span><span class="p">)</span>  <span class="c1"># force to be Courant number for stability</span>
+
+<span class="c1"># Allocate head and velocity vectors, assign initial values</span>
+<span class="n">start_head</span> <span class="o">=</span> <span class="mf">5.0</span>  <span class="c1"># meters</span>
+<span class="n">start_velo</span> <span class="o">=</span> <span class="mf">9.9</span>  <span class="c1"># meters/second</span>
+<span class="n">pipe_length</span> <span class="o">=</span> <span class="mi">6000</span>  <span class="c1"># meters</span>
+<span class="n">close_time</span> <span class="o">=</span> <span class="mf">2.0</span>  <span class="c1"># seconds</span>
+<span class="n">simulation_duration</span> <span class="o">=</span> <span class="mi">250</span>  <span class="c1"># seconds</span>
+<span class="n">friction_factor</span> <span class="o">=</span> <span class="mf">0.015</span>  <span class="c1"># Moody Chart</span>
+<span class="n">cell_count</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">pipe_length</span> <span class="o">/</span> <span class="n">deltax</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="n">head</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="n">cell_count</span><span class="p">,</span> <span class="n">start_head</span><span class="p">)</span>  <span class="c1"># initial head values</span>
+<span class="n">velocity</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="n">cell_count</span><span class="p">,</span> <span class="n">start_velo</span><span class="p">)</span>  <span class="c1"># initial velocity values</span>
+
+<span class="c1"># Friction modified properties</span>
+<span class="k">if</span> <span class="n">friction_factor</span> <span class="o">&gt;</span> <span class="mf">0.0</span><span class="p">:</span>
+    <span class="n">courant_ratio</span> <span class="o">=</span> <span class="mf">0.96</span>  <span class="c1"># modify Courant ratio to set time step</span>
+    <span class="n">deltat</span> <span class="o">=</span> <span class="n">courant_ratio</span> <span class="o">*</span> <span class="p">(</span><span class="n">deltax</span> <span class="o">/</span> <span class="n">cc</span><span class="p">)</span>  <span class="c1"># force to be Courant number for stability</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+<span class="c1"># Useful constants</span>
+<span class="n">dtdx</span> <span class="o">=</span> <span class="n">deltat</span> <span class="o">/</span> <span class="n">deltax</span>
+<span class="n">cc2g</span> <span class="o">=</span> <span class="n">cc</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mf">9.81</span>
+<span class="n">do2</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="n">diameter</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># used when friction included</span>
+
+<span class="c1"># Allocate some output vectors</span>
+<span class="n">etime</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># time steps</span>
+<span class="n">head_valve</span> <span class="o">=</span> <span class="p">[</span><span class="n">head</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>  <span class="c1"># head at valve</span>
+<span class="n">velocity_tank</span> <span class="o">=</span> <span class="p">[</span><span class="n">velocity</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>  <span class="c1"># velocity at tank</span>
+
+<span class="c1"># Time Stepping Loop</span>
+<span class="n">max_iter</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">simulation_duration</span> <span class="o">/</span> <span class="n">deltat</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">itime</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">max_iter</span><span class="p">):</span>
+    <span class="n">etime</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">etime</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">deltat</span><span class="p">)</span>
+    
+    <span class="c1"># Valve closure model</span>
+    <span class="n">close_ratio</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="p">(</span><span class="n">etime</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">close_time</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">close_ratio</span> <span class="o">&gt;=</span> <span class="mf">0.0</span><span class="p">:</span>
+        <span class="n">velocity</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">close_ratio</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="mf">9.81</span> <span class="o">*</span> <span class="n">head</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">velocity</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+    
+    <span class="c1"># Update velocity</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">cell_count</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">friction</span> <span class="o">=</span> <span class="n">friction_factor</span> <span class="o">*</span> <span class="n">velocity</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="nb">abs</span><span class="p">(</span><span class="n">velocity</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">*</span> <span class="n">do2</span>
+        <span class="n">velocity</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-=</span> <span class="mf">9.81</span> <span class="o">*</span> <span class="n">dtdx</span> <span class="o">*</span> <span class="p">(</span><span class="n">head</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">head</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="n">deltat</span> <span class="o">*</span> <span class="n">friction</span>
+    
+    <span class="c1"># Update head</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">cell_count</span><span class="p">):</span>
+        <span class="n">head</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-=</span> <span class="n">cc2g</span> <span class="o">*</span> <span class="n">dtdx</span> <span class="o">*</span> <span class="p">(</span><span class="n">velocity</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">velocity</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
+    
+    <span class="c1"># Store results</span>
+    <span class="n">head_valve</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">head</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">velocity_tank</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">velocity</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="c1"># Report results</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Maximum head at valve: </span><span class="si">{</span><span class="nb">max</span><span class="p">(</span><span class="n">head_valve</span><span class="p">)</span><span class="si">}</span><span class="s2"> meters&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Minimum head at valve: </span><span class="si">{</span><span class="nb">min</span><span class="p">(</span><span class="n">head_valve</span><span class="p">)</span><span class="si">}</span><span class="s2"> meters&quot;</span><span class="p">)</span>
+
+<span class="c1"># Plot results</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+
+<span class="c1"># Head at valve plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">etime</span><span class="p">,</span> <span class="n">head_valve</span><span class="p">,</span> <span class="s1">&#39;r-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Time (seconds)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Head at Valve (meters)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Head at Valve Over Time&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Velocity at tank plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">etime</span><span class="p">,</span> <span class="n">velocity_tank</span><span class="p">,</span> <span class="s1">&#39;b-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Time (seconds)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Velocity at Tank (meters/sec)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Velocity at Tank Over Time&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Celerity: 883.4522085987725 m/s
+Maximum head at valve: 682.0901337595848 meters
+Minimum head at valve: -384.6062306260657 meters
+</pre></div>
+</div>
+<img alt="../../_images/1f655e016cb84b8e6fb10c1bcbd3638a2807f72519d98a21a8b1f39b2240c2a6.png" src="../../_images/1f655e016cb84b8e6fb10c1bcbd3638a2807f72519d98a21a8b1f39b2240c2a6.png" />
+</div>
+</div>
+</section>
+<section id="end-of-section">
+<h2>End of Section<a class="headerlink" href="#end-of-section" title="Link to this heading">#</a></h2>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lessons/12-pipeline_transients"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../08-networks/networks.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">8. Pipe Networks</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../13-epanet_intro/epanet_intro.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">13. EPANET Introduction</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readings">Readings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#videos">Videos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lesson-outline">Lesson Outline</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rigid-column-theory">Rigid Column Theory</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relevant-equations">Relevant Equations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#engineering-applications">Engineering Applications:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-calculation">Example Calculation:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations">Limitations:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elastic-pipe-theory">Elastic Pipe Theory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-explicit-finite-difference-model">An Explicit Finite-Difference Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example-implementation">An Example Implementation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-section">End of Section</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Theodore G. Cleveland
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
