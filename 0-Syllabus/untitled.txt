@@ -1,0 +1,157 @@
+Problem Statement: Hydraulic Analysis and Design of a Municipal Water Distribution System
+Background
+
+The City of Red Bluff, population 6,500, is expanding into newly platted residential subdivisions on the east side of town. The municipal water utility currently serves customers from a single elevated storage tank (EST) and a groundwater well with chlorination. To support future growth, the city must extend its distribution network and verify that the system meets required pressure and fire-flow standards under varying demand conditions.
+
+You have been contracted as a junior design engineer to assist the city in planning and evaluating a proposed network expansion.
+
+Available Information
+
+A base map in QGIS showing:
+
+Existing mains (8-in PVC)
+
+Proposed street alignments
+
+Approximate ground elevations (DEM data)
+
+Locations of existing hydrants and valves
+
+System Facilities:
+
+Groundwater well: 750 gpm supply capacity
+
+Elevated Storage Tank:
+
+Bottom water level = 102 ft above ground
+
+Operating range = 20 ft
+
+Pressure at EST outlet may be assumed as static head only (no pumps for this assignment)
+
+Demand Information:
+
+Existing average day demand: 0.6 MGD
+
+Projected future average day demand: 0.9 MGD
+
+Peak hour factor: 2.5
+
+Fire flow requirement (per state standards):
+
+1,000 gpm for 2 hours at 20 psi minimum residual
+
+Residential zone
+
+Pipe Size Options (assume C = 130):
+
+6-inch
+
+8-inch
+
+12-inch (collector / trunk only)
+
+You may reference:
+
+State design criteria (e.g., Texas Design Criteria Manual)
+
+AWWA recommendations
+
+Local city specification excerpts as provided
+
+Task Requirements
+1. System Layout
+
+Using the QGIS base map and reasonable engineering judgment:
+
+Propose a new looping network to serve the planned expansion
+
+Select which pipes must be 6", 8", or 12"
+
+Place at least four fire hydrants
+
+Indicate pressure zone boundaries (single zone in this case unless students choose otherwise)
+
+Output: Annotated map
+
+2. EPANET Hydraulic Model
+
+Build the extended system model including:
+
+All existing mains
+
+Proposed pipes
+
+Estimated nodal demands (may assume uniform assignment or allocate proportional to parcel counts)
+
+Required simulations:
+
+Average Day Demand
+
+Peak Hour Demand
+
+Fire Flow Test at the most hydraulically disadvantaged hydrant
+
+3. Performance Evaluation
+
+For each simulation, report:
+
+Minimum and maximum pressures
+
+Nodes below required pressure thresholds
+
+Flow velocity limits (check against 2–8 ft/s guideline)
+
+Whether the fire-flow node meets 20 psi residual
+
+If criteria are not met:
+
+Suggest corrective actions, such as:
+
+Larger mains
+
+Grid looping
+
+Additional storage or booster pumping (concept only)
+
+4. Deliverables
+
+Submit the following:
+
+Annotated QGIS layout
+
+EPANET input file (.inp)
+
+Pressure/flow summary tables
+
+One-page written design justification, including:
+
+Major assumptions
+
+Pipe size reasoning
+
+Identification of weakest node
+
+Whether standards are met and why
+
+Learning Objectives
+
+By completing this project, students will:
+
+Apply hydraulic principles to a real municipal network
+
+Use EPANET for steady-state modeling
+
+Interpret results in the context of state design criteria
+
+Demonstrate the value of looping and pipe sizing
+
+Build GIS-based infrastructure planning confidence
+
+If you'd like, I can provide:
+✔ A sample EPANET network (starter .inp)
+✔ A rubric or peer-review form
+✔ Common “mistakes expected” so you can guide gently
+✔ A grading key showing what a compliant vs. failing design looks like
+
+Just say when, Sensei!

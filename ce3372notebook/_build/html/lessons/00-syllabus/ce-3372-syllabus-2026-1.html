@@ -419,7 +419,6 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Syllabus</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ce-3372-water-systems-design">CE 3372 Water Systems Design</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-catalog-description">Course Catalog Description:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-sections">Course Sections</a></li>
@@ -456,13 +455,14 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="syllabus">
+  <div class="alert alert-block alert-info">
+    <b><h1>CE 3372 Water Systems Design</h1></b> 
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="syllabus">
 <h1>Syllabus<a class="headerlink" href="#syllabus" title="Link to this heading">#</a></h1>
-<section id="ce-3372-water-systems-design">
-<h2>CE 3372 Water Systems Design<a class="headerlink" href="#ce-3372-water-systems-design" title="Link to this heading">#</a></h2>
-</section>
 <section id="course-catalog-description">
 <h2>Course Catalog Description:<a class="headerlink" href="#course-catalog-description" title="Link to this heading">#</a></h2>
+<p><strong>3372. Water Systems Design (3:3:0).</strong>  Prerequesite: CE 3305.  Hydraulic analysis and design of municipal water distribution, stormwater collection, and wastewater collection systems.  Oral and written presentations. (Communications Literacy)</p>
 </section>
 <section id="prerequisites">
 <h2>Prerequisites:<a class="headerlink" href="#prerequisites" title="Link to this heading">#</a></h2>
@@ -518,28 +518,29 @@ document.write(`
 </section>
 <section id="textbook-s">
 <h2>Textbook(s):<a class="headerlink" href="#textbook-s" title="Link to this heading">#</a></h2>
-<p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/1-LabManual/_build/html/intro.html">Laboratory Manual/Instructor Notes</a> serve as the textbook.</p>
-<p><a class="reference external" href="http://54.243.252.9/ce-3105-webroot/3-Readings/">Supplimental Readings</a> if any, are stored on the class server.</p>
+<ol class="arabic simple">
+<li><p>Gupta, R.S., 2017. Hydrology and Hydraulic Systems, Waveland Press, ISBN 10: 1-4786-3091-4; ISBN 13: 978-1-4786-3091-3, 888p. <br>
+<a class="reference external" href="https://www.waveland.com/browse.php?t=384">Waveland Press - purchase</a><br>
+<a class="reference external" href="https://www.amazon.com/Hydrology-Hydraulic-Systems-Fourth-Gupta-dp-1478630914/dp/1478630914/ref=dp_ob_title_bk">Amazon - purchase or rent</a></p></li>
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/3-Readings">Assorted Readings</a></p></li>
+<li><p><a class="reference external" href="http://54.243.252.9/">Instructor Notes</a></p></li>
+</ol>
 </section>
 <section id="course-objectives">
 <h2>Course Objectives:<a class="headerlink" href="#course-objectives" title="Link to this heading">#</a></h2>
-<p>This course aims to enhance students’ understanding of the behavior of real fluids and their interactions with physical systems through hands-on experimentation and theoretical analysis. By engaging in the experimental method, students will develop critical thinking and problem-solving skills. The course also emphasizes improving technical writing proficiency and preparing students for the fluid mechanics section of the FE Exam. Collaborative group work is a cornerstone of this course, with peer assessment contributing to a portion of the final grade.</p>
+<p>The purpose of this class is to study the theory and application of hydraulics, learn how to use predictive tools such as charts and computer programs, and apply these tools to the analysis and design of distribution and collection and pumping systems. Preparation of reports is an equally emphasized objective of this course.</p>
 </section>
 <section id="knowledge-skills-abilities-ksa">
 <h2>Knowledge, Skills, Abilities (KSA) :<a class="headerlink" href="#knowledge-skills-abilities-ksa" title="Link to this heading">#</a></h2>
 <p>By the end of this course, students will be able to:</p>
 <ol class="arabic simple">
-<li><p>Analyze and solve fluid mechanics problems using measured and tabulated fluid properties with appropriate units.</p></li>
-<li><p>Solve manometer problems by applying the fundamental equations of fluid statics.</p></li>
-<li><p>Calculate pressures, forces, and lines of action for fluids at rest on plane and curved surfaces.</p></li>
-<li><p>Define and evaluate control volumes in fluid flow systems.</p></li>
-<li><p>Apply the principles of conservation of mass, energy, and momentum to control volumes.</p></li>
-<li><p>Predict the effects of channel transitions, such as changes in width or bed level, in open channel flow problems.</p></li>
-<li><p>Compare and contrast the behavior of real and theoretical fluids based on experimental observations.</p></li>
-<li><p>Develop step-by-step protocols for conducting fluid mechanics experiments and collecting reliable data.</p></li>
-<li><p>Measure values such as head, discharge, and fluid properties using legacy techniques to support calculations involving conservation laws.</p></li>
-<li><p>Measure values such as pressure and discharge using modern automated methods, including DIY data loggers and digital and analog sensors, to support conservation law applications.</p></li>
-<li><p>Write effective, concise reports that clearly document experimental methods, data analysis, and conclusions, emphasizing technical accuracy and professional presentation.</p></li>
+<li><p>Read, synthesize, and clearly communicate ideas presented in current and historical technical literature.</p></li>
+<li><p>Perform flow and head loss calculations in simple systems using Excel or Jupyter Notebooks.</p></li>
+<li><p>Model flow, pressure, and transport in realistic water distribution systems using EPANET or comparable professional tools.</p></li>
+<li><p>Develop and apply rule-based operating schedules to maintain prescribed conditions in water distribution systems.</p></li>
+<li><p>Model flow and transport in stormwater and wastewater collection systems using SWMM 5.0 or similar tools.</p></li>
+<li><p>Select and size engineering materials (pipes, pumps, valves, etc.) for drinking water, stormwater, and wastewater applications.</p></li>
+<li><p>Prepare professional engineering reports to support the design of drinking water, stormwater, or wastewater infrastructure.</p></li>
 </ol>
 </section>
 <section id="abet-student-outcomes">
@@ -602,12 +603,12 @@ evaluating the extent to which the student outcomes are being attained. The resu
 </thead>
 <tbody>
 <tr class="row-even"><td class="text-left"><p>14 Jan 2026</p></td>
-<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/01-introduction/introduction.html">1-Introduction</a> <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372notebook/_build/html/lessons/00-syllabus/ce-3372-syllabus-2026-1.html">Syllabus</a><br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/01-introduction/introduction.html#water-systems-definition-s">Water System Types</a></p></td>
+<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372notebook/_build/html/lessons/01-introduction/introduction.html">1-Introduction</a> <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372notebook/_build/html/lessons/00-syllabus/ce-3372-syllabus-2026-1.html">Syllabus</a><br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372notebook/_build/html/lessons/01-introduction/introduction.html#water-systems-definition-s">Water System Types</a></p></td>
 <td class="text-left"><p></p></td>
 <td class="text-left"><p>- <font color="red">directive</font></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>16 Jan 2026</p></td>
-<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/02-projects/projects.html">2-Design Projects</a> <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/02-dwdesign/drinking_water_design/drinking_water_design.html#distribution-system-types">Distribution System Types</a>  <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/02-dwdesign/drinking_water_design/drinking_water_design.html#guidance-documents">Guidance Documents</a></p></td>
+<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372notebook/_build/html/lessons/02-projects/projects.html">2-Design Projects</a> <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372notebook/_build/html/lessons/02-projects/projects.html#what-is-an-engineering-project">Engineering Projects</a>  <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372notebook/_build/html/lessons/02-projects/projects.html#design-reports-communicating-technical-work-effectively">Design Reports</a></p></td>
 <td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a></p></td>
 <td class="text-left"><p>- <font color="red">directive</font></p></td>
 </tr>
@@ -617,42 +618,42 @@ evaluating the extent to which the student outcomes are being attained. The resu
 <td class="text-left"><p></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>21 Jan 2026</p></td>
-<td class="text-left"><p><a class="reference internal" href="#"><span class="xref myst">3-Drinking Water Design</span></a> <br> - <a class="reference internal" href="#"><span class="xref myst">Distribution System Types</span></a>  <br> - <a class="reference internal" href="#"><span class="xref myst">Guidance Documents</span></a></p></td>
+<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372notebook/_build/html/lessons/02-dwdesign/drinking_water_design/drinking_water_design.html">3-Drinking Water Design</a> <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372notebook/_build/html/lessons/02-dwdesign/drinking_water_design/drinking_water_design.html#transmission-and-distribution-networks">Distribution System Types</a>  <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372notebook/_build/html/lessons/02-dwdesign/drinking_water_design/drinking_water_design.html#design-guidance-and-professional-standards">Guidance Documents</a></p></td>
 <td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a></p></td>
 <td class="text-left"><p>- <font color="red">directive</font></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>23 Jan 2026</p></td>
-<td class="text-left"><p><a class="reference internal" href="#"><span class="xref myst">4-Raw Water Transmission</span></a> <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/03-drawings/design_drawings/design_drawings.html#plan-view-requirements">Plan View Requirements</a>  <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/03-drawings/design_drawings/design_drawings.html#profile-elevation-view-requirements">Profile View Requirements</a></p></td>
+<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372notebook/_build/html/lessons/02-dwdesign/water_transmission_design/water_transmission_design.html">4-Raw Water Transmission</a> <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372notebook/_build/html/lessons/02-dwdesign/water_transmission_design/water_transmission_design.html#determination-of-transmission-pipe-size">Determining Pipe Size</a>  <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372notebook/_build/html/lessons/02-dwdesign/water_transmission_design/water_transmission_design.html#appurtenances-for-transmission-mains">Appurtenances for Transmission Mains</a></p></td>
 <td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a></p></td>
 <td class="text-left"><p>- <font color="red">directive</font></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>26 Jan 2026</p></td>
-<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/03-drawings/xyz2topo/xyz2topo.html">5-Drawings and Maps</a> <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/03-drawings/xyz2topo/xyz2topo.html#example">Example</a></p></td>
+<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372notebook/_build/html/lessons/03-drawings/design_drawings/design_drawings.html">5-Drawings and Maps</a> <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372notebook/_build/html/lessons/03-drawings/design_drawings/design_drawings.html#types-of-graphics">Types of Graphics</a> <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372notebook/_build/html/lessons/03-drawings/design_drawings/design_drawings.html#design-drawings">Design Drawings</a></p></td>
 <td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a></p></td>
 <td class="text-left"><p>- <font color="red">directive</font></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>28 Jan 2026</p></td>
-<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/03-drawings/qgis_topography/qgis_topography.html">6-Maps from XYZ</a> <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/03-drawings/qgis_topography/qgis_topography.html#why-qgis-instead-of-esri-products">QGIS vs ArcGIS</a>  <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/03-drawings/qgis_topography/qgis_topography.html#making-a-topographic-map">Making a Topo Map</a></p></td>
+<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372notebook/_build/html/lessons/03-drawings/xyz2topo/xyz2topo.html">6-Maps from XYZ</a> <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372notebook/_build/html/lessons/03-drawings/xyz2topo/xyz2topo.html#example">Making a Topo Map</a></p></td>
 <td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a></p></td>
 <td class="text-left"><p>- <font color="red">directive</font></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>30 Jan 2026</p></td>
-<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/04-demands/demand-forcasting.html">7-Maps using GIS</a> <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/04-demands/demand-forcasting.html#population-forecasting">Population Forecasting</a>  <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/04-demands/demand-forcasting.html#average-daily-demand-add">Average Daily Demand</a></p></td>
+<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372notebook/_build/html/lessons/03-drawings/qgis_topography/qgis_topography.html">7-Maps using GIS</a> <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372notebook/_build/html/lessons/03-drawings/qgis_topography/qgis_topography.html#why-qgis-instead-of-esri-products">QGIS vs ArcGIS</a>  <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372notebook/_build/html/lessons/03-drawings/qgis_topography/qgis_topography.html#making-a-topographic-map">Making a Topo Map</a></p></td>
 <td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a></p></td>
 <td class="text-left"><p>- <font color="red">directive</font></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>02 Feb 2026</p></td>
-<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/055-headloss/headloss.html">Pipeline Headloss</a> <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/055-headloss/headloss.html#energy-equation">Energy Equation</a>  <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/055-headloss/headloss.html#head-loss-models-for-losses-in-closed-conduits">Head Loss Models</a></p></td>
+<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372notebook/_build/html/lessons/04-demands/demand-forcasting.html">8-Demand Estimation</a>  <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372notebook/_build/html/lessons/04-demands/demand-forcasting.html#water-needs-for-a-city">Water Needs</a> <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372notebook/_build/html/lessons/04-demands/demand-forcasting.html#average-daily-demand-add">Average Daily Demand</a></p></td>
 <td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a></p></td>
 <td class="text-left"><p>- <font color="red">directive</font></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>04 Feb 2026</p></td>
-<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/05-pipeline_hydraulics/pipelinehydraulics.html#">Pipeline Hydraulics</a> <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/05-pipeline_hydraulics/pipelinehydraulics.html#example-steady-discharge-between-reservoirs">Example</a>  <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/05-pipeline_hydraulics/pipelinehydraulics.html#linking-systems">Linking Systems</a></p></td>
+<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372notebook/_build/html/lessons/055-headloss/headloss.html">9-Pipeline Headloss</a> <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372notebook/_build/html/lessons/055-headloss/headloss.html#head-loss-models-for-losses-in-closed-conduits">Head Loss Models</a></p></td>
 <td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a></p></td>
 <td class="text-left"><p>- <font color="red">directive</font></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>06 Feb 2026</p></td>
-<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/06-pumping/pumps.html">Pumping Systems</a> <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/06-pumping/pumps.html#pump-selection">Pump Selection</a>  <br> - Topic 2</p></td>
+<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372notebook/_build/html/lessons/05-pipeline_hydraulics/pipelinehydraulics.html">10-Pipeline Hydraulics</a> <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372notebook/_build/html/lessons/05-pipeline_hydraulics/pipelinehydraulics.html#example-steady-discharge-between-reservoirs">Steady Discharge between Reservoirs</a>  <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372notebook/_build/html/lessons/05-pipeline_hydraulics/pipelinehydraulics.html#linking-systems">Linking Systems</a></p></td>
 <td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a></p></td>
 <td class="text-left"><p>- <font color="red">directive</font></p></td>
 </tr>
@@ -662,77 +663,77 @@ evaluating the extent to which the student outcomes are being attained. The resu
 <td class="text-left"><p></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>16 Feb 2026</p></td>
-<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/07-storage/storage.html">Storage Systems</a> <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/07-storage/storage.html#storage-systems-types">Types of Storage</a>  <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/07-storage/storage.html#purposes">Purpose(s) of Storage</a></p></td>
+<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372notebook/_build/html/lessons/06-pumping/pumps.html">11-Pumping Systems</a> <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372notebook/_build/html/lessons/06-pumping/pumps.html#pump-selection">Pump Selection</a>  <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372notebook/_build/html/lessons/06-pumping/pumps.html#suction-requirements">Suction Requirements</a></p></td>
 <td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a></p></td>
 <td class="text-left"><p>- <font color="red">directive</font></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>18 Feb 2026</p></td>
-<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/08-networks/networks.html">Pipe Networks</a> <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/08-networks/networks.html#pipeline-network-simulation">Network Simulation</a>  <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/08-networks/networks.html#network-analysis-example">Network Analysis Example (python)</a></p></td>
+<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372notebook/_build/html/lessons/07-storage/storage.html">12-Storage Systems</a> <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372notebook/_build/html/lessons/07-storage/storage.html#storage-systems-types">Storage System Types</a>  <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372notebook/_build/html/lessons/07-storage/storage.html#purposes">Uses of Storage</a></p></td>
 <td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a></p></td>
 <td class="text-left"><p>- <font color="red">directive</font></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>20 Feb 2026</p></td>
-<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/08-networks/networks.html">Pipe Networks</a> <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/08-networks/networks.html#spreadsheet-solutions">Network Analysis Example (Excel)</a>  <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/08-networks/networks.html#analysis-using-epanet">EPANET</a></p></td>
+<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/08-networks/networks.html">13-Pipe Networks</a> <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/08-networks/networks.html#spreadsheet-solutions">Network Analysis Example (Excel)</a>  <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/08-networks/networks.html#analysis-using-epanet">EPANET</a></p></td>
 <td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a></p></td>
 <td class="text-left"><p>- <font color="red">directive</font></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>23 Feb 2026</p></td>
-<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/12-pipeline_transients/pipeline_transients.html">Pipeline Transients</a> <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/12-pipeline_transients/pipeline_transients.html#rigid-column-theory">Rigid Column Theory</a>  <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/12-pipeline_transients/pipeline_transients.html#elastic-pipe-theory">Elastic Pipe Theory</a></p></td>
+<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/12-pipeline_transients/pipeline_transients.html">14-Pipeline Transients</a> <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/12-pipeline_transients/pipeline_transients.html#rigid-column-theory">Rigid Column Theory</a>  <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/12-pipeline_transients/pipeline_transients.html#elastic-pipe-theory">Elastic Pipe Theory</a></p></td>
 <td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a></p></td>
 <td class="text-left"><p>- <font color="red">directive</font></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>25 Feb 2026</p></td>
-<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/13-epanet_intro/epanet_intro.html">EPANET Introduction</a> <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/13-epanet_intro/epanet_intro.html#about-epanet">About EPANET</a>  <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/13-epanet_intro/epanet_intro.html#examples-from-epanet-by-example">EPANET by Example</a></p></td>
+<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/13-epanet_intro/epanet_intro.html">15-EPANET Introduction</a> <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/13-epanet_intro/epanet_intro.html#about-epanet">About EPANET</a>  <br> - <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/13-epanet_intro/epanet_intro.html#examples-from-epanet-by-example">EPANET by Example</a></p></td>
 <td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a></p></td>
 <td class="text-left"><p>- <font color="red">directive</font></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>27 Feb 2026</p></td>
-<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/15-epanet_pumps/epanet_pumps.html">EPANET Pumps, Pipes, and Valves</a> <br> - Topic 1  <br> - Topic 2</p></td>
+<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/15-epanet_pumps/epanet_pumps.html">16-EPANET Pumps, Pipes, and Valves</a> <br> - Topic 1  <br> - Topic 2</p></td>
 <td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a></p></td>
 <td class="text-left"><p>- <font color="red">directive</font></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>02 Mar 2026</p></td>
-<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/17-epanet_eps/epanet_eps.html">EPANET Extended Period Simulation</a>  <br> - Topic 1  <br> - Topic 2</p></td>
+<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/17-epanet_eps/epanet_eps.html">17-EPANET Extended Period Simulation</a>  <br> - Topic 1  <br> - Topic 2</p></td>
 <td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a></p></td>
 <td class="text-left"><p>- <font color="red">directive</font></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>04 Mar 2026</p></td>
-<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/19-swdesign/swdesign.html">Stormwater Drainage Design</a> <br> - Topic 1  <br> - Topic 2</p></td>
+<td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">18-Raw Water Operational Control Workshop I</span></a> <br> - Topic 1  <br> - Topic 2</p></td>
 <td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a></p></td>
 <td class="text-left"><p>- <font color="red">directive</font></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>06 Mar 2026</p></td>
-<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/20-inletsizing/inlets.html">Initial Inlet Sizing</a> <br> - Topic 1  <br> - Topic 2</p></td>
+<td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">19-Raw Water Operational Control Workshop II</span></a> <br> - Topic 1  <br> - Topic 2</p></td>
 <td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a></p></td>
 <td class="text-left"><p>- <font color="red">directive</font></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>09 Mar 2026</p></td>
-<td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">Initial Conduit Sizing</span></a> <br> - Topic 1  <br> - Topic 2</p></td>
+<td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">20-Raw Water Operational Control Workshop III</span></a> <br> - Topic 1  <br> - Topic 2</p></td>
 <td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a></p></td>
 <td class="text-left"><p>- <font color="red">directive</font></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>11 Mar 2026</p></td>
-<td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a> <br> - Topic 1  <br> - Topic 2</p></td>
+<td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">21-Pressure Service Zone Workshop I</span></a> <br> - Topic 1  <br> - Topic 2</p></td>
 <td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a></p></td>
 <td class="text-left"><p>- <font color="red">directive</font></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>13 Mar 2026</p></td>
-<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/25-swmm_intro/swmm_intro.html">EPA SWMM Introduction</a> <br> - Topic 1  <br> - Topic 2</p></td>
+<td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">22-Pressure Service Zone Workshop II</span></a> <br> - Topic 1  <br> - Topic 2</p></td>
 <td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a></p></td>
 <td class="text-left"><p>- <font color="red">directive</font></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>09 Mar 2026</p></td>
-<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/25-swmm_intro/swmm_intro.html">EPA SWMM Hydrology</a> <br> - Topic 1  <br> - Topic 2</p></td>
+<td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">23-Pressure Service Zone Workshop III</span></a> <br> - Topic 1  <br> - Topic 2</p></td>
 <td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a></p></td>
 <td class="text-left"><p>- <font color="red">directive</font></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>11 Mar 2026</p></td>
-<td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">EPA SWMM Conduits </span></a> <br> - Topic 1  <br> - Topic 2</p></td>
+<td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">24-link</span></a> <br> - Topic 1  <br> - Topic 2</p></td>
 <td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a></p></td>
 <td class="text-left"><p>- <font color="red">directive</font></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>13 Mar 2026</p></td>
-<td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">EPA SWMM Surface/Subsurface Hydraulics</span></a> <br> - Topic 1  <br> - Topic 2</p></td>
+<td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">25-link</span></a> <br> - Topic 1  <br> - Topic 2</p></td>
 <td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a></p></td>
 <td class="text-left"><p>- <font color="red">directive</font></p></td>
 </tr>
@@ -742,32 +743,32 @@ evaluating the extent to which the student outcomes are being attained. The resu
 <td class="text-left"><p></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>23 Mar 2026</p></td>
-<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/21-greeninfrastructure/greeninfrastructure.html">Green Infrastructure</a> <br> - Topic 1  <br> - Topic 2</p></td>
+<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/19-swdesign/swdesign.html">26-Stormwater Drainage Design</a> <br> - Topic 1  <br> - Topic 2</p></td>
 <td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a></p></td>
 <td class="text-left"><p>- <font color="red">directive</font></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>25 Mar 2026</p></td>
-<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/21-greeninfrastructure/21.1waterquality.html">Green Infrastructure and Water Quality</a> <br> - Topic 1  <br> - Topic 2</p></td>
+<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/20-inletsizing/inlets.html">27-Initial Inlet Sizing</a> <br> - Topic 1  <br> - Topic 2</p></td>
 <td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a></p></td>
 <td class="text-left"><p>- <font color="red">directive</font></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>27 Mar 2026</p></td>
-<td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a> <br> - Topic 1  <br> - Topic 2</p></td>
+<td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">28-Initial Conduit Sizing</span></a> <br> - Topic 1  <br> - Topic 2</p></td>
 <td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a></p></td>
 <td class="text-left"><p>- <font color="red">directive</font></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>30 Mar 2026</p></td>
-<td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a> <br> - Topic 1  <br> - Topic 2</p></td>
+<td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">29-link</span></a> <br> - Topic 1  <br> - Topic 2</p></td>
 <td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a></p></td>
 <td class="text-left"><p>- <font color="red">directive</font></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>01 Apr 2026</p></td>
-<td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a> <br> - Topic 1  <br> - Topic 2</p></td>
+<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/25-swmm_intro/swmm_intro.html">30-EPA SWMM Introduction</a> <br> - Topic 1  <br> - Topic 2</p></td>
 <td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a></p></td>
 <td class="text-left"><p>- <font color="red">directive</font></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>03 Apr 2026</p></td>
-<td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a> <br> - Topic 1  <br> - Topic 2</p></td>
+<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/25-swmm_intro/swmm_intro.html">31-EPA SWMM Hydrology</a> <br> - Topic 1  <br> - Topic 2</p></td>
 <td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a></p></td>
 <td class="text-left"><p>- <font color="red">directive</font></p></td>
 </tr>
@@ -777,66 +778,71 @@ evaluating the extent to which the student outcomes are being attained. The resu
 <td class="text-left"><p></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>08 Apr 2026</p></td>
-<td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a> <br> - Topic 1  <br> - Topic 2</p></td>
+<td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">32-EPA SWMM Conduits </span></a> <br> - Topic 1  <br> - Topic 2</p></td>
 <td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a></p></td>
 <td class="text-left"><p>- <font color="red">directive</font></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>10 Apr 2026</p></td>
-<td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a> <br> - Topic 1  <br> - Topic 2</p></td>
+<td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">33-EPA SWMM Surface/Subsurface Hydraulics</span></a> <br> - Topic 1  <br> - Topic 2</p></td>
 <td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a></p></td>
 <td class="text-left"><p>- <font color="red">directive</font></p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>13 Apr 2026</p></td>
-<td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a> <br> - Topic 1  <br> - Topic 2</p></td>
+<tr class="row-odd"><td class="text-left"><p>14-22 Mar 2026</p></td>
+<td class="text-left"><p><font color="green">No Class (Spring Retreat)</font></p></td>
+<td class="text-left"><p></p></td>
+<td class="text-left"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>13 Apr 2026</p></td>
+<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/21-greeninfrastructure/greeninfrastructure.html">34-Green Infrastructure</a> <br> - Topic 1  <br> - Topic 2</p></td>
 <td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a></p></td>
 <td class="text-left"><p>- <font color="red">directive</font></p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>15 Apr 2026</p></td>
-<td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a> <br> - Topic 1  <br> - Topic 2</p></td>
+<tr class="row-odd"><td class="text-left"><p>15 Apr 2026</p></td>
+<td class="text-left"><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372jb/_build/html/lessons/21-greeninfrastructure/21.1waterquality.html">35-Green Infrastructure and Water Quality</a> <br> - Topic 1  <br> - Topic 2</p></td>
 <td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a></p></td>
 <td class="text-left"><p>- <font color="red">directive</font></p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>17 Apr 2026</p></td>
-<td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a> <br> - Topic 1  <br> - Topic 2</p></td>
+<tr class="row-even"><td class="text-left"><p>17 Apr 2026</p></td>
+<td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">36-link</span></a> <br> - Topic 1  <br> - Topic 2</p></td>
 <td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a></p></td>
 <td class="text-left"><p>- <font color="red">directive</font></p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>20 Apr 2026</p></td>
-<td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a> <br> - Topic 1  <br> - Topic 2</p></td>
+<tr class="row-odd"><td class="text-left"><p>20 Apr 2026</p></td>
+<td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">37-link</span></a> <br> - Topic 1  <br> - Topic 2</p></td>
 <td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a></p></td>
 <td class="text-left"><p>- <font color="red">directive</font></p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>22 Apr 2026</p></td>
-<td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a> <br> - Topic 1  <br> - Topic 2</p></td>
+<tr class="row-even"><td class="text-left"><p>22 Apr 2026</p></td>
+<td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">38-link</span></a> <br> - Topic 1  <br> - Topic 2</p></td>
 <td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a></p></td>
 <td class="text-left"><p>- <font color="red">directive</font></p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>24 Apr 2026</p></td>
-<td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a> <br> - Topic 1  <br> - Topic 2</p></td>
+<tr class="row-odd"><td class="text-left"><p>24 Apr 2026</p></td>
+<td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">39-link</span></a> <br> - Topic 1  <br> - Topic 2</p></td>
 <td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a></p></td>
 <td class="text-left"><p>- <font color="red">directive</font></p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>27 Apr 2026</p></td>
-<td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a> <br> - Topic 1  <br> - Topic 2</p></td>
+<tr class="row-even"><td class="text-left"><p>27 Apr 2026</p></td>
+<td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">40-sanitary sewers</span></a> <br> - Topic 1  <br> - Topic 2</p></td>
 <td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a></p></td>
 <td class="text-left"><p>- <font color="red">directive</font></p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>29 Apr 2026</p></td>
-<td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a> <br> - Topic 1  <br> - Topic 2</p></td>
+<tr class="row-odd"><td class="text-left"><p>29 Apr 2026</p></td>
+<td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">41-waste water collection</span></a> <br> - Topic 1  <br> - Topic 2</p></td>
 <td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a></p></td>
 <td class="text-left"><p>- <font color="red">directive</font></p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>01 May 2026</p></td>
-<td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a> <br> - Topic 1  <br> - Topic 2</p></td>
+<tr class="row-even"><td class="text-left"><p>01 May 2026</p></td>
+<td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">42-inflow and infiltration</span></a> <br> - Topic 1  <br> - Topic 2</p></td>
 <td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a></p></td>
 <td class="text-left"><p>- <font color="red">directive</font></p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>04 May 2026</p></td>
-<td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a> <br> - Topic 1  <br> - Topic 2</p></td>
+<tr class="row-odd"><td class="text-left"><p>04 May 2026</p></td>
+<td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">43-outfalls</span></a> <br> - Topic 1  <br> - Topic 2</p></td>
 <td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a></p></td>
 <td class="text-left"><p>- <font color="red">directive</font></p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>12 May 2026</p></td>
+<tr class="row-even"><td class="text-left"><p>12 May 2026</p></td>
 <td class="text-left"><p><span style="color:red; font-weight:bold;">Final Exam 7:30–10:00 PM</span></p></td>
 <td class="text-left"><p><a class="reference internal" href="#url"><span class="xref myst">link</span></a></p></td>
 <td class="text-left"><p>- <font color="red">directive</font></p></td>
@@ -860,14 +866,14 @@ evaluating the extent to which the student outcomes are being attained. The resu
 <tr class="row-even"><td><p>Attendance</p></td>
 <td class="text-right"><p>10</p></td>
 </tr>
-<tr class="row-odd"><td><p>Laboratory Reports</p></td>
-<td class="text-right"><p>40</p></td>
+<tr class="row-odd"><td><p>Quizzes</p></td>
+<td class="text-right"><p>10</p></td>
 </tr>
-<tr class="row-even"><td><p>Laboratory Quizzes</p></td>
+<tr class="row-even"><td><p>Homework</p></td>
 <td class="text-right"><p>30</p></td>
 </tr>
-<tr class="row-odd"><td><p>Lab Final Exam</p></td>
-<td class="text-right"><p>20</p></td>
+<tr class="row-odd"><td><p>Final Exam</p></td>
+<td class="text-right"><p>50</p></td>
 </tr>
 <tr class="row-even"><td><p>Overall total</p></td>
 <td class="text-right"><p>100</p></td>
@@ -986,7 +992,6 @@ evaluating the extent to which the student outcomes are being attained. The resu
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Syllabus</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ce-3372-water-systems-design">CE 3372 Water Systems Design</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-catalog-description">Course Catalog Description:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-sections">Course Sections</a></li>
