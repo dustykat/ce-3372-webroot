@@ -1,0 +1,110 @@
+📘 Quiz — CE 3372 Water Systems Design Syllabus
+
+1. The primary instructional resource for the course is:
+a) A required textbook from the bookstore
+b) Instructor notes and laboratory manual
+c) A commercial design handbook
+d) YouTube tutorials
+
+
+Syllabus — CE 3372 Water System…
+
+2. The course emphasizes preparing students for which professional assessment?
+a) PE Civil: Water Resources and Environmental Exam
+b) College Exit Writing Exam
+c) FE Exam fluid mechanics section
+d) OSHA safety certification
+
+
+Syllabus — CE 3372 Water System…
+
+3. According to the syllabus, which prerequisite is required?
+a) CE 3301 — Hydraulics
+b) CE 3305 or equivalent
+c) ENGR 1330 only
+d) Senior standing in Civil Engineering
+
+
+Syllabus — CE 3372 Water System…
+
+4. Which of the following is listed as one of the course Knowledge, Skills, and Abilities (KSAs)?
+a) Design multi‐lane highways and drainage
+b) Write concise reports documenting experimental methods and results
+c) Manufacture water quality sensors
+d) Analyze structural beam deflection
+
+
+Syllabus — CE 3372 Water System…
+
+5. The primary ABET Student Outcome assessed in CE 3372 is:
+a) Solving complex engineering problems
+b) Ability to acquire and apply new knowledge
+c) Developing and conducting experimentation, analyzing and interpreting data
+d) Using modern tools to design highways
+
+
+Syllabus — CE 3372 Water System…
+
+6. Which hardware option is suggested for students unable to install software locally?
+a) A Raspberry Pi cluster
+b) A Chromebook
+c) An AWS Lightsail Windows Server instance
+d) A university virtual desktop only
+
+
+Syllabus — CE 3372 Water System…
+
+7. Which Learning Management System (LMS) is used for assignment submission and course management?
+a) Blackboard
+b) Canvas
+c) Moodle
+d) Brightspace
+
+
+Syllabus — CE 3372 Water System…
+
+8. During February 9–13, 2026, the posted schedule indicates:
+a) Midterm examinations
+b) No class due to Job Fair
+c) Lecture on water hammer
+d) SWMM lab week
+
+9. Which component contributes the largest percentage of the final grade?
+a) Attendance
+b) Laboratory reports
+c) Laboratory quizzes
+d) Lab final exam
+
+
+Syllabus — CE 3372 Water System…
+
+10. What is the stated penalty for late submissions?
+a) No credit
+b) 10% per day
+c) Automatically reduced by 50%
+d) No penalty if submitted within one week
+
+
+Syllabus — CE 3372 Water System…
+
+✅ Answer Key
+
+b
+
+c
+
+b
+
+b
+
+c
+
+c
+
+b
+
+b
+
+b
+
+c
