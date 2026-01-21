@@ -11,6 +11,9 @@ kernelspec:
   name: python3
   
 ---
+<div class="alert alert-block alert-info">
+    <b><h1>CE 3372 Water Systems Design</h1></b> 
+</div>
 
 # CE 3372 Water Systems Design
 
@@ -21,7 +24,7 @@ These instructor's notes are intended to **parallel** the regular textbook: [htt
 The course content is entirely deployed on a web server hosted at Amazon Web Services at [http://54.243.252.9/ce-3372-webroot/](http://54.243.252.9/ce-3372-webroot/)  This book is located on the same server at [http://54.243.252.9/ce-3372-webroot/ce3372-jb/ce3372jb/\_build/html](http://54.243.252.9/ce-3372-webroot/ce3372-jb/ce3372jb/_build/html)
 
 :::{note}
-2025 update
+2026 revision
 :::
 
 
