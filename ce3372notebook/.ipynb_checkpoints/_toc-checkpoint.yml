@@ -21,7 +21,8 @@ chapters:
 - file: lessons/07-storage/storage #12
 - file: lessons/08-networks/networks  #13
 - file: lessons/13-epanet_intro/epanet_intro #14
-- file: lessons/14-epanet_network/epanet_simple_network #15
+  sections:
+  - file: lessons/14-epanet_network/epanet_simple_network #15
 - file: lessons/15-epanet_pumps/epanet_pumps #16
 - file: lessons/17-epanet_eps/epanet_eps #18
   sections:
