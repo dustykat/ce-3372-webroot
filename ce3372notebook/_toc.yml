@@ -23,8 +23,9 @@ chapters:
 - file: lessons/13-epanet_intro/epanet_intro #14
 - file: lessons/14-epanet_network/epanet_simple_network #15
 - file: lessons/15-epanet_pumps/epanet_pumps #16
-- file: lessons/16-epanet_tanks/epanet_tanks_demand_patterns #17
 - file: lessons/17-epanet_eps/epanet_eps #18
+  sections:
+  - file: lessons/16-epanet_tanks/epanet_tanks_demand_patterns #17
 - file: lessons/18-epanet_quality/epanet_water_quality #19
 - file: lessons/12-pipeline_transients/pipeline_transients #20
 - file: lessons/20-swdesign/swdesign #21
