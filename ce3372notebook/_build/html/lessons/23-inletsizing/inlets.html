@@ -1,0 +1,626 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Stormwater Collection - Inlet Sizing &#8212; CE 3372 Water Systems Design</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lessons/23-inletsizing/inlets';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="SWMM Introduction" href="../24-swmm_intro/swmm_intro.html" />
+    <link rel="prev" title="Stormwater Conduit Sizing" href="../22-conduitsizing/conduitsizing.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/wsimage.png" class="logo__image only-light" alt="CE 3372 Water Systems Design - Home"/>
+    <script>document.write(`<img src="../../_static/wsimage.png" class="logo__image only-dark" alt="CE 3372 Water Systems Design - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    CE 3372 Water Systems Design
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../00-syllabus/ce-3372-syllabus-2026-1.html">Syllabus</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../01-introduction/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-projects/projects.html">Semester Design Project(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-dwdesign/drinking_water_design/drinking_water_design.html">Drinking Water Design</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../02-dwdesign/water_transmission_design/water_transmission_design.html">Raw Water Transmission Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-drawings/design_drawings/design_drawings.html">Drawings and Maps</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../03-drawings/xyz2topo/xyz2topo.html">Maps from XYZ data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-drawings/qgis_topography/qgis_topography.html">Complex Maps using QGIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04-demands/demand-forcasting.html">Demand Estimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../055-headloss/headloss.html">Pipeline Head Loss</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-pipeline_hydraulics/pipelinehydraulics.html">Pipeline Hydraulics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06-pumping/pumps.html">Pumping Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-storage/storage.html">Storage Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08-networks/networks.html">Pipe Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../12-pipeline_transients/pipeline_transients.html">Pipeline Transients</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../13-epanet_intro/epanet_intro.html">EPANET Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../14-epanet_network/epanet_simple_network.html">EPANET Simple Networks</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../15-epanet_pumps/epanet_pumps.html">EPANET Pumps, Tanks, and Valves</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../17-epanet_eps/epanet_eps.html">EPANET Extended Period Simulation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../16-epanet_tanks/epanet_tanks_demand_patterns.html">EPANET Tanks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../18-epanet_quality/epanet_water_quality.html">EPANET Water Quality</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../20-swdesign/swdesign.html">Storm Water Design</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../21-hydrologyreview/HydrologyReview.html">Storm Water Hydrology</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../22-conduitsizing/conduitsizing.html">Stormwater Conduit Sizing</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Stormwater Collection - Inlet Sizing</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../24-swmm_intro/swmm_intro.html">SWMM Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../25-swmm_water_surface/swmm.watersurface.steady.html">Steady Open Channel Hydraulics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../25-swmm_water_surface/swmm.watersurface.unsteady.html">Unsteady Open Channel Hydraulics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../26-swmm_hydrology/swmmhydrology.html">SWMM Hydrology</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../26.1-swmm_dual_system/swmmdualhydraulics.html">SWMM Combined Surface/Subsurface Hydraulics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../27-swmm_conduits/swmm.conduits.html">Lesson 18. Stormwater Conduit Sizing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../29-swmm_pumps/swmm.pumps.html">28. SWMM Pumps</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../30-greeninfrastructure/greeninfrastructure.html">Green Infrastructure</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../28-swmm_storage/swmm.storage.html">28. Stormwater Detention Ponds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../30-greeninfrastructure/waterquality.html">GI and Water Quality</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../31-sanitarydesign/sanitarydesign.html">Wastewater Collection Systems</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flessons/23-inletsizing/inlets.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/lessons/23-inletsizing/inlets.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Stormwater Collection - Inlet Sizing</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concepts">Concepts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-calculations">Example Calculations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#storm-sewers">Storm Sewers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hydrological-considerations-in-storm-sewer-design">Hydrological Considerations in Storm Sewer Design</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-section">End of Section</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="alert alert-block alert-info">
+    <b><h1>CE 3372 Water Systems Design</h1></b> 
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="stormwater-collection-inlet-sizing">
+<h1>Stormwater Collection - Inlet Sizing<a class="headerlink" href="#stormwater-collection-inlet-sizing" title="Link to this heading">#</a></h1>
+<section id="concepts">
+<h2>Concepts<a class="headerlink" href="#concepts" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Inlet on Grade</p></li>
+<li><p>Inlet in Sag</p></li>
+</ul>
+</section>
+<section id="example-calculations">
+<h2>Example Calculations<a class="headerlink" href="#example-calculations" title="Link to this heading">#</a></h2>
+</section>
+<section id="storm-sewers">
+<h2>Storm Sewers<a class="headerlink" href="#storm-sewers" title="Link to this heading">#</a></h2>
+<p>Storm sewers are an essential component of urban drainage systems, designed to manage the runoff generated by rainfall events. Unlike sanitary sewers, which carry wastewater, storm sewers convey rainwater and surface runoff away from streets, parking lots, and other impervious surfaces to prevent flooding and waterlogging in urban areas. These systems typically consist of a <strong>network of inlets, underground pipes, manholes, and outfalls</strong> that discharge water into nearby water bodies such as rivers, lakes, or retention basins. Properly designed storm sewer systems help reduce flood risks, protect infrastructure, and improve safety by minimizing surface water accumulation during storms.</p>
+<p><img alt="" src="../../_images/stormsewer1.png" /></p>
+<div class="admonition-storm-sewer-components admonition">
+<p class="admonition-title">Storm Sewer Components</p>
+<p><strong>Inlets</strong> to capture runoff<br>
+<strong>Conduits</strong> to convey to outfall<br></p>
+<ul class="simple">
+<li><p>Lift Stations if cannot gravity flow to outfall</p></li>
+<li><p>Detention and diversions</p></li>
+</ul>
+<p><strong>Outfalls</strong> release water back into environment<br></p>
+</div>
+<section id="hydrological-considerations-in-storm-sewer-design">
+<h3>Hydrological Considerations in Storm Sewer Design<a class="headerlink" href="#hydrological-considerations-in-storm-sewer-design" title="Link to this heading">#</a></h3>
+<p>Storm sewer design requires careful consideration of various hydrological factors to ensure the system can handle anticipated runoff volumes and flow rates. Some of the key hydrological aspects include:</p>
+<ul class="simple">
+<li><p>Rainfall Intensity and Duration: The design process begins with an analysis of rainfall data, often based on intensity-duration-frequency (IDF) curves. These curves help determine the intensity and duration of rainfall events that the storm sewer system should be able to manage. Engineers typically design for specific return periods, such as a 10-year or 100-year storm event, depending on local regulations and the level of protection required. (<strong>We have already examined these topics!</strong>)</p></li>
+<li><p>Runoff Coefficients: Runoff coefficients represent the fraction of rainfall that becomes surface runoff. These coefficients vary based on the type of land cover (e.g., impervious surfaces like roads and rooftops, or pervious areas like parks and gardens). The more impervious the area, the higher the runoff coefficient, which results in greater volumes of stormwater entering the system. (<strong>We have examined runoff generation via Unit Hydrographs as well as rational method</strong>)</p></li>
+<li><p>Watershed Characteristics: The size, slope, and shape of the drainage area (watershed) contribute to how quickly and how much water will enter the storm sewer system. Steeper slopes typically lead to faster runoff, while larger watersheds generate greater volumes of water. These characteristics influence the required capacity of storm sewers. (<strong>The whole point of delineation, and path identification</strong>)</p></li>
+<li><p>Time of Concentration: This is the time it takes for runoff to travel from the furthest point in the watershed to the storm sewer inlet. The time of concentration affects the peak flow rate that the system must handle. Shorter times of concentration generally lead to higher peak flows. (<strong>Synthetic unit hydrographs</strong>)</p></li>
+<li><p>Peak Flow Estimation: Hydrologists use methods such as the Rational Method or more complex hydrological models to estimate the peak flow rate that storm sewers will need to convey. Peak flow is critical in determining the diameter of pipes and the placement of inlets to avoid overloading the system.</p></li>
+<li><p>Infiltration and Storage: In some cases, designers incorporate infiltration or storage solutions (such as detention basins or permeable pavements) to reduce the volume and speed of water entering the storm sewer. This mitigates the risk of overwhelming the system during heavy rainfall events. (<strong>Why we model things!</strong>)</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There is a whole set of hydraulic concerns, these are generally handled contemporanously (at the same time) in design and analysis.</p>
+</div>
+</section>
+</section>
+<section id="end-of-section">
+<h2>End of Section<a class="headerlink" href="#end-of-section" title="Link to this heading">#</a></h2>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lessons/23-inletsizing"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../22-conduitsizing/conduitsizing.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Stormwater Conduit Sizing</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../24-swmm_intro/swmm_intro.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">SWMM Introduction</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concepts">Concepts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-calculations">Example Calculations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#storm-sewers">Storm Sewers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hydrological-considerations-in-storm-sewer-design">Hydrological Considerations in Storm Sewer Design</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-section">End of Section</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Theodore G. Cleveland
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
