@@ -47,6 +47,7 @@ chapters:
   sections:
   - file: lessons/28-swmm_storage/swmm.storage #30
   - file: lessons/30-greeninfrastructure/waterquality #33
+########################################################
 - file: lessons/31-sanitarydesign/sanitarydesign #34
   sections:
   - file: lessons/32-inflowinfiltration/inflowinfiltration #35
