@@ -1,0 +1,36 @@
+create basemap.bmp from provided drawing
+
+ 
+ 1hr - lay out nodes for wells and junctions
+ 1hr - lay out pipes as indicated
+     - add wells as reservoir+pump+node element
+ 2hr - g3data capture (x,y) coordinates from drawing to compute lengths (parmeters to redraw in file basemap.png.dat)
+     - enter lengths for each link; naming convention is WellID-JunctionID (or well to well if how drawn)
+     - enter diameters as per drawing.
+     - enter elevations where supplied
+     - spreadsheet with various (x,y) for each node, and computed link lengths, and link diameters (basemap.data.xlsx.xlsx)
+ 1hr - verify can read xlsx with libre office.
+     - download/install g3data on personal laptop
+     - download/install epanet on personal laptop
+     - parameterize pump for each well used supplied head/discharge in manufacturer pump curve
+     #  create 3-point pump curve from pump report for EPANET simple pumps:
+     #  shutoff == 652 ft. @ 0 gpm
+     #  op. point == 556 ft. @ 151 gpm
+     #  alt. point == 500 ft. @ 175 gpm (read from chart)
+1hr  - download/install GoogleEarth on  personal laptop
+     - Plot supplied KML file in GoogleEarth
+     - Identify alingment changes; use as provisional nodes in long pipeline portion.
+     - GoogleEarth to get elevations at provisional nodes
+     - Use GoogleEarth ruler tool to estimate pipe portion lengths.
+2hr  - Update spreadsheet with elevations and transmission pipe data
+     - Initial runs all wells to transmission line, then to TSR in Pecos (mostly to check connectivity)
+     - Need FCV on some wells; just going to put one on every well; then can delete as needed when put actual groundwater elevations 
+     - hydraulics runs without errors or warnings - so at good starting point to figure out tanks
+
+ ToDo:
+      - Fix the 2 missing elevations in the transmission line
+      - Backup input file to cloud server
+      - pipe to node length is lift length (set diameter equal to pump diameter) - may not need FCV plays similar role in computation
+      - set groundwater reservoir heads at MODFLOW computed head from Ken's report
+      - call about what the tanks are
+      - call to get guidance on what questions to ask with the model
