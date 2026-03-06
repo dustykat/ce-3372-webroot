@@ -432,7 +432,21 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pecos-raw-water-transmission">Pecos Raw Water Transmission</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pecos-raw-water-transmission">Pecos Raw Water Transmission</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-statement-review">Problem Statement Review</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supplied-data">Supplied Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#base-maps">Base Maps</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#illustrative-examples">Illustrative Examples</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#no-control-rules">No control rules</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tanks">Tanks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tank-control-file-s">Tank Control File(s)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#control-rules">Control rules</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -455,10 +469,158 @@ document.write(`
 </div>
 <section id="pecos-raw-water-transmission">
 <h2>Pecos Raw Water Transmission<a class="headerlink" href="#pecos-raw-water-transmission" title="Link to this heading">#</a></h2>
+<p>Overview here</p>
+<section id="problem-statement-review">
+<h3>Problem Statement Review<a class="headerlink" href="#problem-statement-review" title="Link to this heading">#</a></h3>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>This section in progress</p>
 </div>
+</section>
+</section>
+<section id="supplied-data">
+<h2>Supplied Data<a class="headerlink" href="#supplied-data" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/2-Exercises/PR1_PecosWater/2-SuppliedData">Link to Supplied Data Files</a></p>
+</section>
+<section id="base-maps">
+<h2>Base Maps<a class="headerlink" href="#base-maps" title="Link to this heading">#</a></h2>
+<p>Base maps are constructed using QGIS (ArcGIS would be fine too), and the given .kml file.</p>
+<p>The figure below is an annotated map of the model area.  The three main parts are shown as the Terminal Storage Portion, the Transmission Pipeline Portion, and the Wellfield Portion (Collection is used interchangeably).</p>
+<p><img alt="" src="http://54.243.252.9/ce-3372-webroot/2-Exercises/PR1_PecosWater/5-Figures/overview.png" /></p>
+<p>The unlabeled contour interval is 100 feet. The approximate elevation of the wellfield is 2800 feet, and the terminal storage area is approximately 2600 feet.</p>
+<p>The KML file that contained the coordinates of the wellfield components, pipeline alignment, and terminal storage were loaded into QGIS to build an EPANET network.  A 30-meter DEM was downloaded from the public STRM database.  The STRM data were re-projected onto the Zone 31N UTM coordinate system (approximately Cartesian at the study scale; it will render nicely in ordinary EPANET, and the auto-length algorithm can determine pipe lengths from node locations).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Shuttle Radar Topography Mission (SRTM) was flown aboard the space shuttle Endeavour February 11-22, 2000. The National Aeronautics and Space Administration (NASA) and the National Geospatial-Intelligence Agency (NGA) participated in an international project to acquire radar data which were used to create the first near-global set of land elevations.  Endeavour orbited Earth 16 times each day during the 11-day mission, completing 176 orbits. SRTM successfully collected single-pass interferometry radar data over 80% of the Earth’s land surface between 60° north and 56° south lati-tude with data points posted every 1 arc-second (approximately 30 meters).</p>
+</div>
+<p>A “plug-in” named “QEPANET” was used in QGIS to map nodes and tanks, and extract locations and elevations.  The extracted file is further edited by-hand until the remainder of the EPANET model is built, to be used directly in the US EPA supplied software.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>QEPANET (circa 2024) did not work completely with QGIS - it could run an existing model withn QGIS, but additions and changes to the model would not run in QGIS; however it does work well enough to extract spatial coordinates and elevations for “node-type” objects, so it was used herein to obtain coordinates and elevations for use in the EPANET model.  Visualize its use as a step before the EPANET network map step, where a framework is built in GIS, then exported to an EPANET input file, then that file is loaded into EPANET to complete the model build.</p>
+</div>
+<p>The resulting “model building basemap” for the class is (the image itself is a link to the file):</p>
+<p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/2-Exercises/PR1_PecosWater/4-BaseMaps/PecosPipelineBasemapVertical.bmp"><img alt="Pecos Pipeline Base Map" src="http://54.243.252.9/ce-3372-webroot/2-Exercises/PR1_PecosWater/4-BaseMaps/PecosPipelineBasemapVertical.bmp" /></a></p>
+</section>
+<section id="illustrative-examples">
+<h2>Illustrative Examples<a class="headerlink" href="#illustrative-examples" title="Link to this heading">#</a></h2>
+<p>The goal is to design operation rules to maintain prescribed system conditions under varying demands.  Main goals are positive pressure for entire range of flows, head should be at least 3 feet - to guarentee that head in pipeline is at least 1.5 feet above the top of the pipe.   Maximum pressure is obtained from bursting data for the material:</p>
+<p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/2-Exercises/PR1_PecosWater/5-Figures/burstpressure.png"><img alt="" src="http://54.243.252.9/ce-3372-webroot/2-Exercises/PR1_PecosWater/5-Figures/burstpressure.png" /></a></p>
+<p>So run analysis 1X to identify if system works without draining tanks, heads are all greater than node values by required amount.  Then again with varying demand to see if still true.  Check for maximum pressures.</p>
+<section id="no-control-rules">
+<h3>No control rules<a class="headerlink" href="#no-control-rules" title="Link to this heading">#</a></h3>
+<p>The link(s) to files for no-control case (just vary demands )</p>
+<p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/2-Exercises/PR1_PecosWater/8-EN2-Files/ppss-wells-pipeline-control.net">ppss-wells-pipeline-control.net</a></p>
+</section>
+</section>
+<section id="tanks">
+<h2>Tanks<a class="headerlink" href="#tanks" title="Link to this heading">#</a></h2>
+<p>In EPANET, when a tank is configured to allow overflow, any water that exceeds the tank’s maximum level is simply removed from the hydraulic system. In other words, the excess water is treated as a loss from the network, not routed to another node or storage element.</p>
+<p>What happens internally:</p>
+<ul class="simple">
+<li><p>When the computed tank level would exceed the specified maximum water level:</p></li>
+<li><p>The tank level is capped at the maximum level.</p></li>
+<li><p>Any additional inflow that would raise the level further is treated as overflow discharge.</p></li>
+<li><p>That overflow volume is removed from the system mass balance.</p></li>
+</ul>
+<p>Consequence for volume balance:</p>
+<ul class="simple">
+<li><p>Because the overflow water is not tracked to a receiving node, the system water balance will show a mismatch if you compare:</p></li>
+</ul>
+<p>Inflow − Outflow ≠ ΔStorage</p>
+<p>The difference corresponds to the overflow loss.</p>
+<p>Physical interpretation</p>
+<p>EPANET assumes the water simply spills out of the tank through an overflow pipe to some external drainage location, such as: a storm drain, a drainage ditch, ground surface, an overflow pipe not modeled in the network</p>
+<p>But the destination is not simulated.</p>
+<p>Where you can see it</p>
+<p>Overflow is typically reported in the tank results table as:</p>
+<ul class="simple">
+<li><p>Overflow rate</p></li>
+<li><p>Total overflow volume (depending on the interface you are using).</p></li>
+</ul>
+<p>Practical modeling notes:</p>
+<ul class="simple">
+<li><p>Many engineers use overflow intentionally to detect operational problems:</p></li>
+<li><p>Pumps oversized or improperly controlled</p></li>
+<li><p>Tank control levels set incorrectly</p></li>
+<li><p>Demand patterns causing tank overfill</p></li>
+</ul>
+<p>For some examples</p>
+<ul>
+<li><p>If pumps continue running after a tank is full, the excess flow simply leaves the system as overflow.</p></li>
+<li><p>This is often a cue that pump controls should be tied to tank level.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>              Q_in
+               ↓
+        ┌─────────────┐
+        │    TANK     │
+        │             │
+        │   storage   │
+        └─────────────┘
+           ↓       ↓
+       Q_out   Q_overflow
+                (lost from
+                the model)
+</pre></div>
+</div>
+</li>
+</ul>
+<p>In EPANET, when a tank is set with Overflow = No, the tank behaves as a closed storage element at its maximum level.</p>
+<p>What happens when the tank reaches maximum level</p>
+<ul class="simple">
+<li><p>If inflow would raise the tank above its Maximum Water Level, EPANET enforces the limit by preventing further inflow.</p></li>
+</ul>
+<p>The solver handles this by:</p>
+<ul class="simple">
+<li><p>Fixing the tank head at the elevation corresponding to the maximum water level.</p></li>
+<li><p>The tank then behaves like a fixed-head node (reservoir) at that head.</p></li>
+<li><p>Any pipes or pumps connected to the tank adjust their flows accordingly.</p></li>
+</ul>
+<p>Hydraulic consequences</p>
+<ul class="simple">
+<li><p>Inflow to the tank becomes zero once the tank is full.</p></li>
+<li><p>Pumps feeding the tank may:</p>
+<ul>
+<li><p>operate at zero flow, or</p></li>
+<li><p>shut off if controls or pump curves require it.</p></li>
+<li><p>Flow may reverse through connecting pipes if system pressure exceeds the tank head.</p></li>
+</ul>
+</li>
+</ul>
+<p>Physical interpretation</p>
+<p>This setting represents tanks where:</p>
+<ul class="simple">
+<li><p>automatic pump controls prevent overfilling</p></li>
+<li><p>level sensors shut down pumps</p></li>
+<li><p>float valves or control valves stop inflow</p></li>
+</ul>
+<p>Practical modeling note</p>
+<p>In most water distribution operational models, engineers use Overflow = No, because real systems typically include controls to prevent continuous spilling.</p>
+<p>The Overflow = Yes option is usually used when:</p>
+<ul>
+<li><p>modeling old standpipes or open reservoirs</p></li>
+<li><p>checking system resilience during control failures</p></li>
+<li><p>evaluating worst-case pump operation</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>              Q_in
+               ↓
+        ┌─────────────┐
+        │    TANK     │
+        │             │
+        │   storage   │
+        └─────────────┘
+               ↓
+             Q_out
+</pre></div>
+</div>
+</li>
+</ul>
+<section id="tank-control-file-s">
+<h3>Tank Control File(s)<a class="headerlink" href="#tank-control-file-s" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/2-Exercises/PR1_PecosWater/8-EN2-Files/tank-control-example.net">Simple File for Exploring Control Rules</a></p>
+</section>
+<section id="control-rules">
+<h3>Control rules<a class="headerlink" href="#control-rules" title="Link to this heading">#</a></h3>
+<p>The link(s) to files for active controls</p>
+<p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/2-Exercises/PR1_PecosWater/8-EN2-Files/ppss-control-case6A.net">ppss-wells-pipeline-control.net</a></p>
+</section>
 </section>
 </section>
 
@@ -526,7 +688,21 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pecos-raw-water-transmission">Pecos Raw Water Transmission</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pecos-raw-water-transmission">Pecos Raw Water Transmission</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-statement-review">Problem Statement Review</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supplied-data">Supplied Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#base-maps">Base Maps</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#illustrative-examples">Illustrative Examples</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#no-control-rules">No control rules</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tanks">Tanks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tank-control-file-s">Tank Control File(s)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#control-rules">Control rules</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
