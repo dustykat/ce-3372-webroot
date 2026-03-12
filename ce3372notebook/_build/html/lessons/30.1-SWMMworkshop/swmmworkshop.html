@@ -433,6 +433,15 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tanglewilde-storm-drain">Tanglewilde Storm Drain</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tanglewilde-storm-sewer">Tanglewilde Storm Sewer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-context">Project Context</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-statement-review-engineering-objectives">Problem Statement Review (Engineering Objectives)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#design-and-modeling-tasks">Design and Modeling Tasks</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supplied-data">Supplied Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#base-maps">Base Maps</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#illustrative-examples">Illustrative Examples</a></li>
 </ul>
             </nav>
         </div>
@@ -459,6 +468,84 @@ document.write(`
 <p class="admonition-title">Tip</p>
 <p>This section in progress</p>
 </div>
+</section>
+<section id="tanglewilde-storm-sewer">
+<h2>Tanglewilde Storm Sewer<a class="headerlink" href="#tanglewilde-storm-sewer" title="Link to this heading">#</a></h2>
+</section>
+<section id="project-context">
+<h2>Project Context<a class="headerlink" href="#project-context" title="Link to this heading">#</a></h2>
+<p>Students are provided with an aerial image of an urban area in Houston, Texas, a scaled drawing of a storm sewer network, and land surface elevation data at selected locations. A corresponding storm sewer network topology suitable for implementation in EPA SWMM is also supplied.</p>
+<p>The network represents the physical layout of a storm drainage system but contains placeholder conduit sizes, incomplete hydraulic parameters, and provisional elevations. The objective of this project is to develop a hydraulically consistent storm drainage design using the Rational Method for initial sizing and evaluate system performance using SWMM.</p>
+<section id="problem-statement-review-engineering-objectives">
+<h3>Problem Statement Review (Engineering Objectives)<a class="headerlink" href="#problem-statement-review-engineering-objectives" title="Link to this heading">#</a></h3>
+<p>The project integrates traditional hand-based hydrologic design with hydraulic simulation. Students will:</p>
+<ul class="simple">
+<li><p>Delineate drainage areas contributing to each inlet using aerial imagery and elevation data.</p></li>
+<li><p>Estimate design flows using the Rational Method.</p></li>
+<li><p>Size storm sewer conduits to convey design flows for a 5-year design storm in Harris County, Texas.</p></li>
+<li><p>Establish the vertical geometry of the drainage system through appropriate invert elevations and pipe offsets.</p></li>
+<li><p>Implement the resulting design in a SWMM hydraulic model to evaluate system behavior during a design storm event.</p></li>
+</ul>
+</section>
+<section id="design-and-modeling-tasks">
+<h3>Design and Modeling Tasks<a class="headerlink" href="#design-and-modeling-tasks" title="Link to this heading">#</a></h3>
+<p>Students will complete the following major tasks:</p>
+<ol class="arabic simple">
+<li><p><strong>Watershed Delineation</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p>Construct a contour map from provided elevation data.</p></li>
+<li><p>Identify drainage directions and contributing areas.</p></li>
+<li><p>Assign drainage areas to inlet nodes and identify junctions needed with and without direct inflow.</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p><strong>Hydrologic Design</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p>Compute inlet times and pipe travel times.</p></li>
+<li><p>Apply the Rational Method to determine design flows at each inlet.</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p><strong>Storm Sewer Design</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p>Size conduits to convey the calculated design flows.</p></li>
+<li><p>Define system vertical geometry including:</p></li>
+<li><p>invert elevations at nodes</p></li>
+<li><p>conduit slopes</p></li>
+<li><p>offsets and crown elevations to maintain hydraulic continuity.</p></li>
+</ul>
+<ol class="arabic simple" start="4">
+<li><p><strong>Hydraulic Modeling</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p>Build a SWMM model representing the designed system.</p></li>
+<li><p>Define subcatchments and drainage parameters.</p></li>
+<li><p>Adjust subcatchment “virtual widths” so SWMM runoff timing approximates Rational Method inlet timing.</p></li>
+<li><p>Simulate a 3-hour, 5-year design storm with the outlet modeled as a free outfall to a roadside ditch.</p></li>
+</ul>
+<ol class="arabic simple" start="5">
+<li><p><strong>Evaluation of System Performance</strong></p></li>
+</ol>
+<p>Model results will be used to assess system behavior under the design storm, including:</p>
+<ul class="simple">
+<li><p>Hydraulic capacity of storm sewer conduits</p></li>
+<li><p>Potential surcharge or flow limitations</p></li>
+<li><p>Consistency between Rational Method design expectations and SWMM simulation results</p></li>
+</ul>
+</section>
+</section>
+<section id="supplied-data">
+<h2>Supplied Data<a class="headerlink" href="#supplied-data" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372notebook/lessons/30.1-SWMMworkshop/2-SuppliedData">Link to Supplied Data Files</a></p>
+</section>
+<section id="base-maps">
+<h2>Base Maps<a class="headerlink" href="#base-maps" title="Link to this heading">#</a></h2>
+<p>Base maps are constructed using QGIS (ArcGIS would be fine too), and the given .kml file.</p>
+</section>
+<section id="illustrative-examples">
+<h2>Illustrative Examples<a class="headerlink" href="#illustrative-examples" title="Link to this heading">#</a></h2>
+<p>The goal is to design operation rules to maintain prescribed system conditions under varying demands.  Main goals are positive pressure for entire range of flows, head should be at least 3 feet - to guarentee that head in pipeline is at least 1.5 feet above the top of the pipe.</p>
 </section>
 </section>
 
@@ -527,6 +614,15 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tanglewilde-storm-drain">Tanglewilde Storm Drain</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tanglewilde-storm-sewer">Tanglewilde Storm Sewer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-context">Project Context</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-statement-review-engineering-objectives">Problem Statement Review (Engineering Objectives)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#design-and-modeling-tasks">Design and Modeling Tasks</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supplied-data">Supplied Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#base-maps">Base Maps</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#illustrative-examples">Illustrative Examples</a></li>
 </ul>
   </nav></div>
 
