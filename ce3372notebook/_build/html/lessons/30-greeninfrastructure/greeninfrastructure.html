@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -210,11 +210,12 @@
 <li class="toctree-l2"><a class="reference internal" href="../18-epanet_quality/epanet_water_quality.html">EPANET Water Quality</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="../18.1-EPANETworkshop/epanetworkshop.html">EPANET Project Workshop</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../20-swdesign/swdesign.html">Storm Water Design</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../21-hydrologyreview/HydrologyReview.html">Storm Water Hydrology</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../22-conduitsizing/conduitsizing.html">Stormwater Conduit Sizing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../22-conduitsizing/conduitsizing.html">Stormwater Collection - Conduit Sizing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../23-inletsizing/inlets.html">Stormwater Collection - Inlet Sizing</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../24-swmm_intro/swmm_intro.html">SWMM Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../25-swmm_water_surface/swmm.watersurface.steady.html">Steady Open Channel Hydraulics</a></li>
@@ -232,8 +233,10 @@
 <li class="toctree-l2"><a class="reference internal" href="waterquality.html">GI and Water Quality</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="../30.1-SWMMworkshop/swmmworkshop.html">SWMM Project Workshop</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../31-sanitarydesign/sanitarydesign.html">Wastewater Collection Systems</a></li>
 
+<li class="toctree-l1"><a class="reference internal" href="../34-epilog/epilog.html">Epilog</a></li>
 </ul>
 
     </div>
@@ -435,6 +438,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#videos">Videos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concepts">Concepts</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#devices">Devices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#screening-tool-s">Screening Tool(s)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-estimation">Performance Estimation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-section">End of Section</a></li>
 </ul>
@@ -567,6 +571,609 @@ waters.”</p>
 </li>
 </ul>
 </section>
+<section id="screening-tool-s">
+<h2>Screening Tool(s)<a class="headerlink" href="#screening-tool-s" title="Link to this heading">#</a></h2>
+<p>Below is a simple screening tool, intent is really to document choices - in practice similar “blessed” tools exist, find and use them.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Transportation Infrastructure Stormwater BMP Selector</span>
+<span class="sd">Script by Sensei + OpenAI</span>
+<span class="sd">2026-03-24</span>
+
+<span class="sd">Purpose:</span>
+<span class="sd">    Prompt the user through a simplified BMP decision tree and rank</span>
+<span class="sd">    candidate stormwater BMPs for transportation infrastructure,</span>
+<span class="sd">    especially constrained sites such as interchanges.</span>
+
+<span class="sd">Intended use:</span>
+<span class="sd">    - Classroom screening tool</span>
+<span class="sd">    - Student concept development</span>
+<span class="sd">    - Compare multiple hypothetical sites in one run</span>
+
+<span class="sd">Notes:</span>
+<span class="sd">    - This is not a final design tool.</span>
+<span class="sd">    - Final design should consider hydraulics, soils, safety, right-of-way,</span>
+<span class="sd">      utilities, regulatory criteria, and maintenance access.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span><span class="p">,</span> <span class="n">field</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span>
+
+
+<span class="c1"># ---------------------------------------------------------------------</span>
+<span class="c1"># Data structure</span>
+<span class="c1"># ---------------------------------------------------------------------</span>
+
+<span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">BMP</span><span class="p">:</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">water_quality</span><span class="p">:</span> <span class="nb">int</span>      <span class="c1"># 0-3</span>
+    <span class="n">quantity_control</span><span class="p">:</span> <span class="nb">int</span>   <span class="c1"># 0-3</span>
+    <span class="n">timing_control</span><span class="p">:</span> <span class="nb">int</span>     <span class="c1"># 0-3</span>
+    <span class="n">compactness</span><span class="p">:</span> <span class="nb">int</span>        <span class="c1"># 0-3 (higher = better for tight sites)</span>
+    <span class="n">linear_fit</span><span class="p">:</span> <span class="nb">int</span>         <span class="c1"># 0-3</span>
+    <span class="n">infiltration_dependent</span><span class="p">:</span> <span class="nb">bool</span>
+    <span class="n">maintenance</span><span class="p">:</span> <span class="nb">int</span>        <span class="c1"># 0-3 (higher = more maintenance burden)</span>
+    <span class="n">notes</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">score</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">init</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">reasons</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">list</span><span class="p">,</span> <span class="n">init</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+
+<span class="c1"># ---------------------------------------------------------------------</span>
+<span class="c1"># Input helpers</span>
+<span class="c1"># ---------------------------------------------------------------------</span>
+
+<span class="k">def</span> <span class="nf">ask_yes_no</span><span class="p">(</span><span class="n">prompt</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Prompt user for yes/no response.&quot;&quot;&quot;</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">prompt</span><span class="si">}</span><span class="s2"> [y/n]: &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">response</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;yes&quot;</span><span class="p">}:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="n">response</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">&quot;n&quot;</span><span class="p">,</span> <span class="s2">&quot;no&quot;</span><span class="p">}:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Please answer y or n.&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">ask_choice</span><span class="p">(</span><span class="n">prompt</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">choices</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Prompt user to choose from a dictionary of options.&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">prompt</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">description</span> <span class="ow">in</span> <span class="n">choices</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="n">description</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter choice: &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">response</span> <span class="ow">in</span> <span class="n">choices</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">response</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid choice. Please select one of the listed options.&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># ---------------------------------------------------------------------</span>
+<span class="c1"># BMP library</span>
+<span class="c1"># ---------------------------------------------------------------------</span>
+
+<span class="k">def</span> <span class="nf">build_bmps</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">BMP</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create BMP library.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">[</span>
+        <span class="n">BMP</span><span class="p">(</span>
+            <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Vegetative Swale&quot;</span><span class="p">,</span>
+            <span class="n">water_quality</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+            <span class="n">quantity_control</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="n">timing_control</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="n">compactness</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+            <span class="n">linear_fit</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+            <span class="n">infiltration_dependent</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">maintenance</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+            <span class="n">notes</span><span class="o">=</span><span class="s2">&quot;Effective where width is available; often difficult to fit in tight interchange geometry.&quot;</span>
+        <span class="p">),</span>
+        <span class="n">BMP</span><span class="p">(</span>
+            <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Bioretention Cell&quot;</span><span class="p">,</span>
+            <span class="n">water_quality</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+            <span class="n">quantity_control</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+            <span class="n">timing_control</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+            <span class="n">compactness</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="n">linear_fit</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="n">infiltration_dependent</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">maintenance</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+            <span class="n">notes</span><span class="o">=</span><span class="s2">&quot;Good multi-objective BMP; requires moderate footprint and careful grading.&quot;</span>
+        <span class="p">),</span>
+        <span class="n">BMP</span><span class="p">(</span>
+            <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Infiltration Trench&quot;</span><span class="p">,</span>
+            <span class="n">water_quality</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+            <span class="n">quantity_control</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+            <span class="n">timing_control</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+            <span class="n">compactness</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+            <span class="n">linear_fit</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+            <span class="n">infiltration_dependent</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">maintenance</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+            <span class="n">notes</span><span class="o">=</span><span class="s2">&quot;Strong candidate for narrow linear sites if soils are suitable and clogging is managed.&quot;</span>
+        <span class="p">),</span>
+        <span class="n">BMP</span><span class="p">(</span>
+            <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Permeable Pavement&quot;</span><span class="p">,</span>
+            <span class="n">water_quality</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+            <span class="n">quantity_control</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+            <span class="n">timing_control</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="n">compactness</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+            <span class="n">linear_fit</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+            <span class="n">infiltration_dependent</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">maintenance</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+            <span class="n">notes</span><span class="o">=</span><span class="s2">&quot;Can save space but is maintenance-sensitive and depends on pavement application suitability.&quot;</span>
+        <span class="p">),</span>
+        <span class="n">BMP</span><span class="p">(</span>
+            <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Underground Detention&quot;</span><span class="p">,</span>
+            <span class="n">water_quality</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+            <span class="n">quantity_control</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="n">timing_control</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+            <span class="n">compactness</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+            <span class="n">linear_fit</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+            <span class="n">infiltration_dependent</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">maintenance</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="n">notes</span><span class="o">=</span><span class="s2">&quot;Excellent for peak control in constrained sites; usually needs pretreatment for quality benefits.&quot;</span>
+        <span class="p">),</span>
+        <span class="n">BMP</span><span class="p">(</span>
+            <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Sand Filter&quot;</span><span class="p">,</span>
+            <span class="n">water_quality</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+            <span class="n">quantity_control</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+            <span class="n">timing_control</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="n">compactness</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+            <span class="n">linear_fit</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+            <span class="n">infiltration_dependent</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">maintenance</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+            <span class="n">notes</span><span class="o">=</span><span class="s2">&quot;Strong water-quality BMP where infiltration is limited or undesirable.&quot;</span>
+        <span class="p">),</span>
+        <span class="n">BMP</span><span class="p">(</span>
+            <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Hydrodynamic Separator&quot;</span><span class="p">,</span>
+            <span class="n">water_quality</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="n">quantity_control</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+            <span class="n">timing_control</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+            <span class="n">compactness</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+            <span class="n">linear_fit</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+            <span class="n">infiltration_dependent</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">maintenance</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="n">notes</span><span class="o">=</span><span class="s2">&quot;Very compact pretreatment BMP; best used as part of a treatment train.&quot;</span>
+        <span class="p">),</span>
+        <span class="n">BMP</span><span class="p">(</span>
+            <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Detention Basin&quot;</span><span class="p">,</span>
+            <span class="n">water_quality</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="n">quantity_control</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="n">timing_control</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+            <span class="n">compactness</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+            <span class="n">linear_fit</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+            <span class="n">infiltration_dependent</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">maintenance</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="n">notes</span><span class="o">=</span><span class="s2">&quot;Traditional peak-control BMP; generally poor fit for tight interchange sites due to footprint.&quot;</span>
+        <span class="p">),</span>
+    <span class="p">]</span>
+
+
+<span class="c1"># ---------------------------------------------------------------------</span>
+<span class="c1"># Evaluation logic</span>
+<span class="c1"># ---------------------------------------------------------------------</span>
+
+<span class="k">def</span> <span class="nf">evaluate_bmps</span><span class="p">(</span>
+    <span class="n">bmps</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">BMP</span><span class="p">],</span>
+    <span class="n">site_limited_space</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+    <span class="n">width_class</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">soils_good_for_infiltration</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+    <span class="n">objective_quality</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+    <span class="n">objective_quantity</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+    <span class="n">objective_timing</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+    <span class="n">interchange_context</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+    <span class="n">low_maintenance_priority</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Assign scores and reasons to each BMP.&quot;&quot;&quot;</span>
+
+    <span class="k">for</span> <span class="n">bmp</span> <span class="ow">in</span> <span class="n">bmps</span><span class="p">:</span>
+        <span class="n">bmp</span><span class="o">.</span><span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">bmp</span><span class="o">.</span><span class="n">reasons</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="c1"># Space / footprint evaluation</span>
+        <span class="k">if</span> <span class="n">site_limited_space</span><span class="p">:</span>
+            <span class="n">bmp</span><span class="o">.</span><span class="n">score</span> <span class="o">+=</span> <span class="n">bmp</span><span class="o">.</span><span class="n">compactness</span> <span class="o">*</span> <span class="mi">3</span>
+            <span class="k">if</span> <span class="n">bmp</span><span class="o">.</span><span class="n">compactness</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="n">bmp</span><span class="o">.</span><span class="n">reasons</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Fits relatively well in constrained space.&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">bmp</span><span class="o">.</span><span class="n">reasons</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Needs more footprint than a constrained site may allow.&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">bmp</span><span class="o">.</span><span class="n">score</span> <span class="o">+=</span> <span class="n">bmp</span><span class="o">.</span><span class="n">compactness</span>
+
+        <span class="c1"># Width class</span>
+        <span class="k">if</span> <span class="n">width_class</span> <span class="o">==</span> <span class="s2">&quot;narrow&quot;</span><span class="p">:</span>
+            <span class="n">bmp</span><span class="o">.</span><span class="n">score</span> <span class="o">+=</span> <span class="n">bmp</span><span class="o">.</span><span class="n">linear_fit</span> <span class="o">*</span> <span class="mi">3</span>
+            <span class="k">if</span> <span class="n">bmp</span><span class="o">.</span><span class="n">linear_fit</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="n">bmp</span><span class="o">.</span><span class="n">reasons</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Works reasonably well in narrow linear corridors.&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">bmp</span><span class="o">.</span><span class="n">reasons</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Not well suited to narrow linear geometry.&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">width_class</span> <span class="o">==</span> <span class="s2">&quot;moderate&quot;</span><span class="p">:</span>
+            <span class="n">bmp</span><span class="o">.</span><span class="n">score</span> <span class="o">+=</span> <span class="n">bmp</span><span class="o">.</span><span class="n">linear_fit</span> <span class="o">*</span> <span class="mi">2</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">bmp</span><span class="o">.</span><span class="n">score</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="c1"># Infiltration feasibility</span>
+        <span class="k">if</span> <span class="n">bmp</span><span class="o">.</span><span class="n">infiltration_dependent</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">soils_good_for_infiltration</span><span class="p">:</span>
+                <span class="n">bmp</span><span class="o">.</span><span class="n">score</span> <span class="o">+=</span> <span class="mi">6</span>
+                <span class="n">bmp</span><span class="o">.</span><span class="n">reasons</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Soils support infiltration-based performance.&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">bmp</span><span class="o">.</span><span class="n">score</span> <span class="o">-=</span> <span class="mi">8</span>
+                <span class="n">bmp</span><span class="o">.</span><span class="n">reasons</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Depends on infiltration, but site soils are not favorable.&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">soils_good_for_infiltration</span><span class="p">:</span>
+                <span class="n">bmp</span><span class="o">.</span><span class="n">score</span> <span class="o">+=</span> <span class="mi">2</span>
+                <span class="n">bmp</span><span class="o">.</span><span class="n">reasons</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Does not rely strongly on infiltration, which helps on poor soils.&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Functional objectives</span>
+        <span class="k">if</span> <span class="n">objective_quality</span><span class="p">:</span>
+            <span class="n">bmp</span><span class="o">.</span><span class="n">score</span> <span class="o">+=</span> <span class="n">bmp</span><span class="o">.</span><span class="n">water_quality</span> <span class="o">*</span> <span class="mi">4</span>
+            <span class="k">if</span> <span class="n">bmp</span><span class="o">.</span><span class="n">water_quality</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="n">bmp</span><span class="o">.</span><span class="n">reasons</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Provides meaningful water-quality treatment.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">objective_quantity</span><span class="p">:</span>
+            <span class="n">bmp</span><span class="o">.</span><span class="n">score</span> <span class="o">+=</span> <span class="n">bmp</span><span class="o">.</span><span class="n">quantity_control</span> <span class="o">*</span> <span class="mi">4</span>
+            <span class="k">if</span> <span class="n">bmp</span><span class="o">.</span><span class="n">quantity_control</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="n">bmp</span><span class="o">.</span><span class="n">reasons</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Provides useful runoff-volume reduction or storage.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">objective_timing</span><span class="p">:</span>
+            <span class="n">bmp</span><span class="o">.</span><span class="n">score</span> <span class="o">+=</span> <span class="n">bmp</span><span class="o">.</span><span class="n">timing_control</span> <span class="o">*</span> <span class="mi">4</span>
+            <span class="k">if</span> <span class="n">bmp</span><span class="o">.</span><span class="n">timing_control</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="n">bmp</span><span class="o">.</span><span class="n">reasons</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Provides meaningful peak-flow or release-timing control.&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Interchange context</span>
+        <span class="k">if</span> <span class="n">interchange_context</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">bmp</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">&quot;Vegetative Swale&quot;</span><span class="p">,</span> <span class="s2">&quot;Detention Basin&quot;</span><span class="p">}:</span>
+                <span class="n">bmp</span><span class="o">.</span><span class="n">score</span> <span class="o">-=</span> <span class="mi">5</span>
+                <span class="n">bmp</span><span class="o">.</span><span class="n">reasons</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Often difficult to fit safely and effectively within interchange geometry.&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">bmp</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">&quot;Underground Detention&quot;</span><span class="p">,</span> <span class="s2">&quot;Infiltration Trench&quot;</span><span class="p">,</span> <span class="s2">&quot;Sand Filter&quot;</span><span class="p">,</span> <span class="s2">&quot;Hydrodynamic Separator&quot;</span><span class="p">}:</span>
+                <span class="n">bmp</span><span class="o">.</span><span class="n">score</span> <span class="o">+=</span> <span class="mi">4</span>
+                <span class="n">bmp</span><span class="o">.</span><span class="n">reasons</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Often compatible with constrained transportation applications.&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Maintenance preference</span>
+        <span class="k">if</span> <span class="n">low_maintenance_priority</span><span class="p">:</span>
+            <span class="n">bmp</span><span class="o">.</span><span class="n">score</span> <span class="o">-=</span> <span class="n">bmp</span><span class="o">.</span><span class="n">maintenance</span> <span class="o">*</span> <span class="mi">2</span>
+            <span class="k">if</span> <span class="n">bmp</span><span class="o">.</span><span class="n">maintenance</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="n">bmp</span><span class="o">.</span><span class="n">reasons</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Has moderate to high maintenance burden.&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">bmp</span><span class="o">.</span><span class="n">reasons</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Relatively manageable maintenance demand.&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Multi-objective bonus</span>
+        <span class="n">objective_count</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">objective_quality</span><span class="p">,</span> <span class="n">objective_quantity</span><span class="p">,</span> <span class="n">objective_timing</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">objective_count</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">multi_objective_strength</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="p">(</span><span class="mi">1</span> <span class="k">if</span> <span class="n">bmp</span><span class="o">.</span><span class="n">water_quality</span> <span class="o">&gt;=</span> <span class="mi">2</span> <span class="k">else</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span>
+                <span class="p">(</span><span class="mi">1</span> <span class="k">if</span> <span class="n">bmp</span><span class="o">.</span><span class="n">quantity_control</span> <span class="o">&gt;=</span> <span class="mi">2</span> <span class="k">else</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span>
+                <span class="p">(</span><span class="mi">1</span> <span class="k">if</span> <span class="n">bmp</span><span class="o">.</span><span class="n">timing_control</span> <span class="o">&gt;=</span> <span class="mi">2</span> <span class="k">else</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="p">)</span>
+            <span class="n">bmp</span><span class="o">.</span><span class="n">score</span> <span class="o">+=</span> <span class="n">multi_objective_strength</span> <span class="o">*</span> <span class="mi">2</span>
+            <span class="k">if</span> <span class="n">multi_objective_strength</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="n">bmp</span><span class="o">.</span><span class="n">reasons</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Addresses more than one major design objective.&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Special interpretive notes</span>
+        <span class="k">if</span> <span class="n">bmp</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;Hydrodynamic Separator&quot;</span> <span class="ow">and</span> <span class="n">objective_quality</span><span class="p">:</span>
+            <span class="n">bmp</span><span class="o">.</span><span class="n">reasons</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Best interpreted as pretreatment rather than stand-alone treatment.&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">bmp</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;Underground Detention&quot;</span> <span class="ow">and</span> <span class="n">objective_quality</span><span class="p">:</span>
+            <span class="n">bmp</span><span class="o">.</span><span class="n">reasons</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Usually needs a companion BMP for strong water-quality performance.&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># ---------------------------------------------------------------------</span>
+<span class="c1"># Output logic</span>
+<span class="c1"># ---------------------------------------------------------------------</span>
+
+<span class="k">def</span> <span class="nf">print_scenario_summary</span><span class="p">(</span>
+    <span class="n">scenario_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">site_limited_space</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+    <span class="n">width_class</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">soils_good_for_infiltration</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+    <span class="n">objective_quality</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+    <span class="n">objective_quantity</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+    <span class="n">objective_timing</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+    <span class="n">interchange_context</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+    <span class="n">low_maintenance_priority</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Print a brief summary of user inputs.&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">72</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;SCENARIO: </span><span class="si">{</span><span class="n">scenario_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">72</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Space-limited site: </span><span class="si">{</span><span class="s1">&#39;Yes&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">site_limited_space</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;No&#39;</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Geometry class: </span><span class="si">{</span><span class="n">width_class</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Soils suitable for infiltration: </span><span class="si">{</span><span class="s1">&#39;Yes&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">soils_good_for_infiltration</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;No&#39;</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Water-quality objective: </span><span class="si">{</span><span class="s1">&#39;Yes&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">objective_quality</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;No&#39;</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Quantity-control objective: </span><span class="si">{</span><span class="s1">&#39;Yes&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">objective_quantity</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;No&#39;</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Timing / peak-control objective: </span><span class="si">{</span><span class="s1">&#39;Yes&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">objective_timing</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;No&#39;</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Constrained interchange context: </span><span class="si">{</span><span class="s1">&#39;Yes&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">interchange_context</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;No&#39;</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Low-maintenance priority: </span><span class="si">{</span><span class="s1">&#39;Yes&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">low_maintenance_priority</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;No&#39;</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">suggest_combinations</span><span class="p">(</span>
+    <span class="n">objective_quality</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+    <span class="n">objective_quantity</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+    <span class="n">objective_timing</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+    <span class="n">soils_good_for_infiltration</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return treatment-train suggestions.&quot;&quot;&quot;</span>
+    <span class="n">combos</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">if</span> <span class="n">objective_quality</span> <span class="ow">and</span> <span class="n">objective_timing</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">soils_good_for_infiltration</span><span class="p">:</span>
+        <span class="n">combos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="s2">&quot;Hydrodynamic Separator + Sand Filter + Underground Detention</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="s2">&quot;  Rationale: pretreatment, treatment, and peak-flow control where infiltration is limited.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">objective_quality</span> <span class="ow">and</span> <span class="n">objective_quantity</span> <span class="ow">and</span> <span class="n">soils_good_for_infiltration</span><span class="p">:</span>
+        <span class="n">combos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="s2">&quot;Bioretention Cell or Infiltration Trench</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="s2">&quot;  Rationale: can provide treatment and some volume reduction where soils permit infiltration.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">objective_quantity</span> <span class="ow">and</span> <span class="n">objective_timing</span> <span class="ow">and</span> <span class="n">soils_good_for_infiltration</span><span class="p">:</span>
+        <span class="n">combos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="s2">&quot;Infiltration Trench + Underground Detention</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="s2">&quot;  Rationale: volume reduction where feasible plus reliable peak attenuation.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">objective_quality</span> <span class="ow">and</span> <span class="n">objective_quantity</span> <span class="ow">and</span> <span class="n">objective_timing</span> <span class="ow">and</span> <span class="n">soils_good_for_infiltration</span><span class="p">:</span>
+        <span class="n">combos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="s2">&quot;Hydrodynamic Separator + Infiltration Trench + Underground Detention</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="s2">&quot;  Rationale: pretreatment, volume reduction, and timing control in a compact treatment train.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">objective_quality</span> <span class="ow">and</span> <span class="n">objective_timing</span> <span class="ow">and</span> <span class="n">soils_good_for_infiltration</span><span class="p">:</span>
+        <span class="n">combos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="s2">&quot;Hydrodynamic Separator + Bioretention Cell or Infiltration Trench + Underground Detention</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="s2">&quot;  Rationale: pretreatment, treatment, and timing control with infiltration support.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">objective_quality</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">objective_quantity</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">objective_timing</span><span class="p">:</span>
+        <span class="n">combos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="s2">&quot;Sand Filter or Bioretention Cell</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="s2">&quot;  Rationale: water-quality improvement is the dominant objective.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">objective_timing</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">objective_quality</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">objective_quantity</span><span class="p">:</span>
+        <span class="n">combos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="s2">&quot;Underground Detention or Detention Basin</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="s2">&quot;  Rationale: timing and peak control are dominant objectives.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">combos</span><span class="p">:</span>
+        <span class="n">combos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="s2">&quot;Select the highest-ranked BMP, but verify whether a hybrid system is still warranted.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">combos</span>
+
+
+<span class="k">def</span> <span class="nf">print_results</span><span class="p">(</span>
+    <span class="n">bmps</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">BMP</span><span class="p">],</span>
+    <span class="n">objective_quality</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+    <span class="n">objective_quantity</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+    <span class="n">objective_timing</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+    <span class="n">soils_good_for_infiltration</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+    <span class="n">top_n</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Print ranked BMP results and recommended combinations.&quot;&quot;&quot;</span>
+    <span class="n">ranked</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">bmps</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">score</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">72</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;RANKED BMP CANDIDATES&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">72</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">bmp</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ranked</span><span class="p">[:</span><span class="n">top_n</span><span class="p">],</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="n">bmp</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">  |  Score: </span><span class="si">{</span><span class="n">bmp</span><span class="o">.</span><span class="n">score</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   General note: </span><span class="si">{</span><span class="n">bmp</span><span class="o">.</span><span class="n">notes</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">top_reasons</span> <span class="o">=</span> <span class="n">bmp</span><span class="o">.</span><span class="n">reasons</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">top_reasons</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   Why it ranked here:&quot;</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">reason</span> <span class="ow">in</span> <span class="n">top_reasons</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     - </span><span class="si">{</span><span class="n">reason</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">72</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SUGGESTED TREATMENT-TRAIN INTERPRETATIONS&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">72</span><span class="p">)</span>
+
+    <span class="n">combos</span> <span class="o">=</span> <span class="n">suggest_combinations</span><span class="p">(</span>
+        <span class="n">objective_quality</span><span class="o">=</span><span class="n">objective_quality</span><span class="p">,</span>
+        <span class="n">objective_quantity</span><span class="o">=</span><span class="n">objective_quantity</span><span class="p">,</span>
+        <span class="n">objective_timing</span><span class="o">=</span><span class="n">objective_timing</span><span class="p">,</span>
+        <span class="n">soils_good_for_infiltration</span><span class="o">=</span><span class="n">soils_good_for_infiltration</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">combo</span> <span class="ow">in</span> <span class="n">combos</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">- </span><span class="si">{</span><span class="n">combo</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Engineering reminder:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This screening result is conceptual. Final BMP selection should also consider&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hydraulic constraints, utility conflicts, maintenance access, right-of-way,&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;site grading, and agency-specific stormwater criteria.&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># ---------------------------------------------------------------------</span>
+<span class="c1"># Scenario runner</span>
+<span class="c1"># ---------------------------------------------------------------------</span>
+
+<span class="k">def</span> <span class="nf">run_single_scenario</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Prompt user for one scenario and print results.&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">72</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;NEW BMP SCREENING SCENARIO&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">72</span><span class="p">)</span>
+
+    <span class="n">scenario_name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a scenario name: &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">scenario_name</span><span class="p">:</span>
+        <span class="n">scenario_name</span> <span class="o">=</span> <span class="s2">&quot;Unnamed Scenario&quot;</span>
+
+    <span class="n">site_limited_space</span> <span class="o">=</span> <span class="n">ask_yes_no</span><span class="p">(</span><span class="s2">&quot;Is the site space-limited?&quot;</span><span class="p">)</span>
+    <span class="n">width_class</span> <span class="o">=</span> <span class="n">ask_choice</span><span class="p">(</span>
+        <span class="s2">&quot;How would you describe the available geometry?&quot;</span><span class="p">,</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;narrow&quot;</span><span class="p">:</span> <span class="s2">&quot;Narrow linear strip / corridor&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;moderate&quot;</span><span class="p">:</span> <span class="s2">&quot;Moderate footprint available&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;broad&quot;</span><span class="p">:</span> <span class="s2">&quot;Broad footprint available&quot;</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">)</span>
+    <span class="n">soils_good_for_infiltration</span> <span class="o">=</span> <span class="n">ask_yes_no</span><span class="p">(</span><span class="s2">&quot;Are soils generally suitable for infiltration?&quot;</span><span class="p">)</span>
+    <span class="n">objective_quality</span> <span class="o">=</span> <span class="n">ask_yes_no</span><span class="p">(</span><span class="s2">&quot;Is water-quality improvement a major objective?&quot;</span><span class="p">)</span>
+    <span class="n">objective_quantity</span> <span class="o">=</span> <span class="n">ask_yes_no</span><span class="p">(</span><span class="s2">&quot;Is runoff-volume reduction / quantity control a major objective?&quot;</span><span class="p">)</span>
+    <span class="n">objective_timing</span> <span class="o">=</span> <span class="n">ask_yes_no</span><span class="p">(</span><span class="s2">&quot;Is peak-flow reduction / timing control a major objective?&quot;</span><span class="p">)</span>
+    <span class="n">interchange_context</span> <span class="o">=</span> <span class="n">ask_yes_no</span><span class="p">(</span><span class="s2">&quot;Is this a constrained interchange or similar transportation site?&quot;</span><span class="p">)</span>
+    <span class="n">low_maintenance_priority</span> <span class="o">=</span> <span class="n">ask_yes_no</span><span class="p">(</span><span class="s2">&quot;Is low maintenance a high priority?&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">([</span><span class="n">objective_quality</span><span class="p">,</span> <span class="n">objective_quantity</span><span class="p">,</span> <span class="n">objective_timing</span><span class="p">]):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">At least one design objective should be selected. Scenario cancelled.&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+
+    <span class="n">bmps</span> <span class="o">=</span> <span class="n">build_bmps</span><span class="p">()</span>
+    <span class="n">evaluate_bmps</span><span class="p">(</span>
+        <span class="n">bmps</span><span class="o">=</span><span class="n">bmps</span><span class="p">,</span>
+        <span class="n">site_limited_space</span><span class="o">=</span><span class="n">site_limited_space</span><span class="p">,</span>
+        <span class="n">width_class</span><span class="o">=</span><span class="n">width_class</span><span class="p">,</span>
+        <span class="n">soils_good_for_infiltration</span><span class="o">=</span><span class="n">soils_good_for_infiltration</span><span class="p">,</span>
+        <span class="n">objective_quality</span><span class="o">=</span><span class="n">objective_quality</span><span class="p">,</span>
+        <span class="n">objective_quantity</span><span class="o">=</span><span class="n">objective_quantity</span><span class="p">,</span>
+        <span class="n">objective_timing</span><span class="o">=</span><span class="n">objective_timing</span><span class="p">,</span>
+        <span class="n">interchange_context</span><span class="o">=</span><span class="n">interchange_context</span><span class="p">,</span>
+        <span class="n">low_maintenance_priority</span><span class="o">=</span><span class="n">low_maintenance_priority</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">print_scenario_summary</span><span class="p">(</span>
+        <span class="n">scenario_name</span><span class="o">=</span><span class="n">scenario_name</span><span class="p">,</span>
+        <span class="n">site_limited_space</span><span class="o">=</span><span class="n">site_limited_space</span><span class="p">,</span>
+        <span class="n">width_class</span><span class="o">=</span><span class="n">width_class</span><span class="p">,</span>
+        <span class="n">soils_good_for_infiltration</span><span class="o">=</span><span class="n">soils_good_for_infiltration</span><span class="p">,</span>
+        <span class="n">objective_quality</span><span class="o">=</span><span class="n">objective_quality</span><span class="p">,</span>
+        <span class="n">objective_quantity</span><span class="o">=</span><span class="n">objective_quantity</span><span class="p">,</span>
+        <span class="n">objective_timing</span><span class="o">=</span><span class="n">objective_timing</span><span class="p">,</span>
+        <span class="n">interchange_context</span><span class="o">=</span><span class="n">interchange_context</span><span class="p">,</span>
+        <span class="n">low_maintenance_priority</span><span class="o">=</span><span class="n">low_maintenance_priority</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">print_results</span><span class="p">(</span>
+        <span class="n">bmps</span><span class="o">=</span><span class="n">bmps</span><span class="p">,</span>
+        <span class="n">objective_quality</span><span class="o">=</span><span class="n">objective_quality</span><span class="p">,</span>
+        <span class="n">objective_quantity</span><span class="o">=</span><span class="n">objective_quantity</span><span class="p">,</span>
+        <span class="n">objective_timing</span><span class="o">=</span><span class="n">objective_timing</span><span class="p">,</span>
+        <span class="n">soils_good_for_infiltration</span><span class="o">=</span><span class="n">soils_good_for_infiltration</span><span class="p">,</span>
+        <span class="n">top_n</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+    <span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">print_main_menu</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Print main menu.&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">72</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TRANSPORTATION STORMWATER BMP SELECTOR&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">72</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1 - Run a new BMP screening scenario&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2 - Show example classroom scenario&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;3 - Quit&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">run_example_scenario</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Run a built-in example aligned with constrained interchange conditions.&quot;&quot;&quot;</span>
+    <span class="n">scenario_name</span> <span class="o">=</span> <span class="s2">&quot;Example: Constrained Urban Interchange&quot;</span>
+
+    <span class="n">site_limited_space</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">width_class</span> <span class="o">=</span> <span class="s2">&quot;narrow&quot;</span>
+    <span class="n">soils_good_for_infiltration</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">objective_quality</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">objective_quantity</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">objective_timing</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">interchange_context</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">low_maintenance_priority</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="n">bmps</span> <span class="o">=</span> <span class="n">build_bmps</span><span class="p">()</span>
+    <span class="n">evaluate_bmps</span><span class="p">(</span>
+        <span class="n">bmps</span><span class="o">=</span><span class="n">bmps</span><span class="p">,</span>
+        <span class="n">site_limited_space</span><span class="o">=</span><span class="n">site_limited_space</span><span class="p">,</span>
+        <span class="n">width_class</span><span class="o">=</span><span class="n">width_class</span><span class="p">,</span>
+        <span class="n">soils_good_for_infiltration</span><span class="o">=</span><span class="n">soils_good_for_infiltration</span><span class="p">,</span>
+        <span class="n">objective_quality</span><span class="o">=</span><span class="n">objective_quality</span><span class="p">,</span>
+        <span class="n">objective_quantity</span><span class="o">=</span><span class="n">objective_quantity</span><span class="p">,</span>
+        <span class="n">objective_timing</span><span class="o">=</span><span class="n">objective_timing</span><span class="p">,</span>
+        <span class="n">interchange_context</span><span class="o">=</span><span class="n">interchange_context</span><span class="p">,</span>
+        <span class="n">low_maintenance_priority</span><span class="o">=</span><span class="n">low_maintenance_priority</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">print_scenario_summary</span><span class="p">(</span>
+        <span class="n">scenario_name</span><span class="o">=</span><span class="n">scenario_name</span><span class="p">,</span>
+        <span class="n">site_limited_space</span><span class="o">=</span><span class="n">site_limited_space</span><span class="p">,</span>
+        <span class="n">width_class</span><span class="o">=</span><span class="n">width_class</span><span class="p">,</span>
+        <span class="n">soils_good_for_infiltration</span><span class="o">=</span><span class="n">soils_good_for_infiltration</span><span class="p">,</span>
+        <span class="n">objective_quality</span><span class="o">=</span><span class="n">objective_quality</span><span class="p">,</span>
+        <span class="n">objective_quantity</span><span class="o">=</span><span class="n">objective_quantity</span><span class="p">,</span>
+        <span class="n">objective_timing</span><span class="o">=</span><span class="n">objective_timing</span><span class="p">,</span>
+        <span class="n">interchange_context</span><span class="o">=</span><span class="n">interchange_context</span><span class="p">,</span>
+        <span class="n">low_maintenance_priority</span><span class="o">=</span><span class="n">low_maintenance_priority</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">print_results</span><span class="p">(</span>
+        <span class="n">bmps</span><span class="o">=</span><span class="n">bmps</span><span class="p">,</span>
+        <span class="n">objective_quality</span><span class="o">=</span><span class="n">objective_quality</span><span class="p">,</span>
+        <span class="n">objective_quantity</span><span class="o">=</span><span class="n">objective_quantity</span><span class="p">,</span>
+        <span class="n">objective_timing</span><span class="o">=</span><span class="n">objective_timing</span><span class="p">,</span>
+        <span class="n">soils_good_for_infiltration</span><span class="o">=</span><span class="n">soils_good_for_infiltration</span><span class="p">,</span>
+        <span class="n">top_n</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+    <span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Main menu loop.&quot;&quot;&quot;</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">print_main_menu</span><span class="p">()</span>
+        <span class="n">choice</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Select an option: &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span><span class="p">:</span>
+            <span class="n">run_single_scenario</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span>
+            <span class="n">run_example_scenario</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;3&quot;</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Exiting BMP Selector.&quot;</span><span class="p">)</span>
+            <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid choice. Please enter 1, 2, or 3.&quot;</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>========================================================================
+TRANSPORTATION STORMWATER BMP SELECTOR
+========================================================================
+1 - Run a new BMP screening scenario
+2 - Show example classroom scenario
+3 - Quit
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">555</span>
+<span class="g g-Whitespace">    </span><span class="mi">551</span>             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid choice. Please enter 1, 2, or 3.&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">554</span> <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">555</span>     <span class="n">main</span><span class="p">()</span>
+
+<span class="nn">Cell In[1], line 541,</span> in <span class="ni">main</span><span class="nt">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">539</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">540</span>     <span class="n">print_main_menu</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">541</span>     <span class="n">choice</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Select an option: &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">543</span>     <span class="k">if</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">544</span>         <span class="n">run_single_scenario</span><span class="p">()</span>
+
+<span class="nn">File /opt/jupyterhub/lib/python3.10/site-packages/ipykernel/kernelbase.py:1281,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1279</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1280</span>     <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1281</span>     <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1282</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1283</span>     <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1284</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_parent_ident</span><span class="p">[</span><span class="s2">&quot;shell&quot;</span><span class="p">],</span>
+<span class="g g-Whitespace">   </span><span class="mi">1285</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1286</span>     <span class="n">password</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1287</span> <span class="p">)</span>
+
+<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="performance-estimation">
 <h2>Performance Estimation<a class="headerlink" href="#performance-estimation" title="Link to this heading">#</a></h2>
 <p>Quantitative Metrics:</p>
@@ -671,6 +1278,7 @@ waters.”</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#videos">Videos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concepts">Concepts</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#devices">Devices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#screening-tool-s">Screening Tool(s)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-estimation">Performance Estimation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-section">End of Section</a></li>
 </ul>

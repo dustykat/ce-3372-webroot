@@ -1,0 +1,611 @@
+Traceback (most recent call last):
+  File "/opt/jupyterhub/lib/python3.10/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/opt/jupyterhub/lib/python3.10/site-packages/nbclient/client.py", line 1314, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/opt/jupyterhub/lib/python3.10/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "/opt/jupyterhub/lib/python3.10/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/opt/jupyterhub/lib/python3.10/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/jupyterhub/lib/python3.10/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+"""
+Transportation Infrastructure Stormwater BMP Selector
+Script by Sensei + OpenAI
+2026-03-24
+
+Purpose:
+    Prompt the user through a simplified BMP decision tree and rank
+    candidate stormwater BMPs for transportation infrastructure,
+    especially constrained sites such as interchanges.
+
+Intended use:
+    - Classroom screening tool
+    - Student concept development
+    - Compare multiple hypothetical sites in one run
+
+Notes:
+    - This is not a final design tool.
+    - Final design should consider hydraulics, soils, safety, right-of-way,
+      utilities, regulatory criteria, and maintenance access.
+"""
+
+from dataclasses import dataclass, field
+from typing import Dict, List
+
+
+# ---------------------------------------------------------------------
+# Data structure
+# ---------------------------------------------------------------------
+
+@dataclass
+class BMP:
+    name: str
+    water_quality: int      # 0-3
+    quantity_control: int   # 0-3
+    timing_control: int     # 0-3
+    compactness: int        # 0-3 (higher = better for tight sites)
+    linear_fit: int         # 0-3
+    infiltration_dependent: bool
+    maintenance: int        # 0-3 (higher = more maintenance burden)
+    notes: str
+    score: int = field(default=0, init=False)
+    reasons: List[str] = field(default_factory=list, init=False)
+
+
+# ---------------------------------------------------------------------
+# Input helpers
+# ---------------------------------------------------------------------
+
+def ask_yes_no(prompt: str) -> bool:
+    """Prompt user for yes/no response."""
+    while True:
+        response = input(f"{prompt} [y/n]: ").strip().lower()
+        if response in {"y", "yes"}:
+            return True
+        if response in {"n", "no"}:
+            return False
+        print("Please answer y or n.")
+
+
+def ask_choice(prompt: str, choices: Dict[str, str]) -> str:
+    """Prompt user to choose from a dictionary of options."""
+    print(f"\n{prompt}")
+    for key, description in choices.items():
+        print(f"  {key} - {description}")
+
+    while True:
+        response = input("Enter choice: ").strip().lower()
+        if response in choices:
+            return response
+        print("Invalid choice. Please select one of the listed options.")
+
+
+# ---------------------------------------------------------------------
+# BMP library
+# ---------------------------------------------------------------------
+
+def build_bmps() -> List[BMP]:
+    """Create BMP library."""
+    return [
+        BMP(
+            name="Vegetative Swale",
+            water_quality=2,
+            quantity_control=1,
+            timing_control=1,
+            compactness=0,
+            linear_fit=2,
+            infiltration_dependent=False,
+            maintenance=2,
+            notes="Effective where width is available; often difficult to fit in tight interchange geometry."
+        ),
+        BMP(
+            name="Bioretention Cell",
+            water_quality=3,
+            quantity_control=2,
+            timing_control=2,
+            compactness=1,
+            linear_fit=1,
+            infiltration_dependent=False,
+            maintenance=2,
+            notes="Good multi-objective BMP; requires moderate footprint and careful grading."
+        ),
+        BMP(
+            name="Infiltration Trench",
+            water_quality=2,
+            quantity_control=3,
+            timing_control=2,
+            compactness=3,
+            linear_fit=3,
+            infiltration_dependent=True,
+            maintenance=2,
+            notes="Strong candidate for narrow linear sites if soils are suitable and clogging is managed."
+        ),
+        BMP(
+            name="Permeable Pavement",
+            water_quality=2,
+            quantity_control=2,
+            timing_control=1,
+            compactness=3,
+            linear_fit=2,
+            infiltration_dependent=True,
+            maintenance=3,
+            notes="Can save space but is maintenance-sensitive and depends on pavement application suitability."
+        ),
+        BMP(
+            name="Underground Detention",
+            water_quality=0,
+            quantity_control=1,
+            timing_control=3,
+            compactness=3,
+            linear_fit=2,
+            infiltration_dependent=False,
+            maintenance=1,
+            notes="Excellent for peak control in constrained sites; usually needs pretreatment for quality benefits."
+        ),
+        BMP(
+            name="Sand Filter",
+            water_quality=3,
+            quantity_control=0,
+            timing_control=1,
+            compactness=2,
+            linear_fit=2,
+            infiltration_dependent=False,
+            maintenance=2,
+            notes="Strong water-quality BMP where infiltration is limited or undesirable."
+        ),
+        BMP(
+            name="Hydrodynamic Separator",
+            water_quality=1,
+            quantity_control=0,
+            timing_control=0,
+            compactness=3,
+            linear_fit=2,
+            infiltration_dependent=False,
+            maintenance=1,
+            notes="Very compact pretreatment BMP; best used as part of a treatment train."
+        ),
+        BMP(
+            name="Detention Basin",
+            water_quality=1,
+            quantity_control=1,
+            timing_control=3,
+            compactness=0,
+            linear_fit=0,
+            infiltration_dependent=False,
+            maintenance=1,
+            notes="Traditional peak-control BMP; generally poor fit for tight interchange sites due to footprint."
+        ),
+    ]
+
+
+# ---------------------------------------------------------------------
+# Evaluation logic
+# ---------------------------------------------------------------------
+
+def evaluate_bmps(
+    bmps: List[BMP],
+    site_limited_space: bool,
+    width_class: str,
+    soils_good_for_infiltration: bool,
+    objective_quality: bool,
+    objective_quantity: bool,
+    objective_timing: bool,
+    interchange_context: bool,
+    low_maintenance_priority: bool,
+) -> None:
+    """Assign scores and reasons to each BMP."""
+
+    for bmp in bmps:
+        bmp.score = 0
+        bmp.reasons = []
+
+        # Space / footprint evaluation
+        if site_limited_space:
+            bmp.score += bmp.compactness * 3
+            if bmp.compactness >= 2:
+                bmp.reasons.append("Fits relatively well in constrained space.")
+            else:
+                bmp.reasons.append("Needs more footprint than a constrained site may allow.")
+        else:
+            bmp.score += bmp.compactness
+
+        # Width class
+        if width_class == "narrow":
+            bmp.score += bmp.linear_fit * 3
+            if bmp.linear_fit >= 2:
+                bmp.reasons.append("Works reasonably well in narrow linear corridors.")
+            else:
+                bmp.reasons.append("Not well suited to narrow linear geometry.")
+        elif width_class == "moderate":
+            bmp.score += bmp.linear_fit * 2
+        else:
+            bmp.score += 1
+
+        # Infiltration feasibility
+        if bmp.infiltration_dependent:
+            if soils_good_for_infiltration:
+                bmp.score += 6
+                bmp.reasons.append("Soils support infiltration-based performance.")
+            else:
+                bmp.score -= 8
+                bmp.reasons.append("Depends on infiltration, but site soils are not favorable.")
+        else:
+            if not soils_good_for_infiltration:
+                bmp.score += 2
+                bmp.reasons.append("Does not rely strongly on infiltration, which helps on poor soils.")
+
+        # Functional objectives
+        if objective_quality:
+            bmp.score += bmp.water_quality * 4
+            if bmp.water_quality >= 2:
+                bmp.reasons.append("Provides meaningful water-quality treatment.")
+        if objective_quantity:
+            bmp.score += bmp.quantity_control * 4
+            if bmp.quantity_control >= 2:
+                bmp.reasons.append("Provides useful runoff-volume reduction or storage.")
+        if objective_timing:
+            bmp.score += bmp.timing_control * 4
+            if bmp.timing_control >= 2:
+                bmp.reasons.append("Provides meaningful peak-flow or release-timing control.")
+
+        # Interchange context
+        if interchange_context:
+            if bmp.name in {"Vegetative Swale", "Detention Basin"}:
+                bmp.score -= 5
+                bmp.reasons.append("Often difficult to fit safely and effectively within interchange geometry.")
+            if bmp.name in {"Underground Detention", "Infiltration Trench", "Sand Filter", "Hydrodynamic Separator"}:
+                bmp.score += 4
+                bmp.reasons.append("Often compatible with constrained transportation applications.")
+
+        # Maintenance preference
+        if low_maintenance_priority:
+            bmp.score -= bmp.maintenance * 2
+            if bmp.maintenance >= 2:
+                bmp.reasons.append("Has moderate to high maintenance burden.")
+            else:
+                bmp.reasons.append("Relatively manageable maintenance demand.")
+
+        # Multi-objective bonus
+        objective_count = sum([objective_quality, objective_quantity, objective_timing])
+        if objective_count >= 2:
+            multi_objective_strength = (
+                (1 if bmp.water_quality >= 2 else 0) +
+                (1 if bmp.quantity_control >= 2 else 0) +
+                (1 if bmp.timing_control >= 2 else 0)
+            )
+            bmp.score += multi_objective_strength * 2
+            if multi_objective_strength >= 2:
+                bmp.reasons.append("Addresses more than one major design objective.")
+
+        # Special interpretive notes
+        if bmp.name == "Hydrodynamic Separator" and objective_quality:
+            bmp.reasons.append("Best interpreted as pretreatment rather than stand-alone treatment.")
+
+        if bmp.name == "Underground Detention" and objective_quality:
+            bmp.reasons.append("Usually needs a companion BMP for strong water-quality performance.")
+
+
+# ---------------------------------------------------------------------
+# Output logic
+# ---------------------------------------------------------------------
+
+def print_scenario_summary(
+    scenario_name: str,
+    site_limited_space: bool,
+    width_class: str,
+    soils_good_for_infiltration: bool,
+    objective_quality: bool,
+    objective_quantity: bool,
+    objective_timing: bool,
+    interchange_context: bool,
+    low_maintenance_priority: bool,
+) -> None:
+    """Print a brief summary of user inputs."""
+    print("\n" + "=" * 72)
+    print(f"SCENARIO: {scenario_name}")
+    print("=" * 72)
+    print(f"Space-limited site: {'Yes' if site_limited_space else 'No'}")
+    print(f"Geometry class: {width_class}")
+    print(f"Soils suitable for infiltration: {'Yes' if soils_good_for_infiltration else 'No'}")
+    print(f"Water-quality objective: {'Yes' if objective_quality else 'No'}")
+    print(f"Quantity-control objective: {'Yes' if objective_quantity else 'No'}")
+    print(f"Timing / peak-control objective: {'Yes' if objective_timing else 'No'}")
+    print(f"Constrained interchange context: {'Yes' if interchange_context else 'No'}")
+    print(f"Low-maintenance priority: {'Yes' if low_maintenance_priority else 'No'}")
+
+
+def suggest_combinations(
+    objective_quality: bool,
+    objective_quantity: bool,
+    objective_timing: bool,
+    soils_good_for_infiltration: bool,
+) -> List[str]:
+    """Return treatment-train suggestions."""
+    combos = []
+
+    if objective_quality and objective_timing and not soils_good_for_infiltration:
+        combos.append(
+            "Hydrodynamic Separator + Sand Filter + Underground Detention\n"
+            "  Rationale: pretreatment, treatment, and peak-flow control where infiltration is limited."
+        )
+
+    if objective_quality and objective_quantity and soils_good_for_infiltration:
+        combos.append(
+            "Bioretention Cell or Infiltration Trench\n"
+            "  Rationale: can provide treatment and some volume reduction where soils permit infiltration."
+        )
+
+    if objective_quantity and objective_timing and soils_good_for_infiltration:
+        combos.append(
+            "Infiltration Trench + Underground Detention\n"
+            "  Rationale: volume reduction where feasible plus reliable peak attenuation."
+        )
+
+    if objective_quality and objective_quantity and objective_timing and soils_good_for_infiltration:
+        combos.append(
+            "Hydrodynamic Separator + Infiltration Trench + Underground Detention\n"
+            "  Rationale: pretreatment, volume reduction, and timing control in a compact treatment train."
+        )
+
+    if objective_quality and objective_timing and soils_good_for_infiltration:
+        combos.append(
+            "Hydrodynamic Separator + Bioretention Cell or Infiltration Trench + Underground Detention\n"
+            "  Rationale: pretreatment, treatment, and timing control with infiltration support."
+        )
+
+    if objective_quality and not objective_quantity and not objective_timing:
+        combos.append(
+            "Sand Filter or Bioretention Cell\n"
+            "  Rationale: water-quality improvement is the dominant objective."
+        )
+
+    if objective_timing and not objective_quality and not objective_quantity:
+        combos.append(
+            "Underground Detention or Detention Basin\n"
+            "  Rationale: timing and peak control are dominant objectives."
+        )
+
+    if not combos:
+        combos.append(
+            "Select the highest-ranked BMP, but verify whether a hybrid system is still warranted."
+        )
+
+    return combos
+
+
+def print_results(
+    bmps: List[BMP],
+    objective_quality: bool,
+    objective_quantity: bool,
+    objective_timing: bool,
+    soils_good_for_infiltration: bool,
+    top_n: int = 5,
+) -> None:
+    """Print ranked BMP results and recommended combinations."""
+    ranked = sorted(bmps, key=lambda x: x.score, reverse=True)
+
+    print("\n" + "=" * 72)
+    print("RANKED BMP CANDIDATES")
+    print("=" * 72)
+
+    for i, bmp in enumerate(ranked[:top_n], start=1):
+        print(f"\n{i}. {bmp.name}  |  Score: {bmp.score}")
+        print(f"   General note: {bmp.notes}")
+        top_reasons = bmp.reasons[:4]
+        if top_reasons:
+            print("   Why it ranked here:")
+            for reason in top_reasons:
+                print(f"     - {reason}")
+
+    print("\n" + "=" * 72)
+    print("SUGGESTED TREATMENT-TRAIN INTERPRETATIONS")
+    print("=" * 72)
+
+    combos = suggest_combinations(
+        objective_quality=objective_quality,
+        objective_quantity=objective_quantity,
+        objective_timing=objective_timing,
+        soils_good_for_infiltration=soils_good_for_infiltration,
+    )
+
+    for combo in combos:
+        print(f"\n- {combo}")
+
+    print("\nEngineering reminder:")
+    print("This screening result is conceptual. Final BMP selection should also consider")
+    print("hydraulic constraints, utility conflicts, maintenance access, right-of-way,")
+    print("site grading, and agency-specific stormwater criteria.")
+
+
+# ---------------------------------------------------------------------
+# Scenario runner
+# ---------------------------------------------------------------------
+
+def run_single_scenario() -> None:
+    """Prompt user for one scenario and print results."""
+    print("\n" + "=" * 72)
+    print("NEW BMP SCREENING SCENARIO")
+    print("=" * 72)
+
+    scenario_name = input("Enter a scenario name: ").strip()
+    if not scenario_name:
+        scenario_name = "Unnamed Scenario"
+
+    site_limited_space = ask_yes_no("Is the site space-limited?")
+    width_class = ask_choice(
+        "How would you describe the available geometry?",
+        {
+            "narrow": "Narrow linear strip / corridor",
+            "moderate": "Moderate footprint available",
+            "broad": "Broad footprint available",
+        },
+    )
+    soils_good_for_infiltration = ask_yes_no("Are soils generally suitable for infiltration?")
+    objective_quality = ask_yes_no("Is water-quality improvement a major objective?")
+    objective_quantity = ask_yes_no("Is runoff-volume reduction / quantity control a major objective?")
+    objective_timing = ask_yes_no("Is peak-flow reduction / timing control a major objective?")
+    interchange_context = ask_yes_no("Is this a constrained interchange or similar transportation site?")
+    low_maintenance_priority = ask_yes_no("Is low maintenance a high priority?")
+
+    if not any([objective_quality, objective_quantity, objective_timing]):
+        print("\nAt least one design objective should be selected. Scenario cancelled.")
+        return
+
+    bmps = build_bmps()
+    evaluate_bmps(
+        bmps=bmps,
+        site_limited_space=site_limited_space,
+        width_class=width_class,
+        soils_good_for_infiltration=soils_good_for_infiltration,
+        objective_quality=objective_quality,
+        objective_quantity=objective_quantity,
+        objective_timing=objective_timing,
+        interchange_context=interchange_context,
+        low_maintenance_priority=low_maintenance_priority,
+    )
+
+    print_scenario_summary(
+        scenario_name=scenario_name,
+        site_limited_space=site_limited_space,
+        width_class=width_class,
+        soils_good_for_infiltration=soils_good_for_infiltration,
+        objective_quality=objective_quality,
+        objective_quantity=objective_quantity,
+        objective_timing=objective_timing,
+        interchange_context=interchange_context,
+        low_maintenance_priority=low_maintenance_priority,
+    )
+
+    print_results(
+        bmps=bmps,
+        objective_quality=objective_quality,
+        objective_quantity=objective_quantity,
+        objective_timing=objective_timing,
+        soils_good_for_infiltration=soils_good_for_infiltration,
+        top_n=5,
+    )
+
+
+def print_main_menu() -> None:
+    """Print main menu."""
+    print("\n" + "=" * 72)
+    print("TRANSPORTATION STORMWATER BMP SELECTOR")
+    print("=" * 72)
+    print("1 - Run a new BMP screening scenario")
+    print("2 - Show example classroom scenario")
+    print("3 - Quit")
+
+
+def run_example_scenario() -> None:
+    """Run a built-in example aligned with constrained interchange conditions."""
+    scenario_name = "Example: Constrained Urban Interchange"
+
+    site_limited_space = True
+    width_class = "narrow"
+    soils_good_for_infiltration = False
+    objective_quality = True
+    objective_quantity = False
+    objective_timing = True
+    interchange_context = True
+    low_maintenance_priority = True
+
+    bmps = build_bmps()
+    evaluate_bmps(
+        bmps=bmps,
+        site_limited_space=site_limited_space,
+        width_class=width_class,
+        soils_good_for_infiltration=soils_good_for_infiltration,
+        objective_quality=objective_quality,
+        objective_quantity=objective_quantity,
+        objective_timing=objective_timing,
+        interchange_context=interchange_context,
+        low_maintenance_priority=low_maintenance_priority,
+    )
+
+    print_scenario_summary(
+        scenario_name=scenario_name,
+        site_limited_space=site_limited_space,
+        width_class=width_class,
+        soils_good_for_infiltration=soils_good_for_infiltration,
+        objective_quality=objective_quality,
+        objective_quantity=objective_quantity,
+        objective_timing=objective_timing,
+        interchange_context=interchange_context,
+        low_maintenance_priority=low_maintenance_priority,
+    )
+
+    print_results(
+        bmps=bmps,
+        objective_quality=objective_quality,
+        objective_quantity=objective_quantity,
+        objective_timing=objective_timing,
+        soils_good_for_infiltration=soils_good_for_infiltration,
+        top_n=5,
+    )
+
+
+def main() -> None:
+    """Main menu loop."""
+    while True:
+        print_main_menu()
+        choice = input("Select an option: ").strip()
+
+        if choice == "1":
+            run_single_scenario()
+        elif choice == "2":
+            run_example_scenario()
+        elif choice == "3":
+            print("\nExiting BMP Selector.")
+            break
+        else:
+            print("Invalid choice. Please enter 1, 2, or 3.")
+
+
+if __name__ == "__main__":
+    main()
+------------------
+
+----- stdout -----
+
+========================================================================
+TRANSPORTATION STORMWATER BMP SELECTOR
+========================================================================
+1 - Run a new BMP screening scenario
+2 - Show example classroom scenario
+3 - Quit
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mStdinNotImplementedError[0m                  Traceback (most recent call last)
+Cell [0;32mIn[1], line 555[0m
+[1;32m    551[0m             [38;5;28mprint[39m([38;5;124m"[39m[38;5;124mInvalid choice. Please enter 1, 2, or 3.[39m[38;5;124m"[39m)
+[1;32m    554[0m [38;5;28;01mif[39;00m [38;5;18m__name__[39m [38;5;241m==[39m [38;5;124m"[39m[38;5;124m__main__[39m[38;5;124m"[39m:
+[0;32m--> 555[0m     [43mmain[49m[43m([49m[43m)[49m
+
+Cell [0;32mIn[1], line 541[0m, in [0;36mmain[0;34m()[0m
+[1;32m    539[0m [38;5;28;01mwhile[39;00m [38;5;28;01mTrue[39;00m:
+[1;32m    540[0m     print_main_menu()
+[0;32m--> 541[0m     choice [38;5;241m=[39m [38;5;28;43minput[39;49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43mSelect an option: [39;49m[38;5;124;43m"[39;49m[43m)[49m[38;5;241m.[39mstrip()
+[1;32m    543[0m     [38;5;28;01mif[39;00m choice [38;5;241m==[39m [38;5;124m"[39m[38;5;124m1[39m[38;5;124m"[39m:
+[1;32m    544[0m         run_single_scenario()
+
+File [0;32m/opt/jupyterhub/lib/python3.10/site-packages/ipykernel/kernelbase.py:1281[0m, in [0;36mKernel.raw_input[0;34m(self, prompt)[0m
+[1;32m   1279[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28mself[39m[38;5;241m.[39m_allow_stdin:
+[1;32m   1280[0m     msg [38;5;241m=[39m [38;5;124m"[39m[38;5;124mraw_input was called, but this frontend does not support input requests.[39m[38;5;124m"[39m
+[0;32m-> 1281[0m     [38;5;28;01mraise[39;00m StdinNotImplementedError(msg)
+[1;32m   1282[0m [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39m_input_request(
+[1;32m   1283[0m     [38;5;28mstr[39m(prompt),
+[1;32m   1284[0m     [38;5;28mself[39m[38;5;241m.[39m_parent_ident[[38;5;124m"[39m[38;5;124mshell[39m[38;5;124m"[39m],
+[1;32m   1285[0m     [38;5;28mself[39m[38;5;241m.[39mget_parent([38;5;124m"[39m[38;5;124mshell[39m[38;5;124m"[39m),
+[1;32m   1286[0m     password[38;5;241m=[39m[38;5;28;01mFalse[39;00m,
+[1;32m   1287[0m )
+
+[0;31mStdinNotImplementedError[0m: raw_input was called, but this frontend does not support input requests.
+
