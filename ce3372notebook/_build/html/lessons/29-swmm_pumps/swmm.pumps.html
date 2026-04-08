@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>28. SWMM Pumps &#8212; CE 3372 Water Systems Design</title>
+    <title>SWMM Pumps &#8212; CE 3372 Water Systems Design</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -210,11 +210,12 @@
 <li class="toctree-l2"><a class="reference internal" href="../18-epanet_quality/epanet_water_quality.html">EPANET Water Quality</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="../18.1-EPANETworkshop/epanetworkshop.html">EPANET Project Workshop</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../20-swdesign/swdesign.html">Storm Water Design</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../21-hydrologyreview/HydrologyReview.html">Storm Water Hydrology</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../22-conduitsizing/conduitsizing.html">Stormwater Conduit Sizing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../22-conduitsizing/conduitsizing.html">Stormwater Collection - Conduit Sizing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../23-inletsizing/inlets.html">Stormwater Collection - Inlet Sizing</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../24-swmm_intro/swmm_intro.html">SWMM Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../25-swmm_water_surface/swmm.watersurface.steady.html">Steady Open Channel Hydraulics</a></li>
@@ -224,7 +225,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../26-swmm_hydrology/swmmhydrology.html">SWMM Hydrology</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../26.1-swmm_dual_system/swmmdualhydraulics.html">SWMM Combined Surface/Subsurface Hydraulics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../27-swmm_conduits/swmm.conduits.html">Lesson 18. Stormwater Conduit Sizing</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">28. SWMM Pumps</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">SWMM Pumps</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../30-greeninfrastructure/greeninfrastructure.html">Green Infrastructure</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -232,8 +233,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../30-greeninfrastructure/waterquality.html">GI and Water Quality</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="../30.1-SWMMworkshop/swmmworkshop.html">SWMM Project Workshop</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../31-sanitarydesign/sanitarydesign.html">Wastewater Collection Systems</a></li>
 
+<li class="toctree-l1"><a class="reference internal" href="../34-epilog/epilog.html">Epilog</a></li>
 </ul>
 
     </div>
@@ -419,7 +422,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>28. SWMM Pumps</h1>
+    <h1>SWMM Pumps</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -429,9 +432,6 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concepts">Concepts</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#devices">Devices</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-estimation">Performance Estimation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-section">End of Section</a></li>
 </ul>
             </nav>
@@ -444,17 +444,22 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="swmm-pumps">
-<h1>28. SWMM Pumps<a class="headerlink" href="#swmm-pumps" title="Link to this heading">#</a></h1>
-<section id="concepts">
-<h2>Concepts<a class="headerlink" href="#concepts" title="Link to this heading">#</a></h2>
-</section>
-<section id="devices">
-<h2>Devices<a class="headerlink" href="#devices" title="Link to this heading">#</a></h2>
-</section>
-<section id="performance-estimation">
-<h2>Performance Estimation<a class="headerlink" href="#performance-estimation" title="Link to this heading">#</a></h2>
-</section>
+  <div class="alert alert-block alert-info">
+    <b><h1>CE 3372 Water Systems Design</h1></b> 
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="swmm-pumps">
+<h1>SWMM Pumps<a class="headerlink" href="#swmm-pumps" title="Link to this heading">#</a></h1>
+<p>Use <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372notebook/lessons/29-swmm_pumps/CE3372-Lecture-22.pdf">Dual Drainage Pumps and Lift Stations</a> to discuss pumps in SWMM</p>
+<p>Use <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372notebook/lessons/29-swmm_pumps/WoodlandsNoSewer">WoodlandsNoSewer</a> to illustrate localized flooding.</p>
+<p>Use <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372notebook/lessons/29-swmm_pumps/WoodlandsReliefSewer">WoodlandsReliefSewer</a> to illustrate non-pumpin solution to localized flooding.</p>
+<p>Use <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372notebook/lessons/29-swmm_pumps/WoodlandsLiftStation">WoodlandsLiftStation</a> to illustrate lift-station solution to localized flooding.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Future revision move contents above into proper JupyterBook structure below:</p>
+<h2 class="rubric" id="concepts">Concepts</h2>
+<h2 class="rubric" id="devices">Devices</h2>
+<h2 class="rubric" id="performance-estimation">Performance Estimation</h2>
+</div>
 <section id="end-of-section">
 <h2>End of Section<a class="headerlink" href="#end-of-section" title="Link to this heading">#</a></h2>
 </section>
@@ -524,9 +529,6 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concepts">Concepts</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#devices">Devices</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-estimation">Performance Estimation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-section">End of Section</a></li>
 </ul>
   </nav></div>

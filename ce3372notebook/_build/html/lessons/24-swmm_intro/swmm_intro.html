@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -210,11 +210,12 @@
 <li class="toctree-l2"><a class="reference internal" href="../18-epanet_quality/epanet_water_quality.html">EPANET Water Quality</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="../18.1-EPANETworkshop/epanetworkshop.html">EPANET Project Workshop</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../20-swdesign/swdesign.html">Storm Water Design</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../21-hydrologyreview/HydrologyReview.html">Storm Water Hydrology</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../22-conduitsizing/conduitsizing.html">Stormwater Conduit Sizing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../22-conduitsizing/conduitsizing.html">Stormwater Collection - Conduit Sizing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../23-inletsizing/inlets.html">Stormwater Collection - Inlet Sizing</a></li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">SWMM Introduction</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../25-swmm_water_surface/swmm.watersurface.steady.html">Steady Open Channel Hydraulics</a></li>
@@ -224,7 +225,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../26-swmm_hydrology/swmmhydrology.html">SWMM Hydrology</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../26.1-swmm_dual_system/swmmdualhydraulics.html">SWMM Combined Surface/Subsurface Hydraulics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../27-swmm_conduits/swmm.conduits.html">Lesson 18. Stormwater Conduit Sizing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../29-swmm_pumps/swmm.pumps.html">28. SWMM Pumps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../29-swmm_pumps/swmm.pumps.html">SWMM Pumps</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../30-greeninfrastructure/greeninfrastructure.html">Green Infrastructure</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -232,8 +233,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../30-greeninfrastructure/waterquality.html">GI and Water Quality</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="../30.1-SWMMworkshop/swmmworkshop.html">SWMM Project Workshop</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../31-sanitarydesign/sanitarydesign.html">Wastewater Collection Systems</a></li>
 
+<li class="toctree-l1"><a class="reference internal" href="../34-epilog/epilog.html">Epilog</a></li>
 </ul>
 
     </div>
@@ -429,17 +432,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interface-tour">Interface Tour</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-of-a-minimal-model">Example of a Minimal Model</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workshop">Workshop</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#junctions">Junctions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conduits">Conduits</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#catchments">Catchments</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#raingages">Raingages</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#presentation">Presentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#live-demo">Live Demo</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-section">End of Section</a></li>
 </ul>
             </nav>
@@ -463,26 +457,26 @@ document.write(`
 </div>
 <p>The EPA Storm Water Management Model (SWMM) is a comprehensive software tool developed by the U.S. Environmental Protection Agency for simulating the quantity and quality of stormwater runoff in urban areas. First developed in 1971, SWMM has become one of the most widely used models for planning, analyzing, and designing urban drainage systems, including storm sewers, combined sewers, and other conveyance systems. Its ability to simulate dynamic rainfall-runoff relationships, along with pollutant transport, makes it a key tool for engineers working on stormwater management, flood control, and water quality improvement projects.</p>
 <p>SWMM allows users to model the physical processes involved in stormwater runoff, including rainfall, infiltration, evaporation, and surface flow, as well as the behavior of drainage networks under varying conditions. The model supports continuous or event-based simulation, which enables long-term studies of stormwater systems under different climate conditions. Additionally, SWMM includes a variety of features for modeling green infrastructure practices such as permeable pavement, rain gardens, and green roofs, which are essential for sustainable stormwater management. Its versatility and ability to incorporate both conventional and innovative infrastructure make it an invaluable tool for engineers tasked with addressing complex urban water challenges.</p>
-<section id="interface-tour">
-<h2>Interface Tour<a class="headerlink" href="#interface-tour" title="Link to this heading">#</a></h2>
-<section id="example-of-a-minimal-model">
-<h3>Example of a Minimal Model<a class="headerlink" href="#example-of-a-minimal-model" title="Link to this heading">#</a></h3>
+<section id="presentation">
+<h2>Presentation<a class="headerlink" href="#presentation" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="http://54.243.252.9/ce-3372-webroot/1-Lessons/Lesson18/PowerPointInLecture/CE3372-Lesson-18.pdf">Introduction to SWMM (circa 2020)</a></p></li>
+</ul>
 </section>
-</section>
-<section id="workshop">
-<h2>Workshop<a class="headerlink" href="#workshop" title="Link to this heading">#</a></h2>
-<section id="junctions">
-<h3>Junctions<a class="headerlink" href="#junctions" title="Link to this heading">#</a></h3>
-</section>
-<section id="conduits">
-<h3>Conduits<a class="headerlink" href="#conduits" title="Link to this heading">#</a></h3>
-</section>
-<section id="catchments">
-<h3>Catchments<a class="headerlink" href="#catchments" title="Link to this heading">#</a></h3>
-</section>
-<section id="raingages">
-<h3>Raingages<a class="headerlink" href="#raingages" title="Link to this heading">#</a></h3>
-</section>
+<section id="live-demo">
+<h2>Live Demo<a class="headerlink" href="#live-demo" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Installation</p></li>
+<li><p>Example of a Minimal Model</p></li>
+<li><p>Junctions</p></li>
+<li><p>Conduits</p></li>
+<li><p>Catchments</p></li>
+<li><p>Raingages</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Use the <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/1-Lessons/Lesson18/">Introduction to SWMM (circa 2020)</a> for SWMM intro, including data sources, etc.</p>
+</div>
 </section>
 <section id="end-of-section">
 <h2>End of Section<a class="headerlink" href="#end-of-section" title="Link to this heading">#</a></h2>
@@ -555,17 +549,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interface-tour">Interface Tour</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-of-a-minimal-model">Example of a Minimal Model</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workshop">Workshop</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#junctions">Junctions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conduits">Conduits</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#catchments">Catchments</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#raingages">Raingages</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#presentation">Presentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#live-demo">Live Demo</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-section">End of Section</a></li>
 </ul>
   </nav></div>

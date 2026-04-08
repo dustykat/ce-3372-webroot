@@ -1,0 +1,4 @@
+#!/bin/bash
+# runs the python script in local directory i hope!
+python Z-MakeFileForExcel.py
+# end of script
