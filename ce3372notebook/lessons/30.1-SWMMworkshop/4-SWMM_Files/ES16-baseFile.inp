@@ -1,0 +1,231 @@
+[TITLE]
+;;Project Title/Notes
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CFS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           04/13/2017
+START_TIME           00:00:00
+REPORT_START_DATE    04/13/2017
+REPORT_START_TIME    00:00:00
+END_DATE             04/13/2017
+END_TIME             06:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:05:00
+WET_STEP             00:05:00
+DRY_STEP             01:00:00
+ROUTING_STEP         0:00:30 
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         12.557
+MAX_TRIALS           8
+HEAD_TOLERANCE       0.005
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+
+[EVAPORATION]
+;;Evap Data      Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[RAINGAGES]
+;;Gage           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+1                INTENSITY 1:00     1.0      TIMESERIES 5yr20min-EBDLKUP-HarrisCo
+
+[SUBCATCHMENTS]
+;;Subcatchment   Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  Snow Pack       
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+SCA1             1                DA1              3.51     85       391      0.5      0                        
+SCA2             1                DA2              1.45     85       252      0.5      0                        
+SCA3             1                DA3              9.58     85       646      0.5      0                        
+SCA4             1                DA4              3.39     85       385      0.5      0                        
+SCA5             1                DA5              1.38     85       245      0.5      0                        
+SCA8             1                DA8              5.32     85       481      0.5      0                        
+SCA9             1                DA9              1.11     85       220      0.5      0                        
+SCA10            1                DA10             4.93     85       464      0.5      0                        
+SCA11            1                DA11             2.84     85       351      0.5      0                        
+SCA12            1                DA12             1.22     85       231      0.5      0                        
+SCA13            1                DA13             1.5      85       255      0.5      0                        
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+SCA1             0.01       0.1        0.05       0.05       25         OUTLET    
+SCA2             0.01       0.1        0.05       0.05       25         OUTLET    
+SCA3             0.01       0.1        0.05       0.05       25         OUTLET    
+SCA4             0.01       0.1        0.05       0.05       25         OUTLET    
+SCA5             0.01       0.1        0.05       0.05       25         OUTLET    
+SCA8             0.01       0.1        0.05       0.05       25         OUTLET    
+SCA9             0.01       0.1        0.05       0.05       25         OUTLET    
+SCA10            0.01       0.1        0.05       0.05       25         OUTLET    
+SCA11            0.01       0.1        0.05       0.05       25         OUTLET    
+SCA12            0.01       0.1        0.05       0.05       25         OUTLET    
+SCA13            0.01       0.1        0.05       0.05       25         OUTLET    
+
+[INFILTRATION]
+;;Subcatchment   MaxRate    MinRate    Decay      DryTime    MaxInfil  
+;;-------------- ---------- ---------- ---------- ---------- ----------
+SCA1             10         7          4          7          0         
+SCA2             10         7          4          7          0         
+SCA3             10         7          4          7          0         
+SCA4             10         7          4          7          0         
+SCA5             10         7          4          7          0         
+SCA8             10         7          4          7          0         
+SCA9             10         7          4          7          0         
+SCA10            10         7          4          7          0         
+SCA11            10         7          4          7          0         
+SCA12            10         7          4          7          0         
+SCA13            10         7          4          7          0         
+
+[JUNCTIONS]
+;;Junction       Invert     MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+DA13             59.95      8.05       0          0          0         
+DA12             58.45      7.55       0          0          0         
+DA10             59.7       6.3        0          0          0         
+DA9              61         9          0          0          0         
+DA7              61.725     8.475      0          0          0         
+DA6              62.975     7.025      0          0          0         
+DA4              63.6       7.8        0          0          0         
+DA3              65.1       6.4        0          0          0         
+DA1              68.225     4.275      0          0          0         
+DA2              67.1       5.1        0          0          0         
+DA5              64.225     6.275      0          0          0         
+DA8              63.6       5.4        0          0          0         
+DA11             61.2       8.3        0          0          0         
+
+[OUTFALLS]
+;;Outfall        Invert     Type       Stage Data       Gated   
+;;-------------- ---------- ---------- ---------------- --------
+OF14             57         FIXED      58               NO
+
+[CONDUITS]
+;;Conduit        From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+P12              DA13             DA12             300        0.01       0          0          0          0         
+P1               DA1              DA3              625        0.01       0          2          0          0         
+P2               DA2              DA3              400        0.01       0          0          0          0         
+P3               DA3              DA4              300        0.01       0          0          0          0         
+P4               DA4              DA6              125        0.01       0          0          0          0         
+P5               DA5              DA6              250        0.01       0          0          0          0         
+P6               DA6              DA7              250        0.01       0          0.25       0          0         
+P7               DA8              DA7              375        0.01       0          0          0          0         
+P8               DA7              DA9              125        0.01       0          .6         0          0         
+P9               DA9              DA10             280        0.01       0          0          0          0         
+P11              DA10             DA12             250        0.01       0          0          0          0         
+P10              DA11             DA10             300        0.01       0          0          0          0         
+P13              DA12             OF14             125        0.01       0          0          0          0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ----------
+P12              CIRCULAR     2                0          0          0          1                    
+P1               CIRCULAR     2.25             0          0          0          1                    
+P2               CIRCULAR     2                0          0          0          1                    
+P3               CIRCULAR     4                0          0          0          1                    
+P4               CIRCULAR     4                0          0          0          1                    
+P5               CIRCULAR     2                0          0          0          1                    
+P6               CIRCULAR     4                0          0          0          1                    
+P7               CIRCULAR     2.5              0          0          0          1                    
+P8               CIRCULAR     4.25             0          0          0          1                    
+P9               CIRCULAR     5                0          0          0          1                    
+P11              CIRCULAR     5                0          0          0          1                    
+P10              CIRCULAR     2.5              0          0          0          1                    
+P13              RECT_CLOSED  5                6          0          0          1                    
+
+[TIMESERIES]
+;;Time Series    Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+MyStorm                     0          2         
+MyStorm                     1          2         
+MyStorm                     2          2         
+MyStorm                     3          2         
+MyStorm                     4          2         
+MyStorm                     5          2         
+MyStorm                     6          2         
+;
+5yr20min-EBDLKUP-HarrisCo            0          0         
+5yr20min-EBDLKUP-HarrisCo            1          5         
+5yr20min-EBDLKUP-HarrisCo            2          5         
+5yr20min-EBDLKUP-HarrisCo            3          5         
+5yr20min-EBDLKUP-HarrisCo            4          5         
+5yr20min-EBDLKUP-HarrisCo            5          0         
+5yr20min-EBDLKUP-HarrisCo            6          0         
+5yr20min-EBDLKUP-HarrisCo            7          0         
+5yr20min-EBDLKUP-HarrisCo            8          0         
+5yr20min-EBDLKUP-HarrisCo            9          0         
+5yr20min-EBDLKUP-HarrisCo            10         0         
+5yr20min-EBDLKUP-HarrisCo            11         0         
+5yr20min-EBDLKUP-HarrisCo            12         0         
+
+[REPORT]
+;;Reporting Options
+INPUT      NO
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 0.000 0.000 10000.000 10000.000
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+DA13             4065.421           8901.869          
+DA12             3890.187           8060.748          
+DA10             4240.654           7313.084          
+DA9              4216.691           6442.167          
+DA7              4334.112           5724.299          
+DA6              4906.542           5514.019          
+DA4              4637.850           5175.234          
+DA3              4135.514           4380.841          
+DA1              3866.822           2324.766          
+DA2              2616.822           4380.841          
+DA5              5607.477           5070.093          
+DA8              3212.617           6460.280          
+DA11             5000.000           6647.196          
+OF14             4521.028           7990.654          
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+SCA1             4221.902           1858.790          
+SCA2             2175.793           3890.490          
+SCA3             4495.677           3933.718          
+SCA4             5043.228           4755.043          
+SCA5             5605.187           5706.052          
+SCA8             2795.389           5734.870          
+SCA9             4870.317           6253.602          
+SCA10            3458.213           7146.974          
+SCA11            5662.824           6743.516          
+SCA12            3530.259           8458.213          
+SCA13            3631.124           9481.268          
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+1                1039.720           8084.112          
+

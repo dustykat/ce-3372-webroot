@@ -1,0 +1,231 @@
+
+  EPA STORM WATER MANAGEMENT MODEL - VERSION 5.1 (Build 5.1.007)
+  --------------------------------------------------------------
+
+  
+  *********************************************************
+  NOTE: The summary statistics displayed in this report are
+  based on results found at every computational time step,  
+  not just on results from each reporting time step.
+  *********************************************************
+  
+  ****************
+  Analysis Options
+  ****************
+  Flow Units ............... CFS
+  Process Models:
+    Rainfall/Runoff ........ YES
+    RDII ................... NO
+    Snowmelt ............... NO
+    Groundwater ............ NO
+    Flow Routing ........... YES
+    Ponding Allowed ........ YES
+    Water Quality .......... NO
+  Infiltration Method ...... HORTON
+  Flow Routing Method ...... DYNWAVE
+  Starting Date ............ APR-26-2017 00:00:00
+  Ending Date .............. APR-28-2017 23:00:00
+  Antecedent Dry Days ...... 0.0
+  Report Time Step ......... 00:15:00
+  Wet Time Step ............ 00:05:00
+  Dry Time Step ............ 01:00:00
+  Routing Time Step ........ 30.00 sec
+  Variable Time Step ....... YES
+  Maximum Trials ........... 8
+  Head Tolerance ........... 0.005000 ft
+  
+  
+  **************************        Volume         Depth
+  Runoff Quantity Continuity     acre-feet        inches
+  **************************     ---------       -------
+  Total Precipitation ......        15.750        21.000
+  Evaporation Loss .........         0.000         0.000
+  Infiltration Loss ........         6.300         8.400
+  Surface Runoff ...........         9.438        12.584
+  Final Surface Storage ....         0.017         0.023
+  Continuity Error (%) .....        -0.034
+  
+  
+  **************************        Volume        Volume
+  Flow Routing Continuity        acre-feet      10^6 gal
+  **************************     ---------     ---------
+  Dry Weather Inflow .......         0.000         0.000
+  Wet Weather Inflow .......         9.438         3.076
+  Groundwater Inflow .......         0.000         0.000
+  RDII Inflow ..............         0.000         0.000
+  External Inflow ..........         0.000         0.000
+  External Outflow .........         3.595         1.172
+  Internal Outflow .........         0.000         0.000
+  Evaporation Loss .........         0.000         0.000
+  Exfiltration Loss ........         0.000         0.000
+  Initial Stored Volume ....         0.000         0.000
+  Final Stored Volume ......         5.840         1.903
+  Continuity Error (%) .....         0.038
+  
+  
+  ***************************
+  Time-Step Critical Elements
+  ***************************
+  Link Bottom4 (49.21%)
+  Link Lower8 (47.12%)
+  Link InletToPond (1.64%)
+  
+  
+  ********************************
+  Highest Flow Instability Indexes
+  ********************************
+  All links are stable.
+  
+  
+  *************************
+  Routing Time Step Summary
+  *************************
+  Minimum Time Step           :     1.50 sec
+  Average Time Step           :    24.48 sec
+  Maximum Time Step           :    30.00 sec
+  Percent in Steady State     :     0.00
+  Average Iterations per Step :     2.00
+  Percent Not Converging      :     0.00
+  
+  
+  ***************************
+  Subcatchment Runoff Summary
+  ***************************
+  
+  --------------------------------------------------------------------------------------------------------
+                            Total      Total      Total      Total      Total       Total     Peak  Runoff
+                           Precip      Runon       Evap      Infil     Runoff      Runoff   Runoff   Coeff
+  Subcatchment                 in         in         in         in         in    10^6 gal      CFS
+  --------------------------------------------------------------------------------------------------------
+  1                         21.00       0.00       0.00       8.40      12.58        3.08    16.34   0.599
+  
+  
+  ******************
+  Node Depth Summary
+  ******************
+  
+  ---------------------------------------------------------------------
+                                 Average  Maximum  Maximum  Time of Max
+                                   Depth    Depth      HGL   Occurrence
+  Node                 Type         Feet     Feet     Feet  days hr:min
+  ---------------------------------------------------------------------
+  4                    JUNCTION     0.15     0.18   139.08     0  10:47
+  5                    OUTFALL      0.15     0.18   135.18     0  10:47
+  DETENTION            STORAGE      2.55     2.85   141.85     0  10:46
+  WATERSHED            STORAGE      2.50     2.82   141.92     0  08:41
+  
+  
+  *******************
+  Node Inflow Summary
+  *******************
+  
+  -------------------------------------------------------------------------------------------------
+                                  Maximum  Maximum                  Lateral       Total        Flow
+                                  Lateral    Total  Time of Max      Inflow      Inflow     Balance
+                                   Inflow   Inflow   Occurrence      Volume      Volume       Error
+  Node                 Type           CFS      CFS  days hr:min    10^6 gal    10^6 gal     Percent
+  -------------------------------------------------------------------------------------------------
+  4                    JUNCTION      0.00     0.82     0  10:47           0        1.17       0.011
+  5                    OUTFALL       0.00     0.82     0  10:47           0        1.17       0.000
+  DETENTION            STORAGE       0.00     2.26     0  01:48           0        1.36       0.134
+  WATERSHED            STORAGE      16.34    16.34     0  06:32        3.08        3.08       0.034
+  
+  
+  **********************
+  Node Surcharge Summary
+  **********************
+  
+  Surcharging occurs when water rises above the top of the highest conduit.
+  ---------------------------------------------------------------------
+                                               Max. Height   Min. Depth
+                                   Hours       Above Crown    Below Rim
+  Node                 Type      Surcharged           Feet         Feet
+  ---------------------------------------------------------------------
+  WATERSHED            STORAGE        69.34          1.821        6.179
+  
+  
+  *********************
+  Node Flooding Summary
+  *********************
+  
+  No nodes were flooded.
+  
+  
+  **********************
+  Storage Volume Summary
+  **********************
+  
+  --------------------------------------------------------------------------------------------------
+                         Average     Avg  Evap Exfil       Maximum     Max    Time of Max    Maximum
+                          Volume    Pcnt  Pcnt  Pcnt        Volume    Pcnt     Occurrence    Outflow
+  Storage Unit          1000 ft3    Full  Loss  Loss      1000 ft3    Full    days hr:min        CFS
+  --------------------------------------------------------------------------------------------------
+  DETENTION               26.228       8     0     0        31.089      10       0  10:46       0.82
+  WATERSHED              279.632       4     0     0       368.701       6       0  08:41       2.26
+  
+  
+  ***********************
+  Outfall Loading Summary
+  ***********************
+  
+  -----------------------------------------------------------
+                         Flow       Avg       Max       Total
+                         Freq      Flow      Flow      Volume
+  Outfall Node           Pcnt       CFS       CFS    10^6 gal
+  -----------------------------------------------------------
+  5                     98.63      0.63      0.82       1.171
+  -----------------------------------------------------------
+  System                98.63      0.63      0.82       1.171
+  
+  
+  ********************
+  Link Flow Summary
+  ********************
+  
+  -----------------------------------------------------------------------------
+                                 Maximum  Time of Max   Maximum    Max/    Max/
+                                  |Flow|   Occurrence   |Veloc|    Full    Full
+  Link                 Type          CFS  days hr:min    ft/sec    Flow   Depth
+  -----------------------------------------------------------------------------
+  InletToPond          CONDUIT      2.26     0  01:48      3.38    2.18    1.00
+  Upper8               CONDUIT      0.00     0  00:00      0.00    0.00    0.00
+  Lower8               CONDUIT      0.62     0  10:47      2.12    2.28    0.78
+  Bottom4              CONDUIT      0.20     0  10:47      2.83    4.79    0.77
+  5                    CONDUIT      0.82     0  10:47      3.32    0.00    0.03
+  OVERFLOWSWALE        CONDUIT      0.00     0  00:00      0.00    0.00    0.00
+  
+  
+  ***************************
+  Flow Classification Summary
+  ***************************
+  
+  -------------------------------------------------------------------------------------
+                      Adjusted    ---------- Fraction of Time in Flow Class ---------- 
+                       /Actual         Up    Down  Sub   Sup   Up    Down  Norm  Inlet 
+  Conduit               Length    Dry  Dry   Dry   Crit  Crit  Crit  Crit  Ltd   Ctrl  
+  -------------------------------------------------------------------------------------
+  InletToPond             1.00   0.01  0.00  0.00  0.99  0.00  0.00  0.00  0.00  0.00
+  Upper8                  1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  Lower8                  1.00   0.06  0.00  0.00  0.00  0.00  0.00  0.94  0.00  0.00
+  Bottom4                 1.00   0.01  0.00  0.00  0.56  0.43  0.00  0.00  0.00  0.00
+  5                       1.00   0.01  0.00  0.00  0.00  0.99  0.00  0.00  0.66  0.00
+  OVERFLOWSWALE           1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  
+  
+  *************************
+  Conduit Surcharge Summary
+  *************************
+  
+  ----------------------------------------------------------------------------
+                                                           Hours        Hours 
+                         --------- Hours Full --------   Above Full   Capacity
+  Conduit                Both Ends  Upstream  Dnstream   Normal Flow   Limited
+  ----------------------------------------------------------------------------
+  InletToPond                68.98     68.98     68.98      7.85         7.15
+  Lower8                      0.01      0.01      0.01     63.60         0.01
+  Bottom4                     0.01      0.01      0.01     69.63         0.01
+  
+
+  Analysis begun on:  Wed Apr 26 17:36:52 2017
+  Analysis ended on:  Wed Apr 26 17:36:53 2017
+  Total elapsed time: 00:00:01
