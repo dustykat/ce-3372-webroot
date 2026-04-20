@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>28. Stormwater Detention Ponds &#8212; CE 3372 Water Systems Design</title>
+    <title>Stormwater Detention Ponds &#8212; CE 3372 Water Systems Design</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -210,11 +210,12 @@
 <li class="toctree-l2"><a class="reference internal" href="../18-epanet_quality/epanet_water_quality.html">EPANET Water Quality</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="../18.1-EPANETworkshop/epanetworkshop.html">EPANET Project Workshop</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../20-swdesign/swdesign.html">Storm Water Design</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../21-hydrologyreview/HydrologyReview.html">Storm Water Hydrology</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../22-conduitsizing/conduitsizing.html">Stormwater Conduit Sizing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../22-conduitsizing/conduitsizing.html">Stormwater Collection - Conduit Sizing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../23-inletsizing/inlets.html">Stormwater Collection - Inlet Sizing</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../24-swmm_intro/swmm_intro.html">SWMM Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../25-swmm_water_surface/swmm.watersurface.steady.html">Steady Open Channel Hydraulics</a></li>
@@ -224,16 +225,18 @@
 <li class="toctree-l1"><a class="reference internal" href="../26-swmm_hydrology/swmmhydrology.html">SWMM Hydrology</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../26.1-swmm_dual_system/swmmdualhydraulics.html">SWMM Combined Surface/Subsurface Hydraulics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../27-swmm_conduits/swmm.conduits.html">Lesson 18. Stormwater Conduit Sizing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../29-swmm_pumps/swmm.pumps.html">28. SWMM Pumps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../29-swmm_pumps/swmm.pumps.html">SWMM Pumps</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../30-greeninfrastructure/greeninfrastructure.html">Green Infrastructure</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">28. Stormwater Detention Ponds</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Stormwater Detention Ponds</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../30-greeninfrastructure/waterquality.html">GI and Water Quality</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="../30.1-SWMMworkshop/swmmworkshop.html">SWMM Project Workshop</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../31-sanitarydesign/sanitarydesign.html">Wastewater Collection Systems</a></li>
 
+<li class="toctree-l1"><a class="reference internal" href="../34-epilog/epilog.html">Epilog</a></li>
 </ul>
 
     </div>
@@ -419,7 +422,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>28. Stormwater Detention Ponds</h1>
+    <h1>Stormwater Detention Ponds</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -429,9 +432,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concepts">Concepts</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#devices">Devices</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-estimation">Performance Estimation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#purposes">Purposes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hydraulic-performance-estimation-using-swmm">Hydraulic Performance Estimation (Using SWMM)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#storage-node-representation">Storage Node Representation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-conceptualization">Example (Conceptualization)</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-section">End of Section</a></li>
 </ul>
             </nav>
@@ -444,16 +450,111 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="stormwater-detention-ponds">
-<h1>28. Stormwater Detention Ponds<a class="headerlink" href="#stormwater-detention-ponds" title="Link to this heading">#</a></h1>
-<section id="concepts">
-<h2>Concepts<a class="headerlink" href="#concepts" title="Link to this heading">#</a></h2>
+  <div class="alert alert-block alert-info">
+    <b><h1>CE 3372 Water Systems Design</h1></b> 
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="stormwater-detention-ponds">
+<h1>Stormwater Detention Ponds<a class="headerlink" href="#stormwater-detention-ponds" title="Link to this heading">#</a></h1>
+<p>A stormwater detention pond is a constructed basin designed to temporarily store runoff during storm events and release it at a controlled rate, typically remaining dry between storms.</p>
+<section id="purposes">
+<h2>Purposes<a class="headerlink" href="#purposes" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Mitigate Peak Discharge(s): Stormwater detention ponds are designed to temporarily store runoff during storm events and release it at a controlled rate. By attenuating peak flows, these systems help reduce downstream flooding, protect channel stability, and limit stress on existing drainage infrastructure. The outlet structure (e.g., orifice, weir, or riser) is typically configured to match pre-development or allowable discharge conditions.</p></li>
+<li><p>Provide water quality benefit: In addition to flow control, detention ponds can improve water quality by promoting sedimentation of suspended solids and associated pollutants. As runoff is detained, heavier particles settle out, and some dissolved constituents may be reduced through biological uptake and chemical processes. While not as treatment-focused as retention (wet) ponds or constructed wetlands, properly designed detention systems still provide meaningful first-flush pollutant reduction and contribute to overall watershed health.</p></li>
+</ol>
+<p><img alt="" src="https://th.bing.com/th/id/R.0a9c48b143d9a95a859681cd52574ada?rik=uKX7WIvslsg2Mw&amp;riu=http%3a%2f%2fwww.constructionspecifier.com%2fwp-content%2fuploads%2f2014%2f04%2fBarnum-Park-Void-Structured-Concrete-May-15-2013-135.jpg&amp;ehk=HjNW6txHPZN2pjKSVqkHoSGZj9d%2bY0QoTJEgTRsMl4E%3d&amp;risl=&amp;pid=ImgRaw&amp;r=0" /></p>
 </section>
-<section id="devices">
-<h2>Devices<a class="headerlink" href="#devices" title="Link to this heading">#</a></h2>
+<section id="hydraulic-performance-estimation-using-swmm">
+<h2>Hydraulic Performance Estimation (Using SWMM)<a class="headerlink" href="#hydraulic-performance-estimation-using-swmm" title="Link to this heading">#</a></h2>
+<p>Stormwater detention ponds can be represented in EPA SWMM using a storage unit node, which explicitly accounts for water volume stored as a function of depth. This allows the model to simulate both hydraulic routing (inflow/outflow) and temporary storage behavior within the basin.</p>
+<section id="storage-node-representation">
+<h3>Storage Node Representation<a class="headerlink" href="#storage-node-representation" title="Link to this heading">#</a></h3>
+<p>A storage node differs from a standard junction node in that it includes volume storage within the node itself, including (if properly defined) any portion of the basin below ground surface.</p>
+<p>Key Storage Node Attributes:</p>
+<ul class="simple">
+<li><p>Invert Elevation: Elevation of the bottom of the basin (reference point for all depths).</p></li>
+<li><p>Maximum Elevation: Elevation of the top of the storage node.</p>
+<ol class="arabic simple">
+<li><p>Set equal to land surface if the goal is to visualize the hydraulic grade line relative to ground.</p></li>
+<li><p>Set above land surface if simulating combined surface and subsurface storage systems (e.g., detention basin with underground conveyance).</p></li>
+</ol>
+</li>
+<li><p>Depth–Area Relationship: Defines how storage volume changes with depth.</p>
+<ol class="arabic simple">
+<li><p>Tabular form – based on surveyed or designed stage–area data (preferred for real systems).</p></li>
+<li><p>Functional form – simplified geometric approximation (e.g., rectangular, trapezoidal basin).</p></li>
+</ol>
+</li>
+</ul>
+<p>This relationship is critical because it controls how quickly the basin fills and drains under varying inflow conditions.</p>
+<p>Using a storage unit type node:</p>
+<ul class="simple">
+<li><p>A storage node explicitly considers storage in the node – including (if data are correctly supplied) the sub-grade portion of the node</p></li>
+<li><p>Storage Node Attributes:</p>
+<ul>
+<li><p>Invert elevation (elevation of the bottom of the node)</p></li>
+<li><p>Max elevation (elevation of top of node)</p>
+<ol class="arabic simple">
+<li><p>Set to land surface to plot profile grade line in SWMM</p></li>
+<li><p>Set to land surface + added depth for simulating surface and subsurface (sewer) drainage</p></li>
+</ol>
+</li>
+<li><p>Depth-Area relationship:</p>
+<ol class="arabic simple">
+<li><p>Tabular or</p></li>
+<li><p>Functional</p></li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
 </section>
-<section id="performance-estimation">
-<h2>Performance Estimation<a class="headerlink" href="#performance-estimation" title="Link to this heading">#</a></h2>
+<section id="example-conceptualization">
+<h3>Example (Conceptualization)<a class="headerlink" href="#example-conceptualization" title="Link to this heading">#</a></h3>
+<p>Consider a detention pond receiving runoff from a 5-acre parking lot, discharging to a nearby stream. The goal is to use SWMM to approximate the hydraulic response of the system under a design storm.</p>
+<p>Model Setup (Simplified):</p>
+<ul class="simple">
+<li><p>Subcatchment Area: 5 acres</p></li>
+<li><p>Curve Number (CN): 98 (represents nearly impervious surface)</p></li>
+<li><p>Rainfall Event:</p>
+<ul>
+<li><p>Intensity: 1 in/hr</p></li>
+<li><p>Duration: 3 hours</p></li>
+</ul>
+</li>
+<li><p>Outlet Configuration:</p>
+<ul>
+<li><p>Low-flow outlet: 6-inch pipe at the basin invert</p></li>
+<li><p>Higher-flow outlet: 1-foot pipe located 2 feet above the basin bottom</p></li>
+</ul>
+</li>
+<li><p>Flow Path: All runoff is routed through the detention pond prior to discharge to the receiving stream</p></li>
+</ul>
+<p>This configuration creates a multi-stage outlet system, where:</p>
+<ul class="simple">
+<li><p>The smaller pipe controls low flows and initial drawdown</p></li>
+<li><p>The larger pipe activates at higher water levels, increasing discharge capacity and limiting excessive ponding</p></li>
+</ul>
+<p><img alt="" src="../../_images/DetentionSchematic.png" /></p>
+<p><strong>Model Implementation Notes</strong></p>
+<p>The SWMM model for this system is relatively simple to construct, consisting of:</p>
+<ul class="simple">
+<li><p>One subcatchment</p></li>
+<li><p>One storage node (detention pond)</p></li>
+<li><p>One or more outlet links (pipes or orifices)</p></li>
+</ul>
+<p>Input files for this example are available here: <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/ce3372notebook/lessons/28-swmm_storage/SWMM_Files">SWMM Input Files</a>.</p>
+<p>A representative model output screen (somewhat busy, but illustrative of key components) is shown below:</p>
+<p><img alt="" src="../../_images/SWMM_Model_Output.png" /></p>
+<p><strong>Interpretation Notes</strong></p>
+<p>When reviewing results, focus on:</p>
+<ul class="simple">
+<li><p>Water surface elevation vs. time (does the pond overtop?)</p></li>
+<li><p>Outflow hydrograph (is peak discharge reduced relative to inflow?)</p></li>
+<li><p>Storage utilization (is the basin sized appropriately, or under/over-designed?)</p></li>
+</ul>
+<p>This example is intended to connect conceptual design (basin + outlet structure) with modeled hydraulic performance, reinforcing how detention systems achieve peak flow mitigation in practice, and how one might employ a hydraulic model to inform design (selecting pond size to satisfy a design goal).</p>
+</section>
 </section>
 <section id="end-of-section">
 <h2>End of Section<a class="headerlink" href="#end-of-section" title="Link to this heading">#</a></h2>
@@ -524,9 +625,12 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concepts">Concepts</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#devices">Devices</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-estimation">Performance Estimation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#purposes">Purposes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hydraulic-performance-estimation-using-swmm">Hydraulic Performance Estimation (Using SWMM)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#storage-node-representation">Storage Node Representation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-conceptualization">Example (Conceptualization)</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-section">End of Section</a></li>
 </ul>
   </nav></div>
