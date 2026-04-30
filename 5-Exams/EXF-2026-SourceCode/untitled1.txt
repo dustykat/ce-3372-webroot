@@ -1,0 +1,837 @@
+%%%%%%%%%%%%%%%%% FE EXAM QUESTIONS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\item The pressure drop across a valve, through which 0.04 cubic meters per second of water flows, is measured to be 100 kPa. Estimate the loss coefficient if the nominal diameter of the valve is 8 cm. \\
+
+
+
+\item The figure below is a perspective view of a large at-grade water storage reservoir. The initial depth in the 50-foot diameter tank is  Z = 30 feet. What is the average outflow rate in cubic-feet-per-second, if the tank drains through the hole in the side in 24 hours? 
+
+\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+   \centering
+  \includegraphics[width=4in]{StorageTank.png} 
+   \caption{At-grade storage reservoir}
+   \label{fig:placeholder6}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%% EDMONSTON PUMPING PLANT ANALYSIS %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Figure \ref{fig:PumpPlantPicture} is a collection of annotated images of the Edmonston Pumping Plant and pipeline/tunnel system at the southern end of the California Aqueduct.  The 10+ mile system lifts water from the Edmonston forebay at elevation 1239 feet to the Tehachapi afterbay at elevation 3131 feet for subsequent distribution to various parts of southern California.
+
+Figure %\ref{fig:pumpcurve} 
+is a pump performance curve for one of the 14 pumps arranged in two 7-pump bays, each supplying one of the parallel 16-foot diameter steel pressure pipes. 
+\begin{figure}[ht!] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=6.5in]{PumpPlantPicture.jpg} 
+   \caption{Aerial images of Tehachapi Mountains, California;  showing the lift system for the California Aqueduct.}
+   \label{fig:PumpPlantPicture}
+\end{figure}
+
+\begin{figure}[ht!] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=6in]{pumpcurve.pdf} 
+   \caption{Lift pump performance curve for single pump.   System has 14 identical pumps in two parallel galleries;  each gallery has 7 pumps operating in parallel.}
+   \label{fig:pumpcurve}
+\end{figure}
+
+    \begin{enumerate}[a)]
+    %%%%%%%%%%%%%%%%%%%%%%%%
+\item Sketch a plan view layout of the system showing the various components, and station distances (from the pump station forebay).  Label the sketch with node elevations, node names, pipe names, and pipe lengths.).
+\item What are the pipe lengths between the indicated locations in Table \ref{tab:lengths} (i.e. complete the table)?
+\begin{table}[h!]
+   \centering
+    \caption{Selected Pipeline Locations and Pressures }
+   \begin{tabular}{p{0.5in}p{1.8in}p{1in}p{1in}p{1in}} % Column formatting, @{} suppresses leading/trailing space
+\hline
+\hline
+ID & Location & Distance from Pumps (feet) & Connection Sequence & Pipe Barrel Length  \\
+\hline
+\hline
+1& Edmonston Pump House & ~~~~~0  & N/A & 0 \\
+\hline
+2& Surge Tank & ~7,671 & 1 to 2 & ~~ \\
+\hline
+3& Pipes to Surface & 19,535 & 2 to 3 & ~~ \\
+\hline
+4& Pipes to Ground & 21,738 & 3 to 4 & ~~ \\
+\hline
+5& High Tunnel & 33,579 & 4 to 5 & ~~ \\
+\hline
+6& Tehachapi Afterbay & 55,256 & 5 to 6 & ~~ \\
+\hline
+   \end{tabular}
+   \label{tab:lengths}
+\end{table}
+\item What is the total length of pipe/tunnel required (in miles)?
+\item What is the total head at the Edmonston Pump Forebay (the pumphouse)?
+\item What hydraulic element is used to represent the forebay?
+\item What is the total head at the Tehachapi Afterbay?
+\item What hydraulic element is used to represent the afterbay?
+\item What head-loss model is most appropriate for this analysis?
+\item What is the total discharge in the system in cubic-feet-per-second when all 14 pumps are running?
+\item What is the pressure at the locations in Table \ref{tab:pressures} (i.e. complete the table)?
+\begin{table}[h!]
+   \centering
+    \caption{Selected Pipeline Locations and Pressures }
+   \begin{tabular}{p{0.5in}p{2in}p{1in}p{0.7in}p{0.7in}} % Column formatting, @{} suppresses leading/trailing space
+\hline
+\hline
+ID & Location & Distance from Pumps (feet) & Elevation (feet) & Pressure (psi) \\
+\hline
+\hline
+0& Edmonston Pump House (suction) & ~~~~~0  & 1,239 & ~~ \\
+\hline
+0& Edmonston Pump House (discharge)& ~~~~~0  & 1,239 & ~~ \\
+\hline
+2& Surge Tank & ~7,671 & 3,121 & ~~ \\
+\hline
+3& Pipes to Surface & 19,535 & 3,119 & ~~ \\
+\hline
+4& Pipes to Ground & 21,738 & 3,131 & ~~ \\
+\hline
+5& High Tunnel & 33,579 & 3,566 & ~~ \\
+\hline
+6& Tehachapi Afterbay & 55,256 & 3,131 & ~~ \\
+\hline
+   \end{tabular}
+   \label{tab:pressures}
+\end{table}
+\item What is the velocity of water the each of the pipes?
+\item What is the mechanical energy required to move the water in kW-h  (kilowatt-hours)?
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%PART 2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\item \label{prob:EPANET} (46 Points) Consider the pipe network portion shown in Figure \ref{fig:Pipes}.
+\begin{quote}
+The reservoir has a pool elevation of 1310 meters\\
+\\
+Node 1 elevation is 200.0 meters; Node 2 elevation is 150.0 meters\\
+Node 3 elevation is 150.0 meters; Node 4 elevation is 100.0 meters\\
+Node 5 elevation is 100.0 meters; Node 6 elevation is 50.0 meters\\
+\\
+P1 roughness is $e=0.045$ mm; P2  roughness is $e=0.045$ mm\\
+P3 roughness is $e=0.045$ mm; P4  roughness is $e=0.090$ mm\\
+P5 roughness is $e=0.045$ mm; P6  roughness is $e=0.045$ mm\\
+P7 roughness is $e=0.045$ mm; P8  roughness is $e=0.045$ mm\\
+
+\end{quote}
+\begin{figure}[h!] %  figure placement: here, top, bottom, or page
+\centering
+   \includegraphics[width=6.5in]{2018Pipeline.jpg}
+   \caption{Pipe Network}
+   \label{fig:Pipes} 
+\end{figure}
+\clearpage
+
+\begin{enumerate}[a)]
+\item Use EPANET to determine the discharge, velocity, and head loss in each pipe and populate Table \ref{tab:pipes}
+
+% Requires the booktabs if the memoir class is not being used
+\begin{table}[htbp]
+   %\centering
+      \caption{Estimated $Q$,$V$, and $\Delta h$ in each pipe in Figure \ref{fig:Pipes} \\}
+   %\topcaption{Table captions are better up top} % requires the topcapt package
+   \begin{tabular}{| p{0.6in} | p{1.3in} | p{1.3in} | p{1.3in} |} % Column formatting, @{} suppresses leading/trailing space
+   \hline
+   \hline
+Pipe ID & Discharge ($m^3/s$) & Velocity ($m/s$) & Head Loss ($m$)\\
+\hline
+\hline
+1 &  ~ & ~ & ~ \\
+~ &  ~ & ~ & ~ \\
+~ &  ~ & ~ & ~ \\
+\hline
+2 &  ~ & ~ & ~ \\
+~ &  ~ & ~ & ~ \\
+~ &  ~ & ~ & ~ \\
+\hline
+3 &  ~ & ~ & ~ \\
+~ &  ~ & ~ & ~ \\
+~ &  ~ & ~ & ~ \\
+\hline
+4 &  ~ & ~ & ~ \\
+~ &  ~ & ~ & ~ \\
+~ &  ~ & ~ & ~ \\
+\hline
+5 &  ~ & ~ & ~ \\
+~ &  ~ & ~ & ~ \\
+~ &  ~ & ~ & ~ \\
+\hline
+6 &  ~ & ~ & ~ \\
+~ &  ~ & ~ & ~ \\
+~ &  ~ & ~ & ~ \\
+\hline
+7 &  ~ & ~ & ~ \\
+~ &  ~ & ~ & ~ \\
+~ &  ~ & ~ & ~ \\
+\hline
+8 &  ~ & ~ & ~ \\
+~ &  ~ & ~ & ~ \\
+~ &  ~ & ~ & ~ \\
+\hline
+\hline
+   \end{tabular}
+   \label{tab:pipes}
+\end{table}
+
+\clearpage
+\item Use EPANET to determine the total head and pressure at each node and populate Table \ref{tab:booktabs} below.
+% Requires the booktabs if the memoir class is not being used
+\begin{table}[htbp]
+   %\centering
+      \caption{$TDH$, $z$,  and $P$ at  each node in Figure \ref{fig:Pipes} \\}
+   %\topcaption{Table captions are better up top} % requires the topcapt package
+   \begin{tabular}{| p{1in} | p{1.1in} | p{1in} | p{1.1in} | } % Column formatting, @{} suppresses leading/trailing space
+   \hline
+   \hline
+Node ID & Total Head (m) & Elevation (m) & Pressure (kPa) \\
+\hline
+\hline
+Reservoir & 1310 & N/A & 0  \\
+~ & ~ & ~ & ~  \\
+~ & ~ & ~ & ~  \\
+\hline
+1 & ~ & 200 & ~  \\
+~ & ~ & ~ & ~  \\
+~ & ~ & ~ & ~  \\
+\hline
+2 & ~ & 150 & ~  \\
+~ & ~ & ~ & ~  \\
+~ & ~ & ~ & ~  \\
+\hline
+3 & ~ & 150 & ~  \\
+~ & ~ & ~ & ~  \\
+~ & ~ & ~ & ~  \\
+\hline
+4 & ~ & 100 & ~  \\
+~ & ~ & ~ & ~  \\
+~ & ~ & ~ & ~  \\
+\hline
+5 & ~ & 100 & ~  \\
+~ & ~ & ~ & ~  \\
+~ & ~ & ~ & ~  \\
+\hline
+6 & ~ & 50 & ~  \\
+~ & ~ & ~ & ~  \\
+~ & ~ & ~ & ~  \\
+\hline
+\hline
+
+   \end{tabular}
+
+   \label{tab:booktabs}
+\end{table}
+\end{enumerate}
+
+
+\begin{enumerate}[i)]
+\item Attach a \textbf{screen capture} of your EPANET simulation here
+\item Attach the EPANET \textbf{summary report} here
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%% SEWER QUESTIONS %%%%%%%%%%% 
+\clearpage
+\item (10 points) In a sewer system if design criteria require a minimum velocity of 2 ft/sec, and your design cannot produce that velocity at the design flow, what are some changes can you make in your design? 
+\item (10 points) Why is population forecasting important for water distribution and wastewater collection system designs? 
+\item (10 points) What is a lift station, and when are they necessary?  
+\item (10 points) Define the time of concentration for a drainage area.  
+\item (10 points) Define the inlet time for an urbanized drainage area. 
+\item (10 points) Define inflow and infiltraton in the context of a sanitary sewer system.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%% PROBLEM 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item (1 points) The hydraulic radius in a conduit containing a flowing liquid is
+\begin{enumerate} [(A)]
+\item	the mean radius from the center of flow to the wetted side of the conduit
+\item	the ratio of the cross-sectional area of the conduit and the wetted perimeter
+\item	the ratio of the wetted perimeter and the cross-sectional area of the conduit
+\item	the ratio of the cross-sectional area of flow and the wetted perimeter
+\end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%% PROBLEM 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item (4 points) The rational runoff coefficient for a $14.81$~acre parcel property is $0.35$.  
+The rainfall intensity is $4.56$ inches per hour.  
+Determine the anticipated peak discharge from this property
+
+% is anticipated to be about
+%%standard answer set
+%\begin{enumerate} [(A)]
+%\item $22~ft^3/s$
+%\item $24~ft^3/s$
+%\item $38~ft^3/s$
+%\item $70~ft^3/s$
+%\item $22~ft^3/s$
+%\item $24~ft^3/s$
+%\item $38~ft^3/s$
+%\item $70~ft^3/s$
+%\end{enumerate}
+
+\item (4 points) The rational runoff coefficient for a $300X200$-meter property with a slope of $3$\% is $0.35$.  The rainfall intensity is $116$ mm/hr.  Determine the anticipated peak discharge from this property
+
+%The peak discharge from this property is anticipated to be about
+%%standard answer set
+%\begin{enumerate} [(A)]
+%\item $2200~m^3/hr$
+%\item $2400~m^3/hr$
+%\item $3800~m^3/hr$
+%\item $7000~m^3/hr$
+%\end{enumerate}
+%======== SOLUTION ===========
+% B   Apply Rational Runoff Formula (in SI units)
+% NCEES pp 159
+%=============================
+%
+\item (5 points)  A storm sewer (reinforced concrete pipe) is 400-feet long and 30-inches in diameter.  The sewer flows from a junction box (invert elevation $101.00$ feet) to a lift station sump (invert elevation $100.00$ feet).  Assuming Manning's roughness coefficient is $0.013$ for all flow depths, determine the maximum sewer flow capacity without surcharge 
+
+%is about\footnote{For partial credit show work}
+%% US Customary Versions
+%\begin{enumerate} [(A)]
+%\item  $17.8$ cfs
+%\item  $19.2$ cfs
+%\item  $20.6$ cfs
+%\item  $22.1$ cfs
+%\item  $28.9$ cfs
+%\item  $31.2$ cfs
+%\item  $33.4$ cfs
+%\item  $35.9$ cfs
+%\end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% n=0.013, So = 1/400, D = 30/12, Qf = 20.6 , Q= 22.1    % %
+% n=0.013, So = 1/400, D = 36/12, Qf = 33.4 , Q = 35.9    % %
+% n=0.015, So = 1/400, D = 30/12, Qf = 17.8 , Q= 19.1     %%
+% n=0.015, So = 1/400, D = 36/12, Qf = 28.9 , Q = 31.2    %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%% PROBLEM 3 BEGIN %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%====== SOLUTION ==========================
+% C  use Manning's equation for full pipe flow
+%  NCEES pp 160-161
+%==========================================
+%=======================================================================
+%\clearpage
+\item (5 points) The storm sewer in the question above is flowing at $\frac{3}{4}$ full.  What is the discharge in the sewer?
+%standard answer set
+%\begin{enumerate} [(A)]
+%\item  $3.6$ cfs
+%\item  $8.1$ cfs
+%\item  $12.5$ cfs
+%\item  $18.1$ cfs
+%\item $22~ft^3/s$
+%\item $24~ft^3/s$
+%\item $38~ft^3/s$
+%\item $70~ft^3/s$
+%\end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%% PROBLEM 4 DONE %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item  (5 points) A pipe with a diameter of $2.4$ meters is depicted in Figure \ref{fig:CircularSewerToo}.   The pipe is flowing partially full.
+
+\begin{figure}[h!] %  figure placement: here, top, bottom, or page
+\centering
+   \includegraphics[width=1.9in]{CircularSewerToo.jpg}
+   \caption{Circular channel flowing partially full.}
+   \label{fig:CircularSewerToo} 
+\end{figure}
+
+Determine the hydraulic radius of flow in the circular section.
+%%standard answer set
+%\begin{enumerate} [(A)]
+%\item $0.44$ m
+%\item $0.88$ m
+%\item $1.30$ m
+%\item $1.80$ m
+%\item $0.44$ m
+%\item $0.88$ m
+%\item $1.30$ m
+%\item $1.80$ m
+%\end{enumerate}
+~\clearpage
+\item  (5 points) A smooth concrete channel is depicted in Figure \ref{fig:TriangleChannel}.  The channel's dimensionless slope in the direction of flow is $0.005$.  The flow width at the surface is $2$-meters. 
+
+%using the Hazen-Williams friction formula?
+
+\begin{figure}[h!] %  figure placement: here, top, bottom, or page
+\centering
+   \includegraphics[width=2.2in]{TriangleChannel.jpg}
+   \caption{Triangular channel.}
+   \label{fig:TriangleChannel} 
+\end{figure}
+
+Determine the flow rate in the channel.
+
+%%standard answer set
+%\begin{enumerate} [(A)]
+%\item $0.80~ m^3/sec$
+%\item $1.30~ m^3/sec$
+%\item $1.45~ m^3/sec$
+%\item $2.20~ m^3/sec$
+%\item $22~ft^3/s$
+%\item $24~ft^3/s$
+%\item $38~ft^3/s$
+%\item $70~ft^3/s$
+%\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%% PROBLEM 6 BEGIN %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\clearpage
+\item (10 points) A 24-inch diameter sewer pipe, with Manning's n of $0.015$ is laid on slope $S_0 =0.01$ as shown in Figure \ref{fig:PipeOnSlope}.    
+
+\begin{figure}[h!] %  figure placement: here, top, bottom, or page
+\centering
+   \includegraphics[width=2in]{PipeOnSlope.jpg}
+   \caption{Sewer pipe sketch}
+   \label{fig:PipeOnSlope} 
+\end{figure}
+
+Use Manning's equation and the depth-area, and the depth-perimeter equations to complete Table \ref{tab:SewerPipes}.
+% Requires the booktabs if the memoir class is not being used
+\begin{table}[htbp]
+   \centering
+   \caption{Depth-Area, Depth-Perimeter, Depth-Hyd. Radius, and Discharge for Circular Sewer}
+   \begin{tabular}{p{1in}p{1in}p{1in}p{1in}p{1in}}
+   ~ & ~ & ~  & ~ & ~ \\
+$y$ ($ft$)~~& $A$ ($ft^2$) & $P_w$ ($ft$) & $R_h$ ($ft$) & $Q$ ($ft^3/sec$) \\
+\hline
+\hline
+~ & ~ & ~  & ~ & ~ \\
+1.00 & ~ & ~  & ~ & ~ \\
+~& ~ & ~  & ~ & ~ \\
+\hline
+~ & ~ & ~  & ~ & ~ \\
+2.00 & ~ & ~  & ~ & ~ \\
+~ & ~ & ~  & ~ & ~ \\
+\hline
+   \end{tabular}
+   \label{tab:SewerPipes}
+\end{table}
+
+
+
+%%%%%%%%%%%%%%%%%%%%% STORM SEWER PIPE SIZE BY RATIONAL METHOD %%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\item \label{prob:DrainDesign1} (15 points)Consider the drainage area depicted in Figure \ref{fig:DrainageCase1}.  The 6.0 acre drainage area has a runoff coefficient of 0.65, and an inlet time (time of concentration to the inlet depicted in the figure) of 17 minutes.  The pipes are concrete (Manning's $n$ = 0.013).  The initial invert elevations for the junction boxes (MH-1, MH-2, MH-3) are 323.2, 321.1, and 319.0 feet, respectively.
+
+\begin{figure}[ht!] %  figure placement: here, top, bottom, or page
+\centering
+   \includegraphics[width=6in]{DrainageCase1.jpg}
+   \caption{Drainage System Layout}
+   \label{fig:DrainageCase1} 
+\end{figure}
+Equation \ref{eqn:intensity1} is the 10-year ARI intensity equation for the area, where $I$ is intensity in inches-per-hour, and $T_c$ is the characteristic time, in minutes.
+
+\begin{equation}
+I = \frac{56.6}{(T_c + 8.6)^{0.823}}
+\label{eqn:intensity1}
+\end{equation}
+
+%Questions related to the drainage design begin on the next page.
+%~\\
+%\begin{tabular}{p{6in}}
+%~\\
+%\hline
+%\end{tabular}
+%\clearpage
+\begin{enumerate}[a)]
+\item What is the dimensionless slope of the pipe run P1 (connecting MH-1 and MH-2)? 
+\item What is the dimensionless slope of the pipe run P2 (connecting MH-2 and MH-3)?  
+\item What is the $CA$ value for drainage area DA-1?  
+\item What is the $\sum{CA}$ value (sum of the upstream products of runoff coefficients and contributing areas) at junction MH-1?  
+\item What is the $\sum{CA}$ value (sum of the upstream products of runoff coefficients and contributing areas) at junction MH-2?  
+\item What is the time of concentration to be used to compute the discharge leaving MH-1?  
+\item What is the rainfall intensity for this time of concentration?  
+\item What is the value of peak discharge leaving MH-1?  
+\item What is the pipe diameter for pipe P-1 required the carry the design flow at full pipe depth?  
+\item What is the flow velocity in pipe P-1?  
+\item What is the pipe travel time for pipe P-1?  
+\item What is the value of peak discharge leaving MH-2? (Explain your reasoning)  
+\item What is the pipe diameter for pipe P-2 required the carry the design flow at full pipe depth?  
+\item What is the flow velocity in pipe P-2?  
+\item What is the pipe travel time for  pipe P-2?  
+\end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%% SANITARY SEWER I&I INTERPRETATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\item (10 points) Figure \ref{fig:InflowInfilatration1} shows ten (10) sources of non-permitted drainage into a sanitary sewer system.
+For each listed source classify the source type as infiltration or inflow and complete Table \ref{tab:IandITwo}
+\begin{figure}[h!] %  figure placement: here, top, bottom, or page
+\centering
+   \includegraphics[width=6in]{InflowInfilatration1.jpg}
+   \caption{Schematic of Inflow and Infiltration Sources}
+   \label{fig:InflowInfilatration1} 
+\end{figure}
+
+\begin{table}[h!]
+   \centering
+   \caption{Inflow and Infiltration Source Classification}
+   \begin{tabular}{c l  c} % Column formatting, @{} suppresses leading/trailing space
+   ~ & ~ & \\
+   \hline
+   \hline
+      Source ID & Source Name & Source Type (Inflow or Infiltration?) \\
+      \hline
+      1 &  Cracked/Broken Pipe &  \\
+      2 &  Foundation Drain &  \\
+      3 & Driveway or Area Drain &  \\  
+      4 & Downspout   \\   
+      5 & Leaking/Bad Joints &  \\ 
+      6 & Leaking/Bad Connection &  \\
+      7 & Sump Pump &  \\  
+      8 & Footer Drain &  \\   
+      9 & Entrance Way Drain & \\ 
+      10 & Wall/Floor Seepage &  \\  
+      \hline
+      \hline
+   \end{tabular}
+   \label{tab:IandITwo}
+\end{table}
+
+
+\clearpage
+%%%%%%%%%%%%%%%%% LAZYBROOK SWMM MODEL %%%%%%%%%%%%%%%%%%
+\item \label{prob:DrainDesign1} (100 points) Consider the drainage area depicted in Figure \ref{fig:Lazybrook}. 
+
+\begin{figure}[ht!] %  figure placement: here, top, bottom, or page
+\centering
+   \includegraphics[width=6in]{lazybrook_drainage.png}
+   \caption{Drainage System Layout}
+   \label{fig:Lazybrook} 
+\end{figure}
+
+Table \ref{tab:drainageareas} lists the hydrologic features of the four drainage areas.
+ 
+\begin{table}[ht!]
+   %\centering
+      \caption{Hydrologic data for each drainage area in Figure \ref{fig:Lazybrook} \\}
+   %\topcaption{Table captions are better up top} % requires the topcapt package
+   \begin{tabular}{| p{0.6in} | p{0.9in} | p{0.9in} | p{1.3in} | p{1.3in} |} % Column formatting, @{} suppresses leading/trailing space
+   \hline
+   \hline
+Area ID & Area ($acres$) & Width ($feet$) & Avg. Slope ($\%$) & NRCS CN \\
+\hline
+\hline
+DA\_1 &  25 & 1073 & 0.2 & 85\\
+DA\_2 &  25 & 1073 & 0.2 & 85\\
+DA\_3 &  17 & ~719 & 0.8 & 85\\
+DA\_4 &  ~8 & ~688 & 0.9 & 85\\
+\hline
+\hline
+   \end{tabular}
+   \label{tab:drainageareas}
+\end{table}
+
+
+
+\begin{table}[ht!]
+   %\centering
+      \caption{Elevation data for each junction in Figure \ref{fig:Lazybrook} \\}
+   %\topcaption{Table captions are better up top} % requires the topcapt package
+   \begin{tabular}{| p{1.6in} | p{1.6in} | p{1.6in} |} % Column formatting, @{} suppresses leading/trailing space
+   \hline
+   \hline
+Junction ID & Invert Elevation ($feet$) & Land Elevation ($feet$) \\
+\hline
+\hline
+J-DA\_1 &  65 & 70 \\
+J-DA\_2 &  60 & 66 \\
+J-DA\_3 &  56 & 66 \\
+J-DA\_4 &  48 & 62 \\
+OUTFALL &  35 & N/A \\
+\hline
+\hline
+   \end{tabular}
+   \label{tab:junctions}
+\end{table}
+
+\clearpage
+The red dots on Figure \ref{fig:Lazybrook} are inlets to the storm sewer system (indicated by the blue pipes).  The red rectangle (on the East side of the figure) is a stormwater outfall.  Table \ref{tab:junctions} lists the invert elevations, and land surface elevations of these points. 
+
+The system is to be sized using the design storm shown in Table \ref{tab:storm}\footnote{A 10-inch, 24 hour, SCS Type-2 - with the first and last hour trimmed}
+
+\begin{table}[ht!]
+   \centering
+      \caption{Design Storm for Drainage System in Figure \ref{fig:Lazybrook} \\}
+   %\topcaption{Table captions are better up top} % requires the topcapt package
+   \begin{tabular}{| p{1.6in} | p{1.7in} |} % Column formatting, @{} suppresses leading/trailing space
+   \hline
+   \hline
+Elapsed Time & Rainfall Intensity ($\frac{in}{hr}$) \\
+\hline
+\hline
+00:00 & 0.11 \\
+01:00 & 0.11 \\
+02:00 & 0.13 \\
+03:00 & 0.13 \\
+04:00 & 0.15 \\
+05:00 & 0.17 \\
+06:00 & 0.19 \\
+07:00 & 0.21 \\
+08:00 & 0.27 \\
+09:00 & 0.34 \\
+10:00 & 0.54 \\
+11:00 & 4.28 \\
+12:00 & 1.09 \\
+13:00 & 0.48 \\
+14:00 & 0.34 \\
+15:00 & 0.26 \\
+16:00 & 0.22 \\
+17:00 & 0.19 \\
+18:00 & 0.17 \\
+19:00 & 0.14 \\
+20:00 & 0.13 \\
+21:00 & 0.12 \\
+22:00 & 0.12 \\
+23:00 & 0.11 \\
+\hline
+\hline
+   \end{tabular}
+   \label{tab:storm}
+\end{table}
+
+The blue line segments on Figure \ref{fig:Lazybrook} are pipes that comprise the storm sewer system.   Table \ref{tab:pipes} lists the proposed design (i.e. pipe lengths, diameters, connection(s), and offsets) for the storm sewer.
+
+\clearpage
+
+\begin{table}[ht!]
+   %\centering
+      \caption{Hydraulic data for each pipe in Figure \ref{fig:Lazybrook} \\}
+   %\topcaption{Table captions are better up top} % requires the topcapt package
+   \begin{tabular}{| p{0.6in} | p{1.7in} | p{0.9in} | p{0.9in} | p{1.4in} |} % Column formatting, @{} suppresses leading/trailing space
+   \hline
+   \hline
+Pipe ID & Connection (Start:End) & Diameter ($feet$) & Length ($feet$) & Offset (inlet:outlet) \\
+\hline
+\hline
+P\_1 & DA\_1 : DA\_2 & 3.0 & 1000 & 0:0 \\
+P\_2 & DA\_2 : DA\_4 & 3.0 & 1000 & 0:2 \\
+P\_3 & DA\_3 : DA\_4 & 3.0 & 1000 & 0:2 \\
+P\_4 & DA\_4 : OUTFALL & 5.0 & 1000 & 0:0\\
+\hline
+\hline
+   \end{tabular}
+   \label{tab:pipes}
+\end{table}
+
+Using these data build a SWMM model of the system.  Assume the outfall is a fixed pool with depth 5 feet (water elevation 40 feet).   Use DYNWAVE routing, and the SCS CN infiltration method in SWMM. 
+
+Use the model to inform answers to:
+
+\begin{enumerate}[A)]
+\item Make a screen capture of your working model. 
+\item How many subcatchments are in your model? 
+\item Are all the pipes below grade?  
+\item Does the system surcharge during the design storm?  
+\item If yes, when does the surcharge occur (what time)? 
+\item What is the maximum flow velocity in the sewer system?  
+\item Where and when does this maximum occur (which pipe)?  
+\item Use SWMM to sketch a profile of the sewer system and the water surface elevation at hour 12:00 of the simulation, starting at J-DA\_1 and ending at the OUTFALL 
+\item Use SWMM to generate a time series (a plot) of the precipitation input  
+\item Use SWMM to generate a time series (a plot) of runoff in subcatchment DA\_2  
+\item Modify your model to make pipes P\_1 and P\_2, into 5.0 foot diameter pipes, keeping them at least 2 feet below grade.  
+\item List the required changes (there are several, invert elevations must be changed, and offsets need changing)
+\item Does the system surcharge during the design storm?  
+\item Use SWMM to sketch a profile of the sewer system and the water surface elevation at hour 12:00 of the simulation, starting at J-DA\_1 and ending at the OUTFALL 
+\item Use SWMM to generate a time series (a plot) of runoff in subcatchment DA\_2  
+\end{enumerate}
+\clearpage
+
+ 
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%% SHEILDS DIAGRAM INTERPRETATION FOR OUTFALL DESIGN %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item (30 points) Figure \ref{fig:grainSize} is a grain size distribution curve for a soil sample in a receiving stream.
+Figure \ref{fig:Hjulstrom} is a Hjulstrom diagram; 
+\begin{figure}[ht!] %  figure placement: here, top, bottom, or page
+\centering
+   \includegraphics[height=3.4in]{grainSize.jpg}
+   \caption{Grain Size Distribution for Nankai Outfall}
+   \label{fig:grainSize} 
+\end{figure}
+
+\begin{figure}[ht!] %  figure placement: here, top, bottom, or page
+\centering
+   \includegraphics[height=3.4in]{Hjulstrom2.jpg}
+   \caption{Hjulstrom Diagram for Sediment Transport}
+   \label{fig:Hjulstrom} 
+\end{figure}
+
+\clearpage
+Using the grain size distribution and the Hjulstrom diagram;
+
+\begin{enumerate}[a)]
+\item Estimate the median grain diameter, in millimeters.  Draw directly on the diagram to show where the mean grain size is plotted.
+\item Estimate the \textbf{largest} particle diameter represented in the soil sample.  Draw directly on the diagram to show where the largest grain size is plotted.
+\item Estimate the \textbf{smallest} particle diameter represented in the soil sample.  Draw directly on the diagram to show where the smallest grain size is plotted.
+\item Draw directly on the diagram the three sizes determined above (smallest, median, and largest). 
+\item Determine the maximum stream velocity, in feet per second, at the outfall to prevent erosion if the smallest size is considered.
+\item Determine the maximum stream velocity, in feet per second, at the outfall to prevent erosion if the median size is considered. 
+\item Determine the maximum stream velocity, in feet per second, at the outfall to prevent erosion if the largest size is considered. 
+\item Determine the maximum stream velocity, in feet per second,  at the outfall to prevent erosion if no material in the sample is to be mobilized. 
+\end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\item \label{prob:DrainDesign2} Consider the drainage area depicted in Figure \ref{fig:DrainageCase2}.  Drainage area DA-1 is a 6.0 acre drainage area has a runoff coefficient of 0.65, and an inlet time (time of concentration to the inlet depicted in the figure) of 17 minutes.  
+%Drainage area DA-2 is a 5.1 acre drainage area has a runoff coefficient of 0.55, and an inlet time (time of concentration to the inlet depicted in the figure) of 14 minutes.
+%The pipes, P-1 and P-2 are concrete (Manning's $n$ = 0.013).  
+%The initial invert elevations for the junction boxes (MH-1, MH-2, MH-3) are 323.2, 321.1, and 319.0 feet, respectively.
+%
+%\begin{figure}[ht!] %  figure placement: here, top, bottom, or page
+%\centering
+%   \includegraphics[width=6in]{DrainageCase2.jpg}
+%   \caption{Drainage System Layout}
+%   \label{fig:DrainageCase2} 
+%\end{figure}
+%Equation \ref{eqn:intensity2} is the 10-year ARI intensity equation for the area, where $I$ is intensity in inches-per-hour, and $T_c$ is the characteristic time, in minutes.
+%
+%\begin{equation}
+%I = \frac{56.6}{(T_c + 8.6)^{0.823}}
+%\label{eqn:intensity2}
+%\end{equation}
+%%~\\
+%%\begin{tabular}{p{6in}}
+%%~\\
+%%\hline
+%%\end{tabular}
+%\begin{enumerate}[a)]
+%\item What is the dimensionless slope of the pipe run P1 (connecting MH-1 and MH-2)? ~\\
+%\item What is the dimensionless slope of the pipe run P2 (connecting MH-2 and MH-3)? ~\\
+%\item What is the $CA$ value for drainage area DA-1? ~\\
+%\item What is the $CA$ value for drainage area DA-2? ~\\
+%\item What is the $\sum{CA}$ value (sum of the upstream products of runoff coefficients and contributing areas) at junction MH-1? ~\\
+%\item What is the $\sum{CA}$ value (sum of the upstream products of runoff coefficients and contributing areas) at junction MH-2? ~\\~\\
+%\item What is the time of concentration to be used to compute the discharge leaving MH-1? ~\\~\\
+%\item What is the rainfall intensity for this time of concentration? ~\\~\\
+%\item What is the value of peak discharge leaving MH-1? ~\\~\\
+%\item What is the pipe diameter for pipe P-1 required the carry the design flow at full pipe depth? ~\\~\\
+%\item What is the flow velocity in pipe P-1? ~\\~\\
+%\item What is the pipe travel time for pipe P-1?~\\~\\
+%\item What is the value of peak discharge leaving MH-2? (Explain your reasoning) ~\\~\\
+%\item What is the pipe diameter for pipe P-2 required the carry the design flow at full pipe depth? ~\\~\\
+%\item What is the flow velocity in pipe P-2? ~\\~\\
+%\item What is the pipe travel time for  pipe P-2?
+%\end{enumerate}
+%\clearpage
+%
+%\item \label{prob:DrainDesign3} Consider the drainage area depicted in Figure \ref{fig:DrainageCase3}.  
+%Drainage area DA-1 is a 6.0 acre drainage area has a runoff coefficient of 0.65, and an inlet time (time of concentration to the inlet depicted in the figure) of 17 minutes.  
+%Drainage area DA-2 is a 5.1 acre drainage area has a runoff coefficient of 0.55, and an inlet time (time of concentration to the inlet depicted in the figure) of 14 minutes.
+%Drainage area DA-3 is a 3.5 acre drainage area has a runoff coefficient of 0.70, and an inlet time (time of concentration to the inlet depicted in the figure) of 12 minutes.
+%The pipes, P-1 and P-2 are concrete (Manning's $n$ = 0.013).  
+%The initial invert elevations for the junction boxes (MH-1, MH-2, MH-3) are 323.2, 321.1, and 319.0 feet, respectively.
+%
+%\begin{figure}[ht!] %  figure placement: here, top, bottom, or page
+%\centering
+%   \includegraphics[width=6in]{DrainageCase3.jpg}
+%   \caption{Drainage System Layout}
+%   \label{fig:DrainageCase3} 
+%\end{figure}
+%Equation \ref{eqn:intensity3} is the 10-year ARI intensity equation for the area, where $I$ is intensity in inches-per-hour, and $T_c$ is the characteristic time, in minutes.
+%
+%\begin{equation}
+%I = \frac{56.6}{(T_c + 8.6)^{0.823}}
+%\label{eqn:intensity3}
+%\end{equation}
+%%~\\
+%%\begin{tabular}{p{6in}}
+%%~\\
+%%\hline
+%%\end{tabular}
+%\begin{enumerate}[a)]
+%\item What is the dimensionless slope of the pipe run P1 (connecting MH-1 and MH-2)? ~\\~\\
+%\item What is the dimensionless slope of the pipe run P2 (connecting MH-2 and MH-3)? ~\\~\\ ~\newpage
+%\item What is the $CA$ value for drainage area DA-1? ~\\~\\
+%\item What is the $CA$ value for drainage area DA-2? ~\\~\\
+%\item What is the $CA$ value for drainage area DA-3? ~\\~\\
+%\item What is the $\sum{CA}$ value (sum of the upstream products of runoff coefficients and contributing areas) at junction MH-1? ~\\~\\
+%\item What is the $\sum{CA}$ value (sum of the upstream products of runoff coefficients and contributing areas) at junction MH-2? ~\\~\\
+%\item What is the time of concentration to be used to compute the discharge leaving MH-1? ~\\~\\
+%\item What is the rainfall intensity for this time of concentration? ~\\~\\
+%\item What is the value of peak discharge leaving MH-1? ~\\~\\
+%\item What is the pipe diameter for pipe P-1 required the carry the design flow at full pipe depth?~\\~\\
+%\item What is the flow velocity in pipe P-1?~\\~\\
+%\item What is the pipe travel time for pipe P-1?~\\~\\ 
+%\item What is the time of concentration to be used to compute the discharge leaving MH-2? ~\\~\\
+%\item What is the rainfall intensity for this time of concentration? ~\\~\\
+%\item What is the value of peak discharge leaving MH-2? ~\\~\\
+%\item What is the pipe diameter for pipe P-2 required the carry the design flow at full pipe depth?~\\~\\
+%\item What is the flow velocity in pipe P-2?~\\~\\
+%\item What is the pipe travel time for pipe P-2?
+%\end{enumerate}
+%\clearpage
+%
+%\item \label{prob:FlowDepth}
+%Using the pipe sizes you determined in Problem \ref{prob:DrainDesign3}, resize the pipes so the pipes convey the design flows at 1/2 full. Round your results up to the nearest 0.1 foot value.
+%\begin{figure}[h!] %  figure placement: here, top, bottom, or page
+%\centering
+%   \includegraphics[height=5in]{hydraulic-elements-simple.jpg}
+%   \caption{Hydraulic elements chart}
+%   \label{fig:hydraulic-elements-simple} 
+%\end{figure}
+%~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\
+%\begin{enumerate}[a)]
+%\item Diameter P-1 =
+%\item Diameter P-2 =
+%\end{enumerate}
+%\clearpage
+%
+%\item \label{prob:DrainDesignReset}
+%Using the pipe sizes you determined in Problem \ref{prob:FlowDepth}, determine the required invert elevations of junction boxes MH-1 and MH-2 that maintain the pipe slopes of pipes P-1 and P-2, maintain the junction box elevation of MH-3, and match soffit elevations (top of pipe) at each junction.  Make an elevation view sketch of the conduit system.
+%~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%PROBLEM 6 SWMM INTERPRETATION %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\item (32 points) Listing \ref{lst:SWMM Input} is a SWMM input file listing, and Listing \ref{lst:SWMM Summary} is a SWMM summary file for a particular sewer system.   
+%Using these files answer the following questions:~\\
+%\begin{enumerate}[a)]
+%\item How many sub-catchments are modeled?~\\
+%\item How many outfalls are modeled?~\\
+%\item How many conduits are modeled?~\\
+%\item What is the peak intensity of the design storm applied in the SWMM model ?~\\
+%\item How long is the storm applied to the drainage system?~\\
+%\item How long is the drainage system simulation run? \\
+%\item What is the maximum discharge from the system in cubic feet per second?~\\
+%\item What is the diameter in inches of the most downstream conduit?~\\
+%\item How many junctions are modeled?~\\
+%\item Are any of the conduits offset relative to a connecting junction?
+%~\\
+%
+%
+%\item Which drawing in Figure \ref{fig:boundary-condition} is representative of the downstream (outfall) boundary condition in the SWMM model?
+%\begin{figure}[ht!] %  figure placement: here, top, bottom, or page
+%\centering
+%   \includegraphics[width=6in]{boundary-condition.pdf}
+%   \caption{Conceptual downstream boundary conditions}
+%   \label{fig:boundary-condition} 
+%\end{figure}
+%
+%\item Which conduit had the largest peak flow?~\\
+%\item Which conduit had the smallest peak flow?~\\
+%\item What was the depth of water in the conduit with the smallest flow (in feet)?~\\
+%\item What was the depth of water in the conduit with the largest flow (in feet)?~\\
+%\item What was the total runoff, in watershed inches, for the model?~\\
+%\item What hydrologic method was used in the model?~\\
+%\item What flow routing method was used in the model?~\\
+%\item What was the run date of the model?~\\
+%\item What version number and build number of SWMM was used in the model?~\\
+%\end{enumerate}
+%\clearpage
+%
+%\includepdf[pages=-]{SWMM.pdf}
+
+%standard answer set
+

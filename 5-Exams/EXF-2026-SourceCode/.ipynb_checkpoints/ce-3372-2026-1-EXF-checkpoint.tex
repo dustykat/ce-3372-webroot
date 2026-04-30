@@ -1,0 +1,569 @@
+\documentclass[12pt]{article}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{daves,fancyhdr,natbib,graphicx,dcolumn,amsmath,lastpage,url}
+\usepackage{amsmath,amssymb,epstopdf,longtable}
+\usepackage{paralist}  % need to properly formulate standard answer blocks
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+\pagestyle{fancy}
+\lhead{CE 3372 Water Systems Design; Exam 1}
+\rhead{\textbf{Name \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}}
+\lfoot{REVISION 1}
+\cfoot{}
+\rfoot{Page \thepage\ of \pageref{LastPage}}
+\renewcommand\headrulewidth{0pt}
+
+
+
+\begin{document}
+\begingroup
+\begin{center}
+{\textbf{{ CE 3372 Water Systems Design} \\ Final Exam \\ Spring 2026} }
+%{\textbf{{ CE 3372 Water Systems Design} \\ Quiz 1 \\ Fall 2014} }
+\end{center}
+\endgroup
+
+
+\begin{enumerate}
+%%%%%%%%%%%%%%% GENERAL WATER SYSTEMS QUESTIONS %%%%%%%%%%%%%%%%%%%%%%
+\item (10 points) What is a water use system? How are they usually sized?\\~\\~\\
+\item (10 points) What is a water control system? How are they usually sized?\\~\\~\\
+
+\begin{figure}[h!] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=4in]{whiteoakbayou.jpg} 
+   \caption{Braes Bayou at SH288}
+   \label{fig:whiteoakbayou}
+\end{figure}
+
+\item (10 points) Which kind of system is depicted in Figure \ref{fig:whiteoakbayou}?  Explain your reasoning.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%% DRINKING WATER REGULATIONS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\item (10 points) Use Title 30, Part 1, Chapter 290, Subchapter D, Rule 290.44 of the Texas Administrative Code or TCEQ RG-195 to find the minimum pressure requirement for a public water system during normal (non-fire suppression) operation for parts of the system that deliver 1.5 gallons per minute or more.\\~\\~\\~\\~\\~\\
+\item (10 points) Use Title 30, Part 1, Chapter 290, Subchapter D, Rule 290.44 of the Texas Administrative Code or TCEQ RG-195 to find the minimum pressure requirement for a public water system during emergency (fire suppression) operation for parts of the system that deliver 1.5 gallons per minute or more.\\~\\~\\~\\~\\~\\
+\item (10 points) Use Title 30, Part 1, Chapter 290, Subchapter D, Rule 290.44 of the Texas Administrative Code or TCEQ RG-195 to find the minimum distance (spacing) for new potable water distribution lines in feet to wastewater collection facilities.\\~\\~\\~\\~\\~\\
+\item (10 points) Use Title 30, Part 1, Chapter 290, Subchapter D, Rule 290.44 of the Texas Administrative Code or TCEQ RG-195 to find the minimum free chlorine residual in mg/L required in Texas water distribution systems (if using free chlorine).
+
+%%%%%%%%%%%%%%% DISTRIBUTION NETWORKS TOPOLOGIES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\item (30 points) Consider the two networks depicted in Figure \ref{fig:placeholder0}. Both network designs serve the same junction nodes, have same nodal demands, and draw supply from the same reservoir.
+
+\begin{figure}[h!] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=4in]{Distribution.png} 
+   \caption{Two Distribution Systems}
+   \label{fig:placeholder0}
+\end{figure}
+
+Determine:
+\begin{enumerate}[a)]
+\item Which network design would be superior in terms of reliability? Why? \\~\\~\\~\\
+\item Which network design would cost less to build? Why?  \\~\\~\\~\\
+\item Which network would be superior in terms of disinfection residual? Why? 
+\end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%% NETWORK WITH NUMBERS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\item (30 points) Consider the pipe network portion shown in Figure \ref{fig:placeholder1}. Node 6 has a total head of 290.5 meters. All the pipes are PVC (roughness height = 0.007 millimeters).  
+
+\begin{figure}[h!] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=3.5in]{2018Pipeline2.jpg} 
+   \caption{A Distribution System}
+   \label{fig:placeholder1}
+\end{figure}
+
+Determine:
+\begin{enumerate}[a)]
+\item The discharge in cubic meters per second (cms) in pipe P1? \\~\\~\\~\\
+\item The discharge in cubic meters per second (cms) in pipe P5? \\~\\~\\~\\
+\item The discharge in cubic meters per second (cms) in pipe P6? \\~\\~\\~\\
+\end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% TIME-TO-DRAIN %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\item (10 points) Figure \ref{fig:placeholder6} is a perspective view of a large at-grade water storage reservoir. The initial depth in the 50-foot diameter tank is  Z = 30 feet. What is the average outflow rate in cubic-feet-per-second, if the tank drains through the hole in the side in 24 hours? 
+
+\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+   \centering
+  \includegraphics[width=4in]{StorageTank.png} 
+   \caption{At-grade storage reservoir}
+   \label{fig:placeholder6}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%% EDMONSTON PUMPING PLANT ANALYSIS %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\item (230 points) Figure \ref{fig:PumpPlantPicture} is a collection of annotated images of the Edmonston Pumping Plant and pipeline/tunnel system at the southern end of the California Aqueduct.  The 10+ mile system lifts water from the Edmonston forebay at elevation 1239 feet to the Tehachapi afterbay at elevation 3131 feet for subsequent distribution to various parts of southern California.
+
+\begin{figure}[ht!] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=6.5in]{PumpPlantPicture.jpg} 
+   \caption{Aerial images of Tehachapi Mountains, California;  showing the lift system for the California Aqueduct.}
+   \label{fig:PumpPlantPicture}
+\end{figure}
+
+\clearpage
+Figure \ref{fig:pumpcurve} is a pump performance curve for any \textbf{one} of the 14 pumps arranged in two 7-pump bays, each supplying one of the parallel 16-foot diameter steel pressure pipes. 
+
+\begin{figure}[ht!] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=6in]{pumpcurve.pdf} 
+   \caption{Lift pump performance curve for single pump.   System has 14 identical pumps in two parallel galleries;  each gallery has 7 pumps operating in parallel.}
+   \label{fig:pumpcurve}
+\end{figure}
+
+\clearpage
+Determine:
+    \begin{enumerate}[a)]
+    %%%%%%%%%%%%%%%%%%%%%%%%
+\item A plan view layout of the system (a sketch) showing the various components, and station distances (from the pump station forebay).  Label the sketch with node elevations, node names, pipe names, and pipe lengths.).
+\item The pipe lengths between the indicated locations in Table \ref{tab:lengths} (i.e. complete the table)?
+\begin{table}[h!]
+   \centering
+    \caption{Selected Pipeline Locations and Pressures }
+   \begin{tabular}{p{0.5in}p{1.8in}p{1in}p{1in}p{1in}} % Column formatting, @{} suppresses leading/trailing space
+\hline
+\hline
+ID & Location & Distance from Pumps (feet) & Connection Sequence & Pipe Barrel Length  \\
+\hline
+\hline
+1& Edmonston Pump House & ~~~~~0  & N/A & 0 \\
+\hline
+2& Surge Tank & ~7,671 & 1 to 2 & ~~ \\
+\hline
+3& Pipes to Surface & 19,535 & 2 to 3 & ~~ \\
+\hline
+4& Pipes to Ground & 21,738 & 3 to 4 & ~~ \\
+\hline
+5& High Tunnel & 33,579 & 4 to 5 & ~~ \\
+\hline
+6& Tehachapi Afterbay & 55,256 & 5 to 6 & ~~ \\
+\hline
+   \end{tabular}
+   \label{tab:lengths}
+\end{table}
+\item The total length of pipe/tunnel required (in miles). \\~\\
+\item The total head at the Edmonston Pump Forebay (the pumphouse). \\~\\
+\item What hydraulic element to represent the forebay. \\~\\
+\item The total head at the Tehachapi Afterbay. \\~\\
+\item What hydraulic element to represent the afterbay. \\~\\
+\item The head-loss model is most appropriate for this analysis. \\~\\
+\item The total discharge in the system in cubic-feet-per-second when all 14 pumps are running. \\~\\
+\item The pressure at the locations in Table \ref{tab:pressures} (i.e. complete the table). \\~\\
+\begin{table}[h!]
+   \centering
+    \caption{Selected Pipeline Locations and Pressures }
+    \begin{tabular}{p{0.5in}p{2in}p{1in}p{0.7in}p{0.7in}} % Column formatting, @{} suppresses leading/trailing space
+\hline
+\hline
+ID & Location & Distance from Pumps (feet) & Elevation (feet) & Pressure (psi) \\
+\hline
+\hline
+0& Edmonston Pump House (suction) & ~~~~~0  & 1,239 & ~~ \\
+\hline
+0& Edmonston Pump House (discharge)& ~~~~~0  & 1,239 & ~~ \\
+\hline
+2& Surge Tank & ~7,671 & 3,121 & ~~ \\
+\hline
+3& Pipes to Surface & 19,535 & 3,119 & ~~ \\
+\hline
+4& Pipes to Ground & 21,738 & 3,131 & ~~ \\
+\hline
+5& High Tunnel & 33,579 & 3,566 & ~~ \\
+\hline
+6& Tehachapi Afterbay & 55,256 & 3,131 & ~~ \\
+\hline
+   \end{tabular}
+   \label{tab:pressures}
+\end{table}
+\item The velocity of water the each of the pipes. \\~\\
+\item The mechanical energy required to move the water in kW-h  (kilowatt-hours). \\~\\
+
+    \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% EPANET USAGE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\item \label{prob:EPANET} (46 Points) Consider the pipe network portion shown in Figure \ref{fig:Pipes}.
+\begin{quote}
+The reservoir has a pool elevation of 1310 meters\\
+\\
+Node 1 elevation is 200.0 meters; Node 2 elevation is 150.0 meters\\
+Node 3 elevation is 150.0 meters; Node 4 elevation is 100.0 meters\\
+Node 5 elevation is 100.0 meters; Node 6 elevation is 50.0 meters\\
+\\
+P1 roughness is $e=0.045$ mm; P2  roughness is $e=0.045$ mm\\
+P3 roughness is $e=0.045$ mm; P4  roughness is $e=0.090$ mm\\
+P5 roughness is $e=0.045$ mm; P6  roughness is $e=0.045$ mm\\
+P7 roughness is $e=0.045$ mm; P8  roughness is $e=0.045$ mm\\
+
+\end{quote}
+\begin{figure}[h!] %  figure placement: here, top, bottom, or page
+\centering
+   \includegraphics[width=6.5in]{2018Pipeline.jpg}
+   \caption{Pipe Network}
+   \label{fig:Pipes} 
+\end{figure}
+\clearpage
+
+Using EPANET, determine:
+
+\begin{enumerate}[a)]
+\item The discharge, velocity, and head loss in each pipe and populate Table \ref{tab:pipes}
+
+% Requires the booktabs if the memoir class is not being used
+\begin{table}[htbp]
+   %\centering
+      \caption{Estimated $Q$,$V$, and $\Delta h$ in each pipe in Figure \ref{fig:Pipes} \\}
+   %\topcaption{Table captions are better up top} % requires the topcapt package
+   \begin{tabular}{| p{0.6in} | p{1.3in} | p{1.3in} | p{1.3in} |} % Column formatting, @{} suppresses leading/trailing space
+   \hline
+   \hline
+Pipe ID & Discharge ($m^3/s$) & Velocity ($m/s$) & Head Loss ($m$)\\
+\hline
+\hline
+1 &  ~ & ~ & ~ \\
+~ &  ~ & ~ & ~ \\
+~ &  ~ & ~ & ~ \\
+\hline
+2 &  ~ & ~ & ~ \\
+~ &  ~ & ~ & ~ \\
+~ &  ~ & ~ & ~ \\
+\hline
+3 &  ~ & ~ & ~ \\
+~ &  ~ & ~ & ~ \\
+~ &  ~ & ~ & ~ \\
+\hline
+4 &  ~ & ~ & ~ \\
+~ &  ~ & ~ & ~ \\
+~ &  ~ & ~ & ~ \\
+\hline
+5 &  ~ & ~ & ~ \\
+~ &  ~ & ~ & ~ \\
+~ &  ~ & ~ & ~ \\
+\hline
+6 &  ~ & ~ & ~ \\
+~ &  ~ & ~ & ~ \\
+~ &  ~ & ~ & ~ \\
+\hline
+7 &  ~ & ~ & ~ \\
+~ &  ~ & ~ & ~ \\
+~ &  ~ & ~ & ~ \\
+\hline
+8 &  ~ & ~ & ~ \\
+~ &  ~ & ~ & ~ \\
+~ &  ~ & ~ & ~ \\
+\hline
+\hline
+   \end{tabular}
+   \label{tab:pipes}
+\end{table}
+
+\clearpage
+\item The total head and pressure at each node and populate Table \ref{tab:booktabs} below.
+% Requires the booktabs if the memoir class is not being used
+\begin{table}[htbp]
+   %\centering
+      \caption{$TDH$, $z$,  and $P$ at  each node in Figure \ref{fig:Pipes} \\}
+   %\topcaption{Table captions are better up top} % requires the topcapt package
+   \begin{tabular}{| p{1in} | p{1.1in} | p{1in} | p{1.1in} | } % Column formatting, @{} suppresses leading/trailing space
+   \hline
+   \hline
+Node ID & Total Head (m) & Elevation (m) & Pressure (kPa) \\
+\hline
+\hline
+Reservoir & 1310 & N/A & 0  \\
+~ & ~ & ~ & ~  \\
+~ & ~ & ~ & ~  \\
+\hline
+1 & ~ & 200 & ~  \\
+~ & ~ & ~ & ~  \\
+~ & ~ & ~ & ~  \\
+\hline
+2 & ~ & 150 & ~  \\
+~ & ~ & ~ & ~  \\
+~ & ~ & ~ & ~  \\
+\hline
+3 & ~ & 150 & ~  \\
+~ & ~ & ~ & ~  \\
+~ & ~ & ~ & ~  \\
+\hline
+4 & ~ & 100 & ~  \\
+~ & ~ & ~ & ~  \\
+~ & ~ & ~ & ~  \\
+\hline
+5 & ~ & 100 & ~  \\
+~ & ~ & ~ & ~  \\
+~ & ~ & ~ & ~  \\
+\hline
+6 & ~ & 50 & ~  \\
+~ & ~ & ~ & ~  \\
+~ & ~ & ~ & ~  \\
+\hline
+\hline
+
+   \end{tabular}
+
+   \label{tab:booktabs}
+\end{table}
+
+\item Insert a \textbf{screen capture} of \textbf{your} EPANET simulation here.
+\item Attach the EPANET \textbf{summary report} here.
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%% SEWER QUESTIONS %%%%%%%%%%% 
+\clearpage
+\item (10 points) In a sewer system if design criteria require a minimum velocity of 2 ft/sec, and your design cannot produce that velocity at the design flow, what are some changes can you make in your design? \\~\\~\\~\\~\\
+\item (10 points) Why is population forecasting important for water distribution and wastewater collection system designs? \\~\\~\\~\\~\\
+\item (10 points) What is a lift station, and when are they necessary?  \\~\\~\\~\\~\\
+\item (10 points) Define the time of concentration for a small watershed.  \\~\\~\\~\\~\\
+\item (10 points) Define the inlet time for an urbanized drainage area. \\~\\~\\~\\~\\
+\item (10 points) Define inflow and infiltraton in the context of a sanitary sewer system.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% MANNINGS EQN AND PARTIALLY FULL PIPES DEFNITIONS %%%%%%%
+\clearpage
+\item (10 points) A 24-inch diameter sewer pipe, with Manning's n of $0.015$ is laid on slope $S_0 =0.01$ as shown in Figure \ref{fig:PipeOnSlope}.    
+
+\begin{figure}[h!] %  figure placement: here, top, bottom, or page
+\centering
+   \includegraphics[width=2in]{PipeOnSlope.jpg}
+   \caption{Sewer pipe sketch}
+   \label{fig:PipeOnSlope} 
+\end{figure}
+
+Use Manning's equation and the depth-area, and the depth-perimeter equations to complete Table \ref{tab:SewerPipes}.
+% Requires the booktabs if the memoir class is not being used
+\begin{table}[htbp]
+   \centering
+   \caption{Depth-Area, Depth-Perimeter, Depth-Hyd. Radius, and Discharge for Circular Sewer}
+   \begin{tabular}{p{1in}p{1in}p{1in}p{1in}p{1in}}
+   ~ & ~ & ~  & ~ & ~ \\
+$y$ ($ft$)~~& $A$ ($ft^2$) & $P_w$ ($ft$) & $R_h$ ($ft$) & $Q$ ($ft^3/sec$) \\
+\hline
+\hline
+~ & ~ & ~  & ~ & ~ \\
+1.00 & ~ & ~  & ~ & ~ \\
+~& ~ & ~  & ~ & ~ \\
+\hline
+~ & ~ & ~  & ~ & ~ \\
+2.00 & ~ & ~  & ~ & ~ \\
+~ & ~ & ~  & ~ & ~ \\
+\hline
+   \end{tabular}
+   \label{tab:SewerPipes}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%% STORM SEWER PIPE SIZE BY RATIONAL METHOD %%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\item \label{prob:DrainDesign1} (150 points)Consider the drainage area depicted in Figure \ref{fig:DrainageCase1}.  The 6.0 acre drainage area has a runoff coefficient of 0.65, and an inlet time (time of concentration to the inlet depicted in the figure) of 17 minutes.  The pipes are concrete (Manning's $n$ = 0.013).  The initial invert elevations for the junction boxes (MH-1, MH-2, MH-3) are 323.2, 321.1, and 319.0 feet, respectively.
+
+\begin{figure}[ht!] %  figure placement: here, top, bottom, or page
+\centering
+   \includegraphics[width=6in]{DrainageCase1.jpg}
+   \caption{Drainage System Layout}
+   \label{fig:DrainageCase1} 
+\end{figure}
+Equation \ref{eqn:intensity1} is the 10-year ARI intensity equation for the area, where $I$ is intensity in inches-per-hour, and $T_c$ is the characteristic time, in minutes.
+
+\begin{equation}
+I = \frac{56.6}{(T_c + 8.6)^{0.823}}
+\label{eqn:intensity1}
+\end{equation}
+
+Determine: 
+\begin{enumerate}[a)]
+\item The dimensionless slope of the pipe run P1 (connecting MH-1 and MH-2)? \\~\\~\\
+\item The dimensionless slope of the pipe run P2 (connecting MH-2 and MH-3)?  \\~\\~\\
+\item The $CA$ value for drainage area DA-1?  \\~\\~\\
+\newpage
+\item The $\sum{CA}$ value (sum of the upstream products of runoff coefficients and contributing areas) at junction MH-1?  \\~\\~\\
+\item The $\sum{CA}$ value (sum of the upstream products of runoff coefficients and contributing areas) at junction MH-2?  \\~\\~\\
+\item The time of concentration to be used to compute the discharge leaving MH-1?  \\~\\~\\
+\item The rainfall intensity for this time of concentration?  \\~\\~\\
+\item The value of peak discharge leaving MH-1?  \\~\\~\\
+\item The pipe diameter for pipe P-1 required the carry the design flow at full pipe depth? \\~\\~\\  
+\item The flow velocity in pipe P-1?  \\~\\~\\
+\item The pipe travel time for pipe P-1?  \\~\\~\\
+\newpage
+\item The value of peak discharge leaving MH-2? (Explain your reasoning) \\~\\~\\  
+\item The pipe diameter for pipe P-2 required the carry the design flow at full pipe depth?  \\~\\~\\
+\item The flow velocity in pipe P-2?  \\~\\~\\
+\item The pipe travel time for  pipe P-2?  \\~\\~\\
+\end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%% LAZYBROOK SWMM MODEL %%%%%%%%%%%%%%%%%%
+\clearpage
+\item \label{prob:DrainDesign2} (140 points) Consider the drainage area depicted in Figure \ref{fig:Lazybrook}. 
+
+\begin{figure}[ht!] %  figure placement: here, top, bottom, or page
+\centering
+   \includegraphics[width=6in]{lazybrook_drainage.png}
+   \caption{Drainage System Layout}
+   \label{fig:Lazybrook} 
+\end{figure}
+
+Table \ref{tab:drainageareas} lists the hydrologic features of the four drainage areas.
+ 
+\begin{table}[ht!]
+   %\centering
+      \caption{Hydrologic data for each drainage area in Figure \ref{fig:Lazybrook} \\}
+   %\topcaption{Table captions are better up top} % requires the topcapt package
+   \begin{tabular}{| p{0.6in} | p{0.9in} | p{0.9in} | p{1.3in} | p{1.3in} |} % Column formatting, @{} suppresses leading/trailing space
+   \hline
+   \hline
+Area ID & Area ($acres$) & Width ($feet$) & Avg. Slope ($\%$) & NRCS CN \\
+\hline
+\hline
+DA\_1 &  25 & 1073 & 0.2 & 85\\
+DA\_2 &  25 & 1073 & 0.2 & 85\\
+DA\_3 &  17 & ~719 & 0.8 & 85\\
+DA\_4 &  ~8 & ~688 & 0.9 & 85\\
+\hline
+\hline
+   \end{tabular}
+   \label{tab:drainageareas}
+\end{table}
+
+
+
+\begin{table}[ht!]
+   %\centering
+      \caption{Elevation data for each junction in Figure \ref{fig:Lazybrook} \\}
+   %\topcaption{Table captions are better up top} % requires the topcapt package
+   \begin{tabular}{| p{1.6in} | p{1.6in} | p{1.6in} |} % Column formatting, @{} suppresses leading/trailing space
+   \hline
+   \hline
+Junction ID & Invert Elevation ($feet$) & Land Elevation ($feet$) \\
+\hline
+\hline
+J-DA\_1 &  65 & 70 \\
+J-DA\_2 &  60 & 66 \\
+J-DA\_3 &  56 & 66 \\
+J-DA\_4 &  48 & 62 \\
+OUTFALL &  35 & N/A \\
+\hline
+\hline
+   \end{tabular}
+   \label{tab:junctions}
+\end{table}
+
+\clearpage
+The red dots on Figure \ref{fig:Lazybrook} are inlets to the storm sewer system (indicated by the blue pipes).  The red rectangle (on the East side of the figure) is a stormwater outfall.  Table \ref{tab:junctions} lists the invert elevations, and land surface elevations of these points. 
+
+The system is to be sized using the design storm shown in Table \ref{tab:storm}\footnote{A 10-inch, 24 hour, SCS Type-2 - with the first and last hour trimmed}
+
+\begin{table}[ht!]
+   \centering
+      \caption{Design Storm for Drainage System in Figure \ref{fig:Lazybrook} \\}
+   %\topcaption{Table captions are better up top} % requires the topcapt package
+   \begin{tabular}{| p{1.6in} | p{1.7in} |} % Column formatting, @{} suppresses leading/trailing space
+   \hline
+   \hline
+Elapsed Time & Rainfall Intensity ($\frac{in}{hr}$) \\
+\hline
+\hline
+00:00 & 0.11 \\
+01:00 & 0.11 \\
+02:00 & 0.13 \\
+03:00 & 0.13 \\
+04:00 & 0.15 \\
+05:00 & 0.17 \\
+06:00 & 0.19 \\
+07:00 & 0.21 \\
+08:00 & 0.27 \\
+09:00 & 0.34 \\
+10:00 & 0.54 \\
+11:00 & 4.28 \\
+12:00 & 1.09 \\
+13:00 & 0.48 \\
+14:00 & 0.34 \\
+15:00 & 0.26 \\
+16:00 & 0.22 \\
+17:00 & 0.19 \\
+18:00 & 0.17 \\
+19:00 & 0.14 \\
+20:00 & 0.13 \\
+21:00 & 0.12 \\
+22:00 & 0.12 \\
+23:00 & 0.11 \\
+\hline
+\hline
+   \end{tabular}
+   \label{tab:storm}
+\end{table}
+
+The blue line segments on Figure \ref{fig:Lazybrook} are pipes that comprise the storm sewer system.   Table \ref{tab:pipes} lists the proposed design (i.e. pipe lengths, diameters, connection(s), and offsets) for the storm sewer.
+
+\clearpage
+
+\begin{table}[ht!]
+   %\centering
+      \caption{Hydraulic data for each pipe in Figure \ref{fig:Lazybrook} \\}
+   %\topcaption{Table captions are better up top} % requires the topcapt package
+   \begin{tabular}{| p{0.6in} | p{1.7in} | p{0.9in} | p{0.9in} | p{1.4in} |} % Column formatting, @{} suppresses leading/trailing space
+   \hline
+   \hline
+Pipe ID & Connection (Start:End) & Diameter ($feet$) & Length ($feet$) & Offset (inlet:outlet) \\
+\hline
+\hline
+P\_1 & DA\_1 : DA\_2 & 3.0 & 1000 & 0:0 \\
+P\_2 & DA\_2 : DA\_4 & 3.0 & 1000 & 0:2 \\
+P\_3 & DA\_3 : DA\_4 & 3.0 & 1000 & 0:2 \\
+P\_4 & DA\_4 : OUTFALL & 5.0 & 1000 & 0:0\\
+\hline
+\hline
+   \end{tabular}
+   \label{tab:pipes}
+\end{table}
+
+Using these data build a SWMM model of the system.  Assume the outfall is a fixed pool with depth 5 feet (water elevation 40 feet).   Use DYNWAVE routing, and the SCS CN infiltration method in SWMM. 
+
+From \textbf{your} SWMM model, determine:
+
+\begin{enumerate}[a)]
+\item Insert a screen capture of your working model here. \\~\\~\\~\\
+\item How many subcatchments are in your model? \\~\\~\\~\\
+\item If all the pipes are below grade?  \\~\\~\\~\\
+\item If the system surcharges during the design storm?  \\~\\~\\~\\
+\item If yes, when does the surcharge occur (what time)? \\~\\~\\~\\
+\item The maximum flow velocity in the sewer system?  \\~\\~\\~\\
+\item Where and when this maximum occurs (which pipe, what time)?  \\~\\~\\~\\
+\item Insert a profile of the sewer system and the water surface elevation at hour 12:00 of the simulation, starting at J-DA\_1 and ending at the OUTFALL \\~\\~\\~\\
+\item Insert a time series (a plot) of the precipitation input  \\~\\~\\~\\
+\item Insert a time series (a plot) of runoff in subcatchment DA\_2  \\~\\~\\~\\
+
+Modify your model to make pipes P\_1 and P\_2, into 5.0 foot diameter pipes, keeping them at least 2 feet below grade.  
+\item List the required changes (there are several, invert elevations must be changed, and offsets need changing) \\~\\~\\~\\
+\item Does the system surcharge during the design storm?  \\~\\~\\~\\
+\item Insert a profile of the \textbf{modified} sewer system and the water surface elevation at hour 12:00 of the simulation, starting at J-DA\_1 and ending at the OUTFALL \\~\\~\\~\\
+\item Insert a time series (a plot) of runoff in subcatchment DA\_2  \\~\\~\\~\\
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%
+\end{enumerate}
+\end{document} 
+
